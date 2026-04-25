@@ -42,3 +42,27 @@ id = "FnUR2OAPTJBXidXhlZjHY"
 uri = "file://artifacts/agency/public/case-study-saas.png"
 type = "image"
 title = "SaaS growth dashboard"
+
+[[generated]]
+id = "Kre4LQ9nD5xcODtonMmP3"
+uri = "file://artifacts/agency/public/hero-showcase.png"
+type = "image"
+title = "Website mockups hero image"
+
+[[generated]]
+id = "e6sicn6TWxyuMXk9J_Ery"
+uri = "file://artifacts/agency/public/case-study-local.png"
+type = "image"
+title = "Luxury Limo service website mockup"
+
+[[generated]]
+id = "a1iwIr69uDy8amAFPP8FA"
+uri = "file://artifacts/agency/public/case-study-home.png"
+type = "image"
+title = "Landscaping website mockup"
+
+[[generated]]
+id = "wtY243aF_Qu_6jZ5y1K0S"
+uri = "file://artifacts/agency/public/local-business-bg.png"
+type = "image"
+title = "Local business storefront"
