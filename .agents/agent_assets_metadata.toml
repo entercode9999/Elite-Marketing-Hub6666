@@ -35,7 +35,7 @@ title = "Abstract modern corporate architecture"
 id = "nSf_XP5NhNoRotLeZnnYQ"
 uri = "file://artifacts/agency/public/case-study-ecommerce.png"
 type = "image"
-title = "eCommerce warehouse analytics"
+title = "ecommerce website mockup"
 
 [[generated]]
 id = "FnUR2OAPTJBXidXhlZjHY"
@@ -66,3 +66,93 @@ id = "wtY243aF_Qu_6jZ5y1K0S"
 uri = "file://artifacts/agency/public/local-business-bg.png"
 type = "image"
 title = "Local business storefront"
+
+[[generated]]
+id = "OPrJvW0hdE8NR5ucJ5JaW"
+uri = "file://artifacts/agency/public/case-study-limo.png"
+type = "image"
+title = "Limo app UI mockup"
+
+[[generated]]
+id = "fEwuF9_vZDCayfIYXcxf9"
+uri = "file://artifacts/agency/public/case-study-dental.png"
+type = "image"
+title = "dental practice website mockup"
+
+[[generated]]
+id = "Qfk1tfbnkcrU8IAAMQtkh"
+uri = "file://artifacts/agency/public/case-study-realestate.png"
+type = "image"
+title = "real estate website mockup"
+
+[[generated]]
+id = "noaz99EDpUgUrRNBZfj9s"
+uri = "file://artifacts/agency/public/case-study-homeservices.png"
+type = "image"
+title = "Home services app UI mockup"
+
+[[generated]]
+id = "kZxMl7sARtP9qVoQPZDww"
+uri = "file://artifacts/agency/public/industry-ecommerce.png"
+type = "image"
+title = "eCommerce flatlay website UI"
+
+[[generated]]
+id = "SQtTj-6N9dV0pw4ar1jRG"
+uri = "file://artifacts/agency/public/industry-legal.png"
+type = "image"
+title = "Law firm website UI"
+
+[[generated]]
+id = "xDjxtEdY6CdDnOJDZoBUE"
+uri = "file://artifacts/agency/public/industry-restaurant.png"
+type = "image"
+title = "Restaurant website UI"
+
+[[generated]]
+id = "ISN2G04CZ0vLIetHJn2Lw"
+uri = "file://artifacts/agency/public/industry-fitness.png"
+type = "image"
+title = "Fitness studio app UI"
+
+[[generated]]
+id = "6at0mrZuCKBU6qUgALyqm"
+uri = "file://artifacts/agency/public/headshot-1.png"
+type = "image"
+title = "headshot 1"
+
+[[generated]]
+id = "X_gJAghTpYbwyow-Sv2T4"
+uri = "file://artifacts/agency/public/headshot-2.png"
+type = "image"
+title = "headshot 2"
+
+[[generated]]
+id = "kQoHHITMC_G5Z3-69ywN-"
+uri = "file://artifacts/agency/public/headshot-3.png"
+type = "image"
+title = "headshot 3"
+
+[[generated]]
+id = "k0tDD1VJQ5nXedwXOIkg7"
+uri = "file://artifacts/agency/public/headshot-4.png"
+type = "image"
+title = "headshot 4"
+
+[[generated]]
+id = "Xj4echFQgSIfEeqo97Hf8"
+uri = "file://artifacts/agency/public/industry-local.png"
+type = "image"
+title = "local services industry"
+
+[[generated]]
+id = "omBbSiTcdVxIADh05agVp"
+uri = "file://artifacts/agency/public/industry-dental.png"
+type = "image"
+title = "dental medical industry"
+
+[[generated]]
+id = "Qge_L4xMkmsy4ryNKguca"
+uri = "file://artifacts/agency/public/industry-realestate.png"
+type = "image"
+title = "real estate industry"
