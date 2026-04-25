@@ -24,3 +24,21 @@ id = "SZI3p-oAMOZVDrsM-FFR4"
 uri = "file://artifacts/agency/public/studio.png"
 type = "image"
 title = "creative studio loft"
+
+[[generated]]
+id = "cURyqN83XC_ZE360UfRVv"
+uri = "file://artifacts/agency/public/hero-abstract.png"
+type = "image"
+title = "Abstract modern corporate architecture"
+
+[[generated]]
+id = "nSf_XP5NhNoRotLeZnnYQ"
+uri = "file://artifacts/agency/public/case-study-ecommerce.png"
+type = "image"
+title = "eCommerce warehouse analytics"
+
+[[generated]]
+id = "FnUR2OAPTJBXidXhlZjHY"
+uri = "file://artifacts/agency/public/case-study-saas.png"
+type = "image"
+title = "SaaS growth dashboard"
