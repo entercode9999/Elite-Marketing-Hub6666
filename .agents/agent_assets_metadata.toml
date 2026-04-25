@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "npMwwK_-b6Kpr90c03L1C"
+uri = "file://artifacts/agency/public/work-1.png"
+type = "image"
+title = "avant-garde fashion campaign"
+
+[[generated]]
+id = "OJwKZlTeRprCYlhXWn8nO"
+uri = "file://artifacts/agency/public/work-2.png"
+type = "image"
+title = "surreal 3d motion frame"
+
+[[generated]]
+id = "vq85KAccZQ-8-J6DtBUgo"
+uri = "file://artifacts/agency/public/work-3.png"
+type = "image"
+title = "grunge typography poster"
+
+[[generated]]
+id = "SZI3p-oAMOZVDrsM-FFR4"
+uri = "file://artifacts/agency/public/studio.png"
+type = "image"
+title = "creative studio loft"
