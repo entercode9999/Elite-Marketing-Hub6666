@@ -93,7 +93,7 @@ const m2MigrationData: HubData = {
       headline: "Magento 1 to Magento 2 migration with full data and feature parity.",
       description: "Complete Magento 1 to Magento 2 migration: product catalogue, customer data, order history, CMS pages, extension replacement, theme redesign, and performance configuration. Parallel-run environment with delta migration for zero-downtime cutover.",
       bullets: ["Full data migration and validation", "Extension audit and replacement", "Theme redesign on M2", "Zero-downtime cutover process"],
-      image: "/case-study-saas.png",
+      image: "/case-study-homeservices.png",
       href: "/magento-2-migration",
     },
     {
@@ -101,7 +101,7 @@ const m2MigrationData: HubData = {
       headline: "Migrate from Shopify to Magento 2 when your business outgrows the platform.",
       description: "Shopify to Magento 2 migration for businesses that need B2B commerce, complex pricing, large catalogue management, or ERP integration that Shopify can't deliver. Complete data migration, custom theme, and full feature rebuild on the Magento 2 platform.",
       bullets: ["Full product and customer migration", "Custom M2 theme development", "B2B Commerce configuration", "SEO preservation and monitoring"],
-      image: "/case-study-saas.png",
+      image: "/hero-showcase.png",
       href: "/magento-2-migration",
     },
     {
@@ -109,7 +109,7 @@ const m2MigrationData: HubData = {
       headline: "Migrate from any eCommerce platform to Magento 2.",
       description: "Platform migration to Magento 2 from WooCommerce, BigCommerce, custom builds, or any legacy eCommerce platform. Custom data migration scripts, URL mapping, SEO preservation, and post-migration monitoring.",
       bullets: ["Custom data migration scripts", "URL mapping and 301 redirects", "Content and media migration", "Post-launch monitoring programme"],
-      image: "/case-study-realestate.png",
+      image: "/work-1.png",
       href: "/magento-2-migration",
     },
     {
@@ -117,7 +117,7 @@ const m2MigrationData: HubData = {
       headline: "Magento 2 version upgrade to the current supported release.",
       description: "Magento 2.x to 2.4.x upgrade with full extension compatibility testing, staging environment upgrade first, and regression testing before production deployment. Keeps your store on a supported version with current security patches.",
       bullets: ["Staging environment upgrade first", "Extension compatibility testing", "Full regression test suite", "Production deployment with rollback plan"],
-      image: "/case-study-saas.png",
+      image: "/case-study-ecommerce.png",
       href: "/magento-2-migration",
     },
     {
@@ -125,7 +125,7 @@ const m2MigrationData: HubData = {
       headline: "Migrate without losing a single organic ranking.",
       description: "SEO-preserving migration: complete URL audit, 301 redirect mapping for every changed URL, canonical configuration, sitemap resubmission, and 90-day ranking monitoring. We've run migrations with zero measurable organic traffic loss.",
       bullets: ["Complete URL audit and mapping", "301 redirect implementation", "Post-migration ranking monitoring", "Google Search Console management"],
-      image: "/case-study-saas.png",
+      image: "/industry-ecommerce.png",
       href: "/magento-2-migration",
     },
   ],
@@ -149,9 +149,9 @@ const m2MigrationData: HubData = {
     { platform: "Screaming Frog", stat: "URL auditing", description: "Pre-migration URL crawl and post-migration redirect verification using Screaming Frog. Every redirect is tested, every canonical is verified, and every indexable URL is confirmed accessible post-launch." },
   ],
   caseStudies: [
-    { image: "/industry-ecommerce.png", client: "Coastal Collective", industry: "eCommerce", blurb: "M1 to M2 migration for a store running $3.2M annual revenue. Complete in 14 weeks, zero downtime, 100% data integrity. Performance improved 220% on Lighthouse.", metrics: [{ value: "Zero", label: "Downtime" }, { value: "+220%", label: "Performance" }] },
-    { image: "/case-study-saas.png", client: "National Supply Group", industry: "B2B Commerce", blurb: "Shopify to Magento 2 migration for a wholesale supplier with 40,000 SKUs and B2B pricing requirements Shopify couldn't meet. Custom B2B theme and SAP integration.", metrics: [{ value: "40k", label: "SKUs migrated" }, { value: "+78%", label: "B2B orders" }] },
-    { image: "/case-study-home.png", client: "BuildCo Supply", industry: "Wholesale", blurb: "Legacy custom eCommerce to Magento 2. Custom data migration scripts, zero ranking loss from full URL mapping, and a 30-day post-launch monitoring programme.", metrics: [{ value: "0%", label: "Organic traffic loss" }, { value: "+188%", label: "Performance score" }] },
+    { image: "/case-study-ecommerce.png", client: "Coastal Collective", industry: "eCommerce", blurb: "M1 to M2 migration for a store running $3.2M annual revenue. Complete in 14 weeks, zero downtime, 100% data integrity. Performance improved 220% on Lighthouse.", metrics: [{ value: "Zero", label: "Downtime" }, { value: "+220%", label: "Performance" }] },
+    { image: "/case-study-homeservices.png", client: "National Supply Group", industry: "B2B Commerce", blurb: "Shopify to Magento 2 migration for a wholesale supplier with 40,000 SKUs and B2B pricing requirements Shopify couldn't meet. Custom B2B theme and SAP integration.", metrics: [{ value: "40k", label: "SKUs migrated" }, { value: "+78%", label: "B2B orders" }] },
+    { image: "/hero-showcase.png", client: "BuildCo Supply", industry: "Wholesale", blurb: "Legacy custom eCommerce to Magento 2. Custom data migration scripts, zero ranking loss from full URL mapping, and a 30-day post-launch monitoring programme.", metrics: [{ value: "0%", label: "Organic traffic loss" }, { value: "+188%", label: "Performance score" }] },
   ],
   process: [
     { label: "Audit", headline: "Complete audit of the source platform before planning a migration.", description: "URL crawl, data entity audit, extension inventory, performance baseline, and SEO audit. We know exactly what we're migrating before we plan how to migrate it." },
@@ -169,9 +169,9 @@ const m2MigrationData: HubData = {
     { question: "Is there any downtime during migration?", answer: "Our migration methodology produces zero downtime. The M2 environment is built and fully tested while the M1 store runs in production. The final cutover is a DNS change that takes 10-15 minutes, with the M1 store remaining accessible as a rollback target for 24 hours post-cutover." },
   ],
   hubInsights: [
-    { image: "/industry-ecommerce.png", category: "Magento Migration", readTime: "8 min read", title: "The M1 to M2 Migration Playbook: How to Migrate $5M+ eCommerce Stores Without Downtime", excerpt: "Magento 1 end-of-life migrations are complex for high-revenue stores because the cost of errors is significant. We've run 20+ migrations and refined a methodology that produces zero downtime, 100% data integrity, and measurable performance improvements on every project. Here is the complete playbook.", author: "James Okafor", authorRole: "Migration Lead", href: "/blog/m1-m2-migration-playbook" },
-    { image: "/case-study-saas.png", category: "Magento 2", readTime: "6 min read", title: "Why Magento 1 Stores Are Still Being Hacked in 2026 (And What to Do About It)", excerpt: "Six years after Magento 1's end-of-life, tens of thousands of M1 stores are still running in production — many with credit card skimming malware already installed. We break down the actual attack vectors, the realistic timeline from installation to discovery, and the migration options for business owners who've delayed.", author: "Marcus Chen", authorRole: "Security Lead", href: "/blog/magento-1-security-2026" },
-    { image: "/case-study-home.png", category: "Migration SEO", readTime: "5 min read", title: "How to Migrate to Magento 2 Without Losing a Single Organic Ranking", excerpt: "Platform migrations are one of the highest-risk events in the SEO lifecycle of a website. The window for getting URL redirects wrong is narrow and the consequences can last months. We walk through the complete SEO migration checklist we use on every project — from pre-migration crawl to 90-day post-launch monitoring.", author: "Priya Anand", authorRole: "SEO Migration Lead", href: "/blog/magento-2-migration-seo-checklist" },
+    { image: "/work-1.png", category: "Magento Migration", readTime: "8 min read", title: "The M1 to M2 Migration Playbook: How to Migrate $5M+ eCommerce Stores Without Downtime", excerpt: "Magento 1 end-of-life migrations are complex for high-revenue stores because the cost of errors is significant. We've run 20+ migrations and refined a methodology that produces zero downtime, 100% data integrity, and measurable performance improvements on every project. Here is the complete playbook.", author: "James Okafor", authorRole: "Migration Lead", href: "/blog/m1-m2-migration-playbook" },
+    { image: "/case-study-ecommerce.png", category: "Magento 2", readTime: "6 min read", title: "Why Magento 1 Stores Are Still Being Hacked in 2026 (And What to Do About It)", excerpt: "Six years after Magento 1's end-of-life, tens of thousands of M1 stores are still running in production — many with credit card skimming malware already installed. We break down the actual attack vectors, the realistic timeline from installation to discovery, and the migration options for business owners who've delayed.", author: "Marcus Chen", authorRole: "Security Lead", href: "/blog/magento-1-security-2026" },
+    { image: "/hero-showcase.png", category: "Migration SEO", readTime: "5 min read", title: "How to Migrate to Magento 2 Without Losing a Single Organic Ranking", excerpt: "Platform migrations are one of the highest-risk events in the SEO lifecycle of a website. The window for getting URL redirects wrong is narrow and the consequences can last months. We walk through the complete SEO migration checklist we use on every project — from pre-migration crawl to 90-day post-launch monitoring.", author: "Priya Anand", authorRole: "SEO Migration Lead", href: "/blog/magento-2-migration-seo-checklist" },
   ],
 };
 

@@ -96,7 +96,7 @@ const adobeCommerceData: HubData = {
       headline: "End-to-end Adobe Commerce implementation from discovery to launch.",
       description: "Full Adobe Commerce implementation: requirements analysis, architecture design, custom theme development, extension development, integration build, and performance configuration. Delivered to enterprise quality standards with full documentation.",
       bullets: ["Discovery and architecture design", "Custom theme development", "Extension and integration development", "Performance and infrastructure setup"],
-      image: "/case-study-saas.png",
+      image: "/case-study-ecommerce.png",
       href: "/adobe-commerce-development",
     },
     {
@@ -104,7 +104,7 @@ const adobeCommerceData: HubData = {
       headline: "Connect Adobe Commerce to the full Experience Cloud stack.",
       description: "Adobe Analytics, Adobe Target, Adobe Real-Time CDP, and Adobe Experience Manager integration with Adobe Commerce. The full personalisation and analytics stack — implemented by engineers who understand both the commerce platform and the Experience Cloud.",
       bullets: ["Adobe Analytics data layer", "Adobe Target A/B + personalisation", "Real-Time CDP segments", "AEM content integration"],
-      image: "/case-study-saas.png",
+      image: "/industry-realestate.png",
       href: "/adobe-commerce-development",
     },
     {
@@ -112,7 +112,7 @@ const adobeCommerceData: HubData = {
       headline: "Enterprise B2B commerce on Adobe Commerce.",
       description: "Adobe Commerce B2B module implementation for enterprise wholesale operations — company hierarchy management, shared catalogs with negotiated pricing, purchase approval workflows, credit limits, and quick order functionality. The most capable B2B commerce platform available.",
       bullets: ["Company hierarchy management", "Shared catalogs and pricing", "Purchase approval workflows", "Credit management and net terms"],
-      image: "/case-study-saas.png",
+      image: "/work-3.png",
       href: "/adobe-commerce-development",
     },
     {
@@ -120,7 +120,7 @@ const adobeCommerceData: HubData = {
       headline: "Custom modules and extensions built to Adobe standards.",
       description: "Custom Adobe Commerce extension development for ERP integration, custom checkout flows, third-party system connections, and proprietary business logic. All development follows Magento coding standards with unit tests and is upgrade-safe.",
       bullets: ["ERP / SAP / Dynamics integration", "Custom checkout pipelines", "Third-party API integrations", "Upgrade-safe module architecture"],
-      image: "/case-study-saas.png",
+      image: "/industry-ecommerce.png",
       href: "/adobe-commerce-development",
     },
     {
@@ -128,7 +128,7 @@ const adobeCommerceData: HubData = {
       headline: "Enterprise performance infrastructure for Adobe Commerce.",
       description: "Adobe Commerce Cloud or AWS infrastructure setup — Varnish full page cache, Redis, Elasticsearch, CDN, and auto-scaling. We consistently achieve sub-2s page loads on catalogues of any size and prepare infrastructure for peak-day traffic.",
       bullets: ["Adobe Commerce Cloud or AWS", "Varnish, Redis, Elasticsearch", "CDN and auto-scaling setup", "Peak load testing and validation"],
-      image: "/case-study-saas.png",
+      image: "/hero-abstract.png",
       href: "/adobe-commerce-development",
     },
   ],
@@ -152,9 +152,9 @@ const adobeCommerceData: HubData = {
     { platform: "PHP 8.2 / Composer", stat: "Backend", description: "Adobe Commerce development requires strict adherence to the Magento module architecture — dependency injection, plugins, observers, and proper Composer package management." },
   ],
   caseStudies: [
-    { image: "/case-study-saas.png", client: "National Supply Group", industry: "B2B Commerce", blurb: "Adobe Commerce enterprise implementation with B2B Commerce module, SAP integration, and shared catalog management across 8 company accounts. $47M B2B GMV in year one.", metrics: [{ value: "$47M", label: "B2B GMV year one" }, { value: "8", label: "Company accounts" }] },
+    { image: "/case-study-ecommerce.png", client: "National Supply Group", industry: "B2B Commerce", blurb: "Adobe Commerce enterprise implementation with B2B Commerce module, SAP integration, and shared catalog management across 8 company accounts. $47M B2B GMV in year one.", metrics: [{ value: "$47M", label: "B2B GMV year one" }, { value: "8", label: "Company accounts" }] },
     { image: "/industry-ecommerce.png", client: "LuxeBrand", industry: "Luxury Retail", blurb: "Adobe Commerce + Adobe Target + Real-Time CDP personalisation programme. Personalised homepage and product recommendations increased CVR by 34% on the homepage.", metrics: [{ value: "+34%", label: "Homepage CVR" }, { value: "6.1x", label: "ROAS" }] },
-    { image: "/case-study-home.png", client: "BuildCo Supply", industry: "Wholesale", blurb: "Migration from Magento 1 to Adobe Commerce with full B2B module and ERP integration. Order processing time reduced from 2 days to real-time with bidirectional SAP sync.", metrics: [{ value: "Real-time", label: "Order sync (was 2 days)" }, { value: "+55%", label: "Wholesale orders" }] },
+    { image: "/case-study-homeservices.png", client: "BuildCo Supply", industry: "Wholesale", blurb: "Migration from Magento 1 to Adobe Commerce with full B2B module and ERP integration. Order processing time reduced from 2 days to real-time with bidirectional SAP sync.", metrics: [{ value: "Real-time", label: "Order sync (was 2 days)" }, { value: "+55%", label: "Wholesale orders" }] },
   ],
   process: [
     { label: "Discovery", headline: "Enterprise requirements analysis and platform architecture design.", description: "Stakeholder workshops, requirements documentation, integration mapping, and infrastructure planning. The output is a complete technical specification that all development teams work from." },
@@ -172,9 +172,9 @@ const adobeCommerceData: HubData = {
     { question: "What ongoing support do you provide?", answer: "Monthly maintenance plans covering security patch application (tested in staging), module updates, performance monitoring, and a dedicated developer support line. Adobe Commerce has a regular security patch release schedule — unpatched implementations are actively targeted. We keep every client on a patching schedule." },
   ],
   hubInsights: [
-    { image: "/case-study-saas.png", category: "Adobe Commerce", readTime: "8 min read", title: "Adobe Commerce vs. Magento Open Source: The Enterprise Decision Framework", excerpt: "Adobe Commerce costs significantly more than Magento Open Source. The question is whether the B2B module, AI recommendations, and Experience Cloud integration justify the cost for your specific business. We've helped 20+ organisations make this decision and have a clear framework for when each platform is the right choice.", author: "Marcus Chen", authorRole: "Commerce Architect", href: "/blog/adobe-commerce-vs-magento-open-source" },
-    { image: "/industry-ecommerce.png", category: "Personalisation", readTime: "7 min read", title: "Adobe Target + Real-Time CDP on Adobe Commerce: What Enterprise Personalisation Actually Looks Like", excerpt: "Most Adobe Commerce implementations use Adobe Target for basic A/B testing. The combination of Real-Time CDP segment data driving Adobe Target personalisation rules on an Adobe Commerce storefront is a fundamentally different capability — context-aware, real-time, and fully automated. Here is what it takes to implement it properly.", author: "Priya Anand", authorRole: "Digital Experience Lead", href: "/blog/adobe-target-rtcdp-commerce" },
-    { image: "/case-study-home.png", category: "B2B Commerce", readTime: "6 min read", title: "Adobe Commerce B2B Module: The Complete Implementation Guide", excerpt: "The Adobe Commerce B2B module is the most capable B2B commerce feature set available on any platform. Company hierarchy management, shared catalogs, negotiated pricing, purchase approval workflows, and credit management — all in one module. Here is the complete implementation guide from requirements through go-live.", author: "James Okafor", authorRole: "B2B Commerce Lead", href: "/blog/adobe-commerce-b2b-module-guide" },
+    { image: "/case-study-ecommerce.png", category: "Adobe Commerce", readTime: "8 min read", title: "Adobe Commerce vs. Magento Open Source: The Enterprise Decision Framework", excerpt: "Adobe Commerce costs significantly more than Magento Open Source. The question is whether the B2B module, AI recommendations, and Experience Cloud integration justify the cost for your specific business. We've helped 20+ organisations make this decision and have a clear framework for when each platform is the right choice.", author: "Marcus Chen", authorRole: "Commerce Architect", href: "/blog/adobe-commerce-vs-magento-open-source" },
+    { image: "/industry-realestate.png", category: "Personalisation", readTime: "7 min read", title: "Adobe Target + Real-Time CDP on Adobe Commerce: What Enterprise Personalisation Actually Looks Like", excerpt: "Most Adobe Commerce implementations use Adobe Target for basic A/B testing. The combination of Real-Time CDP segment data driving Adobe Target personalisation rules on an Adobe Commerce storefront is a fundamentally different capability — context-aware, real-time, and fully automated. Here is what it takes to implement it properly.", author: "Priya Anand", authorRole: "Digital Experience Lead", href: "/blog/adobe-target-rtcdp-commerce" },
+    { image: "/work-3.png", category: "B2B Commerce", readTime: "6 min read", title: "Adobe Commerce B2B Module: The Complete Implementation Guide", excerpt: "The Adobe Commerce B2B module is the most capable B2B commerce feature set available on any platform. Company hierarchy management, shared catalogs, negotiated pricing, purchase approval workflows, and credit management — all in one module. Here is the complete implementation guide from requirements through go-live.", author: "James Okafor", authorRole: "B2B Commerce Lead", href: "/blog/adobe-commerce-b2b-module-guide" },
   ],
 };
 

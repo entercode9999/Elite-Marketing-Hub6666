@@ -96,7 +96,7 @@ const aiData: HubData = {
         "CRM and calendar integration",
         "Handoff to human agent with full context",
       ],
-      image: "/case-study-saas.png",
+      image: "/studio.png",
       href: "/ai-chatbot-service",
     },
     {
@@ -110,7 +110,7 @@ const aiData: HubData = {
         "Integration with your existing tools",
         "Monitoring and error handling included",
       ],
-      image: "/case-study-home.png",
+      image: "/work-1.png",
       href: "/ai-workflow-service",
     },
     {
@@ -124,7 +124,7 @@ const aiData: HubData = {
         "Document processing and data extraction",
         "Custom API integrations with any system",
       ],
-      image: "/case-study-saas.png",
+      image: "/hero-abstract.png",
       href: "/ai-integration-service",
     },
     {
@@ -138,7 +138,7 @@ const aiData: HubData = {
         "Predictive analytics and forecasting",
         "AI-powered internal tools and dashboards",
       ],
-      image: "/case-study-saas.png",
+      image: "/work-2.png",
       href: "/custom-ai-service",
     },
     {
@@ -201,21 +201,21 @@ const aiData: HubData = {
   ],
   caseStudies: [
     {
-      image: "/industry-dental.png",
+      image: "/studio.png",
       client: "Apex Dental Group",
       industry: "Dental",
       blurb: "Custom AI chatbot captures after-hours appointment requests across 6 locations. Trained on each location's schedule, services, and pricing. Staff time saved: 18 hours per week.",
       metrics: [{ value: "+240%", label: "After-hours leads" }, { value: "18h/wk", label: "Staff time saved" }],
     },
     {
-      image: "/case-study-saas.png",
+      image: "/work-1.png",
       client: "Nova FinTech",
       industry: "SaaS",
       blurb: "AI-powered lead qualification and CRM enrichment. Every inbound lead is scored, enriched, and routed before a human touches it. Sales team now focuses exclusively on qualified accounts.",
       metrics: [{ value: "+85%", label: "Qualified pipeline" }, { value: "-60%", label: "Time-to-qualify" }],
     },
     {
-      image: "/case-study-home.png",
+      image: "/hero-abstract.png",
       client: "Hudson Outdoor",
       industry: "Home Services",
       blurb: "Automated quote workflow and follow-up sequences. Quote requests now get an AI-generated preliminary estimate within 5 minutes. Estimate-to-close cycle reduced from 12 days to 3.",
@@ -278,7 +278,7 @@ const aiData: HubData = {
   ],
   hubInsights: [
     {
-      image: "/case-study-saas.png",
+      image: "/studio.png",
       category: "AI & Automation",
       readTime: "6 min read",
       title: "Why Generic Chatbots Lose Leads and What Custom AI Actually Fixes",
@@ -288,7 +288,7 @@ const aiData: HubData = {
       href: "/blog/custom-ai-vs-generic-chatbots",
     },
     {
-      image: "/case-study-home.png",
+      image: "/work-1.png",
       category: "Workflow Automation",
       readTime: "5 min read",
       title: "The 8 Workflows Every Service Business Should Automate First",
@@ -298,7 +298,7 @@ const aiData: HubData = {
       href: "/blog/workflows-to-automate-first",
     },
     {
-      image: "/industry-dental.png",
+      image: "/hero-abstract.png",
       category: "AI Strategy",
       readTime: "7 min read",
       title: "How AI Infrastructure Becomes a Compounding Advantage Over 24 Months",

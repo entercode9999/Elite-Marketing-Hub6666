@@ -99,7 +99,7 @@ const socialAdsData: HubData = {
       headline: "Facebook and Instagram advertising built for measurable revenue.",
       description: "Meta Ads management with proper campaign structure, Conversions API implementation, and systematic creative testing. Advantage+ Shopping for eCommerce, lead gen campaigns for service businesses — all built around your actual CPA and ROAS targets.",
       bullets: ["Conversions API + pixel setup", "Advantage+ campaign structures", "Creative testing framework", "Full-funnel audience strategy"],
-      image: "/case-study-home.png",
+      image: "/case-study-local.png",
       href: "/social-media-advertising",
     },
     {
@@ -107,7 +107,7 @@ const socialAdsData: HubData = {
       headline: "TikTok advertising for brands ready to scale through video.",
       description: "TikTok Ads for growth-stage and scaling brands. In-Feed Ads, TopView, and Spark Ads managed with a creative-first approach — because TikTok is a creative platform and creative quality is the primary performance variable. We partner with UGC creators or work with your in-house team.",
       bullets: ["In-Feed and Spark Ads", "UGC creator briefing and management", "TikTok Pixel + Events API", "Branded hashtag challenge campaigns"],
-      image: "/case-study-saas.png",
+      image: "/industry-fitness.png",
       href: "/social-media-advertising",
     },
     {
@@ -115,7 +115,7 @@ const socialAdsData: HubData = {
       headline: "B2B pipeline generation on the highest-intent professional network.",
       description: "LinkedIn advertising for B2B brands running demand generation and lead nurturing campaigns. Sponsored Content, Message Ads, and Dynamic Ads — targeting by job title, company size, industry, and seniority. Built for pipeline, not impressions.",
       bullets: ["Sponsored Content and InMail", "Account-based marketing (ABM)", "Lead Gen Form campaigns", "Company and job title targeting"],
-      image: "/case-study-saas.png",
+      image: "/case-study-limo.png",
       href: "/social-media-advertising",
     },
     {
@@ -123,7 +123,7 @@ const socialAdsData: HubData = {
       headline: "Multi-platform social ad strategy under one brief.",
       description: "Full paid social strategy across Meta, TikTok, LinkedIn, and X — with budget allocation, creative direction, audience strategy, and attribution model designed as a unified system. Each platform plays a specific role in the full funnel; we design that system before spending a dollar.",
       bullets: ["Cross-platform budget allocation", "Funnel role by platform", "Unified creative brief", "Attribution model design"],
-      image: "/case-study-saas.png",
+      image: "/case-study-realestate.png",
       href: "/social-media-advertising",
     },
     {
@@ -131,7 +131,7 @@ const socialAdsData: HubData = {
       headline: "Ad creative that stops the scroll and converts the click.",
       description: "Paid social creative strategy and production guidance — UGC briefs, static ad templates, short-form video scripts, and carousel formats. We develop the creative strategy and testing framework; production is done by your team, our network of UGC creators, or a production partner.",
       bullets: ["Creative strategy and testing plan", "UGC brief writing and management", "Video script production", "Static and carousel templates"],
-      image: "/case-study-saas.png",
+      image: "/work-3.png",
       href: "/social-media-advertising",
     },
   ],
@@ -155,9 +155,9 @@ const socialAdsData: HubData = {
     { platform: "Looker Studio", stat: "Reporting", description: "Custom Looker Studio dashboards pulling from Meta, TikTok, LinkedIn, and GA4. One view of your full paid social programme — updated daily." },
   ],
   caseStudies: [
-    { image: "/case-study-saas.png", client: "Nova FinTech", industry: "SaaS", blurb: "LinkedIn Ads + Meta retargeting for a B2B financial platform. Account restructure eliminated 38% budget waste. Lead volume up 315% in 90 days.", metrics: [{ value: "+315%", label: "Lead volume" }, { value: "-38%", label: "CPA" }] },
-    { image: "/case-study-home.png", client: "Hudson Outdoor", industry: "Home Services", blurb: "Full-funnel Meta Ads programme: Advantage+ prospecting + warm retargeting + CRM match. $2.4M attributed revenue from paid social in year one.", metrics: [{ value: "$2.4M", label: "Attributed revenue" }, { value: "4.2x", label: "Blended ROAS" }] },
-    { image: "/industry-ecommerce.png", client: "Coastal Collective", industry: "eCommerce", blurb: "Meta + TikTok creative testing programme. Identified 3 winning UGC formats that reduced CPA by 44% across both platforms simultaneously.", metrics: [{ value: "-44%", label: "CPA" }, { value: "7.2x", label: "Q1 ROAS" }] },
+    { image: "/case-study-local.png", client: "Nova FinTech", industry: "SaaS", blurb: "LinkedIn Ads + Meta retargeting for a B2B financial platform. Account restructure eliminated 38% budget waste. Lead volume up 315% in 90 days.", metrics: [{ value: "+315%", label: "Lead volume" }, { value: "-38%", label: "CPA" }] },
+    { image: "/industry-fitness.png", client: "Hudson Outdoor", industry: "Home Services", blurb: "Full-funnel Meta Ads programme: Advantage+ prospecting + warm retargeting + CRM match. $2.4M attributed revenue from paid social in year one.", metrics: [{ value: "$2.4M", label: "Attributed revenue" }, { value: "4.2x", label: "Blended ROAS" }] },
+    { image: "/case-study-limo.png", client: "Coastal Collective", industry: "eCommerce", blurb: "Meta + TikTok creative testing programme. Identified 3 winning UGC formats that reduced CPA by 44% across both platforms simultaneously.", metrics: [{ value: "-44%", label: "CPA" }, { value: "7.2x", label: "Q1 ROAS" }] },
   ],
   process: [
     { label: "Audit", headline: "Audit your existing paid social account and attribution setup.", description: "Campaign structure review, audience overlap analysis, creative performance analysis, and attribution accuracy assessment. We identify waste and opportunity before spending a dollar on new campaigns." },
@@ -175,9 +175,9 @@ const socialAdsData: HubData = {
     { question: "How long before we see results?", answer: "Meta Ads typically show meaningful optimisation within 30-45 days as the algorithm exits the learning phase. TikTok campaigns often ramp faster — 2-3 weeks for initial signal. LinkedIn is slower — 60-90 days to build a meaningful data set for B2B accounts with longer sales cycles. We set realistic expectations for your specific market during our audit." },
   ],
   hubInsights: [
-    { image: "/case-study-home.png", category: "Meta Ads", readTime: "7 min read", title: "The Meta Ads Account Structure That Actually Works in 2026", excerpt: "Post-iOS 14 and post-Advantage+ rollout, the Meta Ads account structure that worked in 2020 no longer performs. We analysed 40 accounts we restructured in the past 12 months and found consistent patterns in what was wasting budget and what the winning structure looked like. Here is the framework.", author: "James Okafor", authorRole: "Paid Social Lead", href: "/blog/meta-ads-account-structure-2026" },
-    { image: "/case-study-saas.png", category: "Attribution", readTime: "6 min read", title: "Why Your Meta ROAS is Lying to You (And How to Find the Real Number)", excerpt: "Platform-reported ROAS consistently overstates return — sometimes by 2-3x. The combination of view-through attribution, iOS 14 signal loss, and last-click attribution creates a flattering picture that doesn't match your bank account. Here is the attribution setup we use to find the accurate number.", author: "Marcus Chen", authorRole: "Analytics Lead", href: "/blog/meta-roas-accuracy" },
-    { image: "/industry-ecommerce.png", category: "Creative Strategy", readTime: "5 min read", title: "The UGC Creative Formula That Reduces CPA by 40% Across Meta and TikTok", excerpt: "UGC outperforms polished brand creative on Meta and TikTok in almost every A/B test we've run. But not all UGC is equal — the hook, the problem framing, the social proof format, and the call to action all have measurable impacts on performance. Here is the creative brief framework we use for every UGC campaign.", author: "Priya Anand", authorRole: "Creative Strategist", href: "/blog/ugc-creative-formula" },
+    { image: "/work-3.png", category: "Meta Ads", readTime: "7 min read", title: "The Meta Ads Account Structure That Actually Works in 2026", excerpt: "Post-iOS 14 and post-Advantage+ rollout, the Meta Ads account structure that worked in 2020 no longer performs. We analysed 40 accounts we restructured in the past 12 months and found consistent patterns in what was wasting budget and what the winning structure looked like. Here is the framework.", author: "James Okafor", authorRole: "Paid Social Lead", href: "/blog/meta-ads-account-structure-2026" },
+    { image: "/case-study-local.png", category: "Attribution", readTime: "6 min read", title: "Why Your Meta ROAS is Lying to You (And How to Find the Real Number)", excerpt: "Platform-reported ROAS consistently overstates return — sometimes by 2-3x. The combination of view-through attribution, iOS 14 signal loss, and last-click attribution creates a flattering picture that doesn't match your bank account. Here is the attribution setup we use to find the accurate number.", author: "Marcus Chen", authorRole: "Analytics Lead", href: "/blog/meta-roas-accuracy" },
+    { image: "/industry-fitness.png", category: "Creative Strategy", readTime: "5 min read", title: "The UGC Creative Formula That Reduces CPA by 40% Across Meta and TikTok", excerpt: "UGC outperforms polished brand creative on Meta and TikTok in almost every A/B test we've run. But not all UGC is equal — the hook, the problem framing, the social proof format, and the call to action all have measurable impacts on performance. Here is the creative brief framework we use for every UGC campaign.", author: "Priya Anand", authorRole: "Creative Strategist", href: "/blog/ugc-creative-formula" },
   ],
 };
 

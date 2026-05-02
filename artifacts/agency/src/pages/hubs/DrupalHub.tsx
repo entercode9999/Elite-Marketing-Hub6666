@@ -96,7 +96,7 @@ const drupalData: HubData = {
       headline: "Bespoke Drupal content architecture and theme development.",
       description: "Custom Drupal 10 development — content type architecture, custom theme, module configuration, and editorial workflow setup. We design the content model around your actual information architecture, not a generic template.",
       bullets: ["Custom content type architecture", "Custom Drupal theme", "Views and Paragraphs configuration", "Editorial workflow setup"],
-      image: "/case-study-saas.png",
+      image: "/hero-showcase.png",
       href: "/drupal-development-service",
     },
     {
@@ -104,7 +104,7 @@ const drupalData: HubData = {
       headline: "Drupal as a headless CMS with React or Next.js frontend.",
       description: "Headless Drupal architecture using Drupal's JSON:API or GraphQL API as the content backend and a React or Next.js frontend for the presentation layer. The content power of Drupal with the frontend performance and flexibility of React.",
       bullets: ["JSON:API or GraphQL setup", "React / Next.js frontend", "Content preview in Drupal admin", "Incremental Static Regeneration"],
-      image: "/case-study-saas.png",
+      image: "/industry-legal.png",
       href: "/drupal-development-service",
     },
     {
@@ -112,7 +112,7 @@ const drupalData: HubData = {
       headline: "Custom Drupal modules for bespoke functionality.",
       description: "Custom Drupal 10 module development using Drupal's hook system, services, and plugin architecture. Integrations, custom content processing, third-party API connections, and business-specific workflows not available in contributed modules.",
       bullets: ["Drupal hook and service architecture", "Plugin-based extension", "Third-party API integration", "PHPUnit test coverage"],
-      image: "/case-study-saas.png",
+      image: "/work-3.png",
       href: "/drupal-development-service",
     },
     {
@@ -120,7 +120,7 @@ const drupalData: HubData = {
       headline: "Migrate from Drupal 7/8/9 to Drupal 10.",
       description: "Drupal version migrations — from Drupal 7, 8, or 9 to the current Drupal 10. The Migrate module handles most content migrations; custom migration plugins handle complex transformations. Full content integrity validation before cutover.",
       bullets: ["Drupal Migrate module setup", "Custom migration plugins", "Content integrity validation", "Module compatibility updates"],
-      image: "/case-study-realestate.png",
+      image: "/case-study-saas.png",
       href: "/drupal-development-service",
     },
     {
@@ -128,7 +128,7 @@ const drupalData: HubData = {
       headline: "Drupal multi-site architecture for multiple properties.",
       description: "Drupal multi-site setup for organisations managing multiple websites from a single Drupal installation — shared modules, shared configuration, and site-specific themes. Reduced maintenance overhead with full content and configuration isolation between sites.",
       bullets: ["Multi-site configuration", "Shared and site-specific themes", "Centralised module management", "Site-specific access control"],
-      image: "/case-study-saas.png",
+      image: "/case-study-realestate.png",
       href: "/drupal-development-service",
     },
   ],
@@ -153,8 +153,8 @@ const drupalData: HubData = {
   ],
   caseStudies: [
     { image: "/case-study-saas.png", client: "Provincial Government Department", industry: "Government", blurb: "Custom Drupal 10 build for a government information portal with 5,000+ content items across 12 content types. Granular editorial workflow with 4 review stages.", metrics: [{ value: "5,000+", label: "Content items" }, { value: "4", label: "Editorial workflow stages" }] },
-    { image: "/case-study-home.png", client: "National University", industry: "Education", blurb: "Headless Drupal 10 with Next.js frontend for a university website. JSON:API backend serving structured content to a React frontend achieving 98 Lighthouse across 2,000+ programme pages.", metrics: [{ value: "98", label: "Lighthouse score" }, { value: "2,000+", label: "Programme pages" }] },
-    { image: "/case-study-realestate.png", client: "Enterprise Publisher", industry: "Media", blurb: "Drupal 7 to Drupal 10 migration for a publisher with 15,000 articles. Full content migration, new content architecture, and editorial workflow redesign.", metrics: [{ value: "15,000", label: "Articles migrated" }, { value: "Zero", label: "Content loss" }] },
+    { image: "/hero-showcase.png", client: "National University", industry: "Education", blurb: "Headless Drupal 10 with Next.js frontend for a university website. JSON:API backend serving structured content to a React frontend achieving 98 Lighthouse across 2,000+ programme pages.", metrics: [{ value: "98", label: "Lighthouse score" }, { value: "2,000+", label: "Programme pages" }] },
+    { image: "/industry-legal.png", client: "Enterprise Publisher", industry: "Media", blurb: "Drupal 7 to Drupal 10 migration for a publisher with 15,000 articles. Full content migration, new content architecture, and editorial workflow redesign.", metrics: [{ value: "15,000", label: "Articles migrated" }, { value: "Zero", label: "Content loss" }] },
   ],
   process: [
     { label: "Architecture", headline: "Content architecture design before any development.", description: "Content type mapping, field type specification, taxonomy architecture, and editorial workflow design. The information architecture is designed in a structured document and approved before development begins." },
@@ -172,9 +172,9 @@ const drupalData: HubData = {
     { question: "How long does a custom Drupal 10 build take?", answer: "A standard Drupal 10 build — content architecture, custom theme, and module configuration — takes 8-14 weeks. Headless Drupal builds with a React/Next.js frontend run 12-18 weeks. Migrations from Drupal 7 run 10-16 weeks depending on content volume and custom module complexity. We give a firm timeline after the architecture phase." },
   ],
   hubInsights: [
-    { image: "/case-study-saas.png", category: "Drupal Development", readTime: "7 min read", title: "Drupal 10 in 2026: The CMS for Enterprise Content Architecture", excerpt: "Drupal's market share is smaller than WordPress's, but its footprint in government, education, and enterprise is disproportionately large — because for complex content operations, it's simply better. We explain what Drupal does that other CMS platforms can't and who should seriously consider it.", author: "Marcus Chen", authorRole: "CMS Architect", href: "/blog/drupal-10-enterprise-cms-2026" },
-    { image: "/case-study-home.png", category: "Headless Drupal", readTime: "8 min read", title: "Headless Drupal + Next.js: The Architecture Guide for 2026", excerpt: "Using Drupal as a headless CMS backend — with Next.js as the frontend — combines the best content management experience available in open source with the best frontend performance stack available. We cover the architecture decisions, API configuration, and implementation patterns in detail.", author: "Priya Anand", authorRole: "Frontend Architect", href: "/blog/headless-drupal-nextjs-2026" },
-    { image: "/case-study-realestate.png", category: "Drupal Migration", readTime: "6 min read", title: "Drupal 7 to Drupal 10 Migration: What It Actually Involves", excerpt: "Drupal 7 to Drupal 10 is not an upgrade — it's a migration. Drupal 8 was a complete platform rewrite, and the path from D7 requires rebuilding modules, rebuilding themes, and migrating content via the Migrate module. We walk through exactly what this involves and how to plan it.", author: "James Okafor", authorRole: "Migration Lead", href: "/blog/drupal-7-to-10-migration" },
+    { image: "/work-3.png", category: "Drupal Development", readTime: "7 min read", title: "Drupal 10 in 2026: The CMS for Enterprise Content Architecture", excerpt: "Drupal's market share is smaller than WordPress's, but its footprint in government, education, and enterprise is disproportionately large — because for complex content operations, it's simply better. We explain what Drupal does that other CMS platforms can't and who should seriously consider it.", author: "Marcus Chen", authorRole: "CMS Architect", href: "/blog/drupal-10-enterprise-cms-2026" },
+    { image: "/case-study-saas.png", category: "Headless Drupal", readTime: "8 min read", title: "Headless Drupal + Next.js: The Architecture Guide for 2026", excerpt: "Using Drupal as a headless CMS backend — with Next.js as the frontend — combines the best content management experience available in open source with the best frontend performance stack available. We cover the architecture decisions, API configuration, and implementation patterns in detail.", author: "Priya Anand", authorRole: "Frontend Architect", href: "/blog/headless-drupal-nextjs-2026" },
+    { image: "/hero-showcase.png", category: "Drupal Migration", readTime: "6 min read", title: "Drupal 7 to Drupal 10 Migration: What It Actually Involves", excerpt: "Drupal 7 to Drupal 10 is not an upgrade — it's a migration. Drupal 8 was a complete platform rewrite, and the path from D7 requires rebuilding modules, rebuilding themes, and migrating content via the Migrate module. We walk through exactly what this involves and how to plan it.", author: "James Okafor", authorRole: "Migration Lead", href: "/blog/drupal-7-to-10-migration" },
   ],
 };
 

@@ -96,7 +96,7 @@ const magentoData: HubData = {
       headline: "Custom Magento 2 builds designed for your business complexity.",
       description: "Full Magento 2 implementations — custom theme development, extension builds, third-party integrations, and performance configuration. Built to Magento coding standards with documentation your next developer can follow.",
       bullets: ["Custom theme (no page builders)", "Extension development", "Third-party API integrations", "Full technical documentation"],
-      image: "/case-study-saas.png",
+      image: "/case-study-ecommerce.png",
       href: "/magento-development",
     },
     {
@@ -104,7 +104,7 @@ const magentoData: HubData = {
       headline: "Magento B2B Commerce configured for complex wholesale operations.",
       description: "Magento B2B Commerce module configuration: company accounts, customer group pricing, negotiated price lists, purchase order workflows, quick order forms, and requisition lists. The full B2B feature set, properly configured for your wholesale business.",
       bullets: ["Company account management", "Negotiated price lists", "Purchase order workflows", "Quick order and requisition lists"],
-      image: "/case-study-saas.png",
+      image: "/case-study-homeservices.png",
       href: "/magento-development",
     },
     {
@@ -112,7 +112,7 @@ const magentoData: HubData = {
       headline: "Seamless ERP, SAP, and WMS integration.",
       description: "Bidirectional data integration between Magento 2 and your ERP (SAP, NetSuite, Microsoft Dynamics, custom). Order management, inventory synchronisation, customer data, and pricing — all flowing between systems reliably and in real time.",
       bullets: ["SAP, NetSuite, Dynamics integration", "Real-time inventory sync", "Order management bidirectional flow", "Custom message queue architecture"],
-      image: "/case-study-saas.png",
+      image: "/hero-abstract.png",
       href: "/magento-development",
     },
     {
@@ -120,7 +120,7 @@ const magentoData: HubData = {
       headline: "From slow Magento to sub-2s page loads.",
       description: "Magento performance optimisation: Varnish full page cache configuration, Redis for session and block cache, Elasticsearch for catalogue search, image and static asset CDN, and database query optimisation. We consistently take underperforming Magento stores to sub-2s page loads.",
       bullets: ["Varnish FPC configuration", "Redis session/cache setup", "Elasticsearch optimisation", "Database query profiling"],
-      image: "/case-study-saas.png",
+      image: "/industry-ecommerce.png",
       href: "/magento-development",
     },
     {
@@ -128,7 +128,7 @@ const magentoData: HubData = {
       headline: "Ongoing Magento maintenance by engineers who know the platform.",
       description: "Monthly Magento maintenance: security patch application, module updates, performance monitoring, and a dedicated support line staffed by Magento-certified developers. Your store stays current and secure without the risk of unmanaged updates.",
       bullets: ["Security patch application", "Module update management", "Performance monitoring", "Dedicated developer support"],
-      image: "/case-study-saas.png",
+      image: "/work-3.png",
       href: "/magento-development",
     },
   ],
@@ -152,9 +152,9 @@ const magentoData: HubData = {
     { platform: "RabbitMQ", stat: "Message queue", description: "RabbitMQ for asynchronous processing of ERP integrations, email sending, and other operations that shouldn't run synchronously in the request cycle." },
   ],
   caseStudies: [
-    { image: "/case-study-saas.png", client: "Industrial Supply Co.", industry: "B2B Commerce", blurb: "150,000-SKU B2B Magento 2 build with SAP integration, company account management, and negotiated pricing. Order processing time reduced from 4 days to 2 hours.", metrics: [{ value: "150k", label: "SKUs" }, { value: "2h", label: "Order processing (was 4 days)" }] },
+    { image: "/case-study-ecommerce.png", client: "Industrial Supply Co.", industry: "B2B Commerce", blurb: "150,000-SKU B2B Magento 2 build with SAP integration, company account management, and negotiated pricing. Order processing time reduced from 4 days to 2 hours.", metrics: [{ value: "150k", label: "SKUs" }, { value: "2h", label: "Order processing (was 4 days)" }] },
     { image: "/industry-ecommerce.png", client: "Coastal Collective", industry: "eCommerce", blurb: "Magento 2 performance rescue. Page loads improved from 8.2s to 1.7s. Checkout success rate increased from 91% to 99.3% after custom checkout rewrite.", metrics: [{ value: "1.7s", label: "Load time (was 8.2s)" }, { value: "99.3%", label: "Checkout success rate" }] },
-    { image: "/case-study-saas.png", client: "Nova FinTech", industry: "SaaS", blurb: "Custom Magento extension for subscription billing and trial management. Integrated with Stripe and CRM. Fully tested and upgrade-safe.", metrics: [{ value: "Zero", label: "Core file modifications" }, { value: "100%", label: "Test coverage" }] },
+    { image: "/case-study-homeservices.png", client: "Nova FinTech", industry: "SaaS", blurb: "Custom Magento extension for subscription billing and trial management. Integrated with Stripe and CRM. Fully tested and upgrade-safe.", metrics: [{ value: "Zero", label: "Core file modifications" }, { value: "100%", label: "Test coverage" }] },
   ],
   process: [
     { label: "Audit", headline: "Full environment and codebase audit before any development.", description: "Module inventory, performance profiling, database analysis, server configuration review, and security scan. We know exactly what we're working with before making a single change." },
@@ -172,9 +172,9 @@ const magentoData: HubData = {
     { question: "What ongoing support do you provide?", answer: "Monthly maintenance plans covering security patch application (tested in staging first), module updates, performance monitoring, and developer support. Magento requires active maintenance — security vulnerabilities are released regularly and unpatched stores are actively targeted." },
   ],
   hubInsights: [
-    { image: "/case-study-saas.png", category: "Magento Development", readTime: "7 min read", title: "Magento 2 Performance: The Complete Optimisation Stack for Enterprise Stores", excerpt: "A properly configured Magento 2 store on the right infrastructure achieves sub-2s page loads regardless of catalogue size. The components are Varnish, Redis, Elasticsearch, and proper database configuration. We walk through the complete optimisation stack with configuration examples.", author: "James Okafor", authorRole: "Magento Lead", href: "/blog/magento-2-performance-stack" },
-    { image: "/industry-ecommerce.png", category: "B2B Commerce", readTime: "6 min read", title: "Magento B2B Commerce: When and How to Implement It", excerpt: "Magento B2B Commerce module unlocks company accounts, negotiated pricing, purchase order workflows, and quick order capabilities. We walk through the implementation decisions, common configuration pitfalls, and the business cases where B2B Commerce pays for itself in the first quarter.", author: "Marcus Chen", authorRole: "Commerce Architect", href: "/blog/magento-b2b-commerce-guide" },
-    { image: "/case-study-saas.png", category: "ERP Integration", readTime: "8 min read", title: "How to Build a Reliable Magento 2 to SAP Integration That Won't Break", excerpt: "Magento-ERP integrations are where most enterprise commerce implementations fail. Direct database reads, synchronous API calls in the request cycle, and missing error handling create fragile integrations that break under load. Here is the queue-based architecture we use on every ERP integration project.", author: "Priya Anand", authorRole: "Integration Lead", href: "/blog/magento-sap-integration" },
+    { image: "/work-3.png", category: "Magento Development", readTime: "7 min read", title: "Magento 2 Performance: The Complete Optimisation Stack for Enterprise Stores", excerpt: "A properly configured Magento 2 store on the right infrastructure achieves sub-2s page loads regardless of catalogue size. The components are Varnish, Redis, Elasticsearch, and proper database configuration. We walk through the complete optimisation stack with configuration examples.", author: "James Okafor", authorRole: "Magento Lead", href: "/blog/magento-2-performance-stack" },
+    { image: "/case-study-ecommerce.png", category: "B2B Commerce", readTime: "6 min read", title: "Magento B2B Commerce: When and How to Implement It", excerpt: "Magento B2B Commerce module unlocks company accounts, negotiated pricing, purchase order workflows, and quick order capabilities. We walk through the implementation decisions, common configuration pitfalls, and the business cases where B2B Commerce pays for itself in the first quarter.", author: "Marcus Chen", authorRole: "Commerce Architect", href: "/blog/magento-b2b-commerce-guide" },
+    { image: "/hero-abstract.png", category: "ERP Integration", readTime: "8 min read", title: "How to Build a Reliable Magento 2 to SAP Integration That Won't Break", excerpt: "Magento-ERP integrations are where most enterprise commerce implementations fail. Direct database reads, synchronous API calls in the request cycle, and missing error handling create fragile integrations that break under load. Here is the queue-based architecture we use on every ERP integration project.", author: "Priya Anand", authorRole: "Integration Lead", href: "/blog/magento-sap-integration" },
   ],
 };
 

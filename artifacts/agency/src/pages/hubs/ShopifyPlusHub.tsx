@@ -96,7 +96,7 @@ const shopifyPlusData: HubData = {
       headline: "Custom checkout experiences that increase conversion and AOV.",
       description: "Checkout Extensibility implementation using Shopify UI Extensions — custom checkout blocks for order upsells, loyalty point redemption, gift messaging, custom field collection, and trust signals. All compliant with Shopify's checkout architecture and upgrade-safe.",
       bullets: ["Pre-purchase upsell blocks", "Loyalty point redemption", "Custom field collection", "Post-purchase offer pages"],
-      image: "/industry-ecommerce.png",
+      image: "/case-study-ecommerce.png",
       href: "/shopify-plus-development",
     },
     {
@@ -104,7 +104,7 @@ const shopifyPlusData: HubData = {
       headline: "Wholesale and B2B storefronts built on Shopify Plus.",
       description: "B2B with Markets Pro configuration — company accounts, customer-specific pricing, purchase order workflows, net payment terms, and custom B2B checkout flows. Full B2B commerce on the Shopify Plus platform without a separate system.",
       bullets: ["Company account management", "Wholesale price lists", "Purchase order + net terms", "B2B-specific checkout flow"],
-      image: "/case-study-saas.png",
+      image: "/case-study-limo.png",
       href: "/shopify-plus-development",
     },
     {
@@ -112,7 +112,7 @@ const shopifyPlusData: HubData = {
       headline: "Programmatic logic for discounts, shipping, and order routing.",
       description: "Custom Shopify Functions for business logic that apps can't deliver: programmatic discount rules, custom shipping rate calculation, order routing logic, and payment customisation. Runs natively in Shopify's infrastructure — no third-party app overhead.",
       bullets: ["Custom discount logic", "Shipping rate calculation", "Order routing rules", "Payment customisation"],
-      image: "/case-study-saas.png",
+      image: "/work-1.png",
       href: "/shopify-plus-development",
     },
     {
@@ -120,7 +120,7 @@ const shopifyPlusData: HubData = {
       headline: "Manage multiple brands and regions from a single Plus organisation.",
       description: "Shopify Organisations setup for multi-brand and multi-region operators. Shared product catalogues, centralised user management, and unified reporting across every store in your portfolio. Single sign-on for your team across all storefronts.",
       bullets: ["Shopify Organisations setup", "Shared product catalogues", "Cross-store user management", "Unified analytics reporting"],
-      image: "/case-study-saas.png",
+      image: "/industry-ecommerce.png",
       href: "/shopify-plus-development",
     },
     {
@@ -128,7 +128,7 @@ const shopifyPlusData: HubData = {
       headline: "Automate product drops, flash sales, and seasonal campaigns.",
       description: "Launchpad configuration for automated product launches, flash sales, and seasonal promotions. Scheduled theme changes, price adjustments, inventory reveals, and discount activation — all configured in advance and executed automatically at the right moment.",
       bullets: ["Flash sale automation", "Scheduled product drops", "Automatic theme switching", "Inventory reveal scheduling"],
-      image: "/case-study-saas.png",
+      image: "/hero-showcase.png",
       href: "/shopify-plus-development",
     },
   ],
@@ -152,9 +152,9 @@ const shopifyPlusData: HubData = {
     { platform: "Triple Whale / Northbeam", stat: "Attribution", description: "Multi-touch attribution for high-volume brands where native platform attribution significantly understates ROAS. Essential for accurate budget allocation at scale." },
   ],
   caseStudies: [
-    { image: "/industry-ecommerce.png", client: "Coastal Collective", industry: "eCommerce", blurb: "Shopify Plus migration and Checkout Extensibility implementation. Custom upsell blocks added $14 AOV in the first 30 days post-launch. Annual revenue impact: $2.1M.", metrics: [{ value: "+$14", label: "AOV from checkout upsells" }, { value: "$2.1M", label: "Annual revenue impact" }] },
-    { image: "/case-study-saas.png", client: "BuildCo Supply", industry: "B2B Commerce", blurb: "B2B with Markets Pro implementation for a wholesale building supply brand. Company accounts, negotiated pricing, and net-30 terms — replacing a separate B2B system.", metrics: [{ value: "Zero", label: "Separate B2B systems" }, { value: "+60%", label: "Wholesale order volume" }] },
-    { image: "/case-study-home.png", client: "Storm Outerwear", industry: "Fashion", blurb: "Launchpad automation for limited drops and seasonal launches. Launch day operational overhead reduced from 8 hours to 15 minutes. Zero flash sale failures in 24 launches.", metrics: [{ value: "15 min", label: "Launch setup (was 8h)" }, { value: "Zero", label: "Launch failures" }] },
+    { image: "/case-study-ecommerce.png", client: "Coastal Collective", industry: "eCommerce", blurb: "Shopify Plus migration and Checkout Extensibility implementation. Custom upsell blocks added $14 AOV in the first 30 days post-launch. Annual revenue impact: $2.1M.", metrics: [{ value: "+$14", label: "AOV from checkout upsells" }, { value: "$2.1M", label: "Annual revenue impact" }] },
+    { image: "/case-study-limo.png", client: "BuildCo Supply", industry: "B2B Commerce", blurb: "B2B with Markets Pro implementation for a wholesale building supply brand. Company accounts, negotiated pricing, and net-30 terms — replacing a separate B2B system.", metrics: [{ value: "Zero", label: "Separate B2B systems" }, { value: "+60%", label: "Wholesale order volume" }] },
+    { image: "/work-1.png", client: "Storm Outerwear", industry: "Fashion", blurb: "Launchpad automation for limited drops and seasonal launches. Launch day operational overhead reduced from 8 hours to 15 minutes. Zero flash sale failures in 24 launches.", metrics: [{ value: "15 min", label: "Launch setup (was 8h)" }, { value: "Zero", label: "Launch failures" }] },
   ],
   process: [
     { label: "Audit", headline: "Audit your current Plus subscription utilisation.", description: "We review which Plus features you're currently using, which you're not, and quantify the revenue impact of the gap. Most Plus brands discover they're underutilising 60%+ of their subscription's value." },
@@ -172,9 +172,9 @@ const shopifyPlusData: HubData = {
     { question: "How long does a Plus implementation take?", answer: "A standard Plus implementation — custom checkout extensions, theme updates, and Launchpad configuration — takes 6-10 weeks. B2B with Markets Pro adds 4-6 weeks. Multi-store Organisations setup adds 2-4 weeks depending on the number of stores and catalogue complexity." },
   ],
   hubInsights: [
-    { image: "/industry-ecommerce.png", category: "Shopify Plus", readTime: "8 min read", title: "The Complete Guide to Shopify Plus Checkout Extensibility in 2026", excerpt: "Checkout Extensibility is the most powerful — and most underused — feature of Shopify Plus. Custom upsell blocks, loyalty redemption, gift messaging, and custom validation logic are all available natively in checkout now. We cover every extension point, implementation approach, and conversion impact we've measured.", author: "James Okafor", authorRole: "Shopify Plus Lead", href: "/blog/shopify-plus-checkout-extensibility" },
-    { image: "/case-study-saas.png", category: "B2B Commerce", readTime: "6 min read", title: "Shopify Plus B2B vs. a Separate B2B Platform: The True Cost Comparison", excerpt: "Many B2C brands running B2B operations maintain a separate B2B system — a Magento installation, an ERP storefront, or a custom-built portal. Shopify Plus B2B with Markets Pro has matured to the point where consolidation is possible for most mid-market B2B operators. Here is the honest feature comparison.", author: "Marcus Chen", authorRole: "Commerce Architect", href: "/blog/shopify-plus-b2b-comparison" },
-    { image: "/case-study-home.png", category: "Shopify Functions", readTime: "5 min read", title: "What Shopify Functions Can Do That No App Can", excerpt: "Shopify Functions run in Shopify's infrastructure — not a third-party server — which means they're faster, more reliable, and more capable than anything achievable with a standard app. We cover the four function types (discounts, shipping, payment, order routing) and walk through implementation examples for each.", author: "Priya Anand", authorRole: "Engineering Lead", href: "/blog/shopify-functions-guide" },
+    { image: "/hero-showcase.png", category: "Shopify Plus", readTime: "8 min read", title: "The Complete Guide to Shopify Plus Checkout Extensibility in 2026", excerpt: "Checkout Extensibility is the most powerful — and most underused — feature of Shopify Plus. Custom upsell blocks, loyalty redemption, gift messaging, and custom validation logic are all available natively in checkout now. We cover every extension point, implementation approach, and conversion impact we've measured.", author: "James Okafor", authorRole: "Shopify Plus Lead", href: "/blog/shopify-plus-checkout-extensibility" },
+    { image: "/case-study-ecommerce.png", category: "B2B Commerce", readTime: "6 min read", title: "Shopify Plus B2B vs. a Separate B2B Platform: The True Cost Comparison", excerpt: "Many B2C brands running B2B operations maintain a separate B2B system — a Magento installation, an ERP storefront, or a custom-built portal. Shopify Plus B2B with Markets Pro has matured to the point where consolidation is possible for most mid-market B2B operators. Here is the honest feature comparison.", author: "Marcus Chen", authorRole: "Commerce Architect", href: "/blog/shopify-plus-b2b-comparison" },
+    { image: "/case-study-limo.png", category: "Shopify Functions", readTime: "5 min read", title: "What Shopify Functions Can Do That No App Can", excerpt: "Shopify Functions run in Shopify's infrastructure — not a third-party server — which means they're faster, more reliable, and more capable than anything achievable with a standard app. We cover the four function types (discounts, shipping, payment, order routing) and walk through implementation examples for each.", author: "Priya Anand", authorRole: "Engineering Lead", href: "/blog/shopify-functions-guide" },
   ],
 };
 

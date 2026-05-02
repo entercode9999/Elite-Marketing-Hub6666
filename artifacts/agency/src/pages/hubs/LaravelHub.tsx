@@ -93,7 +93,7 @@ const laravelData: HubData = {
       headline: "Scalable Laravel REST APIs with full authentication and documentation.",
       description: "Laravel REST API development with proper authentication (Sanctum or Passport), rate limiting, input validation, error handling, and OpenAPI documentation. Built for production load from day one — not refactored after the first outage.",
       bullets: ["Sanctum / Passport authentication", "Rate limiting and throttling", "OpenAPI / Swagger documentation", "Comprehensive error handling"],
-      image: "/case-study-saas.png",
+      image: "/hero-abstract.png",
       href: "/laravel-web-development",
     },
     {
@@ -101,7 +101,7 @@ const laravelData: HubData = {
       headline: "Full-stack Laravel web applications with Livewire or Inertia.js.",
       description: "Full-stack Laravel web applications using Livewire for server-driven reactivity or Inertia.js with React/Vue for a modern SPA experience. Authentication, authorisation, file uploads, and third-party integrations all handled.",
       bullets: ["Livewire or Inertia.js + React", "Authentication and authorization", "File upload and media handling", "Third-party API integration"],
-      image: "/case-study-saas.png",
+      image: "/case-study-home.png",
       href: "/laravel-web-development",
     },
     {
@@ -109,7 +109,7 @@ const laravelData: HubData = {
       headline: "Multi-tenant SaaS platforms on Laravel.",
       description: "Multi-tenant SaaS application development on Laravel — tenant isolation (separate databases or shared with tenant_id scoping), subscription billing via Stripe and Cashier, feature flags, and usage metering. Built to scale from 10 to 10,000 tenants.",
       bullets: ["Multi-tenancy architecture", "Stripe Cashier subscription billing", "Feature flags and metering", "Tenant onboarding automation"],
-      image: "/case-study-saas.png",
+      image: "/case-study-realestate.png",
       href: "/laravel-web-development",
     },
     {
@@ -117,7 +117,7 @@ const laravelData: HubData = {
       headline: "Laravel queue systems for reliable background processing.",
       description: "Laravel Horizon and queue worker configuration for background job processing — email sending, report generation, third-party API calls, webhook processing, and scheduled tasks. Reliable, monitored, and scalable background processing.",
       bullets: ["Laravel Horizon configuration", "Queue worker deployment", "Failed job monitoring", "Scheduled task management"],
-      image: "/case-study-saas.png",
+      image: "/work-1.png",
       href: "/laravel-web-development",
     },
     {
@@ -125,7 +125,7 @@ const laravelData: HubData = {
       headline: "Ongoing Laravel application maintenance and support.",
       description: "Laravel application maintenance — framework and package updates tested in staging, security patch application, performance monitoring, bug fixes, and developer support. Keeps your application on a supported Laravel version with current security patches.",
       bullets: ["Framework version updates", "Package security patches", "Performance monitoring", "Bug fix SLA support"],
-      image: "/case-study-saas.png",
+      image: "/industry-realestate.png",
       href: "/laravel-web-development",
     },
   ],
@@ -169,7 +169,7 @@ const laravelData: HubData = {
     { question: "What ongoing support do you provide?", answer: "Post-launch support plans covering Laravel framework and package updates (tested in staging first), security patch application, performance monitoring, and developer support with SLA-backed response times. Laravel releases are on a predictable schedule — we keep clients on supported versions." },
   ],
   hubInsights: [
-    { image: "/case-study-saas.png", category: "Laravel Architecture", readTime: "7 min read", title: "The Laravel Service Layer Pattern: Why Fat Controllers Are Killing Your Codebase", excerpt: "Fat controllers are the most common Laravel anti-pattern — and the most expensive to fix later. We explain the service layer pattern, action classes, and how to structure Laravel applications that remain maintainable at 12 and 24 months post-launch, with code examples from real projects.", author: "James Okafor", authorRole: "Laravel Lead", href: "/blog/laravel-service-layer-pattern" },
+    { image: "/hero-abstract.png", category: "Laravel Architecture", readTime: "7 min read", title: "The Laravel Service Layer Pattern: Why Fat Controllers Are Killing Your Codebase", excerpt: "Fat controllers are the most common Laravel anti-pattern — and the most expensive to fix later. We explain the service layer pattern, action classes, and how to structure Laravel applications that remain maintainable at 12 and 24 months post-launch, with code examples from real projects.", author: "James Okafor", authorRole: "Laravel Lead", href: "/blog/laravel-service-layer-pattern" },
     { image: "/case-study-home.png", category: "Laravel Testing", readTime: "6 min read", title: "How We Test Laravel Applications: Feature Tests, Unit Tests, and CI/CD", excerpt: "A Laravel application without tests is a liability — every change carries unknown risk of regression. We share our testing strategy: feature tests for API endpoints, unit tests for service classes, and the GitHub Actions CI setup that enforces test passage before any code reaches staging.", author: "Marcus Chen", authorRole: "Engineering Lead", href: "/blog/laravel-testing-strategy" },
     { image: "/case-study-realestate.png", category: "Laravel SaaS", readTime: "8 min read", title: "Building Multi-Tenant SaaS on Laravel: Separate Databases vs. Shared Schema", excerpt: "Multi-tenancy architecture is one of the most important decisions in SaaS development — separate database per tenant provides the strongest isolation, shared schema with tenant_id is simpler and cheaper. We cover the trade-offs, implementation patterns, and the scenarios where each approach is correct.", author: "Priya Anand", authorRole: "SaaS Architect", href: "/blog/laravel-multi-tenant-saas" },
   ],

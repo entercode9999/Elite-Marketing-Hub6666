@@ -123,7 +123,7 @@ const technicalSeoData: HubData = {
         "Third-party script audit and deferral",
         "Layout shift identification and CSS fixes",
       ],
-      image: "/case-study-home.png",
+      image: "/industry-dental.png",
       href: "/technical-seo-service",
     },
     {
@@ -137,7 +137,7 @@ const technicalSeoData: HubData = {
         "Robots.txt review and configuration",
         "Noindex and canonicalisation strategy",
       ],
-      image: "/case-study-saas.png",
+      image: "/studio.png",
       href: "/technical-seo-service",
     },
     {
@@ -151,7 +151,7 @@ const technicalSeoData: HubData = {
         "Article and BreadcrumbList for content pages",
         "Product and Review schema for eCommerce",
       ],
-      image: "/case-study-saas.png",
+      image: "/case-study-local.png",
       href: "/technical-seo-service",
     },
     {
@@ -165,7 +165,7 @@ const technicalSeoData: HubData = {
         "301 redirect implementation and verification",
         "Post-fix crawl monitoring to confirm clean resolution",
       ],
-      image: "/case-study-realestate.png",
+      image: "/hero-abstract.png",
       href: "/technical-seo-service",
     },
   ],
@@ -221,14 +221,14 @@ const technicalSeoData: HubData = {
       metrics: [{ value: "+165%", label: "Organic traffic" }, { value: "340+", label: "Issues fixed" }],
     },
     {
-      image: "/case-study-realestate.png",
+      image: "/industry-dental.png",
       client: "Prime Realty Group",
       industry: "Real Estate",
       blurb: "Core Web Vitals overhaul on a 2,400-page property site. LCP improved from 6.8s to 1.4s. Page rankings lifted across all key queries within 8 weeks of Lighthouse scores going green.",
       metrics: [{ value: "1.4s", label: "LCP (was 6.8s)" }, { value: "+88%", label: "Rankings" }],
     },
     {
-      image: "/industry-ecommerce.png",
+      image: "/case-study-local.png",
       client: "Coastal Collective",
       industry: "eCommerce",
       blurb: "Post-redesign technical SEO rescue. Previous agency's missing redirect map caused a 60% traffic drop on launch. Full redirect mapping and crawl recovery completed in under 30 days.",
@@ -301,7 +301,7 @@ const technicalSeoData: HubData = {
       href: "/blog/technical-seo-audit-process",
     },
     {
-      image: "/case-study-realestate.png",
+      image: "/industry-dental.png",
       category: "Core Web Vitals",
       readTime: "6 min read",
       title: "Core Web Vitals Fix Priority: Which Metric Moves Rankings Fastest",
@@ -311,7 +311,7 @@ const technicalSeoData: HubData = {
       href: "/blog/core-web-vitals-fix-priority",
     },
     {
-      image: "/industry-ecommerce.png",
+      image: "/studio.png",
       category: "Site Migration",
       readTime: "5 min read",
       title: "How to Redesign Your Website Without Destroying Your SEO Rankings",

@@ -96,7 +96,7 @@ const joomlaData: HubData = {
       headline: "Bespoke Joomla templates in clean HTML/CSS.",
       description: "Custom Joomla template development with no framework dependencies. Clean HTML5, CSS3, and minimal JavaScript that loads fast, works on all devices, and your team can maintain without framework-specific knowledge.",
       bullets: ["Custom HTML/CSS — no Gantry/T3", "Mobile-first responsive", "Performance-optimised", "Full template documentation"],
-      image: "/case-study-saas.png",
+      image: "/case-study-local.png",
       href: "/joomla-development-service",
     },
     {
@@ -104,7 +104,7 @@ const joomlaData: HubData = {
       headline: "Custom Joomla components for complex functionality.",
       description: "Custom MVC Joomla component development for functionality the core doesn't provide — event listings, property directories, booking systems, membership management, and complex content types with custom fields.",
       bullets: ["MVC component architecture", "Custom backend admin views", "Custom frontend display", "Full API integration capability"],
-      image: "/case-study-saas.png",
+      image: "/industry-local.png",
       href: "/joomla-development-service",
     },
     {
@@ -112,7 +112,7 @@ const joomlaData: HubData = {
       headline: "Migrate from Joomla 1.5/2.5/3 to Joomla 4/5.",
       description: "Joomla version migrations — from legacy Joomla 1.5, 2.5, or 3.x to the current Joomla 4 or 5. Extension compatibility audit, content migration, template rebuild, and SEO preservation. A migration that improves your site, not just the version number.",
       bullets: ["Content and database migration", "Extension compatibility audit", "Template rebuild to Joomla 4/5", "SEO preservation and redirect mapping"],
-      image: "/case-study-realestate.png",
+      image: "/studio.png",
       href: "/joomla-development-service",
     },
     {
@@ -120,7 +120,7 @@ const joomlaData: HubData = {
       headline: "Multilingual Joomla with native language management.",
       description: "Multilingual Joomla site architecture using Joomla's native language manager, content associations, and language switcher. No third-party translation plugins — the most maintainable, performant multilingual CMS implementation available.",
       bullets: ["Native Joomla language manager", "Content association architecture", "Language switcher configuration", "SEO hreflang implementation"],
-      image: "/case-study-saas.png",
+      image: "/case-study-realestate.png",
       href: "/joomla-development-service",
     },
     {
@@ -128,7 +128,7 @@ const joomlaData: HubData = {
       headline: "Ongoing Joomla updates and security management.",
       description: "Monthly Joomla maintenance: core and extension updates tested in staging, security patch application, performance monitoring, and developer support. Joomla requires regular updates — we manage them so you don't have to think about it.",
       bullets: ["Monthly core updates via staging", "Extension update management", "Security patch application", "Uptime monitoring"],
-      image: "/case-study-home.png",
+      image: "/work-2.png",
       href: "/joomla-development-service",
     },
   ],
@@ -152,9 +152,9 @@ const joomlaData: HubData = {
     { platform: "Akeeba Backup", stat: "Backup", description: "Akeeba Backup for scheduled automated backups and one-click restore. Industry standard for Joomla site protection." },
   ],
   caseStudies: [
-    { image: "/case-study-saas.png", client: "Global Trade Association", industry: "Membership", blurb: "Custom Joomla 5 membership portal with ACL-gated content, member directory, and event booking. Migrated from Joomla 2.5 with full content preservation.", metrics: [{ value: "100%", label: "Content migrated" }, { value: "+85%", label: "Member portal engagement" }] },
-    { image: "/case-study-realestate.png", client: "European Property Group", industry: "Real Estate", blurb: "Multilingual Joomla 4 build in 6 languages using native language manager. Custom property listing component with advanced filtering. Zero third-party translation plugins.", metrics: [{ value: "6", label: "Languages — no plugins" }, { value: "+140%", label: "Organic traffic" }] },
-    { image: "/case-study-home.png", client: "Municipal Services Portal", industry: "Government", blurb: "Legacy Joomla 1.5 migration to Joomla 5 for a government portal. Full ACL reconfiguration, 800+ article migration, and WCAG 2.1 AA accessibility compliance.", metrics: [{ value: "800+", label: "Articles migrated" }, { value: "WCAG AA", label: "Accessibility standard" }] },
+    { image: "/case-study-local.png", client: "Global Trade Association", industry: "Membership", blurb: "Custom Joomla 5 membership portal with ACL-gated content, member directory, and event booking. Migrated from Joomla 2.5 with full content preservation.", metrics: [{ value: "100%", label: "Content migrated" }, { value: "+85%", label: "Member portal engagement" }] },
+    { image: "/industry-local.png", client: "European Property Group", industry: "Real Estate", blurb: "Multilingual Joomla 4 build in 6 languages using native language manager. Custom property listing component with advanced filtering. Zero third-party translation plugins.", metrics: [{ value: "6", label: "Languages — no plugins" }, { value: "+140%", label: "Organic traffic" }] },
+    { image: "/studio.png", client: "Municipal Services Portal", industry: "Government", blurb: "Legacy Joomla 1.5 migration to Joomla 5 for a government portal. Full ACL reconfiguration, 800+ article migration, and WCAG 2.1 AA accessibility compliance.", metrics: [{ value: "800+", label: "Articles migrated" }, { value: "WCAG AA", label: "Accessibility standard" }] },
   ],
   process: [
     { label: "Audit", headline: "Audit your existing Joomla site before planning anything.", description: "Version assessment, extension inventory, template structure review, content architecture, and performance baseline. We understand exactly what we're working with before recommending a path." },
@@ -172,9 +172,9 @@ const joomlaData: HubData = {
     { question: "How long does a custom Joomla build take?", answer: "A standard custom Joomla site — design, template development, and content architecture — takes 6-10 weeks. Builds including custom components run 8-12 weeks. Migration projects run 6-10 weeks depending on content volume and extension complexity. We give you a firm timeline after our discovery session." },
   ],
   hubInsights: [
-    { image: "/case-study-saas.png", category: "Joomla Development", readTime: "6 min read", title: "Joomla 5 in 2026: When It's the Right CMS and When It Isn't", excerpt: "Joomla is a capable CMS that's been unfairly overshadowed by WordPress's market share. We explain the scenarios where Joomla's built-in multilingual support, granular ACL, and structured content model make it the better choice — and the scenarios where WordPress or Drupal is a better fit.", author: "James Okafor", authorRole: "CMS Lead", href: "/blog/joomla-5-right-cms-2026" },
-    { image: "/case-study-realestate.png", category: "Multilingual", readTime: "5 min read", title: "Joomla Native Multilingual vs. Translation Plugins: Why Built-In Always Wins", excerpt: "Joomla's native language management is the most capable built-in multilingual CMS system available. Content associations, automatic hreflang, and language-specific menus — all without a plugin. We compare the native approach to WPML and similar plugins on architecture, performance, and maintenance.", author: "Priya Anand", authorRole: "Multilingual Specialist", href: "/blog/joomla-native-multilingual" },
-    { image: "/case-study-home.png", category: "Joomla Migration", readTime: "7 min read", title: "Migrating from Joomla 3.x to Joomla 5: The Complete Guide", excerpt: "Joomla 3 reached end-of-life and Joomla 5 is a major architecture change. The migration path is not trivial — extensions require compatibility review, templates need rebuilding, and the content migration requires careful mapping. We walk through the complete migration process with the steps we use on every legacy Joomla migration.", author: "Marcus Chen", authorRole: "Migration Lead", href: "/blog/joomla-3-to-5-migration-guide" },
+    { image: "/case-study-realestate.png", category: "Joomla Development", readTime: "6 min read", title: "Joomla 5 in 2026: When It's the Right CMS and When It Isn't", excerpt: "Joomla is a capable CMS that's been unfairly overshadowed by WordPress's market share. We explain the scenarios where Joomla's built-in multilingual support, granular ACL, and structured content model make it the better choice — and the scenarios where WordPress or Drupal is a better fit.", author: "James Okafor", authorRole: "CMS Lead", href: "/blog/joomla-5-right-cms-2026" },
+    { image: "/case-study-local.png", category: "Multilingual", readTime: "5 min read", title: "Joomla Native Multilingual vs. Translation Plugins: Why Built-In Always Wins", excerpt: "Joomla's native language management is the most capable built-in multilingual CMS system available. Content associations, automatic hreflang, and language-specific menus — all without a plugin. We compare the native approach to WPML and similar plugins on architecture, performance, and maintenance.", author: "Priya Anand", authorRole: "Multilingual Specialist", href: "/blog/joomla-native-multilingual" },
+    { image: "/industry-local.png", category: "Joomla Migration", readTime: "7 min read", title: "Migrating from Joomla 3.x to Joomla 5: The Complete Guide", excerpt: "Joomla 3 reached end-of-life and Joomla 5 is a major architecture change. The migration path is not trivial — extensions require compatibility review, templates need rebuilding, and the content migration requires careful mapping. We walk through the complete migration process with the steps we use on every legacy Joomla migration.", author: "Marcus Chen", authorRole: "Migration Lead", href: "/blog/joomla-3-to-5-migration-guide" },
   ],
 };
 

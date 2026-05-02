@@ -96,7 +96,7 @@ const hyvaEnterpriseData: HubData = {
       headline: "Full Adobe Commerce implementation on the Hyvä frontend stack.",
       description: "End-to-end Adobe Commerce implementation with a custom Hyvä theme — B2B Commerce, multi-store configuration, ERP integration, and Adobe Experience Cloud — all on a frontend that achieves 100 Lighthouse. The full enterprise feature set with no performance compromise.",
       bullets: ["Full Adobe Commerce feature set", "Custom Hyvä theme", "B2B Commerce configuration", "Adobe Experience Cloud integration"],
-      image: "/case-study-saas.png",
+      image: "/case-study-realestate.png",
       href: "/hyva-enterprise-solutions",
     },
     {
@@ -104,7 +104,7 @@ const hyvaEnterpriseData: HubData = {
       headline: "Shared Hyvä component library across multiple storefronts.",
       description: "Multi-store Hyvä architecture for brands operating multiple storefronts from a single Adobe Commerce installation. Shared component library, store-specific theming, and unified component maintenance. 100 Lighthouse on every store.",
       bullets: ["Shared component library", "Store-specific theme variants", "Centralised component maintenance", "Cross-store performance parity"],
-      image: "/case-study-saas.png",
+      image: "/hero-showcase.png",
       href: "/hyva-enterprise-solutions",
     },
     {
@@ -112,7 +112,7 @@ const hyvaEnterpriseData: HubData = {
       headline: "React-powered checkout for complex enterprise B2B requirements.",
       description: "Hyvä React Checkout implementation for enterprise B2B requirements — multi-step approval workflows, purchase order capture, custom shipping logic, and complex payment routing. React's component ecosystem handles complexity that Alpine.js checkout cannot.",
       bullets: ["React-powered B2B checkout", "Purchase order workflow", "Multi-step approval process", "Complex payment routing"],
-      image: "/case-study-saas.png",
+      image: "/work-1.png",
       href: "/hyva-enterprise-solutions",
     },
     {
@@ -128,7 +128,7 @@ const hyvaEnterpriseData: HubData = {
       headline: "Enterprise-scale performance for high-traffic Adobe Commerce.",
       description: "Performance infrastructure for high-traffic Adobe Commerce: Varnish, Redis, Elasticsearch, and auto-scaling combined with Hyvä's lightweight frontend for the fastest possible end-to-end experience. Load testing at 10x expected peak traffic.",
       bullets: ["Varnish + Redis + Elasticsearch", "CDN and auto-scaling", "Load testing at 10x peak traffic", "New Relic APM monitoring"],
-      image: "/case-study-saas.png",
+      image: "/case-study-ecommerce.png",
       href: "/hyva-enterprise-solutions",
     },
   ],
@@ -152,9 +152,9 @@ const hyvaEnterpriseData: HubData = {
     { platform: "New Relic APM", stat: "Monitoring", description: "Application performance monitoring with real user monitoring — transaction tracing, error rate monitoring, and infrastructure metrics. Mandatory for enterprise Adobe Commerce operations." },
   ],
   caseStudies: [
-    { image: "/case-study-saas.png", client: "National Supply Group", industry: "B2B Commerce", blurb: "Adobe Commerce + Hyvä enterprise build with B2B Commerce, 8-store multi-site, and SAP integration. 100 Lighthouse on every storefront. $47M GMV in year one.", metrics: [{ value: "100", label: "Lighthouse on all 8 stores" }, { value: "$47M", label: "Year 1 GMV" }] },
-    { image: "/industry-ecommerce.png", client: "LuxeBrand Portfolio", industry: "Luxury Retail", blurb: "Multi-brand Adobe Commerce + Hyvä architecture with shared component library across 4 brand storefronts. Adobe Target personalisation running on all stores with Hyvä compatibility.", metrics: [{ value: "4", label: "Brand storefronts from one platform" }, { value: "+34%", label: "CVR from personalisation" }] },
-    { image: "/case-study-home.png", client: "Industrial Supply Co.", industry: "Wholesale", blurb: "Luma to Hyvä migration on Adobe Commerce with Hyvä React Checkout for B2B PO workflow. Lighthouse improved from 26 to 98. Checkout completion rate up 28%.", metrics: [{ value: "98", label: "Lighthouse (was 26)" }, { value: "+28%", label: "Checkout completion" }] },
+    { image: "/case-study-ecommerce.png", client: "National Supply Group", industry: "B2B Commerce", blurb: "Adobe Commerce + Hyvä enterprise build with B2B Commerce, 8-store multi-site, and SAP integration. 100 Lighthouse on every storefront. $47M GMV in year one.", metrics: [{ value: "100", label: "Lighthouse on all 8 stores" }, { value: "$47M", label: "Year 1 GMV" }] },
+    { image: "/case-study-realestate.png", client: "LuxeBrand Portfolio", industry: "Luxury Retail", blurb: "Multi-brand Adobe Commerce + Hyvä architecture with shared component library across 4 brand storefronts. Adobe Target personalisation running on all stores with Hyvä compatibility.", metrics: [{ value: "4", label: "Brand storefronts from one platform" }, { value: "+34%", label: "CVR from personalisation" }] },
+    { image: "/hero-showcase.png", client: "Industrial Supply Co.", industry: "Wholesale", blurb: "Luma to Hyvä migration on Adobe Commerce with Hyvä React Checkout for B2B PO workflow. Lighthouse improved from 26 to 98. Checkout completion rate up 28%.", metrics: [{ value: "98", label: "Lighthouse (was 26)" }, { value: "+28%", label: "Checkout completion" }] },
   ],
   process: [
     { label: "Discovery", headline: "Enterprise requirements and architecture planning.", description: "Stakeholder workshops, existing platform audit, Hyvä compatibility assessment for all modules, and infrastructure review. Output: complete technical specification for the enterprise implementation." },
@@ -172,9 +172,9 @@ const hyvaEnterpriseData: HubData = {
     { question: "How long does an enterprise Hyvä implementation take?", answer: "A standard Adobe Commerce + Hyvä enterprise implementation takes 20-28 weeks from discovery to launch. Multi-store implementations with 4+ storefronts and Adobe Experience Cloud integration run 28-36 weeks. We provide a detailed project plan and milestone calendar after the discovery and architecture phase." },
   ],
   hubInsights: [
-    { image: "/case-study-saas.png", category: "Hyvä Enterprise", readTime: "9 min read", title: "Adobe Commerce + Hyvä: The Enterprise Commerce Stack for 2026", excerpt: "Adobe Commerce provides enterprise commerce capability. Hyvä provides frontend performance. Together, they eliminate the trade-off that has made enterprise Magento synonymous with poor performance. We share the architecture decisions, implementation approach, and performance results from enterprise builds running this stack.", author: "Marcus Chen", authorRole: "Enterprise Commerce Lead", href: "/blog/adobe-commerce-hyva-enterprise-2026" },
-    { image: "/industry-ecommerce.png", category: "Multi-Store", readTime: "7 min read", title: "How to Build a Multi-Brand Adobe Commerce Platform with a Shared Hyvä Component Library", excerpt: "Multi-brand commerce platforms built on Adobe Commerce benefit from shared infrastructure but need brand-specific storefronts. Hyvä's Alpine.js + Tailwind stack is ideal for this architecture — shared components with store-specific configuration. We walk through the architecture pattern and the development approach.", author: "James Okafor", authorRole: "Platform Architect", href: "/blog/multi-brand-hyva-component-library" },
-    { image: "/case-study-home.png", category: "B2B Commerce", readTime: "6 min read", title: "Hyvä React Checkout for Enterprise B2B: What It Can Do That Alpine.js Checkout Can't", excerpt: "The standard Hyvä Checkout handles most checkout requirements. Enterprise B2B checkout — multi-step purchase approval, dynamic PO routing, and complex payment logic — requires React's component model. We explain when to choose Hyvä React Checkout and walk through the B2B checkout patterns it enables.", author: "Priya Anand", authorRole: "B2B Commerce Lead", href: "/blog/hyva-react-checkout-b2b" },
+    { image: "/work-1.png", category: "Hyvä Enterprise", readTime: "9 min read", title: "Adobe Commerce + Hyvä: The Enterprise Commerce Stack for 2026", excerpt: "Adobe Commerce provides enterprise commerce capability. Hyvä provides frontend performance. Together, they eliminate the trade-off that has made enterprise Magento synonymous with poor performance. We share the architecture decisions, implementation approach, and performance results from enterprise builds running this stack.", author: "Marcus Chen", authorRole: "Enterprise Commerce Lead", href: "/blog/adobe-commerce-hyva-enterprise-2026" },
+    { image: "/case-study-realestate.png", category: "Multi-Store", readTime: "7 min read", title: "How to Build a Multi-Brand Adobe Commerce Platform with a Shared Hyvä Component Library", excerpt: "Multi-brand commerce platforms built on Adobe Commerce benefit from shared infrastructure but need brand-specific storefronts. Hyvä's Alpine.js + Tailwind stack is ideal for this architecture — shared components with store-specific configuration. We walk through the architecture pattern and the development approach.", author: "James Okafor", authorRole: "Platform Architect", href: "/blog/multi-brand-hyva-component-library" },
+    { image: "/hero-showcase.png", category: "B2B Commerce", readTime: "6 min read", title: "Hyvä React Checkout for Enterprise B2B: What It Can Do That Alpine.js Checkout Can't", excerpt: "The standard Hyvä Checkout handles most checkout requirements. Enterprise B2B checkout — multi-step purchase approval, dynamic PO routing, and complex payment logic — requires React's component model. We explain when to choose Hyvä React Checkout and walk through the B2B checkout patterns it enables.", author: "Priya Anand", authorRole: "B2B Commerce Lead", href: "/blog/hyva-react-checkout-b2b" },
   ],
 };
 

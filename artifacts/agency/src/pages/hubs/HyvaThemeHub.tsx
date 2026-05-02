@@ -104,7 +104,7 @@ const hyvaThemeData: HubData = {
       headline: "Bespoke Hyvä theme built on Alpine.js and Tailwind CSS.",
       description: "Custom Hyvä theme development from scratch — designed to your brand, built for performance, and achieving 95-100 Lighthouse across every page template. Full component library for your team to edit without developer involvement.",
       bullets: ["Custom design in Figma first", "Alpine.js + Tailwind CSS", "95-100 Lighthouse on all templates", "Full component documentation"],
-      image: "/case-study-saas.png",
+      image: "/hero-abstract.png",
       href: "/hyva-theme-development",
     },
     {
@@ -112,7 +112,7 @@ const hyvaThemeData: HubData = {
       headline: "Migrate your existing Magento 2 store from Luma to Hyvä.",
       description: "Full Luma to Hyvä migration — all existing templates rebuilt in the Hyvä stack, all custom modules updated for Hyvä compatibility, and a parallel environment tested before cutover. Consistent 60-70 point Lighthouse improvement on every migration we've run.",
       bullets: ["Full template rebuild in Hyvä stack", "Module compatibility updates", "Parallel environment testing", "Performance before/after benchmarking"],
-      image: "/industry-ecommerce.png",
+      image: "/industry-local.png",
       href: "/hyva-theme-development",
     },
     {
@@ -120,7 +120,7 @@ const hyvaThemeData: HubData = {
       headline: "Replace Magento default checkout with Hyvä Checkout.",
       description: "Hyvä Checkout implementation — replacing Magento's JavaScript-heavy default checkout with a lightweight Alpine.js/Tailwind equivalent. Same performance story through to purchase completion. Custom checkout steps and additional payment methods configurable.",
       bullets: ["Alpine.js checkout implementation", "Custom checkout steps support", "Payment method integration", "Conversion-optimised UX"],
-      image: "/case-study-saas.png",
+      image: "/work-3.png",
       href: "/hyva-theme-development",
     },
     {
@@ -128,7 +128,7 @@ const hyvaThemeData: HubData = {
       headline: "React checkout for teams that need React's full capabilities.",
       description: "Hyvä React Checkout for teams requiring React's component ecosystem for complex checkout customisation. Combines Hyvä's lightweight product and category pages with a React-powered checkout. The best of both worlds for complex checkout requirements.",
       bullets: ["React-powered checkout component", "Full Hyvä base theme", "Complex checkout customisation", "TypeScript support"],
-      image: "/case-study-saas.png",
+      image: "/case-study-ecommerce.png",
       href: "/hyva-theme-development",
     },
     {
@@ -136,7 +136,7 @@ const hyvaThemeData: HubData = {
       headline: "Update third-party modules for Hyvä compatibility.",
       description: "Third-party Magento module Hyvä compatibility development — creating Hyvä-compatible frontend for modules that were built for Luma. Required for any module that renders frontend templates; we audit your module list and quote each compatibility build separately.",
       bullets: ["Module frontend audit", "Hyvä compatibility build per module", "Testing in Hyvä environment", "Documentation for future modules"],
-      image: "/case-study-saas.png",
+      image: "/industry-ecommerce.png",
       href: "/hyva-theme-development",
     },
   ],
@@ -160,9 +160,9 @@ const hyvaThemeData: HubData = {
     { platform: "Vite / Webpack", stat: "Build tooling", description: "Vite for Hyvä theme asset compilation — significantly faster build times than Magento's traditional Grunt/Webpack pipeline, with hot module replacement during development." },
   ],
   caseStudies: [
-    { image: "/industry-ecommerce.png", client: "Coastal Collective", industry: "eCommerce", blurb: "Luma to Hyvä migration. Lighthouse improved from 28 to 98. LCP from 4.8s to 0.7s. Organic traffic up 55% from Core Web Vitals improvement in 4 months.", metrics: [{ value: "98", label: "Lighthouse (was 28)" }, { value: "+55%", label: "Organic traffic" }] },
-    { image: "/case-study-saas.png", client: "Industrial Supply Co.", industry: "B2B Commerce", blurb: "Custom Hyvä theme build on a new Magento 2 B2B implementation. 100 Lighthouse from day one. Development completed in 6 weeks — 3x faster than equivalent Luma development.", metrics: [{ value: "100", label: "Lighthouse score" }, { value: "6 weeks", label: "Development time" }] },
-    { image: "/case-study-home.png", client: "BuildCo Supply", industry: "Wholesale", blurb: "Custom Hyvä theme migration with Hyvä Checkout implementation. Checkout abandonment reduced 22% from improved checkout performance and UX. CVR up 31%.", metrics: [{ value: "-22%", label: "Checkout abandonment" }, { value: "+31%", label: "CVR" }] },
+    { image: "/case-study-ecommerce.png", client: "Coastal Collective", industry: "eCommerce", blurb: "Luma to Hyvä migration. Lighthouse improved from 28 to 98. LCP from 4.8s to 0.7s. Organic traffic up 55% from Core Web Vitals improvement in 4 months.", metrics: [{ value: "98", label: "Lighthouse (was 28)" }, { value: "+55%", label: "Organic traffic" }] },
+    { image: "/hero-abstract.png", client: "Industrial Supply Co.", industry: "B2B Commerce", blurb: "Custom Hyvä theme build on a new Magento 2 B2B implementation. 100 Lighthouse from day one. Development completed in 6 weeks — 3x faster than equivalent Luma development.", metrics: [{ value: "100", label: "Lighthouse score" }, { value: "6 weeks", label: "Development time" }] },
+    { image: "/industry-local.png", client: "BuildCo Supply", industry: "Wholesale", blurb: "Custom Hyvä theme migration with Hyvä Checkout implementation. Checkout abandonment reduced 22% from improved checkout performance and UX. CVR up 31%.", metrics: [{ value: "-22%", label: "Checkout abandonment" }, { value: "+31%", label: "CVR" }] },
   ],
   process: [
     { label: "Audit", headline: "Performance baseline and module compatibility audit.", description: "Lighthouse baseline on all current page templates, module inventory, and Hyvä compatibility assessment. We know exactly what the migration involves before quoting." },
@@ -180,9 +180,9 @@ const hyvaThemeData: HubData = {
     { question: "What is Hyvä Checkout and is it included?", answer: "Hyvä Checkout is a separately licensed module that replaces Magento's default checkout with an Alpine.js/Tailwind equivalent. It's not included in the Hyvä base theme license. We recommend implementing it as part of any Hyvä project — the default Magento checkout partially negates the performance improvements of the Hyvä theme on the most important conversion page." },
   ],
   hubInsights: [
-    { image: "/industry-ecommerce.png", category: "Hyvä Theme", readTime: "7 min read", title: "Hyvä vs. Luma: Why We Recommend Hyvä for Every New Magento 2 Project", excerpt: "Hyvä has become our default recommendation for every new Magento 2 theme project. The performance advantage over Luma is too significant to ignore — and the development speed improvement means custom Hyvä themes often cost less than equivalent Luma builds. We break down the comparison with data from 15 Hyvä projects.", author: "James Okafor", authorRole: "Magento Lead", href: "/blog/hyva-vs-luma-comparison" },
-    { image: "/case-study-saas.png", category: "Performance", readTime: "6 min read", title: "How Hyvä Theme Took a Magento 2 Store from 28 to 98 on Lighthouse", excerpt: "The performance difference between Luma and Hyvä is not incremental — it's categorical. We share the full before/after data from a recent Luma to Hyvä migration, including Lighthouse scores by template, Core Web Vitals measurements, and the 55% organic traffic improvement that followed.", author: "Marcus Chen", authorRole: "Performance Lead", href: "/blog/hyva-migration-case-study" },
-    { image: "/case-study-home.png", category: "Alpine.js", readTime: "5 min read", title: "Alpine.js for Magento Developers: Why It's Better Than Knockout.js in Every Way", excerpt: "Alpine.js is the frontend JavaScript framework Magento 2 should have chosen from the start. It's smaller, faster, more maintainable, and easier to learn than Knockout.js. We explain what makes Alpine.js better and walk through common Magento frontend patterns rewritten in Alpine.js.", author: "Priya Anand", authorRole: "Frontend Lead", href: "/blog/alpinejs-vs-knockoutjs-magento" },
+    { image: "/work-3.png", category: "Hyvä Theme", readTime: "7 min read", title: "Hyvä vs. Luma: Why We Recommend Hyvä for Every New Magento 2 Project", excerpt: "Hyvä has become our default recommendation for every new Magento 2 theme project. The performance advantage over Luma is too significant to ignore — and the development speed improvement means custom Hyvä themes often cost less than equivalent Luma builds. We break down the comparison with data from 15 Hyvä projects.", author: "James Okafor", authorRole: "Magento Lead", href: "/blog/hyva-vs-luma-comparison" },
+    { image: "/hero-abstract.png", category: "Performance", readTime: "6 min read", title: "How Hyvä Theme Took a Magento 2 Store from 28 to 98 on Lighthouse", excerpt: "The performance difference between Luma and Hyvä is not incremental — it's categorical. We share the full before/after data from a recent Luma to Hyvä migration, including Lighthouse scores by template, Core Web Vitals measurements, and the 55% organic traffic improvement that followed.", author: "Marcus Chen", authorRole: "Performance Lead", href: "/blog/hyva-migration-case-study" },
+    { image: "/industry-local.png", category: "Alpine.js", readTime: "5 min read", title: "Alpine.js for Magento Developers: Why It's Better Than Knockout.js in Every Way", excerpt: "Alpine.js is the frontend JavaScript framework Magento 2 should have chosen from the start. It's smaller, faster, more maintainable, and easier to learn than Knockout.js. We explain what makes Alpine.js better and walk through common Magento frontend patterns rewritten in Alpine.js.", author: "Priya Anand", authorRole: "Frontend Lead", href: "/blog/alpinejs-vs-knockoutjs-magento" },
   ],
 };
 

@@ -105,7 +105,7 @@ const contentMarketingData: HubData = {
         "Keyword-to-content mapping with difficulty scoring",
         "12-month editorial roadmap",
       ],
-      image: "/case-study-saas.png",
+      image: "/studio.png",
       href: "/content-marketing-service",
     },
     {
@@ -119,7 +119,7 @@ const contentMarketingData: HubData = {
         "Internal linking to your service pages",
         "CTA integration and conversion optimisation",
       ],
-      image: "/industry-local.png",
+      image: "/case-study-local.png",
       href: "/content-marketing-service",
     },
     {
@@ -133,7 +133,7 @@ const contentMarketingData: HubData = {
         "Abandoned cart and re-engagement flows",
         "Deliverability monitoring and list hygiene",
       ],
-      image: "/case-study-saas.png",
+      image: "/work-2.png",
       href: "/email-marketing-service",
     },
     {
@@ -147,7 +147,7 @@ const contentMarketingData: HubData = {
         "Engagement management",
         "Monthly analytics and optimisation",
       ],
-      image: "/case-study-home.png",
+      image: "/case-study-realestate.png",
       href: "/social-media-service",
     },
     {
@@ -161,7 +161,7 @@ const contentMarketingData: HubData = {
         "Email nurture sequences from blog posts",
         "Short-form social clips from long-form video",
       ],
-      image: "/case-study-saas.png",
+      image: "/hero-abstract.png",
       href: "/content-marketing-service",
     },
   ],
@@ -210,21 +210,21 @@ const contentMarketingData: HubData = {
   ],
   caseStudies: [
     {
-      image: "/case-study-saas.png",
+      image: "/studio.png",
       client: "Nova FinTech",
       industry: "SaaS",
       blurb: "40-article content cluster built around B2B finance and compliance topics. Full topical architecture mapped before a single word was written. Organic traffic 8x'd in 14 months with zero paid amplification.",
       metrics: [{ value: "+800%", label: "Organic traffic" }, { value: "8x", label: "Content ROI" }],
     },
     {
-      image: "/industry-dental.png",
+      image: "/case-study-local.png",
       client: "Apex Dental Group",
       industry: "Dental",
       blurb: "Local content strategy across 6 cities. Programmatic cluster pages combined with editorial content drove 1,100+ city-service combinations to map pack and organic positions.",
       metrics: [{ value: "1,100+", label: "Pages ranked" }, { value: "+86%", label: "New patients" }],
     },
     {
-      image: "/case-study-home.png",
+      image: "/work-2.png",
       client: "Hudson Outdoor",
       industry: "Home Services",
       blurb: "Topical authority content programme built around outdoor living, landscaping, and seasonal guides. 312% traffic growth in 12 months, directly attributed to $2.4M in new revenue via GA4 goal tracking.",
@@ -287,7 +287,7 @@ const contentMarketingData: HubData = {
   ],
   hubInsights: [
     {
-      image: "/case-study-saas.png",
+      image: "/studio.png",
       category: "Content Strategy",
       readTime: "8 min read",
       title: "Why Topical Authority Beats Keyword Targeting in 2026",
@@ -297,7 +297,7 @@ const contentMarketingData: HubData = {
       href: "/blog/topical-authority-2026",
     },
     {
-      image: "/industry-local.png",
+      image: "/case-study-local.png",
       category: "SEO Writing",
       readTime: "5 min read",
       title: "The Content Brief Format That Produces Rankings Every Time",
@@ -307,7 +307,7 @@ const contentMarketingData: HubData = {
       href: "/blog/content-brief-template",
     },
     {
-      image: "/case-study-home.png",
+      image: "/work-2.png",
       category: "Email Marketing",
       readTime: "6 min read",
       title: "How to Turn Your Content Programme Into a $42-per-Dollar Email Channel",

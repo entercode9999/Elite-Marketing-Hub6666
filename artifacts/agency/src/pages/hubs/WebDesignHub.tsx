@@ -101,7 +101,7 @@ const webDesignData: HubData = {
         "Custom component library for your team",
         "A/B testing setup and hypothesis backlog",
       ],
-      image: "/hero-showcase.png",
+      image: "/work-1.png",
       href: "/custom-web-design-service",
     },
     {
@@ -115,7 +115,7 @@ const webDesignData: HubData = {
         "CTA copy and headline experiments",
         "Form and checkout optimisation",
       ],
-      image: "/case-study-saas.png",
+      image: "/work-2.png",
       href: "/cro-service",
     },
     {
@@ -129,7 +129,7 @@ const webDesignData: HubData = {
         "Post-launch crawl monitoring for 30 days",
         "Core Web Vitals benchmarking before and after",
       ],
-      image: "/case-study-realestate.png",
+      image: "/work-3.png",
       href: "/website-redesign-service",
     },
     {
@@ -143,7 +143,7 @@ const webDesignData: HubData = {
         "Dynamic content for audience segments",
         "Weekly performance reporting",
       ],
-      image: "/case-study-home.png",
+      image: "/studio.png",
       href: "/custom-web-design-service",
     },
     {
@@ -157,7 +157,7 @@ const webDesignData: HubData = {
         "Collection and filter UX design",
         "Post-purchase flow design",
       ],
-      image: "/industry-ecommerce.png",
+      image: "/hero-showcase.png",
       href: "/ecommerce-development",
     },
   ],
@@ -206,21 +206,21 @@ const webDesignData: HubData = {
   ],
   caseStudies: [
     {
-      image: "/case-study-saas.png",
+      image: "/work-1.png",
       client: "Nova FinTech",
       industry: "SaaS",
       blurb: "Full redesign of a B2B SaaS platform using Next.js. The new conversion architecture increased demo requests by 160% and pushed site CVR from 1.8% to 4.7% in 90 days post-launch.",
       metrics: [{ value: "+160%", label: "Demo requests" }, { value: "4.7%", label: "Site CVR" }],
     },
     {
-      image: "/case-study-realestate.png",
+      image: "/work-2.png",
       client: "Prime Realty Group",
       industry: "Real Estate",
       blurb: "Complete site redesign with zero SEO authority loss. Full URL mapping and 301 architecture preserved every ranking. Seller appointment bookings up 247% in 6 months.",
       metrics: [{ value: "+247%", label: "Appointments" }, { value: "0%", label: "Ranking loss" }],
     },
     {
-      image: "/industry-ecommerce.png",
+      image: "/work-3.png",
       client: "Coastal Collective",
       industry: "eCommerce",
       blurb: "Shopify redesign with a concurrent CRO programme. Checkout completion improved by 31%. ROAS improved from 2.1x to 7.2x within two quarters of the new site going live.",
@@ -291,7 +291,7 @@ const webDesignData: HubData = {
   ],
   hubInsights: [
     {
-      image: "/case-study-saas.png",
+      image: "/work-1.png",
       category: "Web Design",
       readTime: "7 min read",
       title: "Why Your Website's Conversion Rate Is Probably Half What It Should Be",
@@ -301,7 +301,7 @@ const webDesignData: HubData = {
       href: "/blog/conversion-rate-web-design",
     },
     {
-      image: "/case-study-realestate.png",
+      image: "/work-2.png",
       category: "CRO",
       readTime: "5 min read",
       title: "The Redesign Mistakes That Kill SEO Authority — And How to Avoid Every One",
@@ -311,7 +311,7 @@ const webDesignData: HubData = {
       href: "/blog/redesign-seo-checklist",
     },
     {
-      image: "/hero-showcase.png",
+      image: "/work-3.png",
       category: "Performance",
       readTime: "6 min read",
       title: "Core Web Vitals in 2026: What the Scores Actually Mean for Your Business",

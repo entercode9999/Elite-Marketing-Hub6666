@@ -112,7 +112,7 @@ const wordPressData: HubData = {
       headline: "Custom WordPress plugins built for your exact requirements.",
       description: "When an off-the-shelf plugin doesn't exist or adds too much overhead, we build it. Custom WordPress plugins for booking systems, membership portals, custom post type management, API integrations, and more — all built to WordPress coding standards.",
       bullets: ["Custom post types and taxonomies", "API integration plugins", "Booking and membership systems", "Admin interface customisation"],
-      image: "/case-study-saas.png",
+      image: "/case-study-home.png",
       href: "/wordpress-development-service",
     },
     {
@@ -128,7 +128,7 @@ const wordPressData: HubData = {
       headline: "Ongoing WordPress management so you can focus on your business.",
       description: "Monthly WordPress maintenance: core, theme, and plugin updates tested in staging before deployment, performance monitoring, security scanning, uptime monitoring, and a dedicated support line. Your site stays current, secure, and performant.",
       bullets: ["Monthly core and plugin updates", "Staging environment testing", "Security scanning and malware removal", "24/7 uptime monitoring"],
-      image: "/case-study-home.png",
+      image: "/hero-showcase.png",
       href: "/wordpress-development-service",
     },
   ],

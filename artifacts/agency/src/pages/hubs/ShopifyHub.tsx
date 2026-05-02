@@ -97,7 +97,7 @@ const shopifyData: HubData = {
       headline: "Shopify themes built from scratch in Liquid.",
       description: "Custom Shopify theme development using Liquid, JavaScript, and CSS. No theme framework starting points — a completely bespoke build designed for your products and your customer. Section-based architecture for your team to edit without developer involvement.",
       bullets: ["Custom Liquid theme from scratch", "Section and block architecture", "Mobile-first, Core Web Vitals optimised", "Handover documentation included"],
-      image: "/industry-ecommerce.png",
+      image: "/case-study-ecommerce.png",
       href: "/shopify-development",
     },
     {
@@ -105,7 +105,7 @@ const shopifyData: HubData = {
       headline: "Systematic conversion optimisation from launch day.",
       description: "Structured CRO programme for existing and new Shopify stores. Heatmap and session recording analysis, A/B testing on product pages, cart, and checkout, and monthly reporting on CVR, AOV, and revenue per visitor. CRO is a programme, not a one-time project.",
       bullets: ["Heatmap + session recording analysis", "A/B testing programme", "Product page and PDP optimisation", "Checkout friction reduction"],
-      image: "/case-study-home.png",
+      image: "/industry-ecommerce.png",
       href: "/shopify-development",
     },
     {
@@ -113,7 +113,7 @@ const shopifyData: HubData = {
       headline: "Custom Shopify apps for functionality the App Store doesn't offer.",
       description: "Custom Shopify apps built with the Shopify App Framework — embedded admin apps, storefront extensions, checkout extensions, and post-purchase flows. When the App Store doesn't have exactly what you need, we build it.",
       bullets: ["Embedded admin app development", "Checkout UI extensions", "Storefront API integrations", "Post-purchase page customisation"],
-      image: "/case-study-saas.png",
+      image: "/work-3.png",
       href: "/shopify-development",
     },
     {
@@ -121,7 +121,7 @@ const shopifyData: HubData = {
       headline: "Migrate to Shopify without losing traffic or rankings.",
       description: "Platform migrations from WooCommerce, Magento, BigCommerce, and custom platforms to Shopify — with full URL mapping, product and customer data migration, SEO preservation, and post-migration monitoring. Zero-downtime deployment.",
       bullets: ["Full 301 redirect mapping", "Product, customer, order migration", "SEO signal preservation", "30-day post-launch monitoring"],
-      image: "/case-study-realestate.png",
+      image: "/case-study-homeservices.png",
       href: "/shopify-development",
     },
     {
@@ -129,7 +129,7 @@ const shopifyData: HubData = {
       headline: "Speed, performance, and app stack optimisation.",
       description: "Shopify performance audit and optimisation — image optimisation, script deferral, app bloat elimination, and CDN configuration. We consistently take Shopify stores from 40-60 Lighthouse scores to 90+, with direct conversion rate improvements to show for it.",
       bullets: ["Lighthouse score improvement", "App stack audit and removal", "Image and media optimisation", "Third-party script management"],
-      image: "/case-study-saas.png",
+      image: "/industry-fitness.png",
       href: "/shopify-development",
     },
   ],
@@ -153,9 +153,9 @@ const shopifyData: HubData = {
     { platform: "Gorgias", stat: "Support", description: "Gorgias help desk integration with Shopify — support tickets connected to order data for one-click resolution. Configured as part of every full store build." },
   ],
   caseStudies: [
-    { image: "/industry-ecommerce.png", client: "Coastal Collective", industry: "eCommerce", blurb: "Custom Shopify theme rebuild from a popular theme. CVR improved from 1.6% to 3.8% in 60 days post-launch. Store scaled to eight-figure revenue.", metrics: [{ value: "3.8%", label: "Conversion rate" }, { value: "+38%", label: "AOV" }] },
-    { image: "/case-study-home.png", client: "Hudson Outdoor", industry: "Home Goods", blurb: "WooCommerce to Shopify migration with custom product pages and Klaviyo lifecycle email. Zero traffic loss and 52% conversion rate improvement post-migration.", metrics: [{ value: "0%", label: "Traffic loss" }, { value: "+52%", label: "Conversion rate" }] },
-    { image: "/case-study-saas.png", client: "PureStack Labs", industry: "Health & Wellness", blurb: "Shopify store performance audit and rebuild. Lighthouse score improved from 44 to 94. Organic traffic up 78% from improved Core Web Vitals rankings.", metrics: [{ value: "94", label: "Lighthouse score" }, { value: "+78%", label: "Organic traffic" }] },
+    { image: "/case-study-limo.png", client: "Coastal Collective", industry: "eCommerce", blurb: "Custom Shopify theme rebuild from a popular theme. CVR improved from 1.6% to 3.8% in 60 days post-launch. Store scaled to eight-figure revenue.", metrics: [{ value: "3.8%", label: "Conversion rate" }, { value: "+38%", label: "AOV" }] },
+    { image: "/work-1.png", client: "Hudson Outdoor", industry: "Home Goods", blurb: "WooCommerce to Shopify migration with custom product pages and Klaviyo lifecycle email. Zero traffic loss and 52% conversion rate improvement post-migration.", metrics: [{ value: "0%", label: "Traffic loss" }, { value: "+52%", label: "Conversion rate" }] },
+    { image: "/case-study-ecommerce.png", client: "PureStack Labs", industry: "Health & Wellness", blurb: "Shopify store performance audit and rebuild. Lighthouse score improved from 44 to 94. Organic traffic up 78% from improved Core Web Vitals rankings.", metrics: [{ value: "94", label: "Lighthouse score" }, { value: "+78%", label: "Organic traffic" }] },
   ],
   process: [
     { label: "Audit", headline: "Audit your current store performance and conversion funnel.", description: "We analyse your current CVR by device, traffic source, and product. Heatmaps, session recordings, Lighthouse benchmarks, and app stack review — all before we design or build anything." },
@@ -174,8 +174,8 @@ const shopifyData: HubData = {
   ],
   hubInsights: [
     { image: "/industry-ecommerce.png", category: "Shopify Development", readTime: "7 min read", title: "Why We Never Use Shopify Theme Store Templates for Client Stores", excerpt: "Dawn, Debut, and every other Shopify theme are built for demos, not for the specific conversion goals of your business. We've benchmarked 40 custom builds against their template predecessors and found consistent CVR improvements of 40-60%. Here's why the template is always a ceiling.", author: "James Okafor", authorRole: "Shopify Lead", href: "/blog/shopify-custom-vs-theme-store" },
-    { image: "/case-study-home.png", category: "eCommerce CRO", readTime: "5 min read", title: "The 8 Shopify Product Page Elements That Consistently Move Conversion Rate", excerpt: "After optimising product pages across 60+ Shopify stores, we've identified the 8 elements that produce measurable CVR improvement every time — regardless of product type or price point. Hero image handling, review placement, mobile layout, and cart mechanics dominate the list.", author: "Priya Anand", authorRole: "CRO Lead", href: "/blog/shopify-product-page-cvr" },
-    { image: "/case-study-saas.png", category: "Shopify Performance", readTime: "6 min read", title: "How to Take Your Shopify Store from a 45 to a 90+ Lighthouse Score", excerpt: "Most Shopify stores score between 35 and 55 on Lighthouse — primarily because of app bloat, unoptimised images, and render-blocking third-party scripts. We walk through the exact optimisation sequence we use to consistently reach 90+ scores on stores of any complexity.", author: "Marcus Chen", authorRole: "Performance Specialist", href: "/blog/shopify-lighthouse-90-plus" },
+    { image: "/work-2.png", category: "eCommerce CRO", readTime: "5 min read", title: "The 8 Shopify Product Page Elements That Consistently Move Conversion Rate", excerpt: "After optimising product pages across 60+ Shopify stores, we've identified the 8 elements that produce measurable CVR improvement every time — regardless of product type or price point. Hero image handling, review placement, mobile layout, and cart mechanics dominate the list.", author: "Priya Anand", authorRole: "CRO Lead", href: "/blog/shopify-product-page-cvr" },
+    { image: "/case-study-homeservices.png", category: "Shopify Performance", readTime: "6 min read", title: "How to Take Your Shopify Store from a 45 to a 90+ Lighthouse Score", excerpt: "Most Shopify stores score between 35 and 55 on Lighthouse — primarily because of app bloat, unoptimised images, and render-blocking third-party scripts. We walk through the exact optimisation sequence we use to consistently reach 90+ scores on stores of any complexity.", author: "Marcus Chen", authorRole: "Performance Specialist", href: "/blog/shopify-lighthouse-90-plus" },
   ],
 };
 

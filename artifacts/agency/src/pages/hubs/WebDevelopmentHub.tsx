@@ -93,7 +93,7 @@ const webDevData: HubData = {
       headline: "Modern frontend development with full SEO and performance.",
       description: "React and Next.js applications built with TypeScript, proper component architecture, and server-side rendering where it matters for SEO. Whether it's a content site, a customer portal, or a data-heavy dashboard — performant, maintainable, and properly typed.",
       bullets: ["React 18 with server components", "Next.js App Router + SSR/SSG", "TypeScript throughout", "Accessibility (WCAG 2.1 AA)"],
-      image: "/case-study-saas.png",
+      image: "/hero-showcase.png",
       href: "/website-development-service",
     },
     {
@@ -101,7 +101,7 @@ const webDevData: HubData = {
       headline: "Scalable backend APIs built for real-world load.",
       description: "Node.js REST and GraphQL APIs with proper authentication (JWT, OAuth), rate limiting, input validation, and error handling. Built to handle production traffic from day one — not refactored after the first outage.",
       bullets: ["REST and GraphQL API design", "JWT / OAuth 2.0 authentication", "Rate limiting and input validation", "Comprehensive API documentation"],
-      image: "/case-study-saas.png",
+      image: "/work-1.png",
       href: "/website-development-service",
     },
     {
@@ -109,7 +109,7 @@ const webDevData: HubData = {
       headline: "Data architecture that supports your business logic.",
       description: "PostgreSQL database design with proper normalisation, indexing strategy, and query optimisation. Schema design that reflects your actual business domain — not a generic template adapted poorly to your needs.",
       bullets: ["PostgreSQL schema design", "Migration-based version control", "Query performance optimisation", "Backup and disaster recovery"],
-      image: "/case-study-saas.png",
+      image: "/studio.png",
       href: "/website-development-service",
     },
     {
@@ -125,7 +125,7 @@ const webDevData: HubData = {
       headline: "Cloud infrastructure built for reliability and scale.",
       description: "AWS, GCP, and Vercel infrastructure setup with proper CI/CD pipelines, monitoring, logging, and alerting. Containerised with Docker, deployed with GitHub Actions. 99.9% uptime SLAs on the infrastructure we manage.",
       bullets: ["AWS / GCP / Vercel setup", "Docker containerisation", "CI/CD with GitHub Actions", "Monitoring and alerting (Datadog/Sentry)"],
-      image: "/case-study-saas.png",
+      image: "/work-3.png",
       href: "/website-development-service",
     },
   ],
@@ -149,9 +149,9 @@ const webDevData: HubData = {
     { platform: "Sentry / Datadog", stat: "Observability", description: "Sentry for frontend and backend error tracking, Datadog for APM and infrastructure monitoring. You have full visibility into your application's health from day one." },
   ],
   caseStudies: [
-    { image: "/case-study-saas.png", client: "Nova FinTech", industry: "SaaS", blurb: "Full-stack Next.js application with Node.js API and PostgreSQL. Customer portal built for 10,000+ concurrent users with 99.9% uptime over 18 months.", metrics: [{ value: "99.9%", label: "Uptime" }, { value: "< 800ms", label: "API response time" }] },
-    { image: "/case-study-home.png", client: "Hudson Outdoor", industry: "Home Services", blurb: "Custom booking and quote management web application. Replaced a manual quoting process — estimate time dropped from 3 days to 15 minutes.", metrics: [{ value: "15 min", label: "Quote time (was 3 days)" }, { value: "+45%", label: "Quote acceptance" }] },
-    { image: "/case-study-realestate.png", client: "Prime Realty Group", industry: "Real Estate", blurb: "Custom property listing platform built with Next.js and a PostgreSQL database. 2,400+ property pages with dynamic rendering and real-time availability.", metrics: [{ value: "2,400+", label: "Property pages" }, { value: "+88%", label: "Organic traffic" }] },
+    { image: "/case-study-home.png", client: "Nova FinTech", industry: "SaaS", blurb: "Full-stack Next.js application with Node.js API and PostgreSQL. Customer portal built for 10,000+ concurrent users with 99.9% uptime over 18 months.", metrics: [{ value: "99.9%", label: "Uptime" }, { value: "< 800ms", label: "API response time" }] },
+    { image: "/case-study-realestate.png", client: "Hudson Outdoor", industry: "Home Services", blurb: "Custom booking and quote management web application. Replaced a manual quoting process — estimate time dropped from 3 days to 15 minutes.", metrics: [{ value: "15 min", label: "Quote time (was 3 days)" }, { value: "+45%", label: "Quote acceptance" }] },
+    { image: "/hero-abstract.png", client: "Prime Realty Group", industry: "Real Estate", blurb: "Custom property listing platform built with Next.js and a PostgreSQL database. 2,400+ property pages with dynamic rendering and real-time availability.", metrics: [{ value: "2,400+", label: "Property pages" }, { value: "+88%", label: "Organic traffic" }] },
   ],
   process: [
     { label: "Discovery", headline: "Understand your requirements before designing a solution.", description: "We run a structured discovery session to map your exact requirements — user flows, data models, integration points, and performance expectations. The output is a technical specification document that becomes the contract for the build." },
@@ -169,9 +169,9 @@ const webDevData: HubData = {
     { question: "Can you take over an existing codebase?", answer: "Yes. We run a codebase audit first — architecture review, dependency audit, test coverage, and security scan — and give you an honest assessment of what it will take to bring the codebase to a maintainable state. We've inherited everything from legacy PHP to abandoned React projects." },
   ],
   hubInsights: [
-    { image: "/case-study-saas.png", category: "Web Development", readTime: "8 min read", title: "Why We Use Next.js for Every New Web Project in 2026", excerpt: "The App Router, server components, and built-in optimisation make Next.js the clear choice for web development in 2026. We lay out the architecture decisions, performance benefits, and the scenarios where you might still choose something else.", author: "James Okafor", authorRole: "Lead Developer", href: "/blog/nextjs-2026" },
-    { image: "/case-study-home.png", category: "Architecture", readTime: "6 min read", title: "The Architecture Decision Checklist We Run Before Every Build", excerpt: "Stack selection, data modelling, authentication design, and infrastructure choices — made well, they compound in your favour for years. Made poorly, they create compounding technical debt. Here is the complete decision framework we work through at the start of every project.", author: "Marcus Chen", authorRole: "Engineering Lead", href: "/blog/architecture-decision-checklist" },
-    { image: "/case-study-realestate.png", category: "Performance", readTime: "5 min read", title: "How to Achieve Sub-Second TTFB on Every Page of Your Web Application", excerpt: "Time to First Byte is the foundational performance metric that determines how fast your site feels — and how well it ranks. We walk through the complete optimisation stack: server response time, edge caching, CDN configuration, and database query optimisation.", author: "Priya Anand", authorRole: "Performance Engineer", href: "/blog/sub-second-ttfb" },
+    { image: "/work-2.png", category: "Web Development", readTime: "8 min read", title: "Why We Use Next.js for Every New Web Project in 2026", excerpt: "The App Router, server components, and built-in optimisation make Next.js the clear choice for web development in 2026. We lay out the architecture decisions, performance benefits, and the scenarios where you might still choose something else.", author: "James Okafor", authorRole: "Lead Developer", href: "/blog/nextjs-2026" },
+    { image: "/case-study-local.png", category: "Architecture", readTime: "6 min read", title: "The Architecture Decision Checklist We Run Before Every Build", excerpt: "Stack selection, data modelling, authentication design, and infrastructure choices — made well, they compound in your favour for years. Made poorly, they create compounding technical debt. Here is the complete decision framework we work through at the start of every project.", author: "Marcus Chen", authorRole: "Engineering Lead", href: "/blog/architecture-decision-checklist" },
+    { image: "/industry-legal.png", category: "Performance", readTime: "5 min read", title: "How to Achieve Sub-Second TTFB on Every Page of Your Web Application", excerpt: "Time to First Byte is the foundational performance metric that determines how fast your site feels — and how well it ranks. We walk through the complete optimisation stack: server response time, edge caching, CDN configuration, and database query optimisation.", author: "Priya Anand", authorRole: "Performance Engineer", href: "/blog/sub-second-ttfb" },
   ],
 };
 

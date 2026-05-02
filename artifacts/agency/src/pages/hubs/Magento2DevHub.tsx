@@ -93,7 +93,7 @@ const magento2DevData: HubData = {
       headline: "Bespoke Magento 2 modules built to coding standards.",
       description: "Custom Magento 2 extension development for business requirements that off-the-shelf modules can't meet. All modules use dependency injection, service contracts, and proper plugin/observer architecture. Unit tested, documented, and upgrade-safe.",
       bullets: ["Dependency injection architecture", "Service contract interfaces", "PHPUnit test coverage", "Full technical documentation"],
-      image: "/case-study-saas.png",
+      image: "/industry-ecommerce.png",
       href: "/magento-2-development",
     },
     {
@@ -101,7 +101,7 @@ const magento2DevData: HubData = {
       headline: "Queue-based ERP integration that won't break under load.",
       description: "Bidirectional ERP integration (SAP, NetSuite, Dynamics) via Magento's message queue framework. Asynchronous processing, error handling, retry logic, and monitoring dashboards. Integration that handles production load without synchronous API calls in the request cycle.",
       bullets: ["RabbitMQ / AMQP message queues", "Bidirectional data sync", "Error handling and retry logic", "Integration monitoring dashboard"],
-      image: "/case-study-saas.png",
+      image: "/case-study-ecommerce.png",
       href: "/magento-2-development",
     },
     {
@@ -109,7 +109,7 @@ const magento2DevData: HubData = {
       headline: "Custom Magento 2 checkout steps and payment flows.",
       description: "Custom checkout step development using Magento's KnockoutJS checkout architecture — adding steps, modifying payment flows, implementing custom validation, and integrating third-party payment providers. All built as proper checkout modules.",
       bullets: ["Custom checkout step modules", "Payment gateway integration", "Custom validation logic", "Checkout UX improvements"],
-      image: "/case-study-saas.png",
+      image: "/studio.png",
       href: "/magento-2-development",
     },
     {
@@ -117,7 +117,7 @@ const magento2DevData: HubData = {
       headline: "Custom Magento 2 APIs using service contracts.",
       description: "Custom REST and GraphQL API development extending Magento's web API framework. Service contract definitions, API resource models, and authentication integration. Mobile app backends, headless frontends, and B2B integration endpoints.",
       bullets: ["Custom REST API endpoints", "GraphQL schema extensions", "Service contract definitions", "OAuth and token authentication"],
-      image: "/case-study-saas.png",
+      image: "/case-study-homeservices.png",
       href: "/magento-2-development",
     },
     {
@@ -125,7 +125,7 @@ const magento2DevData: HubData = {
       headline: "Magento 2 B2B Commerce module implementation and customisation.",
       description: "Adobe Commerce B2B module implementation and custom extension — company account management, shared catalogs, negotiated pricing, purchase order workflows, and quick order forms. Extended with custom modules where the standard feature set doesn't cover your business requirements.",
       bullets: ["B2B module implementation", "Custom company account features", "Negotiated pricing extension", "PO workflow customisation"],
-      image: "/case-study-saas.png",
+      image: "/work-2.png",
       href: "/magento-2-development",
     },
   ],
@@ -149,9 +149,9 @@ const magento2DevData: HubData = {
     { platform: "Git + GitHub Actions", stat: "CI/CD", description: "Full Git version control with GitHub Actions CI — static analysis, unit tests, and code style enforcement running on every pull request. No manual deployments." },
   ],
   caseStudies: [
-    { image: "/case-study-saas.png", client: "Industrial Supply Co.", industry: "B2B Commerce", blurb: "Custom Magento 2 B2B module with SAP integration via RabbitMQ message queue. Zero core file modifications across 12 custom modules. 18 months with zero upgrade-related breakage.", metrics: [{ value: "Zero", label: "Core file edits" }, { value: "Zero", label: "Upgrade-related breakage" }] },
+    { image: "/case-study-ecommerce.png", client: "Industrial Supply Co.", industry: "B2B Commerce", blurb: "Custom Magento 2 B2B module with SAP integration via RabbitMQ message queue. Zero core file modifications across 12 custom modules. 18 months with zero upgrade-related breakage.", metrics: [{ value: "Zero", label: "Core file edits" }, { value: "Zero", label: "Upgrade-related breakage" }] },
     { image: "/industry-ecommerce.png", client: "Coastal Collective", industry: "eCommerce", blurb: "Custom checkout module with loyalty point redemption step and custom shipping logic. Built as proper Magento 2 modules — survived two major version upgrades without modification.", metrics: [{ value: "2", label: "Major upgrades survived" }, { value: "+18%", label: "Checkout completion rate" }] },
-    { image: "/case-study-home.png", client: "National Supply Group", industry: "Wholesale", blurb: "Full codebase audit of inherited Magento 2 store. Identified 8 core file modifications causing upgrade failures. Rebuilt all 8 as proper plugins/observers without core edits.", metrics: [{ value: "8", label: "Core edits replaced with proper modules" }, { value: "-70%", label: "Maintenance cost" }] },
+    { image: "/case-study-homeservices.png", client: "National Supply Group", industry: "Wholesale", blurb: "Full codebase audit of inherited Magento 2 store. Identified 8 core file modifications causing upgrade failures. Rebuilt all 8 as proper plugins/observers without core edits.", metrics: [{ value: "8", label: "Core edits replaced with proper modules" }, { value: "-70%", label: "Maintenance cost" }] },
   ],
   process: [
     { label: "Spec", headline: "Functional and technical specification before writing code.", description: "Requirements analysis, data model design, integration point specification, and API design. A technical specification document that all development teams work from — reviewed and approved before development begins." },
@@ -169,9 +169,9 @@ const magento2DevData: HubData = {
     { question: "Do you build for Magento Open Source and Adobe Commerce?", answer: "Yes. Our development approach is identical on both editions — the difference is that Adobe Commerce provides additional modules (B2B Commerce, Product Recommendations, Page Builder) that we implement and extend. Custom module development to Magento coding standards works on both editions." },
   ],
   hubInsights: [
-    { image: "/case-study-saas.png", category: "Magento 2 Architecture", readTime: "8 min read", title: "Magento 2 Module Architecture: The Definitive Guide to Building Upgrade-Safe Extensions", excerpt: "Most Magento 2 modules are built incorrectly — core file edits, direct ObjectManager calls, and missing service contracts that make them brittle and expensive to maintain. We cover the complete module architecture that Magento designed and that makes your extensions survive every upgrade without breakage.", author: "James Okafor", authorRole: "Magento Lead", href: "/blog/magento-2-module-architecture" },
+    { image: "/studio.png", category: "Magento 2 Architecture", readTime: "8 min read", title: "Magento 2 Module Architecture: The Definitive Guide to Building Upgrade-Safe Extensions", excerpt: "Most Magento 2 modules are built incorrectly — core file edits, direct ObjectManager calls, and missing service contracts that make them brittle and expensive to maintain. We cover the complete module architecture that Magento designed and that makes your extensions survive every upgrade without breakage.", author: "James Okafor", authorRole: "Magento Lead", href: "/blog/magento-2-module-architecture" },
     { image: "/industry-ecommerce.png", category: "Magento 2 Testing", readTime: "6 min read", title: "How to Write PHPUnit Tests for Magento 2 Custom Modules (With Real Examples)", excerpt: "Unit testing custom Magento 2 modules requires understanding the DI container, how to mock dependencies, and which test types (unit, integration, functional) apply to which code. We share the testing patterns we use on every project with working code examples.", author: "Marcus Chen", authorRole: "Senior Developer", href: "/blog/magento-2-phpunit-testing" },
-    { image: "/case-study-home.png", category: "ERP Integration", readTime: "7 min read", title: "Building a Reliable Magento 2 to SAP Integration with RabbitMQ", excerpt: "Direct synchronous SAP API calls in the Magento request cycle are how integrations fail under load. Queue-based asynchronous architecture with RabbitMQ is how they stay reliable. We walk through the complete integration architecture we use for Magento 2 ERP integrations.", author: "Priya Anand", authorRole: "Integration Architect", href: "/blog/magento-2-sap-rabbitmq" },
+    { image: "/work-2.png", category: "ERP Integration", readTime: "7 min read", title: "Building a Reliable Magento 2 to SAP Integration with RabbitMQ", excerpt: "Direct synchronous SAP API calls in the Magento request cycle are how integrations fail under load. Queue-based asynchronous architecture with RabbitMQ is how they stay reliable. We walk through the complete integration architecture we use for Magento 2 ERP integrations.", author: "Priya Anand", authorRole: "Integration Architect", href: "/blog/magento-2-sap-rabbitmq" },
   ],
 };
 

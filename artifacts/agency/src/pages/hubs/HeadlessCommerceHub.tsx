@@ -95,7 +95,7 @@ const headlessData: HubData = {
       headline: "Next.js storefront connected to Shopify via Storefront API.",
       description: "Custom Next.js storefront built with React and connected to Shopify's Storefront API. All Shopify commerce capabilities — products, cart, checkout, accounts — delivered through a completely custom frontend with no Liquid or theme constraints.",
       bullets: ["Next.js App Router + React", "Shopify Storefront API", "Shopify Hydrogen/Oxygen option", "Full checkout customisation"],
-      image: "/industry-ecommerce.png",
+      image: "/hero-abstract.png",
       href: "/headless-commerce-service",
     },
     {
@@ -103,7 +103,7 @@ const headlessData: HubData = {
       headline: "Progressive Web App storefront for Magento 2.",
       description: "PWA Studio or custom React storefront connected to Magento 2 via GraphQL API. The performance and UX of a modern web application on top of Magento's powerful commerce infrastructure.",
       bullets: ["Magento 2 GraphQL API", "PWA Studio or custom React", "App-like offline experience", "Full Magento feature access"],
-      image: "/case-study-saas.png",
+      image: "/hero-showcase.png",
       href: "/headless-commerce-service",
     },
     {
@@ -111,7 +111,7 @@ const headlessData: HubData = {
       headline: "Best-of-breed architecture with multiple specialised systems.",
       description: "True composable commerce architecture: Shopify or Commercetools for commerce, Contentful for content, Algolia for search, Klaviyo for email, and a custom Next.js frontend connecting them all. Best tool for each job — fully integrated.",
       bullets: ["Commerce + CMS + Search + Email", "Next.js composable frontend", "Algolia search integration", "Unified data layer design"],
-      image: "/case-study-saas.png",
+      image: "/work-2.png",
       href: "/headless-commerce-service",
     },
     {
@@ -127,7 +127,7 @@ const headlessData: HubData = {
       headline: "Migrate your existing store to a headless architecture.",
       description: "Migrate from a traditional Shopify theme or Magento monolith to a headless architecture — with phased rollout, traffic migration strategy, and SEO preservation. We handle the transition so your existing traffic and rankings are protected throughout.",
       bullets: ["Phased migration strategy", "SEO preservation", "A/B testing new vs. old frontend", "Zero ranking loss approach"],
-      image: "/case-study-realestate.png",
+      image: "/industry-ecommerce.png",
       href: "/headless-commerce-service",
     },
   ],
@@ -151,9 +151,9 @@ const headlessData: HubData = {
     { platform: "Klaviyo / Segment", stat: "Data layer", description: "Customer event data flowing from the frontend to Klaviyo for lifecycle marketing and Segment for a unified customer data platform across your entire tech stack." },
   ],
   caseStudies: [
-    { image: "/industry-ecommerce.png", client: "Coastal Collective", industry: "eCommerce", blurb: "Shopify theme migrated to headless Next.js. LCP improved from 2.8s to 420ms. Organic traffic up 68% from Core Web Vitals improvement in first 4 months.", metrics: [{ value: "420ms", label: "LCP (was 2.8s)" }, { value: "+68%", label: "Organic traffic" }] },
-    { image: "/case-study-saas.png", client: "LuxeBrand", industry: "Luxury Retail", blurb: "Custom Next.js storefront with Contentful CMS and Shopify commerce. Editorial and product pages unified in one immersive experience. CVR improved 44%.", metrics: [{ value: "+44%", label: "Conversion rate" }, { value: "100", label: "Lighthouse score" }] },
-    { image: "/case-study-home.png", client: "Industrial Supply Co.", industry: "B2B Commerce", blurb: "Magento 2 + PWA Studio headless build for a 150k-SKU B2B catalogue. Full-text search via Algolia with faceted filtering across 200+ attributes.", metrics: [{ value: "150k", label: "SKUs with sub-50ms search" }, { value: "+85%", label: "Search-to-purchase rate" }] },
+    { image: "/hero-abstract.png", client: "Coastal Collective", industry: "eCommerce", blurb: "Shopify theme migrated to headless Next.js. LCP improved from 2.8s to 420ms. Organic traffic up 68% from Core Web Vitals improvement in first 4 months.", metrics: [{ value: "420ms", label: "LCP (was 2.8s)" }, { value: "+68%", label: "Organic traffic" }] },
+    { image: "/case-study-ecommerce.png", client: "LuxeBrand", industry: "Luxury Retail", blurb: "Custom Next.js storefront with Contentful CMS and Shopify commerce. Editorial and product pages unified in one immersive experience. CVR improved 44%.", metrics: [{ value: "+44%", label: "Conversion rate" }, { value: "100", label: "Lighthouse score" }] },
+    { image: "/hero-showcase.png", client: "Industrial Supply Co.", industry: "B2B Commerce", blurb: "Magento 2 + PWA Studio headless build for a 150k-SKU B2B catalogue. Full-text search via Algolia with faceted filtering across 200+ attributes.", metrics: [{ value: "150k", label: "SKUs with sub-50ms search" }, { value: "+85%", label: "Search-to-purchase rate" }] },
   ],
   process: [
     { label: "Architecture", headline: "Design the composable architecture before any development.", description: "Stack selection (frontend framework, CMS, search, commerce platform), API integration design, data flow mapping, and infrastructure planning. This phase determines your total cost of ownership for years." },
@@ -171,9 +171,9 @@ const headlessData: HubData = {
     { question: "Can you migrate our existing store to headless in phases?", answer: "Yes. We recommend a phased approach for most migrations — start with the highest-traffic pages (homepage, collections, product pages) and migrate progressively. We use traffic splitting to A/B test the new frontend against the existing one before full cutover." },
   ],
   hubInsights: [
-    { image: "/industry-ecommerce.png", category: "Headless Commerce", readTime: "9 min read", title: "Headless Commerce in 2026: When It's Worth the Investment and When It Isn't", excerpt: "Headless commerce has significant advantages — performance, design freedom, composability. It also has real costs — implementation complexity, maintenance overhead, and a steeper technical learning curve. We've built 20+ headless storefronts and have a clear framework for when the investment pays off and when a well-optimised traditional build is the smarter choice.", author: "Marcus Chen", authorRole: "Commerce Architect", href: "/blog/headless-commerce-when-worth-it" },
-    { image: "/case-study-saas.png", category: "Next.js Performance", readTime: "7 min read", title: "How to Achieve Sub-500ms LCP on a Next.js Commerce Storefront", excerpt: "Sub-500ms LCP requires the right combination of static generation, edge CDN delivery, image optimisation, and font loading strategy. We walk through the complete optimisation stack we use on every headless commerce build, with before/after Lighthouse scores from real projects.", author: "James Okafor", authorRole: "Performance Engineer", href: "/blog/nextjs-sub-500ms-lcp" },
-    { image: "/case-study-home.png", category: "Composable Commerce", readTime: "6 min read", title: "Algolia + Shopify Headless: Building Search That Converts", excerpt: "Platform-native Shopify search handles basic keyword matching. Algolia on a headless storefront delivers faceted search, typo tolerance, personalised ranking, and A/B testing in under 50ms. We walk through the integration architecture and the conversion impact we've measured on stores that made the switch.", author: "Priya Anand", authorRole: "Frontend Lead", href: "/blog/algolia-shopify-headless-search" },
+    { image: "/case-study-saas.png", category: "Headless Commerce", readTime: "9 min read", title: "Headless Commerce in 2026: When It's Worth the Investment and When It Isn't", excerpt: "Headless commerce has significant advantages — performance, design freedom, composability. It also has real costs — implementation complexity, maintenance overhead, and a steeper technical learning curve. We've built 20+ headless storefronts and have a clear framework for when the investment pays off and when a well-optimised traditional build is the smarter choice.", author: "Marcus Chen", authorRole: "Commerce Architect", href: "/blog/headless-commerce-when-worth-it" },
+    { image: "/work-2.png", category: "Next.js Performance", readTime: "7 min read", title: "How to Achieve Sub-500ms LCP on a Next.js Commerce Storefront", excerpt: "Sub-500ms LCP requires the right combination of static generation, edge CDN delivery, image optimisation, and font loading strategy. We walk through the complete optimisation stack we use on every headless commerce build, with before/after Lighthouse scores from real projects.", author: "James Okafor", authorRole: "Performance Engineer", href: "/blog/nextjs-sub-500ms-lcp" },
+    { image: "/industry-ecommerce.png", category: "Composable Commerce", readTime: "6 min read", title: "Algolia + Shopify Headless: Building Search That Converts", excerpt: "Platform-native Shopify search handles basic keyword matching. Algolia on a headless storefront delivers faceted search, typo tolerance, personalised ranking, and A/B testing in under 50ms. We walk through the integration architecture and the conversion impact we've measured on stores that made the switch.", author: "Priya Anand", authorRole: "Frontend Lead", href: "/blog/algolia-shopify-headless-search" },
   ],
 };
 

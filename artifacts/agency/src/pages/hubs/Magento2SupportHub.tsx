@@ -94,7 +94,7 @@ const m2SupportData: HubData = {
       headline: "Magento 2 security patches applied within 5 business days of release.",
       description: "Monthly security patch management — patches applied to a staging environment, tested for 48 hours, then deployed to production. Full regression testing before every production deployment. Your store is always on the current security patch level.",
       bullets: ["< 5 business days from release", "Staging environment testing first", "Regression testing before production", "Patch deployment documentation"],
-      image: "/case-study-saas.png",
+      image: "/case-study-local.png",
       href: "/magento-2-support",
     },
     {
@@ -102,7 +102,7 @@ const m2SupportData: HubData = {
       headline: "Coordinated module updates tested before production deployment.",
       description: "Monthly module update management: we review every available extension update, test compatibility in staging, resolve any conflicts, and deploy a coordinated update batch. No ad-hoc production changes — every update is planned and tested.",
       bullets: ["Monthly update review cycle", "Staging compatibility testing", "Conflict resolution", "Coordinated production deployment"],
-      image: "/case-study-saas.png",
+      image: "/studio.png",
       href: "/magento-2-support",
     },
     {
@@ -110,7 +110,7 @@ const m2SupportData: HubData = {
       headline: "Monthly performance benchmarking and proactive optimisation.",
       description: "Monthly performance baseline — Lighthouse scores by page template, Core Web Vitals, TTFB, and database query analysis. Performance regressions caught and resolved before they affect conversion rate. Proactive optimisation rather than reactive fire-fighting.",
       bullets: ["Monthly Lighthouse benchmarking", "TTFB and CWV monitoring", "Database slow query analysis", "Proactive optimisation recommendations"],
-      image: "/case-study-saas.png",
+      image: "/work-2.png",
       href: "/magento-2-support",
     },
     {
@@ -118,7 +118,7 @@ const m2SupportData: HubData = {
       headline: "Dedicated Magento developer support with < 4h response SLA.",
       description: "Developer support for bug fixes, small enhancement requests, third-party integration troubleshooting, and technical questions. A Magento-certified developer available to your team via a dedicated support channel — without the cost of a full-time hire.",
       bullets: ["< 4h critical response SLA", "Bug fix and enhancement requests", "Third-party integration support", "Technical consultation"],
-      image: "/case-study-saas.png",
+      image: "/case-study-ecommerce.png",
       href: "/magento-2-support",
     },
     {
@@ -126,7 +126,7 @@ const m2SupportData: HubData = {
       headline: "Server monitoring, backup management, and capacity planning.",
       description: "24/7 infrastructure monitoring — uptime alerts, CPU and memory monitoring, disk space management, and MySQL slow query log analysis. Monthly infrastructure health reports and proactive capacity planning before your store hits a limit.",
       bullets: ["24/7 uptime monitoring", "Server resource monitoring", "Automated daily backups", "Capacity planning and scaling"],
-      image: "/case-study-saas.png",
+      image: "/industry-local.png",
       href: "/magento-2-support",
     },
   ],
@@ -150,9 +150,9 @@ const m2SupportData: HubData = {
     { platform: "Blackfire.io", stat: "Performance profiling", description: "Blackfire.io profiling used during monthly performance reviews and when investigating performance regressions — identifying exact bottlenecks in PHP execution, database queries, and I/O operations." },
   ],
   caseStudies: [
-    { image: "/case-study-saas.png", client: "Industrial Supply Co.", industry: "B2B Commerce", blurb: "Inherited a Magento 2 store with 3 unpatched critical security vulnerabilities and a malware infection. Clean-up, emergency patching, and enrolled in monthly maintenance. Zero incidents in 18 months since.", metrics: [{ value: "Zero", label: "Security incidents since" }, { value: "< 24h", label: "Emergency response time" }] },
-    { image: "/industry-ecommerce.png", client: "Coastal Collective", industry: "eCommerce", blurb: "Magento 2 store maintained for 36 months on our managed plan. 100% patch compliance throughout, 99.9% uptime, and performance improved 15% over 36 months through proactive optimisation.", metrics: [{ value: "100%", label: "Patch compliance" }, { value: "99.9%", label: "Uptime over 36 months" }] },
-    { image: "/case-study-home.png", client: "BuildCo Supply", industry: "Wholesale", blurb: "Wholesale Magento 2 store on maintenance plan. Monthly module updates and performance monitoring caught and resolved 3 performance regressions before they affected checkout conversion.", metrics: [{ value: "3", label: "Regressions caught pre-impact" }, { value: "+12%", label: "Performance improvement Y1" }] },
+    { image: "/case-study-ecommerce.png", client: "Industrial Supply Co.", industry: "B2B Commerce", blurb: "Inherited a Magento 2 store with 3 unpatched critical security vulnerabilities and a malware infection. Clean-up, emergency patching, and enrolled in monthly maintenance. Zero incidents in 18 months since.", metrics: [{ value: "Zero", label: "Security incidents since" }, { value: "< 24h", label: "Emergency response time" }] },
+    { image: "/case-study-local.png", client: "Coastal Collective", industry: "eCommerce", blurb: "Magento 2 store maintained for 36 months on our managed plan. 100% patch compliance throughout, 99.9% uptime, and performance improved 15% over 36 months through proactive optimisation.", metrics: [{ value: "100%", label: "Patch compliance" }, { value: "99.9%", label: "Uptime over 36 months" }] },
+    { image: "/studio.png", client: "BuildCo Supply", industry: "Wholesale", blurb: "Wholesale Magento 2 store on maintenance plan. Monthly module updates and performance monitoring caught and resolved 3 performance regressions before they affected checkout conversion.", metrics: [{ value: "3", label: "Regressions caught pre-impact" }, { value: "+12%", label: "Performance improvement Y1" }] },
   ],
   process: [
     { label: "Onboard", headline: "Audit and onboard your Magento 2 store to the maintenance programme.", description: "Full technical audit — security patch status, module versions, performance baseline, and infrastructure review. We document the current state of every system before assuming maintenance responsibility." },
@@ -170,9 +170,9 @@ const m2SupportData: HubData = {
     { question: "Can you take over maintenance from another agency?", answer: "Yes. We run an onboarding audit before assuming maintenance responsibility — documenting the current patch status, module versions, known issues, and any technical debt. The audit gives us a complete picture of what we're inheriting and lets us quote accurately for any stabilisation work needed before starting regular maintenance." },
   ],
   hubInsights: [
-    { image: "/case-study-saas.png", category: "Magento Security", readTime: "6 min read", title: "The Magento 2 Security Patch Calendar: What Every Store Owner Needs to Know", excerpt: "Adobe releases Magento 2 security patches quarterly, with emergency patches for critical vulnerabilities as needed. Most store owners don't know their patch status — and many are running stores with known critical vulnerabilities. We explain the patching process, the risks of delay, and how managed maintenance works.", author: "Marcus Chen", authorRole: "Security Lead", href: "/blog/magento-2-security-patch-calendar" },
-    { image: "/industry-ecommerce.png", category: "Magento Maintenance", readTime: "5 min read", title: "Why Magento 2 Module Updates Need a Staging Environment (And Most Stores Don't Have One)", excerpt: "Applying module updates directly to a production Magento 2 store is how checkout ends up broken on a Monday morning. A staging environment that mirrors production is the minimum required infrastructure for safe Magento maintenance. Here is what a proper staging setup looks like and why it matters.", author: "James Okafor", authorRole: "Platform Lead", href: "/blog/magento-2-staging-environment" },
-    { image: "/case-study-home.png", category: "Performance", readTime: "7 min read", title: "How to Keep Your Magento 2 Store Performant 24 Months After Launch", excerpt: "Magento 2 stores tend to degrade in performance over time — module accumulation, database growth, and cache configuration changes erode the performance achieved at launch. We share the monthly maintenance practices that keep our managed stores performing better at 24 months than they were at launch.", author: "Priya Anand", authorRole: "Performance Engineer", href: "/blog/magento-2-long-term-performance" },
+    { image: "/work-2.png", category: "Magento Security", readTime: "6 min read", title: "The Magento 2 Security Patch Calendar: What Every Store Owner Needs to Know", excerpt: "Adobe releases Magento 2 security patches quarterly, with emergency patches for critical vulnerabilities as needed. Most store owners don't know their patch status — and many are running stores with known critical vulnerabilities. We explain the patching process, the risks of delay, and how managed maintenance works.", author: "Marcus Chen", authorRole: "Security Lead", href: "/blog/magento-2-security-patch-calendar" },
+    { image: "/case-study-ecommerce.png", category: "Magento Maintenance", readTime: "5 min read", title: "Why Magento 2 Module Updates Need a Staging Environment (And Most Stores Don't Have One)", excerpt: "Applying module updates directly to a production Magento 2 store is how checkout ends up broken on a Monday morning. A staging environment that mirrors production is the minimum required infrastructure for safe Magento maintenance. Here is what a proper staging setup looks like and why it matters.", author: "James Okafor", authorRole: "Platform Lead", href: "/blog/magento-2-staging-environment" },
+    { image: "/case-study-local.png", category: "Performance", readTime: "7 min read", title: "How to Keep Your Magento 2 Store Performant 24 Months After Launch", excerpt: "Magento 2 stores tend to degrade in performance over time — module accumulation, database growth, and cache configuration changes erode the performance achieved at launch. We share the monthly maintenance practices that keep our managed stores performing better at 24 months than they were at launch.", author: "Priya Anand", authorRole: "Performance Engineer", href: "/blog/magento-2-long-term-performance" },
   ],
 };
 

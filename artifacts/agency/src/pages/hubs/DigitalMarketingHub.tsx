@@ -105,7 +105,7 @@ const digitalMarketingData: HubData = {
         "Local SEO and GBP management",
         "Link building and digital PR",
       ],
-      image: "/case-study-saas.png",
+      image: "/hero-abstract.png",
       href: "/seo-services",
     },
     {
@@ -119,7 +119,7 @@ const digitalMarketingData: HubData = {
         "Shopping and Dynamic Search campaigns",
         "Full attribution and ROAS reporting",
       ],
-      image: "/case-study-realestate.png",
+      image: "/case-study-limo.png",
       href: "/google-ads-management",
     },
     {
@@ -133,7 +133,7 @@ const digitalMarketingData: HubData = {
         "LinkedIn Ads for B2B pipeline",
         "Organic content strategy and posting",
       ],
-      image: "/case-study-home.png",
+      image: "/work-3.png",
       href: "/paid-social-service",
     },
     {
@@ -147,7 +147,7 @@ const digitalMarketingData: HubData = {
         "Segmented broadcast campaigns",
         "Deliverability monitoring and optimisation",
       ],
-      image: "/case-study-saas.png",
+      image: "/industry-fitness.png",
       href: "/email-marketing-service",
     },
     {
@@ -161,7 +161,7 @@ const digitalMarketingData: HubData = {
         "Blog management and editorial calendar",
         "Content distribution and amplification",
       ],
-      image: "/industry-local.png",
+      image: "/case-study-local.png",
       href: "/content-marketing-service",
     },
     {
@@ -175,7 +175,7 @@ const digitalMarketingData: HubData = {
         "Multi-channel attribution modelling",
         "Monthly performance analysis meetings",
       ],
-      image: "/case-study-saas.png",
+      image: "/hero-abstract.png",
       href: "/analytics-service",
     },
   ],
@@ -224,21 +224,21 @@ const digitalMarketingData: HubData = {
   ],
   caseStudies: [
     {
-      image: "/case-study-saas.png",
+      image: "/case-study-limo.png",
       client: "Nova FinTech",
       industry: "SaaS",
       blurb: "Full-funnel digital marketing across SEO, Google Ads, and LinkedIn. Unified strategy eliminated channel overlap and produced a 315% increase in qualified lead volume in 12 months.",
       metrics: [{ value: "+315%", label: "Lead volume" }, { value: "-42%", label: "CPA" }],
     },
     {
-      image: "/case-study-home.png",
+      image: "/work-3.png",
       client: "Hudson Outdoor",
       industry: "Home Services",
       blurb: "Multi-channel strategy: Local SEO, Google Ads, Meta Ads, and Email Marketing under one strategy. Total attributed revenue reached $2.4M in the first full year of engagement.",
       metrics: [{ value: "$2.4M", label: "Attributed revenue" }, { value: "+18%", label: "Conv. rate" }],
     },
     {
-      image: "/industry-dental.png",
+      image: "/hero-abstract.png",
       client: "Apex Dental Group",
       industry: "Dental",
       blurb: "Six-location dental group dominating map pack across 1,100+ city-service combinations. Local SEO, Google Ads, and AI chatbot working as a unified acquisition system.",
@@ -301,7 +301,7 @@ const digitalMarketingData: HubData = {
   ],
   hubInsights: [
     {
-      image: "/case-study-saas.png",
+      image: "/case-study-limo.png",
       category: "Digital Strategy",
       readTime: "7 min read",
       title: "Why Multi-Agency Digital Marketing Costs You 30% of Your Budget",
@@ -311,7 +311,7 @@ const digitalMarketingData: HubData = {
       href: "/blog/multi-agency-cost",
     },
     {
-      image: "/case-study-realestate.png",
+      image: "/work-3.png",
       category: "Google Ads",
       readTime: "5 min read",
       title: "The Google Ads Audit Checklist We Use on Every New Account",
@@ -321,7 +321,7 @@ const digitalMarketingData: HubData = {
       href: "/blog/google-ads-audit-checklist",
     },
     {
-      image: "/industry-dental.png",
+      image: "/hero-abstract.png",
       category: "Attribution",
       readTime: "6 min read",
       title: "GA4 Attribution in 2026: How to Actually Know What's Driving Revenue",

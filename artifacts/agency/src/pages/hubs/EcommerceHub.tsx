@@ -107,7 +107,7 @@ const ecommerceData: HubData = {
         "Collection and filtering UX design",
         "Mobile-first, Core Web Vitals optimised",
       ],
-      image: "/industry-ecommerce.png",
+      image: "/case-study-ecommerce.png",
       href: "/ecommerce-development",
     },
     {
@@ -121,7 +121,7 @@ const ecommerceData: HubData = {
         "Headless commerce development",
         "Third-party app and API integrations",
       ],
-      image: "/case-study-saas.png",
+      image: "/industry-ecommerce.png",
       href: "/ecommerce-development",
     },
     {
@@ -135,7 +135,7 @@ const ecommerceData: HubData = {
         "Cart and checkout abandonment reduction",
         "A/B and multivariate testing programme",
       ],
-      image: "/case-study-home.png",
+      image: "/case-study-homeservices.png",
       href: "/cro-service",
     },
     {
@@ -149,7 +149,7 @@ const ecommerceData: HubData = {
         "Loyalty and referral programme setup",
         "Review platform integrations (Yotpo, Okendo)",
       ],
-      image: "/case-study-saas.png",
+      image: "/work-1.png",
       href: "/ecommerce-development",
     },
     {
@@ -163,7 +163,7 @@ const ecommerceData: HubData = {
         "Post-migration crawl monitoring for 30 days",
         "Zero downtime deployment strategy",
       ],
-      image: "/case-study-realestate.png",
+      image: "/hero-abstract.png",
       href: "/ecommerce-development",
     },
     {
@@ -177,7 +177,7 @@ const ecommerceData: HubData = {
         "Abandoned cart and browse recovery email",
         "Post-purchase and repeat buyer flows",
       ],
-      image: "/industry-ecommerce.png",
+      image: "/case-study-ecommerce.png",
       href: "/google-ads-management",
     },
   ],
@@ -233,14 +233,14 @@ const ecommerceData: HubData = {
       metrics: [{ value: "7.2x", label: "Q1 ROAS" }, { value: "+38%", label: "AOV" }],
     },
     {
-      image: "/case-study-home.png",
+      image: "/case-study-homeservices.png",
       client: "Hudson Outdoor",
       industry: "Home Goods",
       blurb: "Full eCommerce build on WooCommerce plus Google Shopping, Meta Ads, and lifecycle email as a unified growth system. Every channel designed around the purchase path we built.",
       metrics: [{ value: "$2.4M", label: "Attributed revenue" }, { value: "+18%", label: "Conv. rate" }],
     },
     {
-      image: "/case-study-saas.png",
+      image: "/case-study-ecommerce.png",
       client: "PureStack Labs",
       industry: "Health & Wellness",
       blurb: "WooCommerce to Shopify migration with full URL mapping and zero ranking loss. Post-migration CRO programme lifted conversion rate from 1.8% to 2.9% in the first 60 days.",
@@ -313,7 +313,7 @@ const ecommerceData: HubData = {
       href: "/blog/conversion-before-scaling",
     },
     {
-      image: "/case-study-home.png",
+      image: "/case-study-homeservices.png",
       category: "Shopify Development",
       readTime: "6 min read",
       title: "Why We Never Use Page Builders for Shopify Stores",
@@ -323,7 +323,7 @@ const ecommerceData: HubData = {
       href: "/blog/shopify-no-page-builders",
     },
     {
-      image: "/case-study-saas.png",
+      image: "/case-study-ecommerce.png",
       category: "Email Marketing",
       readTime: "5 min read",
       title: "The 6 Klaviyo Flows Every Shopify Store Needs From Day One",
