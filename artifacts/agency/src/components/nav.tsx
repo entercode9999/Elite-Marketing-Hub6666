@@ -7,7 +7,7 @@ const NAV_LINKS = [
   { label: "Local SEO", href: "/local-seo-service" },
   { label: "Google Ads", href: "/google-ads-management" },
   { label: "Web & AI", href: "/custom-web-design-service" },
-  { label: "Digital Marketing", href: "/seo-services" },
+  { label: "Digital Marketing", href: "/digital-marketing" },
 ];
 
 const MEGA_ITEMS = {

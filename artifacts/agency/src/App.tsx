@@ -11,6 +11,10 @@ import {
   torontoLocalSeoData,
   ottawaLocalSeoData,
 } from "@/pages/LocationServicePage";
+import WebDesignHub from "@/pages/hubs/WebDesignHub";
+import DigitalMarketingHub from "@/pages/hubs/DigitalMarketingHub";
+import AIHub from "@/pages/hubs/AIHub";
+import EcommerceHub from "@/pages/hubs/EcommerceHub";
 
 const queryClient = new QueryClient();
 
@@ -20,7 +24,13 @@ function Router() {
       {/* Homepage */}
       <Route path="/" component={Home} />
 
-      {/* Service pages */}
+      {/* Service hub pages (Kinex-style split hero) */}
+      <Route path="/custom-web-design-service" component={WebDesignHub} />
+      <Route path="/digital-marketing" component={DigitalMarketingHub} />
+      <Route path="/ai-chatbot-service" component={AIHub} />
+      <Route path="/ecommerce-development" component={EcommerceHub} />
+
+      {/* Service detail pages */}
       <Route path="/local-seo-service">{() => <ServicePage data={localSeoData} />}</Route>
       <Route path="/google-ads-management">{() => <ServicePage data={googleAdsData} />}</Route>
 
