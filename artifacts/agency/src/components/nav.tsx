@@ -40,7 +40,8 @@ const NAV_CATEGORIES: { label: string; items: NavItem[] }[] = [
   {
     label: "Digital Marketing",
     items: [
-      { label: "SEO", href: "/technical-seo-service" },
+      { label: "SEO Services", href: "/seo-services" },
+      { label: "Technical SEO", href: "/technical-seo-service" },
       { label: "AI SEO", href: "/ai-seo-service" },
       { label: "Local SEO Services", href: "/local-seo-service" },
       { label: "Pay Per Click (PPC)", href: "/google-ads-management" },

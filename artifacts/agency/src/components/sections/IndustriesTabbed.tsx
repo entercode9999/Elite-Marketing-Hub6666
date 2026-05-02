@@ -41,7 +41,7 @@ const INDUSTRIES = [
   {
     id: "home-services",
     name: "Home Services",
-    image: "/industry-dental.png",
+    image: "/case-study-homeservices.png",
     headline: "More service calls. Fewer slow weeks.",
     description:
       "HVAC, plumbing, electrical, roofing, landscaping, pest control. High-intent searches with excellent unit economics. Our most active local SEO vertical — we know every citation directory, every map pack variable, every seasonal adjustment.",
@@ -58,7 +58,7 @@ const INDUSTRIES = [
   {
     id: "real-estate",
     name: "Real Estate",
-    image: "/case-study-realestate.png",
+    image: "/industry-realestate.png",
     headline: "Listings, leads, and seller appointments — predictably.",
     description:
       "Boutique brokerages, independent agents, property managers. Neighbourhood-specific local SEO and paid campaigns that deliver qualified buyer and seller leads — not general traffic.",
@@ -92,7 +92,7 @@ const INDUSTRIES = [
   {
     id: "auto",
     name: "Auto & Trades",
-    image: "/case-study-home.png",
+    image: "/case-study-limo.png",
     headline: "Map pack visibility in your most competitive local market.",
     description:
       "Dealerships, auto body shops, mechanics, electricians, plumbers. Competitive local markets where map pack position directly determines call volume. We've moved clients from outside the top 10 to #1 in under 14 weeks.",
@@ -126,7 +126,7 @@ const INDUSTRIES = [
   {
     id: "fitness",
     name: "Fitness & Wellness",
-    image: "/industry-dental.png",
+    image: "/industry-fitness.png",
     headline: "Trial memberships. Retention systems. Full studios.",
     description:
       "Gyms, fitness studios, yoga, physiotherapy, wellness clinics. Local SEO and paid campaigns tuned for membership trials and appointment bookings. Review generation that keeps your 4.9-star rating attracting new clients.",
@@ -143,7 +143,7 @@ const INDUSTRIES = [
   {
     id: "restaurants",
     name: "Restaurants & Hospitality",
-    image: "/industry-dental.png",
+    image: "/industry-restaurant.png",
     headline: "Full tables. Memorable brands. Loyal regulars.",
     description:
       "Independent restaurants, café chains, catering companies, hospitality groups. Local SEO for 'near me' searches, paid social for reservation drives, and reputation management to protect your most valuable asset — your reviews.",
@@ -194,7 +194,7 @@ const INDUSTRIES = [
   {
     id: "d2c",
     name: "D2C",
-    image: "/case-study-ecommerce.png",
+    image: "/industry-ecommerce.png",
     headline: "Own your customer relationship. Own your margins.",
     description:
       "Direct-to-consumer brands cutting out the middleman. CRO, email lifecycle, paid social, and SEO built specifically for DTC economics — LTV, repeat purchase rate, and subscription retention.",
@@ -211,7 +211,7 @@ const INDUSTRIES = [
   {
     id: "food-beverage",
     name: "Food & Beverage",
-    image: "/industry-dental.png",
+    image: "/industry-restaurant.png",
     headline: "Hungry customers find you first.",
     description:
       "Food brands, restaurants, beverage companies, grocery retailers. Local SEO, social commerce, and content strategies that put your product in front of hungry, intent-driven buyers.",
@@ -228,7 +228,7 @@ const INDUSTRIES = [
   {
     id: "education",
     name: "Education",
-    image: "/case-study-saas.png",
+    image: "/case-study-local.png",
     headline: "More enrolments. Built to last.",
     description:
       "Private schools, colleges, online courses, tutoring services, training providers. Enrolment-focused digital marketing — from first search to application submission.",
@@ -245,7 +245,7 @@ const INDUSTRIES = [
   {
     id: "transportation",
     name: "Transportation",
-    image: "/case-study-home.png",
+    image: "/case-study-limo.png",
     headline: "More bookings. Lower cost per dispatch.",
     description:
       "Logistics companies, freight brokers, limo and taxi services, trucking companies. Local SEO and paid search for high-intent transportation queries — driving more dispatches and B2B contracts.",
@@ -296,7 +296,7 @@ const INDUSTRIES = [
   {
     id: "fashion",
     name: "Fashion",
-    image: "/case-study-ecommerce.png",
+    image: "/industry-ecommerce.png",
     headline: "Build the brand. Drive the sale.",
     description:
       "Fashion labels, boutiques, accessories brands, sustainable fashion. Paid social, content strategy, and SEO that builds brand equity while driving consistent ecommerce revenue.",
@@ -313,7 +313,7 @@ const INDUSTRIES = [
   {
     id: "entertainment",
     name: "Entertainment",
-    image: "/case-study-saas.png",
+    image: "/case-study-limo.png",
     headline: "Sell out the show. Build the audience.",
     description:
       "Events, venues, entertainment brands, streaming content, talent agencies. Ticket sales, audience growth, and content-driven brand building across paid and organic channels.",
@@ -347,7 +347,7 @@ const INDUSTRIES = [
   {
     id: "small-business",
     name: "Small Business",
-    image: "/case-study-home.png",
+    image: "/case-study-local.png",
     headline: "Compete with bigger brands. Win in your market.",
     description:
       "Solopreneurs to 20-person teams. Lean, high-impact digital marketing that doesn't require an enterprise budget. Local SEO, targeted paid search, and content that punches above your weight class.",
@@ -364,7 +364,7 @@ const INDUSTRIES = [
   {
     id: "construction",
     name: "Construction",
-    image: "/case-study-home.png",
+    image: "/case-study-homeservices.png",
     headline: "More RFQs. Higher-value contracts.",
     description:
       "General contractors, specialty trades, construction firms, developers. Local SEO for project-intent searches, paid campaigns for high-value tender keywords, and authority content that wins RFQ shortlists.",
@@ -398,7 +398,7 @@ const INDUSTRIES = [
   {
     id: "sports-fitness",
     name: "Sports & Fitness",
-    image: "/industry-dental.png",
+    image: "/industry-fitness.png",
     headline: "More members. More athletes. Full facilities.",
     description:
       "Sports clubs, gyms, fitness studios, personal trainers, sports academies. Local SEO and paid campaigns tuned for membership trials, class bookings, and league registrations.",
@@ -421,7 +421,6 @@ export function IndustriesTabbed() {
   return (
     <section className="py-20 md:py-28 bg-[#f9f8f5] border-t border-[#e5e2d9]" id="industries">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
         <div className="mb-12">
           <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary block mb-3">By industry</span>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
@@ -434,9 +433,7 @@ export function IndustriesTabbed() {
           </div>
         </div>
 
-        {/* Main layout */}
         <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-0 border border-[#e5e2d9] rounded-2xl overflow-hidden shadow-sm">
-          {/* Left: industry list */}
           <div className="bg-white border-r border-[#e5e2d9] overflow-y-auto max-h-[600px]">
             {INDUSTRIES.map((ind, i) => (
               <button
@@ -459,7 +456,6 @@ export function IndustriesTabbed() {
             ))}
           </div>
 
-          {/* Right: content panel */}
           <div className="min-h-[500px]">
             <AnimatePresence mode="wait">
               <motion.div
@@ -470,12 +466,10 @@ export function IndustriesTabbed() {
                 transition={{ duration: 0.22 }}
                 className="h-full grid grid-cols-1 md:grid-cols-2"
               >
-                {/* Left: text + why choose */}
                 <div className="p-8 flex flex-col bg-white">
                   <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-2">{current.name}</span>
                   <h3 className="text-xl font-black text-[#0e0e0e] mb-3 leading-snug">{current.headline}</h3>
                   <p className="text-sm text-gray-500 leading-relaxed mb-5">{current.description}</p>
-
                   <div className="mb-6 flex-1">
                     <p className="text-[10px] font-bold uppercase tracking-wider text-gray-300 mb-3">
                       Why choose Outlier for {current.name}?
@@ -489,7 +483,6 @@ export function IndustriesTabbed() {
                       ))}
                     </div>
                   </div>
-
                   <Link
                     href={current.href}
                     className="inline-flex items-center gap-2 bg-[#0e0e0e] text-white font-bold py-3 px-5 rounded-xl text-sm group hover:bg-black/80 transition-colors w-fit"
@@ -498,8 +491,6 @@ export function IndustriesTabbed() {
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                 </div>
-
-                {/* Right: image */}
                 <div className="relative overflow-hidden min-h-[300px]">
                   <img
                     src={current.image}

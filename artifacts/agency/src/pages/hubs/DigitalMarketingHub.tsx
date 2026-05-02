@@ -180,7 +180,7 @@ const digitalMarketingData: HubData = {
     },
   ],
   features: [
-    { icon: <Search className="w-5 h-5 text-primary" />, title: "Technical & Local SEO", body: "From site architecture to local map pack domination. We fix the foundation before building traffic on top of it." },
+    { icon: <Search className="w-5 h-5 text-primary" />, title: "SEO", body: "Full-service search engine optimisation: on-page, off-page, local, and content strategy. We build organic visibility that compounds month over month." },
     { icon: <TrendingUp className="w-5 h-5 text-primary" />, title: "Google Ads (Search, PMAX, LSA)", body: "Flat-fee management by senior strategists. No percentage of spend. No junior hand-offs. Revenue-first campaign architecture." },
     { icon: <Share2 className="w-5 h-5 text-primary" />, title: "Paid Social (Meta, TikTok, LinkedIn)", body: "Audience-first paid social campaigns designed for leads and sales — not likes, impressions, or awareness metrics." },
     { icon: <Mail className="w-5 h-5 text-primary" />, title: "Email & Lifecycle Marketing", body: "Automated flows and broadcast campaigns that turn your list into a reliable revenue channel at the highest ROI in digital." },
@@ -224,21 +224,21 @@ const digitalMarketingData: HubData = {
   ],
   caseStudies: [
     {
-      image: "/case-study-limo.png",
+      image: "/case-study-saas.png",
       client: "Nova FinTech",
       industry: "SaaS",
       blurb: "Full-funnel digital marketing across SEO, Google Ads, and LinkedIn. Unified strategy eliminated channel overlap and produced a 315% increase in qualified lead volume in 12 months.",
       metrics: [{ value: "+315%", label: "Lead volume" }, { value: "-42%", label: "CPA" }],
     },
     {
-      image: "/work-3.png",
+      image: "/case-study-homeservices.png",
       client: "Hudson Outdoor",
       industry: "Home Services",
       blurb: "Multi-channel strategy: Local SEO, Google Ads, Meta Ads, and Email Marketing under one strategy. Total attributed revenue reached $2.4M in the first full year of engagement.",
       metrics: [{ value: "$2.4M", label: "Attributed revenue" }, { value: "+18%", label: "Conv. rate" }],
     },
     {
-      image: "/hero-abstract.png",
+      image: "/industry-dental.png",
       client: "Apex Dental Group",
       industry: "Dental",
       blurb: "Six-location dental group dominating map pack across 1,100+ city-service combinations. Local SEO, Google Ads, and AI chatbot working as a unified acquisition system.",
@@ -301,7 +301,7 @@ const digitalMarketingData: HubData = {
   ],
   hubInsights: [
     {
-      image: "/case-study-limo.png",
+      image: "/studio.png",
       category: "Digital Strategy",
       readTime: "7 min read",
       title: "Why Multi-Agency Digital Marketing Costs You 30% of Your Budget",

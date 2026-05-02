@@ -40,6 +40,7 @@ import HyvaEnterpriseHub from "@/pages/hubs/HyvaEnterpriseHub";
 /* ── Digital Marketing hubs ── */
 import TechnicalSeoHub from "@/pages/hubs/TechnicalSeoHub";
 import AISeoHub from "@/pages/hubs/AISeoHub";
+import SeoServicesHub from "@/pages/hubs/SeoServicesHub";
 import DigitalMarketingHub from "@/pages/hubs/DigitalMarketingHub";
 import ContentMarketingHub from "@/pages/hubs/ContentMarketingHub";
 import AIHub from "@/pages/hubs/AIHub";
@@ -160,6 +161,7 @@ function Router() {
       <Route path="/hyva-enterprise-solutions" component={HyvaEnterpriseHub} />
 
       {/* ── Digital Marketing ── */}
+      <Route path="/seo-services" component={SeoServicesHub} />
       <Route path="/technical-seo-service" component={TechnicalSeoHub} />
       <Route path="/ai-seo-service" component={AISeoHub} />
       <Route path="/digital-marketing" component={DigitalMarketingHub} />

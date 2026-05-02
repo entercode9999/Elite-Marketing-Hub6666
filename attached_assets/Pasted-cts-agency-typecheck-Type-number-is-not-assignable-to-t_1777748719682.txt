@@ -1,0 +1,13 @@
+cts/agency typecheck:                               Type 'number' is not assignable to type 'Easing'.
+artifacts/agency typecheck: src/pages/HubPage.tsx(153,17): error TS2322: Type '{ hidden: { opacity: number; y: number; }; visible: (i?: number) => { opacity: number; y: number; transition: { duration: number; delay: number; ease: number[]; }; }; }' is not assignable to type 'Variants'.
+artifacts/agency typecheck:   Property 'visible' is incompatible with index signature.
+artifacts/agency typecheck:     Type '(i?: number) => { opacity: number; y: number; transition: { duration: number; delay: number; ease: number[]; }; }' is not assignable to type 'Variant'.
+artifacts/agency typecheck:       Type '(i?: number) => { opacity: number; y: number; transition: { duration: number; delay: number; ease: number[]; }; }' is not assignable to type 'TargetResolver'.
+artifacts/agency typecheck:         Type '{ opacity: number; y: number; transition: { duration: number; delay: number; ease: number[]; }; }' is not assignable to type 'string | TargetAndTransition'.
+artifacts/agency typecheck:           Type '{ opacity: number; y: number; transition: { duration: number; delay: number; ease: number[]; }; }' is not assignable to type 'TargetAndTransition'.
+artifacts/agency typecheck:             Type '{ opacity: number; y: number; transition: { duration: number; delay: number; ease: number[]; }; }' is not assignable to type '{ transition?: Transition<any> | undefined; transitionEnd?: ResolvedValues$1 | undefined; }'.
+artifacts/agency typecheck:               Types of property 'transition' are incompatible.
+artifacts/agency typecheck:                 Type '{ duration: number; delay: number; ease: number[]; }' is not assignable to type 'Transition<any> | undefined'.
+artifacts/agency typecheck:                   Type '{ duration: number; delay: number; ease: number[]; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+artifacts/agency typecheck:                     Type '{ duration: number; delay: number; ease: number[]; }' is not assignable to type 'ValueAnimationTransition<any>'.
+artifacts/agency typecheck:                       Types of property 'ease' are incompatible.
