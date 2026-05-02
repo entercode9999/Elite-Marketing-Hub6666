@@ -24,7 +24,7 @@ function StatItem({ stat, inView, index }: { stat: Stat; inView: boolean; index:
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
       className="text-center md:px-6 py-6 md:py-0"
     >
       <div className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-primary mb-3 tracking-tight">
