@@ -88,6 +88,21 @@ import {
   SaasMarketingPage,
   FitnessMarketingPage,
   RestaurantMarketingPage,
+  B2BMarketingPage,
+  B2CMarketingPage,
+  D2CMarketingPage,
+  FoodBeverageMarketingPage,
+  EducationMarketingPage,
+  TransportationMarketingPage,
+  HealthCareMarketingPage,
+  TravelMarketingPage,
+  FashionMarketingPage,
+  EntertainmentMarketingPage,
+  TechnologyMarketingPage,
+  SmallBusinessMarketingPage,
+  ConstructionMarketingPage,
+  LawMarketingPage,
+  SportsFitnessMarketingPage,
 } from "@/pages/IndustryPages";
 
 const queryClient = new QueryClient();
@@ -163,6 +178,21 @@ function Router() {
       <Route path="/saas-marketing" component={SaasMarketingPage} />
       <Route path="/fitness-marketing" component={FitnessMarketingPage} />
       <Route path="/restaurant-marketing" component={RestaurantMarketingPage} />
+      <Route path="/b2b-marketing" component={B2BMarketingPage} />
+      <Route path="/b2c-marketing" component={B2CMarketingPage} />
+      <Route path="/d2c-marketing" component={D2CMarketingPage} />
+      <Route path="/food-beverage-marketing" component={FoodBeverageMarketingPage} />
+      <Route path="/education-marketing" component={EducationMarketingPage} />
+      <Route path="/transportation-marketing" component={TransportationMarketingPage} />
+      <Route path="/healthcare-marketing" component={HealthCareMarketingPage} />
+      <Route path="/travel-marketing" component={TravelMarketingPage} />
+      <Route path="/fashion-marketing" component={FashionMarketingPage} />
+      <Route path="/entertainment-marketing" component={EntertainmentMarketingPage} />
+      <Route path="/technology-marketing" component={TechnologyMarketingPage} />
+      <Route path="/small-business-marketing" component={SmallBusinessMarketingPage} />
+      <Route path="/construction-marketing" component={ConstructionMarketingPage} />
+      <Route path="/law-marketing" component={LawMarketingPage} />
+      <Route path="/sports-fitness-marketing" component={SportsFitnessMarketingPage} />
 
       {/* ── Location × Service pages ── */}
       <Route path="/toronto/local-seo-service">{() => <LocationServicePage data={torontoLocalSeoData} />}</Route>

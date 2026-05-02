@@ -3,43 +3,44 @@ import { Link, useLocation } from "wouter";
 import { ArrowRight, X, AlignJustify } from "lucide-react";
 
 const NAV_LINKS = [
-  { label: "Website Design", href: "/custom-web-design-service" },
-  { label: "Ecommerce", href: "/ecommerce-development" },
-  { label: "Adobe Commerce", href: "#" },
-  { label: "Digital Marketing", href: "/digital-marketing" },
+  { label: "SEO & Search", href: "/local-seo-service" },
+  { label: "Paid Media", href: "/google-ads-management" },
+  { label: "Web & Design", href: "/custom-web-design-service" },
+  { label: "Industries", href: "/dental-marketing" },
 ];
 
 const MEGA_ITEMS: Record<string, { label: string; href: string }[]> = {
-  "Website Design": [
-    { label: "Website Design", href: "/custom-web-design-service" },
-    { label: "Website Development", href: "/custom-web-design-service" },
-    { label: "WordPress Development", href: "/custom-web-design-service" },
-    { label: "Joomla Development", href: "/custom-web-design-service" },
-    { label: "Drupal Development", href: "/custom-web-design-service" },
-    { label: "Laravel Design", href: "/custom-web-design-service" },
-  ],
-  "Ecommerce": [
-    { label: "Ecommerce Development", href: "/ecommerce-development" },
-    { label: "Magento Development", href: "/ecommerce-development" },
-    { label: "Shopify", href: "/ecommerce-development" },
-    { label: "Shopify Plus", href: "/ecommerce-development" },
-    { label: "Headless Commerce", href: "/ecommerce-development" },
-  ],
-  "Adobe Commerce": [
-    { label: "Adobe Commerce", href: "#" },
-    { label: "Magento 2 Development", href: "#" },
-    { label: "Magento 2 Migration", href: "#" },
-    { label: "Magento 2 Support", href: "#" },
-    { label: "Hyva Theme Development", href: "#" },
-    { label: "Hyva Enterprise", href: "#" },
-  ],
-  "Digital Marketing": [
-    { label: "Digital Marketing", href: "/digital-marketing" },
-    { label: "Search Engine Optimization", href: "/technical-seo-service" },
-    { label: "AI SEO", href: "/ai-integration-service" },
+  "SEO & Search": [
     { label: "Local SEO Services", href: "/local-seo-service" },
-    { label: "Pay Per Click", href: "/google-ads-management" },
-    { label: "Social Media Advertising", href: "/paid-social-service" },
+    { label: "Google Business Profile", href: "/gbp-optimisation" },
+    { label: "Technical SEO", href: "/technical-seo-service" },
+    { label: "Content Marketing", href: "/content-marketing-service" },
+    { label: "AI-Powered SEO", href: "/ai-integration-service" },
+    { label: "Citation Management", href: "/citation-audit" },
+  ],
+  "Paid Media": [
+    { label: "Google Ads Management", href: "/google-ads-management" },
+    { label: "Local Service Ads", href: "/local-service-ads" },
+    { label: "Performance Max", href: "/performance-max" },
+    { label: "Paid Social Media", href: "/paid-social-service" },
+    { label: "Display & Retargeting", href: "/display-retargeting" },
+    { label: "YouTube Advertising", href: "/youtube-ads-service" },
+  ],
+  "Web & Design": [
+    { label: "Custom Web Design", href: "/custom-web-design-service" },
+    { label: "Conversion Rate Optimisation", href: "/cro-service" },
+    { label: "Landing Page Design", href: "/landing-page-design" },
+    { label: "UI/UX Design", href: "/ui-ux-design" },
+    { label: "AI Chatbots", href: "/ai-chatbot-service" },
+    { label: "App Development", href: "/app-development-service" },
+  ],
+  "Industries": [
+    { label: "Dental & Medical", href: "/dental-marketing" },
+    { label: "Legal & Law", href: "/legal-marketing" },
+    { label: "Real Estate", href: "/real-estate-marketing" },
+    { label: "eCommerce & Retail", href: "/ecommerce-marketing" },
+    { label: "Health Care", href: "/healthcare-marketing" },
+    { label: "Technology", href: "/technology-marketing" },
   ],
 };
 
