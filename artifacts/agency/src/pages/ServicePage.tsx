@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "wouter";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { Check, ChevronDown, ArrowRight } from "lucide-react";
+import { LogoMarquee } from "@/components/LogoMarquee";
+import { Check, ChevronRight, ArrowRight } from "lucide-react";
 
 /* ── TYPES ── */
 export interface ServicePageData {
@@ -32,15 +34,27 @@ export interface ServicePageData {
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-border last:border-0">
+    <div className="border-b border-white/8 last:border-0">
       <button
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-center justify-between gap-4 py-5 text-left"
       >
-        <span className="font-semibold text-sm text-foreground pr-4">{q}</span>
-        <ChevronDown className={`w-4 h-4 shrink-0 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`} />
+        <span className="font-semibold text-sm text-white/80 pr-4">{q}</span>
+        <ChevronRight className={`w-4 h-4 shrink-0 text-white/30 transition-transform ${open ? "rotate-90" : ""}`} />
       </button>
-      {open && <p className="text-sm text-muted-foreground pb-5 leading-relaxed pr-8">{a}</p>}
+      <AnimatePresence>
+        {open && (
+          <motion.p
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="overflow-hidden text-sm text-white/45 pb-5 leading-relaxed pr-8"
+          >
+            {a}
+          </motion.p>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
@@ -50,9 +64,9 @@ const SIDEBAR_SECTIONS = [
   { id: "process", label: "Our process" },
   { id: "whofor", label: "Who this is for" },
   { id: "result", label: "A real result" },
-  { id: "different", label: "Why ours is different" },
+  { id: "different", label: "Why different" },
   { id: "pricing", label: "Pricing" },
-  { id: "faq", label: "Frequently asked" },
+  { id: "faq", label: "FAQs" },
 ];
 
 /* ── MAIN COMPONENT ── */
@@ -62,49 +76,48 @@ export function ServicePage({ data }: { data: ServicePageData }) {
   };
 
   return (
-    <div className="min-h-screen bg-[#f9f8f5] text-[#1a1a1a]">
+    <div className="min-h-screen bg-[#08090d] text-white selection:bg-primary selection:text-white">
       <Nav />
 
       {/* ══ HERO ══ */}
-      <section className="pt-28 pb-14 bg-[#f9f8f5] border-b border-[#e5e2d9]">
+      <section className="pt-28 pb-16 bg-[#08090d] border-b border-white/5">
         <div className="max-w-6xl mx-auto px-6">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-1.5 text-xs text-gray-400 mb-7 flex-wrap">
+          <nav className="flex items-center gap-1.5 text-xs text-white/25 mb-8 flex-wrap">
             {data.breadcrumb.map((crumb, i) => (
               <span key={crumb} className="flex items-center gap-1.5">
-                {i > 0 && <span className="text-gray-300">›</span>}
-                <span className={i === data.breadcrumb.length - 1 ? "text-gray-700 font-medium" : ""}>{crumb}</span>
+                {i > 0 && <span className="text-white/15">›</span>}
+                <span className={i === data.breadcrumb.length - 1 ? "text-white/50 font-medium" : ""}>{crumb}</span>
               </span>
             ))}
           </nav>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12 items-start">
-            {/* Headline */}
             <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-5">{data.label}</p>
-              <h1 className="text-5xl sm:text-6xl font-black tracking-tight leading-[1.03] mb-5 text-[#0e0e0e]">
+              <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary mb-5">{data.label}</p>
+              <h1 className="text-5xl sm:text-6xl font-black tracking-tight leading-[1.03] mb-5">
                 {data.headline}
                 <br />
                 <span className="italic text-primary">{data.headlineAccent}</span>
               </h1>
-              <p className="text-base text-gray-500 mt-5 max-w-xl leading-relaxed">{data.subhead}</p>
+              <p className="text-base text-white/50 mt-5 max-w-xl leading-relaxed">{data.subhead}</p>
             </div>
 
-            {/* Stat card + CTA */}
-            <div className="bg-white border border-[#e5e2d9] rounded-2xl p-5 shadow-sm">
-              <a
+            {/* Stat card */}
+            <div className="bg-white/5 border border-white/8 rounded-2xl p-5 backdrop-blur-sm">
+              <Link
                 href="/contact"
-                className="flex items-center justify-center gap-2 bg-primary text-white font-bold py-3 px-5 rounded-xl text-sm w-full mb-5 hover:bg-primary/90 transition-colors group"
+                className="flex items-center justify-center gap-2 bg-primary text-white font-bold py-3.5 px-5 rounded-xl text-sm w-full mb-5 hover:bg-primary/90 transition-colors group shadow-lg shadow-primary/20"
               >
                 Get a free audit
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-              </a>
+              </Link>
               <div className="grid grid-cols-2 gap-3">
                 {data.stats.map((s) => (
-                  <div key={s.label} className="border border-[#e5e2d9] rounded-xl p-3">
-                    <p className="text-2xl font-black text-[#0e0e0e] tabular-nums leading-none">{s.value}</p>
-                    <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mt-1.5">{s.label}</p>
-                    {s.sub && <p className="text-[10px] text-gray-300 mt-0.5">{s.sub}</p>}
+                  <div key={s.label} className="border border-white/8 rounded-xl p-3 bg-white/3">
+                    <p className="text-2xl font-black text-white tabular-nums leading-none">{s.value}</p>
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-white/30 mt-1.5">{s.label}</p>
+                    {s.sub && <p className="text-[10px] text-white/20 mt-0.5">{s.sub}</p>}
                   </div>
                 ))}
               </div>
@@ -113,9 +126,12 @@ export function ServicePage({ data }: { data: ServicePageData }) {
         </div>
       </section>
 
+      {/* ══ LOGO MARQUEE ══ */}
+      <LogoMarquee />
+
       {/* ══ BODY — sidebar + content ══ */}
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-[180px_1fr] gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[160px_1fr] gap-16">
 
           {/* Sticky sidebar */}
           <aside className="hidden lg:block">
@@ -124,15 +140,15 @@ export function ServicePage({ data }: { data: ServicePageData }) {
                 <button
                   key={s.id}
                   onClick={() => scrollTo(s.id)}
-                  className="w-full text-left text-xs text-gray-400 hover:text-primary font-medium py-2 px-2 rounded-lg transition-colors hover:bg-primary/5 leading-tight"
+                  className="w-full text-left text-xs text-white/30 hover:text-primary font-medium py-2 px-2 rounded-lg transition-colors hover:bg-primary/5 leading-tight"
                 >
                   {s.label}
                 </button>
               ))}
               <div className="pt-5 pl-2">
-                <a href="/contact" className="text-xs font-bold text-primary hover:underline">
+                <Link href="/contact" className="text-xs font-bold text-primary hover:underline">
                   Free audit →
-                </a>
+                </Link>
               </div>
             </div>
           </aside>
@@ -143,11 +159,11 @@ export function ServicePage({ data }: { data: ServicePageData }) {
             {/* ─ DELIVERABLES ─ */}
             <section id="deliver">
               <div className="flex items-center gap-4 mb-8">
-                <div className="h-px flex-1 bg-[#e5e2d9]" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-gray-400 whitespace-nowrap">
+                <div className="h-px flex-1 bg-white/8" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/25 whitespace-nowrap">
                   What we deliver — every engagement
                 </span>
-                <div className="h-px flex-1 bg-[#e5e2d9]" />
+                <div className="h-px flex-1 bg-white/8" />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
                 {data.deliverables.map((item, i) => (
@@ -163,8 +179,8 @@ export function ServicePage({ data }: { data: ServicePageData }) {
                       <Check className="w-2.5 h-2.5 text-primary" />
                     </div>
                     <div>
-                      <p className="font-bold text-sm text-[#0e0e0e] mb-1">{item.title}</p>
-                      <p className="text-sm text-gray-500 leading-relaxed">{item.body}</p>
+                      <p className="font-bold text-sm text-white mb-1">{item.title}</p>
+                      <p className="text-sm text-white/45 leading-relaxed">{item.body}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -173,32 +189,48 @@ export function ServicePage({ data }: { data: ServicePageData }) {
 
             {/* ─ PROCESS ─ */}
             <section id="process">
-              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-gray-400 mb-7">Our process</p>
-              <div className="grid grid-cols-1 sm:grid-cols-5 gap-3">
+              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/25 mb-7">Our process</p>
+              <div className="flex flex-wrap gap-0 border border-white/8 rounded-2xl overflow-hidden mb-6">
                 {data.process.map((step, i) => (
-                  <div key={step.phase} className="bg-white border border-[#e5e2d9] rounded-2xl p-4 relative">
-                    <div className="w-8 h-8 rounded-full bg-primary/8 flex items-center justify-center mb-3">
+                  <div
+                    key={step.phase}
+                    className={`flex-1 min-w-[100px] flex flex-col items-center gap-1 py-4 px-3 text-center border-r border-white/8 last:border-0 ${i === 0 ? "bg-white/5" : "bg-white/2"}`}
+                  >
+                    <span className="text-lg font-black text-primary">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="text-[10px] font-bold text-white/40">{step.title}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="space-y-4">
+                {data.process.map((step, i) => (
+                  <motion.div
+                    key={step.phase}
+                    initial={{ opacity: 0, x: -12 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.07 }}
+                    className="flex gap-5 items-start py-4 border-b border-white/5 last:border-0"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
                       <span className="text-[11px] font-black text-primary">{String(i + 1).padStart(2, "0")}</span>
                     </div>
-                    <p className="text-[9px] font-bold uppercase tracking-widest text-gray-300 mb-1">{step.phase}</p>
-                    <p className="font-bold text-xs text-[#0e0e0e] mb-2 leading-snug">{step.title}</p>
-                    <p className="text-[11px] text-gray-400 leading-relaxed">{step.body}</p>
-                    {i < data.process.length - 1 && (
-                      <div className="hidden sm:block absolute top-7 -right-2 w-4 h-px bg-primary/30" />
-                    )}
-                  </div>
+                    <div className="flex-1 grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-1 sm:gap-4">
+                      <p className="font-bold text-sm text-white">{step.title}</p>
+                      <p className="text-sm text-white/45 leading-relaxed">{step.body}</p>
+                    </div>
+                  </motion.div>
                 ))}
               </div>
             </section>
 
             {/* ─ WHO FOR ─ */}
             <section id="whofor">
-              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-gray-400 mb-7">Who this is for</p>
+              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/25 mb-7">Who this is for</p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {data.whoFor.map((item) => (
-                  <div key={item} className="flex gap-3 p-5 bg-white border border-[#e5e2d9] rounded-2xl">
+                  <div key={item} className="flex gap-3 p-5 bg-white/3 border border-white/8 rounded-2xl">
                     <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <p className="text-sm text-[#1a1a1a] leading-relaxed">{item}</p>
+                    <p className="text-sm text-white/70 leading-relaxed">{item}</p>
                   </div>
                 ))}
               </div>
@@ -206,8 +238,8 @@ export function ServicePage({ data }: { data: ServicePageData }) {
 
             {/* ─ CASE STUDY ─ */}
             <section id="result">
-              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-gray-400 mb-7">A real result</p>
-              <div className="bg-[#090b10] text-white rounded-2xl overflow-hidden">
+              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/25 mb-7">A real result</p>
+              <div className="bg-white/3 border border-white/8 text-white rounded-2xl overflow-hidden">
                 <div className="p-8 lg:p-10">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div>
@@ -219,7 +251,6 @@ export function ServicePage({ data }: { data: ServicePageData }) {
                       <p className="text-white/55 text-sm leading-relaxed">{data.caseStudy.body}</p>
                     </div>
                     <div>
-                      {/* Animated bar chart */}
                       <div className="h-36 flex items-end gap-1.5 mb-4 px-1">
                         {[18, 28, 22, 38, 32, 50, 44, 62, 58, 78, 85, 100].map((h, i) => (
                           <motion.div
@@ -249,12 +280,12 @@ export function ServicePage({ data }: { data: ServicePageData }) {
 
             {/* ─ WHY DIFFERENT ─ */}
             <section id="different">
-              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-gray-400 mb-7">Why ours is structured differently</p>
+              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/25 mb-7">Why ours is structured differently</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {data.differentiators.map((item) => (
                   <div key={item.title} className="border-l-2 border-primary pl-5">
-                    <p className="font-bold text-sm text-[#0e0e0e] mb-1.5">{item.title}</p>
-                    <p className="text-sm text-gray-500 leading-relaxed">{item.body}</p>
+                    <p className="font-bold text-sm text-white mb-1.5">{item.title}</p>
+                    <p className="text-sm text-white/45 leading-relaxed">{item.body}</p>
                   </div>
                 ))}
               </div>
@@ -262,26 +293,26 @@ export function ServicePage({ data }: { data: ServicePageData }) {
 
             {/* ─ PRICING ─ */}
             <section id="pricing">
-              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-gray-400 mb-7">Pricing</p>
-              <div className="border border-[#e5e2d9] rounded-2xl overflow-hidden bg-white">
+              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/25 mb-7">Pricing</p>
+              <div className="border border-white/8 rounded-2xl overflow-hidden bg-white/2">
                 {data.pricing.map((tier, i) => (
                   <div
                     key={tier.tier}
                     className={`flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-6 py-5 ${
-                      i < data.pricing.length - 1 ? "border-b border-[#e5e2d9]" : ""
+                      i < data.pricing.length - 1 ? "border-b border-white/8" : ""
                     }`}
                   >
                     <div>
-                      <p className="font-bold text-sm text-[#0e0e0e]">{tier.tier}</p>
-                      <p className="text-xs text-gray-400 mt-0.5">{tier.desc}</p>
+                      <p className="font-bold text-sm text-white">{tier.tier}</p>
+                      <p className="text-xs text-white/35 mt-0.5">{tier.desc}</p>
                     </div>
-                    <p className="text-base font-black text-[#0e0e0e] shrink-0">{tier.range}</p>
+                    <p className="text-base font-black text-white shrink-0">{tier.range}</p>
                   </div>
                 ))}
-                <div className="bg-primary/4 border-t border-[#e5e2d9] px-6 py-4">
-                  <p className="text-xs text-gray-400">
+                <div className="bg-primary/5 border-t border-white/8 px-6 py-4">
+                  <p className="text-xs text-white/35">
                     All engagements month-to-month. No lock-in. First audit is free.{" "}
-                    <a href="/contact" className="text-primary font-semibold hover:underline">Book yours →</a>
+                    <Link href="/contact" className="text-primary font-semibold hover:underline">Book yours →</Link>
                   </p>
                 </div>
               </div>
@@ -289,8 +320,8 @@ export function ServicePage({ data }: { data: ServicePageData }) {
 
             {/* ─ FAQ ─ */}
             <section id="faq">
-              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-gray-400 mb-7">Frequently asked</p>
-              <div className="bg-white border border-[#e5e2d9] rounded-2xl px-6">
+              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/25 mb-7">Frequently asked</p>
+              <div className="bg-white/2 border border-white/8 rounded-2xl px-6">
                 {data.faq.map((item) => (
                   <FaqItem key={item.q} q={item.q} a={item.a} />
                 ))}
@@ -301,17 +332,18 @@ export function ServicePage({ data }: { data: ServicePageData }) {
       </div>
 
       {/* ══ BOTTOM CTA ══ */}
-      <section className="bg-[#090b10] text-white py-20 md:py-28">
+      <section className="bg-[#08090d] border-t border-white/5 text-white py-20 md:py-28">
         <div className="max-w-2xl mx-auto px-6 text-center">
+          <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-4 block">Ready?</span>
           <h2 className="text-4xl md:text-5xl font-black leading-tight mb-4">{data.cta.headline}</h2>
-          <p className="text-white/45 text-base mb-8 leading-relaxed">{data.cta.sub}</p>
-          <a
+          <p className="text-white/40 text-base mb-8 leading-relaxed">{data.cta.sub}</p>
+          <Link
             href="/contact"
             className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 rounded-xl transition-all text-sm group shadow-[0_0_50px_rgba(26,86,255,0.25)]"
           >
             Book your free audit
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -363,31 +395,11 @@ export const localSeoData: ServicePageData = {
     },
   ],
   process: [
-    {
-      phase: "Step 01",
-      title: "Local audit",
-      body: "GBP, NAP, map stack across 45+ Canadian directories. Full competitor comparison for every priority query.",
-    },
-    {
-      phase: "Step 02",
-      title: "GBP + citations",
-      body: "Profile rebuild, service-area configuration, citation corrections across all major and local Canadian directories.",
-    },
-    {
-      phase: "Step 03",
-      title: "Pages + schema",
-      body: "Neighbourhood landing pages. Structured data: LocalBusiness, FAQ, review schema, breadcrumbs.",
-    },
-    {
-      phase: "Step 04",
-      title: "Reviews + links",
-      body: "Review velocity system. Editorial link outreach to local directories, community organisations, local press.",
-    },
-    {
-      phase: "Step 05",
-      title: "Compound",
-      body: "Monthly pack tracking. Strategy updates based on what's moving in your market — not a template report.",
-    },
+    { phase: "Step 01", title: "Local audit", body: "GBP, NAP, map stack across 45+ Canadian directories. Full competitor comparison for every priority query." },
+    { phase: "Step 02", title: "GBP + citations", body: "Profile rebuild, service-area configuration, citation corrections across all major and local Canadian directories." },
+    { phase: "Step 03", title: "Pages + schema", body: "Neighbourhood landing pages. Structured data: LocalBusiness, FAQ, review schema, breadcrumbs." },
+    { phase: "Step 04", title: "Reviews + links", body: "Review velocity system. Editorial link outreach to local directories, community organisations, local press." },
+    { phase: "Step 05", title: "Compound", body: "Monthly pack tracking. Strategy updates based on what's moving in your market — not a template report." },
   ],
   whoFor: [
     "Service businesses competing for high-intent local searches: dental, legal, HVAC, auto, real estate, trades.",
@@ -406,22 +418,10 @@ export const localSeoData: ServicePageData = {
     ],
   },
   differentiators: [
-    {
-      title: "GBP as an active marketing channel",
-      body: "Most agencies treat GBP as a one-time setup. We post weekly, manage Q&A, respond to every review, and update attributes seasonally. It compounds.",
-    },
-    {
-      title: "Structure-first before content",
-      body: "We fix the citation graph and service-area configuration before publishing a single page. Most agencies skip this; it's why they plateau at positions 4–10.",
-    },
-    {
-      title: "No percentage-of-spend pricing",
-      body: "Our retainer covers all deliverables at a fixed monthly rate. Adding cities, services, or review campaigns doesn't trigger a new invoice.",
-    },
-    {
-      title: "Pack-level competitor intelligence",
-      body: "We track every business in your map pack and reverse-engineer exactly what they're doing better. Your content and link strategy targets those specific gaps.",
-    },
+    { title: "GBP as an active marketing channel", body: "Most agencies treat GBP as a one-time setup. We post weekly, manage Q&A, respond to every review, and update attributes seasonally. It compounds." },
+    { title: "Structure-first before content", body: "We fix the citation graph and service-area configuration before publishing a single page. Most agencies skip this; it's why they plateau at positions 4–10." },
+    { title: "No percentage-of-spend pricing", body: "Our retainer covers all deliverables at a fixed monthly rate. Adding cities, services, or review campaigns doesn't trigger a new invoice." },
+    { title: "Pack-level competitor intelligence", body: "We track every business in your map pack and reverse-engineer exactly what they're doing better. Your content and link strategy targets those specific gaps." },
   ],
   pricing: [
     { tier: "Single location · low competition", range: "$800–$1,400/mo", desc: "1 GBP, 1 city, up to 3 priority service queries" },
@@ -430,22 +430,10 @@ export const localSeoData: ServicePageData = {
     { tier: "Multi-location · 5+ locations", range: "By scope", desc: "Enterprise-level programmatic local SEO" },
   ],
   faq: [
-    {
-      q: "How long before local SEO produces map pack movement?",
-      a: "Low-competition markets: 4–8 weeks for meaningful movement. Saturated markets like Toronto dental or legal: 12–24 weeks. We give honest timelines upfront after reviewing your pack position.",
-    },
-    {
-      q: "Does my business need a physical address to rank?",
-      a: "A verified GBP with service-area configuration can rank for local queries without a shopfront. We handle the verification process and set your service radius correctly.",
-    },
-    {
-      q: "Can you help us rank in multiple GTA cities from one location?",
-      a: "Yes — through service-area GBP configuration, city-specific landing pages, and local citation targeting. We manage this systematically across all your target markets.",
-    },
-    {
-      q: "What's the difference between local SEO and regular SEO?",
-      a: "Regular SEO targets organic web results. Local SEO specifically targets the map pack, which appears above organic results for location-based searches and drives significantly higher click and call rates.",
-    },
+    { q: "How long before local SEO produces map pack movement?", a: "Low-competition markets: 4–8 weeks for meaningful movement. Saturated markets like Toronto dental or legal: 12–24 weeks. We give honest timelines upfront after reviewing your pack position." },
+    { q: "Does my business need a physical address to rank?", a: "A verified GBP with service-area configuration can rank for local queries without a shopfront. We handle the verification process and set your service radius correctly." },
+    { q: "Can you help us rank in multiple GTA cities from one location?", a: "Yes — through service-area GBP configuration, city-specific landing pages, and local citation targeting. We manage this systematically across all your target markets." },
+    { q: "What's the difference between local SEO and regular SEO?", a: "Regular SEO targets organic web results. Local SEO specifically targets the map pack, which appears above organic results for location-based searches and drives significantly higher click and call rates." },
   ],
   cta: {
     headline: "The audit takes a week. The gap it finds costs you without one.",
@@ -475,51 +463,51 @@ export const googleAdsData: ServicePageData = {
     { title: "Ad copy + creatives", body: "Headline and description testing across RSA variants. We write and iterate until your CTR is above benchmark." },
     { title: "Landing page alignment", body: "Every campaign matched to a purpose-built landing page. We audit or build if yours isn't converting." },
     { title: "Bid strategy management", body: "Manual CPC to smart bidding transitions managed based on conversion volume — not Google's automatic suggestions." },
-    { title: "Weekly reporting", body: "Cost-per-lead, ROAS, conversion paths, quality score trends. Transparent weekly performance summaries." },
+    { title: "Monthly reporting", body: "Conversions, ROAS, CPA, impression share by campaign and ad group — with a written analysis and next-month priorities." },
   ],
   process: [
-    { phase: "Step 01", title: "Audit", body: "Full account review: wasted spend, quality scores, search term reports, campaign structure gaps." },
-    { phase: "Step 02", title: "Architecture", body: "Rebuild or restructure based on audit findings. New campaigns built with intent-segmented ad groups." },
-    { phase: "Step 03", title: "Launch", body: "Copy live. Tracking verified. Conversion actions mapped to your actual business goals." },
-    { phase: "Step 04", title: "Optimise", body: "Weekly bid and budget management. A/B testing copy and landing pages. Negative keyword additions." },
-    { phase: "Step 05", title: "Scale", body: "Increase budget on what's working. Expand to new markets or services using proven campaign templates." },
+    { phase: "Step 01", title: "Account audit", body: "Full review of existing account structure, keyword coverage, negative lists, quality scores, and wasted spend." },
+    { phase: "Step 02", title: "Strategy", body: "Budget allocation, campaign architecture, and keyword strategy built before a single dollar is spent." },
+    { phase: "Step 03", title: "Build", body: "Campaign build with RSA variants, extensions, negative keyword list, and conversion tracking verified." },
+    { phase: "Step 04", title: "Launch", body: "Aggressive launch with daily optimisation in the first two weeks. Bid adjustments, query mining, negative additions." },
+    { phase: "Step 05", title: "Optimise", body: "Monthly strategy calls. Bid automation transitions based on data. Landing page testing. Expansion to new campaigns." },
   ],
   whoFor: [
-    "Service businesses with a proven offer who need more qualified leads at a lower cost per acquisition.",
-    "Companies currently running Google Ads but not sure if they're getting the performance they're paying for.",
-    "Growth-stage brands scaling revenue through paid search without inflating cost-per-lead.",
+    "Service businesses spending $3,000+/month on Google Ads who aren't seeing clear ROI from their current agency.",
+    "Growth-stage companies launching Google Ads for the first time who want to avoid the common setup mistakes.",
+    "eCommerce brands wanting Google Shopping and PMAX managed under one flat-fee retainer.",
   ],
   caseStudy: {
-    client: "SaaS — Toronto",
-    headline: "From $42 CPL to $19 CPL in 90 days.",
-    subheadline: "Inherited an account spending $22K/month with a 38% impression share and no conversion tracking.",
-    body: "We rebuilt the campaign structure from scratch, fixed conversion tracking, moved to a manual CPC strategy until we had 50+ conversions, then transitioned to target CPA. In 90 days: CPL cut by 55%, qualified lead volume up 3x.",
+    client: "Legal — Toronto, ON",
+    headline: "CPA cut by 52% in 60 days. Lead volume doubled.",
+    subheadline: "Inheriting an account with a bloated keyword list and no negative keyword strategy.",
+    body: "We inherited an account spending $8,000/month with a 14% impression share and $340 average CPA. After a full rebuild — intent layering, RSA testing, negative keyword architecture, and landing page alignment — CPA dropped to $163 and monthly lead volume doubled within 60 days.",
     metrics: [
-      { value: "-55%", label: "Cost per lead" },
-      { value: "3x", label: "Lead volume" },
-      { value: "+38%", label: "Conv. rate" },
+      { value: "-52%", label: "CPA" },
+      { value: "+2x", label: "Lead volume" },
+      { value: "4.2x", label: "ROAS" },
     ],
   },
   differentiators: [
-    { title: "No percentage-of-spend pricing", body: "We charge a flat retainer regardless of your ad budget. Our incentives are aligned with your results — not your spend level." },
-    { title: "Senior account management only", body: "No junior account executives or offshore teams. The person who built your campaigns manages them." },
-    { title: "Conversion tracking as step one", body: "We don't touch campaigns until tracking is airtight. Optimising without clean data is guesswork." },
-    { title: "Platform-agnostic recommendations", body: "If Google Ads isn't the right channel for your budget or goals, we'll tell you. We also run Meta, LinkedIn, and TikTok." },
+    { title: "Flat fee — never percentage of spend", body: "Every percentage-of-spend agency has an incentive to grow your budget, not your ROI. We charge a fixed monthly fee regardless of what you spend." },
+    { title: "Senior strategist only", body: "Your account is managed by the same senior strategist every week. No junior hand-offs after onboarding. No account manager layers." },
+    { title: "Intent-first keyword architecture", body: "We build negative keyword lists before we write a single ad. Intent layering means your budget only reaches people who are ready to buy." },
+    { title: "Landing page accountability", body: "If your landing page isn't converting, we say so and fix it. Most agencies blame the algorithm. We look at the full funnel." },
   ],
   pricing: [
-    { tier: "Local campaigns · single market", range: "$1,200–$2,000/mo", desc: "1 city, up to 3 campaign types" },
-    { tier: "Growth campaigns · multi-market", range: "$2,000–$4,000/mo", desc: "Multi-city or multi-product campaigns" },
-    { tier: "Enterprise · full-funnel", range: "$4,000+/mo", desc: "Complex account structure, multiple ad types" },
-    { tier: "Account audit only", range: "$800 one-time", desc: "Full diagnosis with specific recommendations" },
+    { tier: "Starter · up to $5,000/mo ad spend", range: "$800–$1,200/mo", desc: "Search campaigns, full setup, weekly optimisation" },
+    { tier: "Growth · $5,000–$20,000/mo ad spend", range: "$1,200–$2,000/mo", desc: "Search + PMAX + display, conversion tracking, landing page audit" },
+    { tier: "Scale · $20,000+/mo ad spend", range: "$2,000–$3,500/mo", desc: "Full account with LSA, Shopping, YouTube pre-roll, quarterly strategy" },
+    { tier: "Enterprise", range: "By scope", desc: "Multi-account, multi-market management" },
   ],
   faq: [
-    { q: "What ad spend budget do I need to work with Outlier?", a: "We recommend a minimum monthly ad spend of $3,000–$5,000 to generate enough data for meaningful optimisation. Smaller budgets produce slower learning and slower improvements." },
-    { q: "Do you charge a percentage of ad spend?", a: "No. We charge a flat monthly management fee regardless of your budget. If you scale your ad spend from $5K to $50K per month, our fee doesn't change unless the scope of work expands." },
-    { q: "How quickly will I see results?", a: "Most accounts see meaningful movement within 30–45 days of launch. Larger restructures or accounts with limited conversion history may take 60–90 days to fully optimise." },
-    { q: "Can you work with an existing Google Ads account?", a: "Yes. We prefer it — existing accounts have conversion history that accelerates optimisation. We'll audit first and give you a clear picture of what's working and what isn't." },
+    { q: "How quickly do Google Ads produce results?", a: "The first 2–4 weeks are a data-gathering period. Meaningful cost-per-conversion optimisation happens in weeks 4–8. Most clients see ROAS improvement vs. their previous agency within the first 60 days." },
+    { q: "What's the minimum ad spend you recommend?", a: "We require a minimum of $3,000/month in ad spend to achieve statistically meaningful data for optimisation. Below that, results are slow and margins are tight." },
+    { q: "Do you write the ad copy?", a: "Yes. Ad copy is included in all engagements. We write all RSA headlines, descriptions, and extensions — and we test variants continuously." },
+    { q: "Do you also manage Meta or TikTok ads?", a: "Yes — we can manage Meta and TikTok ads alongside Google as part of an integrated paid media retainer. Ask about our multi-channel packages." },
   ],
   cta: {
-    headline: "Find out exactly where your ad spend is leaking.",
-    sub: "A free Google Ads audit identifies your biggest wasted spend opportunities — usually found within 20 minutes of access.",
+    headline: "Your current agency is probably costing you more than their fee.",
+    sub: "A free account audit reveals exactly where your spend is being wasted — and what a rebuilt account would return.",
   },
 };

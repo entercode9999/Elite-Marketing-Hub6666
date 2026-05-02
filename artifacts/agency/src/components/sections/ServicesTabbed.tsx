@@ -394,25 +394,25 @@ export function ServicesTabbed() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 mb-8 flex-1">
                   {current.subServices.map((sub) => (
-                    <a
+                    <Link
                       key={sub.label}
                       href={sub.href}
                       className="flex items-center gap-2 py-2 border-b border-white/5 text-sm text-white/55 hover:text-white transition-colors group"
                     >
                       <ArrowRight className="w-3.5 h-3.5 shrink-0 text-white/20 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                       {sub.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
 
-                <a
+                <Link
                   href={current.href}
                   className="inline-flex items-center gap-2 font-bold text-sm group w-fit"
                   style={{ color: current.color }}
                 >
                   Explore {current.label}
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </a>
+                </Link>
               </motion.div>
             </AnimatePresence>
 

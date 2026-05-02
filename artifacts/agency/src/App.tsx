@@ -15,6 +15,8 @@ import WebDesignHub from "@/pages/hubs/WebDesignHub";
 import DigitalMarketingHub from "@/pages/hubs/DigitalMarketingHub";
 import AIHub from "@/pages/hubs/AIHub";
 import EcommerceHub from "@/pages/hubs/EcommerceHub";
+import ContentMarketingHub from "@/pages/hubs/ContentMarketingHub";
+import TechnicalSeoHub from "@/pages/hubs/TechnicalSeoHub";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +31,8 @@ function Router() {
       <Route path="/digital-marketing" component={DigitalMarketingHub} />
       <Route path="/ai-chatbot-service" component={AIHub} />
       <Route path="/ecommerce-development" component={EcommerceHub} />
+      <Route path="/content-marketing-service" component={ContentMarketingHub} />
+      <Route path="/technical-seo-service" component={TechnicalSeoHub} />
 
       {/* Service detail pages */}
       <Route path="/local-seo-service">{() => <ServicePage data={localSeoData} />}</Route>

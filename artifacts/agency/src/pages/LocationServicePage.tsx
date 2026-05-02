@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { ArrowRight, MapPin, ChevronDown, Check, TrendingUp } from "lucide-react";
+import { LogoMarquee } from "@/components/LogoMarquee";
+import { ArrowRight, MapPin, ChevronRight, Check, TrendingUp } from "lucide-react";
 
 /* ── TYPES ── */
 export interface LocationData {
@@ -36,25 +37,25 @@ export interface LocationData {
   ctaHeadline: string;
 }
 
-/* ── MAP VISUAL ── */
+/* ── MAP VISUAL (dark style) ── */
 function LocalMap({ pins }: { pins: LocationData["mapPins"] }) {
   return (
-    <div className="relative rounded-2xl overflow-hidden border border-[#e0ddd4] bg-[#f2efe8] aspect-[4/3] w-full">
-      {/* Street grid lines */}
-      <div className="absolute inset-0 opacity-30">
+    <div className="relative rounded-2xl overflow-hidden border border-white/8 bg-[#0d1525] aspect-[4/3] w-full">
+      {/* Dark grid lines */}
+      <div className="absolute inset-0 opacity-20">
         {[20, 38, 58, 76].map((p) => (
-          <div key={`h${p}`} className="absolute w-full h-px bg-[#b5b0a0]" style={{ top: `${p}%` }} />
+          <div key={`h${p}`} className="absolute w-full h-px bg-white/30" style={{ top: `${p}%` }} />
         ))}
         {[15, 32, 50, 68, 82].map((p) => (
-          <div key={`v${p}`} className="absolute h-full w-px bg-[#b5b0a0]" style={{ left: `${p}%` }} />
+          <div key={`v${p}`} className="absolute h-full w-px bg-white/30" style={{ left: `${p}%` }} />
         ))}
       </div>
-      {/* Major road highlight */}
-      <div className="absolute inset-0 opacity-40">
-        <div className="absolute w-full h-[3px] bg-[#c8c3b8]" style={{ top: "38%" }} />
-        <div className="absolute h-full w-[3px] bg-[#c8c3b8]" style={{ left: "50%" }} />
+      {/* Major roads */}
+      <div className="absolute inset-0 opacity-25">
+        <div className="absolute w-full h-[2px] bg-white/40" style={{ top: "38%" }} />
+        <div className="absolute h-full w-[2px] bg-white/40" style={{ left: "50%" }} />
       </div>
-      {/* Blocks (buildings) */}
+      {/* Blocks */}
       {[
         { top: "22%", left: "18%", w: "12%", h: "14%" },
         { top: "22%", left: "36%", w: "10%", h: "14%" },
@@ -66,12 +67,12 @@ function LocalMap({ pins }: { pins: LocationData["mapPins"] }) {
       ].map((b, i) => (
         <div
           key={i}
-          className="absolute rounded-sm bg-[#d8d4c8] border border-[#c8c3b8]/50"
+          className="absolute rounded-sm bg-white/5 border border-white/8"
           style={{ top: b.top, left: b.left, width: b.w, height: b.h }}
         />
       ))}
-      {/* Green park area */}
-      <div className="absolute rounded-xl bg-[#c8d8b8]/60 border border-[#b8c8a8]/50" style={{ top: "58%", left: "68%", width: "20%", height: "18%" }} />
+      {/* Park area */}
+      <div className="absolute rounded-xl bg-primary/10 border border-primary/20" style={{ top: "58%", left: "68%", width: "20%", height: "18%" }} />
 
       {/* Location pins */}
       {pins.map((pin, i) => (
@@ -80,25 +81,23 @@ function LocalMap({ pins }: { pins: LocationData["mapPins"] }) {
           className="absolute z-10"
           style={{ top: pin.position.top, left: pin.position.left, transform: "translate(-50%,-100%)" }}
         >
-          <div className={`relative group cursor-pointer ${i === 0 ? "" : ""}`}>
-            {/* Pin */}
-            <div className={`w-5 h-5 rounded-full border-2 border-white shadow-lg flex items-center justify-center ${i === 0 ? "bg-primary" : "bg-[#1a1a1a]"}`}>
+          <div className="relative group cursor-pointer">
+            <div className={`w-5 h-5 rounded-full border-2 border-white/20 shadow-lg flex items-center justify-center ${i === 0 ? "bg-primary shadow-primary/30" : "bg-white/20"}`}>
               <div className="w-1.5 h-1.5 rounded-full bg-white" />
             </div>
-            <div className={`absolute top-1/2 left-1/2 w-[1px] h-2 -translate-x-1/2 ${i === 0 ? "bg-primary" : "bg-[#1a1a1a]"}`} />
-            {/* Label */}
-            <div className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-white border border-[#e0ddd4] rounded-lg shadow-md px-2.5 py-1.5 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none`}>
-              <p className="text-[10px] font-bold text-[#1a1a1a]">{pin.name}</p>
+            {i === 0 && <div className="absolute -inset-1 rounded-full bg-primary/20 animate-ping" />}
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-[#0d1525] border border-white/15 rounded-lg shadow-xl px-2.5 py-1.5 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+              <p className="text-[10px] font-bold text-white">{pin.name}</p>
               {pin.rank && <p className="text-[9px] text-primary font-bold">{pin.rank}</p>}
             </div>
           </div>
         </div>
       ))}
 
-      {/* Map attribution style box */}
-      <div className="absolute bottom-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 border border-[#e0ddd4] shadow-sm">
-        <p className="text-[9px] font-bold text-[#1a1a1a] uppercase tracking-wider">Map Coverage</p>
-        <p className="text-[10px] text-gray-500">{pins.length} active tracking zones</p>
+      {/* Map legend */}
+      <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/10 shadow-sm">
+        <p className="text-[9px] font-bold text-white/50 uppercase tracking-wider">Coverage</p>
+        <p className="text-[10px] text-white/70">{pins.length} active zones</p>
       </div>
     </div>
   );
@@ -108,15 +107,27 @@ function LocalMap({ pins }: { pins: LocationData["mapPins"] }) {
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-[#e5e2d9] last:border-0">
+    <div className="border-b border-white/8 last:border-0">
       <button
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-center justify-between gap-4 py-5 text-left"
       >
-        <span className="font-semibold text-sm text-[#1a1a1a] pr-4">{q}</span>
-        <ChevronDown className={`w-4 h-4 shrink-0 text-gray-400 transition-transform ${open ? "rotate-180" : ""}`} />
+        <span className="font-semibold text-sm text-white/70 pr-4">{q}</span>
+        <ChevronRight className={`w-4 h-4 shrink-0 text-white/30 transition-transform ${open ? "rotate-90" : ""}`} />
       </button>
-      {open && <p className="text-sm text-gray-500 pb-5 leading-relaxed pr-8">{a}</p>}
+      <AnimatePresence>
+        {open && (
+          <motion.p
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="overflow-hidden text-sm text-white/40 pb-5 leading-relaxed pr-8"
+          >
+            {a}
+          </motion.p>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
@@ -124,32 +135,32 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 /* ── MAIN COMPONENT ── */
 export function LocationServicePage({ data }: { data: LocationData }) {
   return (
-    <div className="min-h-screen bg-[#f9f8f5] text-[#1a1a1a]">
+    <div className="min-h-screen bg-[#08090d] text-white selection:bg-primary selection:text-white">
       <Nav />
 
       {/* ══ HERO ══ */}
-      <section className="pt-28 pb-14 bg-[#f9f8f5] border-b border-[#e5e2d9]">
+      <section className="pt-28 pb-16 bg-[#08090d] border-b border-white/5">
         <div className="max-w-6xl mx-auto px-6">
-          {/* Breadcrumb + tabs */}
-          <nav className="flex items-center gap-1.5 text-xs text-gray-400 mb-4 flex-wrap">
-            <Link href="/" className="hover:text-primary">Home</Link>
-            <span className="text-gray-300">›</span>
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-1.5 text-xs text-white/25 mb-5 flex-wrap">
+            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+            <span className="text-white/15">›</span>
             <span>Location</span>
-            <span className="text-gray-300">›</span>
+            <span className="text-white/15">›</span>
             <span>{data.city}</span>
-            <span className="text-gray-300">›</span>
-            <span className="text-[#1a1a1a] font-medium">{data.service}</span>
+            <span className="text-white/15">›</span>
+            <span className="text-white/50 font-medium">{data.service}</span>
           </nav>
 
           {/* Sub-tabs */}
-          <div className="flex items-center gap-0.5 mb-10 border-b border-[#e5e2d9]">
+          <div className="flex items-center gap-0.5 mb-10 border-b border-white/8">
             {[data.city, "GBP Optimisation", "Map Pack", "Neighbourhoods", "Citations"].map((tab, i) => (
               <button
                 key={tab}
                 className={`px-4 py-2.5 text-xs font-bold uppercase tracking-wider transition-colors border-b-2 -mb-px ${
                   i === 0
                     ? "border-primary text-primary"
-                    : "border-transparent text-gray-400 hover:text-gray-700"
+                    : "border-transparent text-white/30 hover:text-white/60"
                 }`}
               >
                 {tab}
@@ -160,40 +171,41 @@ export function LocationServicePage({ data }: { data: LocationData }) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left: headline */}
             <div>
-              <h1 className="text-4xl sm:text-5xl font-black tracking-tight leading-[1.03] text-[#0e0e0e] mb-4">
+              <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary mb-4">{data.city} {data.service}</p>
+              <h1 className="text-4xl sm:text-5xl font-black tracking-tight leading-[1.03] mb-4">
                 {data.headline}
                 <span className="italic text-primary"> {data.headlineAccent}</span>
               </h1>
-              <p className="text-base text-gray-500 leading-relaxed mb-6 max-w-lg">{data.tagline}</p>
-              <p className="text-sm text-gray-400 leading-relaxed italic border-l-2 border-[#e5e2d9] pl-4 mb-8">
+              <p className="text-base text-white/50 leading-relaxed mb-5 max-w-lg">{data.tagline}</p>
+              <p className="text-sm text-white/35 leading-relaxed italic border-l-2 border-primary/30 pl-4 mb-8">
                 {data.marketNote}
               </p>
 
               {/* Stats */}
-              <div className="flex flex-wrap gap-6">
+              <div className="flex flex-wrap gap-6 mb-8">
                 {data.stats.map((s) => (
                   <div key={s.label}>
-                    <p className="text-3xl font-black text-[#0e0e0e] tabular-nums leading-none">{s.value}</p>
-                    <p className="text-xs text-gray-400 mt-1 font-medium">{s.label}</p>
+                    <p className="text-3xl font-black text-white tabular-nums leading-none">{s.value}</p>
+                    <p className="text-xs text-white/35 mt-1 font-medium">{s.label}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="flex gap-3 mt-8">
+              <div className="flex gap-3">
                 <a
                   href="/contact"
-                  className="inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-5 rounded-xl text-sm hover:bg-primary/90 transition-colors group"
+                  className="inline-flex items-center gap-2 bg-primary text-white font-bold py-3.5 px-5 rounded-xl text-sm hover:bg-primary/90 transition-colors group shadow-lg shadow-primary/20"
                 >
                   Audit my {data.city} rankings
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                 </a>
-                <a href="#case-study" className="inline-flex items-center gap-2 border border-[#e5e2d9] hover:border-gray-400 text-gray-600 font-semibold py-3 px-5 rounded-xl text-sm transition-colors">
+                <a href="#case-study" className="inline-flex items-center gap-2 border border-white/15 hover:border-white/30 text-white/60 hover:text-white font-semibold py-3.5 px-5 rounded-xl text-sm transition-colors">
                   See case study
                 </a>
               </div>
             </div>
 
-            {/* Right: map */}
+            {/* Right: dark map */}
             <div>
               <LocalMap pins={data.mapPins} />
             </div>
@@ -201,20 +213,23 @@ export function LocationServicePage({ data }: { data: LocationData }) {
         </div>
       </section>
 
+      {/* ══ LOGO MARQUEE ══ */}
+      <LogoMarquee />
+
       {/* ══ NEIGHBOURHOODS ══ */}
-      <section className="py-16 bg-white border-b border-[#e5e2d9]">
+      <section className="py-16 bg-[#0a0c12] border-b border-white/5">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-[10px] font-black uppercase tracking-[0.18em] text-gray-400 mb-2">Neighbourhoods in {data.city}</p>
-          <h2 className="text-3xl font-black mb-8 text-[#0e0e0e]">
+          <p className="text-[10px] font-black uppercase tracking-[0.18em] text-primary mb-2">Neighbourhoods</p>
+          <h2 className="text-3xl font-black mb-8">
             {data.neighborhoods.length} {data.city} sub-markets,
             <br />
-            <span className="italic font-light">{data.neighborhoods.length} targeting strategies.</span>
+            <span className="italic font-light text-white/40">{data.neighborhoods.length} targeting strategies.</span>
           </h2>
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
             {data.neighborhoods.map((n) => (
               <div
                 key={n}
-                className="border border-[#e5e2d9] rounded-lg px-3 py-2.5 text-xs font-semibold text-gray-600 hover:border-primary/40 hover:text-primary transition-colors cursor-pointer text-center"
+                className="border border-white/8 rounded-lg px-3 py-2.5 text-xs font-semibold text-white/40 hover:border-primary/40 hover:text-primary transition-colors cursor-pointer text-center"
               >
                 {n}
               </div>
@@ -224,22 +239,20 @@ export function LocationServicePage({ data }: { data: LocationData }) {
       </section>
 
       {/* ══ MARKET ANALYSIS ══ */}
-      <section className="py-16 bg-[#f9f8f5] border-b border-[#e5e2d9]">
+      <section className="py-16 bg-[#08090d] border-b border-white/5">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Text side */}
             <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-gray-400 mb-3">
+              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-primary mb-3">
                 Why {data.city} is different
               </p>
-              <h2 className="text-3xl font-black leading-tight mb-5 text-[#0e0e0e]">
+              <h2 className="text-3xl font-black leading-tight mb-5">
                 {data.marketAnalysis.heading}
               </h2>
-              <p className="text-sm text-gray-500 leading-relaxed mb-8">{data.marketAnalysis.body}</p>
-
+              <p className="text-sm text-white/45 leading-relaxed mb-8">{data.marketAnalysis.body}</p>
               <a
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-[#0e0e0e] text-white font-bold py-3 px-5 rounded-xl text-sm hover:bg-black/80 transition-colors group"
+                className="inline-flex items-center gap-2 bg-white text-[#0e0e0e] font-bold py-3 px-5 rounded-xl text-sm hover:bg-white/90 transition-colors group"
               >
                 Book a {data.city} audit
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -247,15 +260,15 @@ export function LocationServicePage({ data }: { data: LocationData }) {
             </div>
 
             {/* Data table */}
-            <div className="bg-white border border-[#e5e2d9] rounded-2xl overflow-hidden shadow-sm">
-              <div className="px-5 py-4 border-b border-[#e5e2d9] bg-[#f9f8f5]">
-                <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">{data.city} Market Data</p>
+            <div className="bg-white/3 border border-white/8 rounded-2xl overflow-hidden">
+              <div className="px-5 py-4 border-b border-white/8 bg-white/3">
+                <p className="text-[10px] font-black uppercase tracking-widest text-white/30">{data.city} Market Data</p>
               </div>
-              <div className="divide-y divide-[#e5e2d9]">
+              <div className="divide-y divide-white/5">
                 {data.marketAnalysis.tableRows.map((row) => (
                   <div key={row.label} className="flex items-center justify-between px-5 py-3.5">
-                    <p className="text-xs text-gray-500 font-medium">{row.label}</p>
-                    <p className="text-sm font-bold text-[#0e0e0e] text-right max-w-[60%]">{row.value}</p>
+                    <p className="text-xs text-white/35 font-medium">{row.label}</p>
+                    <p className="text-sm font-bold text-white text-right max-w-[60%]">{row.value}</p>
                   </div>
                 ))}
               </div>
@@ -265,10 +278,10 @@ export function LocationServicePage({ data }: { data: LocationData }) {
       </section>
 
       {/* ══ PROCESS ══ */}
-      <section className="py-16 bg-white border-b border-[#e5e2d9]">
+      <section className="py-16 bg-[#0a0c12] border-b border-white/5">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-[10px] font-black uppercase tracking-[0.18em] text-gray-400 mb-3">Our approach</p>
-          <h2 className="text-2xl font-black mb-10 text-[#0e0e0e]">
+          <p className="text-[10px] font-black uppercase tracking-[0.18em] text-primary mb-3">Our approach</p>
+          <h2 className="text-2xl font-black mb-10">
             Same five phases. Tuned to {data.city}.
           </h2>
           <div className="space-y-4">
@@ -279,14 +292,14 @@ export function LocationServicePage({ data }: { data: LocationData }) {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.07 }}
-                className="flex gap-5 items-start py-4 border-b border-[#f0ede8] last:border-0"
+                className="flex gap-5 items-start py-4 border-b border-white/5 last:border-0"
               >
-                <div className="w-8 h-8 rounded-full bg-primary/8 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
                   <span className="text-[11px] font-black text-primary">{String(i + 1).padStart(2, "0")}</span>
                 </div>
                 <div className="flex-1 grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-1 sm:gap-4">
-                  <p className="font-bold text-sm text-[#0e0e0e] sm:pt-0">{step.title}</p>
-                  <p className="text-sm text-gray-500 leading-relaxed">{step.body}</p>
+                  <p className="font-bold text-sm text-white">{step.title}</p>
+                  <p className="text-sm text-white/45 leading-relaxed">{step.body}</p>
                 </div>
               </motion.div>
             ))}
@@ -295,14 +308,14 @@ export function LocationServicePage({ data }: { data: LocationData }) {
       </section>
 
       {/* ══ CASE STUDY ══ */}
-      <section id="case-study" className="py-16 bg-[#090b10] text-white">
+      <section id="case-study" className="py-16 bg-[#08090d] border-b border-white/5">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/25 mb-4">{data.city} · Client result</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.18em] text-primary mb-4">{data.city} · Client result</p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-black leading-tight mb-4">{data.caseStudy.headline}</h2>
-              <p className="text-white/55 text-sm leading-relaxed">{data.caseStudy.body}</p>
-              <div className="flex gap-4 mt-8">
+              <p className="text-white/45 text-sm leading-relaxed">{data.caseStudy.body}</p>
+              <div className="flex flex-wrap gap-4 mt-8">
                 {data.caseStudy.metrics.map((m) => (
                   <div key={m.label} className="bg-white/5 border border-white/8 rounded-xl p-4 text-center min-w-[90px]">
                     <p className="text-2xl font-black text-white tabular-nums">{m.value}</p>
@@ -330,36 +343,34 @@ export function LocationServicePage({ data }: { data: LocationData }) {
       </section>
 
       {/* ══ OTHER CITIES + SERVICES ══ */}
-      <section className="py-16 bg-[#f9f8f5] border-b border-[#e5e2d9]">
+      <section className="py-16 bg-[#0a0c12] border-b border-white/5">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Other GTA cities */}
             <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-gray-400 mb-5">Other GTA cities we serve</p>
+              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/25 mb-5">Other GTA cities we serve</p>
               <div className="grid grid-cols-2 gap-2">
                 {data.otherCities.map((c) => (
                   <Link
                     key={c.name}
                     href={c.href}
-                    className="flex items-center gap-2 py-2.5 px-3 rounded-lg border border-[#e5e2d9] hover:border-primary/40 hover:text-primary transition-colors text-sm font-medium text-gray-600"
+                    className="flex items-center gap-2 py-2.5 px-3 rounded-lg border border-white/8 hover:border-primary/40 hover:text-primary transition-colors text-sm font-medium text-white/40"
                   >
-                    <MapPin className="w-3.5 h-3.5 text-primary/50" />
+                    <MapPin className="w-3.5 h-3.5 text-primary/40 shrink-0" />
                     {c.name}
                   </Link>
                 ))}
               </div>
             </div>
-            {/* Other services */}
             <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-gray-400 mb-5">Other services for {data.city}</p>
+              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/25 mb-5">Other services for {data.city}</p>
               <div className="grid grid-cols-2 gap-2">
                 {data.otherServices.map((s) => (
                   <Link
                     key={s.name}
                     href={s.href}
-                    className="flex items-center gap-2 py-2.5 px-3 rounded-lg border border-[#e5e2d9] hover:border-primary/40 hover:text-primary transition-colors text-sm font-medium text-gray-600"
+                    className="flex items-center gap-2 py-2.5 px-3 rounded-lg border border-white/8 hover:border-primary/40 hover:text-primary transition-colors text-sm font-medium text-white/40"
                   >
-                    <TrendingUp className="w-3.5 h-3.5 text-primary/50" />
+                    <TrendingUp className="w-3.5 h-3.5 text-primary/40 shrink-0" />
                     {s.name}
                   </Link>
                 ))}
@@ -370,15 +381,16 @@ export function LocationServicePage({ data }: { data: LocationData }) {
       </section>
 
       {/* ══ BOTTOM CTA ══ */}
-      <section className="py-20 md:py-28 bg-primary text-white">
+      <section className="py-20 md:py-28 bg-[#08090d] border-t border-white/5">
         <div className="max-w-2xl mx-auto px-6 text-center">
+          <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-4 block">{data.city} · Free Audit</span>
           <h2 className="text-3xl md:text-4xl font-black leading-tight mb-4">{data.ctaHeadline}</h2>
-          <p className="text-white/60 text-sm mb-8 leading-relaxed">
-            One-page diagnostic in your ward, your service category, and the businesses currently outranking you.
+          <p className="text-white/40 text-sm mb-8 leading-relaxed">
+            One-page diagnostic: your map pack position in {data.city}, your service category, and the businesses currently outranking you.
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center gap-2 bg-white text-primary font-bold py-4 px-8 rounded-xl transition-all text-sm group hover:bg-white/90"
+            className="inline-flex items-center gap-2 bg-primary text-white font-bold py-4 px-8 rounded-xl transition-all text-sm group hover:bg-primary/90 shadow-lg shadow-primary/25"
           >
             Request {data.city} audit
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
@@ -403,7 +415,7 @@ export const mississaugaLocalSeoData: LocationData = {
   headline: "Local SEO in Mississauga — built for the map pack,",
   headlineAccent: "not the algorithm of the week.",
   tagline:
-    "Mississauga's map pack is dominated by businesses three blocks from Square One, if your operation is in Streetsville, Port Credit, or Erin Mills — proximity is working against you. Here's how we close the gap.",
+    "Mississauga's map pack is dominated by businesses three blocks from Square One. If your operation is in Streetsville, Port Credit, or Erin Mills — proximity is working against you. Here's how we close the gap.",
   marketNote:
     "Toronto proximity creates a unique gravity problem. Businesses in Mississauga's outer sub-markets compete not just locally but against Toronto-adjacent businesses with larger citation footprints.",
   stats: [
@@ -425,7 +437,7 @@ export const mississaugaLocalSeoData: LocationData = {
   ],
   marketAnalysis: {
     heading: "Two centres of gravity, and a proximity problem.",
-    body: "Mississauga's two local markets — it's at least three: Square One dominates search for businesses three blocks from Dundurn-area businesses, Port Credit operates as its own micro-economy, and Streetsville-Clarkson creates a separate proximity challenge for any business competing for calls. GBP as a marketing channel operates on micro-geography — something most agencies building general SEO campaigns never account for.",
+    body: "Mississauga operates as at least three local markets: Square One dominates search for nearby businesses, Port Credit runs as its own micro-economy, and Streetsville–Clarkson creates a separate proximity challenge for any business competing for calls. GBP operates on micro-geography — something most agencies building general SEO campaigns never account for.",
     tableRows: [
       { label: "Population", value: "717,961" },
       { label: "Market status", value: "High competition — Dental, Auto, Legal, Physio" },
@@ -436,31 +448,11 @@ export const mississaugaLocalSeoData: LocationData = {
     ],
   },
   process: [
-    {
-      phase: "Step 01",
-      title: "Local audit",
-      body: "GBP, NAP across 45+ Canadian directories. Comparison vs. all top Mississauga-market incumbents. Analysis of Square One vs. outer-market proximity effects.",
-    },
-    {
-      phase: "Step 02",
-      title: "GBP + citations",
-      body: "Service-area configuration for all target Mississauga sub-markets. Citation corrections submitted to all major and local Mississauga directories. 45+ city cycles.",
-    },
-    {
-      phase: "Step 03",
-      title: "Pages + schema",
-      body: "Neighbourhood landing pages for Square One, Streetsville, Port Credit, Cooksville. Structured data: LocalBusiness, FAQ. Internal linking tuned to local mesh.",
-    },
-    {
-      phase: "Step 04",
-      title: "Reviews + links",
-      body: "Review generation tuned for Mississauga civic context. Outreach to local Mississauga directories, 40+ member profiles, community sponsorships.",
-    },
-    {
-      phase: "Step 05",
-      title: "Compound",
-      body: "Monthly pack tracking across 15 Mississauga-market keywords. Reporting against Mississauga pack incumbents — not just your own historic positions.",
-    },
+    { phase: "Step 01", title: "Local audit", body: "GBP, NAP across 45+ Canadian directories. Comparison vs. all top Mississauga-market incumbents. Analysis of Square One vs. outer-market proximity effects." },
+    { phase: "Step 02", title: "GBP + citations", body: "Service-area configuration for all target Mississauga sub-markets. Citation corrections submitted to all major and local Mississauga directories." },
+    { phase: "Step 03", title: "Pages + schema", body: "Neighbourhood landing pages for Square One, Streetsville, Port Credit, Cooksville. Structured data: LocalBusiness, FAQ. Internal linking tuned to local mesh." },
+    { phase: "Step 04", title: "Reviews + links", body: "Review generation tuned for Mississauga civic context. Outreach to local Mississauga directories, community sponsorships." },
+    { phase: "Step 05", title: "Compound", body: "Monthly pack tracking across 15 Mississauga-market keywords. Reporting against Mississauga pack incumbents." },
   ],
   caseStudy: {
     headline: "Cooksville Auto Body — from #11 to #2 in 14 weeks.",
@@ -487,7 +479,7 @@ export const mississaugaLocalSeoData: LocationData = {
     { name: "Reputation Management", href: "/mississauga/reputation-management" },
     { name: "Programmatic SEO", href: "/mississauga/programmatic-seo-service" },
   ],
-  ctaHeadline: "See where your Mississauga rankings are leaking — before someone else takes the spot.",
+  ctaHeadline: "The Mississauga map pack moves. Here's how to stay in it.",
 };
 
 /* ══════════════════════════════════════════
@@ -499,64 +491,64 @@ export const torontoLocalSeoData: LocationData = {
   slug: "toronto",
   service: "Local SEO",
   serviceSlug: "local-seo-service",
-  headline: "Local SEO in Toronto — built for the",
-  headlineAccent: "most competitive map pack in Canada.",
+  headline: "Local SEO in Toronto — map pack dominance",
+  headlineAccent: "across every neighbourhood.",
   tagline:
-    "Toronto's map pack is fought across 44 distinct wards. Ranking in Yorkville is a different battle from ranking in Scarborough or Etobicoke. Generic local SEO doesn't win here. Neighbourhood-first strategy does.",
+    "Toronto's local search landscape is one of the most competitive in Canada. Winning isn't about being the best business — it's about having the strongest local signal infrastructure in your neighbourhood.",
   marketNote:
-    "Toronto has more active GBP profiles per square kilometre than any other Canadian city. Competition is intense and citation authority requirements are higher than national averages.",
+    "Toronto's 140+ distinct neighbourhoods function as separate micro-markets. A business in Leslieville doesn't compete against one in Etobicoke. We target your specific trade zone.",
   stats: [
-    { value: "+312%", label: "Avg lead growth · 12mo" },
-    { value: "#1", label: "Map pack results achieved" },
-    { value: "44", label: "Wards actively tracked" },
+    { value: "+312%", label: "Lead growth · client avg." },
+    { value: "12 wks", label: "Avg. time to pack" },
+    { value: "140+", label: "Neighbourhoods tracked" },
   ],
   mapPins: [
-    { name: "Downtown Core", position: { top: "50%", left: "50%" }, rank: "#1 Pack Zone" },
-    { name: "Yorkville", position: { top: "35%", left: "45%" }, rank: "High competition" },
-    { name: "Etobicoke", position: { top: "45%", left: "20%" }, rank: "Active" },
-    { name: "Scarborough", position: { top: "40%", left: "75%" }, rank: "Tracking" },
-    { name: "North York", position: { top: "25%", left: "50%" } },
-    { name: "East York", position: { top: "45%", left: "60%" } },
+    { name: "Downtown Core", position: { top: "55%", left: "52%" }, rank: "#1 Pack Target" },
+    { name: "Yorkville", position: { top: "35%", left: "50%" }, rank: "High competition" },
+    { name: "Leslieville", position: { top: "48%", left: "72%" }, rank: "Targeting active" },
+    { name: "Etobicoke", position: { top: "45%", left: "20%" }, rank: "Tracking" },
+    { name: "North York", position: { top: "25%", left: "52%" } },
+    { name: "Scarborough", position: { top: "40%", left: "78%" } },
   ],
   neighborhoods: [
-    "Downtown Core", "Yorkville", "Etobicoke", "Scarborough", "North York", "East York",
-    "Leslieville", "The Annex", "King West", "Danforth", "Liberty Village", "Roncesvalles",
+    "Downtown Core", "Yorkville", "Leslieville", "Etobicoke", "North York", "Scarborough",
+    "Annex", "Kensington", "Roncesvalles", "Liberty Village", "Distillery", "Leaside",
   ],
   marketAnalysis: {
-    heading: "Forty-four wards. Forty-four different search battlefields.",
-    body: "Toronto's local search market is the most fragmented in Canada. A business in Leslieville doesn't compete with Etobicoke — but both compete against national chains with massive citation authority. The key is hyper-specific GBP service-area configuration and neighbourhood-level content clusters that signal genuine local relevance.",
+    heading: "140+ micro-markets. One GBP won't cover them all.",
+    body: "Toronto is Canada's largest city but it isn't one local market — it's 140+. The business in Roncesvalles doesn't compete against the one in Scarborough. We map your exact trade zone, identify the specific sub-markets where your customers search, and build the local signal infrastructure to dominate each one independently.",
     tableRows: [
       { label: "Population", value: "2,794,356" },
-      { label: "Market status", value: "Extremely high competition across all verticals" },
+      { label: "Market status", value: "Extremely competitive — all service categories" },
+      { label: "Neighbourhoods", value: "140+ distinct local markets" },
       { label: "Review delta (avg.)", value: "28–45 reviews behind pack #1" },
-      { label: "Key verticals", value: "Dental, Legal, Real Estate, HVAC, Auto" },
-      { label: "Avg. time to pack", value: "12–24 weeks" },
-      { label: "Wards tracked", value: "44 Toronto wards, 150+ service combos" },
+      { label: "Avg. time to pack", value: "12–20 weeks (competitive)" },
+      { label: "Top verticals", value: "Legal · Dental · Real Estate · HVAC · Auto" },
     ],
   },
   process: [
-    { phase: "Step 01", title: "Local audit", body: "44-ward analysis. GBP, NAP across 45+ directories. Full ward-by-ward competitor mapping for all priority service categories." },
-    { phase: "Step 02", title: "GBP + citations", body: "Ward-specific service area configuration. Citation corrections across all national and Toronto-local directories." },
-    { phase: "Step 03", title: "Pages + schema", body: "Neighbourhood content clusters for each target ward. LocalBusiness and Service schema. Internal link architecture." },
-    { phase: "Step 04", title: "Reviews + links", body: "Review velocity system. Outreach to Toronto BIAs, community organisations, local press." },
-    { phase: "Step 05", title: "Compound", body: "Monthly tracking across all target ward + service combinations. Strategy updates based on pack movement." },
+    { phase: "Step 01", title: "Trade zone audit", body: "Map your exact trade zone. Identify the specific Toronto neighbourhoods where your customers are searching vs. where you're currently visible." },
+    { phase: "Step 02", title: "GBP + citations", body: "Toronto-specific GBP configuration. Citation corrections across all major Canadian and Toronto-specific directories." },
+    { phase: "Step 03", title: "Neighbourhood pages", body: "Custom landing pages for every priority Toronto neighbourhood. LocalBusiness schema. Internal linking architecture for Toronto micro-market mesh." },
+    { phase: "Step 04", title: "Reviews + links", body: "Review generation system. Outreach to Toronto-specific directories, BIA associations, community boards, local press." },
+    { phase: "Step 05", title: "Compound", body: "Monthly pack tracking across all priority Toronto neighbourhoods. Competitive intelligence reports on every business in your pack." },
   ],
   caseStudy: {
-    headline: "Yorkville Dental — from page 2 to #1 map pack in 18 weeks.",
-    body: "Luxury dental practice buried on page 2 despite having a prime Yorkville address. We identified 42 citation inconsistencies, rebuilt the GBP service areas, launched five neighbourhood landing pages, and ran a review velocity campaign. In 18 weeks: #1 in the Yorkville dental map pack.",
+    headline: "Toronto dental clinic — #1 in Annex map pack in 18 weeks.",
+    body: "A Toronto dental practice invisible in their own neighbourhood. We rebuilt GBP, fixed 52 citation inconsistencies, published landing pages for Annex, Roncesvalles, and Bloor West Village, and ran a review velocity programme. In 18 weeks: #1 in the Annex pack, +312% new patient enquiries.",
     metrics: [
-      { value: "+86%", label: "New patients" },
-      { value: "#1", label: "Map pack" },
-      { value: "+94", label: "Net reviews" },
+      { value: "+312%", label: "New patients" },
+      { value: "#1", label: "Annex pack" },
+      { value: "+87", label: "Net reviews" },
     ],
   },
   otherCities: [
     { name: "Local SEO · Mississauga", href: "/mississauga/local-seo-service" },
     { name: "Local SEO · Brampton", href: "/brampton/local-seo-service" },
     { name: "Local SEO · Oakville", href: "/oakville/local-seo-service" },
-    { name: "Local SEO · Hamilton", href: "/hamilton/local-seo-service" },
     { name: "Local SEO · Markham", href: "/markham/local-seo-service" },
-    { name: "Local SEO · Richmond Hill", href: "/richmond-hill/local-seo-service" },
+    { name: "Local SEO · Ottawa", href: "/ottawa/local-seo-service" },
+    { name: "Local SEO · Hamilton", href: "/hamilton/local-seo-service" },
   ],
   otherServices: [
     { name: "Google Ads · Toronto", href: "/toronto/google-ads-management" },
@@ -566,7 +558,7 @@ export const torontoLocalSeoData: LocationData = {
     { name: "Reputation Management", href: "/toronto/reputation-management" },
     { name: "Programmatic SEO", href: "/toronto/programmatic-seo-service" },
   ],
-  ctaHeadline: "See where your Toronto rankings are leaking — before someone else takes the spot.",
+  ctaHeadline: "Toronto is the most competitive local market in Canada. Let's win it.",
 };
 
 /* ══════════════════════════════════════════
@@ -578,55 +570,55 @@ export const ottawaLocalSeoData: LocationData = {
   slug: "ottawa",
   service: "Local SEO",
   serviceSlug: "local-seo-service",
-  headline: "Local SEO in Ottawa — built for a",
-  headlineAccent: "bilingual, government-adjacent market.",
+  headline: "Local SEO in Ottawa — dominate",
+  headlineAccent: "the capital's map pack.",
   tagline:
-    "Ottawa's local search is shaped by its bilingual character, the federal government's commercial footprint, and the Gatineau border. Generic local SEO misses all three. We don't.",
+    "Ottawa's local search market is mid-competition with exceptional opportunity for service businesses willing to invest in the right local signal infrastructure. Government employees, tech workers, and a stable economy mean high-value service queries all year.",
   marketNote:
-    "Ottawa businesses often lose map pack position to Gatineau-based competitors crossing the provincial line. Proper service area configuration is more critical here than in most Canadian markets.",
+    "Ottawa's bilingual market (English + French) creates a unique local SEO advantage for businesses that optimise GBP and content for both languages — most competitors ignore this entirely.",
   stats: [
-    { value: "+280%", label: "Avg lead growth · 12mo" },
-    { value: "#1–2", label: "Map pack positions achieved" },
-    { value: "2", label: "Language markets served" },
+    { value: "+187%", label: "Lead growth · client avg." },
+    { value: "8 wks", label: "Avg. time to pack" },
+    { value: "Bilingual", label: "SEO strategy" },
   ],
   mapPins: [
-    { name: "Downtown Ottawa", position: { top: "45%", left: "50%" }, rank: "#1 Pack Zone" },
-    { name: "Kanata", position: { top: "35%", left: "22%" }, rank: "Tech corridor" },
-    { name: "Barrhaven", position: { top: "65%", left: "35%" }, rank: "Active" },
-    { name: "Westboro", position: { top: "40%", left: "35%" } },
-    { name: "Glebe", position: { top: "55%", left: "52%" } },
-    { name: "Orleans", position: { top: "38%", left: "78%" } },
+    { name: "Downtown Ottawa", position: { top: "50%", left: "50%" }, rank: "#1 Pack Target" },
+    { name: "Kanata", position: { top: "30%", left: "20%" }, rank: "Tech district" },
+    { name: "Nepean", position: { top: "60%", left: "30%" }, rank: "Targeting active" },
+    { name: "Barrhaven", position: { top: "72%", left: "25%" }, rank: "Tracking" },
+    { name: "Gloucester", position: { top: "40%", left: "72%" } },
+    { name: "Gatineau", position: { top: "35%", left: "60%" } },
   ],
   neighborhoods: [
-    "Downtown", "Westboro", "Glebe", "Kanata", "Barrhaven", "Orleans",
-    "Byward Market", "Centretown", "Sandy Hill", "Hintonburg", "Alta Vista", "Hunt Club",
+    "Downtown", "Kanata", "Nepean", "Barrhaven", "Gloucester", "Orléans",
+    "Westboro", "The Glebe", "Sandy Hill", "Hull/Gatineau", "Alta Vista", "Vanier",
   ],
   marketAnalysis: {
-    heading: "Bilingual market, federal anchor, and a border that blurs the map pack.",
-    body: "Ottawa's local search market has three forces that most agencies ignore: the bilingual requirement for federal-adjacent businesses, the Gatineau cross-border competition that bleeds into Ottawa map packs for certain categories, and the Kanata tech corridor which behaves as a completely separate local market from Downtown.",
+    heading: "A bilingual city with a unique local SEO advantage.",
+    body: "Ottawa's market is significantly less saturated than Toronto or Mississauga, which means well-executed local SEO achieves pack positions faster. The bilingual dimension (English and French search queries) is underexploited by most competitors — representing a genuine opportunity for businesses willing to invest in both-language optimisation.",
     tableRows: [
       { label: "Population", value: "1,017,449" },
-      { label: "Market status", value: "Moderate-high competition, bilingual requirements" },
-      { label: "Key complication", value: "Gatineau cross-border GBP competition" },
-      { label: "Key verticals", value: "Legal, Government services, Tech, Medical" },
-      { label: "Avg. time to pack", value: "8–16 weeks" },
-      { label: "Languages tracked", value: "English + French bilingual queries" },
+      { label: "Market status", value: "Moderate competition — opportunity market" },
+      { label: "Bilingual advantage", value: "High — most competitors ignore French queries" },
+      { label: "Review delta (avg.)", value: "8–16 reviews behind pack #1" },
+      { label: "Avg. time to pack", value: "6–12 weeks" },
+      { label: "Top verticals", value: "Legal · Dental · HVAC · Trades · Government Consulting" },
     ],
   },
   process: [
-    { phase: "Step 01", title: "Local audit", body: "Ottawa + Gatineau cross-border competitor analysis. GBP service-area configuration review. Bilingual query mapping." },
-    { phase: "Step 02", title: "GBP + citations", body: "Bilingual GBP optimisation. Citation builds across all major Canadian and Ottawa-specific directories." },
-    { phase: "Step 03", title: "Pages + schema", body: "English and French neighbourhood landing pages. Federal-adjacent content strategy for government-corridor businesses." },
-    { phase: "Step 04", title: "Reviews + links", body: "Review generation in English and French. Links from Ottawa community organisations, BIAs, local press." },
-    { phase: "Step 05", title: "Compound", body: "Bilingual rank tracking. Monthly pack analysis vs. Ottawa and Gatineau incumbents." },
+    { phase: "Step 01", title: "Bilingual audit", body: "GBP audit with English and French query analysis. NAP corrections across Canadian directories plus Ottawa-specific local directories." },
+    { phase: "Step 02", title: "GBP + citations", body: "Bilingual GBP configuration. Service-area setup for Ottawa sub-markets. Citation build across 45+ directories." },
+    { phase: "Step 03", title: "Bilingual pages", body: "Neighbourhood landing pages in both English and French. Hreflang configuration. Local schema for Ottawa sub-markets." },
+    { phase: "Step 04", title: "Reviews + links", body: "Review generation in both languages. Outreach to Ottawa BIAs, community organisations, Ottawa Citizen, CBC Ottawa." },
+    { phase: "Step 05", title: "Compound", body: "Monthly pack tracking across all priority Ottawa neighbourhoods in both English and French queries." },
   ],
   caseStudy: {
-    headline: "Westboro law firm — from page 3 to map pack #1 in 16 weeks.",
-    body: "Family law practice invisible on local search despite 12 years in practice. We identified bilingual citation gaps, rebuilt the GBP with French service descriptions, and published neighbourhood content in both languages. In 16 weeks: #1 in the Ottawa family law map pack.",
+    headline: "Ottawa HVAC company — #1 Kanata map pack in 8 weeks.",
+    body: "An Ottawa HVAC contractor invisible outside their immediate postal code. We built the full GBP, corrected 24 citation inconsistencies, launched bilingual neighbourhood pages for Kanata, Nepean, and Barrhaven, and set up automated review requests. In 8 weeks: #1 in Kanata, +187% service call volume.",
     metrics: [
-      { value: "+280%", label: "Client enquiries" },
-      { value: "#1", label: "Map pack" },
-      { value: "+72", label: "Net reviews" },
+      { value: "+187%", label: "Service calls" },
+      { value: "#1", label: "Kanata pack" },
+      { value: "+42", label: "Net reviews" },
     ],
   },
   otherCities: [
@@ -635,15 +627,15 @@ export const ottawaLocalSeoData: LocationData = {
     { name: "Local SEO · Brampton", href: "/brampton/local-seo-service" },
     { name: "Local SEO · Oakville", href: "/oakville/local-seo-service" },
     { name: "Local SEO · Hamilton", href: "/hamilton/local-seo-service" },
-    { name: "Local SEO · Kingston", href: "/kingston/local-seo-service" },
+    { name: "Local SEO · Markham", href: "/markham/local-seo-service" },
   ],
   otherServices: [
     { name: "Google Ads · Ottawa", href: "/ottawa/google-ads-management" },
     { name: "Web Design · Ottawa", href: "/ottawa/web-design-service" },
     { name: "Content Marketing · Ottawa", href: "/ottawa/content-marketing-service" },
     { name: "Technical SEO · Ottawa", href: "/ottawa/technical-seo-service" },
-    { name: "Reputation Management", href: "/ottawa/reputation-management" },
     { name: "Bilingual SEO", href: "/ottawa/bilingual-seo-service" },
+    { name: "Programmatic SEO", href: "/ottawa/programmatic-seo-service" },
   ],
-  ctaHeadline: "See where your Ottawa rankings are leaking — before someone else takes the spot.",
+  ctaHeadline: "Ottawa's pack is winnable. Let's get you into it.",
 };
