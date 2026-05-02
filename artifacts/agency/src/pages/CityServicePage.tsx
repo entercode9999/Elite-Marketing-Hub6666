@@ -1040,19 +1040,29 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   return (
     <div className="border-b border-[#e5e2d9] last:border-0">
       <button
-        className="w-full flex items-start justify-between gap-4 py-5 text-left"
+        className="w-full flex items-start justify-between gap-4 py-5 text-left group"
         onClick={() => setOpen(!open)}
       >
-        <span className="font-bold text-[#0e0e0e] text-base leading-snug">{q}</span>
-        {open ? (
-          <ChevronUp className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-        ) : (
-          <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-        )}
+        <span className="font-bold text-[#0e0e0e] text-base leading-snug group-hover:text-primary transition-colors">{q}</span>
+        <span className={`w-6 h-6 rounded-full border flex-shrink-0 mt-0.5 flex items-center justify-center transition-all ${open ? "bg-primary border-primary" : "border-[#e5e2d9]"}`}>
+          {open
+            ? <ChevronUp className="w-3.5 h-3.5 text-white" />
+            : <ChevronDown className="w-3.5 h-3.5 text-gray-400" />}
+        </span>
       </button>
       {open && (
-        <p className="pb-5 text-gray-600 leading-relaxed text-sm">{a}</p>
+        <p className="pb-5 text-gray-600 leading-relaxed text-[15px]">{a}</p>
       )}
+    </div>
+  );
+}
+
+/* ─── Stat Card ──────────────────────────────────────────────────── */
+function StatCard({ n, l, dark }: { n: string; l: string; dark?: boolean }) {
+  return (
+    <div className={`rounded-2xl p-6 border ${dark ? "bg-white/4 border-white/8" : "bg-white border-[#e5e2d9]"}`}>
+      <div className={`text-3xl font-black mb-1 ${dark ? "text-white" : "text-[#0e0e0e]"}`}>{n}</div>
+      <div className={`text-xs font-medium leading-snug ${dark ? "text-white/40" : "text-gray-500"}`}>{l}</div>
     </div>
   );
 }
@@ -1072,278 +1082,181 @@ export default function CityServicePage() {
 
   const Icon = svc.icon;
 
+  /* City-unique intro paragraphs — avoids pure [City] template cloning */
+  const introParagraphs = fill(svc.introTemplate).split("\n\n");
+  const cityContextPara = `${city.name}'s business market has its own competitive character: ${city.marketBlurb.replace(/^[A-Z][a-z]+ is /, "").replace(/^[A-Z][a-z]+ has /, "")} Understanding this local context is how we tailor every ${svc.shortLabel} strategy we build for ${city.name} businesses — not a recycled template, but a programme shaped by the specific demand patterns, competitive landscape, and search behaviour of your market.`;
+
+  const neighbourhoodList = city.neighborhoodsOrAreas.split(",").map((n) => n.trim()).filter(Boolean);
+
   return (
     <div className="min-h-screen bg-[#f9f8f5]">
       <Nav />
 
-      {/* ── Hero ── */}
-      <section className="bg-[#08090d] pt-32 pb-24 border-b border-white/8">
-        <div className="container mx-auto px-4 max-w-7xl">
+      {/* ═══ HERO ══════════════════════════════════════════════════════ */}
+      <section className="relative bg-[#08090d] pt-28 pb-0 overflow-hidden">
+        {/* subtle grid overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+        {/* cobalt glow */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-white/25 text-xs mb-6">
-            <Link href="/" className="hover:text-white/50 transition-colors">Home</Link>
+          <div className="flex items-center gap-2 text-white/20 text-xs mb-8 flex-wrap">
+            <Link href="/" className="hover:text-white/40 transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/cities" className="hover:text-white/50 transition-colors">Cities</Link>
+            <Link href="/cities" className="hover:text-white/40 transition-colors">Ontario Cities</Link>
             <span>/</span>
-            <Link href={`/${citySlug}/seo-services`} className="hover:text-white/50 transition-colors">{city.name}</Link>
+            <Link href={`/${citySlug}/seo-services`} className="hover:text-white/40 transition-colors">{city.name}</Link>
             <span>/</span>
-            <span className="text-white/40">{svc.label}</span>
+            <span className="text-white/35">{svc.label}</span>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-16 items-start pb-20">
+            {/* Left */}
             <div>
-              <div className="flex items-center gap-2 mb-5">
-                <MapPin className="w-4 h-4 text-primary" />
-                <p className="text-[11px] font-black uppercase tracking-widest text-primary">
+              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-6">
+                <MapPin className="w-3.5 h-3.5 text-primary" />
+                <span className="text-[11px] font-black uppercase tracking-widest text-primary">
                   {city.name}, {city.province} · {city.region}
-                </p>
+                </span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl font-black text-white leading-[1.05] mb-5">
+              <h1 className="text-5xl md:text-6xl font-black text-white leading-[1.04] mb-4">
                 {fill(svc.h1Template)}
               </h1>
-              <p className="text-xl text-primary italic font-bold mb-6 leading-snug">
+              <p className="text-[1.15rem] text-primary font-bold mb-8 leading-snug">
                 {fill(svc.taglineTemplate)}
               </p>
 
               <div className="flex flex-wrap gap-3 mb-8">
                 <a
                   href="/contact"
-                  className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors"
+                  className="inline-flex items-center gap-2 bg-primary text-white font-bold px-7 py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-[15px]"
                 >
                   {svc.cta} <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
-                  href="tel:+18005550199"
-                  className="inline-flex items-center gap-2 border border-white/15 text-white font-bold px-6 py-3 rounded-xl hover:border-white/30 transition-colors"
+                  href="tel:+14165550199"
+                  className="inline-flex items-center gap-2 border border-white/15 text-white font-semibold px-6 py-3.5 rounded-xl hover:border-white/30 hover:bg-white/4 transition-all text-[15px]"
                 >
-                  <Phone className="w-4 h-4" /> Call Now
+                  <Phone className="w-4 h-4" /> Call Us
                 </a>
               </div>
 
-              {/* Trust signals */}
-              <div className="flex flex-wrap gap-3">
-                {["Google Partner", "SEMrush Certified", "4.9★ on Clutch", "No lock-in contracts"].map((t) => (
-                  <span
-                    key={t}
-                    className="text-[11px] font-bold text-white/40 border border-white/10 rounded-full px-3 py-1"
-                  >
+              <div className="flex flex-wrap gap-2">
+                {["Google Partner", "4.9★ Clutch Rated", "10+ Years in Market", "No Lock-in Contracts"].map((t) => (
+                  <span key={t} className="text-[11px] font-bold text-white/35 border border-white/10 rounded-full px-3 py-1">
                     {t}
                   </span>
                 ))}
               </div>
             </div>
 
-            {/* Stats column */}
-            <div className="space-y-4">
+            {/* Right — stats + city card */}
+            <div className="space-y-3">
               {svc.stats.map((s) => (
-                <div
-                  key={s.l}
-                  className="bg-white/4 border border-white/8 rounded-2xl p-6 flex items-center gap-5"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center flex-shrink-0">
+                <div key={s.l} className="bg-white/4 border border-white/8 rounded-2xl p-5 flex items-center gap-5">
+                  <div className="w-11 h-11 rounded-xl bg-primary/15 flex items-center justify-center flex-shrink-0">
                     <TrendingUp className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <div className="text-3xl font-black text-white">{fill(s.n)}</div>
-                    <div className="text-sm text-white/40">{fill(s.l)}</div>
+                    <div className="text-3xl font-black text-white leading-none">{fill(s.n)}</div>
+                    <div className="text-sm text-white/40 mt-0.5">{fill(s.l)}</div>
                   </div>
                 </div>
               ))}
 
-              {/* City context card */}
-              <div className="bg-white/4 border border-white/8 rounded-2xl p-6">
-                <p className="text-[10px] font-black uppercase tracking-widest text-primary/60 mb-2">
-                  {city.name} Market
-                </p>
-                <p className="text-white/50 text-sm leading-relaxed">{city.economyHighlights}</p>
+              {/* City economy card */}
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <Icon className="w-4 h-4 text-primary" />
+                  <p className="text-[10px] font-black uppercase tracking-widest text-primary">{city.name} Economy</p>
+                </div>
+                <p className="text-white/60 text-sm leading-relaxed">{city.economyHighlights}</p>
+                <div className="mt-4 pt-4 border-t border-white/10">
+                  <p className="text-[10px] font-black uppercase tracking-widest text-white/25 mb-1.5">Population</p>
+                  <p className="text-white font-black text-xl">{city.pop}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* bottom edge fade */}
+        <div className="h-12 bg-gradient-to-b from-transparent to-[#f9f8f5]" />
       </section>
 
-      {/* ── Market Context ── */}
-      <section className="py-20 bg-white border-b border-[#e5e2d9]">
+      {/* ═══ MARKET CONTEXT (unique per city) ══════════════════════════ */}
+      <section className="py-20 bg-[#f9f8f5] border-b border-[#e5e2d9]">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid lg:grid-cols-3 gap-12 items-start">
-            <div className="lg:col-span-2">
+          <div className="grid lg:grid-cols-5 gap-14 items-start">
+            {/* Main text — 3 paragraphs, middle one is city-specific */}
+            <div className="lg:col-span-3">
               <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">
-                The {city.name} Market
+                The {city.name} {svc.shortLabel} Market
               </p>
-              <h2 className="text-3xl font-black text-[#0e0e0e] mb-6">
-                {svc.label} in {city.name}: What You Need to Know
+              <h2 className="text-3xl md:text-4xl font-black text-[#0e0e0e] leading-[1.1] mb-7">
+                {svc.shortLabel} in {city.name}:<br />
+                <span className="text-primary">What sets this market apart.</span>
               </h2>
-              <div className="space-y-4 text-gray-600 leading-relaxed">
-                {fill(svc.introTemplate).split("\n\n").map((para, i) => (
-                  <p key={i}>{para}</p>
-                ))}
+              <div className="space-y-5 text-gray-600 leading-relaxed text-[15.5px]">
+                <p>{introParagraphs[0]}</p>
+                {/* City-unique paragraph — derived from city.marketBlurb */}
+                <p className="border-l-4 border-primary/30 pl-5 text-gray-700 italic">{cityContextPara}</p>
+                {introParagraphs[2] && <p>{introParagraphs[2]}</p>}
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a href="/contact" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors text-sm">
+                  Get a Free {city.name} {svc.shortLabel} Audit <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
             </div>
 
-            <div className="space-y-5">
-              <div className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-6">
-                <p className="text-[10px] font-black uppercase tracking-widest text-primary/60 mb-3">
-                  Population
-                </p>
-                <p className="text-2xl font-black text-[#0e0e0e]">{city.pop}</p>
-              </div>
-              <div className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-6">
-                <p className="text-[10px] font-black uppercase tracking-widest text-primary/60 mb-3">
-                  Key Areas
-                </p>
-                <p className="text-sm text-gray-600 leading-relaxed">{city.neighborhoodsOrAreas}</p>
-              </div>
-              <div className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-6">
-                <p className="text-[10px] font-black uppercase tracking-widest text-primary/60 mb-3">
-                  Competition Level
-                </p>
+            {/* Right sidebar — city intelligence */}
+            <div className="lg:col-span-2 space-y-4">
+              {/* Competition note — unique per city */}
+              <div className="bg-white border border-[#e5e2d9] rounded-2xl p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <TrendingUp className="w-3.5 h-3.5 text-primary" />
+                  </div>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">Market Intelligence</p>
+                </div>
                 <p className="text-sm text-gray-600 leading-relaxed">{city.competitionNote}</p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* ── Why This Service ── */}
-      <section className="py-20 border-b border-[#e5e2d9]">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">
-            Why it matters
-          </p>
-          <h2 className="text-3xl font-black text-[#0e0e0e] mb-10">
-            Why {city.name} Businesses Need {svc.shortLabel}
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {svc.whyTemplate.map((why, i) => (
-              <div key={i} className="bg-white border border-[#e5e2d9] rounded-2xl p-7">
-                <div className="text-4xl font-black text-primary/15 mb-4">{String(i + 1).padStart(2, "0")}</div>
-                <p className="text-gray-700 leading-relaxed text-sm">{fill(why)}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── What's Included ── */}
-      <section className="py-20 bg-white border-b border-[#e5e2d9]">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">
-            What's included
-          </p>
-          <h2 className="text-3xl font-black text-[#0e0e0e] mb-3">
-            {svc.label} for {city.name} Businesses — Everything Included
-          </h2>
-          <p className="text-gray-500 mb-10 max-w-2xl">
-            Every engagement is scoped to your specific needs — but here's what a full {svc.shortLabel.toLowerCase()} programme for a {city.name} business typically covers.
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {svc.included.map((item) => (
-              <div key={item.title} className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-6">
-                <div className="flex items-start gap-3 mb-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <h3 className="font-bold text-[#0e0e0e] leading-snug">{item.title}</h3>
-                </div>
-                <p className="text-sm text-gray-500 leading-relaxed pl-8">{fill(item.description)}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Process ── */}
-      <section className="py-20 border-b border-[#e5e2d9]">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Our process</p>
-          <h2 className="text-3xl font-black text-[#0e0e0e] mb-10">
-            How We Deliver {svc.label} in {city.name}
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
-            {svc.process.map((step, i) => (
-              <div key={i} className="relative">
-                <div className="bg-white border border-[#e5e2d9] rounded-2xl p-6 h-full">
-                  <div className="text-5xl font-black text-primary/10 mb-3 leading-none">{step.step}</div>
-                  <h3 className="font-bold text-[#0e0e0e] mb-2 leading-snug">{step.title}</h3>
-                  <p className="text-xs text-gray-500 leading-relaxed">{fill(step.description)}</p>
-                </div>
-                {i < svc.process.length - 1 && (
-                  <div className="hidden xl:block absolute top-1/2 -right-3 w-6 h-px bg-[#e5e2d9] z-10" />
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Social Proof ── */}
-      <section className="py-20 bg-[#08090d] border-b border-white/8">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Client results</p>
-              <h2 className="text-4xl font-black text-white mb-8">
-                What {city.name} businesses say about Outlier
-              </h2>
-              <div className="space-y-6">
-                {[
-                  {
-                    quote: `"Outlier's ${svc.shortLabel.toLowerCase()} strategy completely transformed our online visibility in ${city.name}. We went from page 4 to position 1 within 7 months. The team is responsive, data-driven, and genuinely invested in our growth."`,
-                    name: "Michael K.",
-                    role: `${city.name} Business Owner`,
-                  },
-                  {
-                    quote: `"We'd worked with two other agencies before Outlier and neither could explain what they were doing or show measurable results. Outlier's reporting is clear, their strategy is transparent, and the results speak for themselves."`,
-                    name: "Sarah L.",
-                    role: `Marketing Director, ${city.name}`,
-                  },
-                ].map((t) => (
-                  <div key={t.name} className="bg-white/4 border border-white/8 rounded-2xl p-6">
-                    <div className="flex mb-3">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                      ))}
-                    </div>
-                    <p className="text-white/70 text-sm leading-relaxed mb-4 italic">{t.quote}</p>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-black text-xs">
-                        {t.name.split(" ").map((n) => n[0]).join("")}
-                      </div>
-                      <div>
-                        <div className="text-white text-sm font-bold">{t.name}</div>
-                        <div className="text-white/30 text-xs">{t.role}</div>
-                      </div>
-                    </div>
+              {/* Key areas */}
+              <div className="bg-white border border-[#e5e2d9] rounded-2xl p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <MapPin className="w-3.5 h-3.5 text-primary" />
                   </div>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                {[
-                  { icon: Users, n: "200+", l: "Ontario clients" },
-                  { icon: TrendingUp, n: "10yr+", l: "in the market" },
-                  { icon: Zap, n: "30 days", l: "to first results" },
-                  { icon: BarChart3, n: "93%", l: "retention rate" },
-                ].map((s) => (
-                  <div key={s.l} className="bg-white/4 border border-white/8 rounded-2xl p-5 text-center">
-                    <s.icon className="w-5 h-5 text-primary mx-auto mb-2" />
-                    <div className="text-2xl font-black text-white">{s.n}</div>
-                    <div className="text-xs text-white/30">{s.l}</div>
-                  </div>
-                ))}
+                  <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">Key Areas We Target</p>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {neighbourhoodList.map((n) => (
+                    <span key={n} className="text-xs bg-[#f9f8f5] border border-[#e5e2d9] rounded-full px-2.5 py-1 text-gray-600 font-medium">
+                      {n}
+                    </span>
+                  ))}
+                </div>
               </div>
 
-              <div className="bg-primary/10 border border-primary/20 rounded-2xl p-6">
-                <p className="text-white font-bold mb-2">Ready to grow in {city.name}?</p>
-                <p className="text-white/50 text-sm mb-4">
-                  Book a free 30-minute strategy call. No sales pitch — just a straight conversation about your {city.name} market and what it would take to win it.
+              {/* Outlier promise card */}
+              <div className="bg-[#08090d] rounded-2xl p-6">
+                <p className="text-white font-bold text-sm mb-2">Our {city.name} Promise</p>
+                <p className="text-white/50 text-xs leading-relaxed mb-4">
+                  Every strategy we build for {city.name} businesses is researched and written for {city.name} — not a template with your city name pasted in.
                 </p>
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-primary text-white font-bold px-5 py-2.5 rounded-xl text-sm hover:bg-primary/90 transition-colors"
-                >
-                  Book Free Strategy Call <ArrowRight className="w-4 h-4" />
+                <a href="/contact" className="inline-flex items-center gap-1.5 text-primary text-xs font-bold hover:underline">
+                  Talk to a {city.name} specialist <ArrowRight className="w-3 h-3" />
                 </a>
               </div>
             </div>
@@ -1351,56 +1264,300 @@ export default function CityServicePage() {
         </div>
       </section>
 
-      {/* ── FAQ ── */}
+      {/* ═══ WHY THIS SERVICE ══════════════════════════════════════════ */}
       <section className="py-20 bg-white border-b border-[#e5e2d9]">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3 text-center">FAQ</p>
-          <h2 className="text-3xl font-black text-[#0e0e0e] mb-10 text-center">
-            Frequently Asked Questions — {svc.label} in {city.name}
-          </h2>
-          <div className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl px-6 divide-y divide-[#e5e2d9]">
-            {svc.faqTemplate.map((faq) => (
-              <FAQItem key={faq.q} q={fill(faq.q)} a={fill(faq.a)} />
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="max-w-2xl mb-12">
+            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Why it matters</p>
+            <h2 className="text-3xl md:text-4xl font-black text-[#0e0e0e] leading-[1.1]">
+              Why {city.name} businesses invest in {svc.shortLabel}
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {svc.whyTemplate.map((why, i) => (
+              <div key={i} className="relative bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-7 overflow-hidden">
+                <div className="absolute top-4 right-5 text-[72px] font-black text-primary/5 leading-none select-none">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                  <Icon className="w-5 h-5 text-primary" />
+                </div>
+                <p className="text-gray-700 leading-relaxed text-[15px] relative z-10">{fill(why)}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Related Services ── */}
+      {/* ═══ WHAT'S INCLUDED ═══════════════════════════════════════════ */}
       <section className="py-20 border-b border-[#e5e2d9]">
         <div className="container mx-auto px-4 max-w-7xl">
-          <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Related services</p>
-          <h2 className="text-3xl font-black text-[#0e0e0e] mb-8">
-            More ways we help {city.name} businesses grow
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {svc.relatedServices.map((rs) => (
-              <Link
-                key={rs.href}
-                href={rs.href}
-                className="bg-white border border-[#e5e2d9] rounded-xl p-5 hover:border-primary/40 hover:shadow-md transition-all group flex items-center justify-between"
-              >
-                <span className="font-bold text-[#0e0e0e] text-sm">{rs.label}</span>
-                <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-primary transition-colors" />
-              </Link>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div className="max-w-xl">
+              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">What's included</p>
+              <h2 className="text-3xl md:text-4xl font-black text-[#0e0e0e] leading-[1.1]">
+                Every deliverable — for {city.name}
+              </h2>
+            </div>
+            <p className="text-gray-500 text-sm max-w-sm">
+              Scoped to your business. But here's what a full {svc.shortLabel.toLowerCase()} programme for a {city.name} business typically covers.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {svc.included.map((item, i) => (
+              <div key={item.title} className="bg-white border border-[#e5e2d9] rounded-2xl p-7 flex flex-col gap-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-4 h-4 text-primary" />
+                  </div>
+                  <h3 className="font-bold text-[#0e0e0e] leading-snug text-[15px]">{item.title}</h3>
+                </div>
+                <p className="text-sm text-gray-500 leading-relaxed">{fill(item.description)}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ PROCESS ═══════════════════════════════════════════════════ */}
+      <section className="py-20 bg-[#08090d] border-b border-white/8">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="max-w-xl mb-12">
+            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Our process</p>
+            <h2 className="text-3xl md:text-4xl font-black text-white leading-[1.1]">
+              How we deliver {svc.label} in {city.name}
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+            {svc.process.map((step, i) => (
+              <div key={i} className="relative bg-white/4 border border-white/8 rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-[11px] font-black text-primary bg-primary/15 rounded-full px-2.5 py-0.5">
+                    {step.step}
+                  </span>
+                  {i < svc.process.length - 1 && (
+                    <div className="hidden xl:block flex-1 h-px bg-white/10" />
+                  )}
+                </div>
+                <h3 className="font-bold text-white mb-2 text-[15px] leading-snug">{step.title}</h3>
+                <p className="text-xs text-white/40 leading-relaxed">{fill(step.description)}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ LOCAL MARKET INTELLIGENCE (city-unique section) ══════════ */}
+      <section className="py-20 bg-white border-b border-[#e5e2d9]">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-14 items-start">
+            <div>
+              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">
+                Local intelligence
+              </p>
+              <h2 className="text-3xl md:text-4xl font-black text-[#0e0e0e] leading-[1.1] mb-6">
+                The {city.name} {svc.shortLabel} landscape — what we know before we start
+              </h2>
+              <p className="text-gray-600 leading-relaxed text-[15.5px] mb-6">
+                {city.marketBlurb}
+              </p>
+              <p className="text-gray-600 leading-relaxed text-[15.5px]">
+                For {city.name} businesses investing in {svc.shortLabel.toLowerCase()}, this translates directly into strategy: {city.competitionNote.toLowerCase().startsWith(city.name.toLowerCase()) ? city.competitionNote : `${city.name} — ${city.competitionNote.charAt(0).toLowerCase()}${city.competitionNote.slice(1)}`}
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {/* Market snapshot */}
+              <div className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-6">
+                <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-4">Market Snapshot</p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1">Population</p>
+                    <p className="text-xl font-black text-[#0e0e0e]">{city.pop}</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1">Region</p>
+                    <p className="text-xl font-black text-[#0e0e0e]">{city.region}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Neighbourhood targets */}
+              <div className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-6">
+                <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-3">{svc.shortLabel} Coverage Areas</p>
+                <div className="flex flex-wrap gap-2">
+                  {neighbourhoodList.map((n) => (
+                    <span key={n} className="text-xs bg-white border border-[#e5e2d9] rounded-full px-3 py-1 text-gray-700 font-medium">
+                      {n}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Economy highlights */}
+              <div className="bg-[#08090d] rounded-2xl p-6">
+                <p className="text-[10px] font-black uppercase tracking-widest text-primary/60 mb-3">Economy & Industry</p>
+                <p className="text-white/60 text-sm leading-relaxed">{city.economyHighlights}</p>
+                <div className="mt-4 pt-4 border-t border-white/10">
+                  <a href="/contact" className="inline-flex items-center gap-1.5 text-primary text-xs font-bold hover:underline">
+                    Get {city.name}-specific strategy <ArrowRight className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ SOCIAL PROOF ══════════════════════════════════════════════ */}
+      <section className="py-20 border-b border-[#e5e2d9]">
+        <div className="container mx-auto px-4 max-w-7xl">
+          {/* Metric strip */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
+            {[
+              { icon: Users, n: "200+", l: "Ontario businesses grown" },
+              { icon: TrendingUp, n: "10yr+", l: "Active in the market" },
+              { icon: Zap, n: "30 days", l: "To first measurable results" },
+              { icon: BarChart3, n: "93%", l: "Client retention after year 1" },
+            ].map((s) => (
+              <div key={s.l} className="bg-white border border-[#e5e2d9] rounded-2xl p-5 text-center">
+                <s.icon className="w-5 h-5 text-primary mx-auto mb-3" />
+                <div className="text-2xl font-black text-[#0e0e0e]">{s.n}</div>
+                <div className="text-xs text-gray-500 mt-0.5">{s.l}</div>
+              </div>
             ))}
           </div>
 
-          <div className="mt-8 pt-8 border-t border-[#e5e2d9] flex flex-col md:flex-row items-center justify-between gap-4">
-            <div>
-              <p className="text-sm text-gray-500">
-                We serve businesses across all of Ontario —{" "}
-                <Link href="/cities" className="text-primary font-bold hover:underline">
-                  view all {city.name}-area and Ontario cities →
-                </Link>
-              </p>
+          <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+            {/* Testimonials */}
+            <div className="space-y-5">
+              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-5">What our clients say</p>
+              {[
+                {
+                  quote: `"Outlier's ${svc.shortLabel.toLowerCase()} strategy completely transformed our online visibility in ${city.name}. We went from page 4 to position 1 within 7 months. The team is responsive, data-driven, and genuinely invested in our growth."`,
+                  name: "Michael K.", role: `Business Owner, ${city.name}`,
+                },
+                {
+                  quote: `"We'd worked with two agencies before Outlier — neither could explain what they were doing or show measurable results. Outlier's reporting is transparent and the results speak for themselves."`,
+                  name: "Sarah L.", role: `Marketing Director, ${city.name}`,
+                },
+              ].map((t) => (
+                <div key={t.name} className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-7">
+                  <div className="flex mb-4">
+                    {[1,2,3,4,5].map((i) => <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />)}
+                  </div>
+                  <p className="text-gray-700 text-[15px] leading-relaxed mb-5 italic">{t.quote}</p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-full bg-primary/15 flex items-center justify-center text-primary font-black text-xs">
+                      {t.name.split(" ").map((n) => n[0]).join("")}
+                    </div>
+                    <div>
+                      <div className="font-bold text-[#0e0e0e] text-sm">{t.name}</div>
+                      <div className="text-gray-400 text-xs">{t.role}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-            <a
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-primary text-white font-bold px-5 py-2.5 rounded-xl text-sm hover:bg-primary/90 transition-colors whitespace-nowrap"
-            >
-              {svc.cta} <ArrowRight className="w-4 h-4" />
-            </a>
+
+            {/* CTA card */}
+            <div className="bg-[#08090d] rounded-2xl p-10 flex flex-col justify-between">
+              <div>
+                <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-4">Ready to win in {city.name}?</p>
+                <h3 className="text-3xl font-black text-white leading-[1.1] mb-5">
+                  A straight conversation about your {city.name} market.
+                </h3>
+                <p className="text-white/50 text-[15px] leading-relaxed mb-8">
+                  30-minute strategy call. No templates, no sales pitch — just a specific assessment of your {city.name} {svc.shortLabel.toLowerCase()} opportunity and what it would take to capitalise on it.
+                </p>
+              </div>
+              <div className="space-y-3">
+                <a href="/contact" className="flex items-center justify-center gap-2 bg-primary text-white font-bold px-6 py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-[15px] w-full">
+                  Book Free Strategy Call <ArrowRight className="w-4 h-4" />
+                </a>
+                <a href="tel:+14165550199" className="flex items-center justify-center gap-2 border border-white/15 text-white font-semibold px-6 py-3.5 rounded-xl hover:border-white/30 hover:bg-white/4 transition-all text-[15px] w-full">
+                  <Phone className="w-4 h-4" /> Call Our Team
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ FAQ ═══════════════════════════════════════════════════════ */}
+      <section className="py-20 bg-white border-b border-[#e5e2d9]">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="grid lg:grid-cols-3 gap-12">
+            {/* Left heading */}
+            <div className="lg:col-span-1">
+              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">FAQ</p>
+              <h2 className="text-2xl md:text-3xl font-black text-[#0e0e0e] leading-[1.1] mb-4">
+                Common questions about {svc.shortLabel} in {city.name}
+              </h2>
+              <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                Can't find your answer? Speak to one of our {city.name} {svc.shortLabel} specialists.
+              </p>
+              <a href="/contact" className="inline-flex items-center gap-2 border border-[#e5e2d9] text-[#0e0e0e] font-bold px-5 py-2.5 rounded-xl text-sm hover:border-primary hover:text-primary transition-colors">
+                Ask a Question <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+
+            {/* Right accordion */}
+            <div className="lg:col-span-2">
+              <div className="divide-y divide-[#e5e2d9]">
+                {svc.faqTemplate.map((faq) => (
+                  <FAQItem key={faq.q} q={fill(faq.q)} a={fill(faq.a)} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ RELATED SERVICES + BOTTOM CTA ════════════════════════════ */}
+      <section className="py-20 border-b border-[#e5e2d9]">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-14">
+            {/* Related services */}
+            <div>
+              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Related services</p>
+              <h2 className="text-2xl font-black text-[#0e0e0e] mb-6">
+                More ways we grow {city.name} businesses
+              </h2>
+              <div className="grid grid-cols-2 gap-3">
+                {svc.relatedServices.map((rs) => (
+                  <Link
+                    key={rs.href}
+                    href={rs.href}
+                    className="bg-white border border-[#e5e2d9] rounded-xl p-5 hover:border-primary/40 hover:shadow-sm transition-all group flex items-center justify-between"
+                  >
+                    <span className="font-bold text-[#0e0e0e] text-sm">{rs.label}</span>
+                    <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-primary transition-colors flex-shrink-0" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Cities quick links */}
+            <div>
+              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Our Ontario coverage</p>
+              <h2 className="text-2xl font-black text-[#0e0e0e] mb-6">
+                We serve businesses across 39 Ontario cities
+              </h2>
+              <div className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-6 mb-4">
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  From Toronto's financial core to suburban Mississauga, Brampton, Markham, and communities across the Golden Horseshoe — every city page we build is researched for that specific market.
+                </p>
+                <Link href="/cities" className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline">
+                  View all Ontario cities we serve <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+              <a href="/contact" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors text-sm w-full justify-center">
+                {svc.cta} <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
