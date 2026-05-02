@@ -11,6 +11,9 @@ import { Faq } from "@/components/sections/Faq";
 import { MegaCta } from "@/components/sections/MegaCta";
 import { ArrowRight, MapPin, Star, TrendingUp, CheckCircle, ArrowUpRight } from "lucide-react";
 import { AllServicesFeature } from "@/components/sections/AllServicesFeature";
+import { WhyOutlier } from "@/components/sections/WhyOutlier";
+import { HowWeWork } from "@/components/sections/HowWeWork";
+import { BlogInsights } from "@/components/sections/BlogInsights";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -213,6 +216,9 @@ export default function Home() {
         {/* ── INDUSTRIES TABBED (Kinex-style) ── */}
         <IndustriesTabbed />
 
+        {/* ── WHY OUTLIER ── */}
+        <WhyOutlier />
+
         {/* ── CASE STUDIES ── */}
         <section id="work" className="py-24 md:py-32 bg-background border-t border-border">
           <div className="max-w-6xl mx-auto px-6">
@@ -278,6 +284,9 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── HOW WE WORK ── */}
+        <HowWeWork />
+
         {/* ── TESTIMONIALS ── */}
         <Testimonials />
 
@@ -286,6 +295,9 @@ export default function Home() {
 
         {/* ── FAQ ── */}
         <Faq />
+
+        {/* ── BLOG / INSIGHTS ── */}
+        <BlogInsights />
 
         {/* ── MEGA CTA ── */}
         <MegaCta />
