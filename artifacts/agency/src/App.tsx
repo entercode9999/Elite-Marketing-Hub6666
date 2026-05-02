@@ -4,9 +4,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
-import HubPage from "@/pages/HubPage";
-import ServicePage from "@/pages/ServicePage";
-import LocationServicePage from "@/pages/LocationServicePage";
+import { ServicePage, localSeoData, googleAdsData } from "@/pages/ServicePage";
+import {
+  LocationServicePage,
+  mississaugaLocalSeoData,
+  torontoLocalSeoData,
+  ottawaLocalSeoData,
+} from "@/pages/LocationServicePage";
 
 const queryClient = new QueryClient();
 
@@ -16,34 +20,17 @@ function Router() {
       {/* Homepage */}
       <Route path="/" component={Home} />
 
-      {/* Hub pages */}
-      <Route path="/local-seo">{() => <HubPage slug="local-seo" />}</Route>
-      <Route path="/seo-services">{() => <HubPage slug="seo-services" />}</Route>
-      <Route path="/ppc-google-ads">{() => <HubPage slug="ppc-google-ads" />}</Route>
-
       {/* Service pages */}
-      <Route path="/local-seo-service">{() => <ServicePage slug="local-seo-service" />}</Route>
-      <Route path="/google-ads-management">{() => <ServicePage slug="google-ads-management" />}</Route>
-      <Route path="/technical-seo-service">{() => <ServicePage slug="technical-seo-service" />}</Route>
-      <Route path="/content-marketing-service">{() => <ServicePage slug="content-marketing-service" />}</Route>
+      <Route path="/local-seo-service">{() => <ServicePage data={localSeoData} />}</Route>
+      <Route path="/google-ads-management">{() => <ServicePage data={googleAdsData} />}</Route>
 
-      {/* Location × Service pages — explicit */}
-      <Route path="/toronto/local-seo-service">
-        {() => <LocationServicePage citySlug="toronto" serviceSlug="local-seo-service" />}
-      </Route>
-      <Route path="/mississauga/local-seo-service">
-        {() => <LocationServicePage citySlug="mississauga" serviceSlug="local-seo-service" />}
-      </Route>
-      <Route path="/ottawa/local-seo-service">
-        {() => <LocationServicePage citySlug="ottawa" serviceSlug="local-seo-service" />}
-      </Route>
+      {/* Location × Service pages */}
+      <Route path="/toronto/local-seo-service">{() => <LocationServicePage data={torontoLocalSeoData} />}</Route>
+      <Route path="/mississauga/local-seo-service">{() => <LocationServicePage data={mississaugaLocalSeoData} />}</Route>
+      <Route path="/ottawa/local-seo-service">{() => <LocationServicePage data={ottawaLocalSeoData} />}</Route>
 
-      {/* Dynamic catch-all for any city × service combo */}
-      <Route path="/:city/:service">
-        {(params) => (
-          <LocationServicePage citySlug={params.city} serviceSlug={params.service} />
-        )}
-      </Route>
+      {/* Catch-all dynamic city × service — shows Mississauga as placeholder */}
+      <Route path="/:city/:service">{() => <LocationServicePage data={mississaugaLocalSeoData} />}</Route>
 
       <Route component={NotFound} />
     </Switch>
