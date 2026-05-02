@@ -22,6 +22,8 @@ export interface IndustryData {
   tactics?: { title: string; body: string }[];
   industryStats?: { value: string; label: string; context: string }[];
   compliance?: string;
+  faq?: { q: string; a: string }[];
+  longIntro?: string;
 }
 
 function FaqItem({ q, a }: { q: string; a: string }) {
@@ -226,6 +228,15 @@ export function IndustryPage({ data }: { data: IndustryData }) {
         </div>
       </section>
 
+      {/* ── LONG INTRO (if applicable) ── */}
+      {data.longIntro && (
+        <section className="py-14 bg-white border-t border-[#e5e2d9]">
+          <div className="max-w-3xl mx-auto px-6">
+            <p className="text-base text-gray-600 leading-[1.85] whitespace-pre-line">{data.longIntro}</p>
+          </div>
+        </section>
+      )}
+
       {/* ── CHALLENGES ── */}
       <section className="py-20 md:py-28 bg-[#f9f8f5] border-t border-[#e5e2d9]">
         <div className="max-w-6xl mx-auto px-6">
@@ -243,6 +254,21 @@ export function IndustryPage({ data }: { data: IndustryData }) {
           </div>
         </div>
       </section>
+
+      {/* ── FAQ ── */}
+      {data.faq && data.faq.length > 0 && (
+        <section className="py-20 md:py-28 bg-white border-t border-[#e5e2d9]">
+          <div className="max-w-3xl mx-auto px-6">
+            <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">Frequently asked</span>
+            <h2 className="text-4xl font-black text-[#0e0e0e] mb-10">Common questions about {data.industry} marketing.</h2>
+            <div className="divide-y divide-[#e5e2d9] border border-[#e5e2d9] rounded-2xl overflow-hidden">
+              {data.faq.map((item) => (
+                <FaqItem key={item.q} q={item.q} a={item.a} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── COMPLIANCE (if applicable) ── */}
       {data.compliance && (
