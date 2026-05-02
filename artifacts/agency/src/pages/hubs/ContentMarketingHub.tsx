@@ -147,7 +147,7 @@ const contentMarketingData: HubData = {
         "Engagement management",
         "Monthly analytics and optimisation",
       ],
-      image: "/case-study-realestate.png",
+      image: "/work-3.png",
       href: "/social-media-service",
     },
     {

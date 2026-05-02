@@ -126,7 +126,7 @@ const seoData: HubData = {
       headline: "Map pack dominance across every city and service area you operate in.",
       description: "Local SEO for businesses that compete by location: GBP management, local citation building, review velocity management, and city-service landing page architecture. We manage local SEO for businesses with 1 location and with 50 — the playbook scales with you. Map pack position 1-3 drives more calls than any paid channel for local businesses.",
       bullets: ["Google Business Profile setup, audit, and management", "Local citation building across 45+ directories", "Review generation and reputation management", "City × service landing page architecture"],
-      image: "/case-study-local.png",
+      image: "/industry-local.png",
       href: "/local-seo-service",
     },
     {

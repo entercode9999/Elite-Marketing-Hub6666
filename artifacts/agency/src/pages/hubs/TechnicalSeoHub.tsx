@@ -123,7 +123,7 @@ const technicalSeoData: HubData = {
         "Third-party script audit and deferral",
         "Layout shift identification and CSS fixes",
       ],
-      image: "/industry-dental.png",
+      image: "/case-study-saas.png",
       href: "/technical-seo-service",
     },
     {

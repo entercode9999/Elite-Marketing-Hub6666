@@ -119,7 +119,7 @@ const digitalMarketingData: HubData = {
         "Shopping and Dynamic Search campaigns",
         "Full attribution and ROAS reporting",
       ],
-      image: "/case-study-limo.png",
+      image: "/case-study-saas.png",
       href: "/google-ads-management",
     },
     {
@@ -147,7 +147,7 @@ const digitalMarketingData: HubData = {
         "Segmented broadcast campaigns",
         "Deliverability monitoring and optimisation",
       ],
-      image: "/industry-fitness.png",
+      image: "/hero-abstract.png",
       href: "/email-marketing-service",
     },
     {

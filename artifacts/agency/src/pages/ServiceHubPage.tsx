@@ -141,12 +141,40 @@ function ProcessTab({ steps }: { steps: HubProcess[] }) {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </a>
           </div>
-          <div className="bg-[#f9f8f5] rounded-2xl p-8 border border-[#e5e2d9]">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-              <span className="text-2xl font-black text-primary">{String(active + 1).padStart(2, "0")}</span>
+          <div className="bg-[#08090d] rounded-2xl p-8 border border-white/8 flex flex-col justify-between min-h-[260px] relative overflow-hidden">
+            {/* Decorative large background number */}
+            <span className="absolute -right-3 -top-4 text-[140px] font-black text-white/[0.04] leading-none select-none pointer-events-none">
+              {String(active + 1).padStart(2, "0")}
+            </span>
+
+            <div className="relative z-10">
+              <p className="text-[10px] font-black uppercase tracking-widest text-primary/60 mb-2">
+                Phase {active + 1} of {steps.length}
+              </p>
+              <p className="text-white font-black text-2xl leading-snug">{current.label}</p>
             </div>
-            <h4 className="font-bold text-[#0e0e0e] mb-3">{current.headline}</h4>
-            <p className="text-sm text-gray-500 leading-relaxed">{current.description}</p>
+
+            {/* Step progress track */}
+            <div className="relative z-10 mt-8">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-white/20 mb-3">All phases</p>
+              <div className="flex gap-1.5 mb-3">
+                {steps.map((step, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActive(i)}
+                    title={step.label}
+                    className={`h-1 rounded-full transition-all flex-1 ${
+                      i === active ? "bg-primary" : i < active ? "bg-white/25" : "bg-white/8"
+                    }`}
+                  />
+                ))}
+              </div>
+              <p className="text-white/25 text-xs">
+                {active < steps.length - 1
+                  ? `Next: ${steps[active + 1].label}`
+                  : "Final phase — results compound from here"}
+              </p>
+            </div>
           </div>
         </motion.div>
       </AnimatePresence>
