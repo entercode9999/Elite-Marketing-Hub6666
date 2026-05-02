@@ -3,12 +3,12 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { LogoMarquee } from "@/components/LogoMarquee";
 import { Stats } from "@/components/sections/Stats";
-import { Industries } from "@/components/sections/Industries";
+import { ServicesTabbed } from "@/components/sections/ServicesTabbed";
+import { IndustriesTabbed } from "@/components/sections/IndustriesTabbed";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Wins } from "@/components/sections/Wins";
 import { Faq } from "@/components/sections/Faq";
 import { MegaCta } from "@/components/sections/MegaCta";
-import { ServicesCarousel } from "@/components/ServicesCarousel";
 import { ArrowRight, MapPin, Star, TrendingUp, CheckCircle, ArrowUpRight } from "lucide-react";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -301,11 +301,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── ALL SERVICES CAROUSEL ── */}
-        <ServicesCarousel />
+        {/* ── SERVICES TABBED (Kinex-style) ── */}
+        <ServicesTabbed />
 
-        {/* ── INDUSTRIES ── */}
-        <Industries />
+        {/* ── INDUSTRIES TABBED (Kinex-style) ── */}
+        <IndustriesTabbed />
 
         {/* ── CASE STUDIES ── */}
         <section id="work" className="py-24 md:py-32 bg-background border-t border-border">

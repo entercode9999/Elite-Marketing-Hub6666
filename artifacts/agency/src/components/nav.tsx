@@ -1,192 +1,197 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { ArrowRight, ChevronDown, X, Menu } from "lucide-react";
+import { ArrowRight, X, AlignJustify } from "lucide-react";
 
-const SERVICES = [
-  {
-    category: "SEO",
-    items: [
-      { label: "Local SEO", href: "/local-seo-service", desc: "Map pack & GBP optimisation" },
-      { label: "Technical SEO", href: "/technical-seo-service", desc: "Site audits & Core Web Vitals" },
-      { label: "Content Marketing", href: "/content-marketing-service", desc: "Strategy-first SEO content" },
-    ],
-  },
-  {
-    category: "Paid Ads",
-    items: [
-      { label: "Google Ads", href: "/google-ads-management", desc: "Managed PPC campaigns" },
-      { label: "Local Service Ads", href: "/local-service-ads", desc: "Pay-per-lead for service businesses" },
-    ],
-  },
-  {
-    category: "Web & CRO",
-    items: [
-      { label: "Custom Web Design", href: "/custom-web-design-service", desc: "Bespoke conversion-first sites" },
-      { label: "Conversion Rate Optimisation", href: "/cro-service", desc: "More from your existing traffic" },
-    ],
-  },
-  {
-    category: "AI & Automation",
-    items: [
-      { label: "AI Chatbots", href: "/ai-chatbot-service", desc: "Customer-facing conversational AI" },
-      { label: "AI Integration", href: "/ai-integration-service", desc: "Connect your business tools" },
-      { label: "Custom AI Systems", href: "/custom-ai-service", desc: "Bespoke operational AI" },
-    ],
-  },
+const NAV_LINKS = [
+  { label: "Our Work", href: "#work" },
+  { label: "Local SEO", href: "/local-seo-service" },
+  { label: "Google Ads", href: "/google-ads-management" },
+  { label: "Web & AI", href: "/custom-web-design-service" },
+  { label: "Digital Marketing", href: "/seo-services" },
 ];
 
-function ServicesDropdown() {
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handle = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
-    };
-    document.addEventListener("mousedown", handle);
-    return () => document.removeEventListener("mousedown", handle);
-  }, []);
-
-  return (
-    <div ref={ref} className="relative">
-      <button
-        onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-foreground transition-colors py-2"
-      >
-        Services
-        <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
-      </button>
-
-      {open && (
-        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[560px] rounded-2xl border border-border bg-background shadow-2xl shadow-black/10 z-50 overflow-hidden">
-          <div className="grid grid-cols-2 p-2 gap-1">
-            {SERVICES.map((group) => (
-              <div key={group.category} className="p-3">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-2 px-2">
-                  {group.category}
-                </p>
-                {group.items.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="flex flex-col px-3 py-2.5 rounded-lg hover:bg-primary/5 transition-colors"
-                  >
-                    <span className="text-sm font-semibold text-foreground">{item.label}</span>
-                    <span className="text-xs text-muted-foreground mt-0.5">{item.desc}</span>
-                  </Link>
-                ))}
-              </div>
-            ))}
-          </div>
-          <div className="border-t border-border px-5 py-3 bg-muted/30 flex items-center justify-between">
-            <p className="text-xs text-muted-foreground">Not sure where to start?</p>
-            <Link
-              href="/local-seo"
-              onClick={() => setOpen(false)}
-              className="text-xs font-bold text-primary hover:underline"
-            >
-              See all services →
-            </Link>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
+const MEGA_ITEMS = {
+  "Local SEO": [
+    { label: "Local SEO Service", href: "/local-seo-service" },
+    { label: "GBP Optimisation", href: "/local-seo-service#deliver" },
+    { label: "Toronto Local SEO", href: "/toronto/local-seo-service" },
+    { label: "Mississauga Local SEO", href: "/mississauga/local-seo-service" },
+  ],
+  "Google Ads": [
+    { label: "Google Ads Management", href: "/google-ads-management" },
+    { label: "Local Service Ads", href: "/local-service-ads" },
+    { label: "Paid Social", href: "/paid-social-service" },
+  ],
+  "Web & AI": [
+    { label: "Custom Web Design", href: "/custom-web-design-service" },
+    { label: "CRO", href: "/cro-service" },
+    { label: "AI Chatbots", href: "/ai-chatbot-service" },
+    { label: "AI Integration", href: "/ai-integration-service" },
+  ],
+  "Digital Marketing": [
+    { label: "SEO Services", href: "/seo-services" },
+    { label: "Content Marketing", href: "/content-marketing-service" },
+    { label: "Technical SEO", href: "/technical-seo-service" },
+  ],
+};
 
 export function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [location] = useLocation();
 
   useEffect(() => {
-    const handle = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handle);
-    return () => window.removeEventListener("scroll", handle);
+    const fn = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", fn);
+    return () => window.removeEventListener("scroll", fn);
   }, []);
+
+  useEffect(() => setMobileOpen(false), [location]);
+
+  const isHome = location === "/";
+  const transparent = isHome && !scrolled;
 
   return (
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "border-b border-border bg-background/95 backdrop-blur-md shadow-sm"
-            : "bg-background/60 backdrop-blur-sm border-b border-transparent"
+          transparent
+            ? "bg-transparent"
+            : "bg-[#08090d]/95 backdrop-blur-md border-b border-white/8 shadow-lg shadow-black/20"
         }`}
       >
-        <div className="max-w-6xl mx-auto px-6 h-[70px] flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl tracking-tight text-foreground shrink-0">
-            <div className="w-6 h-6 rounded bg-primary" />
-            Outlier
-          </Link>
-
-          <div className="hidden lg:flex items-center gap-7">
-            <ServicesDropdown />
-            <Link href="/local-seo" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
-              Locations
+        <div className="max-w-7xl mx-auto px-5 h-[68px] flex items-center justify-between">
+          {/* Logo + hamburger (Kinex style) */}
+          <div className="flex items-center gap-4">
+            <Link href="/" className="flex items-center gap-2 font-black text-xl tracking-tight text-white">
+              <div className="w-7 h-7 rounded-md bg-primary flex items-center justify-center">
+                <span className="text-white text-xs font-black">O</span>
+              </div>
+              Outlier
             </Link>
-            <a href="#work" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
-              Work
-            </a>
-            <a href="#about" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
-              About
-            </a>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <a
-              href="tel:+18005550199"
-              className="hidden xl:block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            <button
+              onClick={() => setMobileOpen(true)}
+              className="w-8 h-8 flex items-center justify-center text-white/50 hover:text-white transition-colors"
             >
-              1-800-555-0199
-            </a>
-            <a
-              href="/contact"
-              className="hidden md:inline-flex items-center gap-1.5 text-sm font-semibold text-foreground/80 hover:text-foreground transition-colors px-4 py-2"
-            >
-              Book a Call
-            </a>
-            <a
-              href="/contact"
-              className="inline-flex items-center gap-1.5 bg-primary hover:bg-primary/90 text-white text-sm font-bold py-2.5 px-5 rounded-lg transition-colors shadow-md shadow-primary/20 group"
-            >
-              Free Audit
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-            </a>
-            <button className="lg:hidden p-2 text-foreground/70" onClick={() => setMobileOpen(true)}>
-              <Menu className="w-5 h-5" />
+              <AlignJustify className="w-5 h-5" />
             </button>
           </div>
+
+          {/* Desktop nav */}
+          <div className="hidden lg:flex items-center gap-1">
+            {NAV_LINKS.map((item) => {
+              const hasSub = item.label in MEGA_ITEMS;
+              return (
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => hasSub && setHoveredItem(item.label)}
+                  onMouseLeave={() => setHoveredItem(null)}
+                >
+                  {item.href.startsWith("/") && !item.href.startsWith("/#") ? (
+                    <Link
+                      href={item.href}
+                      className="px-4 py-2 text-sm font-semibold text-white/70 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={item.href}
+                      className="px-4 py-2 text-sm font-semibold text-white/70 hover:text-white transition-colors rounded-lg hover:bg-white/5 block"
+                    >
+                      {item.label}
+                    </a>
+                  )}
+
+                  {/* Dropdown */}
+                  {hasSub && hoveredItem === item.label && (
+                    <div className="absolute top-full left-0 pt-2 w-52 z-50">
+                      <div className="bg-[#0e1018] border border-white/10 rounded-xl shadow-2xl overflow-hidden py-2">
+                        {MEGA_ITEMS[item.label as keyof typeof MEGA_ITEMS].map((sub) => (
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            className="block px-4 py-2.5 text-sm text-white/60 hover:text-white hover:bg-white/5 transition-colors font-medium"
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* CTA */}
+          <a
+            href="/contact"
+            className="hidden md:inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-2.5 px-5 rounded-lg transition-all text-sm group shadow-lg shadow-primary/25"
+          >
+            Get a Free Audit
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+          </a>
         </div>
       </nav>
 
-      {/* Mobile drawer */}
+      {/* Full-screen mobile/side menu */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-[60] flex">
-          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={() => setMobileOpen(false)} />
-          <div className="relative ml-auto w-72 h-full bg-background border-l border-border overflow-y-auto flex flex-col">
-            <div className="flex items-center justify-between px-5 py-5 border-b border-border shrink-0">
-              <Link href="/" onClick={() => setMobileOpen(false)} className="font-bold">Outlier</Link>
-              <button onClick={() => setMobileOpen(false)}><X className="w-5 h-5" /></button>
+        <div className="fixed inset-0 z-[70] flex">
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setMobileOpen(false)} />
+          <div className="relative w-[320px] h-full bg-[#08090d] border-r border-white/8 flex flex-col overflow-y-auto shadow-2xl">
+            <div className="flex items-center justify-between px-6 py-5 border-b border-white/8">
+              <Link href="/" className="font-black text-white text-lg">Outlier</Link>
+              <button onClick={() => setMobileOpen(false)} className="text-white/50 hover:text-white">
+                <X className="w-5 h-5" />
+              </button>
             </div>
-            {SERVICES.map((group) => (
-              <div key={group.category} className="border-b border-border">
-                <p className="px-5 pt-4 pb-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">{group.category}</p>
-                {group.items.map((item) => (
-                  <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)}
-                    className="flex flex-col px-5 py-3 hover:bg-primary/5 transition-colors">
-                    <span className="text-sm font-semibold">{item.label}</span>
-                    <span className="text-xs text-muted-foreground">{item.desc}</span>
-                  </Link>
-                ))}
-              </div>
-            ))}
-            <div className="p-5 mt-auto">
-              <a href="/contact" onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center gap-2 bg-primary text-white font-bold py-3 px-6 rounded-lg text-sm w-full">
-                Get a Free Audit <ArrowRight className="w-4 h-4" />
+
+            <div className="flex-1 py-4">
+              {NAV_LINKS.map((item) => (
+                <div key={item.label}>
+                  {item.href.startsWith("/") ? (
+                    <Link
+                      href={item.href}
+                      className="flex items-center px-6 py-3.5 text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={item.href}
+                      className="flex items-center px-6 py-3.5 text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                    >
+                      {item.label}
+                    </a>
+                  )}
+                  {item.label in MEGA_ITEMS && (
+                    <div className="pl-10 pb-2">
+                      {MEGA_ITEMS[item.label as keyof typeof MEGA_ITEMS].map((sub) => (
+                        <Link
+                          key={sub.href}
+                          href={sub.href}
+                          className="block py-2 text-xs text-white/40 hover:text-white/70 transition-colors"
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="p-6 border-t border-white/8">
+              <a
+                href="/contact"
+                className="flex items-center justify-center gap-2 bg-primary text-white font-bold py-3.5 px-6 rounded-xl text-sm w-full group"
+              >
+                Get a Free Audit <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
+              <p className="text-center text-xs text-white/25 mt-3">1-800-555-0199</p>
             </div>
           </div>
         </div>
