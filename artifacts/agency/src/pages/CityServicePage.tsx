@@ -591,12 +591,7 @@ function getDefaultCityData(slug: string, displayName: string): CityData {
   };
 }
 
-/* ─── Pricing & Timeline types ───────────────────────────────────── */
-
-interface PricingTier {
-  range: string;
-  context: string;
-}
+/* ─── Timeline types ─────────────────────────────────────────────── */
 
 interface TimelineMilestone {
   period: string;
@@ -618,7 +613,6 @@ interface ServiceData {
   process: { step: string; title: string; description: string }[];
   stats: { n: string; l: string }[];
   faqTemplate: { q: string; a: string }[];
-  pricingTiers: Record<string, PricingTier>;
   timeline: TimelineMilestone[];
   cta: string;
   ctaSecondary: string;
@@ -695,24 +689,6 @@ Our reporting model is built around the metrics that actually matter to a [City]
       { n: "8 months", l: "avg. time to page 1 for primary keywords" },
       { n: "93%", l: "client retention rate after year 1" },
     ],
-    pricingTiers: {
-      premium: {
-        range: "$2,500 – $9,500+/mo",
-        context: "Toronto's search landscape is North America-level competitive. Premium budgets allow the content output, link acquisition velocity, and technical depth required to compete on page 1 against national brands and well-funded local operators.",
-      },
-      major: {
-        range: "$1,800 – $6,500/mo",
-        context: "Major Ontario markets require consistent, sustained execution to build ranking authority over time. This budget range allows meaningful content production, active link building, and full technical maintenance each month.",
-      },
-      standard: {
-        range: "$1,500 – $4,000/mo",
-        context: "Mid-size Ontario markets offer excellent SEO ROI — less competition, more achievable first-page positions, and faster results. A focused budget here often outperforms a larger budget in a tier-1 market.",
-      },
-      emerging: {
-        range: "$1,200 – $2,800/mo",
-        context: "Emerging markets provide a genuine first-mover advantage. Businesses that invest in SEO now — before the local market becomes saturated — establish positions that compound in value as the city grows.",
-      },
-    },
     timeline: [
       { period: "Months 1–2", title: "Technical Foundation + Strategy", desc: "Full audit complete, technical fixes implemented, keyword map finalised, and content roadmap live. First Google indexation improvements typically visible." },
       { period: "Months 3–5", title: "First Ranking Movements", desc: "Secondary and long-tail keywords begin ranking page 1–2. Content production accelerates. Link building programme active. Organic traffic starts growing." },
@@ -728,8 +704,8 @@ Our reporting model is built around the metrics that actually matter to a [City]
         a: "A good [City] SEO agency — like Outlier — does three core things: (1) fixes the technical issues that prevent Google from properly crawling, understanding, and indexing your site; (2) creates and optimises content that matches what [City] buyers are searching for; and (3) builds the backlink authority that signals to Google your site deserves to rank above competitors. Most agencies do one or two of these well; we do all three, on a single integrated roadmap.",
       },
       {
-        q: "How much does SEO cost for a [City] business?",
-        a: "SEO investment for [City] businesses typically ranges from $1,500/month for local-focused strategies to $5,000–$15,000+/month for competitive industries or province-wide ambitions. The right budget depends on your competitive landscape, goals, and timeline. We provide a specific recommendation after your free audit — and we won't recommend a scope we can't deliver results with.",
+        q: "How does Outlier scope an SEO engagement for a [City] business?",
+        a: "Every engagement is scoped individually based on your competitive landscape, current search presence, goals, and timeline. We don't use packages or preset tiers. After your free audit, we build a custom strategy and scope the work required to achieve your specific objectives — and we won't recommend a scope we can't deliver results with.",
       },
       {
         q: "Do you work with businesses in specific [City] industries?",
@@ -803,24 +779,6 @@ Local search competition in [City] varies significantly by category. Home servic
       { n: "+220%", l: "avg. increase in Google Maps impressions" },
       { n: "6 weeks", l: "avg. time to first ranking improvements" },
     ],
-    pricingTiers: {
-      premium: {
-        range: "$2,000 – $5,500/mo",
-        context: "Toronto map pack competition is intense across almost every service category. Success requires active GBP management, review velocity programmes, and content production at a scale that matches the competition.",
-      },
-      major: {
-        range: "$1,200 – $3,500/mo",
-        context: "Major Ontario cities have well-established local search competition in high-demand categories. A comprehensive GBP management and citation programme at this level produces measurable map pack improvements within 60–90 days.",
-      },
-      standard: {
-        range: "$900 – $2,500/mo",
-        context: "Mid-size Ontario markets offer excellent ROI for local SEO investment. Map pack positions in categories like dental, legal, and home services are highly achievable at this investment level.",
-      },
-      emerging: {
-        range: "$700 – $2,000/mo",
-        context: "Emerging markets often have underserved map pack positions — making it faster and more affordable to reach and hold a top 3 position than in larger cities.",
-      },
-    },
     timeline: [
       { period: "Weeks 2–6", title: "GBP Rebuild + Citations", desc: "GBP fully rebuilt, categories and services optimised, citation cleanup and buildout underway. Initial improvements in GBP impressions typically visible within 3–4 weeks." },
       { period: "Months 2–3", title: "Review Volume + First Rankings", desc: "Review generation programme producing net new 5-star reviews. First map pack ranking improvements visible for secondary terms and specific neighbourhood searches." },
@@ -859,7 +817,7 @@ Outlier manages Google Ads for [City] businesses with the same rigour we apply t
 
 What sets our approach apart is our obsession with the full funnel. Most agencies optimise for clicks. We optimise for revenue. That means building landing pages that convert the traffic we send, setting up conversion tracking that captures real business outcomes (not just website visits), and structuring campaigns around the specific customer journeys of [City] buyers in your category. The result is a Google Ads account that delivers genuine business growth — not inflated click counts. Our [City] clients see an average 42% reduction in cost per acquisition within 90 days of taking over a previously self-managed or agency-managed account.
 
-The [City] Google Ads market has its own competitive characteristics. CPCs vary dramatically by industry — legal and financial keywords in [City] can cost $15–$80 per click, while local service businesses in less competitive categories may pay $2–$8 per click. Understanding these cost dynamics, and structuring campaigns to get maximum value from every click, is what separates an agency that simply runs ads from one that engineers profitable customer acquisition systems. We provide a full CPC landscape analysis during your initial audit so you know exactly what it will cost to compete profitably in your [City] category.
+The [City] Google Ads market has its own competitive characteristics. CPCs vary dramatically by industry — legal and financial categories command the highest cost-per-click, while local service businesses in less competitive niches can achieve very efficient cost per lead. Understanding these cost dynamics, and structuring campaigns to get maximum value from every click, is what separates an agency that simply runs ads from one that engineers profitable customer acquisition systems. We provide a full CPC landscape analysis during your initial audit so you know exactly what it will cost to compete profitably in your [City] category.
 
 Conversion tracking is the non-negotiable foundation of any profitable Google Ads programme. If you can't measure what the clicks are producing — phone calls, form submissions, chat conversations, online purchases — you can't optimise toward business outcomes. We set up comprehensive conversion tracking before any campaign goes live: call tracking with recording capability, form submission tracking, Google Tag Manager configuration, and offline conversion imports from your CRM. This data becomes the engine that drives every subsequent optimisation decision we make for your [City] campaigns.
 
@@ -889,31 +847,13 @@ The first 60–90 days of any Google Ads campaign is a learning and optimisation
       { n: "-42%", l: "avg. CPA reduction vs. self-managed accounts" },
       { n: "Google", l: "Partner certified specialists" },
     ],
-    pricingTiers: {
-      premium: {
-        range: "$2,000 – $5,000/mo management + $3,000 – $30,000+/mo ad spend",
-        context: "Toronto CPCs are among the highest in Canada for competitive service categories. Sufficient ad spend is required to generate statistically significant data for optimisation, and management fees reflect the complexity of high-spend account management.",
-      },
-      major: {
-        range: "$1,500 – $3,500/mo management + $2,000 – $20,000/mo ad spend",
-        context: "Major Ontario markets have moderate-to-high CPCs. A well-structured account at this budget level can produce strong lead volume in most service categories.",
-      },
-      standard: {
-        range: "$1,000 – $2,500/mo management + $1,500 – $12,000/mo ad spend",
-        context: "Mid-size Ontario markets often have lower CPCs, meaning ad spend goes further. This is an excellent investment range for local service businesses looking for predictable lead flow.",
-      },
-      emerging: {
-        range: "$800 – $2,000/mo management + $1,000 – $8,000/mo ad spend",
-        context: "Smaller markets have the lowest CPCs, meaning the cost per lead is often very attractive. Google Ads in these markets can be highly profitable with modest ad spend.",
-      },
-    },
     timeline: [
       { period: "Week 1–2", title: "Build & Launch", desc: "Account structure built, conversion tracking live, ad copy written, campaigns launched. First data begins flowing immediately." },
       { period: "Weeks 2–6", title: "Learning + Initial Optimisation", desc: "Google's algorithm learns from conversion data. We optimise negatives, bids, and ad copy based on initial performance. CPA typically decreases through this period." },
       { period: "Month 2–3+", title: "Scaled, Profitable Performance", desc: "With learning phase complete, ROAS improves significantly. We scale winning campaigns and expand keyword coverage. Most clients see 30–50% CPA reduction by month 3." },
     ],
     faqTemplate: [
-      { q: "How much should a [City] business spend on Google Ads?", a: "There's no universal answer — it depends on your industry's cost-per-click in [City], your conversion rate, and your target CPA. A local service business in [City] might start seeing profitable results at $1,500–$3,000/month in ad spend. More competitive categories like legal or home services may require $5,000–$15,000+/month to run meaningful campaigns. We provide a budget recommendation based on your specific goals and industry after reviewing your account." },
+      { q: "How does Outlier recommend a Google Ads budget for my [City] business?", a: "We build a budget recommendation based on your industry's cost-per-click landscape in [City], your conversion rate goals, and your target cost per acquisition. Every recommendation is specific to your business and backed by a clear ROI projection — we don't quote ad spend before we understand your situation. After reviewing your account, we provide a concrete budget recommendation with an expected performance range." },
       { q: "How quickly will Google Ads produce results for my [City] business?", a: "Properly set up Google Ads campaigns typically start delivering leads within the first 1–2 weeks. The first 30–60 days are a 'learning phase' where we optimise based on real data — ROAS and CPA tend to improve significantly in months 2 and 3 as we refine the account. Unlike SEO, Google Ads can produce same-week results for [City] businesses that need immediate lead flow." },
       { q: "What types of Google Ads campaigns do you run for [City] businesses?", a: "We run Google Search campaigns (text ads for high-intent keyword searches), Local Service Ads (for eligible [City] service businesses — these are the 'Google Guaranteed' listings), Performance Max campaigns, Google Shopping campaigns for ecommerce businesses, and YouTube and Display campaigns for brand awareness and retargeting. We recommend the right mix based on your business type and goals." },
       { q: "Can you fix a Google Ads account that hasn't been performing?", a: "Yes — account rescue is a significant part of our work. We see the same problems consistently: broad match keywords without negatives, no conversion tracking, campaigns competing against each other, poor landing page alignment, and automated bidding strategies with insufficient conversion data. We diagnose every issue and rebuild what needs to be rebuilt." },
@@ -975,24 +915,6 @@ Every paid social campaign we run for [City] clients is underpinned by rigorous 
       { n: "-38%", l: "avg. CPA reduction by month 3" },
       { n: "30 days", l: "to first creative winners identified" },
     ],
-    pricingTiers: {
-      premium: {
-        range: "$1,800 – $4,500/mo management + $2,000 – $20,000+/mo ad spend",
-        context: "Toronto paid social is competitive across most consumer categories. Strong creative output and audience diversity are essential to compete effectively in this market.",
-      },
-      major: {
-        range: "$1,200 – $3,500/mo management + $1,500 – $12,000/mo ad spend",
-        context: "Major Ontario markets respond well to well-targeted paid social. Audience segmentation and creative quality are the primary performance levers in these markets.",
-      },
-      standard: {
-        range: "$900 – $2,500/mo management + $1,000 – $8,000/mo ad spend",
-        context: "Mid-size Ontario markets offer favourable CPMs and CPCs — your ad spend goes further, and brand awareness can be built more cost-effectively than in Toronto.",
-      },
-      emerging: {
-        range: "$700 – $2,000/mo management + $800 – $5,000/mo ad spend",
-        context: "Smaller Ontario markets often have very low CPMs on social platforms, making brand building and lead generation extremely cost-efficient for well-targeted campaigns.",
-      },
-    },
     timeline: [
       { period: "Week 1–2", title: "Creative Production + Launch", desc: "Audience research complete, creative assets produced, campaigns launched with multiple variants. Pixel data begins accumulating immediately." },
       { period: "Weeks 2–6", title: "Creative Testing + First Winners", desc: "Top-performing audience and creative combinations identified. Budget shifted toward winners. Initial CPA data informing optimisation decisions." },
@@ -1000,7 +922,7 @@ Every paid social campaign we run for [City] clients is underpinned by rigorous 
     ],
     faqTemplate: [
       { q: "Which social platforms should my [City] business advertise on?", a: "Platform selection depends on your business type and target customer. Consumer-facing businesses in [City] — retail, healthcare, home services, food — typically perform best on Meta (Facebook and Instagram). B2B businesses should start with LinkedIn. Businesses targeting 18–35 year olds with visual products or services should test TikTok. We recommend the right mix based on your goals and customer profile — not what's trendy." },
-      { q: "How much should I spend on paid social in [City]?", a: "Most [City] businesses see meaningful results starting at $1,000–$2,000/month in ad spend. This is enough to test multiple audiences and creative combinations and identify what works. Scaling follows once winning combinations are identified — we don't recommend increasing budgets before the account data supports it." },
+      { q: "How does Outlier determine the right paid social budget for my [City] business?", a: "We recommend a budget based on your campaign objectives, target CPM and CPA in [City], and the creative volume needed to run meaningful tests. The right budget lets us test multiple audiences and creative combinations simultaneously to identify winners quickly. We never recommend scaling budgets before the account data supports it — and we build the case for every budget recommendation with data." },
       { q: "How do you create the ad creative for [City] campaigns?", a: "Our in-house creative team produces all ad content — static images, video, carousel, and story formats. We don't rely on client-provided content or outsource to freelancers. Creative is developed based on your brand, your offer, and the specific behaviours and preferences of your [City] target audience. We produce multiple variants and let performance data determine winners." },
       { q: "How is paid social different from Google Ads for [City] businesses?", a: "Google Ads captures demand — reaching [City] buyers who are actively searching for what you offer. Paid social creates demand — reaching [City] buyers who match your ideal customer profile before they're searching. Both are valuable, but they work at different stages of the funnel. Many [City] businesses that combine both see significantly lower blended CAC than using either channel alone." },
       { q: "Can you run paid social for local [City] service businesses?", a: "Yes — this is a very common use case. A [City] dental practice running Instagram ads targeting local adults within a 5km radius, a home renovation company reaching homeowners in specific [City] postal codes, or a fitness studio promoting a new class to health-interested residents nearby — these are all campaigns we run regularly and produce strong results with." },
@@ -1060,24 +982,6 @@ The ROI of content marketing for [City] businesses is long and compounding. Mont
       { n: "6 months", l: "avg. time to first significant ranking improvements" },
       { n: "4×", l: "avg. content ROI vs. equivalent ad spend at 18 months" },
     ],
-    pricingTiers: {
-      premium: {
-        range: "$3,000 – $10,000+/mo",
-        context: "Toronto content marketing requires high-volume, high-quality production to compete against well-established content programmes. Investment at this level supports 8–16 content assets per month plus distribution and link acquisition.",
-      },
-      major: {
-        range: "$2,000 – $7,000/mo",
-        context: "Major Ontario markets require consistent, quality content production to build topical authority. This range supports 4–10 content assets per month with full SEO optimisation and distribution.",
-      },
-      standard: {
-        range: "$1,500 – $4,500/mo",
-        context: "Mid-size Ontario markets often have lower content competition, meaning quality content can rank relatively quickly. This budget level supports 3–6 content assets per month with full optimisation.",
-      },
-      emerging: {
-        range: "$1,200 – $3,000/mo",
-        context: "Emerging markets often have significant content gaps — meaning even a modest content programme can establish first-page rankings across multiple keyword clusters relatively quickly.",
-      },
-    },
     timeline: [
       { period: "Months 1–2", title: "Strategy + Pillar Production", desc: "Content strategy finalised, pillar pages and initial cluster content produced. Content architecture live on site. Internal linking structure implemented." },
       { period: "Months 3–5", title: "Traffic Starts Building", desc: "Secondary and long-tail content pieces begin ranking. Organic traffic to content assets growing month-over-month. Distribution channels driving initial referral traffic." },
@@ -1145,24 +1049,6 @@ Platform selection, deliverability, and list hygiene are technical foundations t
       { n: "+42%", l: "avg. open rate improvement after list hygiene" },
       { n: "60 days", l: "avg. time to first automation revenue for new setups" },
     ],
-    pricingTiers: {
-      premium: {
-        range: "$1,500 – $5,000/mo",
-        context: "Toronto businesses with large lists and complex customer journeys benefit from premium email management: advanced segmentation, high-volume campaign sends, and sophisticated automation architecture.",
-      },
-      major: {
-        range: "$1,200 – $3,500/mo",
-        context: "Major Ontario market businesses benefit from comprehensive email management including full automation build-out, regular campaign execution, and ongoing optimisation.",
-      },
-      standard: {
-        range: "$900 – $2,500/mo",
-        context: "Mid-size Ontario market businesses can achieve excellent email marketing results at this investment level — full automation setup, regular campaigns, and active list growth strategy.",
-      },
-      emerging: {
-        range: "$700 – $1,800/mo",
-        context: "Even with a smaller list, a well-executed email programme can produce outsized revenue for [City] businesses. We scale the programme as your list grows.",
-      },
-    },
     timeline: [
       { period: "Weeks 1–4", title: "Technical Setup + First Automations", desc: "Platform configured, deliverability authenticated, list cleaned and segmented, welcome and nurture sequences live. First automated revenue typically generated within 30 days." },
       { period: "Months 2–3", title: "Campaign Rhythm + Optimisation", desc: "Regular campaign cadence established. A/B testing underway on subject lines and content. Open rates and click rates improving with deliverability improvements." },
@@ -1230,24 +1116,6 @@ Attribution and measurement are the foundation of everything we do for [City] cl
       { n: "-38%", l: "avg. reduction in cost per acquisition" },
       { n: "200+", l: "Ontario businesses grown" },
     ],
-    pricingTiers: {
-      premium: {
-        range: "$5,000 – $20,000+/mo",
-        context: "Full-channel digital marketing in Toronto requires significant investment to be genuinely competitive across SEO, paid search, paid social, and email simultaneously. Premium programmes include senior specialists across all channels.",
-      },
-      major: {
-        range: "$3,500 – $12,000/mo",
-        context: "Major Ontario markets benefit enormously from integrated multi-channel programmes. This investment range supports full execution across 3–5 channels with dedicated channel specialists.",
-      },
-      standard: {
-        range: "$2,500 – $8,000/mo",
-        context: "Mid-size Ontario markets allow strong multi-channel execution at this investment level. We prioritise 2–3 highest-ROI channels initially, then expand as performance validates budget increases.",
-      },
-      emerging: {
-        range: "$1,800 – $5,500/mo",
-        context: "Emerging markets are where integrated digital programmes often produce the fastest ROI — lower competition across channels and meaningful first-mover advantages for businesses that invest early.",
-      },
-    },
     timeline: [
       { period: "Weeks 1–3", title: "Audit + Strategy + Launch", desc: "Multi-channel audit complete, integrated strategy finalised, paid campaigns and email automations launched. SEO foundation work begins." },
       { period: "Months 2–4", title: "Optimisation + Initial Results", desc: "Paid channels optimised toward CPA targets. Email automation producing revenue. First SEO ranking improvements visible. Cross-channel data insights informing all channels." },
@@ -1315,31 +1183,13 @@ The post-launch phase is where many [City] web design projects fail — not in t
       { n: "<2s", l: "average page load time across all builds" },
       { n: "5★", l: "Clutch rating for web design projects" },
     ],
-    pricingTiers: {
-      premium: {
-        range: "$12,000 – $75,000+ (project-based)",
-        context: "Toronto website projects typically start at $12,000 for professional service or local business sites, scaling to $40,000+ for complex ecommerce or custom-application builds. Premium design and performance standards are expected by Toronto clients.",
-      },
-      major: {
-        range: "$10,000 – $50,000+ (project-based)",
-        context: "Major Ontario city website projects follow similar scope to Toronto but often have more budget flexibility. Most professional service websites are $10,000–$20,000; ecommerce or complex builds run $25,000–$50,000+.",
-      },
-      standard: {
-        range: "$8,500 – $35,000+ (project-based)",
-        context: "Mid-size Ontario market websites are scoped based on complexity. A professional services or local business website typically runs $8,500–$15,000; larger multi-service sites or ecommerce $15,000–$35,000+.",
-      },
-      emerging: {
-        range: "$8,000 – $25,000+ (project-based)",
-        context: "Smaller Ontario market websites still benefit from professional design and technical build quality. Scope is usually leaner — focused on conversion and SEO fundamentals — which keeps costs lower without sacrificing performance.",
-      },
-    },
     timeline: [
       { period: "Weeks 1–2", title: "Discovery + Strategy", desc: "Business deep-dive, competitive research, site architecture and user journey mapping, conversion objective definition. Scope confirmed before design begins." },
       { period: "Weeks 3–6", title: "Design + Client Review", desc: "High-fidelity Figma mockups for all key pages. Client review and feedback rounds. Design sign-off before development begins." },
       { period: "Weeks 7–10", title: "Development + QA + Launch", desc: "Clean, performant code built and QA'd across devices. SEO configuration complete. Technical audit passed. Launch managed by our team." },
     ],
     faqTemplate: [
-      { q: "How much does a website cost for a [City] business?", a: "Website projects for [City] businesses typically range from $8,000–$12,000 for a professional service or local business website to $20,000–$60,000+ for complex ecommerce or enterprise sites. We scope each project individually and provide a detailed estimate after our discovery call. We don't quote until we understand your requirements." },
+      { q: "How does Outlier scope and quote a website project for a [City] business?", a: "Every website project is scoped individually after a discovery call where we understand your goals, content requirements, integrations, and performance expectations. We don't quote from a rate card — each estimate reflects the specific work required for your project. We provide a detailed proposal with a fixed project price, timeline, and deliverable list before any work begins." },
       { q: "How long does a website project take?", a: "A typical [City] business website takes 6–10 weeks from kick-off to launch. Complex ecommerce or custom-application builds take 12–20 weeks. We provide a project-specific timeline at the start of every engagement, with weekly updates throughout." },
       { q: "Do you build websites with SEO built in?", a: "Yes — always. Technical SEO is a first principle for us, not an add-on. Every website we build for [City] clients includes a proper site architecture, clean URL structure, schema markup, optimised page speed, and all the technical SEO configurations that give your site the best possible foundation to rank." },
       { q: "What platform do you build on?", a: "We build on WordPress, Webflow, and custom Next.js/React depending on your needs. We recommend the right platform based on your budget, content management requirements, and technical complexity — and we'll explain the tradeoffs clearly so you can make an informed decision." },
@@ -1434,7 +1284,6 @@ export default function CityServicePage() {
   const cityContextPara = `${city.name}'s business market has its own competitive character: ${city.marketBlurb.replace(/^[A-Z][a-z]+ is /, "").replace(/^[A-Z][a-z]+ has /, "").replace(/^[A-Z][a-z]+ serves /, "")} Understanding this local context is central to every ${svc.shortLabel} strategy we build for ${city.name} businesses — not a recycled template, but a programme shaped by the specific demand patterns, competitive dynamics, and search behaviour of your market.`;
 
   const neighbourhoodList = city.neighborhoodsOrAreas.split(",").map((n) => n.trim()).filter(Boolean);
-  const pricing = svc.pricingTiers[city.marketTier] || svc.pricingTiers["standard"];
   const tierCompetition = TIER_COMPETITION[city.marketTier];
 
   /* Related cities — same service, different cities (up to 8) */
@@ -1773,31 +1622,26 @@ export default function CityServicePage() {
         </div>
       </section>
 
-      {/* ═══ PRICING (city-tier based) ═════════════════════════════════ */}
+      {/* ═══ FREE AUDIT CTA ════════════════════════════════════════════ */}
       <section className="py-20 bg-white border-b border-[#e5e2d9]">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-14 items-start">
             <div>
-              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Investment</p>
+              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Your {city.name} Opportunity</p>
               <h2 className="text-3xl md:text-4xl font-black text-[#0e0e0e] leading-[1.1] mb-6">
-                What does {svc.shortLabel} cost<br />in {city.name}?
+                What's the {svc.shortLabel} opportunity<br />in {city.name}?
               </h2>
               <p className="text-gray-600 leading-relaxed text-[15.5px] mb-6">
-                {city.name} is classified as a <strong>{TIER_LABELS[city.marketTier]}</strong> for {svc.shortLabel.toLowerCase()} investment purposes. Pricing reflects the competitive intensity of the market, the volume of work required to produce results, and the level of expertise needed to compete effectively.
+                {city.name} is a <strong>{TIER_LABELS[city.marketTier]}</strong> for {svc.shortLabel.toLowerCase()} — {tierCompetition.label.toLowerCase()} across most categories. Understanding the specific competitive landscape in {city.name} is central to any engagement we scope.
               </p>
               <p className="text-gray-600 leading-relaxed text-[15.5px] mb-8">
-                {pricing.context}
+                Every engagement with Outlier starts with a free audit. We assess your current position, analyse the {svc.shortLabel.toLowerCase()} competition in {city.name}, and give you a clear picture of the opportunity before any proposal is made. We scope each engagement individually — and we won't recommend a programme we can't deliver results with.
               </p>
-              <div className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-6 mb-6">
-                <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-3">Typical {city.name} Investment Range</p>
-                <p className="text-2xl font-black text-[#0e0e0e] mb-2">{pricing.range}</p>
-                <p className="text-xs text-gray-500">Scoped to your specific situation — we never recommend a budget we can't deliver results with.</p>
-              </div>
               <div className="space-y-3">
                 {[
-                  { icon: BarChart3, title: "Market Competitiveness", desc: `${city.name}'s ${tierCompetition.label.toLowerCase()} means budget requirements reflect the work needed to outperform entrenched competitors.` },
-                  { icon: Target, title: "Scope & Deliverables", desc: "Final investment is scoped to your goals — we never pad proposals. You pay for what's required to achieve your specific objectives." },
-                  { icon: TrendingUp, title: "ROI First", desc: "We won't recommend a budget we can't make profitable. Every engagement starts with a clear ROI projection based on your market, category, and starting position." },
+                  { icon: BarChart3, title: "Market Competitiveness", desc: `${city.name}'s ${tierCompetition.label.toLowerCase()} means every strategy we build is calibrated to the specific work required to outperform entrenched competitors.` },
+                  { icon: Target, title: "Custom Scope", desc: "Every engagement is scoped to your goals — we never pad proposals. You pay for what's required to achieve your specific objectives in the {city} market." },
+                  { icon: TrendingUp, title: "ROI First", desc: "We won't recommend a programme we can't make profitable. Every engagement starts with a clear opportunity analysis based on your market, category, and starting position." },
                 ].map(({ icon: IcComponent, title, desc }) => (
                   <div key={title} className="flex gap-4 items-start">
                     <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -1816,10 +1660,10 @@ export default function CityServicePage() {
               <div className="bg-[#08090d] rounded-2xl p-8">
                 <p className="text-[10px] font-black uppercase tracking-widest text-primary mb-4">Free {city.name} {svc.shortLabel} Audit</p>
                 <h3 className="text-2xl font-black text-white leading-[1.15] mb-4">
-                  Know exactly what your {city.name} {svc.shortLabel.toLowerCase()} opportunity is worth — before you spend a dollar.
+                  Know exactly what your {city.name} {svc.shortLabel.toLowerCase()} opportunity looks like — before you commit to anything.
                 </h3>
                 <p className="text-white/50 text-sm leading-relaxed mb-6">
-                  We audit your current position, analyse your competition in {city.name}, and give you a clear estimate of the traffic, leads, and revenue available from {svc.shortLabel.toLowerCase()}. Then we scope an investment that makes sense for your situation.
+                  We audit your current position, analyse your competition in {city.name}, and give you a clear picture of the traffic, leads, and growth available from {svc.shortLabel.toLowerCase()}. Then we scope an engagement that makes sense for your specific situation.
                 </p>
                 <a href="/contact" className="flex items-center justify-center gap-2 bg-primary text-white font-bold px-6 py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-[15px] w-full">
                   Get Free {city.name} Audit <ArrowRight className="w-4 h-4" />

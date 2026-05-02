@@ -27,7 +27,7 @@ const searchData: SubServiceData = {
     { title: "Optimise", body: "Daily optimisation in the first 2 weeks. Weekly thereafter — query mining, bid adjustments, copy testing, and Quality Score improvement." },
   ],
   faq: [
-    { q: "What budget do you need to run Google Search campaigns?", a: "We require a minimum of $3,000/month in ad spend to generate enough conversion data for meaningful optimisation. Below that, results are slow and margins are tight for both parties." },
+    { q: "What budget do you need to run Google Search campaigns?", a: "The right budget depends on your industry, competitive landscape, and target cost-per-acquisition. We recommend a budget after reviewing your goals and market — and we'll be transparent if we think a proposed budget isn't sufficient to generate meaningful results in your specific category." },
     { q: "How quickly will I see results?", a: "First 2–4 weeks: data gathering. Weeks 4–8: CPA optimisation begins. Most clients see ROAS improvement vs. their previous agency within 60 days." },
   ],
   related: RELATED_PAID,
@@ -55,7 +55,7 @@ const lsaData: SubServiceData = {
   ],
   faq: [
     { q: "Which businesses are eligible for Google Local Service Ads?", a: "LSAs are available for most local service categories: HVAC, plumbing, electrical, roofing, locksmith, pet grooming, legal, financial planning, and more. We'll confirm eligibility for your specific category before starting." },
-    { q: "How much does a Local Service Ad lead cost?", a: "CPL varies by category and market. In the GTA, LSA leads typically range from $18–$65 depending on your service type. We track your exact CPL and optimise the lead quality over time." },
+    { q: "How much does a Local Service Ad lead cost?", a: "CPL varies significantly by category, competitive market, and GBP quality score. We track your exact CPL from day one and optimise continuously toward the lowest cost per qualified lead. We'll project a realistic CPL range during your audit after reviewing your specific category and market." },
   ],
   related: RELATED_PAID,
   cta: "The Google Guaranteed badge is the highest-trust position in local search.",
@@ -149,7 +149,7 @@ const youtubeData: SubServiceData = {
   headline: "Video ads that interrupt with purpose —",
   italic: "and keep watching.",
   subhead: "YouTube pre-roll is the most underused paid channel in local and B2B marketing. We produce the targeting strategy, creative brief, and campaign structure that makes video advertising a performance channel — not just a brand awareness exercise.",
-  stats: [{ value: "45%", label: "Avg view-through rate" }, { value: "$0.03–0.08", label: "CPV target" }, { value: "Skippable", label: "+ non-skip formats" }],
+  stats: [{ value: "45%", label: "Avg view-through rate" }, { value: "Top 5%", label: "CPV efficiency" }, { value: "Skippable", label: "+ non-skip formats" }],
   deliverables: [
     { title: "Audience + Targeting Strategy", body: "In-market audiences, custom intent audiences built from competitor keywords, and remarketing audiences from your site visitors — layered for maximum relevance." },
     { title: "Creative Brief", body: "A detailed creative brief for your video production team covering the hook (first 5 seconds), core message, CTA, and technical specs for both skippable and non-skippable formats." },
@@ -163,7 +163,7 @@ const youtubeData: SubServiceData = {
   ],
   faq: [
     { q: "Do I need to produce a video to run YouTube ads?", a: "Yes. You need at minimum a 15-second non-skippable or a 30-second skippable video. We provide the creative brief. Your production team or a video production vendor creates the asset." },
-    { q: "Is YouTube advertising worth it for local businesses?", a: "For service businesses with $5,000+/month in total ad budget and a strong offer, YouTube pre-roll builds brand recognition that lowers CPA across all other channels." },
+    { q: "Is YouTube advertising worth it for local businesses?", a: "For service businesses with a strong offer and sufficient paid media budget to generate meaningful reach, YouTube pre-roll builds brand recognition that lowers CPA across all other channels. We'll tell you honestly whether it makes sense for your specific situation and budget level." },
   ],
   related: RELATED_PAID,
   cta: "YouTube is the most trusted video platform your prospects use daily.",

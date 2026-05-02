@@ -284,7 +284,7 @@ const digitalMarketingData: HubData = {
     },
     {
       question: "Do you work with a minimum ad budget?",
-      answer: "We require a minimum media budget of $3,000/month for paid channels to achieve meaningful results and gather enough data to optimise efficiently. Our management fees are flat-rate — never a percentage of spend. Below $3,000/month, the signal-to-noise ratio in the data makes proper optimisation very difficult.",
+      answer: "We recommend a media budget that generates enough signal for meaningful optimisation — which varies by industry and competitive landscape. Our management fees are flat-rate — never a percentage of spend. We'll give you a specific recommendation after reviewing your goals and market, and we won't advise a budget we can't make work.",
     },
     {
       question: "Can I start with just one channel?",

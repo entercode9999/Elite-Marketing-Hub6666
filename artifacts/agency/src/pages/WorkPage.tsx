@@ -1,0 +1,896 @@
+import { Link, useParams } from "wouter";
+import { ArrowRight, TrendingUp, BarChart3, Users, Search, Target, Share2, Mail, Globe, MapPin, CheckCircle2, ChevronDown, ChevronUp } from "lucide-react";
+import { useState } from "react";
+import { Nav } from "@/components/nav";
+import { Footer } from "@/components/footer";
+
+/* ─── Case Study Data ─────────────────────────────────────────────── */
+
+interface CaseStudyData {
+  slug: string;
+  client: string;
+  tagline: string;
+  service: string;
+  industry: string;
+  location: string;
+  cardGradient: string;
+  accentColor: string;
+  heroHeadline: string;
+  heroBullets: string[];
+  about: string;
+  projectDetails: {
+    label: string;
+    value: string;
+  }[];
+  challenges: {
+    title: string;
+    description: string;
+  }[];
+  solutionSteps: {
+    title: string;
+    description: string;
+  }[];
+  results: {
+    stat: string;
+    label: string;
+  }[];
+  testimonial?: {
+    quote: string;
+    name: string;
+    role: string;
+  };
+}
+
+const CASE_STUDIES: CaseStudyData[] = [
+  {
+    slug: "meridian-dental",
+    client: "Meridian Dental Group",
+    tagline: "Tripling organic patient enquiries in 11 months",
+    service: "SEO Services",
+    industry: "Healthcare / Dental",
+    location: "Toronto, ON",
+    cardGradient: "from-[#0a1628] to-[#1a56ff]",
+    accentColor: "#1a56ff",
+    heroHeadline: "From page 4 to position 1 — across every core dental keyword in Toronto.",
+    heroBullets: [
+      "Rebuilt technical SEO foundation and eliminated 140+ crawl errors",
+      "Created a comprehensive topical authority architecture for dental services",
+      "Dominated the Toronto map pack for all primary dental search terms",
+    ],
+    about:
+      "Meridian Dental Group is a multi-location dental practice with four Toronto clinics serving patients across the city since 2011. Despite 13 years of operation and strong patient satisfaction scores, their website was invisible on Google — ranking on page 3–5 for their most important service keywords and entirely absent from the Google Maps results. They came to Outlier after an unsuccessful engagement with two previous agencies who produced reports but not results.",
+    projectDetails: [
+      { label: "Services", value: "SEO · Local SEO · Content Marketing" },
+      { label: "Industry", value: "Healthcare / Dental" },
+      { label: "Location", value: "Toronto, Ontario" },
+      { label: "Duration", value: "11 months" },
+    ],
+    challenges: [
+      {
+        title: "Zero map pack visibility",
+        description: "Despite having four Toronto locations, Meridian didn't appear in a single Google Maps result for any dental search term. Their Google Business Profiles were unclaimed, incomplete, and had fewer than 5 reviews each.",
+      },
+      {
+        title: "Severe technical SEO issues",
+        description: "An audit revealed 140+ crawl errors, duplicate content across all four location pages, missing canonical tags, and a site speed score of 31/100 — all of which were actively suppressing rankings regardless of content quality.",
+      },
+      {
+        title: "No content strategy",
+        description: "The existing website had thin service pages with fewer than 200 words each and no blog or topical content. Competitors were ranking with comprehensive procedure guides, FAQ content, and location-specific pages that Meridian simply didn't have.",
+      },
+    ],
+    solutionSteps: [
+      {
+        title: "Technical Foundation Rebuild",
+        description: "We resolved all 140+ crawl errors, implemented proper canonical tags, rebuilt the site's internal linking architecture, and improved page speed from 31 to 91/100 through image optimisation, lazy loading, and server configuration. Core Web Vitals went green across all pages.",
+      },
+      {
+        title: "Local SEO & GBP Overhaul",
+        description: "All four Google Business Profiles were claimed, rebuilt from scratch, and optimised with the correct service categories, complete service menus, professional photography, and Q&A content. We implemented a systematic review generation programme that produced 120+ new 5-star reviews within 90 days.",
+      },
+      {
+        title: "Topical Authority Content Architecture",
+        description: "We built a comprehensive content strategy covering every dental procedure, patient concern, and local search intent relevant to the Toronto market. This included four location-specific service pages, 24 procedure guides, and an ongoing monthly blog programme targeting informational dental queries.",
+      },
+      {
+        title: "Citation Building & Local Link Acquisition",
+        description: "We built consistent NAP citations across 45+ directories and acquired local backlinks from Toronto healthcare directories, dental association listings, and community publications — all of which directly elevated map pack rankings.",
+      },
+    ],
+    results: [
+      { stat: "+312%", label: "Organic website traffic" },
+      { stat: "11 mo.", label: "To achieve primary keyword page 1" },
+      { stat: "4 × #1", label: "Map pack positions across locations" },
+      { stat: "+187%", label: "New patient enquiries from organic" },
+      { stat: "120+", label: "New 5-star reviews in 90 days" },
+      { stat: "91/100", label: "Final page speed score (from 31)" },
+    ],
+    testimonial: {
+      quote: "Outlier didn't just improve our rankings — they rebuilt the entire foundation of how we appear online. The difference in patient enquiries from organic search alone has been transformative. For the first time in 13 years, we're the first result when someone searches for a Toronto dentist.",
+      name: "Dr. James Meridian",
+      role: "Founder, Meridian Dental Group",
+    },
+  },
+  {
+    slug: "gta-home-pros",
+    client: "GTA Home Pros",
+    tagline: "Turning a wasted ad budget into 4.2× ROAS in 90 days",
+    service: "Google Ads + Local SEO",
+    industry: "Home Services",
+    location: "Mississauga & GTA",
+    cardGradient: "from-[#1a1a2e] to-[#e85d04]",
+    accentColor: "#e85d04",
+    heroHeadline: "A self-managed Google Ads account was burning money. We turned it into the company's top revenue channel.",
+    heroBullets: [
+      "Rebuilt campaign structure, eliminated 60% wasted spend in the first 30 days",
+      "Achieved Google Map Pack position 1 across 6 high-value home service terms",
+      "Reduced cost per booked job by 54% while tripling lead volume",
+    ],
+    about:
+      "GTA Home Pros provides HVAC, plumbing, and electrical services across Mississauga, Brampton, and the broader GTA. With 18 technicians and an established customer base, the business had the capacity to grow — but was stuck. Their self-managed Google Ads account was spending significantly each month with little to show for it, and a competitor had recently taken every top map pack position they once held. They needed expert intervention fast.",
+    projectDetails: [
+      { label: "Services", value: "Google Ads · Local SEO · GBP Management" },
+      { label: "Industry", value: "Home Services (HVAC, Plumbing, Electrical)" },
+      { label: "Location", value: "Mississauga, Brampton, GTA" },
+      { label: "Duration", value: "Ongoing (initial results: 90 days)" },
+    ],
+    challenges: [
+      {
+        title: "Catastrophic ad account waste",
+        description: "An audit of the self-managed Google Ads account revealed broad match keywords triggering irrelevant searches, no negative keyword list, duplicate campaigns competing against each other, and zero conversion tracking. The account had no data to optimise against and no way to measure what was working.",
+      },
+      {
+        title: "Map pack displacement",
+        description: "A competitor had systematically built their local SEO presence over 18 months and displaced GTA Home Pros from every map pack position they once held. Response times had slipped, reviews had plateaued, and GBP optimisation had been neglected.",
+      },
+      {
+        title: "No landing page alignment",
+        description: "Paid search traffic was landing on the homepage, which had no service-specific content, no trust signals above the fold, and a contact form that required 8 fields. The conversion rate was below 1% — meaning the majority of expensive clicks produced nothing.",
+      },
+    ],
+    solutionSteps: [
+      {
+        title: "Google Ads Account Rebuild",
+        description: "We rebuilt the account from scratch: proper campaign structure by service type (HVAC, plumbing, electrical), exact and phrase match keywords with a comprehensive negative list, call tracking with recording capability, and Smart Bidding configured with sufficient conversion data. Wasted spend dropped by 60% in the first month while maintaining total lead volume.",
+      },
+      {
+        title: "Landing Page Overhaul",
+        description: "We designed and built three service-specific landing pages — one per core service — with trust signals above the fold, 3-field contact forms, customer testimonials, and service area maps. Conversion rate improved from 0.9% to 4.3% across all paid traffic.",
+      },
+      {
+        title: "GBP Restoration & Review Velocity",
+        description: "We rebuilt all three Google Business Profiles, implemented a post-service review request sequence, and established a weekly GBP posting schedule. Within 60 days, review count grew from 34 to 89 across all profiles, and map pack positions began recovering.",
+      },
+      {
+        title: "Local SEO Foundation",
+        description: "Citation cleanup across 45 directories, local keyword optimisation on all service pages, and a hyperlocal content strategy targeting city-specific service searches across the GTA service area.",
+      },
+    ],
+    results: [
+      { stat: "4.2×", label: "ROAS (Google Ads)" },
+      { stat: "-54%", label: "Cost per booked job" },
+      { stat: "+200%", label: "Monthly lead volume" },
+      { stat: "Map #1", label: "6 primary home service terms" },
+      { stat: "4.3%", label: "Landing page conversion rate (from 0.9%)" },
+      { stat: "90 days", label: "To initial results" },
+    ],
+    testimonial: {
+      quote: "We were spending a lot on Google Ads and getting almost nothing back. Outlier rebuilt everything, and within 90 days we were booked out 3 weeks in advance for the first time ever. The transparency in their reporting alone was a revelation compared to what we'd experienced before.",
+      name: "Marco Deluca",
+      role: "Owner, GTA Home Pros",
+    },
+  },
+  {
+    slug: "axiom-law",
+    client: "Axiom Law Professional Corporation",
+    tagline: "Page 1 across 40+ legal search terms — from a standing start",
+    service: "SEO + Content Marketing",
+    industry: "Legal",
+    location: "Toronto, ON",
+    cardGradient: "from-[#0d0d0d] to-[#2d2d44]",
+    accentColor: "#a78bfa",
+    heroHeadline: "A new Toronto law firm needed to compete online against practices with decades of digital history. We got them there.",
+    heroBullets: [
+      "Established page 1 rankings across 40+ high-intent legal search terms within 14 months",
+      "Built a 60-article topical authority architecture that became the firm's primary new client source",
+      "Achieved first-page rankings for terms previously dominated by Toronto's largest law firms",
+    ],
+    about:
+      "Axiom Law Professional Corporation was founded in 2022 by two senior lawyers leaving Bay Street firm partnerships to build a boutique practice focused on commercial litigation, corporate law, and employment law. Starting with an empty website and no online presence, they needed to build credibility and visibility in one of Canada's most competitive legal search markets from scratch. Traditional legal directories and referral networks alone would not be enough.",
+    projectDetails: [
+      { label: "Services", value: "SEO · Content Marketing · Technical SEO" },
+      { label: "Industry", value: "Legal — Corporate & Commercial" },
+      { label: "Location", value: "Toronto, Ontario" },
+      { label: "Duration", value: "14 months" },
+    ],
+    challenges: [
+      {
+        title: "Zero domain authority on a new website",
+        description: "Axiom launched with a brand-new domain and zero backlinks, competing against firms with 10–20 years of link equity and established Google trust. In legal SEO, new entrants typically spend 18–24 months before seeing meaningful organic traction — we needed to accelerate that timeline significantly.",
+      },
+      {
+        title: "YMYL compliance requirements",
+        description: "Legal content falls under Google's 'Your Money or Your Life' category, which means Google applies the highest level of E-E-A-T scrutiny. Every piece of content needed to demonstrate genuine legal expertise, proper author credentialing, and verifiable claims — generic content would not be tolerated.",
+      },
+      {
+        title: "Entrenched competitors with massive content libraries",
+        description: "The top-ranking Toronto law firms had 200–500 indexed content pages, thousands of backlinks, and years of topical authority signals. Competing for high-intent terms like 'Toronto corporate lawyer' or 'commercial litigation Toronto' required an outflanking strategy targeting winnable long-tail terms first.",
+      },
+    ],
+    solutionSteps: [
+      {
+        title: "E-E-A-T Architecture & Author Credentialing",
+        description: "We built individual author profiles with bar admission credentials, case history summaries, and published legal commentary. Each piece of content was attributed to a named lawyer with linked credentials. We added schema markup for legal services, practice areas, and attorney profiles — all of which improved E-E-A-T signals dramatically.",
+      },
+      {
+        title: "Long-Tail First Keyword Strategy",
+        description: "Rather than targeting impossible head terms immediately, we mapped a 180-day keyword progression: starting with specific procedural questions ('how to contest a shareholder agreement in Ontario'), building to mid-competition service terms ('commercial lease dispute Toronto'), and finally targeting head terms as domain authority accumulated.",
+      },
+      {
+        title: "Topical Authority Content Build",
+        description: "A 60-article content programme covering every commercial law topic, employment law question, and litigation procedure relevant to the Toronto business market. Each piece was researched by legal specialists, written to YMYL standards, and optimised for the specific search queries Axiom's target clients were making.",
+      },
+      {
+        title: "Digital PR & Legal Publication Placements",
+        description: "We secured content placements in six Canadian legal publications and three Toronto business journals, generating high-authority backlinks that compressed the domain authority timeline from 24 months to under 14.",
+      },
+    ],
+    results: [
+      { stat: "40+", label: "Page 1 keyword rankings" },
+      { stat: "+312%", label: "Organic traffic (12-month period)" },
+      { stat: "14 mo.", label: "To competitive keyword rankings" },
+      { stat: "18", label: "New clients sourced from organic search" },
+      { stat: "60", label: "Content assets produced & ranking" },
+      { stat: "6", label: "Legal publication backlink placements" },
+    ],
+    testimonial: {
+      quote: "We were told by multiple people that SEO for a new law firm in Toronto was essentially impossible in any reasonable timeframe. Outlier proved that wrong. We're now ranking ahead of firms that have been in business for 30 years on terms we care about. The quality of the inbound enquiries from organic search is exceptional.",
+      name: "Alexandra Chen",
+      role: "Partner, Axiom Law Professional Corporation",
+    },
+  },
+  {
+    slug: "northview-kitchens",
+    client: "Northview Kitchens & Bath",
+    tagline: "4.8× ROAS and a 14-week booking backlog",
+    service: "Google Ads + Paid Social",
+    industry: "Home Renovation / Retail",
+    location: "Hamilton & Burlington, ON",
+    cardGradient: "from-[#0a1a1a] to-[#087f5b]",
+    accentColor: "#20c997",
+    heroHeadline: "A premium kitchen renovation company needed leads — not impressions. We built a paid media system that delivered both.",
+    heroBullets: [
+      "Rebuilt Google Ads from a flat CPA to 4.8× ROAS within 60 days",
+      "Added Meta advertising targeting Hamilton and Burlington homeowners with renovation intent",
+      "Built a 14-week project backlog for the first time in the company's history",
+    ],
+    about:
+      "Northview Kitchens & Bath is a premium kitchen and bathroom renovation company serving Hamilton, Burlington, and surrounding Halton and Hamilton communities. With 22 years of craftsmanship and an exceptional portfolio of completed projects, Northview had no shortage of quality — but their digital marketing had never matched the calibre of their work. Relying primarily on referrals and a poorly-managed Google Ads account, they were turning away leads for the wrong reasons: not enough of them.",
+    projectDetails: [
+      { label: "Services", value: "Google Ads · Meta Advertising · Landing Page Design" },
+      { label: "Industry", value: "Home Renovation / Premium Kitchen & Bath" },
+      { label: "Location", value: "Hamilton & Burlington, Ontario" },
+      { label: "Duration", value: "Ongoing (initial results: 60 days)" },
+    ],
+    challenges: [
+      {
+        title: "Low-quality lead volume and poor qualification",
+        description: "The existing Google Ads account was targeting broad, low-intent keywords and sending traffic to the homepage — resulting in high spend, low lead volume, and leads that frequently weren't serious renovation buyers. The sales team was spending significant time qualifying out price-shopping enquiries.",
+      },
+      {
+        title: "No social media advertising presence",
+        description: "Northview had zero paid social advertising history despite having a stunning portfolio of completed projects. This was a significant missed opportunity: premium home renovation is an ideal category for Instagram and Facebook advertising, where visual creative can stop the scroll and capture aspirational buyers before they search.",
+      },
+      {
+        title: "No conversion tracking or attribution",
+        description: "There was no call tracking, no form submission tracking, and no way to determine which campaigns, keywords, or creatives were producing actual bookings. Budget decisions were being made on gut instinct with no data.",
+      },
+    ],
+    solutionSteps: [
+      {
+        title: "Google Ads Restructure & Conversion Tracking",
+        description: "We rebuilt the account around high-intent, specific kitchen and bathroom renovation keywords, implemented call tracking with recording, and set up CRM offline conversion imports so that actual booked projects flowed back into Google's algorithm. Smart Bidding strategies were configured with proper conversion data for the first time.",
+      },
+      {
+        title: "High-Converting Landing Pages",
+        description: "We designed and built separate landing pages for kitchen renovations and bathroom renovations — featuring the Northview portfolio prominently, process transparency, financing information, and a streamlined quote request form. Conversion rate improved from 1.2% to 5.8%.",
+      },
+      {
+        title: "Meta Advertising with Portfolio Creative",
+        description: "We produced carousel and video ad formats showcasing Northview's completed projects, targeting homeowners aged 35–65 in Hamilton and Burlington postal codes with household income signals and home ownership indicators. The visual portfolio proved exceptional ad creative — stopping the scroll for the exact audience Northview needed to reach.",
+      },
+      {
+        title: "Blended Retargeting Strategy",
+        description: "Visitors from Google Ads and organic traffic were retargeted across Meta, YouTube, and Display with portfolio showcase creative and specific offer messaging. The combined first-touch and retargeting approach compressed the consideration period significantly for high-value renovation leads.",
+      },
+    ],
+    results: [
+      { stat: "4.8×", label: "ROAS (Google Ads)" },
+      { stat: "3.4×", label: "ROAS (Meta Ads)" },
+      { stat: "+280%", label: "Qualified lead volume" },
+      { stat: "5.8%", label: "Landing page conversion rate" },
+      { stat: "14 weeks", label: "Project backlog (from 3 weeks)" },
+      { stat: "60 days", label: "To initial results" },
+    ],
+    testimonial: {
+      quote: "We went from scrambling for leads to turning jobs away because our schedule is full. The quality of the leads coming from both Google and Meta is completely different from what we were getting before — these are serious renovation buyers, not people calling to compare prices. Outlier completely changed our business trajectory.",
+      name: "Robert Northfield",
+      role: "Owner, Northview Kitchens & Bath",
+    },
+  },
+  {
+    slug: "purecycle-fitness",
+    client: "Purecycle Fitness Studios",
+    tagline: "+180% membership growth through paid social and email",
+    service: "Paid Social + Email Marketing",
+    industry: "Fitness & Wellness",
+    location: "Markham & Richmond Hill, ON",
+    cardGradient: "from-[#1a0533] to-[#7c3aed]",
+    accentColor: "#7c3aed",
+    heroHeadline: "A boutique fitness studio chain grew membership 180% in 8 months — without discounting.",
+    heroBullets: [
+      "Built a Meta advertising funnel that acquired members at a consistent, profitable cost",
+      "Resurrected a 3,200-subscriber email list that had been dormant for 18 months",
+      "Maintained premium pricing throughout — zero promotional discounting required",
+    ],
+    about:
+      "Purecycle Fitness Studios operates two premium boutique fitness locations in Markham and Richmond Hill, offering cycling, HIIT, and yoga classes at a premium price point. After strong initial growth during their launch period, membership acquisition had plateaued. Their email list was large but dormant, their social media posts were getting organic reach only, and they had no paid advertising history. A new competitor had opened nearby, making growth more urgent.",
+    projectDetails: [
+      { label: "Services", value: "Meta Advertising · Email Marketing · Automation" },
+      { label: "Industry", value: "Boutique Fitness / Wellness" },
+      { label: "Location", value: "Markham & Richmond Hill, Ontario" },
+      { label: "Duration", value: "8 months" },
+    ],
+    challenges: [
+      {
+        title: "Membership acquisition plateau",
+        description: "After an initial surge, monthly new member acquisitions had dropped to a level that barely offset churn. The studio relied entirely on word-of-mouth and organic social posts, which had declining reach. There was no systematic acquisition mechanism.",
+      },
+      {
+        title: "Dormant email list",
+        description: "Purecycle had collected 3,200+ email addresses over three years — and had not sent a single email in 18 months. The list had significant potential value but needed careful re-engagement to avoid deliverability damage and to rebuild subscriber trust.",
+      },
+      {
+        title: "Premium price resistance in paid acquisition",
+        description: "Purecycle's price point was 40–60% above typical gym memberships. Previous ad experiments had attracted price-sensitive leads who converted poorly. The challenge was reaching specifically the audience that would value premium, boutique fitness — not just fitness seekers in general.",
+      },
+    ],
+    solutionSteps: [
+      {
+        title: "Meta Advertising Funnel Build",
+        description: "We built a three-stage Meta funnel: awareness creative showcasing the studio environment and community (video), consideration creative highlighting transformation stories from existing members (carousel), and conversion creative with a specific new member offer (single image). Audiences were built from existing member lookalikes, fitness interest signals, and income/lifestyle indicators in the Markham and Richmond Hill postal codes.",
+      },
+      {
+        title: "Email List Re-Engagement Campaign",
+        description: "We ran a carefully managed re-engagement sequence across the dormant list before any promotional sends — allowing subscribers to opt out proactively, cleaning the list of invalid addresses, and warming the sending domain. The re-engagement campaign produced a 38% active rate from a list that had seen zero activity in 18 months.",
+      },
+      {
+        title: "Email Automation Architecture",
+        description: "We built a welcome sequence for new leads, a trial-to-member conversion sequence, a win-back series for lapsed members, and a referral programme automation. Each sequence was personalised by class type preference and behavioural triggers. The automated sequences now run continuously with no manual intervention.",
+      },
+      {
+        title: "Community-Driven Creative Strategy",
+        description: "Rather than gym equipment or stock fitness imagery, all creative featured real Purecycle members and instructors. This authenticity dramatically improved Meta ad performance and created organic sharing behaviour — members reshared ads featuring themselves or their instructors, significantly extending organic reach.",
+      },
+    ],
+    results: [
+      { stat: "+180%", label: "New memberships (8 months)" },
+      { stat: "3.4×", label: "Meta advertising ROAS" },
+      { stat: "42%", label: "Email open rate (industry avg: 21%)" },
+      { stat: "38%", label: "Dormant list re-engagement rate" },
+      { stat: "0%", label: "Promotional discounting required" },
+      { stat: "8 mo.", label: "To 180% membership growth" },
+    ],
+    testimonial: {
+      quote: "We'd tried running Facebook ads ourselves and got clicks but almost no conversions. Outlier completely changed the approach — the creative strategy, the audience targeting, the email sequences — everything was built around our actual members and our actual community. The results have been remarkable and we haven't needed to discount our memberships once.",
+      name: "Priya Sharma",
+      role: "Co-Founder, Purecycle Fitness Studios",
+    },
+  },
+  {
+    slug: "bluesky-roofing",
+    client: "BlueSky Roofing & Exteriors",
+    tagline: "Map Pack #1 for every primary roofing term in Brampton",
+    service: "Local SEO",
+    industry: "Construction / Home Services",
+    location: "Brampton, ON",
+    cardGradient: "from-[#071e3d] to-[#1368aa]",
+    accentColor: "#1aa7ec",
+    heroHeadline: "A roofing company invisible on Google Maps became the #1 result across Brampton within 5 months.",
+    heroBullets: [
+      "Achieved Google Map Pack position 1 for all primary roofing search terms in Brampton",
+      "+220% increase in Google Business Profile impressions",
+      "+85% increase in direct phone calls from Google search",
+    ],
+    about:
+      "BlueSky Roofing & Exteriors has been serving Brampton homeowners since 2009. With 15 years of experience and an impeccable quality record, BlueSky was well-known in the communities they'd served — but completely unknown to homeowners who found roofers by searching on Google. Their competitors had invested heavily in local SEO, occupying the top map pack positions and capturing the majority of inbound calls. BlueSky was losing business to less experienced competitors who simply ranked better.",
+    projectDetails: [
+      { label: "Services", value: "Local SEO · GBP Management · Review Generation · Citations" },
+      { label: "Industry", value: "Roofing & Exteriors" },
+      { label: "Location", value: "Brampton, Ontario" },
+      { label: "Duration", value: "5 months to map pack #1" },
+    ],
+    challenges: [
+      {
+        title: "Unclaimed and incomplete Google Business Profile",
+        description: "BlueSky's GBP had been claimed but never properly managed. The profile lacked a service menu, had only 7 photos (mostly poor quality), had not been posted to in over a year, and had just 11 Google reviews at an average of 4.1 stars. Competitors had 80–150 reviews at 4.8+ stars.",
+      },
+      {
+        title: "No consistent NAP data across directories",
+        description: "An audit found BlueSky listed in 23 directories with 6 different variations of their business name, 4 different phone numbers, and 3 different address formats. This inconsistency was directly suppressing their local ranking signals.",
+      },
+      {
+        title: "Competitors with years of local SEO investment",
+        description: "The top 3 roofing companies in the Brampton map pack had each been actively investing in local SEO for 2–4 years. They had 80–200 reviews, optimised GBPs, and dozens of local citations — a significant head start that required a systematic, accelerated approach to overcome.",
+      },
+    ],
+    solutionSteps: [
+      {
+        title: "GBP Complete Rebuild",
+        description: "We rebuilt the Google Business Profile from the ground up: correct primary and secondary categories (roofing contractor + siding contractor + gutter cleaning), complete service menu with descriptions, 47 professional photos covering crew, completed projects, equipment, and before/after comparisons, and weekly posting schedule targeting seasonal roofing queries.",
+      },
+      {
+        title: "Review Generation Programme",
+        description: "We implemented a post-project SMS review request system and trained BlueSky's office team on review generation best practices. Within 90 days, the review count grew from 11 to 73, with an average rating of 4.9 stars — surpassing the review profiles of every competitor in the map pack.",
+      },
+      {
+        title: "Citation Audit & Comprehensive Build-Out",
+        description: "We identified and corrected all 6 business name variations, standardised NAP data across every existing listing, removed duplicates, and built new citations in 35 additional directories relevant to the roofing and home services industry. All submissions included photos and expanded business descriptions.",
+      },
+      {
+        title: "Local Content & On-Page Optimisation",
+        description: "We optimised every page on the BlueSky website for Brampton-specific roofing searches, added schema markup for local business and services, and created neighbourhood-specific content pages for the 6 major Brampton communities they serve.",
+      },
+    ],
+    results: [
+      { stat: "Map #1", label: "All primary roofing terms in Brampton" },
+      { stat: "+220%", label: "GBP impressions (6-month period)" },
+      { stat: "+85%", label: "Direct phone calls from Google" },
+      { stat: "73", label: "Google reviews (from 11 in 90 days)" },
+      { stat: "4.9★", label: "Average review rating (from 4.1)" },
+      { stat: "5 mo.", label: "To map pack #1" },
+    ],
+    testimonial: {
+      quote: "Before Outlier, we were losing jobs to roofers who weren't half as good as us — just because they showed up on Google Maps and we didn't. Now we're #1 in Brampton and the phone doesn't stop. The review programme they set up has completely changed how homeowners perceive us before they even call.",
+      name: "Kevin Bluestein",
+      role: "Owner, BlueSky Roofing & Exteriors",
+    },
+  },
+];
+
+/* ─── Service icon map ────────────────────────────────────────────── */
+const SERVICE_ICONS: Record<string, React.ElementType> = {
+  "SEO Services": Search,
+  "Google Ads + Local SEO": Target,
+  "SEO + Content Marketing": BarChart3,
+  "Google Ads + Paid Social": TrendingUp,
+  "Paid Social + Email Marketing": Share2,
+  "Local SEO": MapPin,
+};
+
+/* ─── Our Work Page ───────────────────────────────────────────────── */
+
+export function OurWorkPage() {
+  return (
+    <div className="min-h-screen bg-[#f9f8f5]">
+      <Nav />
+
+      {/* Hero */}
+      <section className="bg-[#08090d] pt-32 pb-20 border-b border-white/8">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-4">Case Studies</p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <h1 className="text-5xl md:text-6xl font-black text-white leading-tight max-w-2xl">
+              Real results for real Ontario businesses.
+            </h1>
+            <p className="text-white/40 text-base max-w-xs leading-relaxed">
+              We let the numbers speak. Every engagement below is documented, attributed, and verified.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Grid */}
+      <section className="py-16 bg-[#f9f8f5]">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {CASE_STUDIES.map((cs) => (
+              <Link key={cs.slug} href={`/our-work/${cs.slug}`} className="group block">
+                <div className={`relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-br ${cs.cardGradient} mb-4`}>
+                  {/* Geometric accent */}
+                  <div
+                    className="absolute inset-0 opacity-10"
+                    style={{
+                      backgroundImage: "linear-gradient(135deg, rgba(255,255,255,0.08) 25%, transparent 25%), linear-gradient(225deg, rgba(255,255,255,0.08) 25%, transparent 25%)",
+                      backgroundSize: "40px 40px",
+                    }}
+                  />
+                  {/* Service icon */}
+                  <div className="absolute top-6 left-6">
+                    <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
+                      {(() => {
+                        const Ic = SERVICE_ICONS[cs.service] || TrendingUp;
+                        return <Ic className="w-5 h-5 text-white" />;
+                      })()}
+                    </div>
+                  </div>
+                  {/* Industry badge */}
+                  <div className="absolute top-6 right-6">
+                    <span className="text-[10px] font-black uppercase tracking-widest bg-white/15 text-white px-2.5 py-1 rounded-full border border-white/20">
+                      Case Study
+                    </span>
+                  </div>
+                  {/* Key result */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
+                    <p className="text-white/50 text-[10px] font-black uppercase tracking-widest mb-1">{cs.service} · {cs.location}</p>
+                    <p className="text-white font-black text-xl leading-tight">{cs.client}</p>
+                  </div>
+                  {/* Hover arrow */}
+                  <div className="absolute bottom-6 right-6 w-9 h-9 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
+                    <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-0.5 transition-transform" />
+                  </div>
+                </div>
+                <div className="px-1">
+                  <p className="font-black text-[#0e0e0e] text-base mb-1">{cs.client}</p>
+                  <p className="text-gray-500 text-sm">{cs.tagline}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Awards / trust strip */}
+      <section className="py-16 bg-white border-y border-[#e5e2d9]">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Recognition</p>
+              <h2 className="text-3xl font-black text-[#0e0e0e] leading-tight mb-4">
+                Recognised for results —<br />not just aesthetics.
+              </h2>
+              <p className="text-gray-600 text-[15px] leading-relaxed">
+                Our work is validated not only by client outcomes but by independent reviews and industry recognition. Over 200 Ontario businesses have trusted Outlier with their digital growth, and we've maintained a 93% client retention rate after year one.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { n: "200+", l: "Ontario businesses grown" },
+                { n: "93%", l: "Client retention after year 1" },
+                { n: "4.9★", l: "Clutch rating" },
+                { n: "10yr+", l: "Active in the market" },
+              ].map((s) => (
+                <div key={s.l} className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-6 text-center">
+                  <p className="text-3xl font-black text-primary mb-1">{s.n}</p>
+                  <p className="text-xs text-gray-500">{s.l}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-[#08090d]">
+        <div className="container mx-auto px-4 max-w-3xl text-center">
+          <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-4">Start your case study</p>
+          <h2 className="text-4xl font-black text-white leading-tight mb-5">
+            Your business could be next.
+          </h2>
+          <p className="text-white/40 text-[15px] leading-relaxed mb-8 max-w-xl mx-auto">
+            Every case study above started with a free strategy call. We assessed the market, identified the opportunity, and built a plan. That's how we start every engagement.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-4 rounded-xl hover:bg-primary/90 transition-colors text-[15px]"
+          >
+            Book a Free Strategy Call <ArrowRight className="w-5 h-5" />
+          </Link>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}
+
+/* ─── Case Study Detail Page ─────────────────────────────────────── */
+
+function AccordionItem({ title, description }: { title: string; description: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border border-[#e5e2d9] rounded-2xl overflow-hidden">
+      <button
+        className="w-full flex items-center justify-between p-6 text-left hover:bg-[#f9f8f5] transition-colors"
+        onClick={() => setOpen(!open)}
+      >
+        <span className="font-bold text-[#0e0e0e] text-base">{title}</span>
+        <span className={`w-8 h-8 rounded-full border flex-shrink-0 flex items-center justify-center transition-all ${open ? "bg-primary border-primary" : "border-[#e5e2d9]"}`}>
+          {open ? <ChevronUp className="w-4 h-4 text-white" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
+        </span>
+      </button>
+      {open && (
+        <div className="px-6 pb-6">
+          <p className="text-gray-600 leading-relaxed text-[15px]">{description}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export function CaseStudyPage() {
+  const params = useParams<{ slug: string }>();
+  const cs = CASE_STUDIES.find((c) => c.slug === params.slug);
+
+  if (!cs) {
+    return (
+      <div className="min-h-screen bg-[#f9f8f5] flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-gray-400 mb-4">Case study not found.</p>
+          <Link href="/our-work" className="text-primary font-bold hover:underline">← Back to Our Work</Link>
+        </div>
+      </div>
+    );
+  }
+
+  const otherStudies = CASE_STUDIES.filter((c) => c.slug !== cs.slug).slice(0, 3);
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Nav />
+
+      {/* ═══ HERO ═══════════════════════════════════════════════════ */}
+      <section className="pt-28 pb-0 bg-white border-b border-[#e5e2d9]">
+        <div className="container mx-auto px-4 max-w-7xl">
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-gray-400 text-xs mb-10">
+            <Link href="/" className="hover:text-gray-600">Home</Link>
+            <span>/</span>
+            <Link href="/our-work" className="hover:text-gray-600">Our Work</Link>
+            <span>/</span>
+            <span className="text-gray-600">{cs.client}</span>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center pb-16">
+            {/* Left */}
+            <div>
+              <p className="text-[11px] font-black uppercase tracking-widest mb-3" style={{ color: cs.accentColor }}>
+                {cs.service} · {cs.location}
+              </p>
+              <h1 className="text-4xl md:text-5xl font-black text-[#0e0e0e] leading-[1.1] mb-3">
+                {cs.client}
+              </h1>
+              <p className="text-xl font-bold text-gray-700 mb-8 leading-snug">{cs.heroHeadline}</p>
+              <ul className="space-y-3 mb-10">
+                {cs.heroBullets.map((b) => (
+                  <li key={b} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: cs.accentColor }} />
+                    <span className="text-gray-700 text-[15px] leading-snug">{b}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 text-white font-bold px-7 py-3.5 rounded-xl hover:opacity-90 transition-opacity text-[15px]"
+                style={{ backgroundColor: cs.accentColor }}
+              >
+                Get Similar Results <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            {/* Right — styled visual card */}
+            <div className={`relative rounded-2xl overflow-hidden aspect-[16/10] bg-gradient-to-br ${cs.cardGradient}`}>
+              <div
+                className="absolute inset-0 opacity-10"
+                style={{
+                  backgroundImage: "linear-gradient(135deg, rgba(255,255,255,0.08) 25%, transparent 25%), linear-gradient(225deg, rgba(255,255,255,0.08) 25%, transparent 25%)",
+                  backgroundSize: "40px 40px",
+                }}
+              />
+              {/* Stats overlay */}
+              <div className="absolute bottom-8 left-8 right-8 grid grid-cols-3 gap-3">
+                {cs.results.slice(0, 3).map((r) => (
+                  <div key={r.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-center">
+                    <p className="text-white font-black text-xl leading-none mb-1">{r.stat}</p>
+                    <p className="text-white/60 text-[10px] font-medium leading-snug">{r.label}</p>
+                  </div>
+                ))}
+              </div>
+              {/* Client name watermark */}
+              <div className="absolute top-8 left-8">
+                <p className="text-white font-black text-2xl opacity-20">{cs.client}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ ABOUT + PROJECT DETAILS ════════════════════════════════ */}
+      <section className="py-20 bg-[#f9f8f5] border-b border-[#e5e2d9]">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid lg:grid-cols-3 gap-12">
+            {/* Sidebar */}
+            <div className="lg:col-span-1 space-y-6">
+              {/* Project details */}
+              <div className="bg-white border border-[#e5e2d9] rounded-2xl p-6">
+                <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-4">Project Details</p>
+                <div className="space-y-4">
+                  {cs.projectDetails.map((d) => (
+                    <div key={d.label}>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1">{d.label}</p>
+                      <p className="text-[#0e0e0e] font-semibold text-sm">{d.value}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Key metric highlight */}
+              <div className="rounded-2xl p-6 text-white" style={{ backgroundColor: cs.accentColor }}>
+                <p className="text-[10px] font-black uppercase tracking-widest opacity-60 mb-2">Headline Result</p>
+                <p className="font-black text-4xl mb-1">{cs.results[0].stat}</p>
+                <p className="text-sm opacity-75">{cs.results[0].label}</p>
+              </div>
+            </div>
+
+            {/* Main About */}
+            <div className="lg:col-span-2">
+              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">About the Client</p>
+              <h2 className="text-2xl md:text-3xl font-black text-[#0e0e0e] leading-[1.1] mb-6">
+                About {cs.client}
+              </h2>
+              <p className="text-gray-600 leading-relaxed text-[15.5px]">{cs.about}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ CHALLENGES ═════════════════════════════════════════════ */}
+      <section className="py-20 bg-white border-b border-[#e5e2d9]">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="max-w-2xl mb-12">
+            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">The Challenges</p>
+            <h2 className="text-3xl md:text-4xl font-black text-[#0e0e0e] leading-[1.1]">
+              What {cs.client} was up against
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {cs.challenges.map((c, i) => (
+              <div key={c.title} className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-7 relative overflow-hidden">
+                <div className="absolute top-4 right-5 text-[72px] font-black leading-none select-none" style={{ color: cs.accentColor, opacity: 0.06 }}>
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div className="w-10 h-10 rounded-xl mb-5 flex items-center justify-center" style={{ backgroundColor: `${cs.accentColor}18` }}>
+                  <TrendingUp className="w-5 h-5" style={{ color: cs.accentColor }} />
+                </div>
+                <h3 className="font-black text-[#0e0e0e] text-lg mb-3">{c.title}</h3>
+                <p className="text-gray-600 text-[14px] leading-relaxed">{c.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ SOLUTION ═══════════════════════════════════════════════ */}
+      <section className="py-20 bg-[#f9f8f5] border-b border-[#e5e2d9]">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid lg:grid-cols-5 gap-14 items-start">
+            <div className="lg:col-span-2">
+              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Our Solution</p>
+              <h2 className="text-3xl md:text-4xl font-black text-[#0e0e0e] leading-[1.1] mb-5">
+                How we solved it — step by step
+              </h2>
+              <p className="text-gray-600 leading-relaxed text-[15px]">
+                Every engagement is custom-built for the client's specific situation, market, and goals. Below is the approach we took for {cs.client} — no templates, no recycled playbooks.
+              </p>
+              <div className="mt-6">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 text-white font-bold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity text-sm"
+                  style={{ backgroundColor: cs.accentColor }}
+                >
+                  Build your strategy <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+            <div className="lg:col-span-3 space-y-3">
+              {cs.solutionSteps.map((s) => (
+                <AccordionItem key={s.title} title={s.title} description={s.description} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ RESULTS ════════════════════════════════════════════════ */}
+      <section className="py-20 bg-[#08090d] border-b border-white/8">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="max-w-xl mb-14">
+            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Final Outcomes</p>
+            <h2 className="text-3xl md:text-4xl font-black text-white leading-[1.1]">
+              The results for {cs.client}
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-14">
+            {cs.results.map((r) => (
+              <div key={r.label} className="bg-white/4 border border-white/8 rounded-2xl p-7 text-center">
+                <p className="font-black text-white mb-2" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", lineHeight: 1 }}>
+                  {r.stat}
+                </p>
+                <p className="text-white/40 text-xs font-medium leading-snug">{r.label}</p>
+              </div>
+            ))}
+          </div>
+
+          {cs.testimonial && (
+            <div className="bg-white/4 border border-white/10 rounded-2xl p-10 max-w-3xl mx-auto text-center">
+              <p className="text-white text-lg leading-relaxed italic mb-6">"{cs.testimonial.quote}"</p>
+              <div className="flex items-center justify-center gap-3">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center font-black text-sm text-white" style={{ backgroundColor: cs.accentColor }}>
+                  {cs.testimonial.name.split(" ").map((n) => n[0]).join("")}
+                </div>
+                <div className="text-left">
+                  <p className="text-white font-bold text-sm">{cs.testimonial.name}</p>
+                  <p className="text-white/40 text-xs">{cs.testimonial.role}</p>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* ═══ MORE WORK ══════════════════════════════════════════════ */}
+      <section className="py-20 bg-[#f9f8f5] border-b border-[#e5e2d9]">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+            <div>
+              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-2">More Case Studies</p>
+              <h2 className="text-2xl font-black text-[#0e0e0e]">More results from our Ontario clients</h2>
+            </div>
+            <Link href="/our-work" className="inline-flex items-center gap-2 border border-[#e5e2d9] text-[#0e0e0e] font-bold px-5 py-2.5 rounded-xl text-sm hover:border-primary hover:text-primary transition-colors">
+              View All Work <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {otherStudies.map((ocs) => (
+              <Link key={ocs.slug} href={`/our-work/${ocs.slug}`} className="group block">
+                <div className={`relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-br ${ocs.cardGradient} mb-4`}>
+                  <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "linear-gradient(135deg, rgba(255,255,255,0.08) 25%, transparent 25%)", backgroundSize: "40px 40px" }} />
+                  <span className="absolute top-4 right-4 text-[10px] font-black uppercase tracking-widest bg-white/15 text-white px-2.5 py-1 rounded-full border border-white/20">Case Study</span>
+                  <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/60 to-transparent">
+                    <p className="text-white/50 text-[10px] font-black uppercase tracking-widest mb-1">{ocs.service}</p>
+                    <p className="text-white font-black text-lg">{ocs.client}</p>
+                  </div>
+                  <div className="absolute bottom-4 right-4 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
+                    <ArrowRight className="w-3.5 h-3.5 text-white" />
+                  </div>
+                </div>
+                <p className="text-gray-500 text-sm">{ocs.tagline}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-3xl text-center">
+          <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-4">Work with Outlier</p>
+          <h2 className="text-3xl font-black text-[#0e0e0e] mb-5">
+            Ready to build your case study?
+          </h2>
+          <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
+            Book a free strategy call. We'll assess your market, identify your biggest opportunity, and tell you exactly what it would take to achieve results like the ones above.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-4 rounded-xl hover:bg-primary/90 transition-colors text-[15px]"
+          >
+            Book Free Strategy Call <ArrowRight className="w-5 h-5" />
+          </Link>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}

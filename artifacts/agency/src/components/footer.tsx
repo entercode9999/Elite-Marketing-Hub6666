@@ -33,7 +33,7 @@ const INDUSTRIES = [
 
 const COMPANY = [
   { label: "About", href: "/about" },
-  { label: "Case Studies", href: "/case-studies" },
+  { label: "Our Work", href: "/our-work" },
   { label: "Insights", href: "/insights" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },

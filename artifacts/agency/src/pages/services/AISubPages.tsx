@@ -82,7 +82,7 @@ const customAiData: SubServiceData = {
   ],
   faq: [
     { q: "How is a custom AI system different from using ChatGPT?", a: "ChatGPT answers based on its training data. A custom AI system answers using your specific knowledge base, your data, and your business logic — it knows your products, policies, and processes. The difference in accuracy is dramatic." },
-    { q: "How much does a custom AI system cost?", a: "Project-based pricing starting at $12,000 for a focused RAG implementation. Complex multi-agent systems with fine-tuning range $25,000–$80,000+. We scope every project before committing to a number." },
+    { q: "How much does a custom AI system cost?", a: "Pricing depends on the complexity, data sources, and integrations involved. We scope every project thoroughly before committing to a number — book a discovery call and we'll give you a fixed quote after understanding your specific requirements." },
   ],
   related: RELATED_AI,
   cta: "Generic AI gives generic results. Custom AI solves your actual problem.",
@@ -108,7 +108,7 @@ const appDevData: SubServiceData = {
     { title: "Deploy & Support", body: "Production deployment on AWS, GCP, or Vercel. CI/CD pipeline setup. 90-day post-launch support included in all project contracts." },
   ],
   faq: [
-    { q: "What's the minimum budget for a custom app?", a: "A focused web application (client portal, booking system) starts at approximately $18,000. Full-featured SaaS products with mobile apps start at $45,000+. We provide fixed quotes after a scoping session." },
+    { q: "What's the minimum budget for a custom app?", a: "It depends on the scope, complexity, and integrations required. We provide fixed quotes after a scoping session where we fully understand your requirements — we don't quote before we understand what we're building." },
     { q: "Do you provide ongoing maintenance after launch?", a: "Yes — monthly maintenance retainers are available for bug fixes, dependency updates, and minor feature additions. We recommend all clients retain a maintenance agreement post-launch." },
   ],
   related: RELATED_AI,

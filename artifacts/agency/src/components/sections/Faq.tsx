@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "How is pricing structured?",
-    a: "Three models: project (one-off scope), monthly retainer (most clients), or performance-based for select brands. Retainers typically start at $6K/month. We'll recommend the right fit on the call based on your stage and goals.",
+    a: "Three models: project (one-off scope), monthly retainer (most clients), or performance-based for select brands. We'll recommend the right fit on the call based on your stage, goals, and what we can actually deliver for you.",
   },
   {
     q: "What does the first 30 days look like?",

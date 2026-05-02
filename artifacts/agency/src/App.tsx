@@ -137,13 +137,15 @@ import CityServicePage from "@/pages/CityServicePage";
 import {
   AboutPage,
   ContactPage,
-  CaseStudiesPage,
   InsightsPage,
   CareersPage,
   PrivacyPage,
   TermsPage,
   AccessibilityPage,
 } from "@/pages/SimplePages";
+
+/* ── Our Work & Case Studies ── */
+import { OurWorkPage, CaseStudyPage } from "@/pages/WorkPage";
 
 const queryClient = new QueryClient();
 
@@ -156,7 +158,8 @@ function Router() {
       {/* ── Company pages ── */}
       <Route path="/about" component={AboutPage} />
       <Route path="/contact" component={ContactPage} />
-      <Route path="/case-studies" component={CaseStudiesPage} />
+      <Route path="/our-work" component={OurWorkPage} />
+      <Route path="/our-work/:slug" component={CaseStudyPage} />
       <Route path="/insights" component={InsightsPage} />
       <Route path="/careers" component={CareersPage} />
       <Route path="/privacy" component={PrivacyPage} />

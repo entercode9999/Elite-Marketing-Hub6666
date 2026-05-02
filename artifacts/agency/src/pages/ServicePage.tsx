@@ -25,7 +25,6 @@ export interface ServicePageData {
     metrics: { value: string; label: string }[];
   };
   differentiators: { title: string; body: string }[];
-  pricing: { tier: string; range: string; desc: string }[];
   faq: { q: string; a: string }[];
   cta: { headline: string; sub: string };
 }
@@ -265,36 +264,6 @@ export function ServicePage({ data }: { data: ServicePageData }) {
         </div>
       </section>
 
-      {/* ══ PRICING ══ */}
-      <section id="pricing" className="py-20 md:py-28 bg-[#f9f8f5] border-t border-[#e5e2d9]">
-        <div className="max-w-4xl mx-auto px-6">
-          <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">Pricing</span>
-          <h2 className="text-4xl font-black text-[#0e0e0e] mb-12">Transparent, flat-fee pricing.</h2>
-          <div className="border border-[#e5e2d9] rounded-2xl overflow-hidden bg-white">
-            {data.pricing.map((tier, i) => (
-              <div
-                key={tier.tier}
-                className={`flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-6 py-5 ${
-                  i < data.pricing.length - 1 ? "border-b border-[#e5e2d9]" : ""
-                }`}
-              >
-                <div>
-                  <p className="font-bold text-[#0e0e0e]">{tier.tier}</p>
-                  <p className="text-xs text-gray-400 mt-0.5">{tier.desc}</p>
-                </div>
-                <p className="text-base font-black text-[#0e0e0e] shrink-0">{tier.range}</p>
-              </div>
-            ))}
-            <div className="bg-primary/5 border-t border-[#e5e2d9] px-6 py-4">
-              <p className="text-xs text-gray-400">
-                All engagements month-to-month. No lock-in. First audit is free.{" "}
-                <Link href="/contact" className="text-primary font-semibold hover:underline">Book yours →</Link>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ══ FAQ ══ */}
       <section id="faq" className="py-20 md:py-28 bg-white border-t border-[#e5e2d9]">
         <div className="max-w-3xl mx-auto px-6">
@@ -325,7 +294,7 @@ export function ServicePage({ data }: { data: ServicePageData }) {
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
             <Link
-              href="/work"
+              href="/our-work"
               className="inline-flex items-center gap-2 border border-white/15 hover:border-white/30 text-white font-semibold py-4 px-8 rounded-xl text-sm transition-all"
             >
               View our work
@@ -407,14 +376,8 @@ export const localSeoData: ServicePageData = {
   differentiators: [
     { title: "GBP as an active marketing channel", body: "Most agencies treat GBP as a one-time setup. We post weekly, manage Q&A, respond to every review, and update attributes seasonally. It compounds." },
     { title: "Structure-first before content", body: "We fix the citation graph and service-area configuration before publishing a single page. Most agencies skip this; it's why they plateau at positions 4–10." },
-    { title: "No percentage-of-spend pricing", body: "Our retainer covers all deliverables at a fixed monthly rate. Adding cities, services, or review campaigns doesn't trigger a new invoice." },
+    { title: "Flat retainer — no percentage of spend", body: "Our retainer covers all deliverables at a fixed monthly rate. Adding cities, services, or review campaigns doesn't trigger a new invoice." },
     { title: "Pack-level competitor intelligence", body: "We track every business in your map pack and reverse-engineer exactly what they're doing better. Your content and link strategy targets those specific gaps." },
-  ],
-  pricing: [
-    { tier: "Single location · low competition", range: "$800–$1,400/mo", desc: "1 GBP, 1 city, up to 3 priority service queries" },
-    { tier: "Single location · high competition", range: "$1,400–$2,200/mo", desc: "Saturated market, multi-service" },
-    { tier: "Multi-location · 2–5 locations", range: "$1,800–$3,500/mo", desc: "Consistent GBP + NAP across locations" },
-    { tier: "Multi-location · 5+ locations", range: "By scope", desc: "Enterprise-level programmatic local SEO" },
   ],
   faq: [
     { q: "How long before local SEO produces map pack movement?", a: "Low-competition markets: 4–8 weeks for meaningful movement. Saturated markets like Toronto dental or legal: 12–24 weeks. We give honest timelines upfront after reviewing your pack position." },
@@ -460,7 +423,7 @@ export const googleAdsData: ServicePageData = {
     { phase: "Step 05", title: "Optimise", body: "Monthly strategy calls. Bid automation transitions based on data. Landing page testing. Expansion to new campaigns." },
   ],
   whoFor: [
-    "Service businesses spending $3,000+/month on Google Ads who aren't seeing clear ROI from their current agency.",
+    "Service businesses currently running Google Ads but not seeing clear ROI from their current agency.",
     "Growth-stage companies launching Google Ads for the first time who want to avoid the common setup mistakes.",
     "eCommerce brands wanting Google Shopping and PMAX managed under one flat-fee retainer.",
   ],
@@ -468,7 +431,7 @@ export const googleAdsData: ServicePageData = {
     client: "Legal — Toronto, ON",
     headline: "CPA cut by 52% in 60 days. Lead volume doubled.",
     subheadline: "Inheriting an account with a bloated keyword list and no negative keyword strategy.",
-    body: "We inherited an account spending $8,000/month with a 14% impression share and $340 average CPA. After a full rebuild — intent layering, RSA testing, negative keyword architecture, and landing page alignment — CPA dropped to $163 and monthly lead volume doubled within 60 days.",
+    body: "We inherited an account with bloated spend, a 14% impression share, and a poor average CPA. After a full rebuild — intent layering, RSA testing, negative keyword architecture, and landing page alignment — CPA dropped 52% and monthly lead volume doubled within 60 days.",
     metrics: [
       { value: "-52%", label: "CPA" },
       { value: "+2x", label: "Lead volume" },
@@ -481,15 +444,9 @@ export const googleAdsData: ServicePageData = {
     { title: "Intent-first keyword architecture", body: "We build negative keyword lists before we write a single ad. Intent layering means your budget only reaches people who are ready to buy." },
     { title: "Landing page accountability", body: "If your landing page isn't converting, we say so and fix it. Most agencies blame the algorithm. We look at the full funnel." },
   ],
-  pricing: [
-    { tier: "Starter · up to $5,000/mo ad spend", range: "$800–$1,200/mo", desc: "Search campaigns, full setup, weekly optimisation" },
-    { tier: "Growth · $5,000–$20,000/mo ad spend", range: "$1,200–$2,000/mo", desc: "Search + PMAX + display, conversion tracking, landing page audit" },
-    { tier: "Scale · $20,000+/mo ad spend", range: "$2,000–$3,500/mo", desc: "Full account with LSA, Shopping, YouTube pre-roll, quarterly strategy" },
-    { tier: "Enterprise", range: "By scope", desc: "Multi-account, multi-market management" },
-  ],
   faq: [
     { q: "How quickly do Google Ads produce results?", a: "The first 2–4 weeks are a data-gathering period. Meaningful cost-per-conversion optimisation happens in weeks 4–8. Most clients see ROAS improvement vs. their previous agency within the first 60 days." },
-    { q: "What's the minimum ad spend you recommend?", a: "We require a minimum of $3,000/month in ad spend to achieve statistically meaningful data for optimisation. Below that, results are slow and margins are tight." },
+    { q: "What ad spend do you recommend for my business?", a: "We recommend a budget after reviewing your specific goals, industry cost-per-click landscape, and target CPA. Every budget recommendation is specific to your business and backed by a clear ROI projection — we don't quote before we understand your situation." },
     { q: "Do you write the ad copy?", a: "Yes. Ad copy is included in all engagements. We write all RSA headlines, descriptions, and extensions — and we test variants continuously." },
     { q: "Do you also manage Meta or TikTok ads?", a: "Yes — we can manage Meta and TikTok ads alongside Google as part of an integrated paid media retainer. Ask about our multi-channel packages." },
   ],

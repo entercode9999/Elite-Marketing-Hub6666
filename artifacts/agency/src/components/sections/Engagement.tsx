@@ -6,7 +6,7 @@ const tiers = [
   {
     name: "Project",
     tagline: "One-off builds with a defined scope.",
-    price: "Starting at $8K",
+    price: "Fixed scope",
     features: [
       "Website redesign or build",
       "SEO audit & roadmap",
@@ -20,7 +20,7 @@ const tiers = [
   {
     name: "Retainer",
     tagline: "Embedded growth team. Most popular.",
-    price: "From $6K / month",
+    price: "Monthly retainer",
     features: [
       "Dedicated strategist + specialists",
       "Multi-channel execution",

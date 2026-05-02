@@ -13,7 +13,7 @@ const croData: SubServiceData = {
   label: "Conversion Rate Optimisation",
   headline: "More revenue from the traffic you already have.",
   italic: "Without buying more clicks.",
-  subhead: "CRO is the highest-ROI investment a business with existing traffic can make. Instead of paying for more visitors, we fix the funnel that's already losing them. A 2% CVR improvement on 10,000 monthly visitors outperforms $5,000 in additional ad spend.",
+  subhead: "CRO is the highest-ROI investment a business with existing traffic can make. Instead of paying for more visitors, we fix the funnel that's already losing them. A 2% CVR improvement on 10,000 monthly visitors outperforms significant additional ad spend — without spending another dollar on traffic.",
   stats: [{ value: "+28%", label: "Avg CVR lift" }, { value: "A/B", label: "Test-driven framework" }, { value: "90 days", label: "First sprint results" }],
   deliverables: [
     { title: "CRO Audit & Heatmap Analysis", body: "We use Hotjar or Clarity heatmaps, session recordings, and GA4 funnel data to identify exactly where users drop off and why." },
