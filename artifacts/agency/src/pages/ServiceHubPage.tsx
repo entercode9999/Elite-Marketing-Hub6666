@@ -40,6 +40,31 @@ export interface HubFaq {
   answer: string;
 }
 
+export interface HubTechPlatform {
+  platform: string;
+  stat?: string;
+  description: string;
+}
+
+export interface HubInsightArticle {
+  image: string;
+  category: string;
+  readTime: string;
+  title: string;
+  excerpt: string;
+  author: string;
+  authorRole: string;
+  href: string;
+}
+
+export interface HubProofSection {
+  eyebrow: string;
+  headline: string;
+  body: string;
+  secondBody?: string;
+  bullets?: string[];
+}
+
 export interface HubData {
   slug: string;
   label: string;
@@ -57,6 +82,7 @@ export interface HubData {
     eyebrow: string;
     headline: string;
     body: string;
+    secondBody?: string;
     bullets: string[];
     image?: string;
   };
@@ -66,6 +92,9 @@ export interface HubData {
   caseStudies: HubCaseStudy[];
   faqs: HubFaq[];
   breadcrumb: string;
+  proofSection?: HubProofSection;
+  techStack?: HubTechPlatform[];
+  hubInsights?: HubInsightArticle[];
 }
 
 function ProcessTab({ steps }: { steps: HubProcess[] }) {
@@ -333,8 +362,11 @@ export function ServiceHubPage({ data }: { data: HubData }) {
               <div>
                 <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">{data.intro.eyebrow}</span>
                 <h2 className="text-4xl font-black text-[#0e0e0e] mb-5 leading-tight">{data.intro.headline}</h2>
-                <p className="text-base text-gray-500 leading-relaxed mb-6">{data.intro.body}</p>
-                <div className="space-y-3">
+                <p className="text-base text-gray-500 leading-relaxed mb-4">{data.intro.body}</p>
+                {data.intro.secondBody && (
+                  <p className="text-base text-gray-500 leading-relaxed mb-6">{data.intro.secondBody}</p>
+                )}
+                <div className="space-y-3 mt-6">
                   {data.intro.bullets.map((b) => (
                     <div key={b} className="flex items-start gap-2.5">
                       <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
@@ -363,6 +395,43 @@ export function ServiceHubPage({ data }: { data: HubData }) {
             </div>
           </div>
         </section>
+
+        {/* ── PROOF SECTION (optional) ── */}
+        {data.proofSection && (
+          <section className="py-20 md:py-28 bg-[#08090d]">
+            <div className="max-w-6xl mx-auto px-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                <div>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-4 block">{data.proofSection.eyebrow}</span>
+                  <h2 className="text-4xl font-black text-white leading-tight mb-6">{data.proofSection.headline}</h2>
+                  <p className="text-base text-white/50 leading-relaxed mb-4">{data.proofSection.body}</p>
+                  {data.proofSection.secondBody && (
+                    <p className="text-base text-white/50 leading-relaxed">{data.proofSection.secondBody}</p>
+                  )}
+                </div>
+                {data.proofSection.bullets && data.proofSection.bullets.length > 0 && (
+                  <div className="grid grid-cols-1 gap-4 pt-2">
+                    {data.proofSection.bullets.map((b, i) => (
+                      <motion.div
+                        key={b}
+                        initial={{ opacity: 0, x: 16 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.07 }}
+                        className="flex items-start gap-4 py-4 border-b border-white/5 last:border-0"
+                      >
+                        <div className="w-6 h-6 rounded-full bg-primary/15 flex items-center justify-center shrink-0 mt-0.5">
+                          <Check className="w-3.5 h-3.5 text-primary" />
+                        </div>
+                        <span className="text-sm text-white/60 leading-relaxed">{b}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* ── WHAT WE COVER (Kinex-style internal tabs) ── */}
         <section className="py-20 md:py-28 bg-[#f9f8f5] border-t border-[#e5e2d9]">
@@ -394,6 +463,39 @@ export function ServiceHubPage({ data }: { data: HubData }) {
                     <h3 className="font-bold text-[#0e0e0e] mb-2">{f.title}</h3>
                     <p className="text-sm text-gray-500 leading-relaxed">{f.body}</p>
                   </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* ── TECH STACK (optional) ── */}
+        {data.techStack && data.techStack.length > 0 && (
+          <section className="py-20 md:py-28 bg-[#f9f8f5] border-t border-[#e5e2d9]">
+            <div className="max-w-6xl mx-auto px-6">
+              <div className="mb-12">
+                <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">Technology</span>
+                <h2 className="text-4xl font-black text-[#0e0e0e] leading-tight">The platforms we build on.</h2>
+                <p className="text-base text-gray-500 mt-4 max-w-xl">We're platform-agnostic but opinionated. Every platform recommendation is made after understanding your business model, your team's capability, and your growth plans — not because it's easiest for us.</p>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {data.techStack.map((t, i) => (
+                  <motion.div
+                    key={t.platform}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.06 }}
+                    className="bg-white border border-[#e5e2d9] rounded-2xl p-6 hover:border-primary/30 hover:shadow-sm transition-all"
+                  >
+                    <div className="flex items-start justify-between mb-3">
+                      <h3 className="font-black text-[#0e0e0e] text-lg">{t.platform}</h3>
+                      {t.stat && (
+                        <span className="text-xs font-bold text-primary bg-primary/8 rounded-full px-2.5 py-1 shrink-0 ml-2">{t.stat}</span>
+                      )}
+                    </div>
+                    <p className="text-sm text-gray-500 leading-relaxed">{t.description}</p>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -462,6 +564,59 @@ export function ServiceHubPage({ data }: { data: HubData }) {
                 <h2 className="text-4xl font-black text-[#0e0e0e]">Common questions.</h2>
               </div>
               <FaqAccordion items={data.faqs} />
+            </div>
+          </section>
+        )}
+
+        {/* ── HUB INSIGHTS (optional) ── */}
+        {data.hubInsights && data.hubInsights.length > 0 && (
+          <section className="py-20 md:py-28 bg-white border-t border-[#e5e2d9]">
+            <div className="max-w-6xl mx-auto px-6">
+              <div className="flex items-end justify-between mb-12">
+                <div>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">Insights</span>
+                  <h2 className="text-4xl font-black text-[#0e0e0e] leading-tight">Industry perspectives.</h2>
+                  <p className="text-base text-gray-500 mt-3 max-w-md">Practical guides and data-backed insights from our senior team.</p>
+                </div>
+                <a href="/blog" className="text-sm font-semibold text-gray-400 hover:text-[#0e0e0e] transition-colors flex items-center gap-1 shrink-0">
+                  All articles <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+                {data.hubInsights.map((a, i) => (
+                  <motion.a
+                    key={a.title}
+                    href={a.href}
+                    initial={{ opacity: 0, y: 14 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.08 }}
+                    className="group flex flex-col border border-[#e5e2d9] rounded-2xl overflow-hidden hover:border-primary/30 hover:shadow-md transition-all"
+                  >
+                    <div className="aspect-[16/9] overflow-hidden bg-[#f2f2ef]">
+                      <img src={a.image} alt={a.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    </div>
+                    <div className="p-6 flex flex-col flex-1">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-[10px] font-black uppercase tracking-widest text-primary">{a.category}</span>
+                        <span className="text-[10px] text-gray-300">·</span>
+                        <span className="text-[10px] text-gray-400">{a.readTime}</span>
+                      </div>
+                      <h3 className="font-bold text-[#0e0e0e] text-base leading-snug mb-3 group-hover:text-primary transition-colors">{a.title}</h3>
+                      <p className="text-sm text-gray-500 leading-relaxed flex-1">{a.excerpt}</p>
+                      <div className="mt-5 pt-4 border-t border-[#e5e2d9] flex items-center gap-3">
+                        <div className="w-7 h-7 rounded-full bg-[#0e0e0e] flex items-center justify-center text-white text-[10px] font-black">
+                          {a.author.charAt(0)}
+                        </div>
+                        <div>
+                          <p className="text-xs font-bold text-[#0e0e0e]">{a.author}</p>
+                          <p className="text-[10px] text-gray-400">{a.authorRole}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.a>
+                ))}
+              </div>
             </div>
           </section>
         )}
