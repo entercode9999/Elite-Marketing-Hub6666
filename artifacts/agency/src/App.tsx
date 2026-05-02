@@ -14,13 +14,36 @@ import {
   ottawaLocalSeoData,
 } from "@/pages/LocationServicePage";
 
-/* ── Service hub pages ── */
+/* ── Website Services hubs ── */
 import WebDesignHub from "@/pages/hubs/WebDesignHub";
-import DigitalMarketingHub from "@/pages/hubs/DigitalMarketingHub";
-import AIHub from "@/pages/hubs/AIHub";
+import WebDevelopmentHub from "@/pages/hubs/WebDevelopmentHub";
+import WordPressHub from "@/pages/hubs/WordPressHub";
+import JoomlaHub from "@/pages/hubs/JoomlaHub";
+import DrupalHub from "@/pages/hubs/DrupalHub";
+import LaravelHub from "@/pages/hubs/LaravelHub";
+
+/* ── Ecommerce Services hubs ── */
 import EcommerceHub from "@/pages/hubs/EcommerceHub";
-import ContentMarketingHub from "@/pages/hubs/ContentMarketingHub";
+import MagentoHub from "@/pages/hubs/MagentoHub";
+import ShopifyHub from "@/pages/hubs/ShopifyHub";
+import ShopifyPlusHub from "@/pages/hubs/ShopifyPlusHub";
+import HeadlessCommerceHub from "@/pages/hubs/HeadlessCommerceHub";
+
+/* ── Enterprise Commerce hubs ── */
+import AdobeCommerceHub from "@/pages/hubs/AdobeCommerceHub";
+import Magento2DevHub from "@/pages/hubs/Magento2DevHub";
+import Magento2MigrationHub from "@/pages/hubs/Magento2MigrationHub";
+import Magento2SupportHub from "@/pages/hubs/Magento2SupportHub";
+import HyvaThemeHub from "@/pages/hubs/HyvaThemeHub";
+import HyvaEnterpriseHub from "@/pages/hubs/HyvaEnterpriseHub";
+
+/* ── Digital Marketing hubs ── */
 import TechnicalSeoHub from "@/pages/hubs/TechnicalSeoHub";
+import AISeoHub from "@/pages/hubs/AISeoHub";
+import DigitalMarketingHub from "@/pages/hubs/DigitalMarketingHub";
+import ContentMarketingHub from "@/pages/hubs/ContentMarketingHub";
+import AIHub from "@/pages/hubs/AIHub";
+import SocialMediaAdsHub from "@/pages/hubs/SocialMediaAdsHub";
 
 /* ── Local SEO sub-service pages ── */
 import {
@@ -113,13 +136,36 @@ function Router() {
       {/* ── Homepage ── */}
       <Route path="/" component={Home} />
 
-      {/* ── Service hub pages ── */}
+      {/* ── Website Services ── */}
       <Route path="/custom-web-design-service" component={WebDesignHub} />
-      <Route path="/digital-marketing" component={DigitalMarketingHub} />
-      <Route path="/ai-chatbot-service" component={AIHub} />
+      <Route path="/website-development-service" component={WebDevelopmentHub} />
+      <Route path="/wordpress-development-service" component={WordPressHub} />
+      <Route path="/joomla-development-service" component={JoomlaHub} />
+      <Route path="/drupal-development-service" component={DrupalHub} />
+      <Route path="/laravel-web-development" component={LaravelHub} />
+
+      {/* ── Ecommerce Services ── */}
       <Route path="/ecommerce-development" component={EcommerceHub} />
-      <Route path="/content-marketing-service" component={ContentMarketingHub} />
+      <Route path="/magento-development" component={MagentoHub} />
+      <Route path="/shopify-development" component={ShopifyHub} />
+      <Route path="/shopify-plus-development" component={ShopifyPlusHub} />
+      <Route path="/headless-commerce-service" component={HeadlessCommerceHub} />
+
+      {/* ── Enterprise Commerce ── */}
+      <Route path="/adobe-commerce-development" component={AdobeCommerceHub} />
+      <Route path="/magento-2-development" component={Magento2DevHub} />
+      <Route path="/magento-2-migration" component={Magento2MigrationHub} />
+      <Route path="/magento-2-support" component={Magento2SupportHub} />
+      <Route path="/hyva-theme-development" component={HyvaThemeHub} />
+      <Route path="/hyva-enterprise-solutions" component={HyvaEnterpriseHub} />
+
+      {/* ── Digital Marketing ── */}
       <Route path="/technical-seo-service" component={TechnicalSeoHub} />
+      <Route path="/ai-seo-service" component={AISeoHub} />
+      <Route path="/digital-marketing" component={DigitalMarketingHub} />
+      <Route path="/content-marketing-service" component={ContentMarketingHub} />
+      <Route path="/ai-chatbot-service" component={AIHub} />
+      <Route path="/social-media-advertising" component={SocialMediaAdsHub} />
 
       {/* ── Service detail pages ── */}
       <Route path="/local-seo-service">{() => <ServicePage data={localSeoData} />}</Route>

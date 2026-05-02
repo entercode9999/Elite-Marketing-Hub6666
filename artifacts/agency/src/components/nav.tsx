@@ -1,52 +1,58 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { ArrowRight, X, AlignJustify } from "lucide-react";
+import { ArrowRight, X, AlignJustify, ChevronDown } from "lucide-react";
 
-const NAV_LINKS = [
-  { label: "SEO & Search", href: "/local-seo-service" },
-  { label: "Paid Media", href: "/google-ads-management" },
-  { label: "Web & Design", href: "/custom-web-design-service" },
-  { label: "Industries", href: "/dental-marketing" },
+type NavItem = { label: string; href: string };
+
+const NAV_CATEGORIES: { label: string; items: NavItem[] }[] = [
+  {
+    label: "Website Services",
+    items: [
+      { label: "Website Design", href: "/custom-web-design-service" },
+      { label: "Website Development", href: "/website-development-service" },
+      { label: "WordPress Development", href: "/wordpress-development-service" },
+      { label: "Joomla Development", href: "/joomla-development-service" },
+      { label: "Drupal Development", href: "/drupal-development-service" },
+      { label: "Laravel Web Development", href: "/laravel-web-development" },
+    ],
+  },
+  {
+    label: "Ecommerce Services",
+    items: [
+      { label: "Ecommerce Development", href: "/ecommerce-development" },
+      { label: "Magento Development", href: "/magento-development" },
+      { label: "Shopify Development", href: "/shopify-development" },
+      { label: "Shopify Plus Development", href: "/shopify-plus-development" },
+      { label: "Headless Commerce", href: "/headless-commerce-service" },
+    ],
+  },
+  {
+    label: "Enterprise Commerce",
+    items: [
+      { label: "Adobe Commerce Development", href: "/adobe-commerce-development" },
+      { label: "Magento 2 Development", href: "/magento-2-development" },
+      { label: "Magento 2 Migration", href: "/magento-2-migration" },
+      { label: "Magento 2 Support & Maintenance", href: "/magento-2-support" },
+      { label: "Hyvä Theme Development", href: "/hyva-theme-development" },
+      { label: "Hyvä Enterprise Solutions", href: "/hyva-enterprise-solutions" },
+    ],
+  },
+  {
+    label: "Digital Marketing",
+    items: [
+      { label: "SEO", href: "/technical-seo-service" },
+      { label: "AI SEO", href: "/ai-seo-service" },
+      { label: "Local SEO Services", href: "/local-seo-service" },
+      { label: "Pay Per Click (PPC)", href: "/google-ads-management" },
+      { label: "Social Media Advertising", href: "/social-media-advertising" },
+    ],
+  },
 ];
-
-const MEGA_ITEMS: Record<string, { label: string; href: string }[]> = {
-  "SEO & Search": [
-    { label: "Local SEO Services", href: "/local-seo-service" },
-    { label: "Google Business Profile", href: "/gbp-optimisation" },
-    { label: "Technical SEO", href: "/technical-seo-service" },
-    { label: "Content Marketing", href: "/content-marketing-service" },
-    { label: "AI-Powered SEO", href: "/ai-integration-service" },
-    { label: "Citation Management", href: "/citation-audit" },
-  ],
-  "Paid Media": [
-    { label: "Google Ads Management", href: "/google-ads-management" },
-    { label: "Local Service Ads", href: "/local-service-ads" },
-    { label: "Performance Max", href: "/performance-max" },
-    { label: "Paid Social Media", href: "/paid-social-service" },
-    { label: "Display & Retargeting", href: "/display-retargeting" },
-    { label: "YouTube Advertising", href: "/youtube-ads-service" },
-  ],
-  "Web & Design": [
-    { label: "Custom Web Design", href: "/custom-web-design-service" },
-    { label: "Conversion Rate Optimisation", href: "/cro-service" },
-    { label: "Landing Page Design", href: "/landing-page-design" },
-    { label: "UI/UX Design", href: "/ui-ux-design" },
-    { label: "AI Chatbots", href: "/ai-chatbot-service" },
-    { label: "App Development", href: "/app-development-service" },
-  ],
-  "Industries": [
-    { label: "Dental & Medical", href: "/dental-marketing" },
-    { label: "Legal & Law", href: "/legal-marketing" },
-    { label: "Real Estate", href: "/real-estate-marketing" },
-    { label: "eCommerce & Retail", href: "/ecommerce-marketing" },
-    { label: "Health Care", href: "/healthcare-marketing" },
-    { label: "Technology", href: "/technology-marketing" },
-  ],
-};
 
 export function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [location] = useLocation();
 
@@ -71,7 +77,7 @@ export function Nav() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-5 h-[68px] flex items-center justify-between">
-          {/* Logo + hamburger (Kinex style) */}
+          {/* Logo + hamburger */}
           <div className="flex items-center gap-4">
             <Link href="/" className="flex items-center gap-2 font-black text-xl tracking-tight text-white">
               <div className="w-7 h-7 rounded-md bg-primary flex items-center justify-center">
@@ -89,50 +95,36 @@ export function Nav() {
 
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-1">
-            {NAV_LINKS.map((item) => {
-              const hasSub = item.label in MEGA_ITEMS;
-              return (
-                <div
-                  key={item.label}
-                  className="relative"
-                  onMouseEnter={() => hasSub && setHoveredItem(item.label)}
-                  onMouseLeave={() => setHoveredItem(null)}
-                >
-                  {item.href.startsWith("/") && !item.href.startsWith("/#") ? (
-                    <Link
-                      href={item.href}
-                      className="px-4 py-2 text-sm font-semibold text-white/70 hover:text-white transition-colors rounded-lg hover:bg-white/5"
-                    >
-                      {item.label}
-                    </Link>
-                  ) : (
-                    <a
-                      href={item.href}
-                      className="px-4 py-2 text-sm font-semibold text-white/70 hover:text-white transition-colors rounded-lg hover:bg-white/5 block"
-                    >
-                      {item.label}
-                    </a>
-                  )}
+            {NAV_CATEGORIES.map((cat) => (
+              <div
+                key={cat.label}
+                className="relative"
+                onMouseEnter={() => setHoveredItem(cat.label)}
+                onMouseLeave={() => setHoveredItem(null)}
+              >
+                <button className="px-4 py-2 text-sm font-semibold text-white/70 hover:text-white transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1.5">
+                  {cat.label}
+                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${hoveredItem === cat.label ? "rotate-180" : ""}`} />
+                </button>
 
-                  {/* Dropdown */}
-                  {hasSub && hoveredItem === item.label && (
-                    <div className="absolute top-full left-0 pt-2 w-52 z-50">
-                      <div className="bg-[#0e1018] border border-white/10 rounded-xl shadow-2xl overflow-hidden py-2">
-                        {MEGA_ITEMS[item.label as keyof typeof MEGA_ITEMS].map((sub) => (
-                          <Link
-                            key={sub.href}
-                            href={sub.href}
-                            className="block px-4 py-2.5 text-sm text-white/60 hover:text-white hover:bg-white/5 transition-colors font-medium"
-                          >
-                            {sub.label}
-                          </Link>
-                        ))}
-                      </div>
+                {hoveredItem === cat.label && (
+                  <div className="absolute top-full left-0 pt-2 w-60 z-50">
+                    <div className="bg-[#0e1018] border border-white/10 rounded-xl shadow-2xl overflow-hidden py-2">
+                      <p className="px-4 py-1.5 text-[10px] font-bold text-white/25 uppercase tracking-widest">{cat.label}</p>
+                      {cat.items.map((sub) => (
+                        <Link
+                          key={sub.href}
+                          href={sub.href}
+                          className="block px-4 py-2.5 text-sm text-white/60 hover:text-white hover:bg-white/5 transition-colors font-medium"
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
                     </div>
-                  )}
-                </div>
-              );
-            })}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
 
           {/* CTA */}
@@ -146,7 +138,7 @@ export function Nav() {
         </div>
       </nav>
 
-      {/* Full-screen mobile/side menu */}
+      {/* Full-screen mobile / side menu */}
       {mobileOpen && (
         <div className="fixed inset-0 z-[70] flex">
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setMobileOpen(false)} />
@@ -159,30 +151,22 @@ export function Nav() {
             </div>
 
             <div className="flex-1 py-4">
-              {NAV_LINKS.map((item) => (
-                <div key={item.label}>
-                  {item.href.startsWith("/") ? (
-                    <Link
-                      href={item.href}
-                      className="flex items-center px-6 py-3.5 text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-colors"
-                    >
-                      {item.label}
-                    </Link>
-                  ) : (
-                    <a
-                      href={item.href}
-                      className="flex items-center px-6 py-3.5 text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-colors"
-                    >
-                      {item.label}
-                    </a>
-                  )}
-                  {item.label in MEGA_ITEMS && (
-                    <div className="pl-10 pb-2">
-                      {MEGA_ITEMS[item.label as keyof typeof MEGA_ITEMS].map((sub) => (
+              {NAV_CATEGORIES.map((cat) => (
+                <div key={cat.label}>
+                  <button
+                    onClick={() => setMobileExpanded(mobileExpanded === cat.label ? null : cat.label)}
+                    className="flex items-center justify-between w-full px-6 py-3.5 text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                  >
+                    {cat.label}
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpanded === cat.label ? "rotate-180" : ""}`} />
+                  </button>
+                  {mobileExpanded === cat.label && (
+                    <div className="pl-6 pb-2 border-l border-white/8 ml-6">
+                      {cat.items.map((sub) => (
                         <Link
                           key={sub.href}
                           href={sub.href}
-                          className="block py-2 text-xs text-white/40 hover:text-white/70 transition-colors"
+                          className="block py-2.5 px-3 text-sm text-white/50 hover:text-white transition-colors rounded-lg hover:bg-white/5"
                         >
                           {sub.label}
                         </Link>
