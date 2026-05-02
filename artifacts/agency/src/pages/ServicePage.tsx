@@ -30,320 +30,307 @@ export interface ServicePageData {
   cta: { headline: string; sub: string };
 }
 
-/* ── FAQ ITEM ── */
+/* ── FAQ ITEM (light theme) ── */
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-white/8 last:border-0">
+    <div className="border border-[#e5e2d9] rounded-xl overflow-hidden">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-4 py-5 text-left"
+        className="w-full flex items-center justify-between px-6 py-4 text-left font-bold text-[#0e0e0e] hover:bg-gray-50 transition-colors"
       >
-        <span className="font-semibold text-sm text-white/80 pr-4">{q}</span>
-        <ChevronRight className={`w-4 h-4 shrink-0 text-white/30 transition-transform ${open ? "rotate-90" : ""}`} />
+        <span className="text-sm pr-4">{q}</span>
+        <ChevronRight className={`w-4 h-4 text-gray-400 shrink-0 transition-transform ${open ? "rotate-90" : ""}`} />
       </button>
       <AnimatePresence>
         {open && (
-          <motion.p
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
+          <motion.div
+            initial={{ height: 0 }}
+            animate={{ height: "auto" }}
+            exit={{ height: 0 }}
             transition={{ duration: 0.2 }}
-            className="overflow-hidden text-sm text-white/45 pb-5 leading-relaxed pr-8"
+            className="overflow-hidden"
           >
-            {a}
-          </motion.p>
+            <p className="px-6 py-4 pt-0 text-sm text-gray-500 leading-relaxed border-t border-[#e5e2d9]">{a}</p>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>
   );
 }
 
-const SIDEBAR_SECTIONS = [
-  { id: "deliver", label: "What we deliver" },
-  { id: "process", label: "Our process" },
-  { id: "whofor", label: "Who this is for" },
-  { id: "result", label: "A real result" },
-  { id: "different", label: "Why different" },
-  { id: "pricing", label: "Pricing" },
-  { id: "faq", label: "FAQs" },
-];
-
 /* ── MAIN COMPONENT ── */
 export function ServicePage({ data }: { data: ServicePageData }) {
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
-    <div className="min-h-screen bg-[#08090d] text-white selection:bg-primary selection:text-white">
+    <div className="min-h-screen bg-white selection:bg-primary selection:text-white flex flex-col">
       <Nav />
 
-      {/* ══ HERO ══ */}
-      <section className="pt-28 pb-16 bg-[#08090d] border-b border-white/5">
-        <div className="max-w-6xl mx-auto px-6">
-          {/* Breadcrumb */}
-          <nav className="flex items-center gap-1.5 text-xs text-white/25 mb-8 flex-wrap">
-            {data.breadcrumb.map((crumb, i) => (
-              <span key={crumb} className="flex items-center gap-1.5">
-                {i > 0 && <span className="text-white/15">›</span>}
-                <span className={i === data.breadcrumb.length - 1 ? "text-white/50 font-medium" : ""}>{crumb}</span>
-              </span>
-            ))}
-          </nav>
+      {/* ══ HERO — dark split (left text / right stats card) ══ */}
+      <section className="min-h-[480px] grid grid-cols-1 md:grid-cols-2 pt-[68px]">
+        {/* Left: dark */}
+        <div className="bg-[#08090d] flex flex-col justify-center px-10 lg:px-16 py-20">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+            {/* Breadcrumb */}
+            <nav className="flex items-center gap-1.5 text-xs text-white/25 mb-6 flex-wrap">
+              {data.breadcrumb.map((crumb, i) => (
+                <span key={crumb} className="flex items-center gap-1.5">
+                  {i > 0 && <span className="text-white/15">›</span>}
+                  <span className={i === data.breadcrumb.length - 1 ? "text-white/50 font-medium" : ""}>{crumb}</span>
+                </span>
+              ))}
+            </nav>
+            <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary mb-5">{data.label}</p>
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-[1.04] tracking-tight mb-6">
+              {data.headline}
+              <br />
+              <span className="italic text-primary font-light">{data.headlineAccent}</span>
+            </h1>
+            <p className="text-base text-white/55 leading-relaxed mb-8 max-w-md">{data.subhead}</p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-3.5 px-6 rounded-xl text-sm group shadow-lg shadow-primary/25 transition-all"
+            >
+              Get a free audit
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+          </motion.div>
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12 items-start">
-            <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary mb-5">{data.label}</p>
-              <h1 className="text-5xl sm:text-6xl font-black tracking-tight leading-[1.03] mb-5">
-                {data.headline}
-                <br />
-                <span className="italic text-primary">{data.headlineAccent}</span>
-              </h1>
-              <p className="text-base text-white/50 mt-5 max-w-xl leading-relaxed">{data.subhead}</p>
+        {/* Right: stats grid on light bg */}
+        <div className="bg-[#f2f2ef] flex items-center justify-center px-8 py-16">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="w-full max-w-sm"
+          >
+            <div className="grid grid-cols-2 gap-4">
+              {data.stats.map((s) => (
+                <div key={s.label} className="bg-white rounded-2xl p-5 border border-[#e5e2d9] shadow-sm">
+                  <p className="text-3xl font-black text-[#0e0e0e] tabular-nums leading-none">{s.value}</p>
+                  <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mt-2">{s.label}</p>
+                  {s.sub && <p className="text-[10px] text-gray-300 mt-0.5">{s.sub}</p>}
+                </div>
+              ))}
             </div>
-
-            {/* Stat card */}
-            <div className="bg-white/5 border border-white/8 rounded-2xl p-5 backdrop-blur-sm">
-              <Link
-                href="/contact"
-                className="flex items-center justify-center gap-2 bg-primary text-white font-bold py-3.5 px-5 rounded-xl text-sm w-full mb-5 hover:bg-primary/90 transition-colors group shadow-lg shadow-primary/20"
-              >
-                Get a free audit
-                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-              </Link>
-              <div className="grid grid-cols-2 gap-3">
-                {data.stats.map((s) => (
-                  <div key={s.label} className="border border-white/8 rounded-xl p-3 bg-white/3">
-                    <p className="text-2xl font-black text-white tabular-nums leading-none">{s.value}</p>
-                    <p className="text-[10px] font-bold uppercase tracking-wider text-white/30 mt-1.5">{s.label}</p>
-                    {s.sub && <p className="text-[10px] text-white/20 mt-0.5">{s.sub}</p>}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* ══ LOGO MARQUEE ══ */}
       <LogoMarquee />
 
-      {/* ══ BODY — sidebar + content ══ */}
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-[160px_1fr] gap-16">
-
-          {/* Sticky sidebar */}
-          <aside className="hidden lg:block">
-            <div className="sticky top-24 space-y-0.5">
-              {SIDEBAR_SECTIONS.map((s) => (
-                <button
-                  key={s.id}
-                  onClick={() => scrollTo(s.id)}
-                  className="w-full text-left text-xs text-white/30 hover:text-primary font-medium py-2 px-2 rounded-lg transition-colors hover:bg-primary/5 leading-tight"
-                >
-                  {s.label}
-                </button>
-              ))}
-              <div className="pt-5 pl-2">
-                <Link href="/contact" className="text-xs font-bold text-primary hover:underline">
-                  Free audit →
-                </Link>
-              </div>
-            </div>
-          </aside>
-
-          {/* Main content */}
-          <div className="space-y-20 min-w-0">
-
-            {/* ─ DELIVERABLES ─ */}
-            <section id="deliver">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="h-px flex-1 bg-white/8" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/25 whitespace-nowrap">
-                  What we deliver — every engagement
-                </span>
-                <div className="h-px flex-1 bg-white/8" />
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
-                {data.deliverables.map((item, i) => (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.06 }}
-                    className="flex gap-3"
-                  >
-                    <div className="w-5 h-5 rounded-full border-2 border-primary flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-2.5 h-2.5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-sm text-white mb-1">{item.title}</p>
-                      <p className="text-sm text-white/45 leading-relaxed">{item.body}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </section>
-
-            {/* ─ PROCESS ─ */}
-            <section id="process">
-              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/25 mb-7">Our process</p>
-              <div className="flex flex-wrap gap-0 border border-white/8 rounded-2xl overflow-hidden mb-6">
-                {data.process.map((step, i) => (
-                  <div
-                    key={step.phase}
-                    className={`flex-1 min-w-[100px] flex flex-col items-center gap-1 py-4 px-3 text-center border-r border-white/8 last:border-0 ${i === 0 ? "bg-white/5" : "bg-white/2"}`}
-                  >
-                    <span className="text-lg font-black text-primary">{String(i + 1).padStart(2, "0")}</span>
-                    <span className="text-[10px] font-bold text-white/40">{step.title}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="space-y-4">
-                {data.process.map((step, i) => (
-                  <motion.div
-                    key={step.phase}
-                    initial={{ opacity: 0, x: -12 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.07 }}
-                    className="flex gap-5 items-start py-4 border-b border-white/5 last:border-0"
-                  >
-                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                      <span className="text-[11px] font-black text-primary">{String(i + 1).padStart(2, "0")}</span>
-                    </div>
-                    <div className="flex-1 grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-1 sm:gap-4">
-                      <p className="font-bold text-sm text-white">{step.title}</p>
-                      <p className="text-sm text-white/45 leading-relaxed">{step.body}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </section>
-
-            {/* ─ WHO FOR ─ */}
-            <section id="whofor">
-              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/25 mb-7">Who this is for</p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {data.whoFor.map((item) => (
-                  <div key={item} className="flex gap-3 p-5 bg-white/3 border border-white/8 rounded-2xl">
-                    <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <p className="text-sm text-white/70 leading-relaxed">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* ─ CASE STUDY ─ */}
-            <section id="result">
-              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/25 mb-7">A real result</p>
-              <div className="bg-white/3 border border-white/8 text-white rounded-2xl overflow-hidden">
-                <div className="p-8 lg:p-10">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                    <div>
-                      {data.caseStudy.client && (
-                        <p className="text-[10px] font-bold uppercase tracking-widest text-white/25 mb-3">{data.caseStudy.client}</p>
-                      )}
-                      <h3 className="text-2xl lg:text-3xl font-black mb-3 leading-tight">{data.caseStudy.headline}</h3>
-                      <p className="text-primary font-bold text-sm mb-4">{data.caseStudy.subheadline}</p>
-                      <p className="text-white/55 text-sm leading-relaxed">{data.caseStudy.body}</p>
-                    </div>
-                    <div>
-                      <div className="h-36 flex items-end gap-1.5 mb-4 px-1">
-                        {[18, 28, 22, 38, 32, 50, 44, 62, 58, 78, 85, 100].map((h, i) => (
-                          <motion.div
-                            key={i}
-                            initial={{ height: 0 }}
-                            whileInView={{ height: `${h}%` }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.7, delay: i * 0.05 }}
-                            className="flex-1 rounded-t"
-                            style={{ background: i >= 9 ? "#1a56ff" : "rgba(255,255,255,0.08)" }}
-                          />
-                        ))}
-                      </div>
-                      <div className="grid grid-cols-3 gap-3">
-                        {data.caseStudy.metrics.map((m) => (
-                          <div key={m.label} className="bg-white/5 border border-white/8 rounded-xl p-3 text-center">
-                            <p className="text-xl font-black text-white tabular-nums">{m.value}</p>
-                            <p className="text-[10px] text-white/35 mt-0.5">{m.label}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+      {/* ══ DELIVERABLES ══ */}
+      <section id="deliver" className="py-20 md:py-28 bg-white border-t border-[#e5e2d9]">
+        <div className="max-w-6xl mx-auto px-6">
+          <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">What we deliver</span>
+          <h2 className="text-4xl font-black text-[#0e0e0e] mb-12 leading-tight">Everything included in every engagement.</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {data.deliverables.map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.06 }}
+                className="flex gap-4 p-6 border border-[#e5e2d9] rounded-2xl hover:border-primary/30 transition-colors group"
+              >
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                  <Check className="w-4 h-4 text-primary" />
                 </div>
-              </div>
-            </section>
-
-            {/* ─ WHY DIFFERENT ─ */}
-            <section id="different">
-              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/25 mb-7">Why ours is structured differently</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                {data.differentiators.map((item) => (
-                  <div key={item.title} className="border-l-2 border-primary pl-5">
-                    <p className="font-bold text-sm text-white mb-1.5">{item.title}</p>
-                    <p className="text-sm text-white/45 leading-relaxed">{item.body}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* ─ PRICING ─ */}
-            <section id="pricing">
-              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/25 mb-7">Pricing</p>
-              <div className="border border-white/8 rounded-2xl overflow-hidden bg-white/2">
-                {data.pricing.map((tier, i) => (
-                  <div
-                    key={tier.tier}
-                    className={`flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-6 py-5 ${
-                      i < data.pricing.length - 1 ? "border-b border-white/8" : ""
-                    }`}
-                  >
-                    <div>
-                      <p className="font-bold text-sm text-white">{tier.tier}</p>
-                      <p className="text-xs text-white/35 mt-0.5">{tier.desc}</p>
-                    </div>
-                    <p className="text-base font-black text-white shrink-0">{tier.range}</p>
-                  </div>
-                ))}
-                <div className="bg-primary/5 border-t border-white/8 px-6 py-4">
-                  <p className="text-xs text-white/35">
-                    All engagements month-to-month. No lock-in. First audit is free.{" "}
-                    <Link href="/contact" className="text-primary font-semibold hover:underline">Book yours →</Link>
-                  </p>
+                <div>
+                  <p className="font-bold text-[#0e0e0e] mb-1.5">{item.title}</p>
+                  <p className="text-sm text-gray-500 leading-relaxed">{item.body}</p>
                 </div>
-              </div>
-            </section>
-
-            {/* ─ FAQ ─ */}
-            <section id="faq">
-              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/25 mb-7">Frequently asked</p>
-              <div className="bg-white/2 border border-white/8 rounded-2xl px-6">
-                {data.faq.map((item) => (
-                  <FaqItem key={item.q} q={item.q} a={item.a} />
-                ))}
-              </div>
-            </section>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* ══ PROCESS ══ */}
+      <section id="process" className="py-20 md:py-28 bg-[#f9f8f5] border-t border-[#e5e2d9]">
+        <div className="max-w-6xl mx-auto px-6">
+          <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">How we work</span>
+          <h2 className="text-4xl font-black text-[#0e0e0e] mb-12">Our process.</h2>
+          {/* Step tabs */}
+          <div className="flex flex-wrap gap-0 border border-[#e5e2d9] rounded-xl overflow-hidden mb-8">
+            {data.process.map((step, i) => (
+              <div
+                key={step.phase}
+                className="flex-1 min-w-[100px] flex flex-col items-center gap-1 py-4 px-3 text-center border-r border-[#e5e2d9] last:border-0 bg-white"
+              >
+                <span className="text-xl font-black text-primary">{String(i + 1).padStart(2, "0")}</span>
+                <span className="text-xs font-bold text-gray-500">{step.title}</span>
+              </div>
+            ))}
+          </div>
+          <div className="space-y-0">
+            {data.process.map((step, i) => (
+              <motion.div
+                key={step.phase}
+                initial={{ opacity: 0, x: -12 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.07 }}
+                className="flex gap-5 items-start py-5 border-b border-[#e5e2d9] last:border-0"
+              >
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <span className="text-sm font-black text-primary">{String(i + 1).padStart(2, "0")}</span>
+                </div>
+                <div className="flex-1 grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-1 sm:gap-6">
+                  <p className="font-bold text-[#0e0e0e]">{step.title}</p>
+                  <p className="text-sm text-gray-500 leading-relaxed">{step.body}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══ WHO THIS IS FOR ══ */}
+      <section id="whofor" className="py-20 md:py-28 bg-white border-t border-[#e5e2d9]">
+        <div className="max-w-6xl mx-auto px-6">
+          <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">Ideal fit</span>
+          <h2 className="text-4xl font-black text-[#0e0e0e] mb-12">Who this is for.</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {data.whoFor.map((item) => (
+              <div key={item} className="flex gap-3 p-6 border border-[#e5e2d9] rounded-2xl">
+                <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <p className="text-sm text-gray-600 leading-relaxed">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══ CASE STUDY ══ */}
+      <section id="result" className="py-20 md:py-28 bg-[#08090d]">
+        <div className="max-w-6xl mx-auto px-6">
+          <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">A real result</span>
+          <h2 className="text-4xl font-black text-white mb-12">Proven outcomes.</h2>
+          <div className="bg-white/5 border border-white/8 rounded-2xl overflow-hidden">
+            <div className="p-8 lg:p-12">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  {data.caseStudy.client && (
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-white/25 mb-3">{data.caseStudy.client}</p>
+                  )}
+                  <h3 className="text-2xl lg:text-3xl font-black text-white mb-3 leading-tight">{data.caseStudy.headline}</h3>
+                  <p className="text-primary font-bold text-sm mb-4">{data.caseStudy.subheadline}</p>
+                  <p className="text-white/55 text-sm leading-relaxed">{data.caseStudy.body}</p>
+                </div>
+                <div>
+                  <div className="h-36 flex items-end gap-1.5 mb-5 px-1">
+                    {[18, 28, 22, 38, 32, 50, 44, 62, 58, 78, 85, 100].map((h, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ height: 0 }}
+                        whileInView={{ height: `${h}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, delay: i * 0.05 }}
+                        className="flex-1 rounded-t"
+                        style={{ background: i >= 9 ? "#1a56ff" : "rgba(255,255,255,0.08)" }}
+                      />
+                    ))}
+                  </div>
+                  <div className="grid grid-cols-3 gap-3">
+                    {data.caseStudy.metrics.map((m) => (
+                      <div key={m.label} className="bg-white/8 border border-white/10 rounded-xl p-4 text-center">
+                        <p className="text-2xl font-black text-white tabular-nums">{m.value}</p>
+                        <p className="text-[10px] text-white/35 mt-0.5">{m.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ WHY DIFFERENT ══ */}
+      <section id="different" className="py-20 md:py-28 bg-white border-t border-[#e5e2d9]">
+        <div className="max-w-6xl mx-auto px-6">
+          <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">Why we're different</span>
+          <h2 className="text-4xl font-black text-[#0e0e0e] mb-12">Why clients leave their previous agency for us.</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {data.differentiators.map((item) => (
+              <div key={item.title} className="border-l-4 border-primary pl-6 py-2">
+                <p className="font-bold text-[#0e0e0e] mb-1.5">{item.title}</p>
+                <p className="text-sm text-gray-500 leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══ PRICING ══ */}
+      <section id="pricing" className="py-20 md:py-28 bg-[#f9f8f5] border-t border-[#e5e2d9]">
+        <div className="max-w-4xl mx-auto px-6">
+          <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">Pricing</span>
+          <h2 className="text-4xl font-black text-[#0e0e0e] mb-12">Transparent, flat-fee pricing.</h2>
+          <div className="border border-[#e5e2d9] rounded-2xl overflow-hidden bg-white">
+            {data.pricing.map((tier, i) => (
+              <div
+                key={tier.tier}
+                className={`flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-6 py-5 ${
+                  i < data.pricing.length - 1 ? "border-b border-[#e5e2d9]" : ""
+                }`}
+              >
+                <div>
+                  <p className="font-bold text-[#0e0e0e]">{tier.tier}</p>
+                  <p className="text-xs text-gray-400 mt-0.5">{tier.desc}</p>
+                </div>
+                <p className="text-base font-black text-[#0e0e0e] shrink-0">{tier.range}</p>
+              </div>
+            ))}
+            <div className="bg-primary/5 border-t border-[#e5e2d9] px-6 py-4">
+              <p className="text-xs text-gray-400">
+                All engagements month-to-month. No lock-in. First audit is free.{" "}
+                <Link href="/contact" className="text-primary font-semibold hover:underline">Book yours →</Link>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ FAQ ══ */}
+      <section id="faq" className="py-20 md:py-28 bg-white border-t border-[#e5e2d9]">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="mb-12 text-center">
+            <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">FAQ</span>
+            <h2 className="text-4xl font-black text-[#0e0e0e]">Common questions.</h2>
+          </div>
+          <div className="space-y-3">
+            {data.faq.map((item) => (
+              <FaqItem key={item.q} q={item.q} a={item.a} />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ══ BOTTOM CTA ══ */}
-      <section className="bg-[#08090d] border-t border-white/5 text-white py-20 md:py-28">
-        <div className="max-w-2xl mx-auto px-6 text-center">
+      <section className="py-20 bg-[#08090d] border-t border-white/5">
+        <div className="max-w-4xl mx-auto px-6 text-center">
           <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-4 block">Ready?</span>
-          <h2 className="text-4xl md:text-5xl font-black leading-tight mb-4">{data.cta.headline}</h2>
-          <p className="text-white/40 text-base mb-8 leading-relaxed">{data.cta.sub}</p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 rounded-xl transition-all text-sm group shadow-[0_0_50px_rgba(26,86,255,0.25)]"
-          >
-            Book your free audit
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-          </Link>
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-5 leading-tight">{data.cta.headline}</h2>
+          <p className="text-base text-white/40 mb-8 max-w-md mx-auto leading-relaxed">{data.cta.sub}</p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 rounded-xl transition-all text-sm group shadow-lg shadow-primary/25"
+            >
+              Book your free audit
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+            <Link
+              href="/work"
+              className="inline-flex items-center gap-2 border border-white/15 hover:border-white/30 text-white font-semibold py-4 px-8 rounded-xl text-sm transition-all"
+            >
+              View our work
+            </Link>
+          </div>
         </div>
       </section>
 
