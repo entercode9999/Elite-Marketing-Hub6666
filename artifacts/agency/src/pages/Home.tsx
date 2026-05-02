@@ -10,6 +10,7 @@ import { Wins } from "@/components/sections/Wins";
 import { Faq } from "@/components/sections/Faq";
 import { MegaCta } from "@/components/sections/MegaCta";
 import { ArrowRight, MapPin, Star, TrendingUp, CheckCircle, ArrowUpRight } from "lucide-react";
+import { AllServicesFeature } from "@/components/sections/AllServicesFeature";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -203,103 +204,8 @@ export default function Home() {
         {/* ── STATS ── */}
         <Stats />
 
-        {/* ── LOCAL SEO FEATURE BLOCK ── */}
-        <section className="py-24 md:py-32 bg-background">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Visual */}
-              <motion.div
-                initial={{ opacity: 0, x: -24 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="rounded-2xl overflow-hidden relative aspect-[4/3] border border-border shadow-xl"
-              >
-                <img src="/local-business-bg.png" alt="Local business" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="flex gap-2 mb-3">
-                    {["Dental", "HVAC", "Legal", "Auto"].map((t) => (
-                      <span key={t} className="px-2.5 py-1 text-[10px] font-bold bg-primary text-white rounded uppercase tracking-wider">{t}</span>
-                    ))}
-                  </div>
-                  <h3 className="text-xl font-bold text-white">We build local monopolies.</h3>
-                  <p className="text-white/60 text-sm mt-1">Physical locations → digital powerhouses.</p>
-                </div>
-                {/* GBP preview card */}
-                <div className="absolute top-5 right-5 bg-white rounded-xl p-3 shadow-xl w-44">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-7 h-7 rounded-full bg-primary flex items-center justify-center">
-                      <MapPin className="w-3.5 h-3.5 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-[10px] font-bold text-gray-900 leading-tight">Client Dental</p>
-                      <p className="text-[9px] text-gray-400">Dentist · Open now</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-1 mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-2.5 h-2.5 text-yellow-400 fill-yellow-400" />
-                    ))}
-                    <span className="text-[9px] text-gray-500 ml-0.5">4.9 (312)</span>
-                  </div>
-                  <div className="text-[9px] font-bold text-primary border border-primary/30 rounded px-2 py-1 text-center">
-                    #1 Map Pack · 12 weeks
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Copy */}
-              <motion.div
-                initial={{ opacity: 0, x: 24 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-              >
-                <span className="text-xs font-bold uppercase tracking-widest text-primary mb-4 block">Local Business Growth</span>
-                <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-[1.05] mb-6">
-                  Dominate your city.
-                  <br />
-                  <span className="italic font-light">Own your backyard.</span>
-                </h2>
-                <p className="text-base text-muted-foreground mb-9 leading-relaxed max-w-lg">
-                  We engineer explosive growth for high-value local businesses — dental, legal, HVAC, auto, real estate. We don't just run campaigns. We build systems that own markets.
-                </p>
-                <div className="space-y-5">
-                  {[
-                    { title: "Hyper-Local SEO & GBP", body: "We optimise your Google Business Profile and citation graph to rank #1 in the map pack for high-intent, high-value queries." },
-                    { title: "Reputation Engine", body: "Automated review generation and management to build a compounding moat of 5-star ratings that competitors can't close." },
-                    { title: "Full-Funnel Attribution", body: "Every call, form, and booking traced back to the exact keyword or ad that drove it. You see exact ROI — not estimates." },
-                  ].map((item, i) => (
-                    <motion.div
-                      key={item.title}
-                      initial={{ opacity: 0, y: 12 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.08 }}
-                      className="flex gap-3"
-                    >
-                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <div>
-                        <p className="font-bold text-sm mb-0.5">{item.title}</p>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{item.body}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-                <div className="mt-9">
-                  <a
-                    href="/local-seo-service"
-                    className="inline-flex items-center gap-2 bg-foreground text-background font-bold py-3 px-6 rounded-lg text-sm transition-colors hover:bg-foreground/90 group"
-                  >
-                    Explore Local SEO
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                  </a>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+        {/* ── ALL SERVICES ROTATING FEATURE ── */}
+        <AllServicesFeature />
 
         {/* ── SERVICES TABBED (Kinex-style) ── */}
         <ServicesTabbed />
