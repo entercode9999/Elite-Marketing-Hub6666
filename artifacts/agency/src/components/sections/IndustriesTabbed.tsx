@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "wouter";
 import { ArrowRight, Check } from "lucide-react";
 
 const INDUSTRIES = [
@@ -200,13 +201,13 @@ export function IndustriesTabbed() {
                     </div>
                   </div>
 
-                  <a
+                  <Link
                     href={current.href}
                     className="inline-flex items-center gap-2 bg-[#0e0e0e] text-white font-bold py-3 px-5 rounded-xl text-sm group hover:bg-black/80 transition-colors w-fit"
                   >
                     See results in {current.name}
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             </AnimatePresence>

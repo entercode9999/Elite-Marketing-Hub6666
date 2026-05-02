@@ -13,12 +13,12 @@ const SERVICES = [
     description:
       "We build the citation infrastructure, review velocity, and neighbourhood-level content that keeps you at #1 in the map pack — not just during a campaign, but permanently.",
     subServices: [
-      { label: "Google Business Profile Optimisation", href: "/local-seo-service#deliver" },
-      { label: "Citation Audit & Build", href: "/local-seo-service#deliver" },
-      { label: "Review Generation System", href: "/local-seo-service#deliver" },
-      { label: "Local Landing Pages", href: "/local-seo-service#deliver" },
-      { label: "Local Link Building", href: "/local-seo-service#deliver" },
-      { label: "Monthly Pack Reporting", href: "/local-seo-service#deliver" },
+      { label: "Google Business Profile Optimisation", href: "/gbp-optimisation" },
+      { label: "Citation Audit & Build", href: "/citation-audit" },
+      { label: "Review Generation System", href: "/review-generation" },
+      { label: "Local Landing Pages", href: "/local-landing-pages" },
+      { label: "Local Link Building", href: "/local-link-building" },
+      { label: "Monthly Pack Reporting", href: "/local-seo-reporting" },
     ],
     href: "/local-seo-service",
     visual: (
@@ -77,12 +77,12 @@ const SERVICES = [
     description:
       "Performance-first campaigns with flat-fee management. No percentage-of-spend pricing. Your account is run by a senior strategist — not passed to a junior team after onboarding.",
     subServices: [
-      { label: "Google Search Campaigns", href: "/google-ads-management" },
+      { label: "Google Search Campaigns", href: "/google-search-campaigns" },
       { label: "Local Service Ads (Google Guaranteed)", href: "/local-service-ads" },
-      { label: "Performance Max Campaigns", href: "/google-ads-management" },
+      { label: "Performance Max Campaigns", href: "/performance-max" },
       { label: "Paid Social — Meta & TikTok", href: "/paid-social-service" },
-      { label: "Display & Retargeting", href: "/google-ads-management" },
-      { label: "YouTube Pre-Roll Ads", href: "/google-ads-management" },
+      { label: "Display & Retargeting", href: "/display-retargeting" },
+      { label: "YouTube Pre-Roll Ads", href: "/youtube-ads-service" },
     ],
     href: "/google-ads-management",
     visual: (
@@ -128,9 +128,9 @@ const SERVICES = [
       { label: "Custom Web Design", href: "/custom-web-design-service" },
       { label: "Conversion Rate Optimisation", href: "/cro-service" },
       { label: "Website Redesign (no SEO loss)", href: "/website-redesign-service" },
-      { label: "Landing Page Design", href: "/custom-web-design-service" },
+      { label: "Landing Page Design", href: "/landing-page-design" },
       { label: "eCommerce Development", href: "/ecommerce-development" },
-      { label: "UI/UX Design & Prototyping", href: "/custom-web-design-service" },
+      { label: "UI/UX Design & Prototyping", href: "/ui-ux-design" },
     ],
     href: "/custom-web-design-service",
     visual: (
@@ -173,11 +173,11 @@ const SERVICES = [
       "Strategy-first content that builds topical authority in your niche. Not blog posts for the sake of it — structured content clusters designed to rank for every high-value query in your market.",
     subServices: [
       { label: "SEO Content Strategy", href: "/content-marketing-service" },
-      { label: "Blog Writing & Management", href: "/content-marketing-service" },
-      { label: "Topical Authority Clusters", href: "/content-marketing-service" },
+      { label: "Blog Writing & Management", href: "/blog-writing-service" },
+      { label: "Topical Authority Clusters", href: "/topical-authority-service" },
       { label: "Email Newsletters & Campaigns", href: "/email-marketing-service" },
       { label: "Social Media Management", href: "/social-media-service" },
-      { label: "Video Script Writing", href: "/content-marketing-service" },
+      { label: "Video Script Writing", href: "/video-script-service" },
     ],
     href: "/content-marketing-service",
     visual: (
@@ -220,11 +220,11 @@ const SERVICES = [
       "We run deep technical audits that uncover crawl issues, Core Web Vitals failures, broken redirect chains, and structural problems that hold back every other SEO investment you're making.",
     subServices: [
       { label: "Full Site Technical Audit", href: "/technical-seo-service" },
-      { label: "Core Web Vitals Optimisation", href: "/technical-seo-service" },
-      { label: "Crawl Budget Management", href: "/technical-seo-service" },
-      { label: "Structured Data & Schema", href: "/technical-seo-service" },
-      { label: "Redirect Audit & Fixes", href: "/technical-seo-service" },
-      { label: "International SEO & Hreflang", href: "/technical-seo-service" },
+      { label: "Core Web Vitals Optimisation", href: "/core-web-vitals-service" },
+      { label: "Crawl Budget Management", href: "/crawl-budget-service" },
+      { label: "Structured Data & Schema", href: "/structured-data-service" },
+      { label: "Redirect Audit & Fixes", href: "/redirect-audit-service" },
+      { label: "International SEO & Hreflang", href: "/international-seo-service" },
     ],
     href: "/technical-seo-service",
     visual: (
@@ -275,7 +275,7 @@ const SERVICES = [
       { label: "AI Integration (CRM, tools)", href: "/ai-integration-service" },
       { label: "Custom AI Systems", href: "/custom-ai-service" },
       { label: "App Development", href: "/app-development-service" },
-      { label: "Lead Capture AI", href: "/ai-chatbot-service" },
+      { label: "Lead Capture AI", href: "/ai-lead-capture-service" },
     ],
     href: "/ai-chatbot-service",
     visual: (
