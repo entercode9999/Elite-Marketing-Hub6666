@@ -129,6 +129,22 @@ import {
   SportsFitnessMarketingPage,
 } from "@/pages/IndustryPages";
 
+/* ── Cities & city-service pages ── */
+import CitiesPage from "@/pages/CitiesPage";
+import CityServicePage from "@/pages/CityServicePage";
+
+/* ── Company / static pages ── */
+import {
+  AboutPage,
+  ContactPage,
+  CaseStudiesPage,
+  InsightsPage,
+  CareersPage,
+  PrivacyPage,
+  TermsPage,
+  AccessibilityPage,
+} from "@/pages/SimplePages";
+
 const queryClient = new QueryClient();
 
 function Router() {
@@ -136,6 +152,19 @@ function Router() {
     <Switch>
       {/* ── Homepage ── */}
       <Route path="/" component={Home} />
+
+      {/* ── Company pages ── */}
+      <Route path="/about" component={AboutPage} />
+      <Route path="/contact" component={ContactPage} />
+      <Route path="/case-studies" component={CaseStudiesPage} />
+      <Route path="/insights" component={InsightsPage} />
+      <Route path="/careers" component={CareersPage} />
+      <Route path="/privacy" component={PrivacyPage} />
+      <Route path="/terms" component={TermsPage} />
+      <Route path="/accessibility" component={AccessibilityPage} />
+
+      {/* ── Cities hub ── */}
+      <Route path="/cities" component={CitiesPage} />
 
       {/* ── Website Services ── */}
       <Route path="/custom-web-design-service" component={WebDesignHub} />
@@ -242,13 +271,13 @@ function Router() {
       <Route path="/law-marketing" component={LawMarketingPage} />
       <Route path="/sports-fitness-marketing" component={SportsFitnessMarketingPage} />
 
-      {/* ── Location × Service pages ── */}
+      {/* ── Specific location × service pages ── */}
       <Route path="/toronto/local-seo-service">{() => <LocationServicePage data={torontoLocalSeoData} />}</Route>
       <Route path="/mississauga/local-seo-service">{() => <LocationServicePage data={mississaugaLocalSeoData} />}</Route>
       <Route path="/ottawa/local-seo-service">{() => <LocationServicePage data={ottawaLocalSeoData} />}</Route>
 
-      {/* ── Dynamic city × service fallback ── */}
-      <Route path="/:city/:service">{() => <LocationServicePage data={mississaugaLocalSeoData} />}</Route>
+      {/* ── Dynamic city × service pages ── */}
+      <Route path="/:city/:service" component={CityServicePage} />
 
       <Route component={NotFound} />
     </Switch>

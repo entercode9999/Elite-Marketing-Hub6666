@@ -36,50 +36,104 @@ export function Footer() {
           <div>
             <h4 className="font-display font-semibold mb-5 text-foreground">Capabilities</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="hover:text-foreground transition-colors cursor-pointer">Strategy & Consulting</li>
-              <li className="hover:text-foreground transition-colors cursor-pointer">Enterprise SEO</li>
-              <li className="hover:text-foreground transition-colors cursor-pointer">Local SEO</li>
-              <li className="hover:text-foreground transition-colors cursor-pointer">Paid Advertising</li>
-              <li className="hover:text-foreground transition-colors cursor-pointer">Content Marketing</li>
-              <li className="hover:text-foreground transition-colors cursor-pointer">Branding & Creative</li>
-              <li className="hover:text-foreground transition-colors cursor-pointer">Web & CRO</li>
+              <li>
+                <Link href="/digital-marketing" className="hover:text-foreground transition-colors">Strategy & Consulting</Link>
+              </li>
+              <li>
+                <Link href="/seo-services" className="hover:text-foreground transition-colors">Enterprise SEO</Link>
+              </li>
+              <li>
+                <Link href="/local-seo-service" className="hover:text-foreground transition-colors">Local SEO</Link>
+              </li>
+              <li>
+                <Link href="/google-ads-management" className="hover:text-foreground transition-colors">Paid Advertising</Link>
+              </li>
+              <li>
+                <Link href="/content-marketing-service" className="hover:text-foreground transition-colors">Content Marketing</Link>
+              </li>
+              <li>
+                <Link href="/custom-web-design-service" className="hover:text-foreground transition-colors">Branding & Creative</Link>
+              </li>
+              <li>
+                <Link href="/cro-service" className="hover:text-foreground transition-colors">Web & CRO</Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-display font-semibold mb-5 text-foreground">Industries</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="hover:text-foreground transition-colors cursor-pointer">Local Services</li>
-              <li className="hover:text-foreground transition-colors cursor-pointer">Dental & Medical</li>
-              <li className="hover:text-foreground transition-colors cursor-pointer">Real Estate</li>
-              <li className="hover:text-foreground transition-colors cursor-pointer">SaaS & Tech</li>
-              <li className="hover:text-foreground transition-colors cursor-pointer">eCommerce & DTC</li>
-              <li className="hover:text-foreground transition-colors cursor-pointer">Legal Services</li>
-              <li className="hover:text-foreground transition-colors cursor-pointer">Hospitality</li>
+              <li>
+                <Link href="/home-services-marketing" className="hover:text-foreground transition-colors">Local Services</Link>
+              </li>
+              <li>
+                <Link href="/dental-marketing" className="hover:text-foreground transition-colors">Dental & Medical</Link>
+              </li>
+              <li>
+                <Link href="/real-estate-marketing" className="hover:text-foreground transition-colors">Real Estate</Link>
+              </li>
+              <li>
+                <Link href="/saas-marketing" className="hover:text-foreground transition-colors">SaaS & Tech</Link>
+              </li>
+              <li>
+                <Link href="/ecommerce-marketing" className="hover:text-foreground transition-colors">eCommerce & DTC</Link>
+              </li>
+              <li>
+                <Link href="/legal-marketing" className="hover:text-foreground transition-colors">Legal Services</Link>
+              </li>
+              <li>
+                <Link href="/restaurant-marketing" className="hover:text-foreground transition-colors">Hospitality</Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-display font-semibold mb-5 text-foreground">Company</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="hover:text-foreground transition-colors cursor-pointer">About</li>
-              <li className="hover:text-foreground transition-colors cursor-pointer">Case Studies</li>
-              <li className="hover:text-foreground transition-colors cursor-pointer">Insights</li>
-              <li className="hover:text-foreground transition-colors cursor-pointer">Careers</li>
-              <li className="hover:text-foreground transition-colors cursor-pointer">Contact</li>
+              <li>
+                <Link href="/about" className="hover:text-foreground transition-colors">About</Link>
+              </li>
+              <li>
+                <Link href="/case-studies" className="hover:text-foreground transition-colors">Case Studies</Link>
+              </li>
+              <li>
+                <Link href="/insights" className="hover:text-foreground transition-colors">Insights</Link>
+              </li>
+              <li>
+                <Link href="/careers" className="hover:text-foreground transition-colors">Careers</Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-foreground transition-colors">Contact</Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-display font-semibold mb-5 text-foreground">Markets</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>Toronto</li>
-              <li>Mississauga</li>
-              <li>Hamilton</li>
-              <li>Ottawa</li>
-              <li>Vancouver</li>
-              <li>Calgary</li>
-              <li>NYC + Miami</li>
+              <li>
+                <Link href="/toronto/seo-services" className="hover:text-foreground transition-colors">Toronto</Link>
+              </li>
+              <li>
+                <Link href="/mississauga/seo-services" className="hover:text-foreground transition-colors">Mississauga</Link>
+              </li>
+              <li>
+                <Link href="/hamilton/seo-services" className="hover:text-foreground transition-colors">Hamilton</Link>
+              </li>
+              <li>
+                <Link href="/ottawa/seo-services" className="hover:text-foreground transition-colors">Ottawa</Link>
+              </li>
+              <li>
+                <Link href="/brampton/seo-services" className="hover:text-foreground transition-colors">Brampton</Link>
+              </li>
+              <li>
+                <Link href="/markham/seo-services" className="hover:text-foreground transition-colors">Markham</Link>
+              </li>
+              <li>
+                <Link href="/cities" className="hover:text-primary transition-colors font-semibold text-primary/70">
+                  View all cities →
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -87,9 +141,9 @@ export function Footer() {
         <div className="pt-8 border-t border-border/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} Outlier Marketing Group. All rights reserved.</p>
           <div className="flex gap-6">
-            <span className="hover:text-foreground transition-colors cursor-pointer">Privacy</span>
-            <span className="hover:text-foreground transition-colors cursor-pointer">Terms</span>
-            <span className="hover:text-foreground transition-colors cursor-pointer">Accessibility</span>
+            <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
+            <Link href="/terms" className="hover:text-foreground transition-colors">Terms</Link>
+            <Link href="/accessibility" className="hover:text-foreground transition-colors">Accessibility</Link>
           </div>
         </div>
       </div>
