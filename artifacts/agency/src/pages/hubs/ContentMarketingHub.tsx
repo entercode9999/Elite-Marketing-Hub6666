@@ -11,7 +11,6 @@ const HeroVisual = () => (
         <div className="flex-1 bg-white rounded text-xs text-gray-400 px-3 py-1 ml-2">content.outlier.ca</div>
       </div>
       <div className="bg-[#0a0c12] p-4">
-        {/* Content cluster visual */}
         <div className="bg-white/5 rounded-xl p-3 mb-3 border border-white/8">
           <p className="text-[9px] text-white/30 uppercase tracking-widest mb-2">Topical Cluster: HVAC Toronto</p>
           <div className="space-y-1.5">
@@ -69,8 +68,9 @@ const contentMarketingData: HubData = {
   ],
   intro: {
     eyebrow: "Why content compounds",
-    headline: "The brands winning organic in 2025 built their content architecture in 2022.",
-    body: "Random blog posts don't build topical authority. We build content clusters — structured networks of pages covering every angle of a topic — that signal to Google you're the definitive resource in your niche. Every piece we publish strengthens the ones before it.",
+    headline: "The brands winning organic in 2026 built their content architecture in 2023.",
+    body: "Random blog posts don't build topical authority. We build content clusters — structured networks of pages covering every angle of a topic — that signal to Google you're the definitive resource in your niche. Every piece we publish strengthens the ones before it, and the compound effect becomes dramatically visible after 12 months of consistent execution.",
+    secondBody: "The businesses that complain content 'doesn't work' almost universally made the same mistakes: they published sporadically, targeted keywords without strategic intent, and measured success by traffic instead of attributed revenue. We fix all three from day one. Every piece has a target query, a conversion goal, and a place in the cluster architecture before a single word is written.",
     bullets: [
       "Topical authority clusters — not standalone blog posts",
       "Every piece mapped to a keyword and conversion goal",
@@ -79,12 +79,26 @@ const contentMarketingData: HubData = {
       "Monthly reporting on rankings, traffic, and attributed revenue",
     ],
   },
+  proofSection: {
+    eyebrow: "Why strategy-first content wins",
+    headline: "Content without architecture is just publishing. Content with architecture is compounding equity.",
+    body: "Google's quality evaluators look for topical depth. A site that covers one topic comprehensively — with supporting pages, internal links, and authoritative external references — outranks a site that publishes high-volume shallow content every time. We build the architecture first, then fill it in systematically with content that earns positions and keeps them.",
+    secondBody: "The businesses that see 8x content ROI aren't publishing more than their competitors — they're publishing smarter. A well-architected cluster of 20 articles can outperform 200 disconnected posts. We've proven this across dental, SaaS, eCommerce, home services, and B2B finance verticals. The methodology works regardless of industry because it's built on how search algorithms actually evaluate authority.",
+    bullets: [
+      "We build the topical cluster map before writing anything — so every piece has a structural purpose, not just a keyword target.",
+      "Every article is internally linked to related cluster pages, passing equity through the network and reinforcing the overall authority signal.",
+      "We track not just rankings and traffic but content-attributed leads and revenue — so you see the direct commercial return on every piece.",
+      "Content is updated on a rolling schedule: we track decay, refresh stale articles, and prune thin pages that dilute your topical authority.",
+      "Our E-E-A-T compliance process means every piece demonstrates experience, expertise, authority, and trust — the four signals Google uses to evaluate quality.",
+      "We handle distribution: every new piece goes out through your email list, social channels, and relevant outreach — building initial traffic and link velocity.",
+    ],
+  },
   subServices: [
     {
       tab: "SEO Content Strategy",
       headline: "Build the content architecture before writing a word.",
       description:
-        "We start with a full content gap analysis against your top competitors, identify every high-value topic cluster in your niche, and build a structured editorial roadmap that prioritises by revenue potential and competition level.",
+        "We start with a full content gap analysis against your top competitors, identify every high-value topic cluster in your niche, and build a structured editorial roadmap that prioritises by revenue potential and competition level. No guesswork — every decision is grounded in search data and competitor analysis.",
       bullets: [
         "Full content gap analysis vs. top 3 competitors",
         "Topical authority cluster mapping",
@@ -98,7 +112,7 @@ const contentMarketingData: HubData = {
       tab: "SEO Blog Writing",
       headline: "Long-form content that ranks and converts.",
       description:
-        "Research-led long-form articles written by our in-house team. Each piece is structured for the target query, optimised for E-E-A-T signals, internally linked to your cluster, and formatted to maximise time-on-page and conversion.",
+        "Research-led long-form articles written by our in-house team. Each piece is structured for the target query, optimised for E-E-A-T signals, internally linked to your cluster, and formatted to maximise time-on-page and conversion. We don't use AI to write — we use it to research, while expert writers do the actual creation.",
       bullets: [
         "In-depth research and subject matter interviews",
         "Structured for Featured Snippets and PAA boxes",
@@ -112,7 +126,7 @@ const contentMarketingData: HubData = {
       tab: "Email Marketing",
       headline: "$42 ROI for every $1 spent — the highest-return channel in your stack.",
       description:
-        "Email marketing that goes beyond newsletters. Automated lifecycle sequences, segmented campaigns, and broadcast emails that turn your list into a reliable monthly revenue channel.",
+        "Email marketing that goes beyond newsletters. Automated lifecycle sequences, segmented campaigns, and broadcast emails that turn your list into a reliable monthly revenue channel. We manage deliverability, list hygiene, and segmentation to ensure your emails reach inboxes, not spam folders.",
       bullets: [
         "Welcome and onboarding sequences",
         "Segmented broadcast campaigns",
@@ -126,7 +140,7 @@ const contentMarketingData: HubData = {
       tab: "Social Media Content",
       headline: "Build an audience that trusts you before they're ready to buy.",
       description:
-        "Organic social media content strategy and management for LinkedIn, Instagram, and X. We create content that builds genuine authority in your industry — not follower counts that don't convert.",
+        "Organic social media content strategy and management for LinkedIn, Instagram, and X. We create content that builds genuine authority in your industry — educational, insightful, and distinctively your brand. Follower counts are a vanity metric; we measure social by the leads and traffic it drives.",
       bullets: [
         "Platform-specific content strategy",
         "Content calendar and scheduling",
@@ -140,7 +154,7 @@ const contentMarketingData: HubData = {
       tab: "Content Repurposing",
       headline: "One piece of content. Multiple channels.",
       description:
-        "Systematic repurposing of your high-performing content across every relevant channel. A long-form blog post becomes a video script, a LinkedIn carousel, an email sequence, and a Twitter thread — all pointing back to your service pages.",
+        "Systematic repurposing of your high-performing content across every relevant channel. A long-form blog post becomes a video script, a LinkedIn carousel, an email sequence, and a Twitter thread — all pointing back to your service pages. Maximum reach from every research hour invested.",
       bullets: [
         "Video script creation from blog content",
         "LinkedIn and Instagram carousel formats",
@@ -152,53 +166,156 @@ const contentMarketingData: HubData = {
     },
   ],
   features: [
-    { icon: <BookOpen className="w-5 h-5 text-primary" />, title: "Topical Authority Clusters", body: "Structured content clusters that signal to Google you're the definitive resource in your niche." },
-    { icon: <TrendingUp className="w-5 h-5 text-primary" />, title: "SEO-First Writing", body: "Every piece researched, structured, and optimised for a specific high-value query before a word is written." },
-    { icon: <Mail className="w-5 h-5 text-primary" />, title: "Email Automation", body: "Lifecycle sequences and broadcast campaigns that turn your list into a monthly revenue channel." },
-    { icon: <Share2 className="w-5 h-5 text-primary" />, title: "Social Media Management", body: "Platform-specific content that builds genuine authority — not vanity metrics." },
-    { icon: <Target className="w-5 h-5 text-primary" />, title: "Conversion Integration", body: "Every piece of content has a primary CTA and is mapped to a stage in your sales funnel." },
-    { icon: <Rss className="w-5 h-5 text-primary" />, title: "Content Repurposing", body: "One long-form piece becomes assets across email, social, video, and podcast — systematically." },
-    { icon: <BarChart2 className="w-5 h-5 text-primary" />, title: "Performance Reporting", body: "Monthly reports showing rankings, organic traffic, and content-attributed leads and revenue." },
-    { icon: <FileText className="w-5 h-5 text-primary" />, title: "Content Auditing", body: "Quarterly audits to prune thin content, update stale posts, and consolidate duplicate pages." },
-    { icon: <Zap className="w-5 h-5 text-primary" />, title: "AI-Assisted Research", body: "We use AI for research and competitive analysis while ensuring all content is expert-written and E-E-A-T compliant." },
+    { icon: <BookOpen className="w-5 h-5 text-primary" />, title: "Topical Authority Clusters", body: "Structured content networks that signal to Google you're the definitive resource in your niche — not a random publisher." },
+    { icon: <TrendingUp className="w-5 h-5 text-primary" />, title: "SEO-First Writing", body: "Every piece researched, structured, and optimised for a specific high-value query before a word is written. E-E-A-T compliant by default." },
+    { icon: <Mail className="w-5 h-5 text-primary" />, title: "Email Automation", body: "Lifecycle sequences and broadcast campaigns that turn your list into a monthly revenue channel averaging $42 per dollar spent." },
+    { icon: <Share2 className="w-5 h-5 text-primary" />, title: "Social Media Management", body: "Platform-specific content strategy and management that builds genuine authority — not follower counts that don't convert." },
+    { icon: <Target className="w-5 h-5 text-primary" />, title: "Conversion Integration", body: "Every piece of content has a primary CTA and is mapped to a stage in your sales funnel. Traffic that doesn't convert is a wasted investment." },
+    { icon: <Rss className="w-5 h-5 text-primary" />, title: "Content Repurposing", body: "One long-form piece becomes assets across email, social, video, and podcast — systematically, with every asset pointing back to your service pages." },
+    { icon: <BarChart2 className="w-5 h-5 text-primary" />, title: "Performance Reporting", body: "Monthly reports showing rankings, organic traffic, and content-attributed leads and revenue. We report on what moves the business, not what makes us look good." },
+    { icon: <FileText className="w-5 h-5 text-primary" />, title: "Content Auditing", body: "Quarterly audits to prune thin content, update stale posts, and consolidate duplicate pages — keeping your authority signal clean and strong." },
+    { icon: <Zap className="w-5 h-5 text-primary" />, title: "AI-Assisted Research", body: "We use AI for research and competitive analysis while ensuring all content is expert-written and fully E-E-A-T compliant. No AI-generated walls of text." },
+  ],
+  techStack: [
+    {
+      platform: "Ahrefs / SEMrush",
+      stat: "Keyword research",
+      description: "Our primary keyword research and competitor analysis tools. We use both for different purposes — Ahrefs for backlink analysis and content gap research, SEMrush for keyword tracking, position monitoring, and competitive intelligence.",
+    },
+    {
+      platform: "Surfer SEO",
+      stat: "On-page optimisation",
+      description: "Used to analyse the top-ranking pages for each target query and inform the content brief — structure, length, semantic coverage, and heading hierarchy. Ensures every piece we write has the on-page signals needed to compete.",
+    },
+    {
+      platform: "Clearscope",
+      stat: "Content grading",
+      description: "NLP-based content optimisation tool used to ensure every piece covers the semantic topics that Google's quality evaluators expect to see. Every article achieves a minimum 'A' grade before publication.",
+    },
+    {
+      platform: "Klaviyo / Mailchimp",
+      stat: "Email marketing",
+      description: "Our preferred email platforms depending on your stack — Klaviyo for eCommerce and advanced segmentation, Mailchimp for straightforward broadcast and automation needs. We manage setup, list hygiene, and ongoing deliverability.",
+    },
+    {
+      platform: "GA4 + Looker Studio",
+      stat: "Attribution",
+      description: "Every content programme runs with proper GA4 goal tracking and a custom Looker Studio dashboard. You can see exactly which articles are driving leads and revenue at any time — not just traffic and rankings.",
+    },
+    {
+      platform: "WordPress / Webflow",
+      stat: "CMS publishing",
+      description: "We publish directly to your CMS on request — WordPress and Webflow most commonly. Full metadata, internal linking, schema markup, and image optimisation handled as part of every publication.",
+    },
   ],
   caseStudies: [
     {
       image: "/case-study-saas.png",
       client: "Nova FinTech",
       industry: "SaaS",
-      blurb: "40-article content cluster around B2B finance topics. Organic traffic 8x'd in 14 months.",
+      blurb: "40-article content cluster built around B2B finance and compliance topics. Full topical architecture mapped before a single word was written. Organic traffic 8x'd in 14 months with zero paid amplification.",
       metrics: [{ value: "+800%", label: "Organic traffic" }, { value: "8x", label: "Content ROI" }],
     },
     {
       image: "/industry-dental.png",
       client: "Apex Dental Group",
       industry: "Dental",
-      blurb: "Local content strategy across 6 cities. 1,100+ city-service pages ranking in map pack.",
+      blurb: "Local content strategy across 6 cities. Programmatic cluster pages combined with editorial content drove 1,100+ city-service combinations to map pack and organic positions.",
       metrics: [{ value: "1,100+", label: "Pages ranked" }, { value: "+86%", label: "New patients" }],
     },
     {
       image: "/case-study-home.png",
       client: "Hudson Outdoor",
       industry: "Home Services",
-      blurb: "Topical authority content programme built around outdoor living. 312% traffic growth in 12 months.",
+      blurb: "Topical authority content programme built around outdoor living, landscaping, and seasonal guides. 312% traffic growth in 12 months, directly attributed to $2.4M in new revenue via GA4 goal tracking.",
       metrics: [{ value: "+312%", label: "Organic traffic" }, { value: "$2.4M", label: "Attributed revenue" }],
     },
   ],
   process: [
-    { label: "Audit", headline: "Identify your content gaps and opportunities.", description: "We audit your existing content, run a full competitor gap analysis, and identify every high-value topic cluster your competitors are ranking for that you aren't. This shapes the entire strategy." },
-    { label: "Strategy", headline: "Build the content architecture before writing anything.", description: "We create the full topical cluster map, keyword-to-content assignments, and a prioritised 12-month editorial roadmap. You sign off before we write a single word." },
-    { label: "Create", headline: "Research-led, expert-written content.", description: "Our in-house writers research every piece using your industry data, competitor analysis, and Google's quality guidelines. Every piece is E-E-A-T compliant and conversion-optimised." },
-    { label: "Optimise", headline: "Internal linking, schema, and on-page SEO.", description: "Every piece is internally linked to your cluster, tagged with appropriate schema markup, and optimised for the specific SERP feature we're targeting (Featured Snippet, PAA, etc.)." },
-    { label: "Promote", headline: "Distribution across email, social, and outreach.", description: "New content is distributed through your email list, social channels, and relevant outreach to build initial traffic and links that accelerate ranking." },
-    { label: "Compound", headline: "Monthly tracking, updating, and pruning.", description: "We track rankings and traffic for every piece monthly, update stale content, prune thin pages, and identify new cluster opportunities as your authority grows." },
+    {
+      label: "Audit",
+      headline: "Identify your content gaps and opportunities against your top competitors.",
+      description: "We audit your existing content estate — what you have, what's ranking, what's decaying, and what's missing. We run a full competitor gap analysis to identify every high-value topic cluster your competitors are ranking for that you aren't. This shapes the entire strategy and prioritises the highest-ROI opportunities first.",
+    },
+    {
+      label: "Strategy",
+      headline: "Build the content architecture before writing a single word.",
+      description: "We create the full topical cluster map, keyword-to-content assignments for every planned piece, a prioritised 12-month editorial roadmap, and the internal linking architecture. You sign off on the strategy document before we write anything. No surprises in the execution phase — everything is agreed upfront.",
+    },
+    {
+      label: "Create",
+      headline: "Research-led, expert-written content that earns rankings and holds them.",
+      description: "Our in-house writers research every piece using your industry data, competitor analysis, and Google's quality guidelines. Every piece is E-E-A-T compliant, conversion-optimised, and internally linked before it's handed for review. You approve every piece before it goes live.",
+    },
+    {
+      label: "Optimise",
+      headline: "Internal linking, schema markup, and on-page SEO on every piece.",
+      description: "Every published piece is internally linked to your cluster architecture, tagged with appropriate schema markup, and optimised for the specific SERP feature we're targeting — Featured Snippet, People Also Ask, or position one. On-page optimisation is a publication requirement, not an optional step.",
+    },
+    {
+      label: "Promote",
+      headline: "Distribution through email, social, and outreach to build initial momentum.",
+      description: "New content is distributed through your email list, social channels, and relevant community and outreach touchpoints to build initial traffic and links that accelerate ranking. Content that sits and waits for organic discovery ranks slower. We actively promote every piece from day one.",
+    },
+    {
+      label: "Compound",
+      headline: "Monthly tracking, updating, and pruning to protect and grow your authority.",
+      description: "We track rankings and traffic for every piece monthly, update stale content to maintain positions, prune thin pages that dilute your topical authority signal, and identify new cluster opportunities as your ranking profile grows. Content is a long-term asset that requires active maintenance to compound.",
+    },
   ],
   faqs: [
-    { question: "How long before content starts ranking?", answer: "New content typically takes 3–6 months to achieve meaningful rankings. However, content targeting lower-competition queries can rank within 4–8 weeks. After 12 months of consistent publishing, the compounding effect becomes clearly visible in your analytics." },
-    { question: "How many articles do you publish per month?", answer: "It depends on your budget and goals. Most clients start with 4–8 articles per month. For aggressive topical authority building, 12–16 per month is ideal. We'll recommend a cadence based on your competition level and keyword targets." },
-    { question: "Do you write the content or do I?", answer: "We do. Our in-house team handles everything: research, writing, editing, on-page optimisation, and publishing (if you give us CMS access). You review and approve each piece before it goes live." },
-    { question: "How do you measure content ROI?", answer: "We track organic traffic, keyword rankings, time-on-page, and — most importantly — content-attributed leads and conversions via GA4 goal tracking. Monthly reports show the direct link between content and revenue." },
-    { question: "Do you handle email and social too?", answer: "Yes. We offer full content distribution as part of our content marketing retainer — email campaigns, social media management, and content repurposing across all relevant formats." },
+    {
+      question: "How long before content starts ranking?",
+      answer: "New content targeting lower-competition queries can rank within 4-8 weeks. Content targeting moderate competition typically takes 3-6 months. After 12 months of consistent publishing into a properly architected cluster, the compounding effect becomes clearly visible in your analytics — traffic growth accelerates rather than plateauing. We set realistic expectations for each query we target during strategy sign-off.",
+    },
+    {
+      question: "How many articles do you publish per month?",
+      answer: "It depends on your competition level, budget, and goals. Most clients start with 4-8 articles per month to build momentum. For aggressive topical authority building in a competitive niche, 12-16 per month is the target. We recommend a cadence based on your keyword targets and competitor publishing velocity — not an arbitrary number.",
+    },
+    {
+      question: "Do you write the content or do I?",
+      answer: "We do. Our in-house team handles research, writing, editing, on-page optimisation, schema, and publishing (with CMS access). You review and approve each piece before it goes live. We use AI for competitive research and brief preparation, but every article is written and edited by experienced human writers.",
+    },
+    {
+      question: "How do you measure content ROI?",
+      answer: "We set up GA4 goal tracking and attribution from day one. Monthly reports show organic traffic, keyword rankings, time-on-page, content-attributed leads, and revenue. We specifically report on the direct commercial return from content — not just traffic metrics. This means you can see which articles are driving enquiries and attribute ROI to the content programme.",
+    },
+    {
+      question: "Do you handle email and social distribution too?",
+      answer: "Yes. Email campaigns, social media management, and content repurposing across all relevant formats are available as part of our content marketing retainer. Most clients benefit from treating content, email, and social as a unified distribution system — creating content once and amplifying it across every channel your audience uses.",
+    },
+  ],
+  hubInsights: [
+    {
+      image: "/case-study-saas.png",
+      category: "Content Strategy",
+      readTime: "8 min read",
+      title: "Why Topical Authority Beats Keyword Targeting in 2026",
+      excerpt: "Google's Helpful Content update fundamentally changed what earns rankings. Individual keyword optimisation still matters, but sites with deep topical coverage consistently outperform sites chasing keywords in isolation. We analysed 50 content programmes and found the architecture difference accounts for 3-4x more traffic than any other variable.",
+      author: "Sarah Kowalski",
+      authorRole: "Head of Content",
+      href: "/blog/topical-authority-2026",
+    },
+    {
+      image: "/industry-local.png",
+      category: "SEO Writing",
+      readTime: "5 min read",
+      title: "The Content Brief Format That Produces Rankings Every Time",
+      excerpt: "Most content briefs are a list of keywords and a word count. That produces average content that ranks occasionally. Our brief format — built over 400+ ranking articles — specifies structure, semantic coverage, SERP feature targeting, internal linking, and conversion architecture before a word is written. Here's the full template.",
+      author: "Marcus Chen",
+      authorRole: "SEO Director",
+      href: "/blog/content-brief-template",
+    },
+    {
+      image: "/case-study-home.png",
+      category: "Email Marketing",
+      readTime: "6 min read",
+      title: "How to Turn Your Content Programme Into a $42-per-Dollar Email Channel",
+      excerpt: "Email averages the highest ROI of any digital marketing channel — but only when list building is treated as a content programme output, not an afterthought. We walk through how to structure content-to-email flows, list segmentation, and automation sequences that convert organic readers into paying customers at scale.",
+      author: "Priya Anand",
+      authorRole: "Email Marketing Lead",
+      href: "/blog/content-to-email-funnel",
+    },
   ],
 };
 

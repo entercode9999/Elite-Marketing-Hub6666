@@ -398,19 +398,19 @@ export function ServiceHubPage({ data }: { data: HubData }) {
 
         {/* ── PROOF SECTION (optional) ── */}
         {data.proofSection && (
-          <section className="py-20 md:py-28 bg-[#08090d]">
+          <section className="py-20 md:py-28 bg-[#f9f8f5] border-t border-[#e5e2d9]">
             <div className="max-w-6xl mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                 <div>
                   <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-4 block">{data.proofSection.eyebrow}</span>
-                  <h2 className="text-4xl font-black text-white leading-tight mb-6">{data.proofSection.headline}</h2>
-                  <p className="text-base text-white/50 leading-relaxed mb-4">{data.proofSection.body}</p>
+                  <h2 className="text-4xl font-black text-[#0e0e0e] leading-tight mb-6">{data.proofSection.headline}</h2>
+                  <p className="text-base text-gray-500 leading-relaxed mb-4">{data.proofSection.body}</p>
                   {data.proofSection.secondBody && (
-                    <p className="text-base text-white/50 leading-relaxed">{data.proofSection.secondBody}</p>
+                    <p className="text-base text-gray-500 leading-relaxed">{data.proofSection.secondBody}</p>
                   )}
                 </div>
                 {data.proofSection.bullets && data.proofSection.bullets.length > 0 && (
-                  <div className="grid grid-cols-1 gap-4 pt-2">
+                  <div className="grid grid-cols-1 gap-0 border border-[#e5e2d9] rounded-2xl overflow-hidden bg-white">
                     {data.proofSection.bullets.map((b, i) => (
                       <motion.div
                         key={b}
@@ -418,12 +418,12 @@ export function ServiceHubPage({ data }: { data: HubData }) {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.07 }}
-                        className="flex items-start gap-4 py-4 border-b border-white/5 last:border-0"
+                        className="flex items-start gap-4 px-6 py-4 border-b border-[#e5e2d9] last:border-0"
                       >
-                        <div className="w-6 h-6 rounded-full bg-primary/15 flex items-center justify-center shrink-0 mt-0.5">
-                          <Check className="w-3.5 h-3.5 text-primary" />
+                        <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                          <Check className="w-3 h-3 text-primary" />
                         </div>
-                        <span className="text-sm text-white/60 leading-relaxed">{b}</span>
+                        <span className="text-sm text-gray-600 leading-relaxed">{b}</span>
                       </motion.div>
                     ))}
                   </div>
