@@ -135,7 +135,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 /* ── MAIN COMPONENT ── */
 export function LocationServicePage({ data }: { data: LocationData }) {
   return (
-    <div className="min-h-screen bg-[#08090d] text-white selection:bg-primary selection:text-white">
+    <div className="min-h-screen bg-white text-[#0e0e0e] selection:bg-primary selection:text-white">
       <Nav />
 
       {/* ══ HERO ══ */}
@@ -217,19 +217,19 @@ export function LocationServicePage({ data }: { data: LocationData }) {
       <LogoMarquee />
 
       {/* ══ NEIGHBOURHOODS ══ */}
-      <section className="py-16 bg-[#0a0c12] border-b border-white/5">
+      <section className="py-16 bg-[#f9f8f5] border-b border-[#e5e2d9]">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-[10px] font-black uppercase tracking-[0.18em] text-primary mb-2">Neighbourhoods</p>
-          <h2 className="text-3xl font-black mb-8">
+          <h2 className="text-3xl font-black text-[#0e0e0e] mb-8">
             {data.neighborhoods.length} {data.city} sub-markets,
             <br />
-            <span className="italic font-light text-white/40">{data.neighborhoods.length} targeting strategies.</span>
+            <span className="italic font-light text-gray-400">{data.neighborhoods.length} targeting strategies.</span>
           </h2>
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
             {data.neighborhoods.map((n) => (
               <div
                 key={n}
-                className="border border-white/8 rounded-lg px-3 py-2.5 text-xs font-semibold text-white/40 hover:border-primary/40 hover:text-primary transition-colors cursor-pointer text-center"
+                className="border border-[#e5e2d9] rounded-lg px-3 py-2.5 text-xs font-semibold text-gray-500 hover:border-primary/40 hover:text-primary transition-colors cursor-pointer text-center bg-white"
               >
                 {n}
               </div>
@@ -239,20 +239,20 @@ export function LocationServicePage({ data }: { data: LocationData }) {
       </section>
 
       {/* ══ MARKET ANALYSIS ══ */}
-      <section className="py-16 bg-[#08090d] border-b border-white/5">
+      <section className="py-16 bg-white border-b border-[#e5e2d9]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <p className="text-[10px] font-black uppercase tracking-[0.18em] text-primary mb-3">
                 Why {data.city} is different
               </p>
-              <h2 className="text-3xl font-black leading-tight mb-5">
+              <h2 className="text-3xl font-black leading-tight text-[#0e0e0e] mb-5">
                 {data.marketAnalysis.heading}
               </h2>
-              <p className="text-sm text-white/45 leading-relaxed mb-8">{data.marketAnalysis.body}</p>
+              <p className="text-sm text-gray-500 leading-relaxed mb-8">{data.marketAnalysis.body}</p>
               <a
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-white text-[#0e0e0e] font-bold py-3 px-5 rounded-xl text-sm hover:bg-white/90 transition-colors group"
+                className="inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-5 rounded-xl text-sm hover:bg-primary/90 transition-colors group"
               >
                 Book a {data.city} audit
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -260,15 +260,15 @@ export function LocationServicePage({ data }: { data: LocationData }) {
             </div>
 
             {/* Data table */}
-            <div className="bg-white/3 border border-white/8 rounded-2xl overflow-hidden">
-              <div className="px-5 py-4 border-b border-white/8 bg-white/3">
-                <p className="text-[10px] font-black uppercase tracking-widest text-white/30">{data.city} Market Data</p>
+            <div className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl overflow-hidden">
+              <div className="px-5 py-4 border-b border-[#e5e2d9] bg-[#f2f1ed]">
+                <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">{data.city} Market Data</p>
               </div>
-              <div className="divide-y divide-white/5">
+              <div className="divide-y divide-[#e5e2d9]">
                 {data.marketAnalysis.tableRows.map((row) => (
                   <div key={row.label} className="flex items-center justify-between px-5 py-3.5">
-                    <p className="text-xs text-white/35 font-medium">{row.label}</p>
-                    <p className="text-sm font-bold text-white text-right max-w-[60%]">{row.value}</p>
+                    <p className="text-xs text-gray-500 font-medium">{row.label}</p>
+                    <p className="text-sm font-bold text-[#0e0e0e] text-right max-w-[60%]">{row.value}</p>
                   </div>
                 ))}
               </div>
@@ -278,10 +278,10 @@ export function LocationServicePage({ data }: { data: LocationData }) {
       </section>
 
       {/* ══ PROCESS ══ */}
-      <section className="py-16 bg-[#0a0c12] border-b border-white/5">
+      <section className="py-16 bg-[#f9f8f5] border-b border-[#e5e2d9]">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-[10px] font-black uppercase tracking-[0.18em] text-primary mb-3">Our approach</p>
-          <h2 className="text-2xl font-black mb-10">
+          <h2 className="text-2xl font-black text-[#0e0e0e] mb-10">
             Same five phases. Tuned to {data.city}.
           </h2>
           <div className="space-y-4">
@@ -292,14 +292,14 @@ export function LocationServicePage({ data }: { data: LocationData }) {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.07 }}
-                className="flex gap-5 items-start py-4 border-b border-white/5 last:border-0"
+                className="flex gap-5 items-start py-4 border-b border-[#e5e2d9] last:border-0"
               >
                 <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
                   <span className="text-[11px] font-black text-primary">{String(i + 1).padStart(2, "0")}</span>
                 </div>
                 <div className="flex-1 grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-1 sm:gap-4">
-                  <p className="font-bold text-sm text-white">{step.title}</p>
-                  <p className="text-sm text-white/45 leading-relaxed">{step.body}</p>
+                  <p className="font-bold text-sm text-[#0e0e0e]">{step.title}</p>
+                  <p className="text-sm text-gray-500 leading-relaxed">{step.body}</p>
                 </div>
               </motion.div>
             ))}
@@ -343,17 +343,17 @@ export function LocationServicePage({ data }: { data: LocationData }) {
       </section>
 
       {/* ══ OTHER CITIES + SERVICES ══ */}
-      <section className="py-16 bg-[#0a0c12] border-b border-white/5">
+      <section className="py-16 bg-white border-b border-[#e5e2d9]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/25 mb-5">Other GTA cities we serve</p>
+              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-gray-400 mb-5">Other GTA cities we serve</p>
               <div className="grid grid-cols-2 gap-2">
                 {data.otherCities.map((c) => (
                   <Link
                     key={c.name}
                     href={c.href}
-                    className="flex items-center gap-2 py-2.5 px-3 rounded-lg border border-white/8 hover:border-primary/40 hover:text-primary transition-colors text-sm font-medium text-white/40"
+                    className="flex items-center gap-2 py-2.5 px-3 rounded-lg border border-[#e5e2d9] hover:border-primary/40 hover:text-primary transition-colors text-sm font-medium text-gray-500 bg-[#f9f8f5]"
                   >
                     <MapPin className="w-3.5 h-3.5 text-primary/40 shrink-0" />
                     {c.name}
@@ -362,13 +362,13 @@ export function LocationServicePage({ data }: { data: LocationData }) {
               </div>
             </div>
             <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/25 mb-5">Other services for {data.city}</p>
+              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-gray-400 mb-5">Other services for {data.city}</p>
               <div className="grid grid-cols-2 gap-2">
                 {data.otherServices.map((s) => (
                   <Link
                     key={s.name}
                     href={s.href}
-                    className="flex items-center gap-2 py-2.5 px-3 rounded-lg border border-white/8 hover:border-primary/40 hover:text-primary transition-colors text-sm font-medium text-white/40"
+                    className="flex items-center gap-2 py-2.5 px-3 rounded-lg border border-[#e5e2d9] hover:border-primary/40 hover:text-primary transition-colors text-sm font-medium text-gray-500 bg-[#f9f8f5]"
                   >
                     <TrendingUp className="w-3.5 h-3.5 text-primary/40 shrink-0" />
                     {s.name}
