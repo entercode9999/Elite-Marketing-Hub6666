@@ -3,35 +3,43 @@ import { Link, useLocation } from "wouter";
 import { ArrowRight, X, AlignJustify } from "lucide-react";
 
 const NAV_LINKS = [
-  { label: "Our Work", href: "#work" },
-  { label: "Local SEO", href: "/local-seo-service" },
-  { label: "Google Ads", href: "/google-ads-management" },
-  { label: "Web & AI", href: "/custom-web-design-service" },
+  { label: "Website Design", href: "/custom-web-design-service" },
+  { label: "Ecommerce", href: "/ecommerce-development" },
+  { label: "Adobe Commerce", href: "#" },
   { label: "Digital Marketing", href: "/digital-marketing" },
 ];
 
-const MEGA_ITEMS = {
-  "Local SEO": [
-    { label: "Local SEO Service", href: "/local-seo-service" },
-    { label: "GBP Optimisation", href: "/local-seo-service#deliver" },
-    { label: "Toronto Local SEO", href: "/toronto/local-seo-service" },
-    { label: "Mississauga Local SEO", href: "/mississauga/local-seo-service" },
+const MEGA_ITEMS: Record<string, { label: string; href: string }[]> = {
+  "Website Design": [
+    { label: "Website Design", href: "/custom-web-design-service" },
+    { label: "Website Development", href: "/custom-web-design-service" },
+    { label: "WordPress Development", href: "/custom-web-design-service" },
+    { label: "Joomla Development", href: "/custom-web-design-service" },
+    { label: "Drupal Development", href: "/custom-web-design-service" },
+    { label: "Laravel Design", href: "/custom-web-design-service" },
   ],
-  "Google Ads": [
-    { label: "Google Ads Management", href: "/google-ads-management" },
-    { label: "Local Service Ads", href: "/local-service-ads" },
-    { label: "Paid Social", href: "/paid-social-service" },
+  "Ecommerce": [
+    { label: "Ecommerce Development", href: "/ecommerce-development" },
+    { label: "Magento Development", href: "/ecommerce-development" },
+    { label: "Shopify", href: "/ecommerce-development" },
+    { label: "Shopify Plus", href: "/ecommerce-development" },
+    { label: "Headless Commerce", href: "/ecommerce-development" },
   ],
-  "Web & AI": [
-    { label: "Custom Web Design", href: "/custom-web-design-service" },
-    { label: "CRO", href: "/cro-service" },
-    { label: "AI Chatbots", href: "/ai-chatbot-service" },
-    { label: "AI Integration", href: "/ai-integration-service" },
+  "Adobe Commerce": [
+    { label: "Adobe Commerce", href: "#" },
+    { label: "Magento 2 Development", href: "#" },
+    { label: "Magento 2 Migration", href: "#" },
+    { label: "Magento 2 Support", href: "#" },
+    { label: "Hyva Theme Development", href: "#" },
+    { label: "Hyva Enterprise", href: "#" },
   ],
   "Digital Marketing": [
-    { label: "SEO Services", href: "/seo-services" },
-    { label: "Content Marketing", href: "/content-marketing-service" },
-    { label: "Technical SEO", href: "/technical-seo-service" },
+    { label: "Digital Marketing", href: "/digital-marketing" },
+    { label: "Search Engine Optimization", href: "/technical-seo-service" },
+    { label: "AI SEO", href: "/ai-integration-service" },
+    { label: "Local SEO Services", href: "/local-seo-service" },
+    { label: "Pay Per Click", href: "/google-ads-management" },
+    { label: "Social Media Advertising", href: "/paid-social-service" },
   ],
 };
 

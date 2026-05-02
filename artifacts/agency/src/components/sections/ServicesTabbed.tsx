@@ -455,44 +455,44 @@ export function ServicesTabbed() {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-[#08090d] text-white border-t border-white/5" id="services">
+    <section className="py-20 md:py-28 bg-white border-t border-[#e5e2d9]" id="services">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="mb-12">
           <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary block mb-3">What we do</span>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <h2 className="text-4xl md:text-5xl font-black leading-tight">
+            <h2 className="text-4xl md:text-5xl font-black leading-tight text-[#0e0e0e]">
               Every service your business needs.
               <br />
-              <span className="text-white/30 italic font-light">One senior team.</span>
+              <span className="text-gray-300 italic font-light">One senior team.</span>
             </h2>
-            <p className="text-sm text-white/40 max-w-xs leading-relaxed">
+            <p className="text-sm text-gray-500 max-w-xs leading-relaxed">
               No vendor juggling. No account manager hand-offs. All six service areas under one roof.
             </p>
           </div>
         </div>
 
         {/* Main tabbed layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-0 border border-white/8 rounded-2xl overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-0 border border-[#e5e2d9] rounded-2xl overflow-hidden shadow-sm">
           {/* Left: category tabs */}
-          <div className="bg-[#0d0f14] border-r border-white/8">
+          <div className="bg-[#f9f8f5] border-r border-[#e5e2d9]">
             {SERVICES.map((svc, i) => (
               <button
                 key={svc.id}
                 onClick={() => handleTabClick(i)}
-                className={`w-full flex items-center gap-3 px-5 py-4 text-left transition-all border-b border-white/5 last:border-0 group ${
+                className={`w-full flex items-center gap-3 px-5 py-4 text-left transition-all border-b border-[#e5e2d9] last:border-0 group ${
                   active === i
-                    ? "bg-white/5 border-l-2 border-l-primary"
-                    : "hover:bg-white/3 border-l-2 border-l-transparent"
+                    ? "bg-white border-l-2 border-l-primary"
+                    : "hover:bg-gray-50 border-l-2 border-l-transparent"
                 }`}
               >
                 <div
                   className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all"
-                  style={{ background: active === i ? `${svc.color}25` : "rgba(255,255,255,0.05)" }}
+                  style={{ background: active === i ? `${svc.color}18` : "rgba(0,0,0,0.05)" }}
                 >
-                  <svc.icon className="w-4 h-4" style={{ color: active === i ? svc.color : "rgba(255,255,255,0.3)" }} />
+                  <svc.icon className="w-4 h-4" style={{ color: active === i ? svc.color : "rgba(0,0,0,0.3)" }} />
                 </div>
-                <span className={`font-semibold text-sm transition-colors ${active === i ? "text-white" : "text-white/45 group-hover:text-white/70"}`}>
+                <span className={`font-semibold text-sm transition-colors ${active === i ? "text-[#0e0e0e]" : "text-gray-400 group-hover:text-gray-700"}`}>
                   {svc.label}
                 </span>
                 {active === i && <div className="ml-auto w-1.5 h-1.5 rounded-full" style={{ background: svc.color }} />}
@@ -513,7 +513,7 @@ export function ServicesTabbed() {
                 className="p-8 flex flex-col"
               >
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: `${current.color}20` }}>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: `${current.color}15` }}>
                     <current.icon className="w-5 h-5" style={{ color: current.color }} />
                   </div>
                   <span className="text-xs font-bold uppercase tracking-widest" style={{ color: current.color }}>
@@ -521,10 +521,10 @@ export function ServicesTabbed() {
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-black leading-snug mb-4 max-w-lg">{current.headline}</h3>
-                <p className="text-sm text-white/50 leading-relaxed mb-8 max-w-lg">{current.description}</p>
+                <h3 className="text-2xl font-black leading-snug mb-4 max-w-lg text-[#0e0e0e]">{current.headline}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed mb-8 max-w-lg">{current.description}</p>
 
-                <p className="text-[9px] font-black uppercase tracking-[0.18em] text-white/20 mb-3">
+                <p className="text-[9px] font-black uppercase tracking-[0.18em] text-gray-300 mb-3">
                   Hover a service to preview →
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-0 mb-8 flex-1">
@@ -534,9 +534,9 @@ export function ServicesTabbed() {
                       href={sub.href}
                       onMouseEnter={() => setHoveredSubVisual(sub.visual)}
                       onMouseLeave={() => setHoveredSubVisual(null)}
-                      className="flex items-center gap-2 py-2.5 border-b border-white/5 text-sm text-white/55 hover:text-white transition-colors group"
+                      className="flex items-center gap-2 py-2.5 border-b border-[#e5e2d9] text-sm text-gray-500 hover:text-[#0e0e0e] transition-colors group"
                     >
-                      <ArrowRight className="w-3.5 h-3.5 shrink-0 text-white/20 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
+                      <ArrowRight className="w-3.5 h-3.5 shrink-0 text-gray-300 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                       {sub.label}
                     </Link>
                   ))}
@@ -554,7 +554,7 @@ export function ServicesTabbed() {
             </AnimatePresence>
 
             {/* Visual panel — updates on sub-service hover */}
-            <div className="hidden md:block bg-[#0d0f14] border-l border-white/8">
+            <div className="hidden md:block bg-[#f9f8f5] border-l border-[#e5e2d9]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={hoveredSubVisual ? "sub-hover" : current.id + "-visual"}
@@ -573,10 +573,10 @@ export function ServicesTabbed() {
 
         {/* Bottom CTA */}
         <div className="mt-8 flex items-center justify-center gap-4">
-          <p className="text-sm text-white/30">Not sure which service fits?</p>
+          <p className="text-sm text-gray-400">Not sure which service fits?</p>
           <a
             href="/contact"
-            className="inline-flex items-center gap-2 border border-white/10 hover:border-primary/50 text-white font-semibold py-2.5 px-5 rounded-lg transition-colors text-sm group"
+            className="inline-flex items-center gap-2 border border-[#e5e2d9] hover:border-primary/50 text-[#0e0e0e] font-semibold py-2.5 px-5 rounded-lg transition-colors text-sm group"
           >
             Talk to us →
           </a>
