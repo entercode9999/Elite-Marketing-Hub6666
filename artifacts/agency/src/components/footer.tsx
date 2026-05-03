@@ -152,48 +152,8 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Digital Marketing */}
-          <FooterCol heading="Digital Marketing" links={DIGITAL_MARKETING} />
-
-          {/* Web & Ecommerce */}
-          <FooterCol heading="Web & Ecommerce" links={WEB_SERVICES} />
-
-          {/* Industries */}
-          <FooterCol
-            heading="Industries"
-            links={INDUSTRIES}
-            extra={
-              <div className="mt-3">
-                <Link href="/industries" className="text-xs text-[#1a56ff] font-semibold hover:text-[#1a56ff]/80 transition-colors">
-                  All industries →
-                </Link>
-              </div>
-            }
-          />
-
-          {/* Company + Markets */}
-          <div>
-            <FooterCol heading="Company" links={COMPANY} />
-            <div className="mt-8">
-              <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-5">Markets</h4>
-              <ul className="space-y-2.5">
-                {MARKETS.map((l) => (
-                  <li key={l.href}>
-                    <Link href={l.href} className="text-sm text-white/50 hover:text-white transition-colors">
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <Link href="/cities" className="text-xs text-[#1a56ff] font-semibold hover:text-[#1a56ff]/80 transition-colors">
-                    View all cities →
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="col-span-2 lg:col-span-6">
+          {/* Sitemap */}
+          <div className="col-span-2 md:col-span-3 lg:col-span-6">
             <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-5">Sitemap</h4>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {SITEMAP.map((group) => (
