@@ -1,10 +1,8 @@
-import { motion } from "framer-motion";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Plus, Minus } from "lucide-react";
+import { Link } from "wouter";
+import { ArrowRight } from "lucide-react";
 
 const faqs = [
   {
@@ -42,51 +40,75 @@ const faqs = [
 ];
 
 export function Faq() {
-  return (
-    <section id="faq" className="py-24 md:py-32 bg-background">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto text-center mb-16"
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
-            FAQ
-          </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-[1.05] tracking-tight mb-4">
-            Answers, before you ask.
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Don't see your question? Drop it on the strategy call — we answer everything candidly.
-          </p>
-        </motion.div>
+  const [open, setOpen] = useState<number | null>(0);
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="max-w-3xl mx-auto"
-        >
-          <Accordion type="single" collapsible className="space-y-3">
+  return (
+    <section id="faq" className="py-24 md:py-32 bg-white border-t border-[#e5e2d9]">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-16 items-start">
+
+          {/* Left: sticky header */}
+          <div className="lg:sticky lg:top-24">
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary block mb-4">FAQ</span>
+            <h2 className="text-4xl md:text-5xl font-black text-[#0e0e0e] leading-[1.04] tracking-tight mb-5">
+              Answers,
+              <br />
+              <span className="italic font-light text-gray-400">before you ask.</span>
+            </h2>
+            <p className="text-sm text-gray-500 leading-relaxed mb-8 max-w-sm">
+              Don't see your question? Drop it on the strategy call — we answer everything candidly, even if the answer is that we're not the right fit.
+            </p>
+            <Link
+              href="/free-audit"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-xl text-sm transition-all group"
+            >
+              Book a strategy call
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </div>
+
+          {/* Right: accordion */}
+          <div className="divide-y divide-[#e5e2d9]">
             {faqs.map((faq, i) => (
-              <AccordionItem
-                key={i}
-                value={`item-${i}`}
-                className="border border-border rounded-xl px-6 bg-card/30 data-[state=open]:bg-card/60 data-[state=open]:border-primary/30 transition-colors"
-              >
-                <AccordionTrigger className="text-left text-lg font-display font-semibold py-5 hover:no-underline">
-                  {faq.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground leading-relaxed pb-5">
-                  {faq.a}
-                </AccordionContent>
-              </AccordionItem>
+              <div key={i} className="group">
+                <button
+                  onClick={() => setOpen(open === i ? null : i)}
+                  className="w-full flex items-start justify-between gap-4 py-5 text-left"
+                >
+                  <span className={`text-[15px] font-bold leading-snug transition-colors ${open === i ? "text-primary" : "text-[#0e0e0e] group-hover:text-primary"}`}>
+                    {faq.q}
+                  </span>
+                  <div
+                    className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5 transition-all"
+                    style={{ background: open === i ? "#1a56ff" : "rgba(0,0,0,0.05)" }}
+                  >
+                    {open === i
+                      ? <Minus className="w-3.5 h-3.5 text-white" />
+                      : <Plus className="w-3.5 h-3.5 text-gray-500" />
+                    }
+                  </div>
+                </button>
+                <AnimatePresence initial={false}>
+                  {open === i && (
+                    <motion.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.28, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <p className="text-sm text-gray-500 leading-relaxed pb-5 pr-8 max-w-2xl">
+                        {faq.a}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             ))}
-          </Accordion>
-        </motion.div>
+          </div>
+
+        </div>
       </div>
     </section>
   );

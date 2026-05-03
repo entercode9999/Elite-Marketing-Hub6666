@@ -12,7 +12,6 @@ import { Faq } from "@/components/sections/Faq";
 import { MegaCta } from "@/components/sections/MegaCta";
 import { ArrowRight, MapPin, Star, TrendingUp, CheckCircle, ArrowUpRight, Check, FileText, Target, ShieldCheck } from "lucide-react";
 import { Link } from "wouter";
-import { AllServicesFeature } from "@/components/sections/AllServicesFeature";
 import { HeroServicesPanel } from "@/components/sections/HeroServicesPanel";
 import { WhyOutlier } from "@/components/sections/WhyOutlier";
 import { HowWeWork } from "@/components/sections/HowWeWork";
