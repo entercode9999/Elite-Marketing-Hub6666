@@ -314,27 +314,45 @@ export function IndustriesTabbed() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-0 border border-[#e5e2d9] rounded-2xl overflow-hidden shadow-sm">
-          <div className="bg-white border-r border-[#e5e2d9] overflow-y-auto max-h-[600px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-0 border border-[#e5e2d9] rounded-2xl overflow-hidden shadow-sm">
+          <div className="bg-[#0a0c14] border-r border-white/5 overflow-y-auto max-h-[600px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <div className="px-5 pt-6 pb-4 border-b border-white/5">
+              <p className="text-[9px] font-black uppercase tracking-[0.22em] text-white/25">Industries</p>
+              <p className="text-xs text-white/40 mt-0.5 leading-snug">Focused playbooks. Real track record.</p>
+            </div>
             {INDUSTRIES.map((ind, i) => (
               <button
                 key={ind.id}
                 onClick={() => setActive(i)}
-                className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-all border-b border-[#f0ede8] last:border-0 group ${
+                className={`w-full flex items-center gap-3 px-5 py-4 text-left transition-all border-b border-white/[0.04] last:border-0 group relative overflow-hidden ${
                   active === i
-                    ? "bg-primary/5 border-l-2 border-l-primary"
-                    : "hover:bg-gray-50 border-l-2 border-l-transparent"
+                    ? "bg-white/6 border-l-[3px] border-l-primary"
+                    : "hover:bg-white/[0.04] border-l-[3px] border-l-transparent"
                 }`}
               >
+                <div
+                  className="absolute left-0 top-0 bottom-0 w-[3px] rounded-r transition-all duration-200"
+                  style={{ background: active === i ? "#1a56ff" : "transparent" }}
+                />
                 <span
                   className={`font-semibold text-sm transition-colors leading-tight ${
-                    active === i ? "text-[#0e0e0e]" : "text-gray-500 group-hover:text-[#0e0e0e]"
+                    active === i ? "text-white" : "text-white/45 group-hover:text-white/80"
                   }`}
                 >
                   {ind.name}
                 </span>
               </button>
             ))}
+            <div className="px-5 py-5 border-t border-white/5">
+              <Link
+                href="/free-audit"
+                className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-xs font-bold text-white transition-all hover:opacity-90"
+                style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.10)" }}
+              >
+                Get a Free Audit
+                <ArrowRight className="w-3 h-3" />
+              </Link>
+            </div>
           </div>
 
           <div className="min-h-[500px]">
