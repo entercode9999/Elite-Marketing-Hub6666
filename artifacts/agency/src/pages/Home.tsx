@@ -257,25 +257,6 @@ export default function Home() {
         {/* ── STATS ── */}
         <Stats />
 
-        {/* ── TRUST + PROOF ── */}
-        <section className="py-24 md:py-28 bg-background border-t border-border">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="grid lg:grid-cols-3 gap-6">
-              {[
-                { icon: Check, title: "Senior-led execution", body: "No handoffs to junior teams. Strategy and delivery stay with experienced specialists." },
-                { icon: ShieldCheck, title: "No lock-ins", body: "Clear scopes, transparent reporting, and flexible engagement terms." },
-                { icon: Target, title: "Built to convert", body: "Every asset is designed to improve traffic quality, conversion rate, or revenue." },
-              ].map((item) => (
-                <div key={item.title} className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-                  <item.icon className="w-5 h-5 text-primary mb-4" />
-                  <h3 className="text-xl font-black mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ── SERVICES TABBED (Kinex-style) ── */}
         <ServicesTabbed />
 
