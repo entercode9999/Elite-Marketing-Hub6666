@@ -400,12 +400,12 @@ const SERVICES = [
         visual: subViz("Custom AI Build", [{ l: "Accuracy vs. GPT-4", v: "+28%", c: "#22c55e" }, { l: "Latency", v: "< 2s" }, { l: "Training data", v: "Your docs" }, { l: "Delivery", v: "90 days" }], B, "#d97706"),
       },
       {
-        label: "App Development", href: "/app-development-service",
-        visual: subViz("App Delivery", [{ l: "Platforms", v: "iOS + Android + Web" }, { l: "Timeline", v: "12–16 wks" }, { l: "Tech stack", v: "React Native" }, { l: "Post-launch", v: "90-day support" }], B2, "#d97706"),
-      },
-      {
         label: "Lead Capture AI", href: "/ai-lead-capture-service",
         visual: subViz("Lead Capture AI", [{ l: "Capture rate", v: "+340%" }, { l: "Avg qualify time", v: "< 90 sec" }, { l: "CRM sync", v: "Real-time" }, { l: "Coverage", v: "24/7" }], B3, "#d97706"),
+      },
+      {
+        label: "AI Prompt Engineering", href: "/ai-prompt-engineering-service",
+        visual: subViz("Prompt Systems", [{ l: "Accuracy lift", v: "+31%" }, { l: "Tuned prompts", v: "48" }, { l: "Workflow steps", v: "14" }, { l: "Turnaround", v: "5 days" }], B2, "#d97706"),
       },
     ],
     href: "/ai-chatbot-service",
@@ -475,7 +475,7 @@ export function ServicesTabbed() {
         {/* Main tabbed layout */}
         <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-0 border border-[#e5e2d9] rounded-2xl overflow-hidden shadow-sm">
           {/* Left: category tabs — horizontal scroll on mobile, vertical on lg */}
-          <div className="bg-[#f9f8f5] border-b border-[#e5e2d9] lg:border-b-0 lg:border-r lg:border-[#e5e2d9]">
+        <div className="bg-[#f9f8f5] border-b border-[#e5e2d9] lg:border-b-0 lg:border-r lg:border-[#e5e2d9] lg:bg-gradient-to-b lg:from-[#faf9f7] lg:to-white">
             {/* Mobile: horizontal scrollable pill strip */}
             <div className="flex overflow-x-auto gap-2 p-3 lg:hidden scrollbar-hide">
               {SERVICES.map((svc, i) => (
@@ -505,19 +505,19 @@ export function ServicesTabbed() {
                 <button
                   key={svc.id}
                   onClick={() => handleTabClick(i)}
-                  className={`w-full flex items-center gap-3 px-5 py-4 text-left transition-all border-b border-[#e5e2d9] last:border-0 group ${
+                  className={`w-full flex items-center gap-3 px-6 py-5 text-left transition-all border-b border-[#e5e2d9] last:border-0 group ${
                     active === i
-                      ? "bg-white border-l-2 border-l-primary"
-                      : "hover:bg-gray-50 border-l-2 border-l-transparent"
+                      ? "bg-white border-l-4 border-l-primary shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]"
+                      : "hover:bg-white/80 border-l-4 border-l-transparent"
                   }`}
                 >
                   <div
-                    className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all"
+                    className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all"
                     style={{ background: active === i ? `${svc.color}18` : "rgba(0,0,0,0.05)" }}
                   >
-                    <svc.icon className="w-4 h-4" style={{ color: active === i ? svc.color : "rgba(0,0,0,0.3)" }} />
+                    <svc.icon className="w-5 h-5" style={{ color: active === i ? svc.color : "rgba(0,0,0,0.3)" }} />
                   </div>
-                  <span className={`font-semibold text-sm transition-colors ${active === i ? "text-[#0e0e0e]" : "text-gray-400 group-hover:text-gray-700"}`}>
+                  <span className={`font-bold text-sm transition-colors ${active === i ? "text-[#0e0e0e]" : "text-gray-400 group-hover:text-gray-700"}`}>
                     {svc.label}
                   </span>
                   {active === i && <div className="ml-auto w-1.5 h-1.5 rounded-full" style={{ background: svc.color }} />}
@@ -527,7 +527,7 @@ export function ServicesTabbed() {
           </div>
 
           {/* Right: content panel */}
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_280px] min-h-[520px]">
+          <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] min-h-[560px]">
             {/* Content */}
             <AnimatePresence mode="wait">
               <motion.div
@@ -536,7 +536,7 @@ export function ServicesTabbed() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.25 }}
-                className="p-8 flex flex-col"
+                className="p-10 flex flex-col"
               >
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: `${current.color}15` }}>
@@ -547,20 +547,20 @@ export function ServicesTabbed() {
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-black leading-snug mb-4 max-w-lg text-[#0e0e0e]">{current.headline}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed mb-8 max-w-lg">{current.description}</p>
+                <h3 className="text-[28px] font-black leading-snug mb-4 max-w-xl text-[#0e0e0e]">{current.headline}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed mb-7 max-w-xl">{current.description}</p>
 
                 <p className="text-[9px] font-black uppercase tracking-[0.18em] text-gray-300 mb-3">
                   Hover a service to preview →
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-0 mb-8 flex-1">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-0 mb-6 flex-1">
                   {current.subServices.map((sub) => (
                     <Link
                       key={sub.label}
                       href={sub.href}
                       onMouseEnter={() => setHoveredSubVisual(sub.visual)}
                       onMouseLeave={() => setHoveredSubVisual(null)}
-                      className="flex items-center gap-2 py-2.5 border-b border-[#e5e2d9] text-sm text-gray-500 hover:text-[#0e0e0e] transition-colors group"
+                      className="flex items-center gap-2 py-3 border-b border-[#e5e2d9] text-sm text-gray-500 hover:text-[#0e0e0e] transition-colors group"
                     >
                       <ArrowRight className="w-3.5 h-3.5 shrink-0 text-gray-300 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                       {sub.label}
