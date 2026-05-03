@@ -124,23 +124,6 @@ const INDUSTRIES = [
     href: "/saas-marketing",
   },
   {
-    id: "fitness",
-    name: "Fitness & Wellness",
-    image: "/industry-fitness.png",
-    headline: "Trial memberships. Retention systems. Full studios.",
-    description:
-      "Gyms, fitness studios, yoga, physiotherapy, wellness clinics. Local SEO and paid campaigns tuned for membership trials and appointment bookings. Review generation that keeps your 4.9-star rating attracting new clients.",
-    whyChoose: [
-      "Hyperlocal catchment radius targeting",
-      "Trial-to-member email nurture sequences",
-      "Instagram trial campaign creative",
-      "Review generation for fitness businesses",
-      "January campaign infrastructure",
-      "Proven results: +190% trial memberships",
-    ],
-    href: "/fitness-marketing",
-  },
-  {
     id: "restaurants",
     name: "Restaurants & Hospitality",
     image: "/industry-restaurant.png",
@@ -156,74 +139,6 @@ const INDUSTRIES = [
       "Proven results: +155% online reservations",
     ],
     href: "/restaurant-marketing",
-  },
-  {
-    id: "b2b",
-    name: "B2B",
-    image: "/case-study-saas.png",
-    headline: "Pipeline from the right buyers. Not just more traffic.",
-    description:
-      "Manufacturers, distributors, professional services, agencies. B2B digital marketing where the conversion goal is a sales conversation — not a form submission. We build the content authority and demand gen systems that put you in front of decision-makers.",
-    whyChoose: [
-      "Multi-stakeholder content strategy",
-      "LinkedIn ABM by company, title, and size",
-      "Long-cycle email nurture sequences",
-      "Intent-layered Google Ads for RFQ queries",
-      "Lead quality vs. volume focus",
-      "Proven results: +218% qualified leads",
-    ],
-    href: "/b2b-marketing",
-  },
-  {
-    id: "b2c",
-    name: "B2C",
-    image: "/case-study-ecommerce.png",
-    headline: "More customers. Lower acquisition cost.",
-    description:
-      "Consumer brands, subscription services, local businesses. Paid and organic channels working together to drive awareness, conversion, and retention at the lowest possible blended CPA.",
-    whyChoose: [
-      "Full-funnel paid social campaigns",
-      "Creative testing systems against fatigue",
-      "Seasonal demand management",
-      "Accurate multi-channel attribution",
-      "Loyalty and retention email sequences",
-      "Proven results: -34% blended CPA",
-    ],
-    href: "/b2c-marketing",
-  },
-  {
-    id: "d2c",
-    name: "D2C",
-    image: "/industry-ecommerce.png",
-    headline: "Own your customer relationship. Own your margins.",
-    description:
-      "Direct-to-consumer brands cutting out the middleman. CRO, email lifecycle, paid social, and SEO built specifically for DTC economics — LTV, repeat purchase rate, and subscription retention.",
-    whyChoose: [
-      "First-party attribution post-iOS14",
-      "Subscription churn reduction strategies",
-      "Full DTC email lifecycle stack",
-      "Checkout and cart optimisation",
-      "CPM diversification: Google + Meta",
-      "Proven results: 7.2x blended ROAS",
-    ],
-    href: "/d2c-marketing",
-  },
-  {
-    id: "food-beverage",
-    name: "Food & Beverage",
-    image: "/industry-restaurant.png",
-    headline: "Hungry customers find you first.",
-    description:
-      "Food brands, restaurants, beverage companies, grocery retailers. Local SEO, social commerce, and content strategies that put your product in front of hungry, intent-driven buyers.",
-    whyChoose: [
-      "Photo-first content strategy",
-      "GBP for food discovery searches",
-      "Instagram and TikTok visual campaigns",
-      "Review management and response",
-      "Seasonal product launch campaigns",
-      "Proven results: +155% online orders",
-    ],
-    href: "/food-beverage-marketing",
   },
   {
     id: "education",
@@ -379,38 +294,21 @@ const INDUSTRIES = [
     href: "/construction-marketing",
   },
   {
-    id: "law",
-    name: "Law",
-    image: "/industry-legal.png",
-    headline: "High-value cases find you. Not the other way around.",
+    id: "b2b-b2c-d2c",
+    name: "B2B / B2C / D2C",
+    image: "/case-study-ecommerce.png",
+    headline: "One framework. Three buyer models.",
     description:
-      "Law firms of every size and practice area. SEO authority, Google Ads, and content marketing that position your firm as the go-to choice for high-intent legal queries in your market.",
+      "B2B, B2C, and D2C brands all need different conversion paths, but the same discipline: strong positioning, high-performing channels, and clear attribution. We tailor strategy to the buying cycle, ticket size, and sales motion.",
     whyChoose: [
-      "Law Society advertising compliance",
-      "Practice area × city page architecture",
-      "Intent-layered negative keyword strategy",
-      "E-E-A-T legal content authority",
-      "Reputation and review management",
-      "Proven results: -52% cost per lead",
+      "B2B: lead quality, long-cycle nurture, account-based targeting",
+      "B2C: acquisition efficiency, creative testing, retention",
+      "D2C: LTV, repeat purchase, subscription growth",
+      "Channel mix matched to your buying model",
+      "Clear attribution across paid + organic",
+      "Proven results across consumer and commercial funnels",
     ],
-    href: "/law-marketing",
-  },
-  {
-    id: "sports-fitness",
-    name: "Sports & Fitness",
-    image: "/industry-fitness.png",
-    headline: "More members. More athletes. Full facilities.",
-    description:
-      "Sports clubs, gyms, fitness studios, personal trainers, sports academies. Local SEO and paid campaigns tuned for membership trials, class bookings, and league registrations.",
-    whyChoose: [
-      "Hyperlocal catchment targeting (5km)",
-      "Trial-to-member conversion systems",
-      "January campaign pre-launch strategy",
-      "Paid social for member demographics",
-      "Review velocity management",
-      "Proven results: +190% new memberships",
-    ],
-    href: "/sports-fitness-marketing",
+    href: "/b2b-marketing",
   },
 ];
 
@@ -434,7 +332,7 @@ export function IndustriesTabbed() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-0 border border-[#e5e2d9] rounded-2xl overflow-hidden shadow-sm">
-          <div className="bg-white border-r border-[#e5e2d9] overflow-y-auto max-h-[600px]">
+          <div className="bg-white border-r border-[#e5e2d9] overflow-y-hidden">
             {INDUSTRIES.map((ind, i) => (
               <button
                 key={ind.id}
