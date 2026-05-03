@@ -4,48 +4,48 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 
 const GTA_CITIES = [
-  { name: "Toronto", slug: "toronto", pop: "2.9M", tag: "City Core" },
-  { name: "Mississauga", slug: "mississauga", pop: "717K", tag: "905" },
-  { name: "Brampton", slug: "brampton", pop: "656K", tag: "905" },
-  { name: "Markham", slug: "markham", pop: "353K", tag: "905" },
-  { name: "Vaughan", slug: "vaughan", pop: "323K", tag: "905" },
-  { name: "Richmond Hill", slug: "richmond-hill", pop: "202K", tag: "905" },
-  { name: "Oakville", slug: "oakville", pop: "213K", tag: "905" },
-  { name: "Burlington", slug: "burlington", pop: "186K", tag: "905" },
-  { name: "Pickering", slug: "pickering", pop: "100K", tag: "905" },
-  { name: "Ajax", slug: "ajax", pop: "130K", tag: "905" },
-  { name: "Whitby", slug: "whitby", pop: "138K", tag: "905" },
-  { name: "Oshawa", slug: "oshawa", pop: "166K", tag: "905" },
-  { name: "North York", slug: "north-york", pop: "695K", tag: "City District" },
-  { name: "Scarborough", slug: "scarborough", pop: "632K", tag: "City District" },
-  { name: "Etobicoke", slug: "etobicoke", pop: "362K", tag: "City District" },
-  { name: "Milton", slug: "milton", pop: "132K", tag: "905" },
-  { name: "Newmarket", slug: "newmarket", pop: "88K", tag: "905" },
-  { name: "Aurora", slug: "aurora", pop: "67K", tag: "905" },
-  { name: "Halton Hills", slug: "halton-hills", pop: "61K", tag: "905" },
+  { name: "Toronto", slug: "toronto" },
+  { name: "Mississauga", slug: "mississauga" },
+  { name: "Brampton", slug: "brampton" },
+  { name: "Markham", slug: "markham" },
+  { name: "Vaughan", slug: "vaughan" },
+  { name: "Richmond Hill", slug: "richmond-hill" },
+  { name: "Oakville", slug: "oakville" },
+  { name: "Burlington", slug: "burlington" },
+  { name: "Pickering", slug: "pickering" },
+  { name: "Ajax", slug: "ajax" },
+  { name: "Whitby", slug: "whitby" },
+  { name: "Oshawa", slug: "oshawa" },
+  { name: "North York", slug: "north-york" },
+  { name: "Scarborough", slug: "scarborough" },
+  { name: "Etobicoke", slug: "etobicoke" },
+  { name: "Milton", slug: "milton" },
+  { name: "Newmarket", slug: "newmarket" },
+  { name: "Aurora", slug: "aurora" },
+  { name: "Halton Hills", slug: "halton-hills" },
 ];
 
 const ONTARIO_CITIES = [
-  { name: "Hamilton", slug: "hamilton", pop: "569K", tag: "Southwest ON" },
-  { name: "Kitchener", slug: "kitchener", pop: "256K", tag: "Waterloo Region" },
-  { name: "Waterloo", slug: "waterloo", pop: "121K", tag: "Waterloo Region" },
-  { name: "Cambridge", slug: "cambridge", pop: "140K", tag: "Waterloo Region" },
-  { name: "Guelph", slug: "guelph", pop: "135K", tag: "Southwest ON" },
-  { name: "London", slug: "london-ontario", pop: "422K", tag: "Southwest ON" },
-  { name: "Ottawa", slug: "ottawa", pop: "1.0M", tag: "East ON" },
-  { name: "Barrie", slug: "barrie", pop: "153K", tag: "Central ON" },
-  { name: "Kingston", slug: "kingston", pop: "123K", tag: "East ON" },
-  { name: "Peterborough", slug: "peterborough", pop: "83K", tag: "Central ON" },
-  { name: "Brantford", slug: "brantford", pop: "104K", tag: "Southwest ON" },
-  { name: "St. Catharines", slug: "st-catharines", pop: "136K", tag: "Niagara" },
-  { name: "Niagara Falls", slug: "niagara-falls", pop: "89K", tag: "Niagara" },
-  { name: "Windsor", slug: "windsor", pop: "229K", tag: "Southwest ON" },
-  { name: "Belleville", slug: "belleville", pop: "55K", tag: "East ON" },
-  { name: "Greater Sudbury", slug: "greater-sudbury", pop: "161K", tag: "Northern ON" },
-  { name: "Thunder Bay", slug: "thunder-bay", pop: "108K", tag: "Northern ON" },
-  { name: "Sault Ste. Marie", slug: "sault-ste-marie", pop: "73K", tag: "Northern ON" },
-  { name: "North Bay", slug: "north-bay", pop: "51K", tag: "Northern ON" },
-  { name: "Orangeville", slug: "orangeville", pop: "31K", tag: "Central ON" },
+  { name: "Hamilton", slug: "hamilton" },
+  { name: "Kitchener", slug: "kitchener" },
+  { name: "Waterloo", slug: "waterloo" },
+  { name: "Cambridge", slug: "cambridge" },
+  { name: "Guelph", slug: "guelph" },
+  { name: "London", slug: "london-ontario" },
+  { name: "Ottawa", slug: "ottawa" },
+  { name: "Barrie", slug: "barrie" },
+  { name: "Kingston", slug: "kingston" },
+  { name: "Peterborough", slug: "peterborough" },
+  { name: "Brantford", slug: "brantford" },
+  { name: "St. Catharines", slug: "st-catharines" },
+  { name: "Niagara Falls", slug: "niagara-falls" },
+  { name: "Windsor", slug: "windsor" },
+  { name: "Belleville", slug: "belleville" },
+  { name: "Greater Sudbury", slug: "greater-sudbury" },
+  { name: "Thunder Bay", slug: "thunder-bay" },
+  { name: "Sault Ste. Marie", slug: "sault-ste-marie" },
+  { name: "North Bay", slug: "north-bay" },
+  { name: "Orangeville", slug: "orangeville" },
 ];
 
 const SERVICES = [
@@ -57,19 +57,13 @@ const SERVICES = [
   { label: "Digital Marketing", slug: "digital-marketing" },
 ];
 
-function CityCard({ city }: { city: { name: string; slug: string; pop: string; tag: string } }) {
+function CityCard({ city }: { city: { name: string; slug: string } }) {
   return (
     <div className="bg-white border border-[#e5e2d9] rounded-2xl p-5 hover:border-primary/40 hover:shadow-lg transition-all group">
-      <div className="flex items-start justify-between mb-4">
-        <div className="w-8 h-8 rounded-lg bg-primary/8 flex items-center justify-center">
-          <MapPin className="w-4 h-4 text-primary" />
-        </div>
-        <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 bg-gray-100 px-2 py-1 rounded-full">
-          {city.tag}
-        </span>
+      <div className="w-8 h-8 rounded-lg bg-primary/8 flex items-center justify-center mb-4">
+        <MapPin className="w-4 h-4 text-primary" />
       </div>
       <h3 className="font-black text-[#0e0e0e] text-lg mb-1">{city.name}</h3>
-      <p className="text-xs text-gray-400 mb-4">Pop. ~{city.pop}</p>
       <div className="space-y-1.5">
         {SERVICES.map((svc) => (
           <Link
