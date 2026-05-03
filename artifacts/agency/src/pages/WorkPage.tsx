@@ -647,28 +647,6 @@ export function OurWorkPage() {
 
 /* ─── Case Study Detail Page ─────────────────────────────────────── */
 
-function AccordionItem({ title, description }: { title: string; description: string }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="border border-[#e5e2d9] rounded-2xl overflow-hidden">
-      <button
-        className="w-full flex items-center justify-between p-6 text-left hover:bg-[#f9f8f5] transition-colors"
-        onClick={() => setOpen(!open)}
-      >
-        <span className="font-bold text-[#0e0e0e] text-base">{title}</span>
-        <span className={`w-8 h-8 rounded-full border flex-shrink-0 flex items-center justify-center transition-all ${open ? "bg-primary border-primary" : "border-[#e5e2d9]"}`}>
-          {open ? <ChevronUp className="w-4 h-4 text-white" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
-        </span>
-      </button>
-      {open && (
-        <div className="px-6 pb-6">
-          <p className="text-gray-600 leading-relaxed text-[15px]">{description}</p>
-        </div>
-      )}
-    </div>
-  );
-}
-
 export function CaseStudyPage() {
   const params = useParams<{ slug: string }>();
   const cs = CASE_STUDIES.find((c) => c.slug === params.slug);
@@ -690,215 +668,463 @@ export function CaseStudyPage() {
     <div className="min-h-screen bg-white">
       <Nav />
 
-      {/* ═══ HERO ═══════════════════════════════════════════════════ */}
-      <section className="pt-28 pb-0 bg-white border-b border-[#e5e2d9]">
-        <div className="container mx-auto px-4 max-w-7xl">
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-gray-400 text-xs mb-10">
-            <Link href="/" className="hover:text-gray-600">Home</Link>
-            <span>/</span>
-            <Link href="/our-work" className="hover:text-gray-600">Our Work</Link>
-            <span>/</span>
-            <span className="text-gray-600">{cs.client}</span>
-          </div>
+      {/* ═══ HERO — full dark, accent-branded ══════════════════════ */}
+      <section className="relative bg-[#08090d] pt-24 pb-0 overflow-hidden">
+        {/* Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:72px_72px]" />
+        {/* Accent orbs */}
+        <div
+          className="animate-float-orb absolute top-[-100px] right-[-80px] w-[700px] h-[700px] rounded-full blur-[150px] opacity-35 pointer-events-none"
+          style={{ backgroundColor: cs.accentColor }}
+        />
+        <div
+          className="animate-float-orb-alt absolute bottom-[0px] left-[-100px] w-[500px] h-[500px] rounded-full blur-[130px] opacity-20 pointer-events-none"
+          style={{ backgroundColor: cs.accentColor }}
+        />
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center pb-16">
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+          {/* Breadcrumb */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            className="flex items-center gap-2 text-white/30 text-xs mb-10 pt-4"
+          >
+            <Link href="/" className="hover:text-white/60 transition-colors">Home</Link>
+            <span>/</span>
+            <Link href="/our-work" className="hover:text-white/60 transition-colors">Our Work</Link>
+            <span>/</span>
+            <span className="text-white/60">{cs.client}</span>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-14 items-center pb-16">
             {/* Left */}
             <div>
-              <p className="text-[11px] font-black uppercase tracking-widest mb-3" style={{ color: cs.accentColor }}>
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.05 }}
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-bold mb-6"
+                style={{ borderColor: `${cs.accentColor}50`, color: cs.accentColor, backgroundColor: `${cs.accentColor}12` }}
+              >
                 {cs.service} · {cs.location}
-              </p>
-              <h1 className="text-4xl md:text-5xl font-black text-[#0e0e0e] leading-[1.1] mb-3">
+              </motion.div>
+
+              <motion.h1
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-white leading-[1.06] mb-5"
+              >
                 {cs.client}
-              </h1>
-              <p className="text-xl font-bold text-gray-700 mb-8 leading-snug">{cs.heroHeadline}</p>
-              <ul className="space-y-3 mb-10">
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.18 }}
+                className="text-lg text-white/55 leading-relaxed mb-8 max-w-lg"
+              >
+                {cs.heroHeadline}
+              </motion.p>
+
+              <motion.ul
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.24 }}
+                className="space-y-3 mb-10"
+              >
                 {cs.heroBullets.map((b) => (
                   <li key={b} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: cs.accentColor }} />
-                    <span className="text-gray-700 text-[15px] leading-snug">{b}</span>
+                    <div
+                      className="w-5 h-5 rounded-full flex-shrink-0 mt-0.5 flex items-center justify-center"
+                      style={{ backgroundColor: `${cs.accentColor}25` }}
+                    >
+                      <CheckCircle2 className="w-3.5 h-3.5" style={{ color: cs.accentColor }} />
+                    </div>
+                    <span className="text-white/65 text-[15px] leading-snug">{b}</span>
                   </li>
                 ))}
-              </ul>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 text-white font-bold px-7 py-3.5 rounded-xl hover:opacity-90 transition-opacity text-[15px]"
-                style={{ backgroundColor: cs.accentColor }}
+              </motion.ul>
+
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.32 }}
+                className="flex flex-wrap gap-3"
               >
-                Get Similar Results <ArrowRight className="w-4 h-4" />
-              </Link>
+                <Link
+                  href="/contact"
+                  className="relative overflow-hidden shimmer-button inline-flex items-center gap-2 text-white font-bold px-7 py-3.5 rounded-xl hover:opacity-90 transition-opacity text-[15px] group"
+                  style={{ backgroundColor: cs.accentColor }}
+                >
+                  Get Similar Results <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </Link>
+                <Link
+                  href="/our-work"
+                  className="inline-flex items-center gap-2 border border-white/15 hover:border-white/30 text-white/70 font-semibold px-6 py-3.5 rounded-xl transition-all text-[15px]"
+                >
+                  ← All Work
+                </Link>
+              </motion.div>
             </div>
 
-            {/* Right — styled visual card */}
-            <div className={`relative rounded-2xl overflow-hidden aspect-[16/10] bg-gradient-to-br ${cs.cardGradient}`}>
-              <div
-                className="absolute inset-0 opacity-10"
-                style={{
-                  backgroundImage: "linear-gradient(135deg, rgba(255,255,255,0.08) 25%, transparent 25%), linear-gradient(225deg, rgba(255,255,255,0.08) 25%, transparent 25%)",
-                  backgroundSize: "40px 40px",
-                }}
-              />
-              {/* Stats overlay */}
-              <div className="absolute bottom-8 left-8 right-8 grid grid-cols-3 gap-3">
-                {cs.results.slice(0, 3).map((r) => (
-                  <div key={r.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-center">
-                    <p className="text-white font-black text-xl leading-none mb-1">{r.stat}</p>
-                    <p className="text-white/60 text-[10px] font-medium leading-snug">{r.label}</p>
+            {/* Right — Analytics Dashboard Visual */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+              className="hidden lg:block"
+            >
+              <div className={`relative rounded-2xl overflow-hidden bg-gradient-to-br ${cs.cardGradient} border border-white/10 shadow-[0_0_100px_rgba(0,0,0,0.5)]`}>
+                {/* Pattern overlay */}
+                <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "linear-gradient(135deg, rgba(255,255,255,0.07) 25%, transparent 25%)", backgroundSize: "44px 44px" }} />
+
+                <div className="p-6">
+                  {/* Fake browser chrome top bar */}
+                  <div className="bg-black/25 backdrop-blur-sm rounded-xl border border-white/10 overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-3 border-b border-white/8">
+                      <div className="w-2.5 h-2.5 rounded-full bg-red-400/70" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/70" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-green-400/70" />
+                      <div className="ml-3 flex-1 bg-white/10 rounded h-4 max-w-[180px]" />
+                      <div className="text-white/20 text-[10px] font-mono">Analytics</div>
+                    </div>
+
+                    {/* Chart area */}
+                    <div className="relative p-4 pb-2">
+                      <div className="flex items-center justify-between mb-3">
+                        <div>
+                          <p className="text-white/40 text-[9px] font-bold uppercase tracking-widest">Organic Traffic</p>
+                          <p className="text-white font-black text-xl leading-none">{cs.results[0].stat}</p>
+                        </div>
+                        <div className="flex items-center gap-1.5 bg-green-400/15 border border-green-400/20 rounded-full px-2.5 py-1">
+                          <TrendingUp className="w-3 h-3 text-green-400" />
+                          <span className="text-green-400 text-[10px] font-black">↑ Up</span>
+                        </div>
+                      </div>
+
+                      {/* SVG chart */}
+                      <div className="relative h-28">
+                        <svg viewBox="0 0 400 100" className="w-full h-full" preserveAspectRatio="none">
+                          <defs>
+                            <linearGradient id={`cg-${cs.slug}`} x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stopColor="white" stopOpacity="0.22" />
+                              <stop offset="100%" stopColor="white" stopOpacity="0" />
+                            </linearGradient>
+                          </defs>
+                          {[25, 50, 75].map((y) => (
+                            <line key={y} x1="0" y1={y} x2="400" y2={y} stroke="white" strokeOpacity="0.06" strokeWidth="1" />
+                          ))}
+                          <path d={`M0 92 C30 88, 60 82, 100 75 S160 62, 210 50 S280 28, 330 16 L400 8 L400 100 L0 100 Z`} fill={`url(#cg-${cs.slug})`} />
+                          <path d={`M0 92 C30 88, 60 82, 100 75 S160 62, 210 50 S280 28, 330 16 L400 8`} fill="none" stroke="white" strokeWidth="2" strokeOpacity="0.85" strokeLinecap="round" strokeLinejoin="round" />
+                          {[[0,92],[100,75],[210,50],[330,16],[400,8]].map(([x,y],i) => (
+                            <circle key={i} cx={x} cy={y} r="3.5" fill={cs.accentColor} stroke="white" strokeWidth="1.5" />
+                          ))}
+                        </svg>
+                      </div>
+
+                      {/* X-axis labels */}
+                      <div className="flex justify-between px-1 mt-1">
+                        {["Jan","Mar","May","Aug","Oct","Dec"].map((m) => (
+                          <span key={m} className="text-white/20 text-[8px] font-medium">{m}</span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Stat row */}
+                    <div className="grid grid-cols-3 divide-x divide-white/8 border-t border-white/8">
+                      {cs.results.slice(0, 3).map((r) => (
+                        <div key={r.label} className="p-4 text-center">
+                          <p className="text-white font-black text-base leading-none mb-1">{r.stat}</p>
+                          <p className="text-white/35 text-[9px] font-medium leading-tight">{r.label}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                ))}
+
+                  {/* Floating badge below chart */}
+                  <div className="mt-4 flex items-center gap-3">
+                    <div className="flex-1 bg-white/8 border border-white/10 rounded-xl p-3 flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${cs.accentColor}30` }}>
+                        <BarChart3 className="w-4 h-4" style={{ color: cs.accentColor }} />
+                      </div>
+                      <div>
+                        <p className="text-white/40 text-[9px] font-bold uppercase tracking-widest">Campaign Status</p>
+                        <p className="text-white text-xs font-bold">Active · Exceeding targets</p>
+                      </div>
+                    </div>
+                    <div className="bg-white/8 border border-white/10 rounded-xl p-3 text-center">
+                      <p className="text-white font-black text-sm">{cs.results[1].stat}</p>
+                      <p className="text-white/35 text-[9px]">{cs.results[1].label}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Watermark */}
+                <div className="absolute bottom-3 right-5 opacity-10">
+                  <p className="text-white font-black text-[10px] uppercase tracking-widest">{cs.client}</p>
+                </div>
               </div>
-              {/* Client name watermark */}
-              <div className="absolute top-8 left-8">
-                <p className="text-white font-black text-2xl opacity-20">{cs.client}</p>
-              </div>
-            </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ METRICS STRIP ══════════════════════════════════════════ */}
+      <section style={{ backgroundColor: cs.accentColor }}>
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="flex flex-wrap items-stretch divide-x divide-white/20">
+            {cs.results.map((r, i) => (
+              <motion.div
+                key={r.label}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 + i * 0.06, duration: 0.4 }}
+                className="flex-1 min-w-[120px] py-5 px-4 text-center"
+              >
+                <p className="text-white font-black text-lg leading-none mb-1">{r.stat}</p>
+                <p className="text-white/60 text-[9px] font-bold uppercase tracking-widest leading-tight">{r.label}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ═══ ABOUT + PROJECT DETAILS ════════════════════════════════ */}
-      <section className="py-20 bg-[#f9f8f5] border-b border-[#e5e2d9]">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Sidebar */}
-            <div className="lg:col-span-1 space-y-6">
-              {/* Project details */}
-              <div className="bg-white border border-[#e5e2d9] rounded-2xl p-6">
-                <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-4">Project Details</p>
-                <div className="space-y-4">
+            <div className="space-y-5">
+              <div className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-6 sticky top-24">
+                <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-5">Project Details</p>
+                <div className="space-y-5">
                   {cs.projectDetails.map((d) => (
-                    <div key={d.label}>
-                      <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1">{d.label}</p>
-                      <p className="text-[#0e0e0e] font-semibold text-sm">{d.value}</p>
+                    <div key={d.label} className="border-b border-[#e5e2d9] pb-4 last:border-0 last:pb-0">
+                      <p className="text-[9px] font-black uppercase tracking-widest text-gray-400 mb-1">{d.label}</p>
+                      <p className="text-[#0e0e0e] font-bold text-sm">{d.value}</p>
                     </div>
                   ))}
                 </div>
-              </div>
-
-              {/* Key metric highlight */}
-              <div className="rounded-2xl p-6 text-white" style={{ backgroundColor: cs.accentColor }}>
-                <p className="text-[10px] font-black uppercase tracking-widest opacity-60 mb-2">Headline Result</p>
-                <p className="font-black text-4xl mb-1">{cs.results[0].stat}</p>
-                <p className="text-sm opacity-75">{cs.results[0].label}</p>
+                <div className="mt-6 rounded-xl p-5 text-white relative overflow-hidden" style={{ backgroundColor: cs.accentColor }}>
+                  <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.12)_0%,transparent_60%)]" />
+                  <p className="text-[9px] font-black uppercase tracking-widest opacity-60 mb-2 relative">Top Result</p>
+                  <p className="font-black text-3xl mb-1 relative">{cs.results[0].stat}</p>
+                  <p className="text-sm opacity-70 relative leading-snug">{cs.results[0].label}</p>
+                </div>
               </div>
             </div>
 
-            {/* Main About */}
+            {/* Main */}
             <div className="lg:col-span-2">
-              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">About the Client</p>
-              <h2 className="text-2xl md:text-3xl font-black text-[#0e0e0e] leading-[1.1] mb-6">
-                About {cs.client}
-              </h2>
-              <p className="text-gray-600 leading-relaxed text-[15.5px]">{cs.about}</p>
+              <p className="text-[11px] font-black uppercase tracking-widest mb-3" style={{ color: cs.accentColor }}>About the Client</p>
+              <h2 className="text-2xl md:text-3xl font-black text-[#0e0e0e] leading-[1.1] mb-6">About {cs.client}</h2>
+              <p className="text-gray-600 leading-relaxed text-[16px] mb-10">{cs.about}</p>
+
+              {/* Industry + tagline callout */}
+              <div className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-6 flex gap-5 items-start">
+                <div className="w-10 h-10 rounded-xl flex-shrink-0 flex items-center justify-center" style={{ backgroundColor: `${cs.accentColor}15` }}>
+                  <Globe className="w-5 h-5" style={{ color: cs.accentColor }} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1">{cs.industry} · {cs.location}</p>
+                  <p className="text-[#0e0e0e] font-bold text-[15px] leading-snug">{cs.tagline}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ═══ CHALLENGES ═════════════════════════════════════════════ */}
-      <section className="py-20 bg-white border-b border-[#e5e2d9]">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="max-w-2xl mb-12">
-            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">The Challenges</p>
-            <h2 className="text-3xl md:text-4xl font-black text-[#0e0e0e] leading-[1.1]">
-              What {cs.client} was up against
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {cs.challenges.map((c, i) => (
-              <div key={c.title} className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-7 relative overflow-hidden">
-                <div className="absolute top-4 right-5 text-[72px] font-black leading-none select-none" style={{ color: cs.accentColor, opacity: 0.06 }}>
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-                <div className="w-10 h-10 rounded-xl mb-5 flex items-center justify-center" style={{ backgroundColor: `${cs.accentColor}18` }}>
-                  <TrendingUp className="w-5 h-5" style={{ color: cs.accentColor }} />
-                </div>
-                <h3 className="font-black text-[#0e0e0e] text-lg mb-3">{c.title}</h3>
-                <p className="text-gray-600 text-[14px] leading-relaxed">{c.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ SOLUTION ═══════════════════════════════════════════════ */}
-      <section className="py-20 bg-[#f9f8f5] border-b border-[#e5e2d9]">
+      <section className="py-24 bg-[#f9f8f5]">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid lg:grid-cols-5 gap-14 items-start">
             <div className="lg:col-span-2">
-              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Our Solution</p>
+              <p className="text-[11px] font-black uppercase tracking-widest mb-3" style={{ color: cs.accentColor }}>The Situation</p>
               <h2 className="text-3xl md:text-4xl font-black text-[#0e0e0e] leading-[1.1] mb-5">
-                How we solved it — step by step
+                What {cs.client} was up against
               </h2>
-              <p className="text-gray-600 leading-relaxed text-[15px]">
-                Every engagement is custom-built for the client's specific situation, market, and goals. Below is the approach we took for {cs.client} — no templates, no recycled playbooks.
+              <p className="text-gray-500 text-[15px] leading-relaxed">
+                Before engaging Outlier, {cs.client} faced a combination of challenges that were actively suppressing their growth. Here's what we found.
               </p>
-              <div className="mt-6">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 text-white font-bold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity text-sm"
-                  style={{ backgroundColor: cs.accentColor }}
-                >
-                  Build your strategy <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
             </div>
-            <div className="lg:col-span-3 space-y-3">
-              {cs.solutionSteps.map((s) => (
-                <AccordionItem key={s.title} title={s.title} description={s.description} />
+            <div className="lg:col-span-3 space-y-5">
+              {cs.challenges.map((c, i) => (
+                <motion.div
+                  key={c.title}
+                  initial={{ opacity: 0, x: 24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  className="bg-white border border-[#e5e2d9] rounded-2xl p-7 relative overflow-hidden group hover:shadow-md transition-shadow duration-300"
+                >
+                  <div className="absolute top-3 right-5 text-[80px] font-black leading-none select-none opacity-[0.035]" style={{ color: cs.accentColor }}>
+                    {String(i + 1).padStart(2, "0")}
+                  </div>
+                  <div className="flex gap-5 items-start">
+                    <div className="w-10 h-10 rounded-xl flex-shrink-0 flex items-center justify-center font-black text-sm text-white" style={{ backgroundColor: cs.accentColor }}>
+                      {String(i + 1).padStart(2, "0")}
+                    </div>
+                    <div>
+                      <h3 className="font-black text-[#0e0e0e] text-[17px] mb-2">{c.title}</h3>
+                      <p className="text-gray-600 text-[14.5px] leading-relaxed">{c.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ RESULTS ════════════════════════════════════════════════ */}
-      <section className="py-20 bg-[#08090d] border-b border-white/8">
+      {/* ═══ OUR PROCESS — visual timeline ══════════════════════════ */}
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="max-w-xl mb-14">
-            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Final Outcomes</p>
-            <h2 className="text-3xl md:text-4xl font-black text-white leading-[1.1]">
-              The results for {cs.client}
+            <p className="text-[11px] font-black uppercase tracking-widest mb-3" style={{ color: cs.accentColor }}>Our Approach</p>
+            <h2 className="text-3xl md:text-4xl font-black text-[#0e0e0e] leading-[1.1]">
+              How we solved it — step by step
             </h2>
+            <p className="text-gray-500 mt-4 text-[15px] leading-relaxed">
+              Every engagement is custom-built for the client's specific situation. No templates, no recycled playbooks. Here's exactly what we did for {cs.client}.
+            </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-14">
-            {cs.results.map((r, i) => (
+
+          <div className="grid lg:grid-cols-2 gap-6">
+            {cs.solutionSteps.map((s, i) => (
               <motion.div
-                key={r.label}
-                initial={{ opacity: 0, y: 24 }}
+                key={s.title}
+                initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -3, transition: { duration: 0.2 } }}
-                className="bg-white/4 border border-white/8 hover:border-white/20 hover:bg-white/7 rounded-2xl p-7 text-center transition-colors duration-300"
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ delay: i * 0.09, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-7 hover:border-gray-300 hover:shadow-md transition-all duration-300 relative overflow-hidden group"
               >
-                <p className="font-black text-white mb-2" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", lineHeight: 1 }}>
-                  {r.stat}
-                </p>
-                <p className="text-white/40 text-xs font-medium leading-snug">{r.label}</p>
+                {/* Large step number watermark */}
+                <div className="absolute top-4 right-6 text-[72px] font-black leading-none select-none opacity-[0.04] text-[#0e0e0e]">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                {/* Step badge */}
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center font-black text-sm text-white mb-5"
+                  style={{ backgroundColor: cs.accentColor }}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <h3 className="font-black text-[#0e0e0e] text-[17px] mb-3">{s.title}</h3>
+                <p className="text-gray-600 text-[14.5px] leading-relaxed">{s.description}</p>
               </motion.div>
             ))}
           </div>
 
+          <div className="mt-10">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 text-white font-bold px-6 py-3.5 rounded-xl hover:opacity-90 transition-opacity text-sm group"
+              style={{ backgroundColor: cs.accentColor }}
+            >
+              Get a custom strategy like this <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ RESULTS — dark, accent-tinted ══════════════════════════ */}
+      <section className="relative py-24 bg-[#08090d] overflow-hidden">
+        {/* Accent glow behind */}
+        <div
+          className="animate-float-orb absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full blur-[160px] opacity-18 pointer-events-none"
+          style={{ backgroundColor: cs.accentColor }}
+        />
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+          <div className="max-w-xl mb-14">
+            <p className="text-[11px] font-black uppercase tracking-widest mb-3" style={{ color: cs.accentColor }}>Final Outcomes</p>
+            <h2 className="text-3xl md:text-4xl font-black text-white leading-[1.1]">
+              The results for {cs.client}
+            </h2>
+          </div>
+
+          {/* Stat grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+            {cs.results.map((r, i) => (
+              <motion.div
+                key={r.label}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.07, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                className="rounded-2xl p-7 text-center border transition-all duration-300"
+                style={{ backgroundColor: `${cs.accentColor}10`, borderColor: `${cs.accentColor}25` }}
+              >
+                <p className="font-black mb-2 leading-none" style={{ color: cs.accentColor, fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)" }}>
+                  {r.stat}
+                </p>
+                <p className="text-white/45 text-xs font-medium leading-snug mt-2">{r.label}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Performance bar chart */}
+          <div className="bg-white/4 border border-white/8 rounded-2xl p-8 mb-10">
+            <div className="flex items-center justify-between mb-6">
+              <p className="text-white/40 text-[10px] font-black uppercase tracking-widest">Performance Overview</p>
+              <span className="text-[10px] font-bold text-white/25 bg-white/5 border border-white/8 px-3 py-1 rounded-full">Full Campaign Duration</span>
+            </div>
+            <div className="space-y-5">
+              {cs.results.slice(0, 4).map((r, i) => (
+                <div key={r.label} className="flex items-center gap-4">
+                  <p className="text-white/45 text-xs font-medium w-44 flex-shrink-0 leading-tight">{r.label}</p>
+                  <div className="flex-1 h-2.5 bg-white/6 rounded-full overflow-hidden">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${92 - i * 10}%` }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.12 + 0.3, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                      className="h-full rounded-full"
+                      style={{ backgroundColor: cs.accentColor }}
+                    />
+                  </div>
+                  <p className="font-black text-sm w-14 text-right" style={{ color: cs.accentColor }}>{r.stat}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Testimonial */}
           {cs.testimonial && (
-            <div className="bg-white/4 border border-white/10 rounded-2xl p-10 max-w-3xl mx-auto text-center">
-              <p className="text-white text-lg leading-relaxed italic mb-6">"{cs.testimonial.quote}"</p>
-              <div className="flex items-center justify-center gap-3">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center font-black text-sm text-white" style={{ backgroundColor: cs.accentColor }}>
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative rounded-2xl p-10 overflow-hidden border"
+              style={{ backgroundColor: `${cs.accentColor}12`, borderColor: `${cs.accentColor}30` }}
+            >
+              <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.04)_0%,transparent_60%)]" />
+              {/* Large quote mark */}
+              <div className="absolute top-6 left-8 text-[120px] leading-none font-black opacity-10 select-none" style={{ color: cs.accentColor }}>"</div>
+              <p className="text-white/80 text-lg md:text-xl leading-relaxed italic mb-8 relative max-w-3xl">
+                "{cs.testimonial.quote}"
+              </p>
+              <div className="flex items-center gap-4 relative">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center font-black text-sm text-white flex-shrink-0" style={{ backgroundColor: cs.accentColor }}>
                   {cs.testimonial.name.split(" ").map((n) => n[0]).join("")}
                 </div>
-                <div className="text-left">
-                  <p className="text-white font-bold text-sm">{cs.testimonial.name}</p>
-                  <p className="text-white/40 text-xs">{cs.testimonial.role}</p>
+                <div>
+                  <p className="text-white font-bold">{cs.testimonial.name}</p>
+                  <p className="text-white/45 text-sm">{cs.testimonial.role}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           )}
         </div>
       </section>
 
       {/* ═══ MORE WORK ══════════════════════════════════════════════ */}
-      <section className="py-20 bg-[#f9f8f5] border-b border-[#e5e2d9]">
+      <section className="py-20 bg-[#f9f8f5]">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
             <div>
@@ -910,43 +1136,58 @@ export function CaseStudyPage() {
             </Link>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {otherStudies.map((ocs) => (
-              <Link key={ocs.slug} href={`/our-work/${ocs.slug}`} className="group block">
-                <div className={`relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-br ${ocs.cardGradient} mb-4`}>
-                  <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "linear-gradient(135deg, rgba(255,255,255,0.08) 25%, transparent 25%)", backgroundSize: "40px 40px" }} />
-                  <span className="absolute top-4 right-4 text-[10px] font-black uppercase tracking-widest bg-white/15 text-white px-2.5 py-1 rounded-full border border-white/20">Case Study</span>
-                  <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/60 to-transparent">
-                    <p className="text-white/50 text-[10px] font-black uppercase tracking-widest mb-1">{ocs.service}</p>
-                    <p className="text-white font-black text-lg">{ocs.client}</p>
+            {otherStudies.map((ocs, i) => (
+              <motion.div
+                key={ocs.slug}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08, duration: 0.5 }}
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              >
+                <Link href={`/our-work/${ocs.slug}`} className="group block">
+                  <div className={`relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-br ${ocs.cardGradient} mb-4 shadow-md group-hover:shadow-xl transition-shadow duration-300`}>
+                    <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "linear-gradient(135deg, rgba(255,255,255,0.08) 25%, transparent 25%)", backgroundSize: "40px 40px" }} />
+                    <div className="absolute inset-0 rounded-2xl ring-1 ring-white/10 group-hover:ring-white/25 transition-all duration-300" />
+                    <span className="absolute top-4 right-4 text-[10px] font-black uppercase tracking-widest bg-white/15 backdrop-blur-sm text-white px-2.5 py-1 rounded-full border border-white/20">Case Study</span>
+                    <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
+                      <p className="text-white/50 text-[10px] font-black uppercase tracking-widest mb-1">{ocs.service}</p>
+                      <p className="text-white font-black text-lg">{ocs.client}</p>
+                    </div>
+                    <div className="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                      <ArrowRight className="w-4 h-4 text-white" />
+                    </div>
                   </div>
-                  <div className="absolute bottom-4 right-4 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
-                    <ArrowRight className="w-3.5 h-3.5 text-white" />
-                  </div>
-                </div>
-                <p className="text-gray-500 text-sm">{ocs.tagline}</p>
-              </Link>
+                  <p className="text-gray-500 text-sm px-1 group-hover:text-gray-700 transition-colors">{ocs.tagline}</p>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-3xl text-center">
+      <section className="relative py-20 bg-[#08090d] overflow-hidden">
+        <div className="animate-float-orb absolute top-[-80px] left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-primary/12 rounded-full blur-[130px] pointer-events-none" />
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="container mx-auto px-4 max-w-3xl text-center relative z-10"
+        >
           <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-4">Work with Outlier</p>
-          <h2 className="text-3xl font-black text-[#0e0e0e] mb-5">
-            Ready to build your case study?
-          </h2>
-          <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
+          <h2 className="text-3xl font-black text-white mb-5 leading-tight">Ready to build your case study?</h2>
+          <p className="text-white/40 text-[15px] leading-relaxed mb-8 max-w-xl mx-auto">
             Book a free strategy call. We'll assess your market, identify your biggest opportunity, and tell you exactly what it would take to achieve results like the ones above.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-4 rounded-xl hover:bg-primary/90 transition-colors text-[15px]"
+            className="relative overflow-hidden shimmer-button inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-4 rounded-xl hover:bg-primary/90 transition-colors text-[15px] animate-glow-pulse group"
           >
-            Book Free Strategy Call <ArrowRight className="w-5 h-5" />
+            Book Free Strategy Call <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
           </Link>
-        </div>
+        </motion.div>
       </section>
 
       <Footer />
