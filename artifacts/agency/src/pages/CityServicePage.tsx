@@ -2808,7 +2808,7 @@ export default function CityServicePage() {
             ))}
           </div>
           <Link href="/cities" className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline">
-            View all Ontario cities we serve <ArrowRight className="w-4 h-4" />
+            View all Canadian cities we serve <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
@@ -2837,16 +2837,16 @@ export default function CityServicePage() {
             </div>
 
             <div>
-              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Our Ontario coverage</p>
+              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">More local pages</p>
               <h2 className="text-2xl font-black text-[#0e0e0e] mb-6">
-                Serving {Object.keys(CITIES).length - 1}+ Ontario cities
+                More {city.name} services and nearby markets
               </h2>
               <div className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-6 mb-4">
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  From Toronto's financial core to suburban Mississauga, Brampton, Markham, Hamilton, Ottawa, and communities across the Golden Horseshoe — every city page we build is researched for that specific market, priced for that specific competition level, and executed by specialists who know the local landscape.
+                  Every city page we build is researched for that specific market, priced for that specific competition level, and executed by specialists who know the local landscape. If you’re exploring other markets, use the city directory to compare nearby service pages and coverage areas.
                 </p>
                 <Link href="/cities" className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline">
-                  View all Ontario cities <ArrowRight className="w-4 h-4" />
+                  View all Canadian cities <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
               <Link href="/contact" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors text-sm w-full justify-center">
