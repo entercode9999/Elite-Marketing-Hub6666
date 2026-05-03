@@ -135,13 +135,13 @@ export default function Home() {
                   transition={{ duration: 0.5, delay: 0.22 }}
                   className="flex flex-wrap gap-3 mb-12"
                 >
-                  <a
-                    href="/contact"
+                  <Link
+                    href="/free-audit"
                     className="relative overflow-hidden shimmer-button inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-3.5 px-7 rounded-xl transition-all animate-glow-pulse group text-sm"
                   >
-                    Book a Strategy Call
+                    Get a Free Audit
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                  </a>
+                  </Link>
                   <a
                     href="#work"
                     className="inline-flex items-center gap-2 border border-white/15 hover:border-white/25 hover:bg-white/4 text-white/80 font-semibold py-3.5 px-7 rounded-xl transition-all text-sm"

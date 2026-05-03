@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 const DIFFERENTIATORS = [
   {
@@ -84,13 +85,13 @@ export function WhyOutlier() {
               ))}
             </div>
 
-            <a
-              href="/contact"
+            <Link
+              href="/free-audit"
               className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-3.5 px-7 rounded-xl text-sm transition-all group"
             >
               Start with a free audit
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-            </a>
+            </Link>
           </div>
 
           {/* ── RIGHT: Differentiator rows ── */}

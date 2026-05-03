@@ -718,6 +718,7 @@ const CATEGORIES = ["All", "SEO", "Google Ads", "Content", "Web & CRO", "Local S
 
 const POSTS = [
   {
+    slug: "local-seo-2025",
     title: "Why Local SEO Still Wins in 2025 — And How Ontario Businesses Can Dominate It",
     excerpt: "Google's local pack is more competitive than ever. But for businesses that understand the signals, there's never been a clearer path to map pack position 1.",
     tag: "Local SEO",
@@ -727,6 +728,7 @@ const POSTS = [
     featured: true,
   },
   {
+    slug: "ai-overviews-2025",
     title: "Google's AI Overviews: What It Means for Your Organic Traffic (And What to Do About It)",
     excerpt: "AI-generated summaries are changing what organic rankings actually produce. Here's what we're seeing in client data and how to adapt your SEO strategy now.",
     tag: "SEO",
@@ -736,6 +738,7 @@ const POSTS = [
     featured: false,
   },
   {
+    slug: "true-cost-bad-website",
     title: "The True Cost of a Bad Website: CRO Data from 50 Ontario Businesses",
     excerpt: "We audited 50 Ontario business websites and measured the revenue impact of poor conversion rate optimisation. The numbers are significant — and fixable.",
     tag: "Web & CRO",
@@ -745,6 +748,7 @@ const POSTS = [
     featured: false,
   },
   {
+    slug: "meridian-dental-map-pack",
     title: "How We Took Meridian Dental Group to Map Pack Position 1 in Toronto",
     excerpt: "A deep-dive into the 11-month SEO engagement that rebuilt a dental group's entire digital presence — from 140+ crawl errors to dominating every primary keyword.",
     tag: "Case Study",
@@ -754,6 +758,7 @@ const POSTS = [
     featured: false,
   },
   {
+    slug: "ppc-budget-waste-7-mistakes",
     title: "PPC Budget Waste: The 7 Mistakes Ontario Businesses Make on Google Ads",
     excerpt: "After auditing over 80 Google Ads accounts, these are the seven mistakes we see consistently — and the ones that are costing the most money.",
     tag: "Google Ads",
@@ -763,6 +768,7 @@ const POSTS = [
     featured: false,
   },
   {
+    slug: "topical-authority-playbook",
     title: "Content That Compounds: Our Topical Authority Playbook for 2025",
     excerpt: "Most agencies write content to fill a calendar. We build content architectures that compound in authority over time. Here's exactly how the framework works.",
     tag: "Content",
@@ -772,6 +778,7 @@ const POSTS = [
     featured: false,
   },
   {
+    slug: "gta-home-pros-google-ads",
     title: "4.2× ROAS in 90 Days: Inside the GTA Home Pros Google Ads Rebuild",
     excerpt: "A self-managed Google Ads account was burning money with no data, no structure, and no conversion tracking. We rebuilt it from scratch.",
     tag: "Case Study",
@@ -781,6 +788,7 @@ const POSTS = [
     featured: false,
   },
   {
+    slug: "citation-audit-framework",
     title: "The Citation Audit Framework We Use for Every New Local SEO Client",
     excerpt: "Inconsistent NAP data across directories is one of the most common — and most damaging — issues we find in local SEO audits. Here's how to fix it systematically.",
     tag: "Local SEO",
@@ -855,9 +863,9 @@ export function InsightsPage() {
                         <p className="text-white/30 text-[11px]">{featured.date} · {featured.readTime}</p>
                       </div>
                     </div>
-                    <div className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all cursor-pointer">
+                    <Link href={`/insights/${featured.slug}`} className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all">
                       Read article <ArrowRight className="w-4 h-4" />
-                    </div>
+                    </Link>
                   </div>
                 </div>
                 {/* Right visual */}
@@ -916,42 +924,46 @@ export function InsightsPage() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.06, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="bg-white border border-[#e5e2d9] rounded-2xl overflow-hidden hover:shadow-md hover:border-primary/20 transition-all duration-300 group cursor-pointer flex flex-col"
               >
-                {/* Color accent bar */}
-                <div className="h-1 w-full" style={{ backgroundColor: TAG_COLORS[p.tag] ?? "#1a56ff" }} />
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center justify-between mb-4">
-                    <span
-                      className="text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full border"
-                      style={{
-                        color: TAG_COLORS[p.tag] ?? "#1a56ff",
-                        backgroundColor: `${TAG_COLORS[p.tag] ?? "#1a56ff"}12`,
-                        borderColor: `${TAG_COLORS[p.tag] ?? "#1a56ff"}30`,
-                      }}
-                    >
-                      {p.tag}
-                    </span>
-                    <span className="text-xs text-gray-400">{p.date}</span>
-                  </div>
-                  <h3 className="font-black text-[#0e0e0e] text-[16px] leading-snug mb-3 group-hover:text-primary transition-colors">{p.title}</h3>
-                  <p className="text-gray-500 text-[13.5px] leading-relaxed mb-5 flex-1">{p.excerpt}</p>
-                  <div className="flex items-center justify-between pt-4 border-t border-[#e5e2d9]">
-                    <div className="flex items-center gap-2">
-                      <div
-                        className="w-6 h-6 rounded-full flex items-center justify-center font-black text-white text-[9px]"
-                        style={{ backgroundColor: TAG_COLORS[p.tag] ?? "#1a56ff" }}
+                <Link
+                  href={`/insights/${p.slug}`}
+                  className="bg-white border border-[#e5e2d9] rounded-2xl overflow-hidden hover:shadow-md hover:border-primary/20 transition-all duration-300 group flex flex-col h-full"
+                >
+                  {/* Color accent bar */}
+                  <div className="h-1 w-full" style={{ backgroundColor: TAG_COLORS[p.tag] ?? "#1a56ff" }} />
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="flex items-center justify-between mb-4">
+                      <span
+                        className="text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full border"
+                        style={{
+                          color: TAG_COLORS[p.tag] ?? "#1a56ff",
+                          backgroundColor: `${TAG_COLORS[p.tag] ?? "#1a56ff"}12`,
+                          borderColor: `${TAG_COLORS[p.tag] ?? "#1a56ff"}30`,
+                        }}
                       >
-                        {p.author.split(" ").map((n) => n[0]).join("")}
-                      </div>
-                      <div>
-                        <p className="text-[11px] font-bold text-[#0e0e0e]">{p.author}</p>
-                        <p className="text-[10px] text-gray-400">{p.readTime}</p>
-                      </div>
+                        {p.tag}
+                      </span>
+                      <span className="text-xs text-gray-400">{p.date}</span>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
+                    <h3 className="font-black text-[#0e0e0e] text-[16px] leading-snug mb-3 group-hover:text-primary transition-colors">{p.title}</h3>
+                    <p className="text-gray-500 text-[13.5px] leading-relaxed mb-5 flex-1">{p.excerpt}</p>
+                    <div className="flex items-center justify-between pt-4 border-t border-[#e5e2d9]">
+                      <div className="flex items-center gap-2">
+                        <div
+                          className="w-6 h-6 rounded-full flex items-center justify-center font-black text-white text-[9px]"
+                          style={{ backgroundColor: TAG_COLORS[p.tag] ?? "#1a56ff" }}
+                        >
+                          {p.author.split(" ").map((n) => n[0]).join("")}
+                        </div>
+                        <div>
+                          <p className="text-[11px] font-bold text-[#0e0e0e]">{p.author}</p>
+                          <p className="text-[10px] text-gray-400">{p.readTime}</p>
+                        </div>
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
+                    </div>
                   </div>
-                </div>
+                </Link>
               </motion.div>
             ))}
           </div>

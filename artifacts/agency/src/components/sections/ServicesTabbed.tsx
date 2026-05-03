@@ -574,12 +574,12 @@ export function ServicesTabbed() {
         {/* Bottom CTA */}
         <div className="mt-8 flex items-center justify-center gap-4">
           <p className="text-sm text-gray-400">Not sure which service fits?</p>
-          <a
-            href="/contact"
+          <Link
+            href="/free-audit"
             className="inline-flex items-center gap-2 border border-[#e5e2d9] hover:border-primary/50 text-[#0e0e0e] font-semibold py-2.5 px-5 rounded-lg transition-colors text-sm group"
           >
-            Talk to us →
-          </a>
+            Get a Free Audit →
+          </Link>
         </div>
       </div>
     </section>

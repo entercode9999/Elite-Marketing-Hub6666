@@ -162,13 +162,13 @@ export function Industries() {
           viewport={{ once: true }}
           className="text-center mt-10"
         >
-          <a
-            href="/contact"
+          <Link
+            href="/our-work"
             className="inline-flex items-center gap-2 border border-border hover:border-primary/50 text-foreground font-semibold py-3 px-6 rounded-lg transition-colors text-sm group"
           >
             See work in your industry
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

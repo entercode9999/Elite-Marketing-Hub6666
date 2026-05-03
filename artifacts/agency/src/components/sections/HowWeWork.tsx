@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 const PHASES = [
   {
@@ -62,13 +63,13 @@ export function HowWeWork() {
             <p className="text-base text-gray-500 leading-relaxed mb-6">
               Every engagement follows the same five-phase architecture — built over ten years of learning what works and what doesn't. There are no surprises in how we operate, because we tell you exactly what to expect before we start.
             </p>
-            <a
-              href="/contact"
+            <Link
+              href="/free-audit"
               className="inline-flex items-center gap-2 bg-[#0e0e0e] text-white font-bold py-3 px-6 rounded-xl text-sm group hover:bg-black/80 transition-colors"
             >
               Start with a free audit
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-            </a>
+            </Link>
           </div>
         </div>
 

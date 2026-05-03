@@ -6,35 +6,35 @@ const ARTICLES = [
   {
     image: "/case-study-dental.png",
     category: "Local SEO",
-    readTime: "7 min read",
-    title: "Why Toronto Businesses Are Losing the Map Pack in 2026 — And the Six Fixes That Actually Work",
+    readTime: "8 min read",
+    title: "Why Local SEO Still Wins in 2025 — And How Ontario Businesses Can Dominate It",
     excerpt:
-      "The map pack algorithm shifted twice in Q4 2025. Most businesses haven't adjusted. Here's what changed, why proximity is no longer the dominant signal, and the six structural fixes that moved our clients from invisible to #1 in under 90 days.",
-    href: "/blog/toronto-map-pack-2026",
-    author: "Jamie Park",
-    authorRole: "Head of Local SEO",
+      "The local pack drives 30–45% of click volume on local queries — and that hasn't shrunk despite AI Overviews. Here's what signals actually move the needle in 2025 and how to outrank competitors who are physically closer.",
+    href: "/insights/local-seo-2025",
+    author: "Priya Nair",
+    authorRole: "Head of SEO",
   },
   {
     image: "/case-study-ecommerce.png",
-    category: "Paid Media",
-    readTime: "9 min read",
-    title: "The DTC Paid Media Playbook After iOS 18: How We Maintained 6x ROAS When Everyone Else Was Crying About Attribution",
+    category: "Google Ads",
+    readTime: "7 min read",
+    title: "PPC Budget Waste: The 7 Mistakes Ontario Businesses Make on Google Ads",
     excerpt:
-      "iOS attribution tracking is still broken. But the brands surviving it aren't using better tools — they're using a different model. We rebuilt our DTC playbook around first-party data, creative velocity, and blended ROAS. Here's the full breakdown.",
-    href: "/blog/dtc-paid-media-ios18",
-    author: "Alex Thornton",
-    authorRole: "Paid Media Director",
+      "After auditing 80+ Google Ads accounts, these are the seven mistakes we see in nearly every self-managed account — and the ones costing the most money. Mistake #1 is active in 41% of accounts.",
+    href: "/insights/ppc-budget-waste-7-mistakes",
+    author: "Jordan Kim",
+    authorRole: "Head of Paid Media",
   },
   {
     image: "/case-study-saas.png",
-    category: "SEO Strategy",
+    category: "Content",
     readTime: "12 min read",
-    title: "Programmatic SEO at Scale: How We Ranked 2,400 Keywords in 6 Months Without Thin Content Penalties",
+    title: "Content That Compounds: Our Topical Authority Playbook for 2025",
     excerpt:
-      "Programmatic SEO has a quality problem. Most implementations get penalised because they sacrifice depth for volume. We built an architecture that generates 40–80 genuinely useful, schema-rich pages per month — and the traffic compounded in a straight line from month four.",
-    href: "/blog/programmatic-seo-scale",
-    author: "Priya Nair",
-    authorRole: "Technical SEO Lead",
+      "Most agencies write content to fill a calendar. We build content architectures that compound in authority over time. Here's the exact hub-and-spoke framework — and the data on what it produces.",
+    href: "/insights/topical-authority-playbook",
+    author: "Marcus Reid",
+    authorRole: "Founder & CEO",
   },
 ];
 
@@ -54,10 +54,10 @@ export function BlogInsights() {
             </p>
           </div>
           <Link
-            href="/contact"
+            href="/insights"
             className="shrink-0 inline-flex items-center gap-2 border border-[#e5e2d9] hover:border-primary/40 hover:text-primary text-gray-700 font-semibold py-2.5 px-5 rounded-xl transition-colors text-sm group"
           >
-            Get a Free Audit
+            All articles
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
         </div>
@@ -65,14 +65,14 @@ export function BlogInsights() {
         {/* Articles grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
           {ARTICLES.map((article, i) => (
-            <motion.a
+            <motion.div
               key={article.title}
-              href={article.href}
+              onClick={() => window.location.href = article.href}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
-              className="group flex flex-col bg-white border border-[#e5e2d9] rounded-2xl overflow-hidden hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+              className="group flex flex-col bg-white border border-[#e5e2d9] rounded-2xl overflow-hidden hover:border-primary/30 hover:shadow-lg transition-all duration-300 cursor-pointer"
             >
               {/* Image */}
               <div className="aspect-[16/9] overflow-hidden relative">
@@ -115,7 +115,7 @@ export function BlogInsights() {
                   </span>
                 </div>
               </div>
-            </motion.a>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -150,6 +150,12 @@ import { PricingPage, FreeAuditPage, ThankYouPage } from "@/pages/ConversionPage
 /* ── Our Work & Case Studies ── */
 import { OurWorkPage, CaseStudyPage } from "@/pages/WorkPage";
 
+/* ── Insight article detail pages ── */
+import { InsightArticlePage } from "@/pages/InsightArticlePage";
+
+/* ── Testimonials ── */
+import { TestimonialsPage } from "@/pages/TestimonialsPage";
+
 const queryClient = new QueryClient();
 
 function Router() {
@@ -173,6 +179,12 @@ function Router() {
       <Route path="/pricing" component={PricingPage} />
       <Route path="/free-audit" component={FreeAuditPage} />
       <Route path="/thank-you" component={ThankYouPage} />
+
+      {/* ── Insight article detail ── */}
+      <Route path="/insights/:slug" component={InsightArticlePage} />
+
+      {/* ── Testimonials ── */}
+      <Route path="/testimonials" component={TestimonialsPage} />
 
       {/* ── Cities hub ── */}
       <Route path="/cities" component={CitiesPage} />
