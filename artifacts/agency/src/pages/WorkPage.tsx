@@ -19,27 +19,13 @@ interface CaseStudyData {
   heroHeadline: string;
   heroBullets: string[];
   about: string;
-  projectDetails: {
-    label: string;
-    value: string;
-  }[];
-  challenges: {
-    title: string;
-    description: string;
-  }[];
-  solutionSteps: {
-    title: string;
-    description: string;
-  }[];
-  results: {
-    stat: string;
-    label: string;
-  }[];
-  testimonial?: {
-    quote: string;
-    name: string;
-    role: string;
-  };
+  projectDetails: { label: string; value: string }[];
+  challenges: { title: string; description: string }[];
+  solutionSteps: { title: string; description: string }[];
+  results: { stat: string; label: string }[];
+  testimonial?: { quote: string; name: string; role: string };
+  beforeStats: { label: string; value: string }[];
+  keywords: { term: string; before: number; after: number }[];
 }
 
 const CASE_STUDIES: CaseStudyData[] = [
@@ -111,6 +97,20 @@ const CASE_STUDIES: CaseStudyData[] = [
       name: "Dr. James Meridian",
       role: "Founder, Meridian Dental Group",
     },
+    beforeStats: [
+      { label: "Page Speed Score", value: "31/100" },
+      { label: "Map Pack Positions", value: "0" },
+      { label: "Primary Keyword Rankings", value: "Page 3–5" },
+      { label: "Monthly Organic Calls", value: "~12/mo" },
+    ],
+    keywords: [
+      { term: "dentist toronto", before: 38, after: 1 },
+      { term: "dental clinic toronto", before: 24, after: 2 },
+      { term: "emergency dentist toronto", before: 31, after: 1 },
+      { term: "invisalign toronto", before: 19, after: 3 },
+      { term: "toronto dental implants", before: 42, after: 1 },
+      { term: "teeth whitening toronto", before: 17, after: 2 },
+    ],
   },
   {
     slug: "gta-home-pros",
@@ -180,6 +180,20 @@ const CASE_STUDIES: CaseStudyData[] = [
       name: "Marco Deluca",
       role: "Owner, GTA Home Pros",
     },
+    beforeStats: [
+      { label: "Google Ads ROAS", value: "0.8×" },
+      { label: "Cost Per Booked Job", value: "$380+" },
+      { label: "Monthly Lead Volume", value: "~22/mo" },
+      { label: "Landing Page CVR", value: "0.9%" },
+    ],
+    keywords: [
+      { term: "hvac repair mississauga", before: 22, after: 1 },
+      { term: "plumber brampton", before: 14, after: 3 },
+      { term: "hvac toronto", before: 31, after: 2 },
+      { term: "emergency plumber gta", before: 18, after: 1 },
+      { term: "electrician mississauga", before: 28, after: 4 },
+      { term: "ac repair toronto", before: 24, after: 2 },
+    ],
   },
   {
     slug: "axiom-law",
@@ -249,6 +263,20 @@ const CASE_STUDIES: CaseStudyData[] = [
       name: "Alexandra Chen",
       role: "Partner, Axiom Law Professional Corporation",
     },
+    beforeStats: [
+      { label: "Page 1 Keyword Rankings", value: "0" },
+      { label: "Domain Authority", value: "0 (new domain)" },
+      { label: "Monthly Organic Traffic", value: "<200/mo" },
+      { label: "Indexed Content Pages", value: "8" },
+    ],
+    keywords: [
+      { term: "toronto corporate lawyer", before: 52, after: 4 },
+      { term: "commercial litigation toronto", before: 44, after: 3 },
+      { term: "employment lawyer toronto", before: 28, after: 8 },
+      { term: "corporate solicitor toronto", before: 61, after: 2 },
+      { term: "commercial lease dispute toronto", before: 33, after: 1 },
+      { term: "shareholder dispute lawyer toronto", before: 47, after: 2 },
+    ],
   },
   {
     slug: "northview-kitchens",
@@ -318,6 +346,20 @@ const CASE_STUDIES: CaseStudyData[] = [
       name: "Robert Northfield",
       role: "Owner, Northview Kitchens & Bath",
     },
+    beforeStats: [
+      { label: "Google Ads ROAS", value: "1.1×" },
+      { label: "Landing Page CVR", value: "1.2%" },
+      { label: "Project Backlog", value: "3 weeks" },
+      { label: "Qualified Leads/Month", value: "~8" },
+    ],
+    keywords: [
+      { term: "kitchen renovation hamilton", before: 18, after: 2 },
+      { term: "kitchen remodel burlington", before: 24, after: 1 },
+      { term: "bathroom renovation hamilton", before: 31, after: 3 },
+      { term: "kitchen contractor burlington", before: 22, after: 1 },
+      { term: "custom cabinets hamilton", before: 14, after: 2 },
+      { term: "bathroom remodel burlington", before: 28, after: 2 },
+    ],
   },
   {
     slug: "purecycle-fitness",
@@ -387,6 +429,20 @@ const CASE_STUDIES: CaseStudyData[] = [
       name: "Priya Sharma",
       role: "Co-Founder, Purecycle Fitness Studios",
     },
+    beforeStats: [
+      { label: "New Members/Month", value: "~14" },
+      { label: "Email List Activity", value: "Dormant (18 mo)" },
+      { label: "Paid Advertising Spend", value: "$0" },
+      { label: "Member Acquisition Channel", value: "Word of mouth only" },
+    ],
+    keywords: [
+      { term: "boutique fitness markham", before: 18, after: 2 },
+      { term: "cycling studio richmond hill", before: 24, after: 1 },
+      { term: "fitness classes markham", before: 14, after: 3 },
+      { term: "yoga studio richmond hill", before: 22, after: 1 },
+      { term: "hiit classes markham", before: 31, after: 2 },
+      { term: "spin classes markham", before: 19, after: 1 },
+    ],
   },
   {
     slug: "bluesky-roofing",
@@ -456,6 +512,20 @@ const CASE_STUDIES: CaseStudyData[] = [
       name: "Kevin Bluestein",
       role: "Owner, BlueSky Roofing & Exteriors",
     },
+    beforeStats: [
+      { label: "Map Pack Position", value: "Not ranked" },
+      { label: "Google Reviews", value: "11 (4.1★)" },
+      { label: "GBP Impressions/Month", value: "~840" },
+      { label: "Monthly Calls from Google", value: "~18/mo" },
+    ],
+    keywords: [
+      { term: "roofing contractor brampton", before: 28, after: 1 },
+      { term: "roof repair brampton", before: 19, after: 1 },
+      { term: "roofer brampton", before: 34, after: 1 },
+      { term: "roof replacement brampton", before: 22, after: 2 },
+      { term: "emergency roof repair brampton", before: 41, after: 1 },
+      { term: "shingle repair brampton", before: 16, after: 1 },
+    ],
   },
 ];
 
@@ -891,6 +961,60 @@ export function CaseStudyPage() {
         </div>
       </section>
 
+      {/* ═══ BEFORE vs AFTER ═══════════════════════════════════════════ */}
+      <section className="py-20 bg-[#f9f8f5]">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-10">
+            <p className="text-[11px] font-black uppercase tracking-widest mb-2" style={{ color: cs.accentColor }}>Diagnostic Snapshot</p>
+            <h2 className="text-2xl md:text-3xl font-black text-[#0e0e0e]">Where {cs.client} started — and where they are now</h2>
+          </div>
+          <div className="rounded-2xl overflow-hidden border border-[#e5e2d9] shadow-sm grid md:grid-cols-2">
+            {/* BEFORE */}
+            <div className="bg-white p-8 md:p-10 md:border-r border-b md:border-b-0 border-[#e5e2d9]">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-8 h-8 rounded-full bg-red-50 border border-red-100 flex items-center justify-center flex-shrink-0">
+                  <span className="text-red-400 text-xs font-black leading-none">✕</span>
+                </div>
+                <p className="font-black text-[#0e0e0e] text-[13px] uppercase tracking-widest">Before Outlier</p>
+              </div>
+              <div className="space-y-0">
+                {cs.beforeStats.map((s, i) => (
+                  <div key={i} className="flex items-center justify-between py-4 border-b border-[#f0ede6] last:border-0">
+                    <p className="text-gray-500 text-sm">{s.label}</p>
+                    <p className="font-black text-[#0e0e0e] text-base tabular-nums">{s.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* AFTER */}
+            <div className="p-8 md:p-10" style={{ backgroundColor: `${cs.accentColor}08` }}>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${cs.accentColor}20`, border: `1px solid ${cs.accentColor}35` }}>
+                  <TrendingUp className="w-4 h-4" style={{ color: cs.accentColor }} />
+                </div>
+                <p className="font-black text-[#0e0e0e] text-[13px] uppercase tracking-widest">After Outlier</p>
+              </div>
+              <div className="space-y-0">
+                {cs.results.slice(0, 4).map((r, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: 14 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.08, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                    className="flex items-center justify-between py-4 border-b last:border-0"
+                    style={{ borderColor: `${cs.accentColor}18` }}
+                  >
+                    <p className="text-gray-500 text-sm">{r.label}</p>
+                    <p className="font-black text-base tabular-nums" style={{ color: cs.accentColor }}>{r.stat}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ═══ ABOUT + PROJECT DETAILS ════════════════════════════════ */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
@@ -922,14 +1046,43 @@ export function CaseStudyPage() {
               <h2 className="text-2xl md:text-3xl font-black text-[#0e0e0e] leading-[1.1] mb-6">About {cs.client}</h2>
               <p className="text-gray-600 leading-relaxed text-[16px] mb-10">{cs.about}</p>
 
-              {/* Industry + tagline callout */}
-              <div className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-6 flex gap-5 items-start">
-                <div className="w-10 h-10 rounded-xl flex-shrink-0 flex items-center justify-center" style={{ backgroundColor: `${cs.accentColor}15` }}>
-                  <Globe className="w-5 h-5" style={{ color: cs.accentColor }} />
+              {/* Audit findings visual */}
+              <div className="rounded-2xl overflow-hidden border border-[#e5e2d9]">
+                <div className="flex items-center gap-3 px-5 py-4 bg-[#f9f8f5] border-b border-[#e5e2d9]">
+                  <div className="w-2 h-2 rounded-full bg-red-400" />
+                  <div className="w-2 h-2 rounded-full bg-yellow-400" />
+                  <div className="w-2 h-2 rounded-full bg-green-400" />
+                  <span className="ml-2 text-[10px] font-black uppercase tracking-widest text-gray-400">Audit Findings — {cs.client}</span>
                 </div>
-                <div>
-                  <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1">{cs.industry} · {cs.location}</p>
-                  <p className="text-[#0e0e0e] font-bold text-[15px] leading-snug">{cs.tagline}</p>
+                <div className="bg-white p-5 space-y-3">
+                  {cs.challenges.map((c, i) => (
+                    <div key={i} className="flex gap-3 items-start p-3 rounded-xl bg-red-50/60 border border-red-100/80">
+                      <div className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-red-500 text-[9px] font-black">!</span>
+                      </div>
+                      <div>
+                        <p className="text-[12px] font-black text-[#0e0e0e] mb-0.5">{c.title}</p>
+                        <p className="text-[11px] text-gray-500 leading-snug line-clamp-2">{c.description.slice(0, 90)}…</p>
+                      </div>
+                    </div>
+                  ))}
+                  <div className="flex items-center gap-2 pt-2">
+                    <div className="flex-1 h-1 rounded-full bg-[#f0ede6] overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "100%" }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                        className="h-full rounded-full"
+                        style={{ backgroundColor: cs.accentColor }}
+                      />
+                    </div>
+                    <span className="text-[10px] font-black uppercase tracking-widest" style={{ color: cs.accentColor }}>Issues resolved ✓</span>
+                  </div>
+                </div>
+                <div className="px-5 py-3 bg-[#f9f8f5] border-t border-[#e5e2d9] flex items-center gap-2">
+                  <Globe className="w-3.5 h-3.5 text-gray-400" />
+                  <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">{cs.industry} · {cs.location}</p>
                 </div>
               </div>
             </div>
@@ -1027,6 +1180,141 @@ export function CaseStudyPage() {
             >
               Get a custom strategy like this <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ KEYWORD RANKINGS ══════════════════════════════════════════ */}
+      <section className="relative py-24 bg-[#08090d] overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:72px_72px]" />
+        <div
+          className="absolute bottom-0 right-0 w-[600px] h-[400px] rounded-full blur-[160px] opacity-15 pointer-events-none"
+          style={{ backgroundColor: cs.accentColor }}
+        />
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+          <div className="grid lg:grid-cols-5 gap-14 items-start">
+            {/* Left label */}
+            <div className="lg:col-span-2">
+              <p className="text-[11px] font-black uppercase tracking-widest mb-3" style={{ color: cs.accentColor }}>Search Position Data</p>
+              <h2 className="text-3xl md:text-4xl font-black text-white leading-[1.1] mb-5">
+                Keyword rankings — before & after
+              </h2>
+              <p className="text-white/40 text-[15px] leading-relaxed mb-8">
+                Tracked via Google Search Console and Semrush across the full campaign duration. Every position is verified and attributed.
+              </p>
+              {/* Legend */}
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-white/6 border border-white/10 flex items-center justify-center flex-shrink-0">
+                    <span className="text-white/30 text-[10px] font-black">#38</span>
+                  </div>
+                  <span className="text-white/35 text-sm">Starting position (before Outlier)</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg border flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${cs.accentColor}20`, borderColor: `${cs.accentColor}40` }}>
+                    <span className="text-[10px] font-black" style={{ color: cs.accentColor }}>#1</span>
+                  </div>
+                  <span className="text-white/35 text-sm">Current position (verified)</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center flex-shrink-0">
+                    <TrendingUp className="w-3.5 h-3.5 text-green-400" />
+                  </div>
+                  <span className="text-white/35 text-sm">Positions gained during engagement</span>
+                </div>
+              </div>
+              <p className="text-white/20 text-[11px] mt-8 leading-relaxed">
+                Source: Google Search Console · Semrush<br />Positions reflect end-of-campaign data
+              </p>
+            </div>
+
+            {/* Rankings table */}
+            <div className="lg:col-span-3">
+              {/* Mock browser chrome */}
+              <div className="rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(0,0,0,0.5)]">
+                <div className="flex items-center gap-2 px-4 py-3 bg-white/4 border-b border-white/8">
+                  <div className="w-2.5 h-2.5 rounded-full bg-red-400/50" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/50" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-green-400/50" />
+                  <div className="ml-3 flex-1 bg-white/8 rounded-md h-5 max-w-[200px] flex items-center px-2.5 gap-1.5">
+                    <Search className="w-2.5 h-2.5 text-white/30" />
+                    <span className="text-white/25 text-[9px] font-mono">console.google.com/search</span>
+                  </div>
+                  <span className="text-[9px] font-bold text-white/20 uppercase tracking-widest">Search Console</span>
+                </div>
+                {/* Column headers */}
+                <div className="grid grid-cols-[1fr_72px_72px_56px] gap-2 px-5 py-3 bg-white/3 border-b border-white/6">
+                  <p className="text-[9px] font-black uppercase tracking-widest text-white/25">Keyword</p>
+                  <p className="text-[9px] font-black uppercase tracking-widest text-white/25 text-center">Before</p>
+                  <p className="text-[9px] font-black uppercase tracking-widest text-white/25 text-center">After</p>
+                  <p className="text-[9px] font-black uppercase tracking-widest text-white/25 text-center">Δ</p>
+                </div>
+                {/* Rows */}
+                {cs.keywords.map((kw, i) => (
+                  <motion.div
+                    key={kw.term}
+                    initial={{ opacity: 0, y: 8 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.07, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    className="grid grid-cols-[1fr_72px_72px_56px] gap-2 px-5 py-3.5 border-b border-white/5 last:border-0 items-center hover:bg-white/3 transition-colors"
+                  >
+                    <p className="text-white/65 text-sm font-medium truncate pr-2">{kw.term}</p>
+                    <div className="text-center">
+                      <span className="inline-block text-white/25 font-black text-xs bg-white/5 border border-white/8 rounded-md px-2.5 py-1 tabular-nums">
+                        #{kw.before}
+                      </span>
+                    </div>
+                    <div className="text-center">
+                      <motion.span
+                        initial={{ scale: 0.7, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.07 + 0.18, duration: 0.35, type: "spring", stiffness: 300 }}
+                        className="inline-block font-black text-xs rounded-md px-2.5 py-1 border tabular-nums"
+                        style={{ color: cs.accentColor, backgroundColor: `${cs.accentColor}18`, borderColor: `${cs.accentColor}35` }}
+                      >
+                        #{kw.after}
+                      </motion.span>
+                    </div>
+                    <div className="text-center">
+                      <span className="inline-flex items-center gap-0.5 text-green-400 text-xs font-black">
+                        <TrendingUp className="w-3 h-3" />
+                        {kw.before - kw.after}
+                      </span>
+                    </div>
+                  </motion.div>
+                ))}
+                {/* Footer bar */}
+                <div className="px-5 py-3 bg-white/3 border-t border-white/6 flex items-center justify-between">
+                  <span className="text-white/20 text-[10px]">Showing {cs.keywords.length} tracked keywords</span>
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full border border-green-500/20 bg-green-500/8 text-green-400">
+                    All positions improved ✓
+                  </span>
+                </div>
+              </div>
+
+              {/* Mini performance cards row */}
+              <div className="grid grid-cols-3 gap-3 mt-4">
+                {[
+                  { label: "Avg. rank improvement", value: `+${Math.round(cs.keywords.reduce((acc, k) => acc + (k.before - k.after), 0) / cs.keywords.length)} positions` },
+                  { label: "Keywords on page 1", value: `${cs.keywords.filter(k => k.after <= 10).length}/${cs.keywords.length}` },
+                  { label: "Top 3 rankings", value: `${cs.keywords.filter(k => k.after <= 3).length} keywords` },
+                ].map((stat, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.6 + i * 0.08, duration: 0.4 }}
+                    className="rounded-xl p-4 border border-white/8 bg-white/4 text-center"
+                  >
+                    <p className="font-black text-sm mb-1" style={{ color: cs.accentColor }}>{stat.value}</p>
+                    <p className="text-white/30 text-[10px] leading-snug">{stat.label}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
