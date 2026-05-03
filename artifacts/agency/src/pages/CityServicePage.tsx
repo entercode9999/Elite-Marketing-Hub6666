@@ -2801,7 +2801,7 @@ export default function CityServicePage() {
         </div>
       </section>
 
-      {/* ═══ OTHER CITY SERVICES + NEARBY MARKETS ═══════════════════════ */}
+      {/* ═══ OTHER CITY SERVICES + CTA ══════════════════════════════════ */}
       <section className="py-20 bg-[#f9f8f5] border-b border-[#e5e2d9]">
         <div className="container mx-auto px-4 max-w-7xl">
 
@@ -2828,34 +2828,6 @@ export default function CityServicePage() {
                 </Link>
               ))}
             </div>
-          </div>
-
-          {/* Same-province nearby cities with the same service */}
-          <div>
-            <div className="max-w-2xl mb-8">
-              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Nearby Markets</p>
-              <h2 className="text-2xl md:text-3xl font-black text-[#0e0e0e] leading-[1.1]">
-                {svc.label} in other {city.province} cities
-              </h2>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
-              {relatedCities.map(({ slug, name, province }) => (
-                <Link
-                  key={slug}
-                  href={`/${slug}/${serviceSlug}`}
-                  className="bg-white border border-[#e5e2d9] rounded-xl p-4 hover:border-primary/40 hover:shadow-sm transition-all group flex items-center justify-between"
-                >
-                  <div>
-                    <p className="font-bold text-[#0e0e0e] text-sm">{name}</p>
-                    <p className="text-[11px] text-gray-400 mt-0.5">{province}</p>
-                  </div>
-                  <ArrowRight className="w-3.5 h-3.5 text-gray-300 group-hover:text-primary transition-colors flex-shrink-0" />
-                </Link>
-              ))}
-            </div>
-            <Link href="/cities" className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline">
-              View all Canadian cities we serve <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
 
         </div>
