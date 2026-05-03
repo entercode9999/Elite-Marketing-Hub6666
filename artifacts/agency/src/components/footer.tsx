@@ -50,6 +50,60 @@ const MARKETS = [
   { label: "Markham", href: "/markham/seo-services" },
 ];
 
+const SITEMAP = [
+  {
+    heading: "Main",
+    links: [
+      { label: "Home", href: "/" },
+      { label: "About", href: "/about" },
+      { label: "Insights", href: "/insights" },
+      { label: "Our Work", href: "/our-work" },
+      { label: "Testimonials", href: "/testimonials" },
+      { label: "Pricing", href: "/pricing" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
+  {
+    heading: "Services",
+    links: [
+      { label: "SEO Services", href: "/seo-services" },
+      { label: "Local SEO", href: "/local-seo-service" },
+      { label: "Technical SEO", href: "/technical-seo-service" },
+      { label: "AI SEO", href: "/ai-seo-service" },
+      { label: "Google Ads / PPC", href: "/google-ads-management" },
+      { label: "Social Media Advertising", href: "/social-media-advertising" },
+      { label: "Content Marketing", href: "/content-marketing-service" },
+      { label: "Website Design", href: "/custom-web-design-service" },
+      { label: "Website Development", href: "/website-development-service" },
+      { label: "CRO", href: "/cro-service" },
+    ],
+  },
+  {
+    heading: "Industries",
+    links: [
+      { label: "Dental & Medical", href: "/dental-marketing" },
+      { label: "Legal Services", href: "/legal-marketing" },
+      { label: "Home Services", href: "/home-services-marketing" },
+      { label: "Real Estate", href: "/real-estate-marketing" },
+      { label: "eCommerce & DTC", href: "/ecommerce-marketing" },
+      { label: "SaaS & Tech", href: "/saas-marketing" },
+      { label: "Restaurants", href: "/restaurant-marketing" },
+      { label: "Construction", href: "/construction-marketing" },
+    ],
+  },
+  {
+    heading: "Markets",
+    links: [
+      { label: "Toronto", href: "/toronto/seo-services" },
+      { label: "Mississauga", href: "/mississauga/seo-services" },
+      { label: "Hamilton", href: "/hamilton/seo-services" },
+      { label: "Ottawa", href: "/ottawa/seo-services" },
+      { label: "Brampton", href: "/brampton/seo-services" },
+      { label: "All cities", href: "/cities" },
+    ],
+  },
+];
+
 function FooterCol({ heading, links, extra }: { heading: string; links: { label: string; href: string }[]; extra?: React.ReactNode }) {
   return (
     <div>
@@ -136,6 +190,15 @@ export function Footer() {
                   </Link>
                 </li>
               </ul>
+            </div>
+          </div>
+
+          <div className="col-span-2 lg:col-span-6">
+            <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-5">Sitemap</h4>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {SITEMAP.map((group) => (
+                <FooterCol key={group.heading} heading={group.heading} links={group.links} />
+              ))}
             </div>
           </div>
 
