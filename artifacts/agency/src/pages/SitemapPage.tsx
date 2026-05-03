@@ -41,7 +41,7 @@ const sections = [
 ];
 
 const urlTotal = 215;
-const indexableTotal = 114;
+const indexableTotal = 215;
 
 export default function SitemapPage() {
   useSeo({
