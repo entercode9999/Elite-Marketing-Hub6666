@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { MapPin, ArrowRight, ChevronRight } from "lucide-react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { useSeo } from "@/hooks/useSeo";
 
 const GTA_CITIES = [
   { name: "Toronto", slug: "toronto" },
@@ -81,6 +82,11 @@ function CityCard({ city }: { city: { name: string; slug: string } }) {
 }
 
 export default function CitiesPage() {
+  useSeo({
+    title: "Ontario Cities We Serve | Outlier",
+    description: "Browse the Ontario and Greater Toronto Area cities where Outlier builds local SEO and digital marketing campaigns.",
+    canonicalPath: "/cities",
+  });
   return (
     <div className="min-h-screen bg-[#f9f8f5]">
       <Nav />

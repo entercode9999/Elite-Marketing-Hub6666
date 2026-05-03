@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { useSeo } from "@/hooks/useSeo";
 
 /* ─── Shared hero shell ──────────────────────────────────────────── */
 function DarkHero({ label, title, sub, children }: { label: string; title: React.ReactNode; sub?: string; children?: React.ReactNode }) {
@@ -95,6 +96,11 @@ const MILESTONES = [
 ];
 
 export function AboutPage() {
+  useSeo({
+    title: "About Outlier Toronto Digital Marketing Agency",
+    description: "Meet the Toronto digital marketing team behind Outlier’s SEO, paid media, web, and CRO work for Ontario brands.",
+    canonicalPath: "/about",
+  });
   return (
     <div className="min-h-screen bg-white">
       <Nav />

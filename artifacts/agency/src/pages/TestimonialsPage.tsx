@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Star, ArrowRight, Quote } from "lucide-react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { useSeo } from "@/hooks/useSeo";
 
 const REVIEWS = [
   {
@@ -162,6 +163,11 @@ const INDUSTRY_COLORS: Record<string, string> = {
 };
 
 export function TestimonialsPage() {
+  useSeo({
+    title: "Toronto Digital Marketing Testimonials | Outlier",
+    description: "Read real Toronto and Ontario business reviews of Outlier’s SEO, paid media, and web design work.",
+    canonicalPath: "/testimonials",
+  });
   return (
     <div className="min-h-screen bg-[#f9f8f5]">
       <Nav />

@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { useSeo } from "@/hooks/useSeo";
 
 /* ══════════════════════════════════════════════════════════════════
    PRICING PAGE  /pricing
@@ -215,6 +216,11 @@ function PricingFaqItem({ q, a, index }: { q: string; a: string; index: number }
 }
 
 export function PricingPage() {
+  useSeo({
+    title: "Digital Marketing Pricing Toronto | Outlier",
+    description: "See straightforward Toronto digital marketing pricing for SEO, Google Ads, and growth campaigns from Outlier.",
+    canonicalPath: "/pricing",
+  });
   return (
     <div className="min-h-screen bg-[#f9f8f5]">
       <Nav />

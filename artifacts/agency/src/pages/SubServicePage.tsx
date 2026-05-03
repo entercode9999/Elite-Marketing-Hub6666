@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { LogoMarquee } from "@/components/LogoMarquee";
+import { useSeo } from "@/hooks/useSeo";
 import { ArrowRight, Check, ChevronRight, Clock, BarChart2, Zap, Shield } from "lucide-react";
 
 export interface SubServiceData {
@@ -212,6 +213,10 @@ function getTimeline(parent: string): { week: string; milestone: string }[] {
 export function SubServicePage({ data }: { data: SubServiceData }) {
   const tools = data.tools ?? getTools(data.parentLabel);
   const timeline = getTimeline(data.parentLabel);
+  useSeo({
+    title: `${data.label} | Outlier`,
+    description: data.subhead.slice(0, 160),
+  });
 
   return (
     <div className="min-h-screen bg-white flex flex-col selection:bg-primary selection:text-white">

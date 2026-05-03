@@ -3,8 +3,13 @@ import { motion } from "framer-motion";
 import { ArrowRight, Home, Search, Phone } from "lucide-react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { useSeo } from "@/hooks/useSeo";
 
 export default function NotFound() {
+  useSeo({
+    title: "Page Not Found | Outlier",
+    description: "The page you requested could not be found on Outlier.",
+  });
   return (
     <div className="min-h-screen bg-[#08090d] flex flex-col">
       <Nav />
