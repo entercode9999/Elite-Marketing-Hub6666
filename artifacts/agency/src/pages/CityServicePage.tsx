@@ -2088,11 +2088,29 @@ export default function CityServicePage() {
   const neighbourhoodList = city.neighborhoodsOrAreas.split(",").map((n) => n.trim()).filter(Boolean);
   const tierCompetition = TIER_COMPETITION[city.marketTier];
 
-  /* Related cities — same service, different cities (up to 8) */
+  /* Related cities — same province first, up to 8 */
   const relatedCities = Object.entries(CITIES)
-    .filter(([slug]) => slug !== citySlug && slug !== "london-ontario")
+    .filter(([slug]) => slug !== citySlug)
+    .sort(([, a], [, b]) => {
+      if (a.province === city.province && b.province !== city.province) return -1;
+      if (b.province === city.province && a.province !== city.province) return 1;
+      return 0;
+    })
     .slice(0, 8)
-    .map(([slug, data]) => ({ slug, name: data.name }));
+    .map(([slug, data]) => ({ slug, name: data.name, province: data.province }));
+
+  /* All services for this city — used for cross-service internal links */
+  const ALL_CITY_SERVICES = [
+    { slug: "seo-services", label: "SEO Services" },
+    { slug: "local-seo", label: "Local SEO" },
+    { slug: "google-ads", label: "Google Ads" },
+    { slug: "social-ads", label: "Social Media Ads" },
+    { slug: "content-marketing", label: "Content Marketing" },
+    { slug: "email-marketing", label: "Email Marketing" },
+    { slug: "digital-marketing", label: "Digital Marketing" },
+    { slug: "web-design", label: "Web Design" },
+  ];
+  const otherCityServices = ALL_CITY_SERVICES.filter((s) => s.slug !== serviceSlug);
 
   /* Example local search queries — generated dynamically */
   const shortKeyword = svc.shortLabel.toLowerCase();
@@ -2783,33 +2801,63 @@ export default function CityServicePage() {
         </div>
       </section>
 
-      {/* ═══ RELATED CITIES (pSEO internal linking) ════════════════════ */}
+      {/* ═══ OTHER CITY SERVICES + NEARBY MARKETS ═══════════════════════ */}
       <section className="py-20 bg-[#f9f8f5] border-b border-[#e5e2d9]">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="max-w-2xl mb-10">
-            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">More Canadian Cities</p>
-            <h2 className="text-2xl md:text-3xl font-black text-[#0e0e0e] leading-[1.1]">
-              {svc.label} across Canada — we serve {Object.keys(CITIES).length}+ cities
-            </h2>
+
+          {/* Other services for this exact city */}
+          <div className="mb-16">
+            <div className="max-w-2xl mb-8">
+              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">{city.name} Services</p>
+              <h2 className="text-2xl md:text-3xl font-black text-[#0e0e0e] leading-[1.1]">
+                Other services we offer in {city.name}
+              </h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+              {otherCityServices.map((s) => (
+                <Link
+                  key={s.slug}
+                  href={`/${citySlug}/${s.slug}`}
+                  className="bg-white border border-[#e5e2d9] rounded-xl p-4 hover:border-primary/40 hover:shadow-sm transition-all group flex items-center justify-between"
+                >
+                  <div>
+                    <p className="font-bold text-[#0e0e0e] text-sm">{s.label}</p>
+                    <p className="text-[11px] text-gray-400 mt-0.5">{city.name}</p>
+                  </div>
+                  <ArrowRight className="w-3.5 h-3.5 text-gray-300 group-hover:text-primary transition-colors flex-shrink-0" />
+                </Link>
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
-            {relatedCities.map(({ slug, name }) => (
-              <Link
-                key={slug}
-                href={`/${slug}/${serviceSlug}`}
-                className="bg-white border border-[#e5e2d9] rounded-xl p-4 hover:border-primary/40 hover:shadow-sm transition-all group flex items-center justify-between"
-              >
-                <div>
-                  <p className="font-bold text-[#0e0e0e] text-sm">{name}</p>
-                  <p className="text-[11px] text-gray-400 mt-0.5">{svc.shortLabel}</p>
-                </div>
-                <ArrowRight className="w-3.5 h-3.5 text-gray-300 group-hover:text-primary transition-colors flex-shrink-0" />
-              </Link>
-            ))}
+
+          {/* Same-province nearby cities with the same service */}
+          <div>
+            <div className="max-w-2xl mb-8">
+              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Nearby Markets</p>
+              <h2 className="text-2xl md:text-3xl font-black text-[#0e0e0e] leading-[1.1]">
+                {svc.label} in other {city.province} cities
+              </h2>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+              {relatedCities.map(({ slug, name, province }) => (
+                <Link
+                  key={slug}
+                  href={`/${slug}/${serviceSlug}`}
+                  className="bg-white border border-[#e5e2d9] rounded-xl p-4 hover:border-primary/40 hover:shadow-sm transition-all group flex items-center justify-between"
+                >
+                  <div>
+                    <p className="font-bold text-[#0e0e0e] text-sm">{name}</p>
+                    <p className="text-[11px] text-gray-400 mt-0.5">{province}</p>
+                  </div>
+                  <ArrowRight className="w-3.5 h-3.5 text-gray-300 group-hover:text-primary transition-colors flex-shrink-0" />
+                </Link>
+              ))}
+            </div>
+            <Link href="/cities" className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline">
+              View all Canadian cities we serve <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
-          <Link href="/cities" className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline">
-            View all Canadian cities we serve <ArrowRight className="w-4 h-4" />
-          </Link>
+
         </div>
       </section>
 
@@ -2837,16 +2885,16 @@ export default function CityServicePage() {
             </div>
 
             <div>
-              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">More local pages</p>
+              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Get started</p>
               <h2 className="text-2xl font-black text-[#0e0e0e] mb-6">
-                More {city.name} services and nearby markets
+                Ready to grow your {city.name} business?
               </h2>
               <div className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-6 mb-4">
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  Every city page we build is researched for that specific market, priced for that specific competition level, and executed by specialists who know the local landscape. If you’re exploring other markets, use the city directory to compare nearby service pages and coverage areas.
+                  Our team knows the {city.name} market. Every strategy we build is tailored to your specific competitive landscape, your local audience, and your growth goals — not a generic template.
                 </p>
-                <Link href="/cities" className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline">
-                  View all Canadian cities <ArrowRight className="w-4 h-4" />
+                <Link href={`/${citySlug}`} className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline">
+                  See all {city.name} services <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
               <Link href="/contact" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors text-sm w-full justify-center">
