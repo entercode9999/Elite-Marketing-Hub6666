@@ -615,7 +615,7 @@ export function InsightArticlePage() {
                   </ul>
                 )}
                 {section.stat && (
-                  <div className="grid grid-cols-3 gap-4 my-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
                     {section.stat.map((s, si) => (
                       <div
                         key={si}

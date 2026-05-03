@@ -95,7 +95,7 @@ export function HowWeWork() {
               <span className={`text-[10px] font-black tracking-[0.15em] uppercase leading-none ${active === i ? "text-primary" : "text-gray-300 group-hover:text-gray-400"}`}>
                 {phase.number}
               </span>
-              <span className={`text-[11px] font-bold leading-tight hidden sm:block ${active === i ? "text-white" : "text-gray-500"}`}>
+              <span className={`text-[10px] font-bold leading-tight ${active === i ? "text-white" : "text-gray-500"}`}>
                 {phase.label}
               </span>
             </button>

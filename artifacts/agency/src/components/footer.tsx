@@ -73,7 +73,7 @@ export function Footer() {
     <footer className="bg-[#08090d] text-white border-t border-white/8">
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-10">
 
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-10 lg:gap-12 mb-14">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-10 lg:gap-12 mb-14">
 
           {/* Brand */}
           <div className="col-span-2">

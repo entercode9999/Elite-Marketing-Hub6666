@@ -474,30 +474,56 @@ export function ServicesTabbed() {
 
         {/* Main tabbed layout */}
         <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-0 border border-[#e5e2d9] rounded-2xl overflow-hidden shadow-sm">
-          {/* Left: category tabs */}
-          <div className="bg-[#f9f8f5] border-r border-[#e5e2d9]">
-            {SERVICES.map((svc, i) => (
-              <button
-                key={svc.id}
-                onClick={() => handleTabClick(i)}
-                className={`w-full flex items-center gap-3 px-5 py-4 text-left transition-all border-b border-[#e5e2d9] last:border-0 group ${
-                  active === i
-                    ? "bg-white border-l-2 border-l-primary"
-                    : "hover:bg-gray-50 border-l-2 border-l-transparent"
-                }`}
-              >
-                <div
-                  className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all"
-                  style={{ background: active === i ? `${svc.color}18` : "rgba(0,0,0,0.05)" }}
+          {/* Left: category tabs — horizontal scroll on mobile, vertical on lg */}
+          <div className="bg-[#f9f8f5] border-b border-[#e5e2d9] lg:border-b-0 lg:border-r lg:border-[#e5e2d9]">
+            {/* Mobile: horizontal scrollable pill strip */}
+            <div className="flex overflow-x-auto gap-2 p-3 lg:hidden scrollbar-hide">
+              {SERVICES.map((svc, i) => (
+                <button
+                  key={svc.id}
+                  onClick={() => handleTabClick(i)}
+                  className={`flex items-center gap-2 px-3.5 py-2 rounded-xl whitespace-nowrap shrink-0 text-sm font-semibold transition-all border ${
+                    active === i
+                      ? "bg-white border-[#e5e2d9] shadow-sm text-[#0e0e0e]"
+                      : "border-transparent text-gray-400 hover:text-gray-700"
+                  }`}
                 >
-                  <svc.icon className="w-4 h-4" style={{ color: active === i ? svc.color : "rgba(0,0,0,0.3)" }} />
-                </div>
-                <span className={`font-semibold text-sm transition-colors ${active === i ? "text-[#0e0e0e]" : "text-gray-400 group-hover:text-gray-700"}`}>
+                  <div
+                    className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
+                    style={{ background: active === i ? `${svc.color}18` : "rgba(0,0,0,0.05)" }}
+                  >
+                    <svc.icon className="w-3.5 h-3.5" style={{ color: active === i ? svc.color : "rgba(0,0,0,0.3)" }} />
+                  </div>
                   {svc.label}
-                </span>
-                {active === i && <div className="ml-auto w-1.5 h-1.5 rounded-full" style={{ background: svc.color }} />}
-              </button>
-            ))}
+                  {active === i && <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: svc.color }} />}
+                </button>
+              ))}
+            </div>
+            {/* Desktop: vertical list */}
+            <div className="hidden lg:block">
+              {SERVICES.map((svc, i) => (
+                <button
+                  key={svc.id}
+                  onClick={() => handleTabClick(i)}
+                  className={`w-full flex items-center gap-3 px-5 py-4 text-left transition-all border-b border-[#e5e2d9] last:border-0 group ${
+                    active === i
+                      ? "bg-white border-l-2 border-l-primary"
+                      : "hover:bg-gray-50 border-l-2 border-l-transparent"
+                  }`}
+                >
+                  <div
+                    className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all"
+                    style={{ background: active === i ? `${svc.color}18` : "rgba(0,0,0,0.05)" }}
+                  >
+                    <svc.icon className="w-4 h-4" style={{ color: active === i ? svc.color : "rgba(0,0,0,0.3)" }} />
+                  </div>
+                  <span className={`font-semibold text-sm transition-colors ${active === i ? "text-[#0e0e0e]" : "text-gray-400 group-hover:text-gray-700"}`}>
+                    {svc.label}
+                  </span>
+                  {active === i && <div className="ml-auto w-1.5 h-1.5 rounded-full" style={{ background: svc.color }} />}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Right: content panel */}

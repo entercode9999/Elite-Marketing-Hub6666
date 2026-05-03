@@ -453,7 +453,7 @@ export function FreeAuditPage() {
               initial={{ opacity: 0, x: 24 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="hidden lg:block"
+              className="mt-4 lg:mt-0"
             >
               <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
                 <p className="text-[10px] font-black uppercase tracking-widest text-primary mb-4">What you receive</p>

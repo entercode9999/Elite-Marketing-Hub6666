@@ -108,15 +108,15 @@ export function AboutPage() {
       {/* Stats strip */}
       <section className="bg-primary">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="flex flex-wrap divide-x divide-white/20">
+          <div className="grid grid-cols-2 sm:grid-cols-5">
             {[
               { n: "2013", l: "Founded in Toronto" },
               { n: "200+", l: "Ontario brands grown" },
               { n: "93%", l: "Client retention after year 1" },
               { n: "10yr+", l: "Avg. team experience" },
               { n: "4.9★", l: "Clutch agency rating" },
-            ].map((s) => (
-              <div key={s.l} className="flex-1 min-w-[120px] py-5 px-4 text-center">
+            ].map((s, i, arr) => (
+              <div key={s.l} className={`py-5 px-4 text-center border-white/20 border-r border-b sm:border-b-0 last:border-r-0 sm:last:border-r-0 ${i === arr.length - 1 ? "col-span-2 sm:col-span-1 border-r-0" : ""}`}>
                 <p className="text-white font-black text-xl leading-none mb-1">{s.n}</p>
                 <p className="text-white/60 text-[9px] font-bold uppercase tracking-widest leading-tight">{s.l}</p>
               </div>
