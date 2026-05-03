@@ -250,10 +250,10 @@ export default function Home() {
                   From local monopolies to national scale — we measure success in revenue, not rankings.
                 </p>
               </div>
-              <a href="/our-work" className="shrink-0 inline-flex items-center gap-2 border border-border hover:border-primary/40 text-foreground font-semibold py-2.5 px-5 rounded-lg transition-colors text-sm group">
+              <Link href="/our-work" className="shrink-0 inline-flex items-center gap-2 border border-border hover:border-primary/40 text-foreground font-semibold py-2.5 px-5 rounded-lg transition-colors text-sm group">
                 View all work
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
+              </Link>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
