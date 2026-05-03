@@ -30,7 +30,7 @@ const sections = [
   {
     title: "Cities",
     links: [
-      ["Ontario Cities", "/cities"],
+      ["Canadian Cities", "/cities"],
       ["Toronto", "/toronto/seo-services"],
       ["Mississauga", "/mississauga/seo-services"],
       ["Hamilton", "/hamilton/seo-services"],
@@ -43,7 +43,7 @@ const sections = [
 export default function SitemapPage() {
   useSeo({
     title: "Sitemap | Outlier",
-    description: "Browse Outlier's sitemap with company pages, services, and Ontario city pages.",
+    description: "Browse Outlier's sitemap with company pages, services, and Canadian city pages.",
     canonicalPath: "/sitemap",
   });
 
