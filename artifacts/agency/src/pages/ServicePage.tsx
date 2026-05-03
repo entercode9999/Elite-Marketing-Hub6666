@@ -107,9 +107,9 @@ export function ServicePage({ data }: { data: ServicePageData }) {
       <Nav />
 
       {/* ══ HERO — dark split (left text / right stats card) ══ */}
-      <section className="min-h-[480px] grid grid-cols-1 md:grid-cols-2 pt-[68px]">
+      <section className="min-h-[420px] grid grid-cols-1 md:grid-cols-2 pt-[52px] md:pt-[56px]">
         {/* Left: dark */}
-        <div className="bg-[#08090d] flex flex-col justify-center px-10 lg:px-16 py-20">
+        <div className="bg-[#08090d] flex flex-col justify-center px-10 lg:px-16 py-14 lg:py-16">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             {/* Breadcrumb */}
             <nav className="flex items-center gap-1.5 text-xs text-white/25 mb-6 flex-wrap">
@@ -138,12 +138,12 @@ export function ServicePage({ data }: { data: ServicePageData }) {
         </div>
 
         {/* Right: stats grid on light bg */}
-        <div className="bg-[#f2f2ef] flex items-center justify-center px-8 py-16">
+        <div className="bg-[#f2f2ef] flex items-start justify-center px-8 py-10 lg:py-12">
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="w-full max-w-sm"
+            className="w-full max-w-sm mt-2 lg:mt-4"
           >
             <div className="grid grid-cols-2 gap-4">
               {data.stats.map((s) => (
