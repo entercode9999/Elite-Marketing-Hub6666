@@ -1149,7 +1149,7 @@ The first 60–90 days of any Google Ads campaign is a learning and optimisation
     ctaSecondary: "See PPC Results",
     relatedServices: [
       { label: "Local Service Ads", href: "/local-service-ads" },
-      { label: "Paid Social", href: "/social-media-advertising" },
+      { label: "Paid Social", href: "/paid-social-service" },
       { label: "SEO Services", href: "/seo-services" },
       { label: "Landing Page Design", href: "/landing-page-design" },
     ],
@@ -1293,9 +1293,9 @@ The ROI of content marketing for [City] businesses is long and compounding. Mont
     ctaSecondary: "See Content Results",
     relatedServices: [
       { label: "SEO Services", href: "/seo-services" },
-      { label: "Paid Social", href: "/social-media-advertising" },
+      { label: "Paid Social", href: "/paid-social-service" },
       { label: "Email Marketing", href: "/email-marketing-service" },
-      { label: "Web Design", href: "/web-design-service" },
+      { label: "Web Design", href: "/custom-web-design-service" },
     ],
   },
 
@@ -1365,7 +1365,7 @@ Platform selection, deliverability, and list hygiene are technical foundations t
     ctaSecondary: "See Email Results",
     relatedServices: [
       { label: "Content Marketing", href: "/content-marketing-service" },
-      { label: "Paid Social", href: "/social-media-advertising" },
+      { label: "Paid Social", href: "/paid-social-service" },
       { label: "Google Ads", href: "/google-ads-management" },
       { label: "SEO Services", href: "/seo-services" },
     ],
@@ -1438,7 +1438,7 @@ Attribution and measurement are the foundation of everything we do for [City] cl
     relatedServices: [
       { label: "SEO Services", href: "/seo-services" },
       { label: "Google Ads Management", href: "/google-ads-management" },
-      { label: "Paid Social", href: "/social-media-advertising" },
+      { label: "Paid Social", href: "/paid-social-service" },
       { label: "Content Marketing", href: "/content-marketing-service" },
     ],
   },
@@ -1583,7 +1583,7 @@ Full-funnel social advertising is where the real efficiency gains emerge. Most [
       { label: "Google Ads", href: "/google-ads-management" },
       { label: "SEO Services", href: "/seo-services" },
       { label: "Digital Marketing", href: "/digital-marketing" },
-      { label: "Web Design", href: "/web-design-service" },
+      { label: "Web Design", href: "/custom-web-design-service" },
     ],
   },
 };

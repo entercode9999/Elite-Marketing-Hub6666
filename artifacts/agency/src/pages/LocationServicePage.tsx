@@ -473,7 +473,7 @@ export const mississaugaLocalSeoData: LocationData = {
   ],
   otherServices: [
     { name: "Google Ads · Mississauga", href: "/mississauga/google-ads-management" },
-    { name: "Web Design · Mississauga", href: "/mississauga/web-design-service" },
+    { name: "Web Design · Mississauga", href: "/mississauga/custom-web-design-service" },
     { name: "Content Marketing · Mississauga", href: "/mississauga/content-marketing-service" },
     { name: "Technical SEO · Mississauga", href: "/mississauga/technical-seo-service" },
     { name: "Reputation Management", href: "/mississauga/reputation-management" },
@@ -552,7 +552,7 @@ export const torontoLocalSeoData: LocationData = {
   ],
   otherServices: [
     { name: "Google Ads · Toronto", href: "/toronto/google-ads-management" },
-    { name: "Web Design · Toronto", href: "/toronto/web-design-service" },
+    { name: "Web Design · Toronto", href: "/toronto/custom-web-design-service" },
     { name: "Content Marketing · Toronto", href: "/toronto/content-marketing-service" },
     { name: "Technical SEO · Toronto", href: "/toronto/technical-seo-service" },
     { name: "Reputation Management", href: "/toronto/reputation-management" },
@@ -631,7 +631,7 @@ export const ottawaLocalSeoData: LocationData = {
   ],
   otherServices: [
     { name: "Google Ads · Ottawa", href: "/ottawa/google-ads-management" },
-    { name: "Web Design · Ottawa", href: "/ottawa/web-design-service" },
+    { name: "Web Design · Ottawa", href: "/ottawa/custom-web-design-service" },
     { name: "Content Marketing · Ottawa", href: "/ottawa/content-marketing-service" },
     { name: "Technical SEO · Ottawa", href: "/ottawa/technical-seo-service" },
     { name: "Bilingual SEO", href: "/ottawa/bilingual-seo-service" },
