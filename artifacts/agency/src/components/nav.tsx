@@ -129,13 +129,13 @@ export function Nav() {
           </div>
 
           {/* CTA */}
-          <a
-            href="/contact"
+          <Link
+            href="/free-audit"
             className="relative overflow-hidden shimmer-button hidden md:inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-2.5 px-5 rounded-lg transition-all text-sm group shadow-lg shadow-primary/30 hover:shadow-primary/50"
           >
             Get a Free Audit
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
+          </Link>
         </div>
       </nav>
 
@@ -179,12 +179,12 @@ export function Nav() {
             </div>
 
             <div className="p-6 border-t border-white/8">
-              <a
-                href="/contact"
+              <Link
+                href="/free-audit"
                 className="flex items-center justify-center gap-2 bg-primary text-white font-bold py-3.5 px-6 rounded-xl text-sm w-full group"
               >
                 Get a Free Audit <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </a>
+              </Link>
               <p className="text-center text-xs text-white/25 mt-3">1-800-555-0199</p>
             </div>
           </div>

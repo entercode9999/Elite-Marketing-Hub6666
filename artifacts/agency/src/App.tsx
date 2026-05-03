@@ -144,6 +144,9 @@ import {
   AccessibilityPage,
 } from "@/pages/SimplePages";
 
+/* ── Conversion pages ── */
+import { PricingPage, FreeAuditPage, ThankYouPage } from "@/pages/ConversionPages";
+
 /* ── Our Work & Case Studies ── */
 import { OurWorkPage, CaseStudyPage } from "@/pages/WorkPage";
 
@@ -165,6 +168,11 @@ function Router() {
       <Route path="/privacy" component={PrivacyPage} />
       <Route path="/terms" component={TermsPage} />
       <Route path="/accessibility" component={AccessibilityPage} />
+
+      {/* ── Conversion pages ── */}
+      <Route path="/pricing" component={PricingPage} />
+      <Route path="/free-audit" component={FreeAuditPage} />
+      <Route path="/thank-you" component={ThankYouPage} />
 
       {/* ── Cities hub ── */}
       <Route path="/cities" component={CitiesPage} />
