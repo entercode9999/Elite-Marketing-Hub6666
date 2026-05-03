@@ -2857,21 +2857,28 @@ export default function CityServicePage() {
             </div>
 
             <div>
-              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Get started</p>
-              <h2 className="text-2xl font-black text-[#0e0e0e] mb-6">
-                Ready to grow your {city.name} business?
-              </h2>
-              <div className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-6 mb-4">
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  Our team knows the {city.name} market. Every strategy we build is tailored to your specific competitive landscape, your local audience, and your growth goals — not a generic template.
-                </p>
-                <Link href={`/${citySlug}`} className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline">
-                  See all {city.name} services <ArrowRight className="w-4 h-4" />
-                </Link>
+              <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#09111f] p-8 text-white shadow-[0_20px_60px_rgba(0,0,0,0.22)]">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.35),transparent_42%),radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.24),transparent_38%)]" />
+                <div className="relative">
+                  <p className="text-[11px] font-black uppercase tracking-[0.28em] text-blue-300/90 mb-3">
+                    {city.name}, {city.province}
+                  </p>
+                  <h2 className="text-3xl font-black leading-[1.05] mb-4">
+                    Built for {city.name} businesses that want more leads.
+                  </h2>
+                  <p className="text-white/70 text-sm leading-relaxed mb-6 max-w-md">
+                    Local strategy, strong design, and performance-focused marketing built for your market — not a generic template.
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <Link href={`/${citySlug}`} className="inline-flex items-center gap-2 rounded-xl bg-white text-[#09111f] font-bold px-5 py-3 text-sm hover:bg-white/90 transition-colors">
+                      View all {city.name} services <ArrowRight className="w-4 h-4" />
+                    </Link>
+                    <Link href="/contact" className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-bold text-white hover:bg-white/10 transition-colors">
+                      Get a free audit <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
               </div>
-              <Link href="/contact" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors text-sm w-full justify-center">
-                {svc.cta} <ArrowRight className="w-4 h-4" />
-              </Link>
             </div>
           </div>
         </div>
