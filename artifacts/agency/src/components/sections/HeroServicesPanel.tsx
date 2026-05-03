@@ -11,7 +11,7 @@ const SERVICES = [
     color: "#4f8aff",
     eyebrow: "Dominate the map pack",
     headline: "Every local search — your business, first.",
-    sub: "We actively manage the citation graph, review velocity, and geo-content that keeps you #1 across every city and neighbourhood you serve.",
+    sub: "Most competitors set up GBP once and hope. We actively manage the citation graph, review velocity, and geo-content that keeps you #1 across every city and neighbourhood you serve.",
     bullets: [
       "GBP optimisation, citation graph, review velocity — systemised",
       "#1 map pack positions across 40+ GTA sub-markets",
@@ -30,7 +30,7 @@ const SERVICES = [
     color: "#ff6b5b",
     eyebrow: "Performance-first campaigns",
     headline: "Revenue from every click. Zero wasted spend.",
-    sub: "Intent-layered campaigns built by a senior strategist from day one — no % of spend fees, no junior handoffs after onboarding.",
+    sub: "No % of spend fees. No junior account managers after onboarding. Your campaigns are built and managed by a senior strategist from day one — with intent-layered architecture that converts.",
     bullets: [
       "Intent-layered keyword structure — transactional, mid-intent, branded",
       "Flat-fee management — no % of spend pricing, ever",
@@ -49,7 +49,7 @@ const SERVICES = [
     color: "#34d399",
     eyebrow: "Conversion-engineered websites",
     headline: "Sites built to convert — not just impress.",
-    sub: "Every layout decision is tied to a conversion goal. We research, architect, and build websites with your funnel in mind — then test until it's the most efficient version of itself.",
+    sub: "Every layout decision is tied to a conversion goal. We research, architect, and build websites with your funnel in mind — then test the funnel until it's the most efficient version of itself.",
     bullets: [
       "Custom-built around your specific funnel and conversion goal",
       "+28% average CVR lift across client CRO engagements",
@@ -68,7 +68,7 @@ const SERVICES = [
     color: "#a78bfa",
     eyebrow: "Topical authority at scale",
     headline: "Content that compounds. Traffic that doesn't leave.",
-    sub: "Topical authority clusters — structured content networks that signal to Google you're the definitive resource in your niche.",
+    sub: "Not blog posts for the sake of it. We build topical authority clusters — structured content networks that signal to Google you're the definitive resource in your niche.",
     bullets: [
       "Authority clusters: 40–80 strategically linked pages",
       "E-E-A-T compliant, expert-written long-form content",
@@ -87,7 +87,7 @@ const SERVICES = [
     color: "#38bdf8",
     eyebrow: "Foundation-first SEO",
     headline: "Fix the foundation. Build traffic that lasts.",
-    sub: "Technical SEO issues silently suppress every other channel. We audit deep, uncover what's blocking growth, and fix it in-sprint.",
+    sub: "Technical SEO issues silently suppress every other marketing investment. We run deep audits that uncover crawl waste, Core Web Vitals failures, and structural problems — then fix them in-sprint.",
     bullets: [
       "Core Web Vitals, crawl budget, schema, redirect chains — audited",
       "Full site audit with prioritised fix roadmap",
@@ -106,7 +106,7 @@ const SERVICES = [
     color: "#fbbf24",
     eyebrow: "AI-powered systems",
     headline: "Leads captured. Workflows automated. Revenue compounded.",
-    sub: "Purpose-built AI systems — custom chatbots, workflow automation, and integrations that reduce overhead and capture leads 24/7.",
+    sub: "Purpose-built AI systems — not off-the-shelf tool configurations. We build custom chatbots, workflow automation, and AI integrations that reduce operational overhead and capture leads 24/7.",
     bullets: [
       "Custom AI chatbots trained on your specific business context",
       "Workflow automation across CRM, email, and project management",
@@ -142,17 +142,17 @@ export function HeroServicesPanel() {
 
   return (
     <div
-      className="flex flex-col gap-4 w-full"
+      className="flex flex-col gap-5 w-full"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
       {/* Service pill tabs */}
-      <div className="flex flex-wrap gap-1.5">
+      <div className="flex flex-wrap gap-2">
         {SERVICES.map((s, i) => (
           <button
             key={s.id}
             onClick={() => go(i)}
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold transition-all duration-300"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all duration-300"
             style={{
               background: active === i ? `${s.color}22` : "rgba(255,255,255,0.06)",
               color: active === i ? s.color : "rgba(255,255,255,0.35)",
@@ -166,9 +166,9 @@ export function HeroServicesPanel() {
       </div>
 
       {/* Main card */}
-      <div className="grid grid-cols-[1fr_1.1fr] gap-3 items-stretch">
+      <div className="grid grid-cols-[1.05fr_0.95fr] gap-4 items-stretch">
         {/* Image panel */}
-        <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-lg" style={{ minHeight: 280 }}>
+        <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-lg" style={{ minHeight: 320 }}>
           {/* Progress bar */}
           <div className="absolute top-0 left-0 right-0 h-0.5 bg-white/10 z-10">
             {!paused && (
@@ -206,26 +206,26 @@ export function HeroServicesPanel() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -6 }}
               transition={{ duration: 0.3, delay: 0.1 }}
-              className="absolute bottom-4 left-4 right-4"
+              className="absolute bottom-5 left-5 right-5"
             >
-              <p className="text-[9px] text-white/40 uppercase tracking-widest mb-2">{current.eyebrow}</p>
+              <p className="text-[9px] text-white/55 uppercase tracking-widest mb-2">{current.eyebrow}</p>
               <div className="flex items-end justify-between">
                 <div className="flex gap-3">
                   <div>
-                    <p className="text-lg font-black text-white leading-none">{current.stat1.v}</p>
-                    <p className="text-[9px] text-white/40 mt-0.5">{current.stat1.l}</p>
+                    <p className="text-xl font-black text-white leading-none">{current.stat1.v}</p>
+                    <p className="text-[10px] text-white/55 mt-0.5">{current.stat1.l}</p>
                   </div>
                   <div>
-                    <p className="text-lg font-black text-white leading-none">{current.stat2.v}</p>
-                    <p className="text-[9px] text-white/40 mt-0.5">{current.stat2.l}</p>
+                    <p className="text-xl font-black text-white leading-none">{current.stat2.v}</p>
+                    <p className="text-[10px] text-white/55 mt-0.5">{current.stat2.l}</p>
                   </div>
                 </div>
                 <div
-                  className="rounded-lg px-3 py-1.5 text-center"
+                  className="rounded-xl px-4 py-2 text-center"
                   style={{ background: `${current.color}22`, border: `1px solid ${current.color}44` }}
                 >
-                  <p className="text-base font-black leading-none" style={{ color: current.color }}>{current.metric.value}</p>
-                  <p className="text-[9px] text-white/40 max-w-[64px] leading-tight mt-0.5">{current.metric.label}</p>
+                  <p className="text-lg font-black leading-none" style={{ color: current.color }}>{current.metric.value}</p>
+                  <p className="text-[10px] text-white/55 max-w-[74px] leading-tight mt-0.5">{current.metric.label}</p>
                 </div>
               </div>
             </motion.div>
@@ -233,7 +233,7 @@ export function HeroServicesPanel() {
         </div>
 
         {/* Copy panel */}
-        <div className="flex flex-col justify-between py-1">
+        <div className="flex flex-col justify-between py-2">
           <AnimatePresence mode="wait">
             <motion.div
               key={current.id + "-copy"}
@@ -245,22 +245,25 @@ export function HeroServicesPanel() {
             >
               <div className="flex-1">
                 <span
-                  className="text-[9px] font-black uppercase tracking-[0.2em] block mb-2"
+                  className="text-[10px] font-black uppercase tracking-[0.24em] block mb-3"
                   style={{ color: current.color }}
                 >
                   {current.eyebrow}
                 </span>
-                <h3 className="text-sm font-black text-white leading-snug mb-3">
+                <h3 className="text-2xl font-black text-white leading-[1.06] mb-4">
                   {current.headline}
                 </h3>
-                <ul className="space-y-2 mb-4">
+                <p className="text-sm text-white/70 leading-relaxed mb-5">
+                  {current.sub}
+                </p>
+                <ul className="space-y-3 mb-6">
                   {current.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2 text-[11px] text-white/55 leading-relaxed">
+                    <li key={b} className="flex items-start gap-3 text-sm text-white/72 leading-relaxed">
                       <div
-                        className="w-3.5 h-3.5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                        className="w-4 h-4 rounded-full flex items-center justify-center shrink-0 mt-0.5"
                         style={{ background: `${current.color}25` }}
                       >
-                        <Check className="w-2 h-2" style={{ color: current.color }} />
+                        <Check className="w-2.5 h-2.5" style={{ color: current.color }} />
                       </div>
                       {b}
                     </li>
@@ -271,7 +274,7 @@ export function HeroServicesPanel() {
               <div className="flex flex-col gap-2">
                 <Link
                   href={current.href}
-                  className="inline-flex items-center gap-1.5 font-bold py-2 px-4 rounded-lg text-[11px] text-white transition-all group w-fit"
+                  className="inline-flex items-center gap-2 font-bold py-3 px-5 rounded-xl text-sm text-white transition-all group w-fit"
                   style={{ background: current.color }}
                 >
                   Explore {current.label}
