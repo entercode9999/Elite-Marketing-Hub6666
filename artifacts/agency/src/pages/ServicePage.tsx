@@ -14,12 +14,11 @@ export function ServicePage() {
       <Nav />
 
       {/* ══ HERO — dark split (left text / right stats card) ══ */}
-      <section className="grid grid-cols-1 md:grid-cols-2 pt-[48px] md:pt-[56px] min-h-[calc(100vh-68px)]">
+      <section className="grid grid-cols-1 md:grid-cols-2 pt-[16px] md:pt-[24px] min-h-[calc(100vh-68px)]">
         {/* Left: dark */}
-        <div className="bg-[#08090d] flex flex-col justify-start px-10 lg:px-16 pt-8 pb-10 lg:pt-10 lg:pb-12">
+        <div className="bg-[#08090d] flex flex-col justify-start px-10 lg:px-16 pt-6 pb-8 lg:pt-8 lg:pb-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            {/* Breadcrumb */}
-            <nav className="flex items-center gap-1.5 text-xs text-white/25 mb-5 flex-wrap">
+            <nav className="flex items-center gap-1.5 text-xs text-white/25 mb-4 flex-wrap">
               {pageData.breadcrumb.map((crumb, i) => (
                 <span key={crumb} className="flex items-center gap-1.5">
                   {i > 0 && <span className="text-white/15">›</span>}
@@ -27,13 +26,13 @@ export function ServicePage() {
                 </span>
               ))}
             </nav>
-            <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary mb-4">{pageData.label}</p>
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-[1.04] tracking-tight mb-5">
+            <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary mb-3">{pageData.label}</p>
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-[1.04] tracking-tight mb-4">
               {pageData.headline}
               <br />
               <span className="italic text-primary font-light">{pageData.headlineAccent}</span>
             </h1>
-            <p className="text-base text-white/55 leading-relaxed mb-7 max-w-md">{pageData.subhead}</p>
+            <p className="text-base text-white/55 leading-relaxed mb-6 max-w-md">{pageData.subhead}</p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-3.5 px-6 rounded-xl text-sm group shadow-lg shadow-primary/25 transition-all"
@@ -44,14 +43,8 @@ export function ServicePage() {
           </motion.div>
         </div>
 
-        {/* Right: stats grid on light bg */}
-        <div className="bg-[#f2f2ef] flex items-start justify-center px-8 pt-8 pb-10 lg:pt-10 lg:pb-12">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="w-full max-w-sm"
-          >
+        <div className="bg-[#f2f2ef] flex items-start justify-center px-8 pt-6 pb-8 lg:pt-8 lg:pb-10">
+          <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.1 }} className="w-full max-w-sm">
             <div className="grid grid-cols-2 gap-4">
               {pageData.stats.map((s) => (
                 <div key={s.label} className="bg-white rounded-2xl p-5 border border-[#e5e2d9] shadow-sm">
@@ -65,8 +58,9 @@ export function ServicePage() {
         </div>
       </section>
 
-      {/* ══ LOGO MARQUEE ══ */}
-      <LogoMarquee />
+      <div className="border-t border-[#e5e2d9]">
+        <LogoMarquee />
+      </div>
     </div>
   );
 }
