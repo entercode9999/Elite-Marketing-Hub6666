@@ -54,6 +54,7 @@ const SERVICES = [
   { label: "Google Ads", slug: "google-ads" },
   { label: "Social Ads", slug: "social-ads" },
   { label: "Local SEO", slug: "local-seo" },
+  { label: "Digital Marketing", slug: "digital-marketing" },
 ];
 
 function CityCard({ city }: { city: { name: string; slug: string; pop: string; tag: string } }) {
