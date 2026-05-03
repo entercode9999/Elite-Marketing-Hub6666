@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, MapPin, TrendingUp, Monitor, FileText, Settings, Bot, Check, Sparkles, LineChart } from "lucide-react";
+import { ArrowRight, MapPin, TrendingUp, Monitor, FileText, Settings, Bot, Check } from "lucide-react";
 
 const SERVICES = [
   {
@@ -118,44 +118,6 @@ const SERVICES = [
     stat1: { v: "< 4 wks", l: "Implementation avg" },
     stat2: { v: "200+", l: "Tool integrations" },
   },
-  {
-    id: "analytics",
-    label: "Analytics",
-    icon: LineChart,
-    color: "#60a5fa",
-    eyebrow: "Track what matters",
-    headline: "See what drives growth. Cut what doesn't.",
-    sub: "We turn messy data into clear decision-making with attribution, dashboards, and KPI tracking that your team will actually use.",
-    bullets: [
-      "Simple executive dashboards built around business KPIs",
-      "Channel attribution and lead-source visibility",
-      "Reporting that makes the next decision obvious",
-    ],
-    metric: { value: "100%", label: "Visibility uplift" },
-    href: "/analytics-service",
-    image: "/case-study-local.png",
-    stat1: { v: "1", l: "Source of truth" },
-    stat2: { v: "24/7", l: "Live reporting" },
-  },
-  {
-    id: "branding",
-    label: "Brand Strategy",
-    icon: Sparkles,
-    color: "#f472b6",
-    eyebrow: "Position with intent",
-    headline: "Sharper story. Stronger market position.",
-    sub: "We clarify what you stand for, who you’re for, and why you win — then translate that into a brand system across web, content, and campaigns.",
-    bullets: [
-      "Messaging that aligns sales, marketing, and leadership",
-      "Positioning work built to support conversion",
-      "Visual and verbal consistency across every touchpoint",
-    ],
-    metric: { value: "Clear", label: "Brand direction" },
-    href: "/brand-strategy-service",
-    image: "/case-study-realestate.png",
-    stat1: { v: "1", l: "Brand narrative" },
-    stat2: { v: "∞", l: "Uses across channels" },
-  },
 ];
 
 export function HeroServicesPanel() {
@@ -184,21 +146,21 @@ export function HeroServicesPanel() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Service pill tabs */}
-      <div className="flex flex-wrap gap-2">
+      {/* Service pill tabs — 3 × 2 grid */}
+      <div className="grid grid-cols-3 gap-2">
         {SERVICES.map((s, i) => (
           <button
             key={s.id}
             onClick={() => go(i)}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all duration-300"
+            className="flex items-center justify-center gap-2 px-3 py-2 rounded-xl text-[11px] font-semibold transition-all duration-300 w-full"
             style={{
-              background: active === i ? `${s.color}22` : "rgba(255,255,255,0.06)",
-              color: active === i ? s.color : "rgba(255,255,255,0.35)",
+              background: active === i ? `${s.color}22` : "rgba(255,255,255,0.05)",
+              color: active === i ? s.color : "rgba(255,255,255,0.40)",
               border: `1.5px solid ${active === i ? s.color + "55" : "rgba(255,255,255,0.08)"}`,
             }}
           >
             <s.icon className="w-3 h-3 shrink-0" />
-            {s.label}
+            <span className="truncate">{s.label}</span>
           </button>
         ))}
       </div>
@@ -288,15 +250,15 @@ export function HeroServicesPanel() {
                 >
                   {current.eyebrow}
                 </span>
-                <h3 className="text-[28px] font-black text-white leading-[1.04] mb-4">
+                <h3 className="text-[26px] font-black text-white leading-[1.06] mb-3">
                   {current.headline}
                 </h3>
-                <p className="text-sm text-white/70 leading-relaxed mb-5">
+                <p className="text-sm text-white/65 leading-relaxed mb-4">
                   {current.sub}
                 </p>
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-2.5 mb-5">
                   {current.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-3 text-[13px] text-white/72 leading-relaxed">
+                    <li key={b} className="flex items-start gap-2.5 text-[13px] text-white/70 leading-relaxed">
                       <div
                         className="w-4 h-4 rounded-full flex items-center justify-center shrink-0 mt-0.5"
                         style={{ background: `${current.color}25` }}
@@ -312,11 +274,11 @@ export function HeroServicesPanel() {
               <div className="flex flex-col gap-2">
                 <Link
                   href={current.href}
-                  className="inline-flex items-center gap-2 font-bold py-3 px-5 rounded-xl text-sm text-white transition-all group w-fit"
+                  className="inline-flex items-center gap-2 font-bold py-2.5 px-5 rounded-xl text-sm text-white transition-all group w-fit"
                   style={{ background: current.color }}
                 >
                   Explore {current.label}
-                  <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
                 <div className="flex items-center gap-1">
                   {SERVICES.map((_, i) => (
