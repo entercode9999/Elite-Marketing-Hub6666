@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "wouter";
 
 const DIGITAL_MARKETING = [
@@ -49,6 +50,22 @@ const MARKETS = [
   { label: "Brampton", href: "/brampton/seo-services" },
   { label: "Markham", href: "/markham/seo-services" },
 ];
+
+function FooterCol({ heading, links, extra }: { heading: string; links: { label: string; href: string }[]; extra?: React.ReactNode }) {
+  return (
+    <div>
+      <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-5">{heading}</h4>
+      <ul className="space-y-2.5">
+        {links.map((l) => (
+          <li key={l.href}>
+            <Link href={l.href} className="text-sm text-white/50 hover:text-white transition-colors">{l.label}</Link>
+          </li>
+        ))}
+      </ul>
+      {extra}
+    </div>
+  );
+}
 
 export function Footer() {
   return (

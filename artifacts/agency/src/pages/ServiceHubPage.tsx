@@ -306,9 +306,36 @@ function FaqAccordion({ items }: { items: HubFaq[] }) {
 
 export function ServiceHubPage({ data }: { data: HubData }) {
   useEffect(() => { window.scrollTo(0, 0); }, [data.slug]);
+  const hubSchema: Record<string, unknown>[] = [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://outliermarketing.ca/" },
+        { "@type": "ListItem", "position": 2, "name": data.breadcrumb, "item": `https://outliermarketing.ca/${data.slug}` },
+      ],
+    },
+    {
+      "@type": "Service",
+      "name": data.hero.headline,
+      "description": data.hero.description.slice(0, 300),
+      "provider": { "@type": "LocalBusiness", "@id": "https://outliermarketing.ca/#business", "name": "Outlier Digital Marketing" },
+      "areaServed": { "@type": "City", "name": "Toronto", "addressCountry": "CA" },
+    },
+    ...(data.faqs.length > 0 ? [{
+      "@type": "FAQPage",
+      "mainEntity": data.faqs.map((f) => ({
+        "@type": "Question",
+        "name": f.question,
+        "acceptedAnswer": { "@type": "Answer", "text": f.answer },
+      })),
+    }] : []),
+  ];
+
   useSeo({
     title: `${data.hero.headline} | Outlier`,
     description: data.hero.description.slice(0, 160),
+    canonicalPath: `/${data.slug}`,
+    schema: hubSchema,
   });
 
   return (

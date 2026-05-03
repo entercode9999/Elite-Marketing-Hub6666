@@ -1661,6 +1661,7 @@ export default function CityServicePage() {
   useSeo({
     title: `${fill(svc.h1Template)} | Outlier`,
     description: fill(svc.metaDescTemplate),
+    canonicalPath: `/${citySlug}/${serviceSlug}`,
   });
 
   /* City-unique intro paragraph — derived from city.marketBlurb */

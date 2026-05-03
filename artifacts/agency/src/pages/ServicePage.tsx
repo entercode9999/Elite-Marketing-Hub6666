@@ -9,6 +9,7 @@ import { Check, ChevronRight, ArrowRight } from "lucide-react";
 
 /* ── TYPES ── */
 export interface ServicePageData {
+  canonicalPath?: string;
   breadcrumb: string[];
   label: string;
   headline: string;
@@ -61,9 +62,39 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 
 /* ── MAIN COMPONENT ── */
 export function ServicePage({ data }: { data: ServicePageData }) {
+  const serviceSchema: Record<string, unknown>[] = [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": data.breadcrumb.map((crumb, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": crumb,
+        ...(i === 0 ? { "item": "https://outliermarketing.ca/" } : {}),
+        ...(i === data.breadcrumb.length - 1 && data.canonicalPath ? { "item": `https://outliermarketing.ca${data.canonicalPath}` } : {}),
+      })),
+    },
+    {
+      "@type": "Service",
+      "name": `${data.headline} ${data.headlineAccent}`.trim(),
+      "description": data.subhead,
+      "provider": { "@type": "LocalBusiness", "@id": "https://outliermarketing.ca/#business", "name": "Outlier Digital Marketing" },
+      "areaServed": { "@type": "City", "name": "Toronto", "addressCountry": "CA" },
+    },
+    ...(data.faq.length > 0 ? [{
+      "@type": "FAQPage",
+      "mainEntity": data.faq.map((f) => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    }] : []),
+  ];
+
   useSeo({
     title: `${data.headline}${data.headlineAccent ? " " + data.headlineAccent : ""} | Outlier`,
     description: data.subhead.slice(0, 160),
+    canonicalPath: data.canonicalPath,
+    schema: serviceSchema,
   });
 
   return (
@@ -318,6 +349,7 @@ export function ServicePage({ data }: { data: ServicePageData }) {
    PAGE DATA — LOCAL SEO SERVICE
 ══════════════════════════════════════════ */
 export const localSeoData: ServicePageData = {
+  canonicalPath: "/local-seo-service",
   breadcrumb: ["Home", "SEO", "Local SEO Service"],
   label: "Local SEO",
   headline: "Local SEO that puts you in the map pack —",
@@ -401,6 +433,7 @@ export const localSeoData: ServicePageData = {
    PAGE DATA — GOOGLE ADS MANAGEMENT
 ══════════════════════════════════════════ */
 export const googleAdsData: ServicePageData = {
+  canonicalPath: "/google-ads-management",
   breadcrumb: ["Home", "Paid Ads", "Google Ads Management"],
   label: "Google Ads",
   headline: "Google Ads that generate revenue —",

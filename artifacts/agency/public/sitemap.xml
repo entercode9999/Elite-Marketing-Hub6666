@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core pages -->
+  <url><loc>https://outliermarketing.ca/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://outliermarketing.ca/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/contact</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/our-work</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/insights</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/pricing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/testimonials</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/free-audit</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/careers</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://outliermarketing.ca/cities</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/sitemap</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://outliermarketing.ca/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://outliermarketing.ca/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://outliermarketing.ca/accessibility</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+
+  <!-- Insight articles -->
+  <url><loc>https://outliermarketing.ca/insights/local-seo-2025</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/insights/content-marketing-toronto</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/insights/google-ads-roi</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/insights/meridian-dental-map-pack</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/insights/ai-overviews-2025</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Digital Marketing services -->
+  <url><loc>https://outliermarketing.ca/seo-services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/local-seo-service</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/technical-seo-service</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/ai-seo-service</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/digital-marketing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/content-marketing-service</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/social-media-advertising</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/google-ads-management</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/ai-chatbot-service</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Local SEO sub-services -->
+  <url><loc>https://outliermarketing.ca/gbp-optimisation</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/citation-audit</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/review-generation</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/local-landing-pages</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/local-link-building</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/local-seo-reporting</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Paid Ads sub-services -->
+  <url><loc>https://outliermarketing.ca/google-search-campaigns</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/local-service-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/performance-max</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/paid-social-service</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/display-retargeting</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/youtube-ads-service</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Web Design sub-services -->
+  <url><loc>https://outliermarketing.ca/cro-service</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/website-redesign-service</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/landing-page-design</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/ui-ux-design</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Content sub-services -->
+  <url><loc>https://outliermarketing.ca/blog-writing-service</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/topical-authority-service</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/email-marketing-service</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/social-media-service</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/video-script-service</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Technical SEO sub-services -->
+  <url><loc>https://outliermarketing.ca/core-web-vitals-service</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/crawl-budget-service</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/structured-data-service</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/redirect-audit-service</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/international-seo-service</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- AI sub-services -->
+  <url><loc>https://outliermarketing.ca/ai-workflow-service</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/ai-integration-service</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/custom-ai-service</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/app-development-service</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/ai-lead-capture-service</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Web & Ecommerce hubs -->
+  <url><loc>https://outliermarketing.ca/custom-web-design-service</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/website-development-service</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/wordpress-development-service</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/joomla-development-service</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://outliermarketing.ca/drupal-development-service</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://outliermarketing.ca/laravel-web-development</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://outliermarketing.ca/ecommerce-development</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/magento-development</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/shopify-development</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/shopify-plus-development</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/headless-commerce-service</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/adobe-commerce-development</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/magento-2-development</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/magento-2-migration</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/magento-2-support</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/hyva-theme-development</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/hyva-enterprise-solutions</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Industry pages -->
+  <url><loc>https://outliermarketing.ca/dental-marketing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/legal-marketing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/home-services-marketing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/real-estate-marketing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/ecommerce-marketing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/saas-marketing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/restaurant-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/construction-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/auto-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/fitness-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/healthcare-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/b2b-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/b2c-marketing</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/d2c-marketing</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/food-beverage-marketing</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/education-marketing</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/transportation-marketing</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/travel-marketing</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/fashion-marketing</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/entertainment-marketing</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/technology-marketing</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/small-business-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/law-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/sports-fitness-marketing</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Specific location × service pages -->
+  <url><loc>https://outliermarketing.ca/toronto/local-seo-service</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/mississauga/local-seo-service</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/ottawa/local-seo-service</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- City × service pages — GTA tier -->
+  <url><loc>https://outliermarketing.ca/toronto/seo-services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/toronto/google-ads</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/toronto/local-seo</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/toronto/web-design</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/toronto/digital-marketing</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/toronto/social-ads</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/mississauga/seo-services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/mississauga/google-ads</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/mississauga/local-seo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/mississauga/web-design</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/mississauga/digital-marketing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/brampton/seo-services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/brampton/google-ads</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/brampton/local-seo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/brampton/digital-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/markham/seo-services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/markham/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/markham/local-seo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/markham/digital-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/vaughan/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/vaughan/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/vaughan/local-seo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/richmond-hill/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/richmond-hill/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/oakville/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/oakville/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/oakville/local-seo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/burlington/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/burlington/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- City × service pages — Ontario tier -->
+  <url><loc>https://outliermarketing.ca/hamilton/seo-services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/hamilton/google-ads</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/hamilton/local-seo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/hamilton/digital-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/ottawa/seo-services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/ottawa/google-ads</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/ottawa/local-seo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/ottawa/digital-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/kitchener/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/kitchener/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/waterloo/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/waterloo/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/guelph/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/guelph/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/london-ontario/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/london-ontario/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/barrie/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/barrie/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/kingston/seo-services</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/kingston/google-ads</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/st-catharines/seo-services</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/niagara-falls/seo-services</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/windsor/seo-services</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/oshawa/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/oshawa/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/pickering/seo-services</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/ajax/seo-services</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/whitby/seo-services</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/north-york/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/scarborough/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/etobicoke/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+</urlset>

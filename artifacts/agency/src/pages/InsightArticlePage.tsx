@@ -511,9 +511,31 @@ export function InsightArticlePage() {
   const { slug } = useParams<{ slug: string }>();
   const article = ARTICLES.find((a) => a.slug === slug);
 
+  const articleSchema: Record<string, unknown>[] | undefined = article ? [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://outliermarketing.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://outliermarketing.ca/insights" },
+        { "@type": "ListItem", "position": 3, "name": article.title, "item": `https://outliermarketing.ca/insights/${article.slug}` },
+      ],
+    },
+    {
+      "@type": "Article",
+      "headline": article.title,
+      "description": article.excerpt,
+      "author": { "@type": "Person", "name": article.author, "jobTitle": article.authorRole },
+      "publisher": { "@type": "Organization", "name": "Outlier Digital Marketing", "url": "https://outliermarketing.ca" },
+      "datePublished": article.date,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": `https://outliermarketing.ca/insights/${article.slug}` },
+    },
+  ] : undefined;
+
   useSeo({
     title: article ? `${article.title} | Outlier Insights` : "Insights | Outlier",
     description: article ? article.excerpt.slice(0, 160) : "In-depth digital marketing insights, SEO strategies, and case studies from the Outlier team.",
+    canonicalPath: article ? `/insights/${article.slug}` : "/insights",
+    schema: articleSchema,
   });
 
   if (!article) {

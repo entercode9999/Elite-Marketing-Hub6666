@@ -47,9 +47,37 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 }
 
 export function IndustryPage({ data }: { data: IndustryData }) {
+  const canonicalPath = `/${data.slug}`;
+  const schemaGraph: Record<string, unknown>[] = [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://outliermarketing.ca/" },
+        { "@type": "ListItem", "position": 2, "name": `${data.industry} Marketing`, "item": `https://outliermarketing.ca${canonicalPath}` },
+      ],
+    },
+    {
+      "@type": "Service",
+      "name": `${data.industry} Digital Marketing`,
+      "description": data.subhead,
+      "provider": { "@type": "LocalBusiness", "@id": "https://outliermarketing.ca/#business", "name": "Outlier Digital Marketing" },
+      "areaServed": { "@type": "City", "name": "Toronto", "addressCountry": "CA" },
+    },
+    ...(data.faq && data.faq.length > 0 ? [{
+      "@type": "FAQPage",
+      "mainEntity": data.faq.map((f) => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    }] : []),
+  ];
+
   useSeo({
     title: `${data.industry} Marketing Toronto | Outlier`,
     description: data.subhead.slice(0, 160),
+    canonicalPath,
+    schema: schemaGraph,
   });
 
   const tactics = data.tactics ?? [

@@ -213,9 +213,38 @@ function getTimeline(parent: string): { week: string; milestone: string }[] {
 export function SubServicePage({ data }: { data: SubServiceData }) {
   const tools = data.tools ?? getTools(data.parentLabel);
   const timeline = getTimeline(data.parentLabel);
+  const canonicalPath = typeof window !== "undefined" ? window.location.pathname : undefined;
+  const subServiceSchema: Record<string, unknown>[] = [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://outliermarketing.ca/" },
+        { "@type": "ListItem", "position": 2, "name": data.parentLabel, "item": `https://outliermarketing.ca${data.parentHref}` },
+        { "@type": "ListItem", "position": 3, "name": data.label, "item": `https://outliermarketing.ca${canonicalPath ?? ""}` },
+      ],
+    },
+    {
+      "@type": "Service",
+      "name": data.label,
+      "description": data.subhead,
+      "provider": { "@type": "LocalBusiness", "@id": "https://outliermarketing.ca/#business", "name": "Outlier Digital Marketing" },
+      "areaServed": { "@type": "City", "name": "Toronto", "addressCountry": "CA" },
+    },
+    ...(data.faq.length > 0 ? [{
+      "@type": "FAQPage",
+      "mainEntity": data.faq.map((f) => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    }] : []),
+  ];
+
   useSeo({
     title: `${data.label} | Outlier`,
     description: data.subhead.slice(0, 160),
+    canonicalPath,
+    schema: subServiceSchema,
   });
 
   return (

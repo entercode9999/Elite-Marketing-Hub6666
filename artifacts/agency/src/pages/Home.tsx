@@ -76,10 +76,58 @@ const caseStudies = [
   },
 ];
 
+const HOME_SCHEMA = [
+  {
+    "@type": "LocalBusiness",
+    "@id": "https://outliermarketing.ca/#business",
+    "name": "Outlier Digital Marketing",
+    "url": "https://outliermarketing.ca",
+    "logo": "https://outliermarketing.ca/favicon.svg",
+    "telephone": "+18005550199",
+    "email": "hello@outlier.co",
+    "description": "Toronto's strategy-first digital marketing agency. SEO, Google Ads, paid social, web, and content — one senior team, measurable results.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Spadina Ave, Suite 800",
+      "addressLocality": "Toronto",
+      "addressRegion": "ON",
+      "postalCode": "M5V 2T6",
+      "addressCountry": "CA",
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 43.6486, "longitude": -79.3966 },
+    "areaServed": { "@type": "State", "name": "Ontario", "addressCountry": "CA" },
+    "priceRange": "$$",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "87" },
+    "sameAs": [
+      "https://www.linkedin.com/company/outlier-marketing",
+      "https://twitter.com/outliermarketing",
+      "https://www.instagram.com/outliermarketing",
+    ],
+  },
+  {
+    "@type": "WebSite",
+    "@id": "https://outliermarketing.ca/#website",
+    "url": "https://outliermarketing.ca",
+    "name": "Outlier Digital Marketing",
+    "description": "Toronto's strategy-first digital marketing agency.",
+    "publisher": { "@id": "https://outliermarketing.ca/#business" },
+  },
+  {
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What services does Outlier offer?", "acceptedAnswer": { "@type": "Answer", "text": "Outlier offers SEO (local, technical, AI), Google Ads management, paid social advertising, content marketing, web design, and conversion rate optimisation for Ontario businesses." } },
+      { "@type": "Question", "name": "Where is Outlier located?", "acceptedAnswer": { "@type": "Answer", "text": "Outlier is headquartered at 123 Spadina Ave, Suite 800, Toronto, Ontario. We serve businesses across the GTA and all of Ontario." } },
+      { "@type": "Question", "name": "How much does digital marketing cost?", "acceptedAnswer": { "@type": "Answer", "text": "Outlier's Growth plans start at $2,500/month, Scale plans at $5,000/month. Enterprise packages are scoped to your business. Book a free audit to get a recommendation." } },
+    ],
+  },
+];
+
 export default function Home() {
   useSeo({
     title: "Toronto Digital Marketing Agency | Outlier",
     description: "Outlier is Toronto's strategy-first digital marketing agency. SEO, Google Ads, paid social, and content — one team, every channel, dominant growth.",
+    canonicalPath: "/",
+    schema: HOME_SCHEMA,
   });
 
   return (

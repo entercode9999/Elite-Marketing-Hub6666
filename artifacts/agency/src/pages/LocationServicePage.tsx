@@ -135,9 +135,40 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 
 /* ── MAIN COMPONENT ── */
 export function LocationServicePage({ data }: { data: LocationData }) {
+  const canonicalPath = `/${data.slug}/${data.serviceSlug}`;
+  const locationSchema: Record<string, unknown>[] = [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://outliermarketing.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "Cities We Serve", "item": "https://outliermarketing.ca/cities" },
+        { "@type": "ListItem", "position": 3, "name": data.city, "item": `https://outliermarketing.ca/${data.slug}/seo-services` },
+        { "@type": "ListItem", "position": 4, "name": data.service, "item": `https://outliermarketing.ca${canonicalPath}` },
+      ],
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://outliermarketing.ca/#business",
+      "name": "Outlier Digital Marketing",
+      "url": "https://outliermarketing.ca",
+      "areaServed": {
+        "@type": "City",
+        "name": data.city,
+        "containedInPlace": { "@type": "State", "name": data.province, "addressCountry": "CA" },
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": data.service,
+        "itemListElement": [{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": `${data.service} in ${data.city}`, "description": data.tagline } }],
+      },
+    },
+  ];
+
   useSeo({
     title: `${data.service} in ${data.city}, ${data.province} | Outlier`,
     description: data.tagline.slice(0, 160),
+    canonicalPath,
+    schema: locationSchema,
   });
 
   return (
