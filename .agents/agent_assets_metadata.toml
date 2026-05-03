@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "npMwwK_-b6Kpr90c03L1C"
@@ -156,3 +155,9 @@ id = "Qge_L4xMkmsy4ryNKguca"
 uri = "file://artifacts/agency/public/industry-realestate.png"
 type = "image"
 title = "luxury home exterior real estate"
+
+[[outputs]]
+id = "G4Rj7dxs9qcTzRT965SS8"
+uri = "file://outlier-site-guide.md"
+type = "text"
+title = "Outlier Site — Key Files Guide"
