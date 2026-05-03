@@ -50,10 +50,10 @@ const ONTARIO_CITIES = [
 
 const SERVICES = [
   { label: "SEO", slug: "seo-services" },
-  { label: "Digital Marketing", slug: "digital-marketing" },
   { label: "Web Design", slug: "web-design" },
-  { label: "Local SEO", slug: "local-seo" },
   { label: "Google Ads", slug: "google-ads" },
+  { label: "Social Ads", slug: "social-ads" },
+  { label: "Local SEO", slug: "local-seo" },
 ];
 
 function CityCard({ city }: { city: { name: string; slug: string; pop: string; tag: string } }) {
