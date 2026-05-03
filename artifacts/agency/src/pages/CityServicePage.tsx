@@ -1350,12 +1350,12 @@ export default function CityServicePage() {
               </p>
 
               <div className="flex flex-wrap gap-3 mb-8">
-                <a
+                <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 bg-primary text-white font-bold px-7 py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-[15px]"
                 >
                   {svc.cta} <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
                 <a
                   href="tel:+14165550199"
                   className="inline-flex items-center gap-2 border border-white/15 text-white font-semibold px-6 py-3.5 rounded-xl hover:border-white/30 hover:bg-white/4 transition-all text-[15px]"
@@ -1437,9 +1437,9 @@ export default function CityServicePage() {
               </div>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href="/contact" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors text-sm">
+                <Link href="/contact" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors text-sm">
                   Get a Free {city.name} {svc.shortLabel} Audit <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -1504,9 +1504,9 @@ export default function CityServicePage() {
                 <p className="text-white/50 text-xs leading-relaxed mb-4">
                   Every strategy we build for {city.name} businesses is researched and written for {city.name} — not a template with your city name pasted in.
                 </p>
-                <a href="/contact" className="inline-flex items-center gap-1.5 text-primary text-xs font-bold hover:underline">
+                <Link href="/contact" className="inline-flex items-center gap-1.5 text-primary text-xs font-bold hover:underline">
                   Talk to a {city.name} specialist <ArrowRight className="w-3 h-3" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -1665,9 +1665,9 @@ export default function CityServicePage() {
                 <p className="text-white/50 text-sm leading-relaxed mb-6">
                   We audit your current position, analyse your competition in {city.name}, and give you a clear picture of the traffic, leads, and growth available from {svc.shortLabel.toLowerCase()}. Then we scope an engagement that makes sense for your specific situation.
                 </p>
-                <a href="/contact" className="flex items-center justify-center gap-2 bg-primary text-white font-bold px-6 py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-[15px] w-full">
+                <Link href="/contact" className="flex items-center justify-center gap-2 bg-primary text-white font-bold px-6 py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-[15px] w-full">
                   Get Free {city.name} Audit <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
 
               {/* Last intro paragraph — often the ROI / compounding case */}
@@ -1739,9 +1739,9 @@ export default function CityServicePage() {
                 The milestones below represent typical progression for a {city.name} business starting from scratch. Businesses with existing domain authority or partial optimisation often see faster initial results.
               </p>
               <div className="mt-6">
-                <a href="/contact" className="inline-flex items-center gap-2 bg-[#0e0e0e] text-white font-bold px-6 py-3 rounded-xl hover:bg-primary transition-colors text-sm">
+                <Link href="/contact" className="inline-flex items-center gap-2 bg-[#0e0e0e] text-white font-bold px-6 py-3 rounded-xl hover:bg-primary transition-colors text-sm">
                   Get a {city.name}-specific timeline <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -1821,9 +1821,9 @@ export default function CityServicePage() {
                 <p className="text-[10px] font-black uppercase tracking-widest text-primary/60 mb-3">Economy & Industry</p>
                 <p className="text-white/60 text-sm leading-relaxed">{city.economyHighlights}</p>
                 <div className="mt-4 pt-4 border-t border-white/10">
-                  <a href="/contact" className="inline-flex items-center gap-1.5 text-primary text-xs font-bold hover:underline">
+                  <Link href="/contact" className="inline-flex items-center gap-1.5 text-primary text-xs font-bold hover:underline">
                     Get {city.name}-specific strategy <ArrowRight className="w-3 h-3" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -1891,9 +1891,9 @@ export default function CityServicePage() {
                 </p>
               </div>
               <div className="space-y-3">
-                <a href="/contact" className="flex items-center justify-center gap-2 bg-primary text-white font-bold px-6 py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-[15px] w-full">
+                <Link href="/contact" className="flex items-center justify-center gap-2 bg-primary text-white font-bold px-6 py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-[15px] w-full">
                   Book Free Strategy Call <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
                 <a href="tel:+14165550199" className="flex items-center justify-center gap-2 border border-white/15 text-white font-semibold px-6 py-3.5 rounded-xl hover:border-white/30 hover:bg-white/4 transition-all text-[15px] w-full">
                   <Phone className="w-4 h-4" /> Call Our Team
                 </a>
@@ -1915,9 +1915,9 @@ export default function CityServicePage() {
               <p className="text-gray-500 text-sm leading-relaxed mb-6">
                 Can't find your answer? Speak to one of our {city.name} {svc.shortLabel} specialists.
               </p>
-              <a href="/contact" className="inline-flex items-center gap-2 border border-[#e5e2d9] text-[#0e0e0e] font-bold px-5 py-2.5 rounded-xl text-sm hover:border-primary hover:text-primary transition-colors">
+              <Link href="/contact" className="inline-flex items-center gap-2 border border-[#e5e2d9] text-[#0e0e0e] font-bold px-5 py-2.5 rounded-xl text-sm hover:border-primary hover:text-primary transition-colors">
                 Ask a Question <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
 
             <div className="lg:col-span-2">
@@ -1997,9 +1997,9 @@ export default function CityServicePage() {
                   View all Ontario cities <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-              <a href="/contact" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors text-sm w-full justify-center">
+              <Link href="/contact" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors text-sm w-full justify-center">
                 {svc.cta} <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

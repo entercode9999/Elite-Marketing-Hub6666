@@ -133,13 +133,13 @@ function ProcessTab({ steps }: { steps: HubProcess[] }) {
             <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">Step {active + 1}</span>
             <h3 className="text-2xl font-black text-[#0e0e0e] mb-4">{current.headline}</h3>
             <p className="text-base text-gray-500 leading-relaxed mb-6">{current.description}</p>
-            <a
+            <Link
               href="/contact"
               className="inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-6 rounded-xl text-sm group hover:bg-primary/90 transition-colors"
             >
               Book a Free Strategy Call
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            </a>
+            </Link>
           </div>
           <div className="bg-[#08090d] rounded-2xl p-8 border border-white/8 flex flex-col justify-between min-h-[260px] relative overflow-hidden">
             {/* Decorative large background number */}
@@ -258,12 +258,12 @@ function SubServiceTabs({ items }: { items: HubSubService[] }) {
 
       <div className="mt-8 text-center">
         <p className="text-sm text-gray-400 mb-3">Not sure where to start?</p>
-        <a
+        <Link
           href="/contact"
           className="inline-flex items-center gap-2 bg-[#0e0e0e] text-white font-bold py-3 px-6 rounded-xl text-sm group hover:bg-black/80 transition-colors"
         >
           Talk to our team <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-        </a>
+        </Link>
       </div>
     </div>
   );
@@ -334,13 +334,13 @@ export function ServiceHubPage({ data }: { data: HubData }) {
                 {data.hero.description}
               </p>
               <div className="flex flex-wrap gap-3 mb-8">
-                <a
+                <Link
                   href={data.hero.ctaHref}
                   className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-3.5 px-6 rounded-xl text-sm group shadow-lg shadow-primary/25 transition-all"
                 >
                   {data.hero.cta}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                </a>
+                </Link>
               </div>
               {/* Badges */}
               <div className="flex flex-wrap gap-3">
@@ -539,9 +539,9 @@ export function ServiceHubPage({ data }: { data: HubData }) {
                   <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">Selected Work</span>
                   <h2 className="text-4xl font-black text-white">Proven outcomes.</h2>
                 </div>
-                <a href="/work" className="text-sm font-semibold text-white/40 hover:text-white transition-colors flex items-center gap-1">
+                <Link href="/our-work" className="text-sm font-semibold text-white/40 hover:text-white transition-colors flex items-center gap-1">
                   All work <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {data.caseStudies.map((cs) => (
@@ -606,9 +606,9 @@ export function ServiceHubPage({ data }: { data: HubData }) {
                   <h2 className="text-4xl font-black text-[#0e0e0e] leading-tight">Industry perspectives.</h2>
                   <p className="text-base text-gray-500 mt-3 max-w-md">Practical guides and data-backed insights from our senior team.</p>
                 </div>
-                <a href="/blog" className="text-sm font-semibold text-gray-400 hover:text-[#0e0e0e] transition-colors flex items-center gap-1 shrink-0">
+                <Link href="/contact" className="text-sm font-semibold text-gray-400 hover:text-[#0e0e0e] transition-colors flex items-center gap-1 shrink-0">
                   All articles <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
                 {data.hubInsights.map((a, i) => (
@@ -662,19 +662,19 @@ export function ServiceHubPage({ data }: { data: HubData }) {
               One senior team. Every channel. No hand-offs. Book a free strategy call and we'll audit your current setup and show you exactly what we'd do differently.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
-              <a
+              <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 rounded-xl text-sm shadow-lg shadow-primary/25 group transition-all"
               >
                 Book a Free Audit
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </a>
-              <a
-                href="/work"
+              </Link>
+              <Link
+                href="/our-work"
                 className="inline-flex items-center gap-2 border border-white/15 hover:border-white/30 text-white font-semibold py-4 px-8 rounded-xl text-sm transition-all"
               >
                 View Our Work
-              </a>
+              </Link>
             </div>
           </div>
         </section>

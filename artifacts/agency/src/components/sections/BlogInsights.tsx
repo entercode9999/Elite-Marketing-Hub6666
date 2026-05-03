@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { ArrowRight, Clock } from "lucide-react";
 
 const ARTICLES = [
@@ -52,13 +53,13 @@ export function BlogInsights() {
               Honest analysis, practitioner-written. No generic SEO tips — only what we're learning on active client accounts.
             </p>
           </div>
-          <a
-            href="/blog"
+          <Link
+            href="/contact"
             className="shrink-0 inline-flex items-center gap-2 border border-[#e5e2d9] hover:border-primary/40 hover:text-primary text-gray-700 font-semibold py-2.5 px-5 rounded-xl transition-colors text-sm group"
           >
-            View all articles
+            Get a Free Audit
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
+          </Link>
         </div>
 
         {/* Articles grid */}
