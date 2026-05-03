@@ -10,7 +10,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { Wins } from "@/components/sections/Wins";
 import { Faq } from "@/components/sections/Faq";
 import { MegaCta } from "@/components/sections/MegaCta";
-import { ArrowRight, MapPin, Star, TrendingUp, CheckCircle, ArrowUpRight } from "lucide-react";
+import { ArrowRight, MapPin, Star, TrendingUp, CheckCircle, ArrowUpRight, Check, FileText, Target, ShieldCheck } from "lucide-react";
 import { Link } from "wouter";
 import { AllServicesFeature } from "@/components/sections/AllServicesFeature";
 import { WhyOutlier } from "@/components/sections/WhyOutlier";
@@ -231,23 +231,10 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.1 }}
                 className="hidden lg:block relative"
               >
-                <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(26,86,255,0.1)]">
-                  <img
-                    src="/hero-showcase.png"
-                    alt="Marketing dashboards"
-                    className="w-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#08090d]/80 via-transparent to-transparent" />
-                  {/* Floating metric card */}
-                  <motion.div
-                    animate={{ y: [0, -6, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute bottom-6 left-6 bg-[#111318]/90 backdrop-blur-md border border-white/10 rounded-xl p-4 shadow-xl"
-                  >
-                    <p className="text-xs text-white/40 mb-1">Avg. client result — 12 months</p>
-                    <p className="text-3xl font-black text-white">+420%</p>
-                    <p className="text-xs text-primary font-semibold">Organic Traffic Growth</p>
-                  </motion.div>
+                <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a0b10] shadow-[0_0_60px_rgba(26,86,255,0.1)] p-6">
+                  <div className="scale-[0.92] origin-top-left w-[108%]">
+                    <AllServicesFeature />
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -273,8 +260,24 @@ export default function Home() {
         {/* ── STATS ── */}
         <Stats />
 
-        {/* ── ALL SERVICES ROTATING FEATURE ── */}
-        <AllServicesFeature />
+        {/* ── TRUST + PROOF ── */}
+        <section className="py-24 md:py-28 bg-background border-t border-border">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid lg:grid-cols-3 gap-6">
+              {[
+                { icon: Check, title: "Senior-led execution", body: "No handoffs to junior teams. Strategy and delivery stay with experienced specialists." },
+                { icon: ShieldCheck, title: "No lock-ins", body: "Clear scopes, transparent reporting, and flexible engagement terms." },
+                { icon: Target, title: "Built to convert", body: "Every asset is designed to improve traffic quality, conversion rate, or revenue." },
+              ].map((item) => (
+                <div key={item.title} className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+                  <item.icon className="w-5 h-5 text-primary mb-4" />
+                  <h3 className="text-xl font-black mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* ── SERVICES TABBED (Kinex-style) ── */}
         <ServicesTabbed />

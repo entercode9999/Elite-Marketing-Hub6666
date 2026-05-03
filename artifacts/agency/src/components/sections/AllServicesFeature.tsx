@@ -152,9 +152,11 @@ export function AllServicesFeature() {
           <div>
             <span className="text-[10px] font-black uppercase tracking-[0.25em] text-primary block mb-3">Full service scope</span>
             <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-[1.04]">
-              Every channel you need.
+              One team.
               <br />
-              <span className="italic font-light text-muted-foreground">One team that owns them all.</span>
+              Every channel.
+              <br />
+              <span className="italic font-light text-muted-foreground">Dominant growth.</span>
             </h2>
           </div>
           {/* Service dots nav */}
