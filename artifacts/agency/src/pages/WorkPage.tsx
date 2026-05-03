@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { useSeo } from "@/hooks/useSeo";
 
 /* ─── Case Study Data ─────────────────────────────────────────────── */
 
@@ -542,6 +543,11 @@ const SERVICE_ICONS: Record<string, React.ElementType> = {
 /* ─── Our Work Page ───────────────────────────────────────────────── */
 
 export function OurWorkPage() {
+  useSeo({
+    title: "Our Work | Outlier Toronto Digital Marketing Case Studies",
+    description: "Real results from Outlier's client engagements. SEO, paid media, and web projects for Ontario businesses — with full metrics.",
+    canonicalPath: "/our-work",
+  });
   return (
     <div className="min-h-screen bg-[#f9f8f5]">
       <Nav />
@@ -717,23 +723,13 @@ export function OurWorkPage() {
 
 /* ─── Case Study Detail Page ─────────────────────────────────────── */
 
-export function CaseStudyPage() {
-  const params = useParams<{ slug: string }>();
-  const cs = CASE_STUDIES.find((c) => c.slug === params.slug);
-
-  if (!cs) {
-    return (
-      <div className="min-h-screen bg-[#f9f8f5] flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-gray-400 mb-4">Case study not found.</p>
-          <Link href="/our-work" className="text-primary font-bold hover:underline">← Back to Our Work</Link>
-        </div>
-      </div>
-    );
-  }
-
+function CaseStudyPageInner({ cs }: { cs: CaseStudyData }) {
+  useSeo({
+    title: `${cs.client} Case Study | Outlier Toronto`,
+    description: `${cs.tagline} — a digital marketing case study by Outlier for ${cs.location} businesses.`,
+    canonicalPath: `/our-work/${cs.slug}`,
+  });
   const otherStudies = CASE_STUDIES.filter((c) => c.slug !== cs.slug).slice(0, 3);
-
   return (
     <div className="min-h-screen bg-white">
       <Nav />
@@ -1481,4 +1477,22 @@ export function CaseStudyPage() {
       <Footer />
     </div>
   );
+}
+
+export function CaseStudyPage() {
+  const params = useParams<{ slug: string }>();
+  const cs = CASE_STUDIES.find((c) => c.slug === params.slug);
+
+  if (!cs) {
+    return (
+      <div className="min-h-screen bg-[#f9f8f5] flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-gray-400 mb-4">Case study not found.</p>
+          <Link href="/our-work" className="text-primary font-bold hover:underline">← Back to Our Work</Link>
+        </div>
+      </div>
+    );
+  }
+
+  return <CaseStudyPageInner cs={cs} />;
 }

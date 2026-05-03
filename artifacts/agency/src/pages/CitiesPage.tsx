@@ -174,12 +174,12 @@ export default function CitiesPage() {
           <p className="text-white/40 mb-8 max-w-md mx-auto">
             We serve businesses across all of Ontario. Get in touch and we'll build a strategy for your market.
           </p>
-          <a
+          <Link
             href="/contact"
             className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors"
           >
             Talk to Our Team <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
       </section>
 

@@ -418,6 +418,11 @@ const AUDIT_SERVICES = [
 ];
 
 export function FreeAuditPage() {
+  useSeo({
+    title: "Free Digital Marketing Audit | Outlier Toronto",
+    description: "Request a free growth audit from Outlier. A senior strategist reviews your website, ad accounts, and competitive landscape — then walks you through a custom roadmap.",
+    canonicalPath: "/free-audit",
+  });
   return (
     <div className="min-h-screen bg-[#f9f8f5]">
       <Nav />
@@ -639,6 +644,11 @@ export function FreeAuditPage() {
 ══════════════════════════════════════════════════════════════════ */
 
 export function ThankYouPage() {
+  useSeo({
+    title: "Thank You | Outlier Marketing Group",
+    description: "Your submission has been received. A senior Outlier strategist will review it and be in touch within 1 business day.",
+    canonicalPath: "/thank-you",
+  });
   return (
     <div className="min-h-screen bg-[#08090d] flex flex-col">
       <Nav />

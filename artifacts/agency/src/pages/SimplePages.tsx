@@ -491,6 +491,11 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 }
 
 export function ContactPage() {
+  useSeo({
+    title: "Contact Outlier | Toronto Digital Marketing Agency",
+    description: "Get in touch with Outlier's team. Tell us about your business and goals — a senior strategist will respond within 1 business day.",
+    canonicalPath: "/contact",
+  });
   return (
     <div className="min-h-screen bg-[#f9f8f5]">
       <Nav />
@@ -815,6 +820,11 @@ const TAG_COLORS: Record<string, string> = {
 };
 
 export function InsightsPage() {
+  useSeo({
+    title: "Digital Marketing Insights | Outlier Toronto",
+    description: "Strategy, tactics and real results from Outlier's client engagements. SEO, Google Ads, content, and CRO insights for Ontario businesses.",
+    canonicalPath: "/insights",
+  });
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filtered = activeCategory === "All"
@@ -1035,6 +1045,11 @@ const BENEFITS = [
 ];
 
 export function CareersPage() {
+  useSeo({
+    title: "Careers at Outlier | Toronto Digital Marketing Jobs",
+    description: "Join Outlier's senior digital marketing team in Toronto. Open roles in SEO, paid media, content strategy, and web design.",
+    canonicalPath: "/careers",
+  });
   return (
     <div className="min-h-screen bg-[#f9f8f5]">
       <Nav />
@@ -1202,6 +1217,11 @@ function LegalShell({ label, title, children }: { label: string; title: string; 
 }
 
 export function PrivacyPage() {
+  useSeo({
+    title: "Privacy Policy | Outlier Marketing Group",
+    description: "Outlier Marketing Group's privacy policy — how we collect, use, and protect your personal information.",
+    canonicalPath: "/privacy",
+  });
   return (
     <LegalShell label="Legal" title="Privacy Policy">
       <div className="prose prose-gray max-w-none text-gray-600 space-y-6">
@@ -1221,6 +1241,11 @@ export function PrivacyPage() {
 }
 
 export function TermsPage() {
+  useSeo({
+    title: "Terms of Service | Outlier Marketing Group",
+    description: "Terms of service governing the use of Outlier Marketing Group's website and digital marketing services.",
+    canonicalPath: "/terms",
+  });
   return (
     <LegalShell label="Legal" title="Terms of Service">
       <div className="prose prose-gray max-w-none text-gray-600 space-y-6">
@@ -1242,6 +1267,11 @@ export function TermsPage() {
 }
 
 export function AccessibilityPage() {
+  useSeo({
+    title: "Accessibility Statement | Outlier Marketing Group",
+    description: "Outlier Marketing Group's commitment to WCAG 2.1 Level AA accessibility standards for all users.",
+    canonicalPath: "/accessibility",
+  });
   return (
     <LegalShell label="Accessibility" title="Accessibility Statement">
       <div className="prose prose-gray max-w-none text-gray-600 space-y-6">

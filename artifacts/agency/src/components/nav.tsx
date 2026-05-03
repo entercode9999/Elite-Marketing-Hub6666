@@ -88,7 +88,7 @@ export function Nav() {
             </Link>
             <button
               onClick={() => setMobileOpen(true)}
-              className="w-8 h-8 flex items-center justify-center text-white/50 hover:text-white transition-colors"
+              className="lg:hidden w-8 h-8 flex items-center justify-center text-white/50 hover:text-white transition-colors"
             >
               <AlignJustify className="w-5 h-5" />
             </button>
