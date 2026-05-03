@@ -22,6 +22,7 @@ import {
   Building2,
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useSeo } from "@/hooks/useSeo";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 
@@ -1656,10 +1657,11 @@ export default function CityServicePage() {
 
   const Icon = svc.icon;
 
-  /* Set page title for SEO */
-  useEffect(() => {
-    document.title = `${fill(svc.h1Template)} | Outlier`;
-  }, [citySlug, serviceSlug]);
+  /* Set page title + meta description for SEO */
+  useSeo({
+    title: `${fill(svc.h1Template)} | Outlier`,
+    description: fill(svc.metaDescTemplate),
+  });
 
   /* City-unique intro paragraph — derived from city.marketBlurb */
   const introParagraphs = fill(svc.introTemplate).split("\n\n");
@@ -2072,7 +2074,7 @@ export default function CityServicePage() {
               <div className="space-y-3">
                 {[
                   { icon: BarChart3, title: "Market Competitiveness", desc: `${city.name}'s ${tierCompetition.label.toLowerCase()} means every strategy we build is calibrated to the specific work required to outperform entrenched competitors.` },
-                  { icon: Target, title: "Custom Scope", desc: "Every engagement is scoped to your goals — we never pad proposals. You pay for what's required to achieve your specific objectives in the {city} market." },
+                  { icon: Target, title: "Custom Scope", desc: `Every engagement is scoped to your goals — we never pad proposals. You pay for what's required to achieve your specific objectives in the ${city.name} market.` },
                   { icon: TrendingUp, title: "ROI First", desc: "We won't recommend a programme we can't make profitable. Every engagement starts with a clear opportunity analysis based on your market, category, and starting position." },
                 ].map(({ icon: IcComponent, title, desc }) => (
                   <div key={title} className="flex gap-4 items-start">

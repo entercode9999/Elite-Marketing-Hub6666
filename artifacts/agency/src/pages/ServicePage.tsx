@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useSeo } from "@/hooks/useSeo";
 import { Link } from "wouter";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -60,6 +61,11 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 
 /* ── MAIN COMPONENT ── */
 export function ServicePage({ data }: { data: ServicePageData }) {
+  useSeo({
+    title: `${data.headline}${data.headlineAccent ? " " + data.headlineAccent : ""} | Outlier`,
+    description: data.subhead.slice(0, 160),
+  });
+
   return (
     <div className="min-h-screen bg-white selection:bg-primary selection:text-white flex flex-col">
       <Nav />

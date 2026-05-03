@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, ArrowLeft, Clock, Calendar, User, Star, BookOpen } from "lucide-react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { useSeo } from "@/hooks/useSeo";
 
 /* ─── Types ────────────────────────────────────────────────────── */
 interface ArticleSection {
@@ -509,6 +510,11 @@ const RELATED = [
 export function InsightArticlePage() {
   const { slug } = useParams<{ slug: string }>();
   const article = ARTICLES.find((a) => a.slug === slug);
+
+  useSeo({
+    title: article ? `${article.title} | Outlier Insights` : "Insights | Outlier",
+    description: article ? article.excerpt.slice(0, 160) : "In-depth digital marketing insights, SEO strategies, and case studies from the Outlier team.",
+  });
 
   if (!article) {
     return (

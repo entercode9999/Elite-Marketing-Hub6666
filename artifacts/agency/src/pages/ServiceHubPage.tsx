@@ -5,6 +5,7 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { LogoMarquee } from "@/components/LogoMarquee";
 import { ArrowRight, Check, ChevronRight } from "lucide-react";
+import { useSeo } from "@/hooks/useSeo";
 
 export interface HubSubService {
   tab: string;
@@ -305,6 +306,10 @@ function FaqAccordion({ items }: { items: HubFaq[] }) {
 
 export function ServiceHubPage({ data }: { data: HubData }) {
   useEffect(() => { window.scrollTo(0, 0); }, [data.slug]);
+  useSeo({
+    title: `${data.hero.headline} | Outlier`,
+    description: data.hero.description.slice(0, 160),
+  });
 
   return (
     <div className="min-h-screen flex flex-col bg-white selection:bg-primary selection:text-white">

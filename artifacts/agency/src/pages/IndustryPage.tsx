@@ -5,6 +5,7 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { LogoMarquee } from "@/components/LogoMarquee";
 import { ArrowRight, Check, ChevronRight, Shield, Clock, BarChart2, Zap } from "lucide-react";
+import { useSeo } from "@/hooks/useSeo";
 
 export interface IndustryData {
   industry: string;
@@ -46,6 +47,11 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 }
 
 export function IndustryPage({ data }: { data: IndustryData }) {
+  useSeo({
+    title: `${data.industry} Marketing Toronto | Outlier`,
+    description: data.subhead.slice(0, 160),
+  });
+
   const tactics = data.tactics ?? [
     { title: "Vertical-specific keyword architecture", body: "We don't use generic keyword research templates. Every campaign and content cluster starts from the exact query language your prospective clients use — informed by intent data from your specific vertical." },
     { title: "Industry-calibrated benchmarks", body: "We compare your performance against industry-specific benchmarks, not generic marketing averages. A 3% CVR is mediocre for eCommerce but excellent for high-ticket professional services." },

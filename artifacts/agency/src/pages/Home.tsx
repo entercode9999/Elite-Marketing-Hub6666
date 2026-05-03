@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useSeo } from "@/hooks/useSeo";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { LogoMarquee } from "@/components/LogoMarquee";
@@ -76,6 +77,11 @@ const caseStudies = [
 ];
 
 export default function Home() {
+  useSeo({
+    title: "Toronto Digital Marketing Agency | Outlier",
+    description: "Outlier is Toronto's strategy-first digital marketing agency. SEO, Google Ads, paid social, and content — one team, every channel, dominant growth.",
+  });
+
   return (
     <div className="min-h-[100dvh] flex flex-col bg-background selection:bg-primary selection:text-white">
       <Nav />

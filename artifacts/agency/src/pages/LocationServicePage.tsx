@@ -5,6 +5,7 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { LogoMarquee } from "@/components/LogoMarquee";
 import { ArrowRight, MapPin, ChevronRight, Check, TrendingUp } from "lucide-react";
+import { useSeo } from "@/hooks/useSeo";
 
 /* ── TYPES ── */
 export interface LocationData {
@@ -134,6 +135,11 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 
 /* ── MAIN COMPONENT ── */
 export function LocationServicePage({ data }: { data: LocationData }) {
+  useSeo({
+    title: `${data.service} in ${data.city}, ${data.province} | Outlier`,
+    description: data.tagline.slice(0, 160),
+  });
+
   return (
     <div className="min-h-screen bg-white text-[#0e0e0e] selection:bg-primary selection:text-white">
       <Nav />
