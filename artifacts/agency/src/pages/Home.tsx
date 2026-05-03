@@ -77,10 +77,15 @@ export default function Home() {
         {/* ── HERO ── */}
         <section className="relative pt-36 pb-28 lg:pt-44 lg:pb-40 overflow-hidden bg-[#08090d] text-white">
           {/* Grid bg */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:72px_72px]" />
-          {/* Glow */}
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] opacity-50 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:72px_72px]" />
+          {/* Radial vignette for depth */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(26,86,255,0.12),transparent)]" />
+          {/* Animated glow orbs */}
+          <div className="animate-float-orb absolute top-[-80px] right-[-60px] w-[700px] h-[700px] bg-primary/18 rounded-full blur-[130px] opacity-60 pointer-events-none" />
+          <div className="animate-float-orb-alt absolute bottom-[-100px] left-[-80px] w-[500px] h-[500px] bg-indigo-500/12 rounded-full blur-[110px] pointer-events-none" />
+          <div className="animate-float-orb absolute top-[30%] left-[40%] w-[300px] h-[300px] bg-blue-600/8 rounded-full blur-[90px] pointer-events-none" />
+          {/* Bottom fade into next section */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#08090d] pointer-events-none" />
 
           <div className="max-w-6xl mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -125,14 +130,14 @@ export default function Home() {
                 >
                   <a
                     href="/contact"
-                    className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-3.5 px-7 rounded-xl transition-all shadow-[0_0_40px_rgba(26,86,255,0.35)] group text-sm"
+                    className="relative overflow-hidden shimmer-button inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-3.5 px-7 rounded-xl transition-all animate-glow-pulse group text-sm"
                   >
                     Book a Strategy Call
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                   </a>
                   <a
                     href="#work"
-                    className="inline-flex items-center gap-2 border border-white/15 hover:border-white/30 text-white/80 font-semibold py-3.5 px-7 rounded-xl transition-all text-sm"
+                    className="inline-flex items-center gap-2 border border-white/15 hover:border-white/25 hover:bg-white/4 text-white/80 font-semibold py-3.5 px-7 rounded-xl transition-all text-sm"
                   >
                     View Case Studies
                   </a>
@@ -248,11 +253,12 @@ export default function Home() {
               {caseStudies.map((cs, i) => (
                 <motion.div
                   key={cs.name}
-                  initial={{ opacity: 0, y: 24 }}
+                  initial={{ opacity: 0, y: 32 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.06, duration: 0.5 }}
-                  className="group cursor-pointer flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/30 hover:shadow-xl transition-all duration-300"
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ delay: i * 0.08, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                  whileHover={{ y: -4, transition: { duration: 0.25, ease: "easeOut" } }}
+                  className="group cursor-pointer flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/40 hover:shadow-[0_8px_40px_rgba(26,86,255,0.12)] transition-all duration-300"
                 >
                   <div className="aspect-[16/9] overflow-hidden relative">
                     <img

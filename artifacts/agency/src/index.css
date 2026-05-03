@@ -133,7 +133,55 @@
   --ring: 225 100% 60%;
 }
 
+@keyframes float-orb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.08); }
+  66% { transform: translate(-22px, 28px) scale(0.94); }
+}
+
+@keyframes float-orb-alt {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40% { transform: translate(-38px, 32px) scale(1.07); }
+  75% { transform: translate(28px, -22px) scale(0.95); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 40px rgba(26, 86, 255, 0.35), 0 4px 24px rgba(26, 86, 255, 0.2); }
+  50% { box-shadow: 0 0 70px rgba(26, 86, 255, 0.6), 0 4px 36px rgba(26, 86, 255, 0.35); }
+}
+
+@keyframes shimmer-slide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-float-orb {
+  animation: float-orb 11s ease-in-out infinite;
+}
+
+.animate-float-orb-alt {
+  animation: float-orb-alt 15s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.shimmer-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: translateX(-100%);
+  animation: shimmer-slide 3s ease-in-out infinite;
+  border-radius: inherit;
+}
+
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
     @apply border-border;
   }

@@ -1,6 +1,7 @@
 import { Link, useParams } from "wouter";
 import { ArrowRight, TrendingUp, BarChart3, Users, Search, Target, Share2, Mail, Globe, MapPin, CheckCircle2, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 
@@ -476,16 +477,40 @@ export function OurWorkPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="bg-[#08090d] pt-32 pb-20 border-b border-white/8">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-4">Case Studies</p>
+      <section className="relative bg-[#08090d] pt-32 pb-20 overflow-hidden border-b border-white/8">
+        {/* Grid bg */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:72px_72px]" />
+        {/* Radial vignette */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(26,86,255,0.10),transparent)]" />
+        {/* Animated orbs */}
+        <div className="animate-float-orb absolute top-[-60px] right-[-40px] w-[600px] h-[600px] bg-primary/15 rounded-full blur-[130px] opacity-60 pointer-events-none" />
+        <div className="animate-float-orb-alt absolute bottom-[-80px] left-[-60px] w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-[110px] pointer-events-none" />
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-[11px] font-black uppercase tracking-widest text-primary mb-4"
+          >
+            Case Studies
+          </motion.p>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <h1 className="text-5xl md:text-6xl font-black text-white leading-tight max-w-2xl">
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className="text-5xl md:text-6xl font-black text-white leading-tight max-w-2xl"
+            >
               Real results for real Ontario businesses.
-            </h1>
-            <p className="text-white/40 text-base max-w-xs leading-relaxed">
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.18 }}
+              className="text-white/40 text-base max-w-xs leading-relaxed"
+            >
               We let the numbers speak. Every engagement below is documented, attributed, and verified.
-            </p>
+            </motion.p>
           </div>
         </div>
       </section>
@@ -494,47 +519,58 @@ export function OurWorkPage() {
       <section className="py-16 bg-[#f9f8f5]">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {CASE_STUDIES.map((cs) => (
-              <Link key={cs.slug} href={`/our-work/${cs.slug}`} className="group block">
-                <div className={`relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-br ${cs.cardGradient} mb-4`}>
-                  {/* Geometric accent */}
-                  <div
-                    className="absolute inset-0 opacity-10"
-                    style={{
-                      backgroundImage: "linear-gradient(135deg, rgba(255,255,255,0.08) 25%, transparent 25%), linear-gradient(225deg, rgba(255,255,255,0.08) 25%, transparent 25%)",
-                      backgroundSize: "40px 40px",
-                    }}
-                  />
-                  {/* Service icon */}
-                  <div className="absolute top-6 left-6">
-                    <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
-                      {(() => {
-                        const Ic = SERVICE_ICONS[cs.service] || TrendingUp;
-                        return <Ic className="w-5 h-5 text-white" />;
-                      })()}
+            {CASE_STUDIES.map((cs, i) => (
+              <motion.div
+                key={cs.slug}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ delay: i * 0.08, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -5, transition: { duration: 0.22, ease: "easeOut" } }}
+              >
+                <Link href={`/our-work/${cs.slug}`} className="group block">
+                  <div className={`relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-br ${cs.cardGradient} mb-4 shadow-lg group-hover:shadow-[0_12px_48px_rgba(0,0,0,0.25)] transition-shadow duration-300`}>
+                    {/* Geometric accent */}
+                    <div
+                      className="absolute inset-0 opacity-10"
+                      style={{
+                        backgroundImage: "linear-gradient(135deg, rgba(255,255,255,0.08) 25%, transparent 25%), linear-gradient(225deg, rgba(255,255,255,0.08) 25%, transparent 25%)",
+                        backgroundSize: "40px 40px",
+                      }}
+                    />
+                    {/* Glow edge on hover */}
+                    <div className="absolute inset-0 rounded-2xl ring-1 ring-white/10 group-hover:ring-white/25 transition-all duration-300" />
+                    {/* Service icon */}
+                    <div className="absolute top-6 left-6">
+                      <div className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/18 transition-colors duration-300">
+                        {(() => {
+                          const Ic = SERVICE_ICONS[cs.service] || TrendingUp;
+                          return <Ic className="w-5 h-5 text-white" />;
+                        })()}
+                      </div>
+                    </div>
+                    {/* Industry badge */}
+                    <div className="absolute top-6 right-6">
+                      <span className="text-[10px] font-black uppercase tracking-widest bg-white/15 backdrop-blur-sm text-white px-2.5 py-1 rounded-full border border-white/20">
+                        Case Study
+                      </span>
+                    </div>
+                    {/* Key result */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
+                      <p className="text-white/50 text-[10px] font-black uppercase tracking-widest mb-1">{cs.service} · {cs.location}</p>
+                      <p className="text-white font-black text-xl leading-tight">{cs.client}</p>
+                    </div>
+                    {/* Hover arrow */}
+                    <div className="absolute bottom-6 right-6 w-9 h-9 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                      <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-0.5 transition-transform" />
                     </div>
                   </div>
-                  {/* Industry badge */}
-                  <div className="absolute top-6 right-6">
-                    <span className="text-[10px] font-black uppercase tracking-widest bg-white/15 text-white px-2.5 py-1 rounded-full border border-white/20">
-                      Case Study
-                    </span>
+                  <div className="px-1">
+                    <p className="font-black text-[#0e0e0e] text-base mb-1 group-hover:text-primary transition-colors duration-200">{cs.client}</p>
+                    <p className="text-gray-500 text-sm">{cs.tagline}</p>
                   </div>
-                  {/* Key result */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
-                    <p className="text-white/50 text-[10px] font-black uppercase tracking-widest mb-1">{cs.service} · {cs.location}</p>
-                    <p className="text-white font-black text-xl leading-tight">{cs.client}</p>
-                  </div>
-                  {/* Hover arrow */}
-                  <div className="absolute bottom-6 right-6 w-9 h-9 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
-                    <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-0.5 transition-transform" />
-                  </div>
-                </div>
-                <div className="px-1">
-                  <p className="font-black text-[#0e0e0e] text-base mb-1">{cs.client}</p>
-                  <p className="text-gray-500 text-sm">{cs.tagline}</p>
-                </div>
-              </Link>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -559,11 +595,19 @@ export function OurWorkPage() {
                 { n: "93%", l: "Client retention after year 1" },
                 { n: "4.9★", l: "Clutch rating" },
                 { n: "10yr+", l: "Active in the market" },
-              ].map((s) => (
-                <div key={s.l} className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-6 text-center">
+              ].map((s, i) => (
+                <motion.div
+                  key={s.l}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.07, duration: 0.5 }}
+                  whileHover={{ y: -3, transition: { duration: 0.2 } }}
+                  className="bg-[#f9f8f5] border border-[#e5e2d9] hover:border-primary/30 hover:shadow-[0_4px_24px_rgba(26,86,255,0.08)] rounded-2xl p-6 text-center transition-all duration-300"
+                >
                   <p className="text-3xl font-black text-primary mb-1">{s.n}</p>
                   <p className="text-xs text-gray-500">{s.l}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -571,8 +615,15 @@ export function OurWorkPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-[#08090d]">
-        <div className="container mx-auto px-4 max-w-3xl text-center">
+      <section className="relative py-20 bg-[#08090d] overflow-hidden">
+        <div className="animate-float-orb absolute top-[-80px] left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/15 rounded-full blur-[120px] opacity-60 pointer-events-none" />
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="container mx-auto px-4 max-w-3xl text-center relative z-10"
+        >
           <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-4">Start your case study</p>
           <h2 className="text-4xl font-black text-white leading-tight mb-5">
             Your business could be next.
@@ -582,11 +633,11 @@ export function OurWorkPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-4 rounded-xl hover:bg-primary/90 transition-colors text-[15px]"
+            className="relative overflow-hidden shimmer-button inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-4 rounded-xl hover:bg-primary/90 transition-colors text-[15px] animate-glow-pulse group"
           >
-            Book a Free Strategy Call <ArrowRight className="w-5 h-5" />
+            Book a Free Strategy Call <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
           </Link>
-        </div>
+        </motion.div>
       </section>
 
       <Footer />
@@ -811,13 +862,21 @@ export function CaseStudyPage() {
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-14">
-            {cs.results.map((r) => (
-              <div key={r.label} className="bg-white/4 border border-white/8 rounded-2xl p-7 text-center">
+            {cs.results.map((r, i) => (
+              <motion.div
+                key={r.label}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.07, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -3, transition: { duration: 0.2 } }}
+                className="bg-white/4 border border-white/8 hover:border-white/20 hover:bg-white/7 rounded-2xl p-7 text-center transition-colors duration-300"
+              >
                 <p className="font-black text-white mb-2" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", lineHeight: 1 }}>
                   {r.stat}
                 </p>
                 <p className="text-white/40 text-xs font-medium leading-snug">{r.label}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
 

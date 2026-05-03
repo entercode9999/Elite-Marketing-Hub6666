@@ -131,7 +131,7 @@ export function Nav() {
           {/* CTA */}
           <a
             href="/contact"
-            className="hidden md:inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-2.5 px-5 rounded-lg transition-all text-sm group shadow-lg shadow-primary/25"
+            className="relative overflow-hidden shimmer-button hidden md:inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-2.5 px-5 rounded-lg transition-all text-sm group shadow-lg shadow-primary/30 hover:shadow-primary/50"
           >
             Get a Free Audit
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
