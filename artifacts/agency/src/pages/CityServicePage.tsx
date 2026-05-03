@@ -2111,6 +2111,62 @@ export default function CityServicePage() {
     { slug: "web-design", label: "Web Design" },
   ];
   const otherCityServices = ALL_CITY_SERVICES.filter((s) => s.slug !== serviceSlug);
+  const bannerByService: Record<string, { title: string; body: string; primary: string; secondary: string }> = {
+    "web-design": {
+      title: `Built for ${city.name} brands that need a stronger online presence.`,
+      body: "Custom design, fast performance, and a polished site experience that helps your business look credible, modern, and easy to trust.",
+      primary: `View all ${city.name} services`,
+      secondary: "Get a free audit",
+    },
+    "seo-services": {
+      title: `Built for ${city.name} businesses that want better rankings.`,
+      body: "Technical SEO, content, and authority-building tailored to your market — so you show up when local customers search.",
+      primary: `View all ${city.name} services`,
+      secondary: "Get a free audit",
+    },
+    "local-seo": {
+      title: `Built for ${city.name} businesses that need local visibility.`,
+      body: "Map-pack visibility, location pages, and local search strategy designed to bring nearby customers to you.",
+      primary: `View all ${city.name} services`,
+      secondary: "Get a free audit",
+    },
+    "google-ads": {
+      title: `Built for ${city.name} businesses that want faster leads.`,
+      body: "High-intent campaigns, better landing pages, and conversion tracking that turn ad spend into measurable growth.",
+      primary: `View all ${city.name} services`,
+      secondary: "Get a free audit",
+    },
+    "social-ads": {
+      title: `Built for ${city.name} brands that want demand generation.`,
+      body: "Paid social campaigns that build awareness, retarget visitors, and drive qualified traffic from the right audience.",
+      primary: `View all ${city.name} services`,
+      secondary: "Get a free audit",
+    },
+    "content-marketing": {
+      title: `Built for ${city.name} businesses that want authority.`,
+      body: "Thoughtful content strategy and SEO-friendly pages that build trust, rankings, and long-term organic growth.",
+      primary: `View all ${city.name} services`,
+      secondary: "Get a free audit",
+    },
+    "email-marketing": {
+      title: `Built for ${city.name} businesses that want repeat revenue.`,
+      body: "Automations and campaigns that keep your audience engaged and turn existing contacts into more sales.",
+      primary: `View all ${city.name} services`,
+      secondary: "Get a free audit",
+    },
+    "digital-marketing": {
+      title: `Built for ${city.name} businesses that want integrated growth.`,
+      body: "A full-funnel strategy that aligns SEO, ads, content, email, and site experience around one goal.",
+      primary: `View all ${city.name} services`,
+      secondary: "Get a free audit",
+    },
+  };
+  const banner = bannerByService[serviceSlug] ?? {
+    title: `Built for ${city.name} businesses that want stronger marketing results.`,
+    body: "A tailored strategy built for your market, your audience, and your growth goals — not a generic template.",
+    primary: `View all ${city.name} services`,
+    secondary: "Get a free audit",
+  };
 
   /* Example local search queries — generated dynamically */
   const shortKeyword = svc.shortLabel.toLowerCase();
@@ -2864,17 +2920,17 @@ export default function CityServicePage() {
                     {city.name}, {city.province}
                   </p>
                   <h2 className="text-3xl font-black leading-[1.05] mb-4">
-                    Built for {city.name} businesses that want more leads.
+                    {banner.title}
                   </h2>
                   <p className="text-white/70 text-sm leading-relaxed mb-6 max-w-md">
-                    Local strategy, strong design, and performance-focused marketing built for your market — not a generic template.
+                    {banner.body}
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <Link href={`/${citySlug}`} className="inline-flex items-center gap-2 rounded-xl bg-white text-[#09111f] font-bold px-5 py-3 text-sm hover:bg-white/90 transition-colors">
-                      View all {city.name} services <ArrowRight className="w-4 h-4" />
+                      {banner.primary} <ArrowRight className="w-4 h-4" />
                     </Link>
                     <Link href="/contact" className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-bold text-white hover:bg-white/10 transition-colors">
-                      Get a free audit <ArrowRight className="w-4 h-4" />
+                      {banner.secondary} <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
                 </div>
