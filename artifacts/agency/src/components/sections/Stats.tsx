@@ -11,10 +11,10 @@ type Stat = {
 };
 
 const stats: Stat[] = [
-  { prefix: "$", value: 250, suffix: "M+", label: "Ad Spend Managed" },
-  { value: 2400, suffix: "+", label: "Keywords on Page 1", format: (n) => n.toLocaleString() },
-  { value: 180, suffix: "+", label: "Active Clients" },
+  { value: 10, suffix: "+", label: "Years in Toronto" },
+  { value: 65, suffix: "+", label: "Brands Grown" },
   { value: 94, suffix: "%", label: "Client Retention" },
+  { prefix: "4.", value: 9, suffix: "★", label: "Clutch Rating" },
 ];
 
 function StatItem({ stat, inView, index }: { stat: Stat; inView: boolean; index: number }) {

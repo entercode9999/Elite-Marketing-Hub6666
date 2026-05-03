@@ -50,8 +50,8 @@ const DIFFERENTIATORS = [
 const PROOF_STATS = [
   { value: "94%", label: "Client retention" },
   { value: "10+", label: "Years operating" },
-  { value: "200+", label: "Brands grown" },
-  { value: "< 30d", label: "Time to notice" },
+  { value: "65+", label: "Brands grown" },
+  { value: "4.9★", label: "Clutch rating" },
 ];
 
 export function WhyOutlier() {

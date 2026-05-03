@@ -91,7 +91,7 @@ const MILESTONES = [
   { year: "2018", event: "Launched web & CRO practice. Team reached 12 people." },
   { year: "2020", event: "Scaled remote operations across Canada. 80+ active clients." },
   { year: "2022", event: "Launched pSEO practice. First programmatic campaigns go live." },
-  { year: "2024", event: "200+ brands grown. 93% client retention. Still headquartered in Toronto." },
+  { year: "2024", event: "65+ brands grown. 93% client retention. Still headquartered in Toronto." },
 ];
 
 export function AboutPage() {
@@ -111,7 +111,7 @@ export function AboutPage() {
           <div className="grid grid-cols-2 sm:grid-cols-5">
             {[
               { n: "2013", l: "Founded in Toronto" },
-              { n: "200+", l: "Ontario brands grown" },
+              { n: "65+", l: "Ontario brands grown" },
               { n: "93%", l: "Client retention after year 1" },
               { n: "10yr+", l: "Avg. team experience" },
               { n: "4.9★", l: "Clutch agency rating" },
@@ -389,7 +389,7 @@ export function AboutPage() {
           transition={{ duration: 0.6 }}
           className="container mx-auto px-4 max-w-3xl text-center relative z-10"
         >
-          <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-4">Join 200+ Ontario Businesses</p>
+          <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-4">Join 65+ Ontario Businesses</p>
           <h2 className="text-4xl font-black text-white leading-tight mb-5">Ready to work with a team that's actually senior?</h2>
           <p className="text-white/40 text-[15px] leading-relaxed mb-8 max-w-xl mx-auto">
             Every engagement starts with a free strategy call. We assess your market, identify the real opportunity, and tell you exactly what it would take to dominate it.
@@ -608,7 +608,7 @@ export function ContactPage() {
                 </div>
                 <div className="mt-4 pt-4 border-t border-[#e5e2d9] flex items-center gap-2">
                   <Award className="w-4 h-4 text-primary" />
-                  <span className="text-[11px] text-gray-400 font-medium">4.9★ on Clutch · 200+ Ontario businesses</span>
+                  <span className="text-[11px] text-gray-400 font-medium">4.9★ on Clutch · 65+ Ontario businesses</span>
                 </div>
               </div>
 
@@ -825,7 +825,7 @@ export function InsightsPage() {
       <DarkHero
         label="Insights"
         title={<>Strategy. Tactics.<br /><span className="text-primary italic">Real results.</span></>}
-        sub="What we're learning from 200+ active engagements — published for the operators who want to go further."
+        sub="What we're learning from our client engagements — published for the operators who want to go further."
       />
 
       <section className="py-16">
