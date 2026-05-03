@@ -1293,6 +1293,66 @@ export function AccessibilityPage() {
   );
 }
 
+const FAQS = [
+  {
+    q: "What services does Outlier provide?",
+    a: "We focus on SEO, paid media, content marketing, web design, CRO, and city/service pSEO pages for Ontario businesses.",
+  },
+  {
+    q: "Do you work with businesses outside Toronto?",
+    a: "Yes. We work with clients across the GTA and Ontario, plus selected national brands.",
+  },
+  {
+    q: "What size business is the best fit?",
+    a: "Usually established businesses ready to invest in growth, with a clear service offering and a real market to win in.",
+  },
+  {
+    q: "Do you offer one-off projects?",
+    a: "Yes, but most of our best results come from ongoing engagements where strategy and execution can compound over time.",
+  },
+  {
+    q: "How fast can we get started?",
+    a: "Typically within 1 business day for an intro call, then we move into audit and planning right away if it's a fit.",
+  },
+];
+
+export function FAQPage() {
+  useSeo({
+    title: "FAQ | Outlier Toronto Digital Marketing Agency",
+    description: "Answers to common questions about Outlier's SEO, paid media, web design, and pSEO services.",
+    canonicalPath: "/faq",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: FAQS.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: { "@type": "Answer", text: faq.a },
+      })),
+    },
+  });
+  return (
+    <div className="min-h-screen bg-[#f9f8f5]">
+      <Nav />
+      <DarkHero
+        label="FAQ"
+        title={<>Questions answered.<br /><span className="text-primary italic">Fast.</span></>}
+        sub="The most common questions we get from prospective clients."
+      />
+      <section className="py-20">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="bg-white border border-[#e5e2d9] rounded-2xl overflow-hidden">
+            {FAQS.map((faq) => (
+              <FaqItem key={faq.q} q={faq.q} a={faq.a} />
+            ))}
+          </div>
+        </div>
+      </section>
+      <Footer />
+    </div>
+  );
+}
+
 /* Legacy export for any old import */
 export function CaseStudiesPage() {
   return null;

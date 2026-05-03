@@ -419,19 +419,46 @@ export function LocationServicePage({ data }: { data: LocationData }) {
 
       {/* ══ BOTTOM CTA ══ */}
       <section className="py-20 md:py-28 bg-[#08090d] border-t border-white/5">
-        <div className="max-w-2xl mx-auto px-6 text-center">
-          <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-4 block">{data.city} · Free Audit</span>
-          <h2 className="text-3xl md:text-4xl font-black leading-tight mb-4">{data.ctaHeadline}</h2>
-          <p className="text-white/40 text-sm mb-8 leading-relaxed">
-            One-page diagnostic: your map pack position in {data.city}, your service category, and the businesses currently outranking you.
-          </p>
-          <a
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-primary text-white font-bold py-4 px-8 rounded-xl transition-all text-sm group hover:bg-primary/90 shadow-lg shadow-primary/25"
-          >
-            Request {data.city} audit
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] items-center">
+            <div className="text-center lg:text-left">
+              <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-4 block">{data.city} · Free Audit</span>
+              <h2 className="text-3xl md:text-4xl font-black leading-tight mb-4">{data.ctaHeadline}</h2>
+              <p className="text-white/40 text-sm mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                One-page diagnostic: your map pack position in {data.city}, your service category, and the businesses currently outranking you.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center gap-2 bg-primary text-white font-bold py-4 px-8 rounded-xl transition-all text-sm group hover:bg-primary/90 shadow-lg shadow-primary/25"
+                >
+                  Request {data.city} audit
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                </a>
+                <a
+                  href={`/${data.slug}/seo-services`}
+                  className="inline-flex items-center gap-2 border border-white/15 text-white/70 font-bold py-4 px-8 rounded-xl transition-all text-sm hover:border-white/30 hover:text-white"
+                >
+                  Explore SEO services
+                </a>
+              </div>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+              <p className="text-[10px] font-black uppercase tracking-widest text-primary mb-4">What you get</p>
+              <div className="space-y-3">
+                {[
+                  `Current ${data.city} map pack position`,
+                  `Top outranking competitors`,
+                  `Quick wins for ${data.service}`,
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3 text-sm text-white/60">
+                    <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
