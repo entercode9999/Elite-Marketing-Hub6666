@@ -205,21 +205,21 @@ export default function Home() {
                   </a>
                 </motion.div>
 
-                {/* Trust row */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.35 }}
-                  className="flex flex-wrap items-center gap-6"
+                  className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl"
                 >
                   {[
-                    { icon: Star, label: "4.9 / 5 client rating" },
-                    { icon: CheckCircle, label: "No lock-in contracts" },
-                    { icon: TrendingUp, label: "Results in 30 days" },
+                    { icon: Check, title: "Strategy + delivery", body: "One senior team owns the whole engagement from planning to execution." },
+                    { icon: ShieldCheck, title: "Clear scope", body: "Transparent reporting, defined deliverables, and no messy handoffs." },
+                    { icon: Target, title: "Built for revenue", body: "Every channel, page, and campaign is tied to a conversion outcome." },
                   ].map((item) => (
-                    <div key={item.label} className="flex items-center gap-2 text-xs text-white/40">
-                      <item.icon className="w-3.5 h-3.5 text-white/30" />
-                      {item.label}
+                    <div key={item.title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-sm">
+                      <item.icon className="w-5 h-5 text-primary mb-3" />
+                      <h3 className="text-sm font-black text-white mb-1">{item.title}</h3>
+                      <p className="text-xs leading-relaxed text-white/55">{item.body}</p>
                     </div>
                   ))}
                 </motion.div>
