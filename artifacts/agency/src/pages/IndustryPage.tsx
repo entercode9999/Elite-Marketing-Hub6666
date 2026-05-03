@@ -102,9 +102,9 @@ export function IndustryPage({ data }: { data: IndustryData }) {
       <Nav />
 
       {/* ── HERO — dark split ── */}
-      <section className="min-h-[420px] grid grid-cols-1 md:grid-cols-2 pt-[52px] md:pt-[56px]">
+      <section className="min-h-[360px] md:min-h-[400px] grid grid-cols-1 md:grid-cols-2 pt-[40px] md:pt-[48px]">
         {/* Left: dark */}
-        <div className="bg-[#08090d] flex flex-col justify-center px-10 lg:px-16 py-14 lg:py-16 relative overflow-hidden">
+        <div className="bg-[#08090d] flex flex-col justify-center px-10 lg:px-16 py-10 lg:py-12 relative overflow-hidden">
           <div className="absolute inset-0 z-0">
             <img src={data.image} alt={data.industry} className="w-full h-full object-cover opacity-8" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#08090d] via-[#08090d]/90 to-[#08090d]/70" />
@@ -136,12 +136,12 @@ export function IndustryPage({ data }: { data: IndustryData }) {
         </div>
 
         {/* Right: stats on light bg */}
-        <div className="bg-[#f2f2ef] flex flex-col items-center justify-start px-8 py-10 lg:py-12">
+        <div className="bg-[#f2f2ef] flex flex-col items-center justify-start px-8 py-8 lg:py-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="w-full max-w-sm mt-2 lg:mt-4"
+            className="w-full max-w-sm mt-0 lg:mt-2"
           >
             <div className="grid grid-cols-2 gap-3">
               {data.stats.map((s) => (

@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "wouter";
+import { useState } from "react";
+import { Link } from "wouter";
 import { ArrowRight, X, AlignJustify, ChevronDown } from "lucide-react";
 
 type NavItem = { label: string; href: string };
@@ -59,28 +59,11 @@ export function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
-  const [scrolled, setScrolled] = useState(false);
-  const [location] = useLocation();
-
-  useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", fn);
-    return () => window.removeEventListener("scroll", fn);
-  }, []);
-
-  useEffect(() => setMobileOpen(false), [location]);
-
-  const isHome = location === "/";
-  const transparent = isHome && !scrolled;
 
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          transparent
-            ? "bg-transparent"
-            : "bg-[#08090d]/95 backdrop-blur-md border-b border-white/8 shadow-lg shadow-black/20"
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 bg-[#08090d]/95 backdrop-blur-md border-b border-white/8 shadow-lg shadow-black/20 transition-all duration-300"
       >
         <div className="max-w-7xl mx-auto px-5 h-[68px] flex items-center justify-between">
 
