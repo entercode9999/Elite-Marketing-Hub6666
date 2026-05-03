@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import SitemapPage from "@/pages/SitemapPage";
 
 /* ── Core service pages ── */
 import { ServicePage, localSeoData, googleAdsData } from "@/pages/ServicePage";
@@ -180,6 +181,7 @@ function Router() {
       <Route path="/privacy" component={PrivacyPage} />
       <Route path="/terms" component={TermsPage} />
       <Route path="/accessibility" component={AccessibilityPage} />
+      <Route path="/sitemap" component={SitemapPage} />
 
       {/* ── Conversion pages ── */}
       <Route path="/pricing" component={PricingPage} />

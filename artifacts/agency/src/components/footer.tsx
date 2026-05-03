@@ -50,78 +50,6 @@ const MARKETS = [
   { label: "Markham", href: "/markham/seo-services" },
 ];
 
-const SITEMAP = [
-  {
-    heading: "Main",
-    links: [
-      { label: "Home", href: "/" },
-      { label: "About", href: "/about" },
-      { label: "Insights", href: "/insights" },
-      { label: "Our Work", href: "/our-work" },
-      { label: "Testimonials", href: "/testimonials" },
-      { label: "Pricing", href: "/pricing" },
-      { label: "Contact", href: "/contact" },
-    ],
-  },
-  {
-    heading: "Services",
-    links: [
-      { label: "SEO Services", href: "/seo-services" },
-      { label: "Local SEO", href: "/local-seo-service" },
-      { label: "Technical SEO", href: "/technical-seo-service" },
-      { label: "AI SEO", href: "/ai-seo-service" },
-      { label: "Google Ads / PPC", href: "/google-ads-management" },
-      { label: "Social Media Advertising", href: "/social-media-advertising" },
-      { label: "Content Marketing", href: "/content-marketing-service" },
-      { label: "Website Design", href: "/custom-web-design-service" },
-      { label: "Website Development", href: "/website-development-service" },
-      { label: "CRO", href: "/cro-service" },
-    ],
-  },
-  {
-    heading: "Industries",
-    links: [
-      { label: "Dental & Medical", href: "/dental-marketing" },
-      { label: "Legal Services", href: "/legal-marketing" },
-      { label: "Home Services", href: "/home-services-marketing" },
-      { label: "Real Estate", href: "/real-estate-marketing" },
-      { label: "eCommerce & DTC", href: "/ecommerce-marketing" },
-      { label: "SaaS & Tech", href: "/saas-marketing" },
-      { label: "Restaurants", href: "/restaurant-marketing" },
-      { label: "Construction", href: "/construction-marketing" },
-    ],
-  },
-  {
-    heading: "Markets",
-    links: [
-      { label: "Toronto", href: "/toronto/seo-services" },
-      { label: "Mississauga", href: "/mississauga/seo-services" },
-      { label: "Hamilton", href: "/hamilton/seo-services" },
-      { label: "Ottawa", href: "/ottawa/seo-services" },
-      { label: "Brampton", href: "/brampton/seo-services" },
-      { label: "All cities", href: "/cities" },
-    ],
-  },
-];
-
-function FooterCol({ heading, links, extra }: { heading: string; links: { label: string; href: string }[]; extra?: React.ReactNode }) {
-  return (
-    <div>
-      <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-5">{heading}</h4>
-      <ul className="space-y-2.5">
-        {links.map((l) => (
-          <li key={l.href}>
-            <Link href={l.href} className="text-sm text-white/50 hover:text-white transition-colors">
-              {l.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-      {extra}
-    </div>
-  );
-}
-
 export function Footer() {
   return (
     <footer className="bg-[#08090d] text-white border-t border-white/8">
@@ -152,13 +80,23 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Sitemap */}
-          <div className="col-span-2 md:col-span-3 lg:col-span-6">
-            <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-5">Sitemap</h4>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {SITEMAP.map((group) => (
-                <FooterCol key={group.heading} heading={group.heading} links={group.links} />
-              ))}
+          <FooterCol heading="Digital Marketing" links={DIGITAL_MARKETING} />
+          <FooterCol heading="Web & Ecommerce" links={WEB_SERVICES} />
+          <FooterCol heading="Industries" links={INDUSTRIES} extra={<div className="mt-3"><Link href="/industries" className="text-xs text-[#1a56ff] font-semibold hover:text-[#1a56ff]/80 transition-colors">All industries →</Link></div>} />
+          <div>
+            <FooterCol heading="Company" links={COMPANY} />
+            <div className="mt-8">
+              <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-5">Markets</h4>
+              <ul className="space-y-2.5">
+                {MARKETS.map((l) => (
+                  <li key={l.href}>
+                    <Link href={l.href} className="text-sm text-white/50 hover:text-white transition-colors">{l.label}</Link>
+                  </li>
+                ))}
+                <li>
+                  <Link href="/cities" className="text-xs text-[#1a56ff] font-semibold hover:text-[#1a56ff]/80 transition-colors">View all cities →</Link>
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -179,6 +117,7 @@ export function Footer() {
             <div className="w-px h-3 bg-white/10" />
             <Link href="/privacy" className="hover:text-white/60 transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-white/60 transition-colors">Terms</Link>
+            <Link href="/sitemap" className="hover:text-white/60 transition-colors">Sitemap</Link>
             <Link href="/accessibility" className="hover:text-white/60 transition-colors">Accessibility</Link>
           </div>
         </div>
