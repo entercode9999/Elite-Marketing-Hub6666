@@ -6,51 +6,46 @@ type NavItem = { label: string; href: string };
 
 const NAV_CATEGORIES: { label: string; items: NavItem[] }[] = [
   {
-    label: "Services",
+    label: "Website Services",
     items: [
-      { label: "Local SEO", href: "/local-seo-service" },
+      { label: "Website Design", href: "/custom-web-design-service" },
+      { label: "Website Development", href: "/website-development-service" },
+      { label: "WordPress Development", href: "/wordpress-development-service" },
+      { label: "Joomla Development", href: "/joomla-development-service" },
+      { label: "Drupal Development", href: "/drupal-development-service" },
+      { label: "Laravel Web Development", href: "/laravel-web-development" },
+    ],
+  },
+  {
+    label: "Ecommerce Services",
+    items: [
+      { label: "Ecommerce Development", href: "/ecommerce-development" },
+      { label: "Magento Development", href: "/magento-development" },
+      { label: "Shopify Development", href: "/shopify-development" },
+      { label: "Shopify Plus Development", href: "/shopify-plus-development" },
+      { label: "Headless Commerce", href: "/headless-commerce-service" },
+    ],
+  },
+  {
+    label: "Enterprise Commerce",
+    items: [
+      { label: "Adobe Commerce Development", href: "/adobe-commerce-development" },
+      { label: "Magento 2 Development", href: "/magento-2-development" },
+      { label: "Magento 2 Migration", href: "/magento-2-migration" },
+      { label: "Magento 2 Support & Maintenance", href: "/magento-2-support" },
+      { label: "Hyvä Theme Development", href: "/hyva-theme-development" },
+      { label: "Hyvä Enterprise Solutions", href: "/hyva-enterprise-solutions" },
+    ],
+  },
+  {
+    label: "Digital Marketing",
+    items: [
+      { label: "SEO Services", href: "/seo-services" },
       { label: "Technical SEO", href: "/technical-seo-service" },
       { label: "AI SEO", href: "/ai-seo-service" },
-      { label: "Google Ads (PPC)", href: "/google-ads-management" },
-      { label: "Paid Social", href: "/social-media-advertising" },
-      { label: "Content Marketing", href: "/content-marketing-service" },
-      { label: "Web Design & CRO", href: "/custom-web-design-service" },
-      { label: "AI & Automation", href: "/ai-automation" },
-    ],
-  },
-  {
-    label: "Industries",
-    items: [
-      { label: "Dental & Medical", href: "/dental-marketing" },
-      { label: "Legal Services", href: "/legal-marketing" },
-      { label: "Home Services", href: "/home-services-marketing" },
-      { label: "Real Estate", href: "/real-estate-marketing" },
-      { label: "eCommerce & DTC", href: "/ecommerce-marketing" },
-      { label: "SaaS & Tech", href: "/saas-marketing" },
-      { label: "Restaurants", href: "/restaurant-marketing" },
-      { label: "Construction", href: "/construction-marketing" },
-    ],
-  },
-  {
-    label: "Markets",
-    items: [
-      { label: "Toronto", href: "/toronto/seo-services" },
-      { label: "Mississauga", href: "/mississauga/seo-services" },
-      { label: "Brampton", href: "/brampton/seo-services" },
-      { label: "Oakville", href: "/oakville/seo-services" },
-      { label: "Hamilton", href: "/hamilton/seo-services" },
-      { label: "Ottawa", href: "/ottawa/seo-services" },
-    ],
-  },
-  {
-    label: "Company",
-    items: [
-      { label: "About Outlier", href: "/about" },
-      { label: "Our Work", href: "/our-work" },
-      { label: "Insights", href: "/insights" },
-      { label: "Pricing", href: "/pricing" },
-      { label: "Client Reviews", href: "/testimonials" },
-      { label: "Careers", href: "/careers" },
+      { label: "Local SEO Services", href: "/local-seo-service" },
+      { label: "Pay Per Click (PPC)", href: "/google-ads-management" },
+      { label: "Social Media Advertising", href: "/social-media-advertising" },
     ],
   },
 ];
@@ -83,8 +78,6 @@ export function Nav() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-5 h-[68px] flex items-center justify-between">
-
-          {/* Logo */}
           <div className="flex items-center gap-4">
             <Link href="/" className="flex items-center gap-2 font-black text-xl tracking-tight text-white">
               <div className="w-7 h-7 rounded-md bg-primary flex items-center justify-center">
@@ -100,8 +93,7 @@ export function Nav() {
             </button>
           </div>
 
-          {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-0.5">
+          <div className="hidden lg:flex items-center gap-1">
             {NAV_CATEGORIES.map((cat) => (
               <div
                 key={cat.label}
@@ -115,7 +107,7 @@ export function Nav() {
                 </button>
 
                 {hoveredItem === cat.label && (
-                  <div className="absolute top-full left-0 pt-2 w-56 z-50">
+                  <div className="absolute top-full left-0 pt-2 w-60 z-50">
                     <div className="bg-[#0e1018] border border-white/10 rounded-xl shadow-2xl overflow-hidden py-2">
                       <p className="px-4 py-1.5 text-[10px] font-bold text-white/25 uppercase tracking-widest">{cat.label}</p>
                       {cat.items.map((sub) => (
@@ -134,26 +126,16 @@ export function Nav() {
             ))}
           </div>
 
-          {/* CTA */}
-          <div className="hidden md:flex items-center gap-3">
-            <Link
-              href="/our-work"
-              className="text-sm font-semibold text-white/50 hover:text-white transition-colors"
-            >
-              Our Work
-            </Link>
-            <Link
-              href="/free-audit"
-              className="relative overflow-hidden shimmer-button inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-2.5 px-5 rounded-lg transition-all text-sm group shadow-lg shadow-primary/30 hover:shadow-primary/50"
-            >
-              Get a Free Audit
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          </div>
+          <Link
+            href="/free-audit"
+            className="relative overflow-hidden shimmer-button hidden md:inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-2.5 px-5 rounded-lg transition-all text-sm group shadow-lg shadow-primary/30 hover:shadow-primary/50"
+          >
+            Get a Free Audit
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+          </Link>
         </div>
       </nav>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div className="fixed inset-0 z-[70] flex">
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setMobileOpen(false)} />
@@ -200,7 +182,7 @@ export function Nav() {
                 Get a Free Audit
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </Link>
-              <p className="text-center text-xs text-white/25 mt-3">1-800-555-0199 · hello@outlier.co</p>
+              <p className="text-center text-xs text-white/25 mt-3">1-800-555-0199</p>
             </div>
           </div>
         </div>
