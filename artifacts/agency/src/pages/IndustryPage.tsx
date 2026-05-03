@@ -30,19 +30,23 @@ export interface IndustryData {
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <>
-      <button onClick={() => setOpen((v) => !v)} className="w-full flex items-center justify-between px-6 py-4 text-left font-bold text-[#0e0e0e] hover:bg-gray-50 transition-colors">
-        <span className="text-sm pr-4">{q}</span>
-        <ChevronRight className={`w-4 h-4 text-gray-400 shrink-0 transition-transform ${open ? "rotate-90" : ""}`} />
+    <div className="group">
+      <button onClick={() => setOpen((v) => !v)} className="w-full flex items-start justify-between gap-4 py-5 text-left">
+        <span className={`text-[15px] font-bold leading-snug transition-colors ${open ? "text-primary" : "text-[#0e0e0e] group-hover:text-primary"}`}>
+          {q}
+        </span>
+        <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5 transition-all" style={{ background: open ? "#1a56ff" : "rgba(0,0,0,0.05)" }}>
+          <ChevronRight className={`w-3.5 h-3.5 transition-transform ${open ? "rotate-90 text-white" : "text-gray-500"}`} />
+        </div>
       </button>
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {open && (
-          <motion.div initial={{ height: 0 }} animate={{ height: "auto" }} exit={{ height: 0 }} transition={{ duration: 0.2 }} className="overflow-hidden">
-            <p className="px-6 py-4 pt-0 text-sm text-gray-500 leading-relaxed border-t border-[#e5e2d9]">{a}</p>
+          <motion.div key="content" initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.28, ease: "easeInOut" }} className="overflow-hidden">
+            <p className="text-sm text-gray-500 leading-relaxed pb-5 pr-8 max-w-2xl">{a}</p>
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }
 
@@ -293,9 +297,11 @@ export function IndustryPage({ data }: { data: IndustryData }) {
       {data.faq && data.faq.length > 0 && (
         <section className="py-20 md:py-28 bg-white border-t border-[#e5e2d9]">
           <div className="max-w-3xl mx-auto px-6">
-            <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">Frequently asked</span>
-            <h2 className="text-4xl font-black text-[#0e0e0e] mb-10">Common questions about {data.industry} marketing.</h2>
-            <div className="divide-y divide-[#e5e2d9] border border-[#e5e2d9] rounded-2xl overflow-hidden">
+            <div className="mb-12 text-center">
+              <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">FAQ</span>
+              <h2 className="text-4xl font-black text-[#0e0e0e]">Common questions.</h2>
+            </div>
+            <div className="space-y-3">
               {data.faq.map((item) => (
                 <FaqItem key={item.q} q={item.q} a={item.a} />
               ))}

@@ -104,13 +104,13 @@ function ProcessTab({ steps }: { steps: HubProcess[] }) {
   return (
     <div>
       {/* Horizontal numbered tabs */}
-      <div className="flex flex-wrap gap-0 border border-[#e5e2d9] rounded-xl overflow-hidden mb-8">
+      <div className="flex flex-wrap gap-0 border border-[#e5e2d9] rounded-2xl overflow-hidden mb-8 bg-white">
         {steps.map((step, i) => (
           <button
             key={step.label}
             onClick={() => setActive(i)}
             className={`flex-1 min-w-[100px] flex flex-col items-center gap-1 py-4 px-3 text-center transition-all border-r border-[#e5e2d9] last:border-0 ${
-              active === i ? "bg-[#0e0e0e] text-white" : "bg-white text-gray-500 hover:bg-gray-50"
+              active === i ? "bg-[#08090d] text-white" : "bg-white text-gray-500 hover:bg-gray-50"
             }`}
           >
             <span className={`text-xl font-black ${active === i ? "text-primary" : "text-gray-300"}`}>
@@ -128,7 +128,7 @@ function ProcessTab({ steps }: { steps: HubProcess[] }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start bg-white border border-[#e5e2d9] rounded-2xl p-6 md:p-8"
         >
           <div>
             <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">Step {active + 1}</span>
@@ -617,13 +617,16 @@ export function ServiceHubPage({ data }: { data: HubData }) {
 
         {/* ── FAQ ── */}
         {data.faqs.length > 0 && (
-          <section className="py-20 md:py-28 bg-[#f9f8f5] border-t border-[#e5e2d9]">
+          <section className="py-20 md:py-28 bg-white border-t border-[#e5e2d9]">
             <div className="max-w-3xl mx-auto px-6">
               <div className="mb-12 text-center">
                 <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">FAQ</span>
-                <h2 className="text-4xl font-black text-[#0e0e0e]">Common questions.</h2>
+                <h2 className="text-4xl font-black text-[#0e0e0e]">Answers, before you ask.</h2>
+                <p className="text-gray-500 text-[15px] leading-relaxed max-w-xl mx-auto mt-4">The most common questions we hear about services, process, timelines, and fit — answered plainly.</p>
               </div>
-              <FaqAccordion items={data.faqs} />
+              <div className="space-y-3">
+                <FaqAccordion items={data.faqs} />
+              </div>
             </div>
           </section>
         )}

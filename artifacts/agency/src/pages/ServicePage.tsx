@@ -35,24 +35,29 @@ export interface ServicePageData {
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border border-[#e5e2d9] rounded-xl overflow-hidden">
+    <div className="group">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between px-6 py-4 text-left font-bold text-[#0e0e0e] hover:bg-gray-50 transition-colors"
+        className="w-full flex items-start justify-between gap-4 py-5 text-left"
       >
-        <span className="text-sm pr-4">{q}</span>
-        <ChevronRight className={`w-4 h-4 text-gray-400 shrink-0 transition-transform ${open ? "rotate-90" : ""}`} />
+        <span className={`text-[15px] font-bold leading-snug transition-colors ${open ? "text-primary" : "text-[#0e0e0e] group-hover:text-primary"}`}>
+          {q}
+        </span>
+        <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5 transition-all" style={{ background: open ? "#1a56ff" : "rgba(0,0,0,0.05)" }}>
+          <ChevronRight className={`w-3.5 h-3.5 transition-transform ${open ? "rotate-90 text-white" : "text-gray-500"}`} />
+        </div>
       </button>
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {open && (
           <motion.div
-            initial={{ height: 0 }}
-            animate={{ height: "auto" }}
-            exit={{ height: 0 }}
-            transition={{ duration: 0.2 }}
+            key="content"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.28, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="px-6 py-4 pt-0 text-sm text-gray-500 leading-relaxed border-t border-[#e5e2d9]">{a}</p>
+            <p className="text-sm text-gray-500 leading-relaxed pb-5 pr-8 max-w-2xl">{a}</p>
           </motion.div>
         )}
       </AnimatePresence>
