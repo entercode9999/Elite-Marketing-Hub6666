@@ -243,23 +243,6 @@ const INDUSTRIES = [
     href: "/entertainment-marketing",
   },
   {
-    id: "technology",
-    name: "Technology",
-    image: "/case-study-saas.png",
-    headline: "Grow faster. Build a lasting moat.",
-    description:
-      "Tech companies, IT services, software vendors, hardware brands. Content authority that positions you as the category leader, backed by demand gen and paid channels that fill your pipeline.",
-    whyChoose: [
-      "Category-defining content strategy",
-      "Competitor conquesting ad campaigns",
-      "JavaScript-aware technical SEO",
-      "LinkedIn ABM for enterprise accounts",
-      "Demo and trial CRO",
-      "Proven results: +315% qualified leads",
-    ],
-    href: "/technology-marketing",
-  },
-  {
     id: "small-business",
     name: "Small Business",
     image: "/case-study-local.png",
@@ -332,12 +315,12 @@ export function IndustriesTabbed() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-0 border border-[#e5e2d9] rounded-2xl overflow-hidden shadow-sm">
-          <div className="bg-white border-r border-[#e5e2d9] overflow-y-hidden">
+          <div className="bg-white border-r border-[#e5e2d9] overflow-y-auto max-h-[600px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {INDUSTRIES.map((ind, i) => (
               <button
                 key={ind.id}
                 onClick={() => setActive(i)}
-                className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-all border-b border-[#f0ede8] last:border-0 group ${
+                className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-all border-b border-[#f0ede8] last:border-0 group ${
                   active === i
                     ? "bg-primary/5 border-l-2 border-l-primary"
                     : "hover:bg-gray-50 border-l-2 border-l-transparent"
