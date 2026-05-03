@@ -13,6 +13,7 @@ import { MegaCta } from "@/components/sections/MegaCta";
 import { ArrowRight, MapPin, Star, TrendingUp, CheckCircle, ArrowUpRight, Check, FileText, Target, ShieldCheck } from "lucide-react";
 import { Link } from "wouter";
 import { AllServicesFeature } from "@/components/sections/AllServicesFeature";
+import { HeroServicesPanel } from "@/components/sections/HeroServicesPanel";
 import { WhyOutlier } from "@/components/sections/WhyOutlier";
 import { HowWeWork } from "@/components/sections/HowWeWork";
 import { BlogInsights } from "@/components/sections/BlogInsights";
@@ -148,8 +149,8 @@ export default function Home() {
           {/* Bottom fade into next section */}
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#08090d] pointer-events-none" />
 
-          <div className="max-w-6xl mx-auto px-6 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1.25fr] gap-16 items-center">
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -224,18 +225,14 @@ export default function Home() {
                 </motion.div>
               </div>
 
-              {/* Hero visual */}
+              {/* Hero visual — compact services panel */}
               <motion.div
                 initial={{ opacity: 0, x: 32 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
                 className="hidden lg:block relative"
               >
-                <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a0b10] shadow-[0_0_60px_rgba(26,86,255,0.1)] p-4 xl:p-5">
-                  <div className="w-full">
-                    <AllServicesFeature />
-                  </div>
-                </div>
+                <HeroServicesPanel />
               </motion.div>
             </div>
           </div>
