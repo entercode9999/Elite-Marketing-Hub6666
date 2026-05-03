@@ -192,4 +192,89 @@
   <url><loc>https://outliermarketing.ca/scarborough/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://outliermarketing.ca/etobicoke/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
+  <!-- City × service pages — British Columbia -->
+  <url><loc>https://outliermarketing.ca/vancouver/seo-services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/vancouver/google-ads</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/vancouver/local-seo</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/vancouver/digital-marketing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/vancouver/web-design</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/surrey/seo-services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/surrey/google-ads</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/surrey/local-seo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/surrey/digital-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/burnaby/seo-services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/burnaby/google-ads</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/burnaby/local-seo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/burnaby/digital-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/victoria/seo-services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/victoria/google-ads</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/victoria/local-seo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/victoria/digital-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/kelowna/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/kelowna/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/kelowna/local-seo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/abbotsford/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/abbotsford/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/abbotsford/local-seo</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/coquitlam/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/coquitlam/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/richmond-bc/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/richmond-bc/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/richmond-bc/local-seo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- City × service pages — Alberta -->
+  <url><loc>https://outliermarketing.ca/calgary/seo-services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/calgary/google-ads</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/calgary/local-seo</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/calgary/digital-marketing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/calgary/web-design</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/edmonton/seo-services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/edmonton/google-ads</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/edmonton/local-seo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/edmonton/digital-marketing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/red-deer/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/red-deer/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/lethbridge/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/lethbridge/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/airdrie/seo-services</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://outliermarketing.ca/airdrie/google-ads</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- City × service pages — Quebec -->
+  <url><loc>https://outliermarketing.ca/montreal/seo-services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/montreal/google-ads</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/montreal/local-seo</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://outliermarketing.ca/montreal/digital-marketing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/montreal/web-design</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/quebec-city/seo-services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/quebec-city/google-ads</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/quebec-city/local-seo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/laval/seo-services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/laval/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/longueuil/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/longueuil/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/gatineau/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/gatineau/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- City × service pages — Prairies -->
+  <url><loc>https://outliermarketing.ca/winnipeg/seo-services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/winnipeg/google-ads</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/winnipeg/local-seo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/winnipeg/digital-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/saskatoon/seo-services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/saskatoon/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/saskatoon/local-seo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/regina/seo-services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/regina/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/regina/local-seo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- City × service pages — Atlantic Canada -->
+  <url><loc>https://outliermarketing.ca/halifax/seo-services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/halifax/google-ads</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://outliermarketing.ca/halifax/local-seo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/halifax/digital-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/moncton/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/moncton/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/fredericton/seo-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://outliermarketing.ca/fredericton/google-ads</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
 </urlset>

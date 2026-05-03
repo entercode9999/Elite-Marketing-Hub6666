@@ -49,6 +49,45 @@ const ONTARIO_CITIES = [
   { name: "Orangeville", slug: "orangeville" },
 ];
 
+const BC_CITIES = [
+  { name: "Vancouver", slug: "vancouver" },
+  { name: "Surrey", slug: "surrey" },
+  { name: "Burnaby", slug: "burnaby" },
+  { name: "Victoria", slug: "victoria" },
+  { name: "Kelowna", slug: "kelowna" },
+  { name: "Abbotsford", slug: "abbotsford" },
+  { name: "Coquitlam", slug: "coquitlam" },
+  { name: "Richmond", slug: "richmond-bc" },
+];
+
+const AB_CITIES = [
+  { name: "Calgary", slug: "calgary" },
+  { name: "Edmonton", slug: "edmonton" },
+  { name: "Red Deer", slug: "red-deer" },
+  { name: "Lethbridge", slug: "lethbridge" },
+  { name: "Airdrie", slug: "airdrie" },
+];
+
+const QC_CITIES = [
+  { name: "Montreal", slug: "montreal" },
+  { name: "Quebec City", slug: "quebec-city" },
+  { name: "Laval", slug: "laval" },
+  { name: "Longueuil", slug: "longueuil" },
+  { name: "Gatineau", slug: "gatineau" },
+];
+
+const PRAIRIES_CITIES = [
+  { name: "Winnipeg", slug: "winnipeg" },
+  { name: "Saskatoon", slug: "saskatoon" },
+  { name: "Regina", slug: "regina" },
+];
+
+const ATLANTIC_CITIES = [
+  { name: "Halifax", slug: "halifax" },
+  { name: "Moncton", slug: "moncton" },
+  { name: "Fredericton", slug: "fredericton" },
+];
+
 const SERVICES = [
   { label: "SEO", slug: "seo-services" },
   { label: "Web Design", slug: "web-design" },
@@ -81,12 +120,45 @@ function CityCard({ city }: { city: { name: string; slug: string } }) {
   );
 }
 
+function ProvinceSection({
+  label,
+  title,
+  cities,
+}: {
+  label: string;
+  title: string;
+  cities: { name: string; slug: string }[];
+}) {
+  return (
+    <section className="py-20 border-t border-[#e5e2d9]">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="flex items-end justify-between mb-10">
+          <div>
+            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-2">{label}</p>
+            <h2 className="text-3xl font-black text-[#0e0e0e]">{title}</h2>
+          </div>
+          <span className="text-sm text-gray-400">
+            {cities.length} {cities.length === 1 ? "city" : "cities"}
+          </span>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+          {cities.map((city) => (
+            <CityCard key={city.slug} city={city} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function CitiesPage() {
   useSeo({
-    title: "Ontario Cities We Serve | Outlier",
-    description: "Browse the Ontario and Greater Toronto Area cities where Outlier builds local SEO and digital marketing campaigns.",
+    title: "Canadian Cities We Serve | Outlier Digital Marketing",
+    description:
+      "Outlier builds local SEO and digital marketing campaigns for businesses across Canada — from Vancouver to Halifax, Calgary to Ottawa, and everywhere in between.",
     canonicalPath: "/cities",
   });
+
   return (
     <div className="min-h-screen bg-[#f9f8f5]">
       <Nav />
@@ -95,23 +167,22 @@ export default function CitiesPage() {
       <section className="bg-[#08090d] pt-32 pb-20 border-b border-white/8">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="max-w-3xl">
-            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-4">
-              Cities We Serve
-            </p>
+            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-4">Cities We Serve</p>
             <h1 className="text-5xl md:text-6xl font-black text-white leading-[1.05] mb-6">
               Local expertise.<br />
-              <span className="text-primary italic">Province-wide reach.</span>
+              <span className="text-primary italic">Canada-wide reach.</span>
             </h1>
             <p className="text-lg text-white/50 leading-relaxed max-w-xl">
-              Outlier serves businesses across the Greater Toronto Area and all of Ontario. Same team,
-              same strategy, same relentless focus on results — wherever you are in the province.
+              Outlier serves businesses across the Greater Toronto Area, all of Ontario, and major cities
+              throughout Canada — BC, Alberta, Quebec, the Prairies, and Atlantic Canada.
+              Same team, same relentless strategy, same focus on results.
             </p>
           </div>
 
           <div className="mt-12 grid grid-cols-3 gap-6 max-w-lg">
             {[
-              { n: "39+", l: "Ontario cities" },
-              { n: "200+", l: "Ontario clients" },
+              { n: "65+", l: "Canadian cities" },
+              { n: "500+", l: "clients served" },
               { n: "10yr", l: "in the market" },
             ].map((s) => (
               <div key={s.l}>
@@ -128,14 +199,11 @@ export default function CitiesPage() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="flex items-end justify-between mb-10">
             <div>
-              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-2">
-                Greater Toronto Area
-              </p>
+              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-2">Greater Toronto Area</p>
               <h2 className="text-3xl font-black text-[#0e0e0e]">GTA Coverage</h2>
             </div>
             <span className="text-sm text-gray-400">{GTA_CITIES.length} cities</span>
           </div>
-
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {GTA_CITIES.map((city) => (
               <CityCard key={city.slug} city={city} />
@@ -144,35 +212,19 @@ export default function CitiesPage() {
         </div>
       </section>
 
-      {/* Ontario Cities */}
-      <section className="py-20 border-t border-[#e5e2d9]">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="flex items-end justify-between mb-10">
-            <div>
-              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-2">
-                Ontario
-              </p>
-              <h2 className="text-3xl font-black text-[#0e0e0e]">Province-Wide</h2>
-            </div>
-            <span className="text-sm text-gray-400">{ONTARIO_CITIES.length} cities</span>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-            {ONTARIO_CITIES.map((city) => (
-              <CityCard key={city.slug} city={city} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProvinceSection label="Ontario" title="Province-Wide" cities={ONTARIO_CITIES} />
+      <ProvinceSection label="British Columbia" title="BC Coverage" cities={BC_CITIES} />
+      <ProvinceSection label="Alberta" title="Alberta Coverage" cities={AB_CITIES} />
+      <ProvinceSection label="Quebec" title="Quebec Coverage" cities={QC_CITIES} />
+      <ProvinceSection label="Prairies" title="Manitoba & Saskatchewan" cities={PRAIRIES_CITIES} />
+      <ProvinceSection label="Atlantic Canada" title="Atlantic Coverage" cities={ATLANTIC_CITIES} />
 
       {/* CTA */}
-      <section className="py-20 bg-[#08090d]">
+      <section className="py-20 bg-[#08090d] border-t border-white/8">
         <div className="container mx-auto px-4 max-w-7xl text-center">
-          <h2 className="text-4xl font-black text-white mb-4">
-            Don't see your city?
-          </h2>
+          <h2 className="text-4xl font-black text-white mb-4">Don't see your city?</h2>
           <p className="text-white/40 mb-8 max-w-md mx-auto">
-            We serve businesses across all of Ontario. Get in touch and we'll build a strategy for your market.
+            We serve businesses across Canada. Get in touch and we'll build a strategy for your market.
           </p>
           <Link
             href="/contact"

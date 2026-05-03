@@ -824,6 +824,423 @@ const CITIES: Record<string, CityData> = {
     neighborhoodsOrAreas: "Downtown Orangeville, Westside, Fairgrounds, Montgomery Village, adjacent communities of Shelburne and Grand Valley",
     economyHighlights: "Independent retail hub, healthcare, professional services, agri-food and rural economy, growing commuter population from the GTA",
   },
+  // ── British Columbia ──────────────────────────────────────────
+  vancouver: {
+    name: "Vancouver",
+    province: "British Columbia",
+    pop: "675,000",
+    region: "Metro Vancouver",
+    marketTier: "premium",
+    businessCount: "95,000+",
+    localStats: [
+      "Vancouver is Canada's third-largest city and its most internationally connected business hub, with over 95,000 businesses competing in one of the country's highest-cost markets",
+      "Vancouver's tech sector has grown 30%+ since 2020, with Amazon, Microsoft, and Apple all establishing major Vancouver engineering hubs — driving digital marketing sophistication across the local business ecosystem",
+    ],
+    keyIndustries: ["Technology & Software", "Film & Media Production", "Real Estate & Development", "Tourism & Hospitality", "Financial Services"],
+    marketBlurb: "Vancouver is Canada's Pacific gateway and one of the world's most liveable — and competitive — cities. Its business landscape spans a booming technology sector, a world-class film and media industry, significant real estate and development activity, tourism, and an increasingly sophisticated professional services market. Vancouver businesses compete against international firms, U.S.-headquartered brands, and thousands of well-funded local operators all vying for top search positions in one of Canada's most expensive digital advertising markets.",
+    competitionNote: "Vancouver's search landscape is among the most competitive in Canada, rivalling Toronto for keyword difficulty and CPCs in professional services, real estate, technology, and hospitality. Businesses here need genuine technical depth and content authority to compete — surface-level SEO rarely moves the needle.",
+    neighborhoodsOrAreas: "Downtown Vancouver, Gastown, Yaletown, Kitsilano, Commercial Drive, Mount Pleasant, West End, East Vancouver, Point Grey, Kerrisdale",
+    economyHighlights: "Amazon, Microsoft, Apple engineering hubs; major film production studios; Vancouver Stock Exchange; global real estate investment; one of North America's most active startup ecosystems",
+  },
+  surrey: {
+    name: "Surrey",
+    province: "British Columbia",
+    pop: "570,000",
+    region: "Metro Vancouver",
+    marketTier: "major",
+    businessCount: "40,000+",
+    localStats: [
+      "Surrey is BC's second-largest city and the fastest-growing municipality in Metro Vancouver, adding thousands of new residents and businesses annually",
+      "40,000+ registered Surrey businesses compete across a rapidly evolving commercial landscape spanning healthcare, retail, technology, and professional services",
+    ],
+    keyIndustries: ["Healthcare & Medical", "Retail & E-Commerce", "Technology", "Construction & Real Estate", "Professional Services"],
+    marketBlurb: "Surrey is BC's second-largest city and Metro Vancouver's fastest-growing municipality. Its vast geography encompasses multiple distinct commercial centres — City Centre, Guildford, Cloverdale, Newton, and South Surrey — each with their own consumer base and competitive dynamics. The city's rapidly growing, multicultural population is digitally active and primarily discovers local businesses through Google search and reviews.",
+    competitionNote: "Surrey's digital marketing landscape is less saturated than Vancouver proper, making it an excellent market for businesses willing to invest in local SEO and paid media. Establishing search dominance now, before competition intensifies with population growth, provides a compounding advantage.",
+    neighborhoodsOrAreas: "Surrey City Centre, Guildford, Cloverdale, Newton, South Surrey, White Rock, Fleetwood, Whalley",
+    economyHighlights: "SFU Surrey campus, Kwantlen Polytechnic University, Surrey Memorial Hospital, major retail at Guildford Town Centre, growing tech and professional services sectors",
+  },
+  burnaby: {
+    name: "Burnaby",
+    province: "British Columbia",
+    pop: "249,000",
+    region: "Metro Vancouver",
+    marketTier: "major",
+    businessCount: "22,000+",
+    localStats: [
+      "Burnaby hosts the Metro Vancouver headquarters of Electronic Arts, Telus, and Ballard Power Systems — anchoring a high-income, tech-forward business and consumer environment",
+      "22,000+ Burnaby businesses compete in a premium urban market where technology industry salaries drive strong local consumer spending across healthcare, retail, and professional services",
+    ],
+    keyIndustries: ["Technology & Software", "Telecommunications", "Film & Media", "Education (SFU)", "Healthcare & Retail"],
+    marketBlurb: "Burnaby is Metro Vancouver's central municipality and one of British Columbia's most commercially significant cities. Home to Simon Fraser University, Electronic Arts, Telus, and a growing cluster of technology and media companies, Burnaby's business community is sophisticated, digitally engaged, and operating in a high-income urban market. The Metrotown commercial centre is Metro Vancouver's second-largest retail hub.",
+    competitionNote: "Burnaby's tech-heavy economy means local businesses face digitally sophisticated competitors. Winning organic search rankings here requires genuine content depth, technical SEO precision, and authority-building that can withstand scrutiny from informed buyers.",
+    neighborhoodsOrAreas: "Metrotown, Brentwood, Lougheed, Deer Lake, Capitol Hill, Edmonds, South Burnaby, SFU Mountain",
+    economyHighlights: "Simon Fraser University, Electronic Arts, Telus HQ, Ballard Power Systems, Metrotown retail hub, growing life sciences and technology sector",
+  },
+  victoria: {
+    name: "Victoria",
+    province: "British Columbia",
+    pop: "92,000",
+    region: "Capital Regional District",
+    marketTier: "major",
+    businessCount: "20,000+",
+    localStats: [
+      "Victoria is BC's capital and the CRD's economic hub, with a metro population of 400,000+ and a rapidly growing technology sector that now employs 15,000+ people",
+      "Tourism contributes $2B+ annually to the Victoria economy, creating a dual market of local residents and millions of annual visitors with high digital discovery dependence",
+    ],
+    keyIndustries: ["Government & Public Services", "Technology & Software", "Tourism & Hospitality", "Healthcare", "Education & Research"],
+    marketBlurb: "Victoria is British Columbia's capital city — a unique market that blends government stability with a rapidly growing technology sector, world-class tourism, and an active local services economy. The CRD's 400,000+ residents form a stable and prosperous consumer base, while millions of annual tourists add significant seasonal search demand for hospitality, retail, and experience-based businesses.",
+    competitionNote: "Victoria's compact geography and distinct market character mean local SEO and precise geographic targeting are especially powerful. Businesses that dominate Victoria-specific search terms and map pack positions capture a loyal local customer base plus significant visitor traffic.",
+    neighborhoodsOrAreas: "Downtown Victoria, James Bay, Saanich, Fairfield, Oak Bay, Esquimalt, Langford, Colwood, View Royal",
+    economyHighlights: "BC provincial government, University of Victoria, Royal Roads University, growing tech sector, healthcare, tourism economy",
+  },
+  kelowna: {
+    name: "Kelowna",
+    province: "British Columbia",
+    pop: "145,000",
+    region: "Okanagan",
+    marketTier: "standard",
+    businessCount: "12,000+",
+    localStats: [
+      "Kelowna is BC's fastest-growing metropolitan area, with net migration from Vancouver and Alberta driving exceptional population growth and new business formation",
+      "Wine and agri-tourism drive 1.5M+ visitor nights annually, creating strong search demand for hospitality, retail, and service businesses across the Okanagan",
+    ],
+    keyIndustries: ["Wine & Agri-Tourism", "Technology (Remote-First)", "Healthcare & Wellness", "Real Estate & Construction", "Hospitality & Retail"],
+    marketBlurb: "Kelowna is the Okanagan's economic capital and one of Canada's fastest-growing mid-size cities, driven by immigration from Vancouver, Alberta, and Ontario. Its booming real estate, world-class wine country, and warm climate have made it one of Canada's most desirable destinations for both relocating businesses and remote workers. The city's tourism economy adds significant seasonal search demand that complements year-round local services.",
+    competitionNote: "Kelowna's rapid growth means its digital marketing landscape is evolving quickly. The influx of business-minded newcomers is raising competitive standards across healthcare, professional services, real estate, and hospitality — making early investment in SEO particularly valuable.",
+    neighborhoodsOrAreas: "Downtown Kelowna, Rutland, Lake Country, West Kelowna, Glenmore, Mission, Dilworth, Black Mountain",
+    economyHighlights: "BC wine industry epicentre, growing technology cluster, UBC Okanagan, healthcare, real estate development, tourism",
+  },
+  abbotsford: {
+    name: "Abbotsford",
+    province: "British Columbia",
+    pop: "161,000",
+    region: "Fraser Valley",
+    marketTier: "standard",
+    businessCount: "12,000+",
+    localStats: [
+      "Abbotsford is Canada's largest agricultural producer by area and a major agri-food processing hub, supporting thousands of businesses across the Fraser Valley supply chain",
+      "12,000+ Abbotsford businesses serve a rapidly growing population that uses Google search as the primary way to discover and evaluate local services",
+    ],
+    keyIndustries: ["Agriculture & Agri-Food", "Healthcare & Medical", "Manufacturing", "Retail & Wholesale", "Professional Services"],
+    marketBlurb: "Abbotsford is the Fraser Valley's largest city and one of Canada's most productive agricultural regions. Beyond farming and agri-food, the city hosts a significant manufacturing base, a strong retail economy, and a rapidly growing professional services sector. The University of the Fraser Valley anchors a growing knowledge economy. Abbotsford's proximity to the U.S. border adds cross-border commercial dynamics.",
+    competitionNote: "Abbotsford's digital marketing market is significantly less competitive than Metro Vancouver, offering genuine first-mover opportunities in most service categories. Businesses can achieve strong local search rankings with focused, well-executed investment.",
+    neighborhoodsOrAreas: "Downtown Abbotsford, Clearbrook, Matsqui, Bradner, Huntingdon, Mount Lehman, Central Abbotsford",
+    economyHighlights: "Canada's largest agricultural district, University of the Fraser Valley, Abbotsford International Airport, manufacturing and food processing, cross-border trade",
+  },
+  coquitlam: {
+    name: "Coquitlam",
+    province: "British Columbia",
+    pop: "160,000",
+    region: "Metro Vancouver (Tri-Cities)",
+    marketTier: "standard",
+    businessCount: "11,000+",
+    localStats: [
+      "Coquitlam anchors Metro Vancouver's Tri-Cities area alongside Port Coquitlam and Port Moody, serving a combined consumer market of 300,000+ residents",
+      "Coquitlam Centre — one of Metro Vancouver's largest regional shopping malls — drives significant retail traffic that extends local business search demand across the entire Tri-Cities area",
+    ],
+    keyIndustries: ["Retail & E-Commerce", "Healthcare & Medical", "Professional Services", "Construction & Real Estate", "Technology"],
+    marketBlurb: "Coquitlam is the largest of Metro Vancouver's Tri-Cities — a prosperous suburban municipality with a large, multicultural, middle-class residential base, major retail anchors, and a growing professional services economy. The Evergreen SkyTrain extension has accelerated commercial development, making Coquitlam Centre an increasingly important business and retail hub for eastern Metro Vancouver.",
+    competitionNote: "Coquitlam offers solid local search opportunity without the extreme competition of Vancouver or Burnaby. Businesses that invest in GBP optimisation, local content, and Google Ads in Coquitlam can build dominant positions in most service categories with realistic budgets.",
+    neighborhoodsOrAreas: "Coquitlam Centre, Maillardville, Austin Heights, Burke Mountain, Westwood Plateau, Ranch Park, Chineside",
+    economyHighlights: "Coquitlam Centre regional retail hub, Kwantlen Polytechnic Coquitlam campus, healthcare, construction and real estate development, proximity to Simon Fraser University",
+  },
+  "richmond-bc": {
+    name: "Richmond",
+    province: "British Columbia",
+    pop: "209,000",
+    region: "Metro Vancouver",
+    marketTier: "standard",
+    businessCount: "20,000+",
+    localStats: [
+      "Richmond is Metro Vancouver's most economically dynamic suburb, home to Vancouver International Airport (YVR) and the region's largest Asian-Canadian business community",
+      "20,000+ Richmond businesses span aviation, hospitality, retail, technology, and professional services — all competing in a sophisticated, multicultural digital market",
+    ],
+    keyIndustries: ["Airport & Aviation Services", "Hospitality & Hotels", "Multicultural Retail & Dining", "Technology & Logistics", "Real Estate & Development"],
+    marketBlurb: "Richmond is Metro Vancouver's second-largest municipality by population and arguably its most commercially diverse. Home to Vancouver International Airport, the largest Asian-Canadian business community in Canada, and major logistics and technology operations, Richmond's business landscape is uniquely multicultural and internationally connected. The city's hospitality sector serves both YVR travellers and local residents.",
+    competitionNote: "Richmond's multicultural consumer base and airport-driven hospitality economy create distinctive search marketing opportunities. Businesses that understand Richmond's dual local-and-transient audience — and build content strategies that serve both — gain a significant competitive edge.",
+    neighborhoodsOrAreas: "City Centre, Steveston Village, Brighouse, Ironwood, East Richmond, Oval District, Gilmore, Cambie Corridor",
+    economyHighlights: "Vancouver International Airport (YVR), Asia Pacific Gateway, major hospitality cluster, technology and logistics operations, Steveston heritage tourism, multicultural retail",
+  },
+
+  // ── Alberta ───────────────────────────────────────────────────
+  calgary: {
+    name: "Calgary",
+    province: "Alberta",
+    pop: "1,340,000",
+    region: "Southern Alberta",
+    marketTier: "premium",
+    businessCount: "105,000+",
+    localStats: [
+      "Calgary is Canada's energy capital and has one of the highest average household incomes of any major Canadian city — creating an exceptionally high-value consumer and B2B market",
+      "105,000+ Calgary businesses compete in a diversified economy that has expanded from its oil and gas roots into technology, financial services, and professional services",
+    ],
+    keyIndustries: ["Energy & Oil and Gas", "Financial Services & Banking", "Technology & Startups", "Real Estate & Construction", "Professional Services"],
+    marketBlurb: "Calgary is Canada's energy capital and its fourth-largest city — an economically dynamic, high-income market with a strong entrepreneurial culture and a rapidly diversifying economy. While energy remains a dominant force, Calgary has emerged as one of Canada's top technology hubs, with a strong financial services sector and a booming professional services market. The city's high average household income and business-forward culture make it a highly competitive and high-value digital marketing market.",
+    competitionNote: "Calgary's search landscape is highly competitive, particularly in financial services, energy, real estate, professional services, and technology. The city's high-income consumer base raises the stakes: the reward for ranking well is enormous, but the investment required to get there is substantial.",
+    neighborhoodsOrAreas: "Downtown Calgary, Beltline, Inglewood, Kensington, Mission, Bridgeland, Marda Loop, Seton, University District, Brentwood",
+    economyHighlights: "Canadian Natural Resources, Enbridge, TC Energy; one of Canada's fastest-growing tech sectors; major financial services hub; University of Calgary; booming real estate and construction",
+  },
+  edmonton: {
+    name: "Edmonton",
+    province: "Alberta",
+    pop: "1,010,000",
+    region: "Central Alberta",
+    marketTier: "premium",
+    businessCount: "85,000+",
+    localStats: [
+      "Edmonton is Alberta's capital and Canada's northernmost major city — anchoring a vast provincial economy that stretches from the oilsands to the agricultural heartland",
+      "85,000+ Edmonton businesses compete across government, energy, healthcare, technology, and retail — with digital marketing investment accelerating as the economy diversifies",
+    ],
+    keyIndustries: ["Government & Public Services", "Energy & Petrochemicals", "Healthcare & Life Sciences", "Technology", "Retail & Hospitality"],
+    marketBlurb: "Edmonton is Alberta's provincial capital and its second-largest city — a major government, energy, and healthcare hub with a rapidly growing technology sector. The University of Alberta, Alberta Health Services, and a dense cluster of energy companies anchor a diversified economy with strong B2B and B2C digital spending. Edmonton's consumer market is large, high-income, and increasingly turning to digital channels to discover and evaluate local businesses.",
+    competitionNote: "Edmonton's search market is competitive across government, energy, healthcare, retail, and professional service categories. The city's large professional class and high household incomes make organic search visibility particularly valuable — educated buyers research extensively before committing.",
+    neighborhoodsOrAreas: "Downtown Edmonton, Strathcona, Glenora, Westmount, St. Albert, Sherwood Park, Whyte Avenue, Beverly, South Edmonton Common",
+    economyHighlights: "Alberta provincial government, University of Alberta, Alberta Health Services, Fort McMurray oilsands supply chain, growing technology and startup ecosystem, West Edmonton Mall",
+  },
+  "red-deer": {
+    name: "Red Deer",
+    province: "Alberta",
+    pop: "103,000",
+    region: "Central Alberta",
+    marketTier: "standard",
+    businessCount: "7,000+",
+    localStats: [
+      "Red Deer is Central Alberta's commercial hub, positioned midway between Calgary and Edmonton and serving a regional catchment of 350,000+ rural and suburban consumers",
+      "7,000+ Red Deer businesses span energy services, healthcare, retail, and agriculture — with digital marketing investment growing as the regional economy diversifies",
+    ],
+    keyIndustries: ["Energy & Industrial Services", "Healthcare & Medical", "Agriculture & Agri-Food", "Retail & Wholesale", "Professional Services"],
+    marketBlurb: "Red Deer is Central Alberta's largest city and a critical commercial hub for the province's agricultural and energy heartland. Positioned exactly midway between Calgary and Edmonton on the QEII, Red Deer serves a broad regional catchment of rural Alberta consumers. Its economy spans energy services, healthcare, agriculture, and a growing retail and professional services sector.",
+    competitionNote: "Red Deer's digital marketing landscape is significantly less competitive than Calgary or Edmonton. Businesses that invest in local SEO and Google Ads can achieve dominant search positions across most categories at a fraction of the cost of comparable efforts in Alberta's two major cities.",
+    neighborhoodsOrAreas: "Downtown Red Deer, Gaetz Avenue Corridor, Parkland, Timberlands, Ironstone, Clearview Ridge, Vanier Woods",
+    economyHighlights: "Energy services and supply chain, Red Deer Regional Hospital Centre, Parkland College, agriculture and agri-food, Central Alberta regional retail hub",
+  },
+  lethbridge: {
+    name: "Lethbridge",
+    province: "Alberta",
+    pop: "102,000",
+    region: "Southern Alberta",
+    marketTier: "standard",
+    businessCount: "7,000+",
+    localStats: [
+      "Lethbridge is Southern Alberta's largest city and the agricultural heartland's main commercial hub, serving a regional population that extends into rural Alberta and southern Saskatchewan",
+      "The University of Lethbridge and Lethbridge College together enroll 15,000+ students, adding a significant young, digitally active consumer base to the local market",
+    ],
+    keyIndustries: ["Agriculture & Agri-Food", "Healthcare & Medical", "Education & Research", "Retail & Hospitality", "Professional Services"],
+    marketBlurb: "Lethbridge is Southern Alberta's economic centre — a community shaped by world-class irrigated agriculture, a strong post-secondary education sector, and a growing healthcare and professional services economy. The University of Lethbridge and Lethbridge College attract students from across the region, while the city's position as the main commercial hub for Southern Alberta gives local businesses a catchment market much larger than the city itself.",
+    competitionNote: "Lethbridge offers genuine first-mover opportunities in digital marketing. Most search categories are under-competed relative to the market's size and purchasing power — businesses that invest now can achieve and sustain dominant local search positions.",
+    neighborhoodsOrAreas: "Downtown Lethbridge, North Lethbridge, South Lethbridge, Uplands, Copperwood, Blackwing, Henderson Lake",
+    economyHighlights: "World-scale irrigated agriculture, University of Lethbridge, Lethbridge College, healthcare, food processing and manufacturing, Southern Alberta commercial hub",
+  },
+  airdrie: {
+    name: "Airdrie",
+    province: "Alberta",
+    pop: "80,000",
+    region: "Central Alberta",
+    marketTier: "emerging",
+    businessCount: "4,500+",
+    localStats: [
+      "Airdrie is one of Canada's fastest-growing cities, with population growth consistently exceeding 5% annually — driven by affordable housing relative to Calgary and proximity to the city",
+      "4,500+ Airdrie businesses serve a young, family-oriented population with strong household incomes — a high-value local market with growing digital marketing sophistication",
+    ],
+    keyIndustries: ["Retail & Food Service", "Healthcare & Wellness", "Home Services & Construction", "Professional Services", "Logistics & Warehousing"],
+    marketBlurb: "Airdrie is one of Canada's fastest-growing communities — a rapidly expanding Calgary-adjacent city attracting young families and professionals priced out of the urban core. Its business community is growing in parallel with its population, spanning healthcare, retail, home services, and professional services. As the population grows, local search demand is accelerating — creating a real first-mover window for businesses willing to invest in digital marketing early.",
+    competitionNote: "Airdrie's rapid growth and early-stage digital marketing ecosystem make it one of Alberta's best current opportunities for establishing dominant local search positions. Competition across most categories remains low relative to the market's spending power and growth trajectory.",
+    neighborhoodsOrAreas: "Bayside, Canals, Windsong, Sagewood, Morningside, Meadowbrook, Big Springs, Downtown Airdrie",
+    economyHighlights: "Rapid residential and commercial growth, Calgary bedroom community, logistics and warehousing on QE2 corridor, growing healthcare and professional services base",
+  },
+
+  // ── Quebec ────────────────────────────────────────────────────
+  montreal: {
+    name: "Montreal",
+    province: "Quebec",
+    pop: "2,100,000",
+    region: "Greater Montreal",
+    marketTier: "premium",
+    businessCount: "125,000+",
+    localStats: [
+      "Montreal is Canada's second-largest city and its creative and technology capital — home to the world's largest concentration of video game studios and a leading global AI research ecosystem",
+      "125,000+ Montreal businesses compete in a bilingual market where reaching French and English audiences requires distinct content strategies and a sophisticated understanding of Quebec consumer culture",
+    ],
+    keyIndustries: ["Technology & Video Games", "Aerospace & Defence", "Finance & Insurance", "Life Sciences & Pharma", "Creative Industries & Film"],
+    marketBlurb: "Montreal is Canada's second-largest city and one of North America's most dynamic business markets — a bilingual, culturally rich city with world-leading clusters in artificial intelligence, video game development, aerospace, and life sciences. The city's large, educated, and digitally sophisticated consumer base is spread across distinct francophone and anglophone communities, requiring nuanced digital marketing strategies that work in both official languages.",
+    competitionNote: "Montreal's search market is uniquely competitive: businesses must contend with bilingual search intent, strong local consumer culture that often favours Quebec-based businesses, and fierce competition across technology, professional services, and consumer categories. Winning here requires genuine cultural understanding alongside technical SEO execution.",
+    neighborhoodsOrAreas: "Downtown Montreal, Mile End, Plateau-Mont-Royal, Old Montreal, NDG, Westmount, Rosemont, Verdun, Hochelaga, Outremont",
+    economyHighlights: "Ubisoft, EA, Warner Bros. Games Montreal; Bombardier; McGill University; Université de Montréal; Mila AI Institute; world-class pharma and life sciences cluster",
+  },
+  "quebec-city": {
+    name: "Quebec City",
+    province: "Quebec",
+    pop: "549,000",
+    region: "Capital-Nationale",
+    marketTier: "major",
+    businessCount: "35,000+",
+    localStats: [
+      "Quebec City is Quebec's provincial capital and seat of the National Assembly — its government and public sector economy creates the province's most stable and predictable consumer market",
+      "Quebec City's insurance and financial services sector employs 40,000+ people, making it one of Canada's most important insurance industry hubs alongside its government economy",
+    ],
+    keyIndustries: ["Government & Public Services", "Insurance & Financial Services", "Aerospace & Defence", "Tourism & Hospitality", "Technology"],
+    marketBlurb: "Quebec City is Quebec's capital and one of Canada's most historically significant cities — a UNESCO World Heritage Site that draws millions of tourists annually while anchoring a stable, government-dominated local economy. Beyond government, the city has developed significant clusters in insurance and financial services, aerospace, and a rapidly growing technology sector. Its predominantly francophone market requires French-first digital marketing strategies.",
+    competitionNote: "Quebec City's predominantly francophone market requires a French-first approach to content and SEO. Businesses that invest in quality French-language content, locally relevant GBP profiles, and Quebec-specific search strategies gain a significant advantage over competitors using translated or generic content.",
+    neighborhoodsOrAreas: "Old Quebec (Vieux-Québec), Saint-Roch, Sainte-Foy, Beauport, Charlesbourg, Limoilou, Sillery, Lévis",
+    economyHighlights: "Quebec provincial government, National Assembly, Intact Financial, Co-operators, Videotron, Desjardins Group, Laval University, aerospace cluster",
+  },
+  laval: {
+    name: "Laval",
+    province: "Quebec",
+    pop: "440,000",
+    region: "Greater Montreal",
+    marketTier: "major",
+    businessCount: "25,000+",
+    localStats: [
+      "Laval is Quebec's third-largest city and home to one of Canada's most important pharmaceutical and life sciences clusters — with over 200 life sciences companies generating $3B+ in annual revenue",
+      "25,000+ Laval businesses compete in a strategically located market that serves both the city's own large residential population and proximity to Montreal's 2M+ consumer base",
+    ],
+    keyIndustries: ["Pharmaceuticals & Life Sciences", "Retail (Carrefour Laval)", "Healthcare & Medical", "Manufacturing & Logistics", "Professional Services"],
+    marketBlurb: "Laval is Quebec's third-largest city — a strategically located island municipality north of Montreal anchored by one of Canada's most important pharmaceutical and life sciences clusters. Carrefour Laval, one of Quebec's largest shopping centres, drives major retail traffic, while the city's growing residential population creates strong demand for healthcare, professional services, and home services. Laval's bilingual market requires French-primary digital strategies.",
+    competitionNote: "Laval's pharmaceutical and life sciences sector creates unique B2B search marketing opportunities alongside its large consumer market. Businesses in healthcare, professional services, and retail face significant competition from both Laval-based operators and Montreal-headquartered businesses targeting the Laval market.",
+    neighborhoodsOrAreas: "Chomedey, Sainte-Rose, Vimont, Duvernay, Pont-Viau, Fabreville, Laval-des-Rapides, Saint-Vincent-de-Paul",
+    economyHighlights: "200+ life sciences companies including Pfizer Canada; Carrefour Laval retail hub; Cégep de Laval; healthcare, manufacturing, and logistics operations",
+  },
+  longueuil: {
+    name: "Longueuil",
+    province: "Quebec",
+    pop: "250,000",
+    region: "Greater Montreal (Montérégie)",
+    marketTier: "standard",
+    businessCount: "15,000+",
+    localStats: [
+      "Longueuil is the Montérégie region's largest city and the South Shore's main commercial centre, serving a broad catchment that extends well into the Greater Montreal suburban belt",
+      "The aerospace cluster on the South Shore — anchored by Pratt & Whitney Canada and Bell Flight — creates significant high-income professional employment that drives strong local consumer spending",
+    ],
+    keyIndustries: ["Aerospace & Aeronautics", "Healthcare & Medical", "Retail & Services", "Professional Services", "Manufacturing"],
+    marketBlurb: "Longueuil is Montreal's South Shore counterpart — Montérégie's largest city and a significant commercial and industrial hub. The city's aerospace cluster (Pratt & Whitney Canada, Bell Flight, and dozens of suppliers) drives high-income professional employment and strong B2B demand. Its large residential population and proximity to Montreal make it both a self-contained local market and an extension of the Greater Montreal consumer base.",
+    competitionNote: "Longueuil's French-primary search market requires well-crafted French-language content and local SEO. Businesses that establish strong GBP visibility and local content in French gain a meaningful advantage over competitors using generic or translated strategies.",
+    neighborhoodsOrAreas: "Old Longueuil, Greenfield Park, Saint-Hubert, LeMoyne, Brossard, Saint-Bruno-de-Montarville",
+    economyHighlights: "Pratt & Whitney Canada, Bell Flight, aerospace supply chain, Charles-Le Moyne Hospital, retail at Carrefour de la Rive-Sud, healthcare and professional services",
+  },
+  gatineau: {
+    name: "Gatineau",
+    province: "Quebec",
+    pop: "292,000",
+    region: "Outaouais",
+    marketTier: "standard",
+    businessCount: "16,000+",
+    localStats: [
+      "Gatineau and Ottawa form the National Capital Region — a combined market of 1.4M+ residents where cross-border search behaviour creates unique opportunities for bilingual businesses",
+      "16,000+ Gatineau businesses serve both local Quebec consumers and cross-river Ottawa residents, particularly in retail, healthcare, and professional services",
+    ],
+    keyIndustries: ["Government & Public Services", "Technology & Software", "Healthcare", "Retail & Consumer Services", "Professional Services"],
+    marketBlurb: "Gatineau is the fourth-largest city in Quebec and the Quebec half of Canada's National Capital Region. Separated from Ottawa only by the Ottawa River, Gatineau functions as both a distinct Quebec market and an integral part of the NCR's 1.4M+ combined consumer base. Its large government workforce, growing technology sector, and strategic cross-border position create distinctive digital marketing opportunities for businesses serving both French and English customers.",
+    competitionNote: "Gatineau's bilingual, cross-border market requires careful search strategy: targeting both French Quebec search terms and English NCR terms, with content that serves both audiences. Businesses that do this well capture significantly more search demand than competitors who optimise for only one language.",
+    neighborhoodsOrAreas: "Hull, Aylmer, Gatineau sector, Buckingham, Masson-Angers, Limbour, Plateau sector",
+    economyHighlights: "Federal government presence, Canadian Museum of History, Université du Québec en Outaouais, technology sector, cross-border commercial relationships with Ottawa",
+  },
+
+  // ── Prairies ──────────────────────────────────────────────────
+  winnipeg: {
+    name: "Winnipeg",
+    province: "Manitoba",
+    pop: "749,000",
+    region: "Southern Manitoba",
+    marketTier: "major",
+    businessCount: "50,000+",
+    localStats: [
+      "Winnipeg is Canada's geographic heart — a major logistics and transportation hub handling $25B+ in goods annually, sitting at the intersection of Canada's east-west and north-south trade routes",
+      "50,000+ Winnipeg businesses compete across a diverse economy where agriculture, manufacturing, healthcare, finance, and retail all represent significant digital marketing spend",
+    ],
+    keyIndustries: ["Agriculture & Agri-Food", "Manufacturing & Aerospace", "Healthcare & Life Sciences", "Financial Services & Insurance", "Transportation & Logistics"],
+    marketBlurb: "Winnipeg is Canada's gateway city — the largest prairie metropolis and a critical hub for transportation, logistics, agriculture, and manufacturing. As Manitoba's capital, it anchors the province's government and healthcare economy. The University of Manitoba and a growing technology sector are driving economic diversification. Winnipeg businesses operate in a highly competitive local market where digital visibility is increasingly the primary driver of customer acquisition.",
+    competitionNote: "Winnipeg's search market is competitive relative to its size — particularly in healthcare, legal, home services, and professional services. The city's stable economy and growing population make digital marketing ROI predictable and strong, especially for businesses investing in both SEO and paid media.",
+    neighborhoodsOrAreas: "Downtown Winnipeg, The Forks, Osborne Village, St. Boniface, St. James, Transcona, River Heights, Tuxedo, North End, Exchange District",
+    economyHighlights: "University of Manitoba, Manitoba government, Richardson International, Wawanesa Insurance, Boeing Winnipeg, major agricultural supply chain, growing technology and creative sector",
+  },
+  saskatoon: {
+    name: "Saskatoon",
+    province: "Saskatchewan",
+    pop: "266,000",
+    region: "Central Saskatchewan",
+    marketTier: "major",
+    businessCount: "18,000+",
+    localStats: [
+      "Saskatoon is Canada's potash capital, sitting at the centre of the world's largest recoverable potash deposits — an industry that supports thousands of high-income professional and technical jobs",
+      "18,000+ Saskatoon businesses compete in a resourceful, entrepreneurial market where agriculture, mining technology, and health sciences are all driving rapid economic diversification",
+    ],
+    keyIndustries: ["Potash Mining & Agriculture", "Healthcare & Life Sciences", "Technology & Innovation", "Professional Services", "Retail & Hospitality"],
+    marketBlurb: "Saskatoon is Saskatchewan's largest city and one of Canada's most entrepreneurial mid-size markets. Positioned at the heart of the world's richest potash belt, the city's resource economy supports a large, high-income professional workforce. The University of Saskatchewan anchors a growing health sciences and technology cluster, while Saskatoon's vibrant downtown and retail economy serve a quality-conscious local consumer base.",
+    competitionNote: "Saskatoon's resource-fuelled economy means strong household incomes and high consumer spending power — making digital marketing ROI excellent for businesses across most service categories. Competition is growing as the city attracts more national businesses, making early SEO investment increasingly valuable.",
+    neighborhoodsOrAreas: "Downtown Saskatoon, Broadway, Nutana, Varsity View, Stonebridge, Silverspring, Willowgrove, Forest Grove, University Heights",
+    economyHighlights: "University of Saskatchewan, Nutrien (world's largest potash company), Royal University Hospital, Vendasta Technologies, growing agri-tech and health sciences cluster",
+  },
+  regina: {
+    name: "Regina",
+    province: "Saskatchewan",
+    pop: "230,000",
+    region: "Southern Saskatchewan",
+    marketTier: "major",
+    businessCount: "16,000+",
+    localStats: [
+      "Regina is Saskatchewan's provincial capital and administrative centre — its government and Crown corporation economy provides exceptional economic stability for local businesses",
+      "16,000+ Regina businesses compete in a stable, energy-and-agriculture-driven market where digital adoption is accelerating across professional services, healthcare, and retail",
+    ],
+    keyIndustries: ["Government & Crown Corporations", "Oil & Gas & Petrochemicals", "Agriculture & Agri-Services", "Healthcare", "Professional Services"],
+    marketBlurb: "Regina is Saskatchewan's capital city — a stable, prosperous market anchored by provincial government, Crown corporations, and the energy and agriculture industries that define Saskatchewan's economy. SaskPower, SGI, and dozens of Crown agencies provide significant public-sector employment and economic stability. The University of Regina adds a growing knowledge economy component, while the city's oil and agricultural wealth drives strong household incomes and consumer spending.",
+    competitionNote: "Regina's stable government-anchored economy makes it an excellent market for businesses with consistent, quality-focused digital marketing strategies. Competition is measured but growing — particularly in healthcare, legal, professional services, and home services — rewarding early investors.",
+    neighborhoodsOrAreas: "Downtown Regina, Cathedral, Wascana, Harbour Landing, The Towns, Hillsdale, Lakeridge, Whitmore Park",
+    economyHighlights: "Saskatchewan provincial government, SaskPower, SGI, SaskTel, SaskEnergy, University of Regina, Co-op Refinery Complex, agriculture and oilfield services",
+  },
+
+  // ── Atlantic Canada ───────────────────────────────────────────
+  halifax: {
+    name: "Halifax",
+    province: "Nova Scotia",
+    pop: "480,000",
+    region: "Halifax Regional Municipality",
+    marketTier: "major",
+    businessCount: "28,000+",
+    localStats: [
+      "Halifax is Atlantic Canada's economic capital, commanding the region's largest port, its most significant financial services cluster, and its primary naval base — making it a uniquely multi-sectoral market",
+      "28,000+ Halifax businesses serve both the HRM's 480,000 residents and a broader regional catchment — with inbound migration driving some of Canada's strongest recent population growth",
+    ],
+    keyIndustries: ["Government & Defence (Naval)", "Ocean Technology & Innovation", "Healthcare & Life Sciences", "Post-Secondary Education", "Tourism & Hospitality"],
+    marketBlurb: "Halifax is Atlantic Canada's undisputed economic capital — the region's largest city, its principal seaport, and the headquarters of Canada's Atlantic Fleet naval operations. Beyond its strategic government and military role, Halifax is rapidly emerging as a technology and innovation hub, with a growing ocean technology cluster, a world-class university ecosystem (Dalhousie, SMU, NSCAD), and strong healthcare and professional services sectors. The city is experiencing some of Canada's fastest population growth from inbound migration.",
+    competitionNote: "Halifax's digital marketing landscape is competitive for Atlantic Canada but offers significantly lower CPCs and easier organic ranking opportunities compared to central Canadian markets. Businesses investing in SEO and paid media here achieve strong ROI while building positions that are increasingly difficult for late-entrant competitors to dislodge.",
+    neighborhoodsOrAreas: "Downtown Halifax, North End, South End, West End, Dartmouth, Bedford, Sackville, Clayton Park, Bayers Lake",
+    economyHighlights: "Dalhousie University, Saint Mary's University, NSCAD; CFB Halifax (Canada's Atlantic Fleet HQ); Halifax Port Authority; growing ocean technology and AI research cluster",
+  },
+  moncton: {
+    name: "Moncton",
+    province: "New Brunswick",
+    pop: "80,000",
+    region: "Greater Moncton",
+    marketTier: "standard",
+    businessCount: "9,000+",
+    localStats: [
+      "Moncton is one of Canada's fastest-growing Census Metropolitan Areas, driven by interprovincial migration and international immigration that are rapidly expanding the local business market",
+      "Greater Moncton's 180,000+ bilingual population serves as the commercial hub for a Maritime catchment of 300,000+ people, making it Atlantic Canada's retail and logistics capital",
+    ],
+    keyIndustries: ["Transportation & Logistics", "Retail & E-Commerce", "Financial & Insurance Services", "Healthcare", "Professional Services"],
+    marketBlurb: "Moncton is the commercial heart of New Brunswick and Atlantic Canada's transportation crossroads. As one of Canada's fastest-growing cities, it's attracting national retailers, financial services firms, and technology companies drawn by its bilingual workforce, affordable costs, and strategic logistics position. The city's rapid growth is driving accelerating digital marketing competition — making it one of the most exciting emerging markets in eastern Canada.",
+    competitionNote: "Moncton's rapid growth is quickly maturing its digital marketing landscape. Businesses that establish strong local search presence now — before national brands fully arrive — will enjoy a compounding first-mover advantage in one of Canada's fastest-growing cities.",
+    neighborhoodsOrAreas: "Downtown Moncton, Riverview, Dieppe, Champlain, North End, Caledonia, Wheeler Park, Sunny Brae",
+    economyHighlights: "CN Rail hub, Assumption Life, Atlantic Lottery Corporation, UPS Supply Chain, major retail at Champlain Place, Université de Moncton",
+  },
+  fredericton: {
+    name: "Fredericton",
+    province: "New Brunswick",
+    pop: "67,000",
+    region: "Fredericton Capital Region",
+    marketTier: "standard",
+    businessCount: "5,000+",
+    localStats: [
+      "Fredericton is New Brunswick's provincial capital and one of Canada's most concentrated technology talent markets per capita, with a thriving startup ecosystem anchored by UNB and STU",
+      "5,000+ Fredericton businesses serve a government-anchored economy with exceptionally stable consumer spending and growing digital marketing demand across professional services, tech, and healthcare",
+    ],
+    keyIndustries: ["Government & Public Services", "Technology & Startups", "Education & Research", "Healthcare", "Professional Services"],
+    marketBlurb: "Fredericton is New Brunswick's capital — a compact, highly educated city that has emerged as one of Canada's most impressive startup and technology ecosystems relative to its population. The University of New Brunswick and St. Thomas University anchor a knowledge economy that has produced celebrated technology companies and dozens of innovators. Government employment provides economic stability while the tech sector drives growth and innovation.",
+    competitionNote: "Fredericton's small but highly educated business market rewards quality over quantity in digital marketing. Businesses with well-crafted SEO strategies, polished web presence, and strong review profiles consistently outperform larger competitors who neglect their digital execution.",
+    neighborhoodsOrAreas: "Downtown Fredericton, North Side, Skyline Acres, Silverwood, Hanwell, Devon, Barker's Point, New Maryland",
+    economyHighlights: "New Brunswick provincial government, University of New Brunswick, St. Thomas University, thriving tech startup community, NB Power, growing creative and innovation sector",
+  },
 };
 
 /* Default blurb for cities without specific data */
@@ -881,10 +1298,10 @@ const SERVICES: Record<string, ServiceData> = {
     label: "SEO Services",
     shortLabel: "SEO",
     icon: Search,
-    h1Template: "SEO Services in [City], Ontario",
+    h1Template: "SEO Services in [City], [Province]",
     taglineTemplate: "Rank higher. Get found. Grow faster. Outlier is [City]'s results-driven SEO agency.",
     metaDescTemplate:
-      "Professional SEO services in [City], Ontario. Outlier helps [City] businesses rank on page 1 of Google and drive compounding organic growth. Get a free SEO audit today.",
+      "Professional SEO services in [City], [Province]. Outlier helps [City] businesses rank on page 1 of Google and drive compounding organic growth. Get a free SEO audit today.",
     introTemplate: `Search engine optimisation is the highest-ROI long-term investment a [City] business can make in its digital growth. When potential customers in [City] search for what you offer — whether that's a service, a product, or an answer to a problem — appearing on page 1 of Google puts you in front of buyers at exactly the right moment. Businesses that rank on page 1 receive the overwhelming majority of clicks; page 2 and beyond are essentially invisible to most searchers. In [City]'s competitive market, the difference between ranking #1 and ranking #10 can represent hundreds of thousands of dollars in annual revenue.
 
 At Outlier, we've been building and executing SEO strategies for [City] businesses for over a decade. Our approach combines rigorous technical foundations, deeply researched content strategy, and authoritative link building to create organic visibility that compounds month over month. We don't chase algorithm shortcuts or report on vanity metrics — we build the kind of SEO infrastructure that survives every Google update and keeps delivering results years after the initial work is done. Every [City] client gets a dedicated SEO team that includes a senior strategist, a technical SEO specialist, a content lead, and a link acquisition manager.
@@ -1014,11 +1431,11 @@ Our reporting model is built around the metrics that actually matter to a [City]
     label: "Local SEO",
     shortLabel: "Local SEO",
     icon: MapPin,
-    h1Template: "Local SEO Services in [City], Ontario",
+    h1Template: "Local SEO Services in [City], [Province]",
     taglineTemplate:
       "Map pack position 1–3 for [City] searches. More calls. More walk-ins. More booked appointments.",
     metaDescTemplate:
-      "Local SEO services in [City], Ontario. Outlier gets [City] businesses into the Google Map pack and ranks them for local service searches. Free local SEO audit available.",
+      "Local SEO services in [City], [Province]. Outlier gets [City] businesses into the Google Map pack and ranks them for local service searches. Free local SEO audit available.",
     introTemplate: `For businesses that serve customers in [City] — whether you're a dentist, a home services contractor, a restaurant, a lawyer, or a retail shop — local SEO is the single most cost-effective customer acquisition channel available. When someone in [City] searches "best [your service] near me" or "[your service] in [City]," the businesses that appear in the Google Map pack (the top 3 map results) receive the overwhelming majority of calls, clicks, and walk-ins. Position 1–3 in the map pack is the goal; everything else is table stakes. For most [City] service businesses, appearing in the map pack drives more calls than any paid advertising channel at a fraction of the ongoing cost.
 
 Outlier's [City] Local SEO service is built around getting you into that map pack — and keeping you there. We manage your Google Business Profile with the rigour of a paid ad account, building local citations across every relevant directory, generating reviews at scale, and creating [City]-specific landing pages that capture both map pack and organic local search traffic. We've done this for businesses across dozens of [City] categories and we understand the specific ranking factors and competitive dynamics that matter most in your market. The difference between a GBP in the top 3 and one buried at position 7 is often not the size of the business — it's the quality of its local SEO management.
@@ -1087,7 +1504,7 @@ Local search competition in [City] varies significantly by category. Home servic
     label: "Google Ads Management",
     shortLabel: "Google Ads",
     icon: Target,
-    h1Template: "Google Ads Management in [City], Ontario",
+    h1Template: "Google Ads Management in [City], [Province]",
     taglineTemplate:
       "Profitable Google Ads campaigns for [City] businesses. Managed by certified Google Partners — not algorithmic autopilot.",
     metaDescTemplate:
@@ -1160,11 +1577,11 @@ The first 60–90 days of any Google Ads campaign is a learning and optimisation
     label: "Paid Social Advertising",
     shortLabel: "Paid Social",
     icon: Share2,
-    h1Template: "Paid Social Media Advertising in [City], Ontario",
+    h1Template: "Paid Social Media Advertising in [City], [Province]",
     taglineTemplate:
       "Meta, TikTok & LinkedIn ads for [City] businesses. Audience-first campaigns built to convert, not just reach.",
     metaDescTemplate:
-      "Paid social media advertising in [City], Ontario. Outlier manages Meta, TikTok, and LinkedIn campaigns that target [City] audiences and drive real business results. Free social ads audit.",
+      "Paid social media advertising in [City], [Province]. Outlier manages Meta, TikTok, and LinkedIn campaigns that target [City] audiences and drive real business results. Free social ads audit.",
     introTemplate: `Paid social media advertising gives [City] businesses a unique capability that search advertising can't match: the ability to put your brand in front of your ideal customer before they're actively searching — reaching them by who they are, not just what they're typing. When Meta's targeting precision, TikTok's engagement rates, and LinkedIn's B2B audience data are combined with the right creative and offer, paid social becomes one of the most cost-effective ways to build brand awareness, generate leads, and drive purchases in the [City] market. The key is combining data precision with creative quality — the majority of paid social failures come not from targeting errors, but from creative and copy that fails to stop the scroll.
 
 Outlier manages paid social campaigns for [City] businesses across Meta (Facebook and Instagram), TikTok, LinkedIn, and YouTube. Our approach is built on three pillars: audience intelligence (understanding your [City] customer's demographics, behaviours, and purchase triggers in depth), creative excellence (developing ad content that earns attention in a crowded feed), and relentless data-driven optimisation (testing and iterating toward the audiences and creatives that produce the lowest CPA and highest ROAS). We don't outsource creative to freelancers or rely on client-provided content — our team produces everything in-house.
@@ -1232,11 +1649,11 @@ Every paid social campaign we run for [City] clients is underpinned by rigorous 
     label: "Content Marketing",
     shortLabel: "Content Marketing",
     icon: FileText,
-    h1Template: "Content Marketing Services in [City], Ontario",
+    h1Template: "Content Marketing Services in [City], [Province]",
     taglineTemplate:
       "Build topical authority. Attract [City] buyers. Turn content into your best-performing sales channel.",
     metaDescTemplate:
-      "Content marketing services in [City], Ontario. Outlier builds content strategies that rank on Google, attract qualified [City] buyers, and compound in value month over month. Free content audit.",
+      "Content marketing services in [City], [Province]. Outlier builds content strategies that rank on Google, attract qualified [City] buyers, and compound in value month over month. Free content audit.",
     introTemplate: `Content marketing is how [City] businesses build the kind of organic visibility and audience trust that paid advertising can't replicate. When your business publishes consistently useful, well-researched, properly optimised content — the kind that answers the exact questions your [City] customers are asking on Google — you attract qualified prospects at the exact moment they're seeking the information that will eventually lead them to a purchase decision. This is the compounding power of content: every article, guide, or service page you publish continues attracting traffic and building trust long after it's live, accumulating value in a way that a one-time ad campaign never can.
 
 At Outlier, our content marketing programmes for [City] businesses are built at the intersection of search strategy and editorial excellence. We don't produce content for content's sake — every piece is built to rank for specific keywords, match the search intent of your target [City] audience, and advance a prospect toward a conversion. Our content team includes strategists who understand Google's ranking signals, researchers who verify every claim, writers who produce genuinely compelling copy, and editors who ensure everything reflects the expertise and authority your [City] business needs to build. The result is content that works — not just content that exists.
@@ -1304,11 +1721,11 @@ The ROI of content marketing for [City] businesses is long and compounding. Mont
     label: "Email Marketing",
     shortLabel: "Email Marketing",
     icon: Mail,
-    h1Template: "Email Marketing Services in [City], Ontario",
+    h1Template: "Email Marketing Services in [City], [Province]",
     taglineTemplate:
       "Turn your [City] subscriber list into a revenue engine. Automated sequences. Campaigns that convert.",
     metaDescTemplate:
-      "Email marketing services in [City], Ontario. Outlier builds automated email sequences, campaigns, and nurture programmes that convert [City] leads into paying customers. Free email audit.",
+      "Email marketing services in [City], [Province]. Outlier builds automated email sequences, campaigns, and nurture programmes that convert [City] leads into paying customers. Free email audit.",
     introTemplate: `Email marketing delivers the highest ROI of any digital marketing channel — $36 for every $1 spent on average, according to Litmus's 2023 study. For [City] businesses with an existing customer base or an active lead pipeline, email marketing is the single most cost-effective way to nurture prospects, drive repeat purchases, and build the kind of customer relationships that sustain a business through economic cycles. Unlike social media platforms — where algorithm changes can slash your organic reach overnight — your email list is an owned asset that no platform update, Google algorithm change, or policy revision can take away from you.
 
 Most [City] businesses are drastically underutilising their email lists. If you have subscribers who aren't receiving regular, high-value communications from you — or if your email programme consists of nothing more than occasional promotional blasts — you're leaving significant revenue on the table. The businesses that get email marketing right in [City] send with purpose: each email has a defined audience, a clear goal, a compelling hook, and a specific call to action. They use automation to nurture new leads through a journey from interest to purchase without any manual effort. And they measure relentlessly — open rates, click rates, conversion rates, and revenue per email — optimising every element based on data.
@@ -1376,11 +1793,11 @@ Platform selection, deliverability, and list hygiene are technical foundations t
     label: "Digital Marketing",
     shortLabel: "Digital Marketing",
     icon: BarChart3,
-    h1Template: "Digital Marketing Agency in [City], Ontario",
+    h1Template: "Digital Marketing Agency in [City], [Province]",
     taglineTemplate:
       "Full-channel digital marketing for [City] businesses that want to dominate their market.",
     metaDescTemplate:
-      "Outlier is a full-service digital marketing agency serving [City], Ontario. SEO, Google Ads, social media, email, and content — one team, one strategy. Get a free consultation.",
+      "Outlier is a full-service digital marketing agency serving [City], [Province]. SEO, Google Ads, social media, email, and content — one team, one strategy. Get a free consultation.",
     introTemplate: `Digital marketing is no longer optional for [City] businesses — it's the primary way that customers discover, evaluate, and choose the businesses they buy from. Whether your customers are searching on Google, scrolling Instagram, checking reviews, or opening emails, a coordinated digital marketing strategy ensures your brand is present, compelling, and converting at every touchpoint. The [City] businesses that are growing fastest are the ones that have figured out how to make their digital channels work together — not as isolated campaigns managed by different agencies, but as an integrated system where each channel amplifies the others.
 
 Outlier is a full-service digital marketing agency that works with [City] businesses to build integrated, data-driven growth strategies. Unlike agencies that specialise in just one channel, we manage SEO, Google Ads, social media advertising, email marketing, and content under one roof — creating compounding synergies that siloed single-channel strategies simply can't achieve. When your SEO content supports your PPC landing pages, your email sequences retarget paid visitors, and your social ads close the loop on organic search intent — that's when digital marketing stops being a cost centre and becomes a genuine business growth engine. Our [City] clients who run integrated multi-channel programmes consistently outperform those running isolated campaigns by a significant margin.
@@ -1448,11 +1865,11 @@ Attribution and measurement are the foundation of everything we do for [City] cl
     label: "Web Design & Development",
     shortLabel: "Web Design",
     icon: Globe,
-    h1Template: "Web Design Services in [City], Ontario",
+    h1Template: "Web Design Services in [City], [Province]",
     taglineTemplate:
       "Custom websites built to convert [City] visitors into customers — fast, beautiful, and SEO-ready.",
     metaDescTemplate:
-      "Professional web design and development in [City], Ontario. Outlier builds custom, conversion-optimised websites for [City] businesses. Fast, beautiful, and built for growth.",
+      "Professional web design and development in [City], [Province]. Outlier builds custom, conversion-optimised websites for [City] businesses. Fast, beautiful, and built for growth.",
     introTemplate: `Your website is the most important marketing asset your [City] business owns. It's your 24/7 salesperson, your credibility signal, and the foundation everything else in your digital marketing stack sits on. A slow, outdated, or poorly converting website undermines every other marketing investment you make — turning hard-won traffic from SEO, paid ads, and social media into lost opportunities. Studies consistently show that [City] consumers form a judgement about a website within 50 milliseconds of loading it — and that 88% of online consumers won't return to a site after a poor experience. If your current website isn't converting, that problem compounds with every visitor you send to it.
 
 At Outlier, we design and build custom websites for [City] businesses that do three things exceptionally well: they rank (built with technical SEO as a first principle, not an afterthought), they convert (every page is designed with a clear user journey and conversion objective), and they impress (design that communicates quality, authority, and brand personality in seconds). We don't use templates or page builders — every site we build is custom-designed and built on a technical foundation that performs. Our [City] web design projects consistently achieve sub-2-second load times and green Core Web Vitals scores — the performance standards that Google uses to evaluate site quality in its ranking algorithm.
@@ -1520,7 +1937,7 @@ The post-launch phase is where many [City] web design projects fail — not in t
     label: "Social Media Advertising",
     shortLabel: "Social Ads",
     icon: Share2,
-    h1Template: "Social Media Advertising in [City], Ontario",
+    h1Template: "Social Media Advertising in [City], [Province]",
     taglineTemplate:
       "Reach your exact [City] audience on Meta, Instagram, TikTok, and LinkedIn. Ads that convert — not just impressions.",
     metaDescTemplate:
@@ -1653,7 +2070,7 @@ export default function CityServicePage() {
   const city = CITIES[citySlug] || getDefaultCityData(citySlug, rawCityName);
   const svc = SERVICES[serviceSlug] || SERVICES["seo-services"];
 
-  const fill = (str: string) => str.replace(/\[City\]/g, city.name);
+  const fill = (str: string) => str.replace(/\[City\]/g, city.name).replace(/\[Province\]/g, city.province);
 
   const Icon = svc.icon;
 
@@ -1682,7 +2099,7 @@ export default function CityServicePage() {
   const exampleSearches = [
     `${shortKeyword} in ${city.name}`,
     `${city.name} ${shortKeyword} agency`,
-    `best ${shortKeyword} ${city.name} Ontario`,
+    `best ${shortKeyword} ${city.name} ${city.province}`,
     `${shortKeyword} services ${city.name}`,
     `${city.name} ${shortKeyword} company`,
     neighbourhoodList[0] ? `${shortKeyword} ${neighbourhoodList[0].toLowerCase()}` : `top ${shortKeyword} ${city.name}`,
@@ -1760,7 +2177,7 @@ export default function CityServicePage() {
           <div className="flex items-center gap-2 text-white/20 text-xs mb-8 flex-wrap">
             <Link href="/" className="hover:text-white/40 transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/cities" className="hover:text-white/40 transition-colors">Ontario Cities</Link>
+            <Link href="/cities" className="hover:text-white/40 transition-colors">Canadian Cities</Link>
             <span>/</span>
             <Link href={`/${citySlug}/seo-services`} className="hover:text-white/40 transition-colors">{city.name}</Link>
             <span>/</span>
@@ -2370,9 +2787,9 @@ export default function CityServicePage() {
       <section className="py-20 bg-[#f9f8f5] border-b border-[#e5e2d9]">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="max-w-2xl mb-10">
-            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Other Ontario Cities</p>
+            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">More Canadian Cities</p>
             <h2 className="text-2xl md:text-3xl font-black text-[#0e0e0e] leading-[1.1]">
-              {svc.label} across Ontario — we serve {Object.keys(CITIES).length}+ cities
+              {svc.label} across Canada — we serve {Object.keys(CITIES).length}+ cities
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
