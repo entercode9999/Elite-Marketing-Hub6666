@@ -10,6 +10,7 @@ import { Wins } from "@/components/sections/Wins";
 import { Faq } from "@/components/sections/Faq";
 import { MegaCta } from "@/components/sections/MegaCta";
 import { ArrowRight, MapPin, Star, TrendingUp, CheckCircle, ArrowUpRight } from "lucide-react";
+import { Link } from "wouter";
 import { AllServicesFeature } from "@/components/sections/AllServicesFeature";
 import { WhyOutlier } from "@/components/sections/WhyOutlier";
 import { HowWeWork } from "@/components/sections/HowWeWork";
@@ -19,52 +20,58 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const caseStudies = [
   {
+    slug: "meridian-dental",
     image: "/case-study-dental.png",
-    name: "Apex Dental Group",
+    name: "Meridian Dental Group",
     category: "Dental",
-    service: "Programmatic SEO + Local",
-    blurb: "Six-location practice ranking #1 across 1,100+ city + service combinations. Booked out 8 weeks.",
-    metrics: [{ value: "+86%", label: "New patients" }, { value: "1,100+", label: "Pages ranked" }],
+    service: "SEO Services",
+    blurb: "Six-location practice ranking #1 across every core dental keyword in Toronto. Booked out 8 weeks.",
+    metrics: [{ value: "+312%", label: "Organic traffic" }, { value: "4×#1", label: "Map pack positions" }],
   },
   {
+    slug: "axiom-law",
     image: "/case-study-saas.png",
-    name: "Nova FinTech",
-    category: "SaaS",
-    service: "Growth Engine",
-    blurb: "Scaling enterprise demo bookings and driving down CPA for a national B2B financial platform.",
-    metrics: [{ value: "+315%", label: "Lead volume" }, { value: "-42%", label: "CPA" }],
+    name: "Axiom Law Group",
+    category: "Legal",
+    service: "Content + Local SEO",
+    blurb: "Toronto litigation firm went from invisible to dominant across 60+ high-intent legal search terms.",
+    metrics: [{ value: "+410%", label: "Organic leads" }, { value: "91/100", label: "Technical SEO score" }],
   },
   {
+    slug: "northview-kitchens",
     image: "/case-study-home.png",
-    name: "Hudson Outdoor",
+    name: "Northview Kitchens",
     category: "Home Services",
-    service: "Full Funnel",
-    blurb: "Regional landscaping firm transformed into a $2.4M revenue machine via CRM + paid social.",
-    metrics: [{ value: "$2.4M", label: "Attr. revenue" }, { value: "+18%", label: "Conv. rate" }],
+    service: "Google Ads + SEO",
+    blurb: "Kitchen renovation company doubled qualified leads in 6 months while cutting cost-per-lead by 38%.",
+    metrics: [{ value: "+215%", label: "Qualified leads" }, { value: "-38%", label: "Cost per lead" }],
   },
   {
+    slug: "gta-home-pros",
     image: "/case-study-realestate.png",
-    name: "Prime Realty Group",
-    category: "Real Estate",
-    service: "Local SEO",
-    blurb: "Boutique brokerage flipped cold-lead dependency to a predictable 60-day seller appointment pipeline.",
-    metrics: [{ value: "+247%", label: "Listings YoY" }, { value: "4.2x", label: "ROAS" }],
-  },
-  {
-    image: "/case-study-ecommerce.png",
-    name: "Coastal Collective",
-    category: "eCommerce",
-    service: "Lifecycle + Paid",
-    blurb: "Shopify brand scaled from low-six-figures to eight-figure revenue through CRO + lifecycle email.",
-    metrics: [{ value: "7.2x", label: "Q1 ROAS" }, { value: "+38%", label: "AOV" }],
-  },
-  {
-    image: "/case-study-homeservices.png",
-    name: "Meridian HVAC",
+    name: "GTA Home Pros",
     category: "Home Services",
+    service: "Google Ads + Local SEO",
+    blurb: "Self-managed Google Ads account was bleeding money. We turned it into their top revenue channel.",
+    metrics: [{ value: "4.2×", label: "ROAS" }, { value: "-54%", label: "Cost per booked job" }],
+  },
+  {
+    slug: "purecycle-fitness",
+    image: "/case-study-ecommerce.png",
+    name: "Purecycle Fitness Studios",
+    category: "Fitness",
+    service: "Paid Social + Email",
+    blurb: "Boutique fitness chain grew membership 180% in 8 months without a single discount or promotion.",
+    metrics: [{ value: "+180%", label: "New memberships" }, { value: "3.4×", label: "Meta ad ROAS" }],
+  },
+  {
+    slug: "bluesky-roofing",
+    image: "/case-study-homeservices.png",
+    name: "Bluesky Roofing",
+    category: "Trades",
     service: "Local SEO + Google Ads",
-    blurb: "Multi-city HVAC company moved from page 3 to #1 map pack across four Toronto-area markets.",
-    metrics: [{ value: "+190%", label: "Service calls" }, { value: "#1", label: "Map pack" }],
+    blurb: "GTA roofing company hit page 1 in 14 cities and cut their cost-per-lead in half within 5 months.",
+    metrics: [{ value: "+340%", label: "Organic calls" }, { value: "14", label: "Cities ranked #1" }],
   },
 ];
 
@@ -243,7 +250,7 @@ export default function Home() {
                   From local monopolies to national scale — we measure success in revenue, not rankings.
                 </p>
               </div>
-              <a href="/work" className="shrink-0 inline-flex items-center gap-2 border border-border hover:border-primary/40 text-foreground font-semibold py-2.5 px-5 rounded-lg transition-colors text-sm group">
+              <a href="/our-work" className="shrink-0 inline-flex items-center gap-2 border border-border hover:border-primary/40 text-foreground font-semibold py-2.5 px-5 rounded-lg transition-colors text-sm group">
                 View all work
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
@@ -258,32 +265,39 @@ export default function Home() {
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ delay: i * 0.08, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                   whileHover={{ y: -4, transition: { duration: 0.25, ease: "easeOut" } }}
-                  className="group cursor-pointer flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/40 hover:shadow-[0_8px_40px_rgba(26,86,255,0.12)] transition-all duration-300"
                 >
-                  <div className="aspect-[16/9] overflow-hidden relative">
-                    <img
-                      src={cs.image}
-                      alt={cs.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute top-4 left-4 flex gap-2">
-                      <span className="px-2.5 py-1 rounded bg-primary text-white text-[10px] font-bold uppercase tracking-wider">{cs.category}</span>
-                      <span className="px-2.5 py-1 rounded bg-black/50 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider">{cs.service}</span>
+                  <Link
+                    href={`/our-work/${cs.slug}`}
+                    className="group flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/40 hover:shadow-[0_8px_40px_rgba(26,86,255,0.12)] transition-all duration-300"
+                  >
+                    <div className="aspect-[16/9] overflow-hidden relative">
+                      <img
+                        src={cs.image}
+                        alt={cs.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      <div className="absolute top-4 left-4 flex gap-2">
+                        <span className="px-2.5 py-1 rounded bg-primary text-white text-[10px] font-bold uppercase tracking-wider">{cs.category}</span>
+                        <span className="px-2.5 py-1 rounded bg-black/50 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider">{cs.service}</span>
+                      </div>
+                      <div className="absolute bottom-4 right-4 w-8 h-8 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        <ArrowUpRight className="w-4 h-4 text-white" />
+                      </div>
                     </div>
-                  </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">{cs.name}</h3>
-                    <p className="text-sm text-muted-foreground mb-5 flex-1 leading-relaxed">{cs.blurb}</p>
-                    <div className="grid grid-cols-2 gap-3 pt-4 border-t border-border">
-                      {cs.metrics.map((m) => (
-                        <div key={m.label}>
-                          <p className="text-xl font-black text-foreground">{m.value}</p>
-                          <p className="text-xs text-muted-foreground">{m.label}</p>
-                        </div>
-                      ))}
+                    <div className="p-6 flex flex-col flex-1">
+                      <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">{cs.name}</h3>
+                      <p className="text-sm text-muted-foreground mb-5 flex-1 leading-relaxed">{cs.blurb}</p>
+                      <div className="grid grid-cols-2 gap-3 pt-4 border-t border-border">
+                        {cs.metrics.map((m) => (
+                          <div key={m.label}>
+                            <p className="text-xl font-black text-foreground">{m.value}</p>
+                            <p className="text-xs text-muted-foreground">{m.label}</p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </motion.div>
               ))}
             </div>
