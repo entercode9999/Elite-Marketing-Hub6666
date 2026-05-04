@@ -2518,10 +2518,46 @@ export default function CityServicePage() {
 
   const Icon = svc.icon;
 
+  /* Tier-specific H1 angle suffix — makes each page's H1 factually distinct */
+  const TIER_H1_SUFFIX: Record<string, string> = {
+    premium:  `— Canada's Most Competitive Market`,
+    major:    `— High-Growth ${city.region} Market`,
+    standard: `— Establish Dominance Before Competition Grows`,
+    emerging: `— First-Mover Advantage in ${city.name}`,
+  };
+  const tierH1Suffix = TIER_H1_SUFFIX[city.marketTier];
+
+  /* Tier-specific meta description prefix */
+  const TIER_META_PREFIX: Record<string, string> = {
+    premium:  `Competing in Canada's toughest market? `,
+    major:    `Growing fast in ${city.region}? `,
+    standard: `Ready to establish dominant digital visibility in ${city.name}? `,
+    emerging: `First-mover advantage is still available in ${city.name}. `,
+  };
+  const tierMetaPrefix = TIER_META_PREFIX[city.marketTier];
+
+  /* Tier-specific timeline note injected into timeline section */
+  const TIER_TIMELINE_NOTE: Record<string, string> = {
+    premium:  `${city.name}'s premium market means top-3 positions require sustained execution over 12–24 months — but the revenue impact of ranking there is proportionally larger than any other Canadian market.`,
+    major:    `As a major market, ${city.name}'s competitive intensity means results compound significantly from month 6 onward — businesses that commit to a 12-month programme consistently outperform those looking for quick wins.`,
+    standard: `${city.name}'s standard market competition means strong results are achievable within 6–9 months for most categories. Businesses that start now have a meaningful timing advantage over those that wait.`,
+    emerging: `${city.name}'s emerging market status means lower competition and faster ranking timelines than larger Ontario markets. Businesses investing in digital visibility now are establishing positions that will compound as the market grows.`,
+  };
+  const tierTimelineNote = TIER_TIMELINE_NOTE[city.marketTier];
+
+  /* Tier-aware included section additions (appended to standard deliverables) */
+  const TIER_INCLUDED_NOTE: Record<string, string> = {
+    premium:  `Given ${city.name}'s premium competitive landscape, we also include competitor gap analysis and a dedicated authority-building programme designed to close the domain authority differential against entrenched market leaders.`,
+    major:    `For ${city.name}'s growing market, we include a growth-velocity layer: identifying the emerging keyword clusters and content opportunities that will generate compounding returns as the market matures over the next 12–24 months.`,
+    standard: `In ${city.name}'s market, we include a category dominance audit — identifying where you can establish the most defensible positions in local search before competition intensifies.`,
+    emerging: `Given ${city.name}'s emerging market status, we include a first-mover strategy layer: claiming the highest-value positions before well-resourced competitors increase their investment in this market.`,
+  };
+  const tierIncludedNote = TIER_INCLUDED_NOTE[city.marketTier];
+
   /* Set page title + meta description for SEO */
   useSeo({
-    title: `${fill(svc.h1Template)} | Outlier`,
-    description: fill(svc.metaDescTemplate),
+    title: `${fill(svc.h1Template)} ${tierH1Suffix} | Outlier`,
+    description: `${tierMetaPrefix}${fill(svc.metaDescTemplate)}`,
     canonicalPath: `/${citySlug}/${serviceSlug}`,
   });
 
@@ -2730,7 +2766,7 @@ export default function CityServicePage() {
               </div>
 
               <h1 className="text-5xl md:text-6xl font-black text-white leading-[1.04] mb-4">
-                {fill(svc.h1Template)}
+                {fill(svc.h1Template)}<span className="block text-2xl md:text-3xl text-primary/70 font-bold mt-2 leading-snug">{tierH1Suffix}</span>
               </h1>
               <p className="text-[1.15rem] text-primary font-bold mb-8 leading-snug">
                 {fill(svc.taglineTemplate)}
@@ -3005,6 +3041,16 @@ export default function CityServicePage() {
                 <p className="text-sm text-gray-500 leading-relaxed">{fill(item.description)}</p>
               </div>
             ))}
+            {/* Tier-specific added value card — unique per marketTier */}
+            <div className="bg-primary/5 border border-primary/20 rounded-2xl p-7 flex flex-col gap-4">
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <TrendingUp className="w-4 h-4 text-primary" />
+                </div>
+                <h3 className="font-bold text-[#0e0e0e] leading-snug text-[15px]">{TIER_LABELS[city.marketTier]} Strategy Layer</h3>
+              </div>
+              <p className="text-sm text-gray-600 leading-relaxed">{tierIncludedNote}</p>
+            </div>
           </div>
         </div>
       </section>
@@ -3125,6 +3171,9 @@ export default function CityServicePage() {
               <p className="text-gray-600 leading-relaxed text-[15px]">
                 The milestones below represent typical progression for a {city.name} business starting from scratch. Businesses with existing domain authority or partial optimisation often see faster initial results.
               </p>
+              <div className="mt-4 bg-primary/5 border border-primary/20 rounded-xl p-4">
+                <p className="text-sm text-gray-700 leading-relaxed">{tierTimelineNote}</p>
+              </div>
               <div className="mt-6">
                 <Link href="/contact" className="inline-flex items-center gap-2 bg-[#0e0e0e] text-white font-bold px-6 py-3 rounded-xl hover:bg-primary transition-colors text-sm">
                   Get a {city.name}-specific timeline <ArrowRight className="w-4 h-4" />
