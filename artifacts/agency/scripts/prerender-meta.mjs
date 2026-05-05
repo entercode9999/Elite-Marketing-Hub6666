@@ -156,23 +156,40 @@ function fill(tpl, cityName, pa) {
   return tpl.replace(/\[City\]/g, cityName).replace(/\[PA\]/g, pa);
 }
 
+const OG_IMAGE = "https://outliermarketing.ca/opengraph.jpg";
+const SITE_NAME = "Outlier Digital Marketing";
+
 function injectMeta(baseHtml, title, description, canonical) {
   let html = baseHtml;
 
   // Replace <title>
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${esc(title)}</title>`);
 
-  // Replace meta description (handles both /> and > endings, name or content first)
+  // Replace meta description
   html = html.replace(
     /<meta\s+name="description"[^>]*>/,
     `<meta name="description" content="${esc(description)}" />`
   );
 
-  // Inject canonical just before </head>
-  html = html.replace(
-    "</head>",
-    `  <link rel="canonical" href="${canonical}" />\n</head>`
-  );
+  // Inject canonical + Open Graph + Twitter Card before </head>
+  const inject = [
+    `  <link rel="canonical" href="${canonical}" />`,
+    `  <meta property="og:title" content="${esc(title)}" />`,
+    `  <meta property="og:description" content="${esc(description)}" />`,
+    `  <meta property="og:url" content="${canonical}" />`,
+    `  <meta property="og:type" content="website" />`,
+    `  <meta property="og:image" content="${OG_IMAGE}" />`,
+    `  <meta property="og:image:width" content="1200" />`,
+    `  <meta property="og:image:height" content="630" />`,
+    `  <meta property="og:site_name" content="${SITE_NAME}" />`,
+    `  <meta property="og:locale" content="en_CA" />`,
+    `  <meta name="twitter:card" content="summary_large_image" />`,
+    `  <meta name="twitter:title" content="${esc(title)}" />`,
+    `  <meta name="twitter:description" content="${esc(description)}" />`,
+    `  <meta name="twitter:image" content="${OG_IMAGE}" />`,
+  ].join("\n");
+
+  html = html.replace("</head>", `${inject}\n</head>`);
 
   return html;
 }

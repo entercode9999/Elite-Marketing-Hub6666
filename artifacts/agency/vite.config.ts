@@ -58,6 +58,27 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    chunkSizeWarningLimit: 600,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "vendor-react": ["react", "react-dom"],
+          "vendor-motion": ["framer-motion"],
+          "vendor-ui": ["@radix-ui/react-accordion", "@radix-ui/react-dialog", "@radix-ui/react-tooltip", "lucide-react"],
+          "page-city-service": ["./src/pages/CityServicePage"],
+          "page-industries": ["./src/pages/IndustryPages"],
+          "page-hubs": [
+            "./src/pages/hubs/SeoServicesHub",
+            "./src/pages/hubs/LocalSeoHub",
+            "./src/pages/hubs/GoogleAdsHub",
+            "./src/pages/hubs/DigitalMarketingHub",
+            "./src/pages/hubs/ContentMarketingHub",
+            "./src/pages/hubs/TechnicalSeoHub",
+            "./src/pages/hubs/AISeoHub",
+          ],
+        },
+      },
+    },
   },
   server: {
     port,

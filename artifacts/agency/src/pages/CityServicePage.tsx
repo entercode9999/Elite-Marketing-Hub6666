@@ -2710,15 +2710,22 @@ export default function CityServicePage() {
         "@type": "ProfessionalService",
         "name": "Outlier Digital Marketing",
         "url": "https://outliermarketing.ca",
+        "logo": "https://outliermarketing.ca/favicon.svg",
+        "telephone": "+1-416-555-0199",
+        "priceRange": "$$",
+        "email": "hello@outliermarketing.ca",
         "description": fill(svc.metaDescTemplate),
-        "areaServed": {
-          "@type": "City",
-          "name": city.name,
-          "containedInPlace": { "@type": "State", "name": city.province, "addressCountry": "CA" },
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": city.name,
+            "containedInPlace": { "@type": "AdministrativeArea", "name": city.province, "addressCountry": "CA" },
+          },
+        ],
+        "knowsAbout": [svc.label, "Digital Marketing", "SEO", "Google Ads", "Local SEO"],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": svc.label,
+          "name": `${svc.label} in ${city.name}`,
           "itemListElement": [
             {
               "@type": "Offer",
@@ -2726,6 +2733,8 @@ export default function CityServicePage() {
                 "@type": "Service",
                 "name": fill(svc.h1Template),
                 "description": fill(svc.metaDescTemplate),
+                "provider": { "@type": "Organization", "name": "Outlier Digital Marketing" },
+                "areaServed": { "@type": "City", "name": city.name },
               },
             },
           ],

@@ -5,6 +5,7 @@ import { ArrowRight, ChevronDown, ChevronUp, AlertCircle } from "lucide-react";
 import { Nav } from "@/components/nav";
 import { LogoMarquee } from "@/components/LogoMarquee";
 import { Footer } from "@/components/footer";
+import { useSeo } from "@/hooks/useSeo";
 
 export interface IndustryData {
   industry: string;
@@ -42,6 +43,13 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 }
 
 export function IndustryPage({ data }: { data: IndustryData }) {
+  const metaDesc = data.subhead.length > 155 ? data.subhead.slice(0, 152) + "..." : data.subhead;
+  useSeo({
+    title: `${data.industry} Marketing Agency in Canada | Outlier`,
+    description: metaDesc,
+    canonicalPath: `/${data.slug}`,
+  });
+
   return (
     <div className="min-h-screen bg-white flex flex-col selection:bg-primary selection:text-white">
       <Nav />

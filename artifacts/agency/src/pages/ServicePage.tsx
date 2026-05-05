@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle2, ChevronDown, ChevronUp } from "lucide-react";
 import { Nav } from "@/components/nav";
 import { LogoMarquee } from "@/components/LogoMarquee";
 import { Footer } from "@/components/footer";
+import { useSeo } from "@/hooks/useSeo";
 
 export interface ServicePageData {
   breadcrumb: string[];
@@ -38,6 +39,13 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 }
 
 export function ServicePage({ data }: { data: ServicePageData }) {
+  const metaDesc = data.subhead.length > 155 ? data.subhead.slice(0, 152) + "..." : data.subhead;
+  useSeo({
+    title: `${data.label} | Outlier Digital Marketing`,
+    description: metaDesc,
+    canonicalPath: window.location.pathname,
+  });
+
   return (
     <div className="min-h-screen bg-white selection:bg-primary selection:text-white flex flex-col">
       <Nav />
