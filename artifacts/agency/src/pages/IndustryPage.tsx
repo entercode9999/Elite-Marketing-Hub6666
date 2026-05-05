@@ -1,13 +1,26 @@
-import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { Nav } from "@/components/nav";
-import { LogoMarquee } from "@/components/sections/LogoMarquee";
-import { data } from "./industryData";
+import { LogoMarquee } from "@/components/LogoMarquee";
 
-export function IndustryPage() {
-  const pageData = useMemo(() => data, []);
+export interface IndustryData {
+  industry: string;
+  slug: string;
+  image: string;
+  headline: string;
+  italic: string;
+  subhead: string;
+  stats: Array<{ value: string; label: string }>;
+  deliverables?: Array<{ title: string; body: string }>;
+  process?: Array<{ title: string; body: string }>;
+  faq?: Array<{ q: string; a: string }>;
+  related?: Array<{ label: string; href: string }>;
+  cta?: string;
+}
+
+export function IndustryPage({ data }: { data: IndustryData }) {
+  const pageData = data;
 
   return (
     <div className="min-h-screen bg-white flex flex-col selection:bg-primary selection:text-white">

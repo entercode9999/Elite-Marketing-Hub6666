@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { Nav } from "@/components/nav";
-import { LogoMarquee } from "@/components/sections/LogoMarquee";
+import { LogoMarquee } from "@/components/LogoMarquee";
 
 interface ServicePageData {
   breadcrumb: string[];
