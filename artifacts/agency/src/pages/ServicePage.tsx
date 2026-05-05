@@ -1,13 +1,48 @@
-import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { Nav } from "@/components/nav";
 import { LogoMarquee } from "@/components/sections/LogoMarquee";
-import { data } from "./serviceData";
 
-export function ServicePage() {
-  const pageData = useMemo(() => data, []);
+interface ServicePageData {
+  breadcrumb: string[];
+  label: string;
+  headline: string;
+  headlineAccent: string;
+  subhead: string;
+  stats: Array<{ value: string; label: string; sub?: string }>;
+}
+
+export const localSeoData: ServicePageData = {
+  breadcrumb: ["Home", "Services", "Local SEO"],
+  label: "Local SEO",
+  headline: "Dominate Google Maps.",
+  headlineAccent: "Own your local market.",
+  subhead: "Outlier gets local businesses into Google's Map pack top 3 — where the majority of local calls and enquiries come from.",
+  stats: [
+    { value: "Top 3", label: "Map pack position", sub: "87% of clients within 6 months" },
+    { value: "+220%", label: "GBP impressions", sub: "avg. increase" },
+    { value: "6 wks", label: "First ranking lift", sub: "typical timeline" },
+    { value: "93%", label: "Client retention", sub: "after year 1" },
+  ],
+};
+
+export const googleAdsData: ServicePageData = {
+  breadcrumb: ["Home", "Services", "Google Ads"],
+  label: "Google Ads Management",
+  headline: "More leads from Google.",
+  headlineAccent: "Less wasted spend.",
+  subhead: "Certified Google Partner agency. We lower CPA, maximise ROAS, and track every conversion — so you know exactly what your ad budget is producing.",
+  stats: [
+    { value: "4.2×", label: "Avg. ROAS", sub: "across managed accounts" },
+    { value: "-42%", label: "CPA reduction", sub: "vs. self-managed accounts" },
+    { value: "30 days", label: "First optimisation", sub: "cycle complete" },
+    { value: "Google", label: "Partner certified", sub: "specialists" },
+  ],
+};
+
+export function ServicePage({ data }: { data: ServicePageData }) {
+  const pageData = data;
 
   return (
     <div className="min-h-screen bg-white selection:bg-primary selection:text-white flex flex-col">

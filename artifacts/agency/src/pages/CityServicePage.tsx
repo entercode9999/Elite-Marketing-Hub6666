@@ -26,6 +26,21 @@ import { useSeo } from "@/hooks/useSeo";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 
+/* ─── Province abbreviation map ─────────────────────────────────── */
+
+const PROVINCE_ABBREV: Record<string, string> = {
+  "Ontario": "ON",
+  "British Columbia": "BC",
+  "Alberta": "AB",
+  "Quebec": "QC",
+  "Manitoba": "MB",
+  "Saskatchewan": "SK",
+  "Nova Scotia": "NS",
+  "New Brunswick": "NB",
+  "Prince Edward Island": "PE",
+  "Newfoundland and Labrador": "NL",
+};
+
 /* ─── Deterministic variation utilities ─────────────────────────── */
 
 function hashStr(s: string): number {
@@ -1304,6 +1319,8 @@ interface ServiceData {
   label: string;
   shortLabel: string;
   h1Template: string;
+  /** Shorter title for the <title> tag — uses [ProvinceAbbrev]. Falls back to h1Template if omitted. */
+  titleTemplate?: string;
   taglineTemplate: string;
   metaDescTemplate: string;
   introTemplate: string;
@@ -1332,9 +1349,9 @@ const SERVICES: Record<string, ServiceData> = {
     shortLabel: "SEO",
     icon: Search,
     h1Template: "SEO Services in [City], [Province]",
+    titleTemplate: "SEO Services in [City], [PA] | Outlier",
     taglineTemplate: "Rank higher. Get found. Grow faster. Outlier is [City]'s results-driven SEO agency.",
-    metaDescTemplate:
-      "Professional SEO services in [City], [Province]. Outlier helps [City] businesses rank on page 1 of Google and drive compounding organic growth. Get a free SEO audit today.",
+    metaDescTemplate: "SEO services in [City], [PA]. Outlier builds organic visibility that compounds month over month — more traffic, more qualified leads. Free SEO audit.",
     introTemplate: `Search engine optimisation is the highest-ROI long-term investment a [City] business can make in its digital growth. When potential customers in [City] search for what you offer — whether that's a service, a product, or an answer to a problem — appearing on page 1 of Google puts you in front of buyers at exactly the right moment. Businesses that rank on page 1 receive the overwhelming majority of clicks; page 2 and beyond are essentially invisible to most searchers. In [City]'s competitive market, the difference between ranking #1 and ranking #10 can represent hundreds of thousands of dollars in annual revenue.
 
 At Outlier, we've been building and executing SEO strategies for [City] businesses for over a decade. Our approach combines rigorous technical foundations, deeply researched content strategy, and authoritative link building to create organic visibility that compounds month over month. We don't chase algorithm shortcuts or report on vanity metrics — we build the kind of SEO infrastructure that survives every Google update and keeps delivering results years after the initial work is done. Every [City] client gets a dedicated SEO team that includes a senior strategist, a technical SEO specialist, a content lead, and a link acquisition manager.
@@ -1527,10 +1544,10 @@ The [City] market has [CompetitionLevel] competition across most [Service] categ
     shortLabel: "Local SEO",
     icon: MapPin,
     h1Template: "Local SEO Services in [City], [Province]",
+    titleTemplate: "Local SEO in [City], [PA] | Outlier",
     taglineTemplate:
       "Map pack position 1–3 for [City] searches. More calls. More walk-ins. More booked appointments.",
-    metaDescTemplate:
-      "Local SEO services in [City], [Province]. Outlier gets [City] businesses into the Google Map pack and ranks them for local service searches. Free local SEO audit available.",
+    metaDescTemplate: "Local SEO in [City], [PA]. Google Map pack top 3 is where the calls are. Outlier optimises your GBP and local search presence. Free local SEO audit.",
     introTemplate: `For businesses that serve customers in [City] — whether you're a dentist, a home services contractor, a restaurant, a lawyer, or a retail shop — local SEO is the single most cost-effective customer acquisition channel available. When someone in [City] searches "best [your service] near me" or "[your service] in [City]," the businesses that appear in the Google Map pack (the top 3 map results) receive the overwhelming majority of calls, clicks, and walk-ins. Position 1–3 in the map pack is the goal; everything else is table stakes. For most [City] service businesses, appearing in the map pack drives more calls than any paid advertising channel at a fraction of the ongoing cost.
 
 Outlier's [City] Local SEO service is built around getting you into that map pack — and keeping you there. We manage your Google Business Profile with the rigour of a paid ad account, building local citations across every relevant directory, generating reviews at scale, and creating [City]-specific landing pages that capture both map pack and organic local search traffic. We've done this for businesses across dozens of [City] categories and we understand the specific ranking factors and competitive dynamics that matter most in your market. The difference between a GBP in the top 3 and one buried at position 7 is often not the size of the business — it's the quality of its local SEO management.
@@ -1643,10 +1660,10 @@ The local SEO we build for [City] businesses is designed to produce durable resu
     shortLabel: "Google Ads",
     icon: Target,
     h1Template: "Google Ads Management in [City], [Province]",
+    titleTemplate: "Google Ads Management in [City], [PA] | Outlier",
     taglineTemplate:
       "Profitable Google Ads campaigns for [City] businesses. Managed by certified Google Partners — not algorithmic autopilot.",
-    metaDescTemplate:
-      "Google Ads management for [City] businesses. Outlier builds and manages profitable Google Search, Local Service Ads, and Performance Max campaigns. Free PPC audit available.",
+    metaDescTemplate: "Google Ads in [City], [PA]. Outlier's certified team lowers CPA, maximises ROAS, and tracks every conversion. No wasted spend. Free Google Ads audit.",
     introTemplate: `Google Ads is the fastest way for a [City] business to get in front of buyers who are actively searching for what you offer — right now, at the exact moment of purchase intent. Done right, Google Ads delivers a measurable, predictable return on every dollar you invest, with full attribution from click to conversion. Done wrong — which is how most [City] businesses run their Google Ads accounts — it's an expensive way to fund your competitors' growth. The average self-managed Google Ads account wastes 50–60% of its budget on irrelevant clicks, wrong match types, poor landing page alignment, and automated bidding strategies that have insufficient conversion data to work correctly.
 
 Outlier manages Google Ads for [City] businesses with the same rigour we apply to SEO: every campaign is custom-built for your specific goals and competitive landscape, every dollar is tracked from click to conversion, and every week we're actively optimising to improve ROAS and reduce cost per acquisition. We are a certified Google Partner agency, and our specialists manage significant monthly spend across industries including healthcare, home services, legal, professional services, ecommerce, and real estate in [City] and across Ontario. Being a Google Partner means we have direct access to Google's support team, advance notice of product changes, and training that keeps us ahead of the market.
@@ -1760,10 +1777,10 @@ The first 60–90 days of any [City] Google Ads engagement is a structured optim
     shortLabel: "Paid Social",
     icon: Share2,
     h1Template: "Paid Social Media Advertising in [City], [Province]",
+    titleTemplate: "Paid Social Advertising in [City], [PA] | Outlier",
     taglineTemplate:
       "Meta, TikTok & LinkedIn ads for [City] businesses. Audience-first campaigns built to convert, not just reach.",
-    metaDescTemplate:
-      "Paid social media advertising in [City], [Province]. Outlier manages Meta, TikTok, and LinkedIn campaigns that target [City] audiences and drive real business results. Free social ads audit.",
+    metaDescTemplate: "[City] paid social advertising — Meta, TikTok & LinkedIn campaigns from Outlier that create demand and drive measurable ROI. Free audit.",
     introTemplate: `Paid social media advertising gives [City] businesses a unique capability that search advertising can't match: the ability to put your brand in front of your ideal customer before they're actively searching — reaching them by who they are, not just what they're typing. When Meta's targeting precision, TikTok's engagement rates, and LinkedIn's B2B audience data are combined with the right creative and offer, paid social becomes one of the most cost-effective ways to build brand awareness, generate leads, and drive purchases in the [City] market. The key is combining data precision with creative quality — the majority of paid social failures come not from targeting errors, but from creative and copy that fails to stop the scroll.
 
 Outlier manages paid social campaigns for [City] businesses across Meta (Facebook and Instagram), TikTok, LinkedIn, and YouTube. Our approach is built on three pillars: audience intelligence (understanding your [City] customer's demographics, behaviours, and purchase triggers in depth), creative excellence (developing ad content that earns attention in a crowded feed), and relentless data-driven optimisation (testing and iterating toward the audiences and creatives that produce the lowest CPA and highest ROAS). We don't outsource creative to freelancers or rely on client-provided content — our team produces everything in-house.
@@ -1873,10 +1890,10 @@ For [City] businesses investing in both paid social and Google Ads, we coordinat
     shortLabel: "Content Marketing",
     icon: FileText,
     h1Template: "Content Marketing Services in [City], [Province]",
+    titleTemplate: "Content Marketing in [City], [PA] | Outlier",
     taglineTemplate:
       "Build topical authority. Attract [City] buyers. Turn content into your best-performing sales channel.",
-    metaDescTemplate:
-      "Content marketing services in [City], [Province]. Outlier builds content strategies that rank on Google, attract qualified [City] buyers, and compound in value month over month. Free content audit.",
+    metaDescTemplate: "[City] content marketing from Outlier. SEO-optimised content that ranks on Google, attracts buyers, and compounds in value month after month. Free strategy session.",
     introTemplate: `Content marketing is how [City] businesses build the kind of organic visibility and audience trust that paid advertising can't replicate. When your business publishes consistently useful, well-researched, properly optimised content — the kind that answers the exact questions your [City] customers are asking on Google — you attract qualified prospects at the exact moment they're seeking the information that will eventually lead them to a purchase decision. This is the compounding power of content: every article, guide, or service page you publish continues attracting traffic and building trust long after it's live, accumulating value in a way that a one-time ad campaign never can.
 
 At Outlier, our content marketing programmes for [City] businesses are built at the intersection of search strategy and editorial excellence. We don't produce content for content's sake — every piece is built to rank for specific keywords, match the search intent of your target [City] audience, and advance a prospect toward a conversion. Our content team includes strategists who understand Google's ranking signals, researchers who verify every claim, writers who produce genuinely compelling copy, and editors who ensure everything reflects the expertise and authority your [City] business needs to build. The result is content that works — not just content that exists.
@@ -1986,10 +2003,10 @@ Content performance for [City] clients is tracked comprehensively: organic traff
     shortLabel: "Email Marketing",
     icon: Mail,
     h1Template: "Email Marketing Services in [City], [Province]",
+    titleTemplate: "Email Marketing in [City], [PA] | Outlier",
     taglineTemplate:
       "Turn your [City] subscriber list into a revenue engine. Automated sequences. Campaigns that convert.",
-    metaDescTemplate:
-      "Email marketing services in [City], [Province]. Outlier builds automated email sequences, campaigns, and nurture programmes that convert [City] leads into paying customers. Free email audit.",
+    metaDescTemplate: "Email marketing in [City], [PA]. $36:1 average ROI. Outlier builds automations and campaigns that convert your list into revenue. Owned channel. Free audit.",
     introTemplate: `Email marketing delivers the highest ROI of any digital marketing channel — $36 for every $1 spent on average, according to Litmus's 2023 study. For [City] businesses with an existing customer base or an active lead pipeline, email marketing is the single most cost-effective way to nurture prospects, drive repeat purchases, and build the kind of customer relationships that sustain a business through economic cycles. Unlike social media platforms — where algorithm changes can slash your organic reach overnight — your email list is an owned asset that no platform update, Google algorithm change, or policy revision can take away from you.
 
 Most [City] businesses are drastically underutilising their email lists. If you have subscribers who aren't receiving regular, high-value communications from you — or if your email programme consists of nothing more than occasional promotional blasts — you're leaving significant revenue on the table. The businesses that get email marketing right in [City] send with purpose: each email has a defined audience, a clear goal, a compelling hook, and a specific call to action. They use automation to nurture new leads through a journey from interest to purchase without any manual effort. And they measure relentlessly — open rates, click rates, conversion rates, and revenue per email — optimising every element based on data.
@@ -2100,10 +2117,10 @@ The automation sequences we build for [City] clients cover the key commercial mo
     shortLabel: "Digital Marketing",
     icon: BarChart3,
     h1Template: "Digital Marketing Agency in [City], [Province]",
+    titleTemplate: "Digital Marketing Agency in [City], [PA] | Outlier",
     taglineTemplate:
       "Full-channel digital marketing for [City] businesses that want to dominate their market.",
-    metaDescTemplate:
-      "Outlier is a full-service digital marketing agency serving [City], [Province]. SEO, Google Ads, social media, email, and content — one team, one strategy. Get a free consultation.",
+    metaDescTemplate: "Digital marketing agency in [City], [PA]. SEO, Google Ads, social, and email integrated into one accountable strategy. Measurable ROI. Free consultation.",
     introTemplate: `Digital marketing is no longer optional for [City] businesses — it's the primary way that customers discover, evaluate, and choose the businesses they buy from. Whether your customers are searching on Google, scrolling Instagram, checking reviews, or opening emails, a coordinated digital marketing strategy ensures your brand is present, compelling, and converting at every touchpoint. The [City] businesses that are growing fastest are the ones that have figured out how to make their digital channels work together — not as isolated campaigns managed by different agencies, but as an integrated system where each channel amplifies the others.
 
 Outlier is a full-service digital marketing agency that works with [City] businesses to build integrated, data-driven growth strategies. Unlike agencies that specialise in just one channel, we manage SEO, Google Ads, social media advertising, email marketing, and content under one roof — creating compounding synergies that siloed single-channel strategies simply can't achieve. When your SEO content supports your PPC landing pages, your email sequences retarget paid visitors, and your social ads close the loop on organic search intent — that's when digital marketing stops being a cost centre and becomes a genuine business growth engine. Our [City] clients who run integrated multi-channel programmes consistently outperform those running isolated campaigns by a significant margin.
@@ -2213,10 +2230,10 @@ The [City] businesses we work with that achieve the strongest digital marketing 
     shortLabel: "Web Design",
     icon: Globe,
     h1Template: "Web Design Services in [City], [Province]",
+    titleTemplate: "Web Design & Development in [City], [PA] | Outlier",
     taglineTemplate:
       "Custom websites built to convert [City] visitors into customers — fast, beautiful, and SEO-ready.",
-    metaDescTemplate:
-      "Professional web design and development in [City], [Province]. Outlier builds custom, conversion-optimised websites for [City] businesses. Fast, beautiful, and built for growth.",
+    metaDescTemplate: "Web design in [City], [PA]. Custom, conversion-optimised websites built for speed, SEO, and measurable growth. Outlier. Free consultation.",
     introTemplate: `Your website is the most important marketing asset your [City] business owns. It's your 24/7 salesperson, your credibility signal, and the foundation everything else in your digital marketing stack sits on. A slow, outdated, or poorly converting website undermines every other marketing investment you make — turning hard-won traffic from SEO, paid ads, and social media into lost opportunities. Studies consistently show that [City] consumers form a judgement about a website within 50 milliseconds of loading it — and that 88% of online consumers won't return to a site after a poor experience. If your current website isn't converting, that problem compounds with every visitor you send to it.
 
 At Outlier, we design and build custom websites for [City] businesses that do three things exceptionally well: they rank (built with technical SEO as a first principle, not an afterthought), they convert (every page is designed with a clear user journey and conversion objective), and they impress (design that communicates quality, authority, and brand personality in seconds). We don't use templates or page builders — every site we build is custom-designed and built on a technical foundation that performs. Our [City] web design projects consistently achieve sub-2-second load times and green Core Web Vitals scores — the performance standards that Google uses to evaluate site quality in its ranking algorithm.
@@ -2327,10 +2344,10 @@ Post-launch, we offer ongoing website management that keeps your [City] site fas
     shortLabel: "Social Ads",
     icon: Share2,
     h1Template: "Social Media Advertising in [City], [Province]",
+    titleTemplate: "Social Media Advertising in [City], [PA] | Outlier",
     taglineTemplate:
       "Reach your exact [City] audience on Meta, Instagram, TikTok, and LinkedIn. Ads that convert — not just impressions.",
-    metaDescTemplate:
-      "Social media advertising for [City] businesses. Outlier runs high-performing Meta, Instagram, TikTok, and LinkedIn campaigns that target your exact [City] customer and drive measurable results. Free audit.",
+    metaDescTemplate: "Social media advertising in [City], [PA]. Outlier builds Meta, TikTok & LinkedIn campaigns that reach your ideal customer and drive measurable ROI. Free audit.",
     introTemplate: `Social media advertising has transformed the way [City] businesses reach new customers. Unlike traditional media or even organic social, paid social gives you the ability to put your message directly in front of a precisely defined audience — the exact demographics, interests, behaviours, and geographic locations that match your ideal [City] customer — at exactly the moment you choose. When executed correctly, it is one of the most powerful and scalable customer acquisition channels available to any business competing in [City].
 
 The challenge is that social media advertising has also become significantly more complex. Meta's algorithm, creative requirements, audience behaviour, and attribution models have all evolved dramatically over the past few years. Running social ads effectively in [City] today requires deep platform expertise, a rigorous testing methodology, and a creative operation capable of producing the volume and variety of content that modern social algorithms demand. The [City] businesses that get social advertising right treat it as a system — not a campaign — with audience strategy, creative development, bidding optimisation, and full-funnel architecture all working together.
@@ -2500,6 +2517,8 @@ export default function CityServicePage() {
   const city = CITIES[citySlug] || getDefaultCityData(citySlug, rawCityName);
   const svc = SERVICES[serviceSlug] || SERVICES["seo-services"];
 
+  const provinceAbbrev = PROVINCE_ABBREV[city.province] ?? city.province;
+
   const fill = (str: string) => {
     const industries2 = city.keyIndustries.slice(0, 2).join(" & ");
     const topIndustry = city.keyIndustries[0];
@@ -2507,6 +2526,8 @@ export default function CityServicePage() {
     return str
       .replace(/\[City\]/g, city.name)
       .replace(/\[Province\]/g, city.province)
+      .replace(/\[ProvinceAbbrev\]/g, provinceAbbrev)
+      .replace(/\[PA\]/g, provinceAbbrev)
       .replace(/\[Industries\]/g, industries2)
       .replace(/\[TopIndustry\]/g, topIndustry)
       .replace(/\[BusinessCount\]/g, city.businessCount)
@@ -2555,9 +2576,12 @@ export default function CityServicePage() {
   const tierIncludedNote = TIER_INCLUDED_NOTE[city.marketTier];
 
   /* Set page title + meta description for SEO */
+  const pageTitle = svc.titleTemplate
+    ? fill(svc.titleTemplate)
+    : `${fill(svc.h1Template)} | Outlier`;
   useSeo({
-    title: `${fill(svc.h1Template)} ${tierH1Suffix} | Outlier`,
-    description: `${tierMetaPrefix}${fill(svc.metaDescTemplate)}`,
+    title: pageTitle,
+    description: fill(svc.metaDescTemplate),
     canonicalPath: `/${citySlug}/${serviceSlug}`,
   });
 
