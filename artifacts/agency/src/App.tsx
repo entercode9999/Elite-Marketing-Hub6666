@@ -136,6 +136,7 @@ import {
 /* ── Cities & city-service pages ── */
 import CitiesPage from "@/pages/CitiesPage";
 import CityServicePage from "@/pages/CityServicePage";
+import ServiceIndustryPage from "@/pages/ServiceIndustryPage";
 
 /* ── Company / static pages ── */
 import {
@@ -308,6 +309,9 @@ function Router() {
       <Route path="/toronto/local-seo-service">{() => <LocationServicePage data={torontoLocalSeoData} />}</Route>
       <Route path="/mississauga/local-seo-service">{() => <LocationServicePage data={mississaugaLocalSeoData} />}</Route>
       <Route path="/ottawa/local-seo-service">{() => <LocationServicePage data={ottawaLocalSeoData} />}</Route>
+
+      {/* ── City × service × industry pages (must be before /:city/:service) ── */}
+      <Route path="/:city/:service/:industry" component={ServiceIndustryPage} />
 
       {/* ── Dynamic city × service pages ── */}
       <Route path="/:city/:service" component={CityServicePage} />

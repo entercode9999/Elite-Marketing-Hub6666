@@ -216,4 +216,37 @@ for (const [citySlug, city] of Object.entries(CITIES)) {
   }
 }
 
+/* ── City × service × industry pages ─────────────────────────────── */
+const INDUSTRY_PAGES = [
+  {
+    path: "toronto/local-seo/real-estate",
+    title: "Local SEO for Real Estate Agents in Toronto, ON | Outlier",
+    meta:  "Local SEO for Toronto real estate agents and brokerages. Map pack visibility, neighbourhood content architecture, and review strategy that generates consistent client enquiries. Free audit.",
+  },
+  {
+    path: "toronto/seo-services/legal",
+    title: "SEO for Law Firms in Toronto, ON | Outlier",
+    meta:  "SEO for Toronto law firms. Practice area landing pages, GBP optimisation, LSO-compliant content, and authority building that generates organic client enquiries. Free law firm SEO audit.",
+  },
+  {
+    path: "toronto/seo-services/dental",
+    title: "SEO for Dental Clinics in Toronto, ON | Outlier",
+    meta:  "SEO for Toronto dental clinics. Treatment-specific landing pages, GBP optimisation, RCDSO-compliant content, and authority building that fills appointment books. Free dental SEO audit.",
+  },
+  {
+    path: "toronto/local-seo/healthcare",
+    title: "Local SEO for Healthcare Clinics in Toronto, ON | Outlier",
+    meta:  "Local SEO for Toronto healthcare clinics. GBP optimisation, neighbourhood pages, PHIPA-compliant review strategy, and patient acquisition through organic search. Free healthcare SEO audit.",
+  },
+];
+
+for (const page of INDUSTRY_PAGES) {
+  const canonical = `${BASE}/${page.path}`;
+  const html = injectMeta(baseHtml, page.title, page.meta, canonical);
+  const dir = join(distDir, ...page.path.split("/"));
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, "index.html"), html, "utf-8");
+  count++;
+}
+
 console.log(`✓ Prerendered ${count} pages in ${Date.now() - start}ms`);
