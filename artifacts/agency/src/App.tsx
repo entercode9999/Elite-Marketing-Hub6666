@@ -9,6 +9,8 @@ import SitemapPage from "@/pages/SitemapPage";
 
 /* ── Core service pages ── */
 import { ServicePage, localSeoData, googleAdsData } from "@/pages/ServicePage";
+import LocalSeoHub from "@/pages/hubs/LocalSeoHub";
+import GoogleAdsHub from "@/pages/hubs/GoogleAdsHub";
 import {
   LocationServicePage,
   mississaugaLocalSeoData,
@@ -230,8 +232,8 @@ function Router() {
       <Route path="/social-media-advertising" component={SocialMediaAdsHub} />
 
       {/* ── Service detail pages ── */}
-      <Route path="/local-seo-service">{() => <ServicePage data={localSeoData} />}</Route>
-      <Route path="/google-ads-management">{() => <ServicePage data={googleAdsData} />}</Route>
+      <Route path="/local-seo-service" component={LocalSeoHub} />
+      <Route path="/google-ads-management" component={GoogleAdsHub} />
 
       {/* ── Local SEO sub-services ── */}
       <Route path="/gbp-optimisation" component={GBPOptimisationPage} />
