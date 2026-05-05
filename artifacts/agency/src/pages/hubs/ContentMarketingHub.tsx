@@ -15,7 +15,7 @@ const HeroVisual = () => (
           <p className="text-[9px] text-white/30 uppercase tracking-widest mb-2">Topical Cluster: HVAC Toronto</p>
           <div className="space-y-1.5">
             {[
-              { t: "HVAC Toronto — Best Service Companies 2024", pos: "#1", color: "#22c55e" },
+              { t: "HVAC Toronto — Best Service Companies 2026", pos: "#1", color: "#22c55e" },
               { t: "Air Conditioning Repair Toronto Cost Guide", pos: "#2", color: "#22c55e" },
               { t: "Furnace Replacement Toronto — What to Expect", pos: "#3", color: "#1a56ff" },
             ].map((r) => (

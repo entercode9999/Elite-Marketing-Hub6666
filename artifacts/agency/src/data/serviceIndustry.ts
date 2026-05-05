@@ -36,7 +36,7 @@ const torontoLocalSeoRealEstate: ServiceIndustryPageData = {
     "Buyer's agent Toronto",
     "Condos for sale Toronto",
     "Homes for sale Toronto",
-    "Toronto real estate market 2025",
+    "Toronto real estate market 2026",
     "Sell my home Toronto",
     "How much is my home worth Toronto",
     "Pre-construction condos Toronto",
