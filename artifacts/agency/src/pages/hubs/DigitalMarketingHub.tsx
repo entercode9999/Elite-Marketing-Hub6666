@@ -51,13 +51,13 @@ const digitalMarketingData: HubData = {
   label: "DIGITAL MARKETING AGENCY",
   breadcrumb: "Digital Marketing",
   hero: {
-    headline: "Driving Growth Through Digital Strategy.",
-    italic: "Every channel. One team.",
+    headline: "Toronto's Digital Marketing Company That Turns Traffic Into Revenue.",
+    italic: "Full-service internet marketing agency. Every channel. One team.",
     description:
-      "Outlier is your full-service digital marketing partner for ambitious brands in Toronto and across Canada. We craft data-driven strategies that build visibility, drive qualified traffic, and convert it into predictable, compounding revenue.",
+      "Outlier is a Toronto digital marketing company and full-service internet marketing agency. We build and run integrated digital strategies — SEO, Google Ads, paid social, email, and content — for Canadian businesses that need marketing that produces measurable, attributable revenue. One team. One strategy. Zero coordination tax.",
     cta: "Get a Free Strategy Call",
     ctaHref: "/contact",
-    badges: ["Google Partner", "Meta Business Partner", "Clutch 5★", "SEMrush Certified"],
+    badges: ["Digital Marketing Agency — Toronto", "Google Partner", "Meta Business Partner", "Clutch 5★"],
     visual: <HeroVisual />,
   },
   stats: [
@@ -67,23 +67,23 @@ const digitalMarketingData: HubData = {
     { value: "50+", label: "Industries Served" },
   ],
   intro: {
-    eyebrow: "Full-service performance marketing",
-    headline: "One team to own every digital channel — and make them work together.",
-    body: "Most brands suffer from disconnected agencies — one for SEO, one for ads, one for social, none talking to each other. The result is a fractured strategy, duplicated overhead, and no single point of accountability. We run every channel under one roof, with one strategy, and one clear attribution model so you always know exactly what's driving results.",
-    secondBody: "The difference isn't just operational efficiency — it's strategic compounding. When your SEO team's keyword data informs your paid strategy, when your CRO learnings improve your ad landing pages, when your email team amplifies your content programme — you get multiplicative returns, not additive ones. That only happens when every channel is run by the same team with the same data.",
+    eyebrow: "Why a full-service digital marketing company outperforms siloed agencies",
+    headline: "One internet marketing agency for every channel — with the attribution to prove what's working.",
+    body: "Most brands managing three separate agencies — one for SEO, one for Google Ads, one for social — lose 20–30% of potential return to coordination friction, misaligned attribution, and conflicting priorities. A full-service digital marketing company eliminates this by running every channel with shared data, shared strategy, and a single point of accountability. The result isn't just operational efficiency — it's compounding returns that no siloed agency arrangement can replicate.",
+    secondBody: "As a Toronto digital marketing agency and internet marketing company, Outlier runs SEO, Google Ads, paid social, email marketing, and content under one integrated strategy. When your SEO team's keyword data informs your paid strategy, and your CRO learnings improve landing pages across every channel simultaneously, you get multiplicative returns — not additive ones. That's the difference between a fragmented multi-agency setup and a true full-service internet marketing agency.",
     bullets: [
-      "SEO, Paid Ads, Social, Email — unified under one strategy",
-      "Senior strategist on your account (no junior hand-offs)",
-      "Full attribution: every dollar traced to its source",
-      "Monthly reporting with real numbers, not vanity metrics",
-      "No lock-in contracts — we earn retention every month",
+      "SEO, Paid Ads, Social, Email — unified under one digital marketing strategy",
+      "Senior strategist on your account (no junior hand-offs, ever)",
+      "Full attribution: every dollar traced to its source across all channels",
+      "Monthly reporting with revenue numbers, not vanity metrics",
+      "No lock-in contracts — we earn your retention every single month",
     ],
   },
   proofSection: {
-    eyebrow: "The full-service advantage",
-    headline: "Siloed agencies produce siloed results. We produce compounding growth.",
-    body: "The average brand working with three separate agencies — one for SEO, one for paid, one for social — loses an estimated 20-30% of potential return to coordination friction, misaligned attribution, and conflicting priorities. No one agency owns the outcome. Every agency optimises for its own metrics. The client bears the cost of the gaps between them.",
-    secondBody: "We've taken over accounts from multi-agency arrangements and produced 40-60% improvement in overall performance within 90 days without increasing total spend — purely by aligning strategy across channels and eliminating the coordination tax. The individual agencies weren't doing bad work. The system was broken. One team, one strategy, one accountability structure produces fundamentally better results.",
+    eyebrow: "The full-service digital marketing company advantage",
+    headline: "Siloed agencies produce siloed results. A single internet marketing agency produces compounding growth.",
+    body: "The average brand working with three separate agencies — one for SEO, one for paid, one for social — loses an estimated 20–30% of potential return to coordination friction, misaligned attribution, and conflicting priorities. No one agency owns the outcome. Every agency optimises for its own metrics. The client bears the cost of the gaps between them. The solution isn't better individual agencies — it's a single digital marketing company with a unified strategy and one clear accountability structure.",
+    secondBody: "We've taken over accounts from multi-agency arrangements and produced 40–60% improvement in overall performance within 90 days without increasing total spend — purely by aligning strategy across channels and eliminating the coordination tax. The individual agencies weren't doing bad work. The system was broken. One internet marketing company, one strategy, one accountability structure produces fundamentally better results. That's what Outlier delivers as a full-service digital marketing agency in Toronto.",
     bullets: [
       "One senior strategist owns your entire account — no silo between your SEO lead, your paid lead, and your content lead.",
       "Insight flows across disciplines in real time: paid audience data informs SEO priorities, CRO learnings improve landing pages for every channel simultaneously.",
@@ -278,6 +278,10 @@ const digitalMarketingData: HubData = {
     },
   ],
   faqs: [
+    {
+      question: "What does a full-service digital marketing company actually do?",
+      answer: "A full-service digital marketing company — also called an internet marketing agency or digital marketing agency — manages all of your brand's online marketing channels under one roof: SEO, Google Ads, paid social, email marketing, content, and analytics. Unlike hiring separate specialists for each channel, a full-service digital marketing company runs everything from a unified strategy with shared audience data, shared attribution, and a single point of accountability. For Toronto businesses, this means you get one team that knows your customer, your market, and your goals — not three agencies that don't talk to each other.",
+    },
     {
       question: "How long until I see results?",
       answer: "Paid ads typically show measurable results within the first 30 days as campaigns are optimised. SEO builds over 3-6 months but compounds significantly after 12 months — organic traffic growth is rarely linear. Content and email typically show measurable impact in 60-90 days. We give you realistic projections for each channel during strategy sign-off, not promises made to close a deal.",

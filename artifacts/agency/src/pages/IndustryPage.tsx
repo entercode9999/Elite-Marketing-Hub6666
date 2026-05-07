@@ -25,6 +25,12 @@ export interface IndustryData {
   compliance?: string;
   otherIndustries: Array<{ name: string; href: string }>;
   cta: string;
+  /** Optional city × service links shown at bottom — drives internal links to pSEO pages */
+  cityLinks?: Array<{ city: string; slug: string; serviceSlug: string; serviceLabel: string }>;
+  /** Optional process steps — how the engagement works */
+  process?: Array<{ step: string; title: string; body: string }>;
+  /** Optional results bar — additional proof metrics */
+  results?: Array<{ value: string; label: string; context: string }>;
 }
 
 function FAQItem({ q, a }: { q: string; a: string }) {
@@ -272,15 +278,87 @@ export function IndustryPage({ data }: { data: IndustryData }) {
         </div>
       </section>
 
+      {/* ── PROCESS (if provided) ── */}
+      {data.process && data.process.length > 0 && (
+        <section className="py-20 bg-[#08090d] border-b border-white/8">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <div className="max-w-xl mb-12">
+              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">How we work</p>
+              <h2 className="text-3xl md:text-4xl font-black text-white leading-[1.1]">
+                How we build your {data.industry} marketing programme
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+              {data.process.map((step) => (
+                <div key={step.step} className="bg-white/4 border border-white/8 rounded-2xl p-6">
+                  <span className="text-[11px] font-black text-primary bg-primary/15 rounded-full px-2.5 py-0.5 mb-4 inline-block">{step.step}</span>
+                  <h3 className="font-bold text-white mb-2 text-[15px] leading-snug">{step.title}</h3>
+                  <p className="text-xs text-white/40 leading-relaxed">{step.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── RESULTS (if provided) ── */}
+      {data.results && data.results.length > 0 && (
+        <section className="py-16 bg-white border-b border-[#e5e2d9]">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Results we deliver</p>
+            <h2 className="text-2xl font-black text-[#0e0e0e] mb-8">What {data.industry} clients achieve with Outlier</h2>
+            <div className="grid md:grid-cols-3 gap-5">
+              {data.results.map((r) => (
+                <div key={r.label} className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-7">
+                  <div className="flex items-baseline gap-2 mb-3">
+                    <span className="text-4xl font-black text-primary leading-none">{r.value}</span>
+                  </div>
+                  <p className="font-bold text-[#0e0e0e] text-sm mb-2">{r.label}</p>
+                  <p className="text-sm text-gray-500 leading-relaxed">{r.context}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── CITIES WE SERVE (if provided) ── */}
+      {data.cityLinks && data.cityLinks.length > 0 && (
+        <section className="py-16 bg-[#f9f8f5] border-b border-[#e5e2d9]">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">{data.industry} marketing by city</p>
+            <h2 className="text-2xl font-black text-[#0e0e0e] mb-3">
+              {data.industry} marketing across the GTA and Canada
+            </h2>
+            <p className="text-gray-500 text-sm mb-8 max-w-xl">
+              Every city has its own competitive dynamics. Our {data.industry.toLowerCase()} marketing programmes are built specifically for your market — not recycled from another city.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+              {data.cityLinks.map((cl) => (
+                <Link
+                  key={`${cl.slug}-${cl.serviceSlug}`}
+                  href={`/${cl.slug}/${cl.serviceSlug}`}
+                  className="bg-white border border-[#e5e2d9] rounded-xl p-4 hover:border-primary/40 hover:shadow-sm transition-all group"
+                >
+                  <p className="font-bold text-[#0e0e0e] text-sm">{cl.city}</p>
+                  <p className="text-[11px] text-gray-400 mt-0.5">{cl.serviceLabel}</p>
+                  <ArrowRight className="w-3 h-3 text-gray-300 group-hover:text-primary transition-colors mt-2" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── OTHER INDUSTRIES ── */}
       {data.otherIndustries && data.otherIndustries.length > 0 && (
-        <section className="py-16 bg-[#f9f8f5] border-b border-[#e5e2d9]">
+        <section className="py-16 bg-white border-b border-[#e5e2d9]">
           <div className="container mx-auto px-4 max-w-7xl">
             <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Other industries</p>
             <h2 className="text-2xl font-black text-[#0e0e0e] mb-8">We also specialise in</h2>
             <div className="flex flex-wrap gap-3">
               {data.otherIndustries.map((ind) => (
-                <Link key={ind.href} href={ind.href} className="bg-white border border-[#e5e2d9] rounded-xl px-4 py-2.5 text-sm font-semibold text-[#0e0e0e] hover:border-primary/40 hover:text-primary transition-all">
+                <Link key={ind.href} href={ind.href} className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-xl px-4 py-2.5 text-sm font-semibold text-[#0e0e0e] hover:border-primary/40 hover:text-primary transition-all">
                   {ind.name}
                 </Link>
               ))}

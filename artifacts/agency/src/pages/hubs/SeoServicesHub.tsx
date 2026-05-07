@@ -50,16 +50,16 @@ const HeroVisual = () => (
 
 const seoData: HubData = {
   slug: "seo-services",
-  label: "SEO SERVICES",
+  label: "SEO AGENCY",
   breadcrumb: "SEO Services",
   hero: {
-    headline: "SEO That Compounds. Visibility That Lasts.",
-    italic: "Built on strategy, not shortcuts.",
+    headline: "The SEO Agency That Builds Rankings That Last.",
+    italic: "Senior SEO specialists. Strategy-first. No shortcuts.",
     description:
-      "Search engine optimisation is the highest-ROI long-term investment in digital marketing. We build the technical foundation, content architecture, topical authority, and link equity that makes your site impossible to displace — through every algorithm update, every year.",
+      "Outlier is a Toronto SEO agency with a decade of results for Canadian businesses. Our senior SEO specialists build the technical foundation, content authority, and link equity that makes your site impossible to displace — through every algorithm update, every year. Top-rated SEO agency for businesses that want compounding growth, not vanity metrics.",
     cta: "Get a Free SEO Audit",
     ctaHref: "/contact",
-    badges: ["SEMrush Certified Partner", "Google Partner", "10+ Years SEO", "200+ Brands Grown"],
+    badges: ["Top SEO Agency — Toronto", "SEMrush Certified Partner", "Google Partner", "200+ Brands Ranked"],
     visual: <HeroVisual />,
   },
   stats: [
@@ -69,16 +69,17 @@ const seoData: HubData = {
     { value: "94%", label: "Client retention rate" },
   ],
   intro: {
-    eyebrow: "Why SEO is your most valuable long-term investment",
+    eyebrow: "Why Outlier is the SEO agency Toronto businesses trust",
     headline: "Every dollar you invest in SEO keeps paying back for years. No other channel does that.",
-    body: "Paid ads stop the moment you stop paying. SEO compounds. The content you publish today, the authority you build this quarter, the technical foundation you establish this year — these create returns that grow month over month, year over year, without scaling media cost. At 12 months, your organic channel is performing. At 24 months, it's your largest lead source. At 36 months, competitors can't catch up.",
-    secondBody: "But SEO done poorly produces nothing. Algorithm chasing, keyword stuffing, link schemes — these work briefly and penalise reliably. We build SEO programmes that are designed to last: technically sound, content-rich, authority-backed. Our playbook has remained consistent through every major Google update because it's built on what Google actually wants: the best possible answer for every search query.",
+    body: "Paid ads stop the moment you stop paying. SEO compounds. The content you publish today, the authority you build this quarter, the technical foundation you establish this year — these create returns that grow month over month, year over year, without scaling media cost. As a top SEO agency serving Toronto and Canadian businesses for over a decade, Outlier's senior SEO specialists build programmes designed to dominate search — not just rank briefly and fade. At 12 months, your organic channel is performing. At 24 months, it's your largest lead source. At 36 months, competitors can't catch up.",
+    secondBody: "But SEO done poorly produces nothing. Algorithm chasing, keyword stuffing, link schemes — these work briefly and penalise reliably. Outlier is an SEO agency that builds programmes designed to last: technically sound, content-rich, authority-backed. Every Toronto SEO specialist on our team works from a playbook that has survived every major Google update because it's built on what Google actually wants: the best possible answer for every search query. That's why 94% of our clients stay beyond year one.",
     bullets: [
+      "Senior SEO specialists — not junior staff — lead every engagement from strategy to execution",
       "Technical SEO foundation: site architecture, Core Web Vitals, crawlability, indexation",
       "Content strategy and topical authority clusters across your most valuable keyword universe",
       "On-page optimisation: title tags, headings, schema markup, internal linking",
       "Link building and digital PR: authoritative backlinks that signal domain trust",
-      "Local SEO and GBP management for multi-location and service area businesses",
+      "Local SEO and GBP management for Toronto, GTA, and multi-location businesses",
       "Monthly reporting tied to revenue outcomes — not ranking vanity metrics",
     ],
   },
@@ -172,10 +173,13 @@ const seoData: HubData = {
   ],
   faqs: [
     { question: "How long does SEO take to show results?", answer: "Meaningful ranking movement typically begins at 3-4 months for on-page work on well-indexed sites. Significant traffic growth appears at 6-9 months. Full compounding effect — where organic becomes your largest lead channel — typically happens at 12-18 months. We track leading indicators from day one (technical health, indexation, ranking movement) so you see the programme working before traffic spikes. We give you realistic projections by channel and keyword cluster during strategy sign-off." },
-    { question: "What's the difference between your SEO service and Technical SEO?", answer: "Our general SEO service is the complete package: technical foundation, content strategy, on-page optimisation, link building, local SEO, and reporting. Technical SEO is a specialised service focused specifically on the technical health of your website — site architecture, crawlability, Core Web Vitals, JavaScript rendering, international SEO configuration, and advanced structured data. Most clients need full-service SEO. Technical SEO as a standalone is typically for businesses with an in-house content and marketing team that needs the technical layer handled separately." },
+    { question: "What makes Outlier different from other SEO agencies in Canada?", answer: "Three things: strategy depth, execution seniority, and attribution transparency. Every Outlier SEO engagement is led by a senior SEO specialist — not handed to a junior team after the sale. Our strategies are built from scratch for your specific market and competitive landscape, not recycled from other clients. And we report on the metrics that connect to your revenue — organic leads, attributed pipeline, and traffic from commercially meaningful keywords — not impressions or rankings for terms no one searches." },
+    { question: "What's the difference between your SEO service and Technical SEO?", answer: "Our full SEO service is the complete package: technical foundation, content strategy, on-page optimisation, link building, local SEO, and reporting. Technical SEO is a specialised service focused specifically on the technical health of your website — site architecture, crawlability, Core Web Vitals, JavaScript rendering, international SEO configuration, and advanced structured data. Most clients need full-service SEO. Technical SEO as a standalone is typically for businesses with an in-house content and marketing team that needs the technical layer handled separately." },
     { question: "Do you guarantee rankings?", answer: "No ethical SEO agency can guarantee specific rankings — Google's algorithms are not controllable. What we guarantee is the quality of our work: a technically sound site, a content strategy built on real keyword research, links acquired through legitimate means, and monthly reporting showing exactly what's happening. Our track record — 94% client retention and consistent traffic growth across 200+ brands — is the evidence we point to, not promises we make at the start of an engagement." },
+    { question: "How do I know if I'm hiring the right SEO specialist or agency?", answer: "The right SEO specialist or agency will show you specific, verifiable results for businesses in your market and category — not just generic before/after screenshots. They will explain their process in plain language, be honest about timeline and what results are realistic, and propose reporting that connects to business outcomes rather than vanity metrics. At Outlier, we conduct a free audit of your current position before proposing anything — so you know exactly what the opportunity looks like before committing to a programme." },
     { question: "Can SEO work alongside paid search (Google Ads)?", answer: "SEO and paid search are highly complementary. Paid search gives you immediate visibility and conversion data while SEO builds. SEO keyword data improves paid targeting and landing page relevance. CRO learnings from paid landing pages improve SEO page performance. When we run both channels, we share data and insight across them — which consistently produces better performance on each than running them separately." },
     { question: "What industries do you specialise in for SEO?", answer: "We have deep SEO playbooks for local service businesses (legal, dental, healthcare, home services, real estate), eCommerce (Shopify, Magento, WooCommerce), B2B SaaS, and professional services. These are the verticals where we have the most case study depth and proven methodologies. We also work with businesses outside these categories — but we'll tell you honestly in the discovery call if a vertical is outside our core expertise." },
+    { question: "What is the difference between an SEO agency and an internet marketing company?", answer: "The terms are often used interchangeably. An SEO agency focuses specifically on organic search — technical SEO, content strategy, and link acquisition. An internet marketing company or digital marketing agency typically provides a broader set of services including SEO, paid search, social media advertising, and email marketing. Outlier operates as both: we run pure SEO engagements for clients who need organic specialisation, and full-channel digital marketing programmes for clients who want all channels managed under one strategy." },
   ],
   hubInsights: [
     { image: "/work-1.png", category: "SEO Strategy", readTime: "8 min read", title: "The 18-Month SEO Roadmap: What to Expect at Every Stage", excerpt: "SEO is the most misunderstood channel in digital marketing — mostly because the timeline is counterintuitive. We share the realistic 18-month roadmap we give every new SEO client: what happens in months 1-3, why months 4-6 look slow before they don't, and why clients who reach month 18 own their market.", author: "Marcus Chen", authorRole: "SEO Director", href: "/blog/seo-18-month-roadmap" },
