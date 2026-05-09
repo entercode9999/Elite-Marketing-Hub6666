@@ -115,7 +115,7 @@ export function AboutPage() {
       <section className="bg-primary">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid grid-cols-2 sm:grid-cols-5">
-            [
+            {[
               { n: "Toronto", l: "Based & operator-led" },
               { n: "Boutique", l: "Focused lead generation team" },
               { n: "Long-term", l: "Client partnerships" },
