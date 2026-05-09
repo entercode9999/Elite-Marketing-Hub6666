@@ -8,18 +8,19 @@ type Stat = {
   suffix?: string;
   label: string;
   format?: (n: number) => string;
+  text?: string;
 };
 
 const stats: Stat[] = [
-  { value: 10, suffix: "+", label: "Years in Toronto" },
-  { value: 65, suffix: "+", label: "Brands Grown" },
+  { value: 0, text: "Focused", label: "Execution Team" },
+  { value: 0, text: "Local Service", label: "Business Specialists" },
   { value: 94, suffix: "%", label: "Client Retention" },
   { prefix: "4.", value: 9, suffix: "★", label: "Clutch Rating" },
 ];
 
 function StatItem({ stat, inView, index }: { stat: Stat; inView: boolean; index: number }) {
-  const value = useCountUp(stat.value, 1800, inView);
-  const display = stat.format ? stat.format(value) : value.toString();
+  const value = useCountUp(stat.text ? 0 : stat.value, 1800, inView);
+  const display = stat.text ?? (stat.format ? stat.format(value) : value.toString());
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}

@@ -158,7 +158,7 @@ export default function Home() {
                   className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12 text-white/80 text-xs font-medium mb-8"
                 >
                   <MapPin className="w-3.5 h-3.5 text-primary" />
-                  Built in Toronto — trusted by ambitious local + national brands
+                  Toronto-based lead generation agency for local service businesses
                 </motion.div>
 
                 <motion.h1
@@ -167,11 +167,11 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.08 }}
                   className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.04] tracking-tight mb-7"
                 >
-                  One team.
+                  We build lead
                   <br />
-                  Every channel.
+                  generation systems
                   <br />
-                  <span className="text-primary italic">Dominant growth.</span>
+                  <span className="text-primary italic">for local service businesses.</span>
                 </motion.h1>
 
                 <motion.p
@@ -180,7 +180,7 @@ export default function Home() {
                   transition={{ duration: 0.5, delay: 0.16 }}
                   className="text-lg text-white/55 max-w-lg mb-10 leading-relaxed"
                 >
-                  We partner with ambitious founders, local business owners, and CMOs to build category-defining brands. Strategy-first, execution-obsessed.
+                  Through SEO, paid ads, and conversion-focused websites, we help businesses turn high-intent search traffic into real inbound leads. Focused, operator-led growth systems designed for measurable results — not vanity marketing.
                 </motion.p>
 
                 <motion.div
@@ -211,7 +211,7 @@ export default function Home() {
                   className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl"
                 >
                   {[
-                    { icon: Check, title: "Strategy + delivery", body: "One senior team owns the whole engagement from planning to execution." },
+                    { icon: Check, title: "Lead generation focus", body: "Everything we build is tied to one outcome: qualified inbound leads for your business." },
                     { icon: ShieldCheck, title: "Clear scope", body: "Transparent reporting, defined deliverables, and no messy handoffs." },
                     { icon: Target, title: "Built for revenue", body: "Every channel, page, and campaign is tied to a conversion outcome." },
                   ].map((item) => (

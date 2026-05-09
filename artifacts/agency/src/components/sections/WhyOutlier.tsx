@@ -69,7 +69,7 @@ export function WhyOutlier() {
               <span className="italic font-light text-gray-500">differently.</span>
             </h2>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
-              Most agencies look identical in a pitch deck. The differences that matter aren't in the services list — they're in how the engagement is actually structured, priced, and staffed.
+              We're a small, focused agency — intentionally built for execution over scale. What matters isn't how many services we offer, but whether our systems generate real inbound leads for your business.
             </p>
             <p className="text-sm text-gray-400 leading-relaxed mb-10">
               These aren't aspirational values. They're operational choices we've made — and that clients notice within the first 30 days.

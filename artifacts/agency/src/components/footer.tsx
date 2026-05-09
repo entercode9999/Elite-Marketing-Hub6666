@@ -83,7 +83,7 @@ export function Footer() {
               Outlier
             </Link>
             <p className="text-sm text-white/45 leading-relaxed mb-6 max-w-xs">
-              Full-service digital marketing for Toronto businesses and national category leaders. SEO, paid media, web, and content — one senior team, measurable results.
+              Boutique lead generation agency focused on helping local service businesses generate and convert high-intent leads through SEO, ads, and conversion systems.
             </p>
             <div className="text-sm text-white/35 space-y-1.5">
               <div>123 Spadina Ave, Suite 800</div>

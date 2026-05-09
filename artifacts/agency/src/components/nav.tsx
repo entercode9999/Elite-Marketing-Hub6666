@@ -6,46 +6,39 @@ type NavItem = { label: string; href: string };
 
 const NAV_CATEGORIES: { label: string; items: NavItem[] }[] = [
   {
-    label: "Website Services",
+    label: "Lead Generation",
+    items: [
+      { label: "SEO Services", href: "/seo-services" },
+      { label: "Local SEO Services", href: "/local-seo-service" },
+      { label: "Technical SEO", href: "/technical-seo-service" },
+      { label: "AI SEO", href: "/ai-seo-service" },
+      { label: "Pay Per Click (PPC)", href: "/google-ads-management" },
+      { label: "Social Media Advertising", href: "/social-media-advertising" },
+    ],
+  },
+  {
+    label: "Conversion Systems",
     items: [
       { label: "Website Design", href: "/custom-web-design-service" },
       { label: "Website Development", href: "/website-development-service" },
       { label: "WordPress Development", href: "/wordpress-development-service" },
       { label: "Joomla Development", href: "/joomla-development-service" },
       { label: "Drupal Development", href: "/drupal-development-service" },
-      { label: "Laravel Web Development", href: "/laravel-web-development" },
     ],
   },
   {
-    label: "Ecommerce Services",
+    label: "Ecommerce & Development",
     items: [
-      { label: "Ecommerce Development", href: "/ecommerce-development" },
-      { label: "Magento Development", href: "/magento-development" },
       { label: "Shopify Development", href: "/shopify-development" },
       { label: "Shopify Plus Development", href: "/shopify-plus-development" },
+      { label: "Ecommerce Development", href: "/ecommerce-development" },
+      { label: "Magento Development", href: "/magento-development" },
+      { label: "Adobe Commerce", href: "/adobe-commerce-development" },
       { label: "Headless Commerce", href: "/headless-commerce-service" },
-    ],
-  },
-  {
-    label: "Enterprise Commerce",
-    items: [
-      { label: "Adobe Commerce Development", href: "/adobe-commerce-development" },
-      { label: "Magento 2 Development", href: "/magento-2-development" },
+      { label: "Laravel Web Development", href: "/laravel-web-development" },
       { label: "Magento 2 Migration", href: "/magento-2-migration" },
-      { label: "Magento 2 Support & Maintenance", href: "/magento-2-support" },
+      { label: "Magento 2 Support", href: "/magento-2-support" },
       { label: "Hyvä Theme Development", href: "/hyva-theme-development" },
-      { label: "Hyvä Enterprise Solutions", href: "/hyva-enterprise-solutions" },
-    ],
-  },
-  {
-    label: "Digital Marketing",
-    items: [
-      { label: "SEO Services", href: "/seo-services" },
-      { label: "Technical SEO", href: "/technical-seo-service" },
-      { label: "AI SEO", href: "/ai-seo-service" },
-      { label: "Local SEO Services", href: "/local-seo-service" },
-      { label: "Pay Per Click (PPC)", href: "/google-ads-management" },
-      { label: "Social Media Advertising", href: "/social-media-advertising" },
     ],
   },
 ];
