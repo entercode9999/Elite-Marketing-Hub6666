@@ -16,7 +16,7 @@ const PLANS = [
   {
     name: "Growth",
     badge: null,
-    tagline: "For established local businesses ready to dominate their market.",
+    tagline: "For local service businesses ready to build a consistent lead flow.",
     starting: "2,500",
     period: "/ month",
     note: "Typical engagement: $2,500 – $4,500/mo",
@@ -41,7 +41,7 @@ const PLANS = [
   {
     name: "Scale",
     badge: "Most popular",
-    tagline: "For multi-location brands and companies serious about full-funnel growth.",
+    tagline: "For multi-location service businesses building systematic lead generation.",
     starting: "5,000",
     period: "/ month",
     note: "Typical engagement: $5,000 – $9,000/mo",
@@ -65,9 +65,9 @@ const PLANS = [
     ],
   },
   {
-    name: "Enterprise",
+    name: "Custom",
     badge: "Custom",
-    tagline: "For national brands, complex multi-market operations, and high-volume ecommerce.",
+    tagline: "For larger service operations and multi-location businesses with complex growth needs.",
     starting: null,
     period: null,
     note: "Scoped to your business",
@@ -96,7 +96,7 @@ const PRICING_FAQ = [
   },
   {
     q: "Do you require a long-term contract?",
-    a: "Initial engagements are 6 months (to give strategies time to produce results), then month-to-month. We've kept exits easy deliberately — our 93% retention is based on results, not lock-in.",
+    a: "Initial projects are 6 months (to give strategies time to produce results), then month-to-month. We've kept exits easy deliberately — clients stay because the lead generation keeps working.",
   },
   {
     q: "Does the price include ad spend?",
@@ -104,7 +104,7 @@ const PRICING_FAQ = [
   },
   {
     q: "Can I start with one channel and add more?",
-    a: "Yes, and many clients do. We often start with the highest-leverage channel for your business and expand the engagement as you see results. Growth → Scale transitions are seamless.",
+    a: "Yes, and many clients do. We often start with the highest-leverage channel for your business and expand as you see results. Growing from one channel to two is straightforward.",
   },
   {
     q: "What if I'm not sure which plan fits?",

@@ -4,35 +4,39 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "Our blended CPA dropped 38% in the first quarter and we've never had a clearer view of our funnel. The team operates like an in-house growth squad — not a vendor.",
+      "Our cost-per-lead dropped 38% in the first quarter. They don't just manage ads — they actually understand what it takes to get a local service business more inbound calls.",
     name: "Sarah Chen",
-    title: "VP of Marketing",
-    company: "Nova FinTech",
-    image: "/headshot-1.png",
+    title: "Owner",
+    company: "Nova Financial Planning",
+    initials: "SC",
+    color: "#1a56ff",
   },
   {
     quote:
-      "We went from invisible to dominating the Toronto map pack in five months. Calls are up 312% and our drivers are booked solid. They actually understood our business.",
+      "We went from invisible to ranking in the Toronto map pack in five months. Calls are up 312% and our drivers are booked solid. They actually understood our business.",
     name: "Marcus Holland",
     title: "Founder",
     company: "Toronto Limo Co",
-    image: "/headshot-2.png",
+    initials: "MH",
+    color: "#e85d04",
   },
   {
     quote:
-      "The programmatic SEO build is the single best investment we've made in growth. 2,400 ranked keywords later, organic is now our largest channel by revenue.",
+      "The local SEO work Outlier did has completely changed how we get leads. Organic search is now our biggest source of new customers — and it keeps growing every month.",
     name: "Priya Desai",
-    title: "Head of Growth",
-    company: "Hudson Outdoor",
-    image: "/headshot-3.png",
+    title: "Owner",
+    company: "Hudson Outdoor Supply",
+    initials: "PD",
+    color: "#7c3aed",
   },
   {
     quote:
-      "I evaluated nine agencies. Outlier was the only one whose strategy deck made me think they understood the business better than my team did. We signed in a week.",
+      "I evaluated several agencies. Outlier was the only one who showed up already knowing our competitors and our keyword gaps. They understood our business before we hired them.",
     name: "Daniel Reyes",
-    title: "CEO",
+    title: "Principal",
     company: "Apex Dental Group",
-    image: "/headshot-4.png",
+    initials: "DR",
+    color: "#20c997",
   },
 ];
 
@@ -53,12 +57,12 @@ export function Testimonials() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
-            What clients say
+            Client results
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-[1.05] tracking-tight">
-            Operators talk.
+            What local business
             <br />
-            <span className="text-primary">Results don't lie.</span>
+            <span className="text-primary">owners say.</span>
           </h2>
         </motion.div>
 
@@ -85,11 +89,12 @@ export function Testimonials() {
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
               <div className="flex items-center gap-4 pt-6 border-t border-border">
-                <img
-                  src={t.image}
-                  alt={t.name}
-                  className="w-14 h-14 rounded-full object-cover bg-muted ring-2 ring-primary/10"
-                />
+                <div
+                  className="w-14 h-14 rounded-full flex items-center justify-center font-black text-white text-base flex-shrink-0 ring-2 ring-primary/10"
+                  style={{ backgroundColor: t.color }}
+                >
+                  {t.initials}
+                </div>
                 <div>
                   <div className="font-semibold text-foreground">{t.name}</div>
                   <div className="text-sm text-muted-foreground">
