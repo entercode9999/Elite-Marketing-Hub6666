@@ -99,7 +99,7 @@ export function Footer() {
 
           <FooterCol heading="Digital Marketing" links={DIGITAL_MARKETING} />
           <FooterCol heading="Web & Ecommerce" links={WEB_SERVICES} />
-          <FooterCol heading="Industries" links={INDUSTRIES} extra={<div className="mt-3"><Link href="/industries" className="text-xs text-[#1a56ff] font-semibold hover:text-[#1a56ff]/80 transition-colors">All industries →</Link></div>} />
+          <FooterCol heading="Industries" links={INDUSTRIES} extra={<div className="mt-3"><Link href="/our-work" className="text-xs text-[#1a56ff] font-semibold hover:text-[#1a56ff]/80 transition-colors">See client results →</Link></div>} />
           <div>
             <FooterCol heading="Company" links={COMPANY} />
             <div className="mt-8">

@@ -48,9 +48,9 @@ const DIFFERENTIATORS = [
 ];
 
 const PROOF_STATS = [
-  { value: "94%", label: "Client retention" },
-  { value: "10+", label: "Years operating" },
-  { value: "65+", label: "Brands grown" },
+  { value: "Senior", label: "Team on every project" },
+  { value: "Ontario", label: "Service businesses only" },
+  { value: "Flat fee", label: "No % of ad spend" },
   { value: "4.9★", label: "Clutch rating" },
 ];
 

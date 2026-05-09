@@ -390,12 +390,28 @@ export function IndustriesTabbed() {
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                 </div>
-                <div className="relative overflow-hidden min-h-[300px]" style={{ background: `linear-gradient(135deg, #08090d 0%, ${current.color}44 100%)` }}>
-                  <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.03)_25%,transparent_25%),linear-gradient(225deg,rgba(255,255,255,0.03)_25%,transparent_25%)] bg-[size:48px_48px]" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-[140px] font-black leading-none select-none" style={{ color: current.color, opacity: 0.12 }}>{current.name[0]}</span>
+                <div className="relative overflow-hidden min-h-[300px] flex flex-col justify-between p-7" style={{ background: `linear-gradient(160deg, #0a0c14 0%, ${current.color}28 100%)` }}>
+                  {/* Dot grid */}
+                  <div className="absolute inset-0 opacity-20" style={{ backgroundImage: `radial-gradient(${current.color}55 1px, transparent 1px)`, backgroundSize: "24px 24px" }} />
+                  {/* Proven result */}
+                  <div className="relative z-10">
+                    <p className="text-[9px] font-black uppercase tracking-widest mb-2" style={{ color: `${current.color}99` }}>Typical client result</p>
+                    <p className="text-3xl font-black leading-tight text-white mb-1">
+                      {current.whyChoose[current.whyChoose.length - 1].replace("Proven results: ", "")}
+                    </p>
                   </div>
-                  <div className="absolute inset-0" style={{ background: `radial-gradient(ellipse at 70% 50%, ${current.color}22, transparent 70%)` }} />
+                  {/* Mini bar chart */}
+                  <div className="relative z-10">
+                    <div className="flex items-end gap-1.5 h-16 mb-2">
+                      {[20, 30, 25, 42, 38, 55, 60, 72, 68, 85, 78, 100].map((h, i) => (
+                        <div key={i} className="flex-1 rounded-t-sm transition-all"
+                          style={{ height: `${h}%`, background: i >= 10 ? current.color : `${current.color}30` }} />
+                      ))}
+                    </div>
+                    <p className="text-[9px] font-medium" style={{ color: `${current.color}60` }}>Lead growth over time</p>
+                  </div>
+                  {/* Glow */}
+                  <div className="absolute bottom-0 right-0 w-40 h-40 rounded-full blur-3xl opacity-20" style={{ background: current.color }} />
                 </div>
               </motion.div>
             </AnimatePresence>

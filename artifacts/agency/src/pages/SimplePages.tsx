@@ -97,8 +97,8 @@ const MILESTONES = [
 
 export function AboutPage() {
   useSeo({
-    title: "About Outlier Toronto Digital Marketing Agency",
-    description: "Meet the Toronto digital marketing team behind Outlier’s SEO, paid media, web, and CRO work for Ontario brands.",
+    title: "About Outlier | Toronto Lead Generation Agency",
+    description: "Outlier is a focused Toronto-based lead generation agency helping local service businesses generate more inbound leads through SEO, paid ads, and conversion systems.",
     canonicalPath: "/about",
   });
   return (
@@ -208,72 +208,6 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="max-w-xl mb-14">
-            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">The Team</p>
-            <h2 className="text-3xl md:text-4xl font-black text-[#0e0e0e] leading-[1.1]">Senior people doing senior work</h2>
-            <p className="text-gray-500 mt-4 text-[15px] leading-relaxed">
-              No bait-and-switch. The people you meet in the pitch are the people running your account.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {TEAM.map((member, i) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 28 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.09, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-                className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-6 hover:shadow-md transition-all duration-300 group"
-              >
-                {/* Avatar */}
-                <div
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center font-black text-white text-xl mb-5"
-                  style={{ backgroundColor: member.accent }}
-                >
-                  {member.initials}
-                </div>
-                <p className="font-black text-[#0e0e0e] text-[17px] mb-0.5">{member.name}</p>
-                <p className="text-[11px] font-black uppercase tracking-widest mb-4" style={{ color: member.accent }}>{member.role}</p>
-                <p className="text-gray-500 text-[13px] leading-relaxed mb-5">{member.bio}</p>
-                <div className="flex flex-wrap gap-1.5">
-                  {member.tags.map((tag) => (
-                    <span key={tag} className="text-[10px] font-bold text-gray-400 border border-[#e5e2d9] px-2 py-0.5 rounded-full">{tag}</span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section className="py-20 bg-[#f9f8f5] border-y border-[#e5e2d9]">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <p className="text-center text-[11px] font-black uppercase tracking-widest text-gray-400 mb-10">Certifications & Partnerships</p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {CERTIFICATIONS.map((cert, i) => (
-              <motion.div
-                key={cert.name}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07, duration: 0.4 }}
-                className="bg-white border border-[#e5e2d9] rounded-xl p-4 text-center hover:border-primary/25 hover:shadow-sm transition-all"
-              >
-                <div className="w-10 h-10 rounded-xl bg-primary/8 flex items-center justify-center mx-auto mb-3">
-                  <Award className="w-5 h-5 text-primary" />
-                </div>
-                <p className="font-black text-[#0e0e0e] text-[12px] leading-snug mb-0.5">{cert.name}</p>
-                <p className="text-[10px] text-gray-400">{cert.sub}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Office / culture strip */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
@@ -357,34 +291,6 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Press / recognition */}
-      <section className="py-16 bg-[#f9f8f5] border-y border-[#e5e2d9]">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <p className="text-center text-[11px] font-black uppercase tracking-widest text-gray-400 mb-8">Recognition & Press</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { outlet: "Marketing Magazine", note: "Top Ontario Agency 2024" },
-              { outlet: "Clutch.co", note: "Top SEO Company — Toronto" },
-              { outlet: "Canadian SME", note: "Best Digital Agency 2023" },
-              { outlet: "Globe & Mail", note: "Featured: Agency Growth Report" },
-            ].map((p, i) => (
-              <motion.div
-                key={p.outlet}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07, duration: 0.4 }}
-                className="bg-white border border-[#e5e2d9] rounded-xl p-5 text-center"
-              >
-                <BookOpen className="w-5 h-5 text-primary mx-auto mb-3" />
-                <p className="font-black text-[#0e0e0e] text-sm mb-1">{p.outlet}</p>
-                <p className="text-gray-400 text-[11px]">{p.note}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="relative py-20 bg-[#08090d] overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-primary/12 rounded-full blur-[130px] pointer-events-none" />
@@ -433,7 +339,7 @@ const CONTACT_FAQ = [
     a: "Yes. While we're headquartered in Toronto, we work with service businesses across Ontario — GTA, Hamilton, Ottawa, and surrounding areas. Most clients work with us fully remote.",
   },
   {
-    q: "What's the minimum engagement size?",
+    q: "What's the minimum project size?",
     a: "Our minimum is $2,500/month. We work with established businesses serious about growth — not startups looking for the cheapest option. That said, we're transparent about scope and fit from day one.",
   },
   {
@@ -761,7 +667,7 @@ const POSTS = [
   {
     slug: "meridian-dental-map-pack",
     title: "How We Took Meridian Dental Group to Map Pack Position 1 in Toronto",
-    excerpt: "A deep-dive into the 11-month SEO engagement that rebuilt a dental group's entire digital presence — from 140+ crawl errors to dominating every primary keyword.",
+    excerpt: "A deep-dive into the 11-month SEO project that rebuilt a dental group's entire digital presence — from 140+ crawl errors to ranking for every primary keyword.",
     tag: "Case Study",
     date: "Feb 2025",
     readTime: "14 min read",
@@ -1046,8 +952,8 @@ const BENEFITS = [
 
 export function CareersPage() {
   useSeo({
-    title: "Careers at Outlier | Toronto Digital Marketing Jobs",
-    description: "Join Outlier's senior digital marketing team in Toronto. Open roles in SEO, paid media, content strategy, and web design.",
+    title: "Careers | Outlier",
+    description: "Outlier is a small focused agency. Not currently hiring, but always open to hearing from exceptional specialists in local SEO, paid media, or conversion systems.",
     canonicalPath: "/careers",
   });
   return (
@@ -1056,139 +962,25 @@ export function CareersPage() {
 
       <DarkHero
         label="Careers"
-        title={<>Work at Outlier.<br /><span className="text-primary italic">Do work that matters.</span></>}
-        sub="A small, focused team. We hire slowly, invest deeply in the people we bring on, and move fast on the things that matter."
+        title={<>We're a small,<br /><span className="text-primary italic">focused team.</span></>}
+        sub="We're not currently hiring. If you're exceptional at local SEO, paid media, or conversion systems — reach out."
       />
 
-      {/* Culture / who we hire */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Who We Hire</p>
-              <h2 className="text-3xl md:text-4xl font-black text-[#0e0e0e] leading-[1.1] mb-6">
-                Exceptional people who are done being the smartest person at a mediocre agency
-              </h2>
-              <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed">
-                <p>
-                  We don't hire generalists who can do a bit of everything. We hire specialists who are genuinely exceptional at one discipline — and who care about the quality of their work more than the ease of it.
-                </p>
-                <p>
-                  Our team is small by design. Every person on it is senior, every person works directly on client accounts, and every person has meaningful ownership of their craft.
-                </p>
-              </div>
-              <div className="mt-8 space-y-3">
-                {[
-                  "Senior contribution from week one",
-                  "Direct client interaction and ownership",
-                  "No office politics or hierarchy for its own sake",
-                  "Results recognised and rewarded directly",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-[#0e0e0e] font-medium text-sm">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            {/* Visual */}
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { n: "Boutique", l: "Focused team" },
-                { n: "Senior", l: "Work on every account" },
-                { n: "4.9★", l: "Clutch rating" },
-                { n: "Deep", l: "Specialization over breadth" },
-              ].map((s, i) => (
-                <motion.div
-                  key={s.l}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08, duration: 0.5 }}
-                  className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-6 text-center"
-                >
-                  <p className="text-3xl font-black text-primary mb-1">{s.n}</p>
-                  <p className="text-xs text-gray-500">{s.l}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits */}
-      <section className="py-24 bg-[#f9f8f5]">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="max-w-xl mb-14">
-            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Why Outlier</p>
-            <h2 className="text-3xl md:text-4xl font-black text-[#0e0e0e] leading-[1.1]">What working here looks like</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {BENEFITS.map((b, i) => (
-              <motion.div
-                key={b.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07, duration: 0.5 }}
-                className="bg-white border border-[#e5e2d9] rounded-2xl p-7 hover:shadow-sm transition-all"
-              >
-                <div className="w-10 h-10 rounded-xl bg-primary/8 flex items-center justify-center mb-5">
-                  <b.icon className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-black text-[#0e0e0e] text-[16px] mb-2">{b.title}</h3>
-                <p className="text-gray-500 text-[14px] leading-relaxed">{b.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Open roles */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="max-w-xl mb-10">
-            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Open Positions</p>
-            <h2 className="text-2xl md:text-3xl font-black text-[#0e0e0e] leading-[1.1]">Current openings</h2>
-          </div>
-          <div className="space-y-3 mb-10">
-            {OPEN_ROLES.map((j, i) => (
-              <motion.div
-                key={j.role}
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07, duration: 0.45 }}
-                className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-5 flex items-center justify-between hover:border-primary/30 hover:shadow-sm transition-all cursor-pointer group"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-primary/8 flex items-center justify-center flex-shrink-0">
-                    <Users className="w-4 h-4 text-primary" />
-                  </div>
-                  <div>
-                    <div className="font-black text-[#0e0e0e] text-[15px] group-hover:text-primary transition-colors">{j.role}</div>
-                    <div className="text-sm text-gray-400">{j.type}</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <span className="hidden md:block text-[10px] font-black uppercase tracking-widest text-gray-400 bg-[#e5e2d9]/60 px-3 py-1.5 rounded-full">{j.dept}</span>
-                  <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          <div className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-7">
-            <p className="font-black text-[#0e0e0e] mb-2">Don't see the right role?</p>
-            <p className="text-gray-500 text-[14px] mb-4">
-              We're always interested in meeting exceptional people. Send your portfolio and a note about what you do best.
-            </p>
-            <a
-              href="mailto:careers@outlier.co"
-              className="inline-flex items-center gap-2 bg-primary text-white font-bold px-5 py-2.5 rounded-xl hover:bg-primary/90 transition-colors text-sm"
-            >
-              <Mail className="w-4 h-4" /> careers@outlier.co
-            </a>
-          </div>
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-2xl">
+          <p className="text-gray-500 text-[16px] leading-relaxed mb-5">
+            Outlier works exclusively with local service businesses in Ontario. We keep the team deliberately small — everyone works directly on client projects from day one.
+          </p>
+          <p className="text-gray-500 text-[16px] leading-relaxed mb-10">
+            We're not actively hiring right now, but we're always open to hearing from specialists who are genuinely good at one thing. If that's you, send a short note and a few examples of your work.
+          </p>
+          <a
+            href="mailto:hello@outlier.co"
+            className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-sm"
+          >
+            <Mail className="w-4 h-4" />
+            hello@outlier.co
+          </a>
         </div>
       </section>
 
@@ -1300,7 +1092,7 @@ const FAQS = [
   },
   {
     q: "Do you work with businesses outside Toronto?",
-    a: "Yes. We work with clients across the GTA and Ontario, plus selected national brands.",
+    a: "Yes. We work with service businesses across the GTA and Ontario — Toronto, Mississauga, Hamilton, Ottawa, and surrounding areas.",
   },
   {
     q: "What size business is the best fit?",

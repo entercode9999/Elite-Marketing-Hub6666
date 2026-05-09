@@ -191,16 +191,35 @@ export function HeroServicesPanel() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4 }}
               className="absolute inset-0"
-              style={{ background: `linear-gradient(135deg, #08090d 0%, ${current.color}55 100%)` }}
+              style={{ background: `linear-gradient(160deg, #0a0c14 0%, ${current.color}35 100%)` }}
             >
-              <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.04)_25%,transparent_25%),linear-gradient(225deg,rgba(255,255,255,0.04)_25%,transparent_25%)] bg-[size:48px_48px]" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-[160px] font-black leading-none select-none" style={{ color: current.color, opacity: 0.1 }}>{current.label[0]}</span>
+              {/* Dot grid bg */}
+              <div className="absolute inset-0 opacity-25" style={{ backgroundImage: `radial-gradient(${current.color}55 1px, transparent 1px)`, backgroundSize: "20px 20px" }} />
+              {/* Mini metrics dashboard */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 pb-20">
+                <div className="grid grid-cols-3 gap-2 w-full">
+                  {[
+                    { v: current.metric.value, l: current.metric.label },
+                    { v: current.stat1.v, l: current.stat1.l },
+                    { v: current.stat2.v, l: current.stat2.l },
+                  ].map((m, i) => (
+                    <div key={i} className="rounded-xl p-2.5 text-center border" style={{ background: `${current.color}15`, borderColor: `${current.color}30` }}>
+                      <p className="font-black text-sm leading-none mb-1" style={{ color: current.color }}>{m.v}</p>
+                      <p className="text-[8px] text-white/35 leading-tight">{m.l}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex items-end gap-1 h-10 w-full">
+                  {[18, 26, 22, 38, 32, 50, 44, 62, 56, 75, 70, 88, 82, 100].map((h, i) => (
+                    <div key={i} className="flex-1 rounded-t-sm"
+                      style={{ height: `${h}%`, background: i >= 12 ? current.color : `${current.color}30` }} />
+                  ))}
+                </div>
               </div>
+              <div className="absolute bottom-4 right-4 w-24 h-24 rounded-full blur-2xl opacity-30" style={{ background: current.color }} />
             </motion.div>
           </AnimatePresence>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-          <div className="absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 80%, ${current.color}20, transparent 60%)` }} />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
 
           {/* Stats overlay */}
           <AnimatePresence mode="wait">
