@@ -430,7 +430,7 @@ const CONTACT_FAQ = [
   },
   {
     q: "Do you work with businesses outside Toronto?",
-    a: "Yes. While we're headquartered in Toronto, we work with clients across Ontario, Canada, and North America. Most of our national clients operate fully remote with us.",
+    a: "Yes. While we're headquartered in Toronto, we work with service businesses across Ontario — GTA, Hamilton, Ottawa, and surrounding areas. Most clients work with us fully remote.",
   },
   {
     q: "What's the minimum engagement size?",
@@ -581,7 +581,7 @@ export function ContactPage() {
                 <h2 className="text-2xl font-black text-[#0e0e0e] mb-6">Reach us directly</h2>
                 <div className="space-y-3">
                   {[
-                    { icon: Phone, label: "Phone", val: "1-800-555-0199", href: "tel:+18005550199" },
+                    { icon: Phone, label: "Phone", val: "(416) 555-0199", href: "tel:+14165550199" },
                     { icon: Mail, label: "Email", val: "hello@outlier.co", href: "mailto:hello@outlier.co" },
                     { icon: MapPin, label: "Office", val: "123 Spadina Ave, Suite 800, Toronto, ON M5V 2T6", href: "#" },
                   ].map((c) => (
@@ -619,7 +619,7 @@ export function ContactPage() {
                 </div>
                 <div className="mt-4 pt-4 border-t border-[#e5e2d9] flex items-center gap-2">
                   <Award className="w-4 h-4 text-primary" />
-                  <span className="text-[11px] text-gray-400 font-medium">4.9★ on Clutch · 65+ Ontario businesses</span>
+                  <span className="text-[11px] text-gray-400 font-medium">4.9★ on Clutch · Ontario service businesses</span>
                 </div>
               </div>
 
@@ -822,7 +822,7 @@ const TAG_COLORS: Record<string, string> = {
 export function InsightsPage() {
   useSeo({
     title: "Digital Marketing Insights | Outlier Toronto",
-    description: "Strategy, tactics and real results from Outlier's client engagements. SEO, Google Ads, content, and CRO insights for Ontario businesses.",
+    description: "Strategy, tactics and real results from Outlier's work with Ontario service businesses. SEO, Google Ads, content, and CRO insights.",
     canonicalPath: "/insights",
   });
   const [activeCategory, setActiveCategory] = useState("All");
@@ -841,7 +841,7 @@ export function InsightsPage() {
       <DarkHero
         label="Insights"
         title={<>Strategy. Tactics.<br /><span className="text-primary italic">Real results.</span></>}
-        sub="What we're learning from our client engagements — published for the operators who want to go further."
+        sub="What we're learning from working with Ontario service businesses — practical SEO, ads, and conversion insights."
       />
 
       <section className="py-16">
@@ -1308,7 +1308,7 @@ const FAQS = [
   },
   {
     q: "Do you offer one-off projects?",
-    a: "Yes, but most of our best results come from ongoing engagements where strategy and execution can compound over time.",
+    a: "Yes, but most of our best results come from ongoing projects where strategy and execution can build on each other over time.",
   },
   {
     q: "How fast can we get started?",

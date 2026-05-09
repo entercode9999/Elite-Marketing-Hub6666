@@ -184,19 +184,23 @@ export function HeroServicesPanel() {
           </div>
 
           <AnimatePresence mode="wait">
-            <motion.img
-              key={current.id + "-img"}
-              src={current.image}
-              alt={current.label}
-              initial={{ opacity: 0, scale: 1.04 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.97 }}
-              transition={{ duration: 0.5 }}
-              className="w-full h-full object-cover absolute inset-0"
-            />
+            <motion.div
+              key={current.id + "-bg"}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="absolute inset-0"
+              style={{ background: `linear-gradient(135deg, #08090d 0%, ${current.color}55 100%)` }}
+            >
+              <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.04)_25%,transparent_25%),linear-gradient(225deg,rgba(255,255,255,0.04)_25%,transparent_25%)] bg-[size:48px_48px]" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="text-[160px] font-black leading-none select-none" style={{ color: current.color, opacity: 0.1 }}>{current.label[0]}</span>
+              </div>
+            </motion.div>
           </AnimatePresence>
           <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${current.color}25, transparent 60%)` }} />
+          <div className="absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 80%, ${current.color}20, transparent 60%)` }} />
 
           {/* Stats overlay */}
           <AnimatePresence mode="wait">

@@ -64,9 +64,9 @@ export function WhyOutlier() {
           <div className="lg:sticky lg:top-24">
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary block mb-5">Why Outlier</span>
             <h2 className="text-4xl md:text-5xl font-black text-white leading-[1.04] tracking-tight mb-6">
-              Six ways we work
+              Why local businesses
               <br />
-              <span className="italic font-light text-gray-500">differently.</span>
+              <span className="italic font-light text-gray-500">choose us.</span>
             </h2>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
               We're a small, focused agency — intentionally built for execution over scale. What matters isn't how many services we offer, but whether our systems generate real inbound leads for your business.

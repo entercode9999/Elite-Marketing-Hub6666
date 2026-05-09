@@ -7,7 +7,7 @@ const INDUSTRIES = [
   {
     id: "dental",
     name: "Dental & Medical",
-    image: "/industry-dental.png",
+    color: "#1a56ff",
     headline: "Fill chairs. Build the waitlist. Own your market.",
     description:
       "Multi-location dental practices, orthodontists, MedSpas, and physio clinics. We build patient acquisition systems that produce consistent bookings — not seasonal spikes. Local SEO, Google Ads, and GBP optimisation tuned for regulated healthcare marketing.",
@@ -24,7 +24,7 @@ const INDUSTRIES = [
   {
     id: "legal",
     name: "Legal Services",
-    image: "/industry-legal.png",
+    color: "#7c3aed",
     headline: "High-value cases start with being found first.",
     description:
       "Personal injury, family law, corporate, immigration. Legal SEO has a long compounding runway — the authority you build today dominates for years. We build the content, citations, and link equity that put you at the top of every high-intent query in your practice area.",
@@ -41,7 +41,7 @@ const INDUSTRIES = [
   {
     id: "home-services",
     name: "Home Services",
-    image: "/case-study-homeservices.png",
+    color: "#20c997",
     headline: "More service calls. Fewer slow weeks.",
     description:
       "HVAC, plumbing, electrical, roofing, landscaping, pest control. High-intent searches with excellent unit economics. Our most active local SEO vertical — we know every citation directory, every map pack variable, every seasonal adjustment.",
@@ -58,7 +58,7 @@ const INDUSTRIES = [
   {
     id: "real-estate",
     name: "Real Estate",
-    image: "/industry-realestate.png",
+    color: "#e85d04",
     headline: "Listings, leads, and seller appointments — predictably.",
     description:
       "Boutique brokerages, independent agents, property managers. Neighbourhood-specific local SEO and paid campaigns that deliver qualified buyer and seller leads — not general traffic.",
@@ -75,7 +75,7 @@ const INDUSTRIES = [
   {
     id: "ecommerce",
     name: "eCommerce & Retail",
-    image: "/case-study-ecommerce.png",
+    color: "#ec4899",
     headline: "More revenue from every visitor.",
     description:
       "Shopify and WooCommerce brands growing profitably. CRO, paid social, lifecycle email, and SEO working as a unified system. We don't just drive traffic — we engineer the full purchase path from first touch to repeat buyer.",
@@ -92,7 +92,7 @@ const INDUSTRIES = [
   {
     id: "auto",
     name: "Auto & Trades",
-    image: "/case-study-limo.png",
+    color: "#f59e0b",
     headline: "Map pack visibility in your most competitive local market.",
     description:
       "Dealerships, auto body shops, mechanics, electricians, plumbers. Competitive local markets where map pack position directly determines call volume. We've moved clients from outside the top 10 to #1 in under 14 weeks.",
@@ -109,7 +109,7 @@ const INDUSTRIES = [
   {
     id: "saas",
     name: "SaaS & Technology",
-    image: "/case-study-saas.png",
+    color: "#38bdf8",
     headline: "Demo bookings. MQL growth. Pipeline you can forecast.",
     description:
       "B2B SaaS, fintech, HR tech, vertical SaaS. Account-based plays, PLG funnel optimisation, and content strategies that build topical authority in your niche. We understand the difference between website traffic and pipeline.",
@@ -126,7 +126,7 @@ const INDUSTRIES = [
   {
     id: "restaurants",
     name: "Restaurants & Hospitality",
-    image: "/industry-restaurant.png",
+    color: "#ef4444",
     headline: "Full tables. Memorable brands. Loyal regulars.",
     description:
       "Independent restaurants, café chains, catering companies, hospitality groups. Local SEO for 'near me' searches, paid social for reservation drives, and reputation management to protect your most valuable asset — your reviews.",
@@ -143,7 +143,7 @@ const INDUSTRIES = [
   {
     id: "education",
     name: "Education",
-    image: "/case-study-local.png",
+    color: "#8b5cf6",
     headline: "More enrolments. Built to last.",
     description:
       "Private schools, colleges, online courses, tutoring services, training providers. Enrolment-focused digital marketing — from first search to application submission.",
@@ -160,7 +160,7 @@ const INDUSTRIES = [
   {
     id: "transportation",
     name: "Transportation",
-    image: "/case-study-limo.png",
+    color: "#06b6d4",
     headline: "More bookings. Lower cost per dispatch.",
     description:
       "Logistics companies, freight brokers, limo and taxi services, trucking companies. Local SEO and paid search for high-intent transportation queries — driving more dispatches and B2B contracts.",
@@ -177,7 +177,7 @@ const INDUSTRIES = [
   {
     id: "healthcare",
     name: "Health Care",
-    image: "/industry-dental.png",
+    color: "#10b981",
     headline: "More patients. Compliant, ethical growth.",
     description:
       "Hospitals, clinics, specialist practices, telehealth platforms, pharmacies. Regulatory-aware digital marketing that navigates advertising restrictions while consistently driving new patient acquisition.",
@@ -194,7 +194,7 @@ const INDUSTRIES = [
   {
     id: "travel",
     name: "Travel",
-    image: "/case-study-realestate.png",
+    color: "#3b82f6",
     headline: "More direct bookings. Less OTA dependency.",
     description:
       "Hotels, tour operators, travel agencies, destination brands. Seasonal paid media strategies, OTA-beating local SEO, and content that converts trip researchers into direct bookings.",
@@ -211,7 +211,7 @@ const INDUSTRIES = [
   {
     id: "fashion",
     name: "Fashion",
-    image: "/industry-ecommerce.png",
+    color: "#f472b6",
     headline: "Build the brand. Drive the sale.",
     description:
       "Fashion labels, boutiques, accessories brands, sustainable fashion. Paid social, content strategy, and SEO that builds brand equity while driving consistent ecommerce revenue.",
@@ -228,7 +228,7 @@ const INDUSTRIES = [
   {
     id: "entertainment",
     name: "Entertainment",
-    image: "/case-study-limo.png",
+    color: "#a855f7",
     headline: "Sell out the show. Build the audience.",
     description:
       "Events, venues, entertainment brands, streaming content, talent agencies. Ticket sales, audience growth, and content-driven brand building across paid and organic channels.",
@@ -245,7 +245,7 @@ const INDUSTRIES = [
   {
     id: "small-business",
     name: "Small Business",
-    image: "/case-study-local.png",
+    color: "#1a56ff",
     headline: "Compete with bigger brands. Win in your market.",
     description:
       "Solopreneurs to 20-person teams. Lean, high-impact digital marketing that doesn't require an enterprise budget. Local SEO, targeted paid search, and content that punches above your weight class.",
@@ -262,7 +262,7 @@ const INDUSTRIES = [
   {
     id: "construction",
     name: "Construction",
-    image: "/case-study-homeservices.png",
+    color: "#92400e",
     headline: "More RFQs. Higher-value contracts.",
     description:
       "General contractors, specialty trades, construction firms, developers. Local SEO for project-intent searches, paid campaigns for high-value tender keywords, and authority content that wins RFQ shortlists.",
@@ -279,7 +279,7 @@ const INDUSTRIES = [
   {
     id: "b2b-b2c-d2c",
     name: "B2B / B2C / D2C",
-    image: "/case-study-ecommerce.png",
+    color: "#4f46e5",
     headline: "One framework. Three buyer models.",
     description:
       "B2B, B2C, and D2C brands all need different conversion paths, but the same discipline: strong positioning, high-performing channels, and clear attribution. We tailor strategy to the buying cycle, ticket size, and sales motion.",
@@ -390,13 +390,12 @@ export function IndustriesTabbed() {
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                 </div>
-                <div className="relative overflow-hidden min-h-[300px]">
-                  <img
-                    src={current.image}
-                    alt={current.name}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/20" />
+                <div className="relative overflow-hidden min-h-[300px]" style={{ background: `linear-gradient(135deg, #08090d 0%, ${current.color}44 100%)` }}>
+                  <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.03)_25%,transparent_25%),linear-gradient(225deg,rgba(255,255,255,0.03)_25%,transparent_25%)] bg-[size:48px_48px]" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-[140px] font-black leading-none select-none" style={{ color: current.color, opacity: 0.12 }}>{current.name[0]}</span>
+                  </div>
+                  <div className="absolute inset-0" style={{ background: `radial-gradient(ellipse at 70% 50%, ${current.color}22, transparent 70%)` }} />
                 </div>
               </motion.div>
             </AnimatePresence>

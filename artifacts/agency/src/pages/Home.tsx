@@ -281,7 +281,7 @@ export default function Home() {
                   Proven outcomes.
                 </h2>
                 <p className="text-muted-foreground mt-3 max-w-md text-base">
-                  From local monopolies to national scale — we measure success in revenue, not rankings.
+                  Real results for Ontario service businesses — measured in leads, calls, and booked appointments.
                 </p>
               </div>
               <Link href="/our-work" className="shrink-0 inline-flex items-center gap-2 border border-border hover:border-primary/40 text-foreground font-semibold py-2.5 px-5 rounded-lg transition-colors text-sm group">
@@ -304,12 +304,8 @@ export default function Home() {
                     href={`/our-work/${cs.slug}`}
                     className="group flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/40 hover:shadow-[0_8px_40px_rgba(26,86,255,0.12)] transition-all duration-300"
                   >
-                    <div className="aspect-[16/9] overflow-hidden relative">
-                      <img
-                        src={cs.image}
-                        alt={cs.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      />
+                    <div className={`aspect-[16/9] overflow-hidden relative bg-gradient-to-br ${cs.cardGradient}`}>
+                      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.06)_25%,transparent_25%),linear-gradient(225deg,rgba(255,255,255,0.06)_25%,transparent_25%)] bg-[size:40px_40px]" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                       <div className="absolute top-4 left-4 flex gap-2">
                         <span className="px-2.5 py-1 rounded bg-primary text-white text-[10px] font-bold uppercase tracking-wider">{cs.category}</span>

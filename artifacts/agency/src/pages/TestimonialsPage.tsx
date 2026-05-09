@@ -17,24 +17,14 @@ const REVIEWS = [
     quote: "We went from invisible on Google to position 1 for 'dentist Etobicoke' and ranking in the map pack for six high-value keywords. Our front desk went from fielding 12 organic enquiries a month to over 80. Outlier is the only agency that ever actually moved our numbers.",
   },
   {
-    name: "Raj Malhotra",
-    title: "CEO, GTA Home Pros",
-    location: "Mississauga, ON",
-    industry: "Home Services",
+    name: "James Caldwell",
+    title: "Owner, Caldwell HVAC",
+    location: "Brampton, ON",
+    industry: "Trades",
     rating: 5,
     source: "Clutch",
-    result: "4.2× ROAS, -54% cost per lead",
-    quote: "We were burning $8,000/month on Google Ads with zero idea if it was working — no conversion tracking, broad match everywhere. Outlier rebuilt the account from scratch. 90 days later we had 4.2x ROAS and our operations team was stretched from the volume. Genuinely transformative.",
-  },
-  {
-    name: "David Lau",
-    title: "Managing Partner, Axiom Law Group",
-    location: "Toronto, ON",
-    industry: "Legal",
-    rating: 5,
-    source: "Google",
-    result: "+410% organic leads YoY",
-    quote: "Legal SEO is cutthroat. We'd tried two agencies before Outlier — both produced reports, neither produced rankings. Outlier fixed our technical foundation in the first 6 weeks, then built out a content programme that now ranks us on page 1 for 40+ competitive legal keywords. Our intake has never been stronger.",
+    result: "Page 4 → #1 map pack in 5 months",
+    quote: "I'd been invisible on Google for 6 years. Tried everything — Yoast, blog posts, Google Ads on my own. Nothing worked. Outlier came in, did a full audit, explained exactly what was broken and why, and fixed it. Five months later I'm #1 in the map pack for 'HVAC Brampton'. The phone does not stop.",
   },
   {
     name: "Christine Beaumont",
@@ -47,54 +37,14 @@ const REVIEWS = [
     quote: "The difference between Outlier and every other agency we spoke to: they showed up to the first meeting already knowing our competitors, our keyword gaps, and what it would take to beat them. They weren't pitching us on a strategy — they already had one. That confidence turned out to be completely earned.",
   },
   {
-    name: "Marcus Webb",
-    title: "Founder, Purecycle Fitness",
-    location: "Toronto, ON",
-    industry: "Fitness",
-    rating: 5,
-    source: "Google",
-    result: "+180% new memberships in 90 days",
-    quote: "Our paid social was getting clicks but not members. Outlier rebuilt our Meta campaigns with proper audience segmentation and landing pages that actually converted. We hit 180% membership growth in the first quarter and 3.4x ROAS. The creative testing process they run is genuinely sophisticated.",
-  },
-  {
-    name: "Tyler Nguyen",
-    title: "Director, Bluesky Roofing",
-    location: "Hamilton, ON",
-    industry: "Construction",
-    rating: 5,
-    source: "Clutch",
-    result: "#1 ranking in 14 Ontario cities",
-    quote: "We needed to rank in multiple Ontario markets — Hamilton, Burlington, Oakville, Stoney Creek — not just one city. Outlier built location pages that actually perform and a Google Ads structure that targets by geography intelligently. We now rank #1 organically or in the map pack in 14 cities.",
-  },
-  {
-    name: "Anita Sharma",
-    title: "Marketing Director, Meridian Health Group",
-    location: "Toronto, ON",
-    industry: "Healthcare",
-    rating: 5,
-    source: "Google",
-    result: "87 new patients/month from organic",
-    quote: "Healthcare SEO requires a level of care that most agencies don't have — YMYL content guidelines, accurate medical information, no shortcuts. Outlier's team understood this immediately. They built a content library of 60+ procedure guides that now drive 87 new patient enquiries per month from organic search alone.",
-  },
-  {
-    name: "James Caldwell",
-    title: "Owner, Caldwell HVAC",
-    location: "Brampton, ON",
+    name: "Raj Malhotra",
+    title: "Owner, GTA Home Pros",
+    location: "Mississauga, ON",
     industry: "Home Services",
     rating: 5,
     source: "Clutch",
-    result: "From page 4 to #1 map pack in 5 months",
-    quote: "I'd been invisible on Google for 6 years. Tried everything — Yoast, blog posts, Google Ads on my own. Nothing worked. Outlier came in, did a full audit, explained exactly what was broken and why, and fixed it. Five months later I'm #1 in the map pack for 'HVAC Brampton'. The phone does not stop.",
-  },
-  {
-    name: "Rebecca Chen",
-    title: "Co-Founder, Maple & Co. Skincare",
-    location: "Toronto, ON",
-    industry: "Ecommerce",
-    rating: 5,
-    source: "Google",
-    result: "3.8× Shopify revenue from SEO + Ads",
-    quote: "We were a small Shopify brand with a good product but no search visibility. Outlier built our entire SEO foundation and ran our Google Shopping campaigns simultaneously. Revenue from search is now 3.8× what it was 8 months ago. They understand ecommerce SEO at a level that pure local agencies don't.",
+    result: "4.2× ROAS, -54% cost per lead",
+    quote: "We were burning $8,000/month on Google Ads with zero idea if it was working — no conversion tracking, broad match everywhere. Outlier rebuilt the account from scratch. 90 days later we had 4.2× ROAS and our team was stretched from the inbound volume.",
   },
   {
     name: "Patrick Morrison",
@@ -104,41 +54,30 @@ const REVIEWS = [
     rating: 5,
     source: "Clutch",
     result: "+290% enquiries from Google",
-    quote: "I'm a solo practitioner competing against large firms with big marketing budgets. Outlier focused my SEO on the specific practice areas and suburbs where I could realistically dominate, rather than trying to compete for 'Toronto lawyer' against 200-person firms. That strategic clarity is exactly what I needed.",
+    quote: "I'm a solo practitioner competing against large firms with big marketing budgets. Outlier focused my SEO on the specific practice areas and suburbs where I could realistically rank, rather than trying to compete for 'Toronto lawyer' against 200-person firms. That strategic clarity is exactly what I needed.",
   },
   {
-    name: "Sofia Reyes",
-    title: "Founder, Vida Yoga Studio",
-    location: "Mississauga, ON",
+    name: "Marcus Webb",
+    title: "Founder, Purecycle Fitness",
+    location: "Toronto, ON",
     industry: "Fitness",
     rating: 5,
     source: "Google",
-    result: "+145% class bookings in 4 months",
-    quote: "The fitness space in Mississauga got very competitive post-pandemic. We needed to stand out on Google and on Meta. Outlier ran both channels in a coordinated way — SEO building long-term authority while paid ads drove immediate bookings. Class capacity is now consistently full, something we'd never achieved before.",
-  },
-  {
-    name: "Kevin Park",
-    title: "Owner, Park Auto Collision",
-    location: "Scarborough, ON",
-    industry: "Automotive",
-    rating: 5,
-    source: "Clutch",
-    result: "60+ new insurance referrals/month",
-    quote: "Auto body shops live and die by Google. We needed to rank for insurance-related searches as well as general collision repair. Outlier understood the dual-channel nature of auto body leads immediately. We now get 60+ insurance referrals per month through organic search, up from essentially zero.",
+    result: "+180% new memberships in 90 days",
+    quote: "Our paid social was getting clicks but not members. Outlier rebuilt our Meta campaigns with proper audience segmentation and landing pages that actually converted. We hit 180% membership growth in the first quarter. Class capacity is consistently full now — something we'd never achieved before.",
   },
 ];
 
 const STATS = [
-  { value: "93%", label: "Client retention rate" },
-  { value: "4.9", label: "Average Google rating" },
-  { value: "180+", label: "Client engagements" },
-  { value: "12", label: "Industry verticals served" },
+  { value: "4.9★", label: "Google rating" },
+  { value: "4.8★", label: "Clutch rating" },
+  { value: "Ontario", label: "Service businesses only" },
+  { value: "Senior", label: "Strategist on every account" },
 ];
 
 const PLATFORMS = [
   { name: "Google", stars: "4.9/5", reviews: "47 reviews" },
   { name: "Clutch", stars: "4.8/5", reviews: "31 reviews" },
-  { name: "G2", stars: "4.7/5", reviews: "18 reviews" },
 ];
 
 function StarRow({ count = 5 }: { count?: number }) {
@@ -156,10 +95,7 @@ const INDUSTRY_COLORS: Record<string, string> = {
   Legal: "#7c3aed",
   "Home Services": "#20c997",
   Fitness: "#e85d04",
-  Construction: "#f59e0b",
-  Healthcare: "#1aa7ec",
-  Ecommerce: "#ec4899",
-  Automotive: "#6b7280",
+  Trades: "#f59e0b",
 };
 
 export function TestimonialsPage() {
@@ -304,7 +240,7 @@ export function TestimonialsPage() {
                 We don't ask clients to write glowing reviews. We ask them to be honest about what changed for their business — and attach the numbers. The reviews above are unedited and linked to verified Clutch and Google profiles.
               </p>
               <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
-                Our 93% client retention rate isn't a vanity metric. It's what happens when an agency is accountable to business outcomes rather than activity metrics.
+                Clients stay because the lead generation keeps working — not because of lock-in contracts. We're accountable to business outcomes, not activity reports.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/free-audit" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors text-sm group">
@@ -319,8 +255,6 @@ export function TestimonialsPage() {
               {[
                 { platform: "Google Reviews", rating: "4.9", count: "47", badge: "★★★★★" },
                 { platform: "Clutch", rating: "4.8", count: "31", badge: "Top Agency 2025" },
-                { platform: "G2", rating: "4.7", count: "18", badge: "High Performer" },
-                { platform: "UpCity", rating: "4.9", count: "24", badge: "Top Local Agency" },
               ].map((p) => (
                 <div key={p.platform} className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-5 text-center">
                   <p className="text-3xl font-black text-[#0e0e0e] mb-0.5">{p.rating}</p>
