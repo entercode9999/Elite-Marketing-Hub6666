@@ -238,16 +238,18 @@ function SubServiceTabs({ items }: { items: HubSubService[] }) {
 
           {/* Visual side */}
           <div className="rounded-2xl overflow-hidden bg-[#0a0c12] border border-white/5 aspect-[4/3] relative">
-            {current.image ? (
-              <img src={current.image} alt={current.tab} className="w-full h-full object-cover opacity-80" />
-            ) : (
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="text-center p-8">
-                  <p className="text-3xl font-black text-white mb-2">{current.tab}</p>
-                  <p className="text-sm text-white/30">{current.headline}</p>
-                </div>
+            <div className="w-full h-full flex flex-col justify-between p-7" style={{ background: "linear-gradient(160deg, #0a0c14 0%, rgba(26,86,255,0.25) 100%)" }}>
+              <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "18px 18px" }} />
+              <div className="relative z-10">
+                <p className="text-[10px] font-black uppercase tracking-widest text-primary/80 mb-3">{current.tab}</p>
+                <p className="text-xl font-black text-white leading-snug max-w-xs">{current.headline}</p>
               </div>
-            )}
+              <div className="relative z-10 flex items-end gap-1.5 h-14">
+                {[18, 28, 22, 40, 34, 52, 46, 64, 58, 78, 70, 100].map((h, i) => (
+                  <div key={i} className="flex-1 rounded-t-sm" style={{ height: `${h}%`, background: i >= 10 ? "#1a56ff" : "rgba(26,86,255,0.3)" }} />
+                ))}
+              </div>
+            </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-5 left-5">
               <p className="text-white font-black text-lg">{current.tab}</p>
@@ -436,10 +438,7 @@ export function ServiceHubPage({ data }: { data: HubData }) {
                 </div>
               </div>
               <div className="relative rounded-2xl overflow-hidden bg-[#0a0c12] border border-black/5 aspect-[4/3] shadow-2xl">
-                {data.intro.image ? (
-                  <img src={data.intro.image} alt={data.intro.headline} className="w-full h-full object-cover opacity-75" />
-                ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-[#0d1525] to-[#08090d] flex items-center justify-center">
+                <div className="w-full h-full bg-gradient-to-br from-[#0d1525] to-[#08090d] flex items-center justify-center">
                     <div className="grid grid-cols-2 gap-3 p-8 w-full">
                       {data.stats.map((s) => (
                         <div key={s.label} className="bg-white/5 rounded-xl p-4 border border-white/5">
@@ -449,7 +448,6 @@ export function ServiceHubPage({ data }: { data: HubData }) {
                       ))}
                     </div>
                   </div>
-                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
               </div>
             </div>
@@ -578,8 +576,18 @@ export function ServiceHubPage({ data }: { data: HubData }) {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {data.caseStudies.map((cs) => (
                   <div key={cs.client} className="bg-white/5 border border-white/8 rounded-2xl overflow-hidden hover:border-primary/30 transition-all group">
-                    <div className="aspect-[16/9] overflow-hidden relative">
-                      <img src={cs.image} alt={cs.client} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80" />
+                    <div className="aspect-[16/9] overflow-hidden relative" style={{ background: "linear-gradient(135deg, #0a1628 0%, #1a56ff44 100%)" }}>
+                      <div className="absolute inset-0 opacity-15" style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "16px 16px" }} />
+                      <div className="absolute inset-0 flex items-center justify-center px-4">
+                        <div className="grid grid-cols-2 gap-2 w-full">
+                          {cs.metrics.map((m) => (
+                            <div key={m.label} className="rounded-lg border border-white/15 p-2.5 text-center" style={{ background: "rgba(26,86,255,0.15)" }}>
+                              <p className="text-xl font-black text-white leading-none mb-0.5">{m.value}</p>
+                              <p className="text-[8px] text-white/50 font-medium">{m.label}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                       <div className="absolute top-3 left-3 flex gap-2">
                         <span className="px-2 py-0.5 bg-primary text-white text-[10px] font-bold uppercase rounded">{cs.industry}</span>
@@ -656,8 +664,12 @@ export function ServiceHubPage({ data }: { data: HubData }) {
                     transition={{ delay: i * 0.08 }}
                     className="group flex flex-col border border-[#e5e2d9] rounded-2xl overflow-hidden hover:border-primary/30 hover:shadow-md transition-all"
                   >
-                    <div className="aspect-[16/9] overflow-hidden bg-[#f2f2ef]">
-                      <img src={a.image} alt={a.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <div className="aspect-[16/9] overflow-hidden bg-[#0a0c12] flex items-center justify-center relative" style={{ background: "linear-gradient(135deg, #0a0c14 0%, rgba(26,86,255,0.2) 100%)" }}>
+                      <div className="absolute inset-0 opacity-15" style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px)", backgroundSize: "16px 16px" }} />
+                      <div className="relative z-10 text-center px-6">
+                        <p className="text-[10px] font-black uppercase tracking-widest text-primary mb-2">{a.category}</p>
+                        <p className="text-sm font-bold text-white/80 leading-snug line-clamp-2">{a.title}</p>
+                      </div>
                     </div>
                     <div className="p-6 flex flex-col flex-1">
                       <div className="flex items-center gap-2 mb-3">

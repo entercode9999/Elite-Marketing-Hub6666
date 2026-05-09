@@ -21,58 +21,44 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const caseStudies = [
   {
+    slug: "toronto-limo-co",
+    name: "Limo4All",
+    category: "Transportation",
+    service: "Local SEO",
+    cardGradient: "from-[#071e3d] to-[#1368aa]",
+    accentColor: "#1aa7ec",
+    blurb: "Toronto limo company went from invisible on Google to fully booked drivers in 5 months — 312% more inbound calls.",
+    metrics: [{ value: "+312%", label: "Inbound calls" }, { value: "#1", label: "Map pack — Toronto" }],
+  },
+  {
     slug: "meridian-dental",
-    image: "/case-study-dental.png",
     name: "Meridian Dental Group",
     category: "Dental",
-    service: "SEO Services",
-    blurb: "Six-location practice ranking #1 across every core dental keyword in Toronto. Booked out 8 weeks.",
+    service: "Local SEO",
+    cardGradient: "from-[#0a1628] to-[#1a56ff]",
+    accentColor: "#4f8aff",
+    blurb: "Six-location dental practice ranking #1 across every core keyword in Toronto. Booked out 8 weeks.",
     metrics: [{ value: "+312%", label: "Organic traffic" }, { value: "4×#1", label: "Map pack positions" }],
   },
   {
-    slug: "axiom-law",
-    image: "/case-study-saas.png",
-    name: "Axiom Law Group",
-    category: "Legal",
-    service: "Content + Local SEO",
-    blurb: "Toronto litigation firm went from invisible to dominant across 60+ high-intent legal search terms.",
-    metrics: [{ value: "+410%", label: "Organic leads" }, { value: "91/100", label: "Technical SEO score" }],
-  },
-  {
-    slug: "northview-kitchens",
-    image: "/case-study-home.png",
-    name: "Northview Kitchens",
-    category: "Home Services",
-    service: "Google Ads + SEO",
-    blurb: "Kitchen renovation company doubled qualified leads in 6 months while cutting cost-per-lead by 38%.",
-    metrics: [{ value: "+215%", label: "Qualified leads" }, { value: "-38%", label: "Cost per lead" }],
-  },
-  {
     slug: "gta-home-pros",
-    image: "/case-study-realestate.png",
     name: "GTA Home Pros",
     category: "Home Services",
-    service: "Google Ads + Local SEO",
-    blurb: "Self-managed Google Ads account was bleeding money. We turned it into their top revenue channel.",
+    service: "Google Ads",
+    cardGradient: "from-[#1a0a00] to-[#b84c00]",
+    accentColor: "#e85d04",
+    blurb: "Self-managed Google Ads account was bleeding money. Rebuilt from scratch — now their top lead channel.",
     metrics: [{ value: "4.2×", label: "ROAS" }, { value: "-54%", label: "Cost per booked job" }],
   },
   {
-    slug: "purecycle-fitness",
-    image: "/case-study-ecommerce.png",
-    name: "Purecycle Fitness Studios",
-    category: "Fitness",
-    service: "Paid Social + Email",
-    blurb: "Boutique fitness chain grew membership 180% in 8 months without a single discount or promotion.",
-    metrics: [{ value: "+180%", label: "New memberships" }, { value: "3.4×", label: "Meta ad ROAS" }],
-  },
-  {
-    slug: "bluesky-roofing",
-    image: "/case-study-homeservices.png",
-    name: "Bluesky Roofing",
-    category: "Trades",
-    service: "Local SEO + Google Ads",
-    blurb: "GTA roofing company hit page 1 in 14 cities and cut their cost-per-lead in half within 5 months.",
-    metrics: [{ value: "+340%", label: "Organic calls" }, { value: "14", label: "Cities ranked #1" }],
+    slug: "axiom-law",
+    name: "Axiom Law Group",
+    category: "Legal",
+    service: "Local SEO + Content",
+    cardGradient: "from-[#0a0a1a] to-[#5b21b6]",
+    accentColor: "#7c3aed",
+    blurb: "Toronto litigation firm went from invisible to page 1 across 40+ high-intent legal search terms.",
+    metrics: [{ value: "+410%", label: "Organic leads" }, { value: "40+", label: "Page 1 rankings" }],
   },
 ];
 
@@ -305,11 +291,33 @@ export default function Home() {
                     className="group flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/40 hover:shadow-[0_8px_40px_rgba(26,86,255,0.12)] transition-all duration-300"
                   >
                     <div className={`aspect-[16/9] overflow-hidden relative bg-gradient-to-br ${cs.cardGradient}`}>
-                      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.06)_25%,transparent_25%),linear-gradient(225deg,rgba(255,255,255,0.06)_25%,transparent_25%)] bg-[size:40px_40px]" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      {/* Dot grid */}
+                      <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "18px 18px" }} />
+                      {/* Metrics dashboard mockup */}
+                      <div className="absolute inset-0 flex flex-col items-center justify-center px-6 gap-3">
+                        <div className="grid grid-cols-2 gap-2 w-full">
+                          {cs.metrics.map((m) => (
+                            <div key={m.label} className="rounded-xl border border-white/15 p-3 text-center backdrop-blur-sm" style={{ background: `${cs.accentColor}20` }}>
+                              <p className="text-2xl font-black leading-none text-white mb-1">{m.value}</p>
+                              <p className="text-[9px] font-semibold text-white/55 leading-tight">{m.label}</p>
+                            </div>
+                          ))}
+                        </div>
+                        {/* Mini bar chart */}
+                        <div className="flex items-end gap-1 h-8 w-full opacity-60">
+                          {[20, 32, 26, 44, 38, 56, 50, 68, 62, 80, 74, 100].map((h, idx) => (
+                            <div key={idx} className="flex-1 rounded-t-sm" style={{ height: `${h}%`, background: idx >= 10 ? cs.accentColor : `${cs.accentColor}40` }} />
+                          ))}
+                        </div>
+                      </div>
+                      {/* Bottom fade */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                      {/* Glow */}
+                      <div className="absolute bottom-0 right-0 w-32 h-32 rounded-full blur-3xl opacity-30" style={{ background: cs.accentColor }} />
+                      {/* Badges */}
                       <div className="absolute top-4 left-4 flex gap-2">
-                        <span className="px-2.5 py-1 rounded bg-primary text-white text-[10px] font-bold uppercase tracking-wider">{cs.category}</span>
-                        <span className="px-2.5 py-1 rounded bg-black/50 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider">{cs.service}</span>
+                        <span className="px-2.5 py-1 rounded bg-black/50 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider">{cs.category}</span>
+                        <span className="px-2.5 py-1 rounded bg-black/40 backdrop-blur-sm text-white/70 text-[10px] font-bold uppercase tracking-wider">{cs.service}</span>
                       </div>
                       <div className="absolute bottom-4 right-4 w-8 h-8 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                         <ArrowUpRight className="w-4 h-4 text-white" />

@@ -138,43 +138,42 @@ export function AboutPage() {
             <div>
               <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Our Story</p>
               <h2 className="text-3xl md:text-4xl font-black text-[#0e0e0e] leading-[1.1] mb-6">
-                Built out of frustration with the agency status quo
+                Built specifically for local service businesses
               </h2>
               <div className="space-y-4 text-gray-600 text-[16px] leading-relaxed">
                 <p>
-                  Marcus Reid founded Outlier in 2013 after a decade watching Toronto businesses get sold elaborate strategies, polished decks, and monthly reports — and not much else. The pattern was consistent: agencies optimising for their own renewal, not client outcomes.
+                  We started as a small team with one focus: helping local service businesses in Ontario generate more inbound leads. Not broad digital marketing for everyone — just SEO, paid ads, and conversion systems for the kinds of businesses that live and die by the phone ringing.
                 </p>
                 <p>
-                  The name "Outlier" isn't aspirational — it's descriptive. An outlier result is one that defies the benchmark. Ranking #1 in a market everyone said was too competitive. A paid channel that actually prints money. Organic traffic that compounds for years without a ceiling.
+                  Dental practices, law firms, HVAC companies, renovation contractors, limo services, fitness studios — businesses where one additional qualified lead per day changes the month. That's who we work with and what we've built our systems around.
                 </p>
                 <p>
-                  We're headquartered in Toronto and work with local service businesses — dental practices, law firms, home services, fitness studios, and construction companies — that rely on inbound leads to grow. We don't serve everyone. We go deep with the clients we take on.
+                  We stay deliberately small. Every client gets a senior person working directly on their project — not a junior account manager running reports. We don't take on more than we can do well.
                 </p>
               </div>
             </div>
-            {/* Visual timeline */}
-            <div className="relative">
-              <div className="absolute left-4 top-0 bottom-0 w-px bg-[#e5e2d9]" />
-              <div className="space-y-0">
-                {MILESTONES.map((m, i) => (
-                  <motion.div
-                    key={m.year}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.08, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                    className="flex gap-6 pb-8 relative"
-                  >
-                    <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 relative z-10 mt-0.5">
-                      <div className="w-2.5 h-2.5 rounded-full bg-white" />
-                    </div>
-                    <div className="pt-0.5">
-                      <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-1">{m.year}</p>
-                      <p className="text-[#0e0e0e] font-medium text-sm leading-snug">{m.event}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+            {/* Focus areas visual */}
+            <div className="space-y-4">
+              {[
+                { label: "Lead Generation Systems", desc: "SEO, Google Ads, and paid social built specifically to drive inbound calls and form submissions — not just traffic.", color: "#1a56ff" },
+                { label: "Local Search Visibility", desc: "Google Business Profile, map pack rankings, and local citation systems that put you in front of people searching in your area right now.", color: "#20c997" },
+                { label: "Conversion Optimization", desc: "Websites and landing pages built to turn visitors into enquiries — every design decision tied to a lead generation outcome.", color: "#e85d04" },
+              ].map((item, i) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex gap-4 p-5 bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl hover:border-primary/20 transition-colors"
+                >
+                  <div className="w-3 h-3 rounded-full flex-shrink-0 mt-1.5" style={{ background: item.color }} />
+                  <div>
+                    <p className="font-black text-[#0e0e0e] text-[15px] mb-1">{item.label}</p>
+                    <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
