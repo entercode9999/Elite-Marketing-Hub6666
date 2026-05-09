@@ -31,6 +31,89 @@ interface CaseStudyData {
 
 const CASE_STUDIES: CaseStudyData[] = [
   {
+    slug: "toronto-limo-co",
+    client: "Limo4All",
+    tagline: "From invisible to #1 on Google Maps — 312% more calls in 5 months",
+    service: "Local SEO",
+    industry: "Transportation",
+    location: "Toronto, ON",
+    cardGradient: "from-[#071e3d] to-[#1368aa]",
+    accentColor: "#1aa7ec",
+    heroHeadline: "A Toronto limo company invisible on Google Maps became fully booked within 5 months.",
+    heroBullets: [
+      "Rebuilt Google Business Profile from scratch with complete service menu and professional photography",
+      "Built 12 location-specific landing pages targeting GTA neighborhoods, airports, and corporate corridors",
+      "Implemented post-ride review system that grew reviews from 14 to 87 at 4.9★ in 90 days",
+    ],
+    about:
+      "Limo4All is a Toronto-based limousine and corporate transportation company serving the GTA with premium ground transport for airport transfers, corporate events, and special occasions. Despite years of operation and a solid reputation with existing clients, Limo4All had minimal online visibility — virtually invisible on Google Maps for the searches that drive new bookings. Competitors were dominating the map pack while Limo4All relied almost entirely on word-of-mouth and referrals.",
+    projectDetails: [
+      { label: "Services", value: "Local SEO · GBP Management · Review Generation · Local Landing Pages" },
+      { label: "Industry", value: "Transportation / Limousine Services" },
+      { label: "Location", value: "Toronto, Ontario" },
+      { label: "Duration", value: "5 months to map pack #1" },
+    ],
+    challenges: [
+      {
+        title: "Zero map pack visibility",
+        description: "Limo4All had an unclaimed and incomplete Google Business Profile with only 14 reviews at 3.8 stars. Competitors with 80–200+ reviews occupied every top position for Toronto limo searches. Without map pack presence, high-intent buyers never saw the business.",
+      },
+      {
+        title: "No location-specific landing pages",
+        description: "The website had a single homepage with no pages targeting specific neighbourhoods, airports, or corporate corridors. There was no way to rank for high-value searches like 'limo service Toronto airport' or 'corporate car service downtown Toronto' — both representing buyers ready to book.",
+      },
+      {
+        title: "Inconsistent NAP data across directories",
+        description: "An audit found Limo4All listed in 18 directories with inconsistent phone numbers and business names. This NAP inconsistency was actively suppressing local search rankings — Google couldn't confidently surface a business whose information didn't match across the web.",
+      },
+    ],
+    solutionSteps: [
+      {
+        title: "Google Business Profile Rebuild",
+        description: "We rebuilt the GBP from the ground up: complete service categories covering airport transfers, corporate accounts, weddings, and events; professional photo package covering vehicles, interiors, and drivers; full service menu with descriptions; and a weekly posting schedule targeting peak booking periods and seasonal searches.",
+      },
+      {
+        title: "Review Generation System",
+        description: "We implemented a post-ride SMS review request sequence sent after every booking. Within 90 days, reviews grew from 14 to 87 at a 4.9-star average — surpassing every competitor in the Toronto limo map pack and providing the social proof that converts high-value corporate buyers.",
+      },
+      {
+        title: "12 Local Landing Pages",
+        description: "We built location-specific landing pages targeting the highest-value transportation corridors: Toronto Pearson Airport, Billy Bishop Airport, downtown corporate accounts, Mississauga, Vaughan, and 7 major GTA neighbourhoods. Each page was optimised for the specific searches used by corporate and premium buyers with booking intent.",
+      },
+      {
+        title: "Citation Standardisation",
+        description: "We corrected all 18 directory listings to consistent NAP data, built 25 new citations in transportation-specific and local business directories, and set up ongoing monitoring to maintain consistency across the web.",
+      },
+    ],
+    results: [
+      { stat: "+312%", label: "Inbound calls from Google" },
+      { stat: "#1", label: "Map pack — Toronto limo searches" },
+      { stat: "87", label: "Google reviews (from 14 in 90 days)" },
+      { stat: "4.9★", label: "Average review rating" },
+      { stat: "47", label: "New corporate accounts in 90 days" },
+      { stat: "5 mo.", label: "To map pack #1" },
+    ],
+    testimonial: {
+      quote: "We went from invisible to ranking in the Toronto map pack in five months. Calls are up 312% and our drivers are booked solid. They understood our business — they knew which searches mattered for corporate accounts versus private bookings and built the whole strategy around that.",
+      name: "Marcus Holland",
+      role: "Founder, Limo4All",
+    },
+    beforeStats: [
+      { label: "Map Pack Position", value: "Not ranked" },
+      { label: "Google Reviews", value: "14 (3.8★)" },
+      { label: "Monthly Calls from Google", value: "~12/mo" },
+      { label: "Corporate Accounts via Google", value: "~3/mo" },
+    ],
+    keywords: [
+      { term: "limo service toronto", before: 45, after: 1 },
+      { term: "toronto airport limo", before: 38, after: 2 },
+      { term: "corporate car service toronto", before: 52, after: 1 },
+      { term: "limousine toronto", before: 41, after: 1 },
+      { term: "limo pearson airport", before: 33, after: 1 },
+      { term: "executive car service toronto", before: 29, after: 2 },
+    ],
+  },
+  {
     slug: "meridian-dental",
     client: "Meridian Dental Group",
     tagline: "Tripling organic patient enquiries in 11 months",

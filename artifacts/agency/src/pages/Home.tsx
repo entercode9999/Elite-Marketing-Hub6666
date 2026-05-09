@@ -60,6 +60,26 @@ const caseStudies = [
     blurb: "Toronto litigation firm went from invisible to page 1 across 40+ high-intent legal search terms.",
     metrics: [{ value: "+410%", label: "Organic leads" }, { value: "40+", label: "Page 1 rankings" }],
   },
+  {
+    slug: "northview-kitchens",
+    name: "Northview Kitchens",
+    category: "Home Renovation",
+    service: "Google Ads + SEO",
+    cardGradient: "from-[#0a1a1a] to-[#087f5b]",
+    accentColor: "#20c997",
+    blurb: "Kitchen renovation company doubled qualified leads in 6 months while cutting cost-per-lead by 38%.",
+    metrics: [{ value: "+215%", label: "Qualified leads" }, { value: "-38%", label: "Cost per lead" }],
+  },
+  {
+    slug: "bluesky-roofing",
+    name: "BlueSky Roofing",
+    category: "Trades",
+    service: "Local SEO",
+    cardGradient: "from-[#071e3d] to-[#1368aa]",
+    accentColor: "#38bdf8",
+    blurb: "GTA roofing company hit map pack #1 in Brampton and cut their cost-per-lead in half within 5 months.",
+    metrics: [{ value: "+340%", label: "Organic calls" }, { value: "#1", label: "Map pack — Brampton" }],
+  },
 ];
 
 const HOME_SCHEMA = [
@@ -151,7 +171,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.08 }}
-                  className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.04] tracking-tight mb-7"
+                  className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.04] tracking-tight mb-5 md:mb-7"
                 >
                   We build lead
                   <br />

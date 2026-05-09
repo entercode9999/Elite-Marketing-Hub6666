@@ -314,8 +314,27 @@ export function IndustriesTabbed() {
           </div>
         </div>
 
+        {/* Mobile: horizontal swipe pills — hidden on desktop */}
+        <div className="lg:hidden overflow-x-auto flex gap-2 py-1 mb-4 snap-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {INDUSTRIES.map((ind, i) => (
+            <button
+              key={ind.id}
+              onClick={() => setActive(i)}
+              className="flex-shrink-0 snap-start px-4 py-2 rounded-full text-sm font-semibold transition-all border whitespace-nowrap"
+              style={{
+                background: active === i ? ind.color : "transparent",
+                color: active === i ? "#fff" : "#555",
+                borderColor: active === i ? ind.color : "#e5e2d9",
+              }}
+            >
+              {ind.name}
+            </button>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-0 border border-[#e5e2d9] rounded-2xl overflow-hidden shadow-sm">
-          <div className="bg-[#0a0c14] border-r border-white/5 overflow-y-auto max-h-[600px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {/* Desktop sidebar — hidden on mobile */}
+          <div className="hidden lg:block bg-[#0a0c14] border-r border-white/5 overflow-y-auto max-h-[600px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             <div className="px-5 pt-6 pb-4 border-b border-white/5">
               <p className="text-[9px] font-black uppercase tracking-[0.22em] text-white/25">Industries</p>
               <p className="text-xs text-white/40 mt-0.5 leading-snug">Focused playbooks. Real track record.</p>
@@ -355,7 +374,7 @@ export function IndustriesTabbed() {
             </div>
           </div>
 
-          <div className="min-h-[500px]">
+          <div className="min-h-[auto] lg:min-h-[500px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current.id}
@@ -365,7 +384,7 @@ export function IndustriesTabbed() {
                 transition={{ duration: 0.22 }}
                 className="h-full grid grid-cols-1 md:grid-cols-2"
               >
-                <div className="p-8 flex flex-col bg-white">
+                <div className="p-5 md:p-8 flex flex-col bg-white">
                   <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-2">{current.name}</span>
                   <h3 className="text-xl font-black text-[#0e0e0e] mb-3 leading-snug">{current.headline}</h3>
                   <p className="text-sm text-gray-500 leading-relaxed mb-5">{current.description}</p>
@@ -390,7 +409,7 @@ export function IndustriesTabbed() {
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                 </div>
-                <div className="relative overflow-hidden min-h-[300px] flex flex-col justify-between p-7" style={{ background: `linear-gradient(160deg, #0a0c14 0%, ${current.color}28 100%)` }}>
+                <div className="relative overflow-hidden min-h-[200px] md:min-h-[300px] flex flex-col justify-between p-5 md:p-7" style={{ background: `linear-gradient(160deg, #0a0c14 0%, ${current.color}28 100%)` }}>
                   {/* Dot grid */}
                   <div className="absolute inset-0 opacity-20" style={{ backgroundImage: `radial-gradient(${current.color}55 1px, transparent 1px)`, backgroundSize: "24px 24px" }} />
                   {/* Proven result */}

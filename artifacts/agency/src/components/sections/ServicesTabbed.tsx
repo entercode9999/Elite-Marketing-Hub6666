@@ -423,7 +423,7 @@ export function ServicesTabbed() {
           <div className="bg-[#0a0c14] border-b border-white/5 lg:border-b-0 lg:border-r lg:border-white/5">
 
             {/* Mobile: horizontal pill strip */}
-            <div className="flex overflow-x-auto gap-2 p-3 lg:hidden scrollbar-hide">
+            <div className="flex overflow-x-auto gap-2 p-3 lg:hidden scrollbar-hide snap-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {SERVICES.map((svc, i) => (
                 <button
                   key={svc.id}
@@ -544,7 +544,7 @@ export function ServicesTabbed() {
                 <p className="text-sm text-gray-500 leading-relaxed mb-6">{current.description}</p>
 
                 {/* Sub-services list */}
-                <p className="text-[9px] font-black uppercase tracking-[0.18em] text-gray-300 mb-3">
+                <p className="text-[9px] font-black uppercase tracking-[0.18em] text-gray-300 mb-3 hidden md:block">
                   Hover a service to preview →
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 mb-8">
