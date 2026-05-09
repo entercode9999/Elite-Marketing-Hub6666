@@ -64,7 +64,7 @@ const m2MigrationData: HubData = {
     eyebrow: "Why migrate to Magento 2 now",
     headline: "Magento 1 received its final security patch in June 2020. Every day it runs in production is a day of unmitigated security risk.",
     body: "Magento 1 is actively exploited by automated attack tools that scan for the platform signature and attempt known vulnerabilities. If your M1 store is still live, it has received zero security patches since June 2020 and is significantly more vulnerable than a properly maintained M2 or Shopify installation. The question is not whether to migrate, but how to do it without disrupting a live business.",
-    secondBody: "We've run migrations for M1 stores doing $20M+ in annual revenue — businesses for whom any significant downtime during migration would be commercially catastrophic. Our migration approach uses a parallel-running environment, data synchronisation, and a delta migration strategy that keeps the M1 store live until the final DNS cutover — which takes minutes, not hours.",
+    secondBody: "We've run migrations for established M1 stores where any significant downtime would be commercially catastrophic. Our migration approach uses a parallel-running environment, data synchronisation, and a delta migration strategy that keeps the M1 store live until the final DNS cutover — which takes minutes, not hours.",
     bullets: [
       "M1 → M2 migration with complete product, customer, and order data migration",
       "Parallel-run migration strategy: M2 environment built and tested while M1 stays live",

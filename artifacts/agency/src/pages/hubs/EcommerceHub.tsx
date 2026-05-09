@@ -237,7 +237,7 @@ const ecommerceData: HubData = {
       client: "Hudson Outdoor",
       industry: "Home Goods",
       blurb: "Full eCommerce build on WooCommerce plus Google Shopping, Meta Ads, and lifecycle email as a unified growth system. Every channel designed around the purchase path we built.",
-      metrics: [{ value: "$2.4M", label: "Attributed revenue" }, { value: "+18%", label: "Conv. rate" }],
+      metrics: [{ value: "7.2x", label: "Blended ROAS" }, { value: "+18%", label: "Conv. rate" }],
     },
     {
       image: "/case-study-ecommerce.png",

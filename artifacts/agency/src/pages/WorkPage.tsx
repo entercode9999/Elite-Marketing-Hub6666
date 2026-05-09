@@ -689,39 +689,40 @@ export function OurWorkPage() {
               >
                 <Link href={`/our-work/${cs.slug}`} className="group block">
                   <div className={`relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-br ${cs.cardGradient} mb-4 shadow-lg group-hover:shadow-[0_12px_48px_rgba(0,0,0,0.25)] transition-shadow duration-300`}>
-                    {/* Geometric accent */}
-                    <div
-                      className="absolute inset-0 opacity-10"
-                      style={{
-                        backgroundImage: "linear-gradient(135deg, rgba(255,255,255,0.08) 25%, transparent 25%), linear-gradient(225deg, rgba(255,255,255,0.08) 25%, transparent 25%)",
-                        backgroundSize: "40px 40px",
-                      }}
-                    />
-                    {/* Glow edge on hover */}
-                    <div className="absolute inset-0 rounded-2xl ring-1 ring-white/10 group-hover:ring-white/25 transition-all duration-300" />
-                    {/* Service icon */}
-                    <div className="absolute top-6 left-6">
-                      <div className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/18 transition-colors duration-300">
-                        {(() => {
-                          const Ic = SERVICE_ICONS[cs.service] || TrendingUp;
-                          return <Ic className="w-5 h-5 text-white" />;
-                        })()}
+                    {/* Dot grid */}
+                    <div className="absolute inset-0 opacity-15" style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "18px 18px" }} />
+                    {/* Metrics dashboard */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-center px-5 gap-2.5">
+                      <div className="grid grid-cols-2 gap-2 w-full">
+                        {cs.results.slice(0, 2).map((r) => (
+                          <div key={r.label} className="rounded-xl border border-white/15 p-3 text-center" style={{ background: "rgba(255,255,255,0.1)" }}>
+                            <p className="text-2xl font-black text-white leading-none mb-1">{r.stat}</p>
+                            <p className="text-[9px] text-white/55 font-semibold leading-tight">{r.label}</p>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="flex items-end gap-1 h-8 w-full opacity-50">
+                        {[18, 28, 22, 40, 34, 52, 46, 64, 58, 78, 70, 100].map((h, idx) => (
+                          <div key={idx} className="flex-1 rounded-t-sm" style={{ height: `${h}%`, background: idx >= 10 ? "rgba(255,255,255,0.9)" : "rgba(255,255,255,0.25)" }} />
+                        ))}
                       </div>
                     </div>
-                    {/* Industry badge */}
-                    <div className="absolute top-6 right-6">
-                      <span className="text-[10px] font-black uppercase tracking-widest bg-white/15 backdrop-blur-sm text-white px-2.5 py-1 rounded-full border border-white/20">
-                        Case Study
+                    {/* Bottom overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+                    {/* Service badge top-left */}
+                    <div className="absolute top-4 left-4">
+                      <span className="text-[9px] font-black uppercase tracking-widest bg-black/40 backdrop-blur-sm text-white/80 px-2.5 py-1 rounded-full border border-white/15">
+                        {cs.industry}
                       </span>
                     </div>
-                    {/* Key result */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
-                      <p className="text-white/50 text-[10px] font-black uppercase tracking-widest mb-1">{cs.service} · {cs.location}</p>
-                      <p className="text-white font-black text-xl leading-tight">{cs.client}</p>
+                    {/* Client name bottom */}
+                    <div className="absolute bottom-0 left-0 right-0 p-5">
+                      <p className="text-white/50 text-[9px] font-black uppercase tracking-widest mb-0.5">{cs.service} · {cs.location}</p>
+                      <p className="text-white font-black text-lg leading-tight">{cs.client}</p>
                     </div>
                     {/* Hover arrow */}
-                    <div className="absolute bottom-6 right-6 w-9 h-9 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                      <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-0.5 transition-transform" />
+                    <div className="absolute bottom-5 right-5 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                      <ArrowRight className="w-3.5 h-3.5 text-white group-hover:translate-x-0.5 transition-transform" />
                     </div>
                   </div>
                   <div className="px-1">

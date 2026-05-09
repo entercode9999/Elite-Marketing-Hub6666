@@ -63,8 +63,8 @@ const socialAdsData: HubData = {
   stats: [
     { value: "4.2x", label: "Avg. client ROAS" },
     { value: "-38%", label: "Avg. CPA improvement" },
-    { value: "+315%", label: "Avg. lead volume increase" },
-    { value: "200+", label: "Paid social campaigns managed" },
+    { value: "Flat fee", label: "No % of ad spend" },
+    { value: "4.9★", label: "Clutch rating" },
   ],
   intro: {
     eyebrow: "Revenue-first paid social",
@@ -155,9 +155,9 @@ const socialAdsData: HubData = {
     { platform: "Looker Studio", stat: "Reporting", description: "Custom Looker Studio dashboards pulling from Meta, TikTok, LinkedIn, and GA4. One view of your full paid social programme — updated daily." },
   ],
   caseStudies: [
-    { image: "/case-study-saas.png", client: "Nova FinTech", industry: "SaaS", blurb: "LinkedIn Ads + Meta retargeting for a B2B financial platform. Account restructure eliminated 38% budget waste. Lead volume up 315% in 90 days.", metrics: [{ value: "+315%", label: "Lead volume" }, { value: "-38%", label: "CPA" }] },
-    { image: "/case-study-homeservices.png", client: "Hudson Outdoor", industry: "Home Services", blurb: "Full-funnel Meta Ads programme: Advantage+ prospecting + warm retargeting + CRM match. $2.4M attributed revenue from paid social in year one.", metrics: [{ value: "$2.4M", label: "Attributed revenue" }, { value: "4.2x", label: "Blended ROAS" }] },
-    { image: "/case-study-ecommerce.png", client: "Coastal Collective", industry: "eCommerce", blurb: "Meta + TikTok creative testing programme. Identified 3 winning UGC formats that reduced CPA by 44% across both platforms simultaneously.", metrics: [{ value: "-44%", label: "CPA" }, { value: "7.2x", label: "Q1 ROAS" }] },
+    { image: "", client: "Purecycle Fitness", industry: "Fitness", blurb: "Meta Ads rebuilt around membership acquisition. Advantage+ audience targeting + landing page redesign. Membership volume up 180% in 90 days with no discounting.", metrics: [{ value: "+180%", label: "New memberships" }, { value: "3.4x", label: "Meta ROAS" }] },
+    { image: "", client: "Hudson Outdoor", industry: "Home Services", blurb: "Full-funnel Meta Ads programme: Advantage+ prospecting + warm retargeting + CRM match. 312% organic growth YoY — organic now their top acquisition channel.", metrics: [{ value: "+312%", label: "Organic growth YoY" }, { value: "4.2x", label: "Blended ROAS" }] },
+    { image: "", client: "Coastal Collective", industry: "Retail", blurb: "Meta + TikTok creative testing programme. Identified 3 winning UGC formats that reduced cost-per-lead by 44% across both platforms simultaneously.", metrics: [{ value: "-44%", label: "Cost per lead" }, { value: "7.2x", label: "Q1 ROAS" }] },
   ],
   process: [
     { label: "Audit", headline: "Audit your existing paid social account and attribution setup.", description: "Campaign structure review, audience overlap analysis, creative performance analysis, and attribution accuracy assessment. We identify waste and opportunity before spending a dollar on new campaigns." },

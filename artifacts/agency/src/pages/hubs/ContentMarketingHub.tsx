@@ -227,8 +227,8 @@ const contentMarketingData: HubData = {
       image: "/work-2.png",
       client: "Hudson Outdoor",
       industry: "Home Services",
-      blurb: "Topical authority content programme built around outdoor living, landscaping, and seasonal guides. 312% traffic growth in 12 months, directly attributed to $2.4M in new revenue via GA4 goal tracking.",
-      metrics: [{ value: "+312%", label: "Organic traffic" }, { value: "$2.4M", label: "Attributed revenue" }],
+      blurb: "Topical authority content programme built around outdoor living, landscaping, and seasonal guides. Organic traffic up 312% in 12 months — now the top lead acquisition channel for the business.",
+      metrics: [{ value: "+312%", label: "Organic traffic" }, { value: "#1", label: "Lead acquisition channel" }],
     },
   ],
   process: [

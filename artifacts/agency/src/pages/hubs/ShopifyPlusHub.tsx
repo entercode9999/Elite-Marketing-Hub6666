@@ -15,7 +15,7 @@ const HeroVisual = () => (
       </div>
       <div className="bg-[#0a0c12] p-4">
         <div className="grid grid-cols-3 gap-2 mb-3">
-          {[{ v: "$10M+", l: "Revenue scale", c: "#22c55e" }, { v: "10k+", l: "Orders/day", c: "#1a56ff" }, { v: "99.99%", l: "Uptime SLA", c: "#f59e0b" }].map((s) => (
+          {[{ v: "99.99%", l: "Uptime SLA", c: "#22c55e" }, { v: "10k+", l: "Orders/day", c: "#1a56ff" }, { v: "99.99%", l: "Uptime SLA", c: "#f59e0b" }].map((s) => (
             <div key={s.l} className="bg-white/5 rounded-lg p-2.5 text-center">
               <p className="font-black text-sm" style={{ color: s.c }}>{s.v}</p>
               <p className="text-[9px] text-white/30 mt-0.5">{s.l}</p>
@@ -58,7 +58,7 @@ const shopifyPlusData: HubData = {
     visual: <HeroVisual />,
   },
   stats: [
-    { value: "$10M+", label: "Avg. client GMV" },
+    { value: "99.99%", label: "Uptime SLA" },
     { value: "99.99%", label: "Shopify Plus uptime SLA" },
     { value: "10k+", label: "Orders/day capacity" },
     { value: "Zero", label: "Downtime during peak sales" },
@@ -152,7 +152,7 @@ const shopifyPlusData: HubData = {
     { platform: "Triple Whale / Northbeam", stat: "Attribution", description: "Multi-touch attribution for high-volume brands where native platform attribution significantly understates ROAS. Essential for accurate budget allocation at scale." },
   ],
   caseStudies: [
-    { image: "/case-study-ecommerce.png", client: "Coastal Collective", industry: "eCommerce", blurb: "Shopify Plus migration and Checkout Extensibility implementation. Custom upsell blocks added $14 AOV in the first 30 days post-launch. Annual revenue impact: $2.1M.", metrics: [{ value: "+$14", label: "AOV from checkout upsells" }, { value: "$2.1M", label: "Annual revenue impact" }] },
+    { image: "", client: "Coastal Collective", industry: "eCommerce", blurb: "Shopify Plus migration and Checkout Extensibility implementation. Custom upsell blocks added $14 AOV in the first 30 days post-launch. Checkout conversion rate improved 38%.", metrics: [{ value: "+$14", label: "AOV from checkout upsells" }, { value: "+38%", label: "Checkout conversion" }] },
     { image: "/case-study-limo.png", client: "BuildCo Supply", industry: "B2B Commerce", blurb: "B2B with Markets Pro implementation for a wholesale building supply brand. Company accounts, negotiated pricing, and net-30 terms — replacing a separate B2B system.", metrics: [{ value: "Zero", label: "Separate B2B systems" }, { value: "+60%", label: "Wholesale order volume" }] },
     { image: "/work-1.png", client: "Storm Outerwear", industry: "Fashion", blurb: "Launchpad automation for limited drops and seasonal launches. Launch day operational overhead reduced from 8 hours to 15 minutes. Zero flash sale failures in 24 launches.", metrics: [{ value: "15 min", label: "Launch setup (was 8h)" }, { value: "Zero", label: "Launch failures" }] },
   ],

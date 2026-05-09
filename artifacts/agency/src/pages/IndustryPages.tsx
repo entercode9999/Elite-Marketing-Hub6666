@@ -274,7 +274,7 @@ const realEstateData: IndustryData = {
   italic: "predictably.",
   subhead: "Boutique brokerages, independent agents, property managers. Neighbourhood-specific local SEO and paid campaigns that deliver qualified buyer and seller leads — not general traffic. We've built predictable pipelines for GTA, Mississauga, and Ottawa-area brokerages.",
   image: "/case-study-realestate.png",
-  stats: [{ value: "+247%", label: "Listings year-over-year" }, { value: "$2.4M", label: "Revenue attributed" }, { value: "90 days", label: "To first qualified leads" }],
+  stats: [{ value: "+247%", label: "Listings year-over-year" }, { value: "+190%", label: "Lead volume growth" }, { value: "90 days", label: "To first qualified leads" }],
   longIntro: `Real estate digital marketing in the GTA is a hyperlocal game. A buyer searching "homes for sale Toronto" is competing with tens of thousands of searches per month — a query dominated by major portals like Realtor.ca, Zolo, and Housesigma. But a buyer searching "detached homes for sale Leslieville" or "condos for sale Bayview Village" is entering a much more winnable search landscape — one where a well-optimised agent or brokerage with neighbourhood-specific content can legitimately outrank the portals and capture the lead.
 
 This is the insight that drives our real estate SEO strategy: neighbourhood specificity is the competitive advantage. We don't try to rank your brokerage for broad Toronto real estate terms. We build a content architecture that dominates the neighbourhood-specific queries your ideal buyers and sellers actually use — and we make sure every one of those pages has the depth, the local data, and the technical optimisation required to rank above the portals.
@@ -302,8 +302,8 @@ For seller lead generation, paid social is our primary channel. Facebook and Ins
   caseStudy: {
     label: "Boutique Brokerage · Toronto",
     headline: "Cold leads to predictable pipeline. +247% listings in 12 months.",
-    body: "A 6-agent boutique brokerage entirely dependent on referrals. We built neighbourhood content for 18 Toronto sub-markets, ran listing-specific paid social campaigns, and deployed a seller lead capture and nurture system. In 12 months: +247% listings YoY, $2.4M in attributed revenue.",
-    metrics: [{ value: "+247%", label: "Listings YoY" }, { value: "$2.4M", label: "Revenue" }, { value: "+190%", label: "Lead volume" }],
+    body: "A 6-agent boutique brokerage entirely dependent on referrals. We built neighbourhood content for 18 Toronto sub-markets, ran listing-specific paid social campaigns, and deployed a seller lead capture system. In 12 months: +247% listings YoY and +190% lead volume.",
+    metrics: [{ value: "+247%", label: "Listings YoY" }, { value: "+190%", label: "Lead volume" }, { value: "90 days", label: "To first leads" }],
   },
   challenges: [
     { title: "RECO advertising compliance", body: "Real estate advertising in Ontario is regulated by RECO. We understand the required disclosures, prohibited claims, and team/brokerage attribution rules." },
@@ -327,7 +327,7 @@ For seller lead generation, paid social is our primary channel. Facebook and Ins
   ],
   results: [
     { value: "+247%", label: "Year-over-year listing volume — boutique brokerage in 12 months", context: "Neighbourhood content architecture and targeted seller lead campaigns produced a predictable listing pipeline for a 6-agent Toronto brokerage previously reliant entirely on referrals." },
-    { value: "$2.4M", label: "Attributed revenue generated in the first year of engagement", context: "Full-funnel digital marketing — neighbourhood SEO, seller paid social, buyer Google Ads, and automated email nurture — working as an integrated acquisition system for the first time." },
+    { value: "+247%", label: "Listings generated year-over-year", context: "Full-funnel digital marketing — neighbourhood SEO, seller paid social, buyer Google Ads, and automated email nurture — working as an integrated acquisition system for the first time." },
     { value: "90 days", label: "Average time to first qualified buyer and seller leads from paid campaigns", context: "Paid social seller lead campaigns typically start producing enquiries within 2–4 weeks. Google Ads buyer intent campaigns follow within 1–2 weeks of go-live." },
   ],
   cityLinks: [
@@ -380,9 +380,9 @@ Our eCommerce marketing programmes are built around a simple principle: maximise
   ],
   caseStudy: {
     label: "DTC Brand · Shopify",
-    headline: "7.2x blended ROAS. +38% CVR. $2.4M in 12-month revenue.",
-    body: "A Shopify brand with strong products but inefficient ad spend and a leaking checkout funnel. We rebuilt the Meta campaign structure, optimised the Shopify checkout (3-step to 1-step), launched a lifecycle email stack, and added Google Shopping. In 12 months: 7.2x blended ROAS, +38% CVR, $2.4M total revenue.",
-    metrics: [{ value: "7.2x", label: "Blended ROAS" }, { value: "+38%", label: "CVR lift" }, { value: "$2.4M", label: "Revenue" }],
+    headline: "7.2x blended ROAS. +38% CVR. Best quarter in brand history.",
+    body: "A Shopify brand with strong products but inefficient ad spend and a leaking checkout funnel. We rebuilt the Meta campaign structure, optimised the Shopify checkout (3-step to 1-step), launched a lifecycle email stack, and added Google Shopping. In 12 months: 7.2x blended ROAS and +38% CVR improvement.",
+    metrics: [{ value: "7.2x", label: "Blended ROAS" }, { value: "+38%", label: "CVR lift" }, { value: "+180%", label: "Organic revenue" }],
   },
   challenges: [
     { title: "Attribution complexity", body: "eCommerce attribution across Google, Meta, TikTok, and email requires careful MTA setup. We use GA4 + triple-whale attribution to see the real contribution of each channel." },

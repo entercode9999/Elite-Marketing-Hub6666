@@ -218,7 +218,7 @@ const ARTICLES: Article[] = [
     author: "Jordan Kim",
     authorRole: "Head of Paid Media",
     authorInitials: "JK",
-    authorBio: "Jordan manages $4M+ in annual paid media spend across Google, Meta, and programmatic channels. He specialises in audit and account restructuring for underperforming accounts.",
+    authorBio: "Jordan specialises in Google and Meta campaign strategy for local service businesses, with deep experience in account restructuring and performance recovery for underperforming accounts.",
     sections: [
       {
         heading: "Why self-managed accounts bleed money",

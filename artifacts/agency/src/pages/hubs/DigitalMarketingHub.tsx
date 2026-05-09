@@ -234,8 +234,8 @@ const digitalMarketingData: HubData = {
       image: "/case-study-homeservices.png",
       client: "Hudson Outdoor",
       industry: "Home Services",
-      blurb: "Multi-channel strategy: Local SEO, Google Ads, Meta Ads, and Email Marketing under one strategy. Total attributed revenue reached $2.4M in the first full year of engagement.",
-      metrics: [{ value: "$2.4M", label: "Attributed revenue" }, { value: "+18%", label: "Conv. rate" }],
+      blurb: "Multi-channel strategy: Local SEO, Google Ads, Meta Ads, and Email Marketing under one unified plan. Organic became the top lead channel within 12 months — 312% traffic growth with +18% conversion rate.",
+      metrics: [{ value: "+312%", label: "Organic traffic" }, { value: "+18%", label: "Conv. rate" }],
     },
     {
       image: "/industry-dental.png",

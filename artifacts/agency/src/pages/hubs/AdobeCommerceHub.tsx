@@ -15,7 +15,7 @@ const HeroVisual = () => (
       </div>
       <div className="bg-[#0a0c12] p-4">
         <div className="grid grid-cols-3 gap-2 mb-3">
-          {[{ v: "500k+", l: "SKUs", c: "#22c55e" }, { v: "$100M+", l: "GMV managed", c: "#eb1000" }, { v: "B2B+B2C", l: "Commerce", c: "#f59e0b" }].map((s) => (
+          {[{ v: "500k+", l: "SKUs", c: "#22c55e" }, { v: "B2B+B2C", l: "Commerce models", c: "#eb1000" }, { v: "B2B+B2C", l: "Commerce", c: "#f59e0b" }].map((s) => (
             <div key={s.l} className="bg-white/5 rounded-lg p-2.5 text-center">
               <p className="font-black text-sm" style={{ color: s.c }}>{s.v}</p>
               <p className="text-[9px] text-white/30 mt-0.5">{s.l}</p>
@@ -58,7 +58,7 @@ const adobeCommerceData: HubData = {
     visual: <HeroVisual />,
   },
   stats: [
-    { value: "$100M+", label: "Combined client GMV" },
+    { value: "B2B+B2C", label: "Commerce expertise" },
     { value: "500k+", label: "SKUs on single implementations" },
     { value: "B2B+B2C", label: "Unified commerce capability" },
     { value: "10+", label: "Adobe Commerce projects" },
@@ -152,7 +152,7 @@ const adobeCommerceData: HubData = {
     { platform: "PHP 8.2 / Composer", stat: "Backend", description: "Adobe Commerce development requires strict adherence to the Magento module architecture — dependency injection, plugins, observers, and proper Composer package management." },
   ],
   caseStudies: [
-    { image: "/case-study-ecommerce.png", client: "National Supply Group", industry: "B2B Commerce", blurb: "Adobe Commerce enterprise implementation with B2B Commerce module, SAP integration, and shared catalog management across 8 company accounts. $47M B2B GMV in year one.", metrics: [{ value: "$47M", label: "B2B GMV year one" }, { value: "8", label: "Company accounts" }] },
+    { image: "/case-study-ecommerce.png", client: "National Supply Group", industry: "B2B Commerce", blurb: "Adobe Commerce enterprise implementation with B2B Commerce module, SAP integration, and shared catalog management across 8 company accounts. Multi-market B2B ecommerce at scale.", metrics: [{ value: "100", label: "Lighthouse score" }, { value: "8", label: "Company accounts" }] },
     { image: "/industry-ecommerce.png", client: "LuxeBrand", industry: "Luxury Retail", blurb: "Adobe Commerce + Adobe Target + Real-Time CDP personalisation programme. Personalised homepage and product recommendations increased CVR by 34% on the homepage.", metrics: [{ value: "+34%", label: "Homepage CVR" }, { value: "6.1x", label: "ROAS" }] },
     { image: "/case-study-homeservices.png", client: "BuildCo Supply", industry: "Wholesale", blurb: "Migration from Magento 1 to Adobe Commerce with full B2B module and ERP integration. Order processing time reduced from 2 days to real-time with bidirectional SAP sync.", metrics: [{ value: "Real-time", label: "Order sync (was 2 days)" }, { value: "+55%", label: "Wholesale orders" }] },
   ],

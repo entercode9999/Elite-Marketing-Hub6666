@@ -15,7 +15,7 @@ const HeroVisual = () => (
       </div>
       <div className="bg-[#0a0c12] p-4">
         <div className="grid grid-cols-3 gap-2 mb-3">
-          {[{ v: "100", l: "Lighthouse", c: "#22c55e" }, { v: "$50M+", l: "GMV scale", c: "#6c2bd9" }, { v: "B2B+B2C", l: "Commerce", c: "#f59e0b" }].map((s) => (
+          {[{ v: "100", l: "Lighthouse", c: "#22c55e" }, { v: "B2B+B2C", l: "Commerce models", c: "#6c2bd9" }, { v: "B2B+B2C", l: "Commerce", c: "#f59e0b" }].map((s) => (
             <div key={s.l} className="bg-white/5 rounded-lg p-2.5 text-center">
               <p className="font-black text-sm" style={{ color: s.c }}>{s.v}</p>
               <p className="text-[9px] text-white/30 mt-0.5">{s.l}</p>
@@ -59,7 +59,7 @@ const hyvaEnterpriseData: HubData = {
   },
   stats: [
     { value: "100", label: "Lighthouse on enterprise builds" },
-    { value: "$50M+", label: "GMV on managed platforms" },
+    { value: "100", label: "Lighthouse performance score" },
     { value: "B2B+B2C", label: "Unified enterprise commerce" },
     { value: "< 1s", label: "LCP on all store templates" },
   ],
@@ -152,7 +152,7 @@ const hyvaEnterpriseData: HubData = {
     { platform: "New Relic APM", stat: "Monitoring", description: "Application performance monitoring with real user monitoring — transaction tracing, error rate monitoring, and infrastructure metrics. Mandatory for enterprise Adobe Commerce operations." },
   ],
   caseStudies: [
-    { image: "/case-study-ecommerce.png", client: "National Supply Group", industry: "B2B Commerce", blurb: "Adobe Commerce + Hyvä enterprise build with B2B Commerce, 8-store multi-site, and SAP integration. 100 Lighthouse on every storefront. $47M GMV in year one.", metrics: [{ value: "100", label: "Lighthouse on all 8 stores" }, { value: "$47M", label: "Year 1 GMV" }] },
+    { image: "/case-study-ecommerce.png", client: "National Supply Group", industry: "B2B Commerce", blurb: "Adobe Commerce + Hyvä enterprise build with B2B Commerce, 8-store multi-site, and SAP integration. 100 Lighthouse on every storefront. 100 Lighthouse on all storefronts.", metrics: [{ value: "100", label: "Lighthouse on all 8 stores" }, { value: "8", label: "Multi-site stores" }] },
     { image: "/case-study-realestate.png", client: "LuxeBrand Portfolio", industry: "Luxury Retail", blurb: "Multi-brand Adobe Commerce + Hyvä architecture with shared component library across 4 brand storefronts. Adobe Target personalisation running on all stores with Hyvä compatibility.", metrics: [{ value: "4", label: "Brand storefronts from one platform" }, { value: "+34%", label: "CVR from personalisation" }] },
     { image: "/hero-showcase.png", client: "Industrial Supply Co.", industry: "Wholesale", blurb: "Luma to Hyvä migration on Adobe Commerce with Hyvä React Checkout for B2B PO workflow. Lighthouse improved from 26 to 98. Checkout completion rate up 28%.", metrics: [{ value: "98", label: "Lighthouse (was 26)" }, { value: "+28%", label: "Checkout completion" }] },
   ],
