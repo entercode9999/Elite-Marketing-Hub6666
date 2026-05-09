@@ -4,15 +4,15 @@ const logos = [
   "Apex Dental",
   "Toronto Limo Co",
   "Hudson Outdoor",
-  "Nova FinTech",
-  "Prime Realty",
-  "Elevate Fitness",
-  "Oak & Vine",
-  "Meridian B2B",
   "Cedar Law",
-  "Klaviyo Studio",
   "Coastal Collective",
-  "Northbeam Goods",
+  "Elevate Fitness",
+  "BlueSky Roofing",
+  "Northview Kitchens",
+  "Caldwell HVAC",
+  "Morrison Barristers",
+  "Oak & Vine",
+  "Purecycle Fitness",
 ];
 
 export function LogoMarquee() {
@@ -21,7 +21,7 @@ export function LogoMarquee() {
     <section className="py-10 bg-[#0A0A0C] border-b border-white/10 overflow-hidden">
       <div className="text-center mb-6">
         <div className="text-xs font-semibold tracking-[0.2em] uppercase text-white/40">
-          Trusted by 180+ brands across North America
+          Trusted by Ontario service businesses
         </div>
       </div>
       <div className="relative">

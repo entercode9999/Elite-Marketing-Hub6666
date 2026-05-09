@@ -244,7 +244,7 @@ export default function Home() {
         <div className="bg-primary/90 py-2.5 text-white text-xs font-bold overflow-hidden">
           <div className="container mx-auto px-6 flex items-center gap-4 flex-wrap justify-center">
             <span className="uppercase tracking-widest text-white/60 text-[10px]">Markets:</span>
-            {["Toronto", "Mississauga", "Brampton", "Oakville", "Hamilton", "Ottawa", "Vancouver", "Calgary", "NYC", "Miami"].map((city, i, arr) => (
+            {["Toronto", "Mississauga", "Brampton", "Oakville", "Hamilton", "Ottawa", "Vaughan", "Markham", "Burlington", "Etobicoke"].map((city, i, arr) => (
               <div key={city} className="flex items-center gap-4">
                 <span>{city}</span>
                 {i < arr.length - 1 && <span className="w-1 h-1 rounded-full bg-white/30" />}

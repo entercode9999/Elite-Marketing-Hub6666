@@ -1,68 +1,113 @@
 import { motion } from "framer-motion";
-import { TrendingUp } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
-const wins = [
-  { date: "This week", text: "DentalPlus Mississauga reached #1 for 'Mississauga Invisalign' — inbound call volume up 3× in 60 days." },
-  { date: "Last week", text: "Hudson Outdoor hit 312% organic growth YoY — organic search is now their top lead acquisition channel." },
-  { date: "April", text: "Toronto Limo Co secured 47 new client accounts through Local SEO in under 90 days." },
-  { date: "April", text: "Nova FinTech cut blended cost-per-lead by 38% across Google + Meta in 90 days." },
-  { date: "March", text: "Apex Dental Group launched 6-location local SEO build across the GTA — map pack visibility across all locations." },
-  { date: "March", text: "Coastal Collective's Q1 ROAS hit 7.2× on Meta — driven by structured audience and creative system." },
+const INDUSTRIES = [
+  {
+    name: "Dental & Medical",
+    outcome: "Map pack rankings and new patient enquiries from local search.",
+    color: "#1a56ff",
+    initial: "D",
+  },
+  {
+    name: "Legal Services",
+    outcome: "Page 1 visibility for high-intent legal keywords in your service area.",
+    color: "#7c3aed",
+    initial: "L",
+  },
+  {
+    name: "Home Services",
+    outcome: "Google Ads and local SEO that keeps your schedule fully booked.",
+    color: "#e85d04",
+    initial: "H",
+  },
+  {
+    name: "Fitness & Wellness",
+    outcome: "Paid social and local SEO that fills memberships and class rosters.",
+    color: "#20c997",
+    initial: "F",
+  },
+  {
+    name: "Construction & Trades",
+    outcome: "Lead generation for roofing, HVAC, renovation, and contracting businesses.",
+    color: "#f59e0b",
+    initial: "C",
+  },
+  {
+    name: "Restaurants & Retail",
+    outcome: "Local search visibility, Google Maps prominence, and foot traffic growth.",
+    color: "#ec4899",
+    initial: "R",
+  },
 ];
-
-const item = {
-  hidden: { opacity: 0, x: -16 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
-};
 
 export function Wins() {
   return (
     <section className="py-24 md:py-28 bg-card/40 border-y border-border">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-start">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6 }}
-            className="lg:sticky lg:top-32"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
-              <TrendingUp className="w-4 h-4" />
-              Recent Wins
-            </div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold leading-[1.05] tracking-tight mb-4">
-              Momentum, in real time.
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Real lead generation outcomes from recent client work — search rankings, cost-per-lead improvements, and inbound call growth.
-            </p>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="max-w-2xl mb-14"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
+            Who we help
+          </div>
+          <h2 className="text-4xl md:text-5xl font-display font-bold leading-[1.05] tracking-tight mb-4">
+            Built for local service businesses.
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            If your business relies on inbound calls, form submissions, or booked appointments — this is what we do.
+          </p>
+        </motion.div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ staggerChildren: 0.07 }}
-            className="lg:col-span-2 space-y-4"
-          >
-            {wins.map((w, i) => (
-              <motion.div
-                key={i}
-                variants={item}
-                whileHover={{ x: 4 }}
-                className="flex gap-6 p-5 md:p-6 bg-background border border-border rounded-xl hover:border-primary/30 transition-colors group"
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ staggerChildren: 0.07 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+        >
+          {INDUSTRIES.map((ind, i) => (
+            <motion.div
+              key={ind.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.07, duration: 0.5, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
+              className="flex gap-4 p-5 bg-background border border-border rounded-xl hover:border-primary/30 hover:shadow-md transition-all duration-200 group"
+            >
+              <div
+                className="w-10 h-10 rounded-xl flex items-center justify-center font-black text-white text-sm flex-shrink-0"
+                style={{ backgroundColor: ind.color }}
               >
-                <div className="shrink-0 w-24 md:w-28 text-xs font-bold uppercase tracking-wider text-primary pt-1">
-                  {w.date}
-                </div>
-                <div className="text-base md:text-lg text-foreground/90 leading-relaxed group-hover:text-foreground transition-colors">
-                  {w.text}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
+                {ind.initial}
+              </div>
+              <div>
+                <h3 className="font-bold text-foreground text-[15px] mb-1 group-hover:text-primary transition-colors">{ind.name}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{ind.outcome}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-10"
+        >
+          <Link
+            href="/industries"
+            className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all"
+          >
+            See all industries we serve
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
