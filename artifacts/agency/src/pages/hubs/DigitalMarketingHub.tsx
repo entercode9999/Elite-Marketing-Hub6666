@@ -48,29 +48,29 @@ const HeroVisual = () => (
 
 const digitalMarketingData: HubData = {
   slug: "digital-marketing",
-  label: "DIGITAL MARKETING AGENCY",
+  label: "LEAD GENERATION AGENCY",
   breadcrumb: "Digital Marketing",
   hero: {
-    headline: "Toronto's Digital Marketing Company That Turns Traffic Into Revenue.",
-    italic: "Full-service internet marketing agency. Every channel. One team.",
+    headline: "Toronto Lead Generation Agency for Local Service Businesses.",
+    italic: "Specialized in SEO, paid ads, and local lead generation.",
     description:
-      "Outlier is a Toronto digital marketing company and full-service internet marketing agency. We build and run integrated digital strategies — SEO, Google Ads, paid social, email, and content — for Canadian businesses that need marketing that produces measurable, attributable revenue. One team. One strategy. Zero coordination tax.",
+      "Outlier is a Toronto-based lead generation agency. We build and run SEO, Google Ads, and paid social strategies for local service businesses that need more inbound calls, form submissions, and booked appointments — not vanity metrics.",
     cta: "Get a Free Strategy Call",
     ctaHref: "/contact",
-    badges: ["Digital Marketing Agency — Toronto", "Google Partner", "Meta Business Partner", "Clutch 5★"],
+    badges: ["Lead Generation Agency — Toronto", "Google Partner", "Meta Business Partner", "Clutch 5★"],
     visual: <HeroVisual />,
   },
   stats: [
-    { value: "10+", label: "Years of Experience" },
-    { value: "200+", label: "Brands Grown" },
+    { value: "10+", label: "Years Operating" },
+    { value: "60+", label: "Local Businesses Served" },
     { value: "+312%", label: "Avg. Traffic Growth" },
-    { value: "50+", label: "Industries Served" },
+    { value: "4.9★", label: "Clutch Rating" },
   ],
   intro: {
-    eyebrow: "Why a full-service digital marketing company outperforms siloed agencies",
-    headline: "One internet marketing agency for every channel — with the attribution to prove what's working.",
-    body: "Most brands managing three separate agencies — one for SEO, one for Google Ads, one for social — lose 20–30% of potential return to coordination friction, misaligned attribution, and conflicting priorities. A full-service digital marketing company eliminates this by running every channel with shared data, shared strategy, and a single point of accountability. The result isn't just operational efficiency — it's compounding returns that no siloed agency arrangement can replicate.",
-    secondBody: "As a Toronto digital marketing agency and internet marketing company, Outlier runs SEO, Google Ads, paid social, email marketing, and content under one integrated strategy. When your SEO team's keyword data informs your paid strategy, and your CRO learnings improve landing pages across every channel simultaneously, you get multiplicative returns — not additive ones. That's the difference between a fragmented multi-agency setup and a true full-service internet marketing agency.",
+    eyebrow: "Why a focused specialist outperforms generalist agencies",
+    headline: "One focused team for local service business growth — with the attribution to prove what's working.",
+    body: "Most local service businesses managing separate agencies — one for SEO, one for Google Ads, one for social — lose significant budget to coordination friction, misaligned attribution, and conflicting priorities. A focused agency for local service businesses eliminates this by running your channels with shared data, shared strategy, and a single point of accountability. The result is clearer reporting, faster optimisation, and more qualified leads.",
+    secondBody: "As a Toronto lead generation agency, Outlier runs SEO, Google Ads, and paid social specifically for local service businesses — dental practices, law firms, home services, fitness studios, and trades. When your SEO keyword data informs your paid strategy, and your conversion learnings improve landing pages across every channel simultaneously, you get compounding returns — not siloed results from agencies that don't talk to each other.",
     bullets: [
       "SEO, Paid Ads, Social, Email — unified under one digital marketing strategy",
       "Senior strategist on your account (no junior hand-offs, ever)",
@@ -80,10 +80,10 @@ const digitalMarketingData: HubData = {
     ],
   },
   proofSection: {
-    eyebrow: "The full-service digital marketing company advantage",
-    headline: "Siloed agencies produce siloed results. A single internet marketing agency produces compounding growth.",
-    body: "The average brand working with three separate agencies — one for SEO, one for paid, one for social — loses an estimated 20–30% of potential return to coordination friction, misaligned attribution, and conflicting priorities. No one agency owns the outcome. Every agency optimises for its own metrics. The client bears the cost of the gaps between them. The solution isn't better individual agencies — it's a single digital marketing company with a unified strategy and one clear accountability structure.",
-    secondBody: "We've taken over accounts from multi-agency arrangements and produced 40–60% improvement in overall performance within 90 days without increasing total spend — purely by aligning strategy across channels and eliminating the coordination tax. The individual agencies weren't doing bad work. The system was broken. One internet marketing company, one strategy, one accountability structure produces fundamentally better results. That's what Outlier delivers as a full-service digital marketing agency in Toronto.",
+    eyebrow: "The focused specialist advantage",
+    headline: "Siloed agencies produce siloed results. A focused specialist produces compounding lead generation.",
+    body: "The average local service business working with three separate agencies — one for SEO, one for paid, one for social — loses significant budget to coordination friction, misaligned attribution, and conflicting priorities. No one agency owns the outcome. Every agency optimises for its own metrics. The client bears the cost of the gaps between them. The solution isn't better individual agencies — it's a single focused team with a unified strategy and one clear accountability structure.",
+    secondBody: "We've taken over accounts from multi-agency arrangements and produced 40–60% improvement in overall performance within 90 days without increasing total spend — purely by aligning strategy across channels and eliminating the coordination tax. One focused team, one strategy, one accountability structure produces fundamentally better lead generation results. That's what Outlier delivers as a local service business lead generation agency in Toronto.",
     bullets: [
       "One senior strategist owns your entire account — no silo between your SEO lead, your paid lead, and your content lead.",
       "Insight flows across disciplines in real time: paid audience data informs SEO priorities, CRO learnings improve landing pages for every channel simultaneously.",

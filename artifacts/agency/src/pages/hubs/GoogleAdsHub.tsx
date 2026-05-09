@@ -75,7 +75,7 @@ const googleAdsHubData: HubData = {
     eyebrow: "Why professional Google Ads management pays for itself",
     headline: "Most Google Ads accounts waste more than they cost to fix.",
     body: "Google Ads is the fastest path to qualified inbound leads — but only when managed correctly. Done poorly, it's an extremely efficient way to fund your competitors' growth. The average self-managed account sends 50–60% of its budget to irrelevant searches, overbroad match types, and landing pages that don't convert. Professional management recovers that waste and redirects it toward the clicks that actually become customers.",
-    secondBody: "As a certified Google Partner agency, Outlier manages campaigns across Search, Local Service Ads, Performance Max, Shopping, and YouTube. We specialise in the verticals where the stakes are highest: legal, healthcare, home services, professional services, and ecommerce. Every campaign is built to your specific business economics — not to a generic ROAS template.",
+    secondBody: "As a certified Google Partner agency, Outlier manages campaigns across Search, Local Service Ads, Performance Max, and YouTube for local service businesses. We specialise in the verticals where inbound leads matter most: legal, healthcare, home services, fitness, trades, and professional services. Every campaign is built to your specific business economics — not a generic ROAS template.",
     bullets: [
       "Full conversion tracking: calls, form submissions, purchases, and offline CRM imports",
       "Intent-layered campaign architecture with comprehensive negative keyword coverage",

@@ -61,20 +61,20 @@ const PLANS = [
     ],
     notIncluded: [
       "Custom web development",
-      "Enterprise ecommerce builds",
+      "Large-scale ecommerce development",
     ],
   },
   {
     name: "Custom",
     badge: "Custom",
-    tagline: "For larger service operations and multi-location businesses with complex growth needs.",
+    tagline: "For multi-location service businesses ready to scale lead generation across markets.",
     starting: null,
     period: null,
     note: "Scoped to your business",
     color: "#0e0e0e",
     cta: "Request a custom proposal",
     features: [
-      "Full-service multi-channel management",
+      "Multi-channel lead generation management",
       "Dedicated account team (3+ specialists)",
       "Weekly calls + on-demand access",
       "Custom reporting & attribution modelling",

@@ -37,7 +37,7 @@ const TEAM = [
   {
     name: "Marcus Reid",
     role: "Founder & CEO",
-    bio: "Former Head of Growth at a national media brand. Marcus founded Outlier in 2013 after watching great Toronto businesses lose to inferior competitors who simply outranked them.",
+    bio: "Founded Outlier in 2013 after watching great Toronto service businesses lose to inferior competitors who simply outranked them. Built around one goal: generating more qualified inbound leads for local operators.",
     initials: "MR",
     accent: "#1a56ff",
     tags: ["Strategy", "Business Dev", "Partnerships"],
@@ -730,7 +730,7 @@ const CATEGORIES = ["All", "SEO", "Google Ads", "Content", "Web & CRO", "Local S
 const POSTS = [
   {
     slug: "local-seo-2025",
-    title: "Why Local SEO Still Wins in 2025 — And How Ontario Businesses Can Dominate It",
+    title: "Why Local SEO Still Wins in 2025 — And How Ontario Businesses Can Own Their Market",
     excerpt: "Google's local pack is more competitive than ever. But for businesses that understand the signals, there's never been a clearer path to map pack position 1.",
     tag: "Local SEO",
     date: "Apr 2025",

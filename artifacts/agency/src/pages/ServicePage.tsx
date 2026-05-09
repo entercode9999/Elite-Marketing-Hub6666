@@ -233,14 +233,14 @@ export function ServicePage({ data }: { data: ServicePageData }) {
 export const localSeoData: ServicePageData = {
   breadcrumb: ["Home", "Services", "Local SEO"],
   label: "Local SEO",
-  headline: "Dominate Google Maps.",
-  headlineAccent: "Own your local market.",
+  headline: "Own the Google Maps Pack.",
+  headlineAccent: "Be the first call in your area.",
   subhead: "Outlier gets local businesses into Google's Map pack top 3 — where the majority of local calls and enquiries come from. More calls, more walk-ins, more booked appointments.",
   stats: [
     { value: "Top 3", label: "Map pack position", sub: "87% of clients within 6 months" },
     { value: "+220%", label: "GBP impressions", sub: "avg. increase" },
     { value: "6 wks", label: "First ranking lift", sub: "typical timeline" },
-    { value: "93%", label: "Client retention", sub: "after year 1" },
+    { value: "4.9★", label: "Clutch rating", sub: "verified reviews" },
   ],
   intro: `For businesses that serve customers locally — whether you're a dentist, a home services contractor, a restaurant, a lawyer, or a retail shop — Local SEO is the single most cost-effective customer acquisition channel available. When someone searches "best [your service] near me" or "[your service] in [your city]," the businesses that appear in the Google Map pack receive the overwhelming majority of calls, clicks, and walk-ins.
 
