@@ -57,12 +57,12 @@ export function HowWeWork() {
           <div className="lg:sticky lg:top-24">
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary block mb-4">Our process</span>
             <h2 className="text-4xl md:text-5xl font-black text-[#0e0e0e] leading-[1.04] tracking-tight mb-5">
-              How every engagement
+              How every client project
               <br />
               <span className="italic font-light text-gray-400">actually works.</span>
             </h2>
             <p className="text-base text-gray-500 leading-relaxed mb-8 max-w-sm">
-              Five clear phases. No mystery, no hand-waving — just the way we turn strategy into measurable growth.
+              Five clear phases. No hand-waving — just the structured process we use to build lead generation systems for local service businesses.
             </p>
             <Link
               href="/free-audit"

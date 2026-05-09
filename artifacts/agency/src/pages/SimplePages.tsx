@@ -45,7 +45,7 @@ const TEAM = [
   {
     name: "Priya Nair",
     role: "Head of SEO",
-    bio: "12 years building organic search strategies across Canada. Priya leads our SEO team and developed Outlier's proprietary topical authority framework used on 80+ client engagements.",
+    bio: "12 years building organic search strategies for local service businesses across Canada. Priya leads our SEO practice with a focus on local search visibility and technical SEO foundations.",
     initials: "PN",
     accent: "#7c3aed",
     tags: ["Technical SEO", "Content Strategy", "Local SEO"],
@@ -53,7 +53,7 @@ const TEAM = [
   {
     name: "Jordan Kim",
     role: "Head of Paid Media",
-    bio: "Managed $4M+ in annual paid media across Google, Meta, and programmatic. Jordan's specialty is building acquisition systems that compound — not just campaigns that run.",
+    bio: "Extensive experience running Google and Meta campaigns for local service businesses. Jordan's specialty is building lead acquisition systems that improve over time — not just campaigns that run and stop.",
     initials: "JK",
     accent: "#e85d04",
     tags: ["Google Ads", "Meta Ads", "Analytics"],
@@ -71,9 +71,9 @@ const TEAM = [
 const VALUES = [
   { icon: Target, title: "Outcomes over activity", desc: "Reports and deliverables are easy. Results that move your business are hard. We optimise for the latter — always." },
   { icon: Shield, title: "Radical transparency", desc: "You see everything. Strategy, data, decisions, and what isn't working. We run no black boxes and no vanity metrics." },
-  { icon: Users, title: "Depth over breadth", desc: "We limit our client count deliberately so we can go deep — not thin. You get senior attention, not junior execution." },
+  { icon: Users, title: "Depth over breadth", desc: "We stay selective so we can go deep — not thin. You get senior attention and hands-on execution, not a junior account manager." },
   { icon: BarChart3, title: "Data is the conversation", desc: "Every recommendation is grounded in evidence. We don't guess, and we don't sell on gut feel or industry buzzwords." },
-  { icon: Heart, title: "We win when you win", desc: "Our 93% retention rate exists because we don't chase one-time clients. We build long-term partnerships built on results." },
+  { icon: Heart, title: "We win when you win", desc: "We don't chase one-time clients. We build long-term partnerships because the work keeps generating leads — and clients stay when it does." },
   { icon: Zap, title: "Speed without shortcuts", desc: "Urgency is baked into how we work. We move fast — but never at the cost of quality, data integrity, or client trust." },
 ];
 
@@ -87,12 +87,12 @@ const CERTIFICATIONS = [
 ];
 
 const MILESTONES = [
-  { year: "2013", event: "Founded in Toronto, 4 clients, 1 office." },
-  { year: "2016", event: "Expanded into paid media. First $1M in managed ad spend." },
-  { year: "2018", event: "Launched web & CRO practice. Team reached 12 people." },
-  { year: "2020", event: "Scaled remote operations across Canada. 80+ active clients." },
-  { year: "2022", event: "Launched pSEO practice. First programmatic campaigns go live." },
-  { year: "2024", event: "65+ brands grown. 93% client retention. Still headquartered in Toronto." },
+  { year: "2013", event: "Founded in Toronto. Built for local service businesses from day one." },
+  { year: "2016", event: "Expanded into paid media. First Google and Meta acquisition systems launched." },
+  { year: "2018", event: "Launched conversion-focused web and CRO practice." },
+  { year: "2020", event: "Deepened focus on local SEO and lead generation systems for Ontario markets." },
+  { year: "2022", event: "Launched programmatic local SEO practice for multi-location service businesses." },
+  { year: "2024", event: "Continued focus on lead generation and conversion systems. Still headquartered in Toronto." },
 ];
 
 export function AboutPage() {
@@ -107,19 +107,19 @@ export function AboutPage() {
 
       <DarkHero
         label="About Outlier"
-        title={<>We exist to give ambitious brands an<br /><span className="text-primary italic">unfair advantage.</span></>}
-        sub="Founded in Toronto in 2013. Strategy-first, execution-obsessed, and tired of agencies that confuse activity with results."
+        title={<>We help local service businesses<br /><span className="text-primary italic">generate more qualified leads.</span></>}
+        sub="A focused Toronto-based agency built around one outcome: measurable lead generation for local service businesses."
       />
 
       {/* Stats strip */}
       <section className="bg-primary">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid grid-cols-2 sm:grid-cols-5">
-            {[
-              { n: "2013", l: "Founded in Toronto" },
-              { n: "65+", l: "Ontario brands grown" },
-              { n: "93%", l: "Client retention after year 1" },
-              { n: "10yr+", l: "Avg. team experience" },
+            [
+              { n: "Toronto", l: "Based & operator-led" },
+              { n: "Boutique", l: "Focused lead generation team" },
+              { n: "Long-term", l: "Client partnerships" },
+              { n: "Senior", l: "Execution on every account" },
               { n: "4.9★", l: "Clutch agency rating" },
             ].map((s, i, arr) => (
               <div key={s.l} className={`py-5 px-4 text-center border-white/20 border-r border-b sm:border-b-0 last:border-r-0 sm:last:border-r-0 ${i === arr.length - 1 ? "col-span-2 sm:col-span-1 border-r-0" : ""}`}>
@@ -148,7 +148,7 @@ export function AboutPage() {
                   The name "Outlier" isn't aspirational — it's descriptive. An outlier result is one that defies the benchmark. Ranking #1 in a market everyone said was too competitive. A paid channel that actually prints money. Organic traffic that compounds for years without a ceiling.
                 </p>
                 <p>
-                  We're headquartered at Spadina + King in Toronto. We work with ambitious founders, CMOs, and operators at local businesses and national brands — people who are serious about growth and willing to do the work alongside us.
+                  We're headquartered in Toronto and work with local service businesses — dental practices, law firms, home services, fitness studios, and construction companies — that rely on inbound leads to grow. We don't serve everyone. We go deep with the clients we take on.
                 </p>
               </div>
             </div>
@@ -316,18 +316,18 @@ export function AboutPage() {
               </div>
               {/* Floating stat cards */}
               <div className="absolute -bottom-4 -right-4 bg-white border border-[#e5e2d9] rounded-xl p-4 shadow-lg">
-                <p className="text-primary font-black text-2xl">93%</p>
-                <p className="text-gray-500 text-xs">Client retention</p>
+                <p className="text-primary font-black text-2xl">4.9★</p>
+                <p className="text-gray-500 text-xs">Clutch rating</p>
               </div>
               <div className="absolute -top-4 -left-4 bg-white border border-[#e5e2d9] rounded-xl p-4 shadow-lg">
-                <p className="text-primary font-black text-2xl">10yr+</p>
-                <p className="text-gray-500 text-xs">Avg team exp.</p>
+                <p className="text-primary font-black text-2xl">Senior</p>
+                <p className="text-gray-500 text-xs">Team on every account</p>
               </div>
             </motion.div>
             <div>
               <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Where We Work</p>
               <h2 className="text-3xl md:text-4xl font-black text-[#0e0e0e] leading-[1.1] mb-6">
-                Toronto-rooted, nationally capable
+                Toronto-based, focused on local service businesses
               </h2>
               <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed mb-8">
                 <p>We're headquartered in Toronto's creative and tech district — close enough to our clients to meet for coffee, senior enough in our operations to serve businesses coast-to-coast.</p>
@@ -335,8 +335,8 @@ export function AboutPage() {
               </div>
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {[
-                  { icon: Users, label: "Team size", value: "18 specialists" },
-                  { icon: Globe, label: "Client locations", value: "Canada-wide" },
+                  { icon: Users, label: "Focus", value: "Local service businesses" },
+                  { icon: Globe, label: "Markets served", value: "Ontario + GTA" },
                   { icon: Clock, label: "Est.", value: "2013" },
                   { icon: Star, label: "Clutch rating", value: "4.9 / 5.0" },
                 ].map((item) => (
@@ -395,10 +395,10 @@ export function AboutPage() {
           transition={{ duration: 0.6 }}
           className="container mx-auto px-4 max-w-3xl text-center relative z-10"
         >
-          <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-4">Join 65+ Ontario Businesses</p>
-          <h2 className="text-4xl font-black text-white leading-tight mb-5">Ready to work with a team that's actually senior?</h2>
+          <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-4">Work with a focused team</p>
+          <h2 className="text-4xl font-black text-white leading-tight mb-5">Ready to generate more qualified leads?</h2>
           <p className="text-white/40 text-[15px] leading-relaxed mb-8 max-w-xl mx-auto">
-            Every engagement starts with a free strategy call. We assess your market, identify the real opportunity, and tell you exactly what it would take to dominate it.
+            Every project starts with a free strategy call. We review your current lead flow, identify where demand is being lost, and tell you exactly what we'd do about it.
           </p>
           <Link href="/contact" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-4 rounded-xl hover:bg-primary/90 transition-colors text-[15px] group">
             Book a Free Strategy Call <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
@@ -422,7 +422,7 @@ const CONTACT_FAQ = [
   },
   {
     q: "Do you require long-term contracts?",
-    a: "We work on 90-day rolling agreements after an initial onboarding period. We earn renewal through results — not lock-in clauses. Our 93% retention rate is our track record.",
+    a: "We work on 90-day rolling agreements after an initial onboarding period. We earn renewal through results — not lock-in clauses. Clients stay because the lead generation keeps working.",
   },
   {
     q: "How do you measure and report on results?",
@@ -1094,10 +1094,10 @@ export function CareersPage() {
             {/* Visual */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { n: "18", l: "People on the team" },
-                { n: "93%", l: "Staff retention yr/yr" },
-                { n: "4.9★", l: "Glassdoor rating" },
-                { n: "10yr+", l: "Avg. experience" },
+                { n: "Boutique", l: "Focused team" },
+                { n: "Senior", l: "Work on every account" },
+                { n: "4.9★", l: "Clutch rating" },
+                { n: "Deep", l: "Specialization over breadth" },
               ].map((s, i) => (
                 <motion.div
                   key={s.l}

@@ -577,7 +577,7 @@ export function OurWorkPage() {
               transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
               className="text-5xl md:text-6xl font-black text-white leading-tight max-w-2xl"
             >
-              Real results for real Ontario businesses.
+              Measurable lead generation results for Ontario service businesses.
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
@@ -585,7 +585,7 @@ export function OurWorkPage() {
               transition={{ duration: 0.5, delay: 0.18 }}
               className="text-white/40 text-base max-w-xs leading-relaxed"
             >
-              We let the numbers speak. Every engagement below is documented, attributed, and verified.
+              Each project is built around one goal: increasing qualified inbound leads through structured digital systems.
             </motion.p>
           </div>
         </div>
@@ -659,18 +659,18 @@ export function OurWorkPage() {
             <div>
               <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Recognition</p>
               <h2 className="text-3xl font-black text-[#0e0e0e] leading-tight mb-4">
-                Recognised for results —<br />not just aesthetics.
+                Focused on outcomes —<br />not agency optics.
               </h2>
               <p className="text-gray-600 text-[15px] leading-relaxed">
-                Our work is validated not only by client outcomes but by independent reviews and industry recognition. Over 200 Ontario businesses have trusted Outlier with their digital growth, and we've maintained a 93% client retention rate after year one.
+                Our work is validated by the results our clients see — not just awards. Every engagement is focused on generating measurable inbound leads, not activity reports.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { n: "200+", l: "Ontario businesses grown" },
-                { n: "93%", l: "Client retention after year 1" },
+                { n: "Focused", l: "On Ontario service businesses" },
+                { n: "Long-term", l: "Client relationships built on performance" },
                 { n: "4.9★", l: "Clutch rating" },
-                { n: "10yr+", l: "Active in the market" },
+                { n: "Operator-led", l: "Execution model" },
               ].map((s, i) => (
                 <motion.div
                   key={s.l}

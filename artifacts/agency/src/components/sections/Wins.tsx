@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { TrendingUp } from "lucide-react";
 
 const wins = [
-  { date: "This week", text: "DentalPlus Mississauga reached #1 for 'Mississauga Invisalign' (12,100 monthly searches)." },
-  { date: "Last week", text: "Hudson Outdoor crossed $2.4M attributed revenue YTD — 312% YoY growth." },
-  { date: "April", text: "Toronto Limo Co secured 47 new corporate accounts via Local SEO + LinkedIn outbound." },
-  { date: "April", text: "Nova FinTech cut blended CPA by 38% across Google + Meta in 90 days." },
-  { date: "March", text: "Apex Dental Group launched 6-location programmatic SEO build — 1,100 pages live." },
-  { date: "March", text: "Coastal Collective's Q1 ROAS hit 7.2x on Meta — best quarter in brand history." },
+  { date: "This week", text: "DentalPlus Mississauga reached #1 for 'Mississauga Invisalign' — inbound call volume up 3× in 60 days." },
+  { date: "Last week", text: "Hudson Outdoor hit 312% organic growth YoY — organic search is now their top lead acquisition channel." },
+  { date: "April", text: "Toronto Limo Co secured 47 new client accounts through Local SEO in under 90 days." },
+  { date: "April", text: "Nova FinTech cut blended cost-per-lead by 38% across Google + Meta in 90 days." },
+  { date: "March", text: "Apex Dental Group launched 6-location local SEO build across the GTA — map pack visibility across all locations." },
+  { date: "March", text: "Coastal Collective's Q1 ROAS hit 7.2× on Meta — driven by structured audience and creative system." },
 ];
 
 const item = {
@@ -35,7 +35,7 @@ export function Wins() {
               Momentum, in real time.
             </h2>
             <p className="text-lg text-muted-foreground">
-              A live snapshot of client wins from the last 60 days. Yours could be next month's headline.
+              Real lead generation outcomes from recent client work — search rankings, cost-per-lead improvements, and inbound call growth.
             </p>
           </motion.div>
 

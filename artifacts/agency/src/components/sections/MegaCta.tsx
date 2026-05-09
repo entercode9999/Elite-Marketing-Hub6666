@@ -22,14 +22,14 @@ export function MegaCta() {
           </div>
 
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-[0.95] tracking-tight mb-8">
-            Ready to dominate
+            Ready to generate
             <br />
-            your market?
+            more qualified leads?
           </h2>
 
           <p className="text-xl md:text-2xl text-white/85 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
-            Book a 30-minute strategy call. We'll teardown your funnel live and
-            tell you the three highest-leverage moves — whether you hire us or not.
+            Book a 30-minute strategy call. We'll review your current lead flow and
+            identify the highest-leverage opportunities — whether you hire us or not.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
