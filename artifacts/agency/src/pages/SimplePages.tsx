@@ -327,7 +327,7 @@ const CONTACT_FAQ = [
   },
   {
     q: "Do you require long-term contracts?",
-    a: "We work on 90-day rolling agreements after an initial onboarding period. We earn renewal through results — not lock-in clauses. Clients stay because the lead generation keeps working.",
+    a: "No. Our setup packages are a one-time investment with no ongoing commitment required. If you want to continue with monthly SEO growth, that's month-to-month — cancel any time. No lock-in, no pressure.",
   },
   {
     q: "How do you measure and report on results?",
@@ -338,8 +338,8 @@ const CONTACT_FAQ = [
     a: "Yes. While we're headquartered in Toronto, we work with service businesses across Ontario — GTA, Hamilton, Ottawa, and surrounding areas. Most clients work with us fully remote.",
   },
   {
-    q: "What's the minimum project size?",
-    a: "Our minimum is $2,500/month. We work with established businesses serious about growth — not startups looking for the cheapest option. That said, we're transparent about scope and fit from day one.",
+    q: "What's the minimum to get started?",
+    a: "Our setup packages start at $1,490 — a one-time investment with no monthly commitment required. We work with local service businesses of all sizes. If you're serious about generating more inbound leads, get in touch and we'll find the right fit.",
   },
   {
     q: "What happens after I submit the form?",
