@@ -37,7 +37,7 @@ const TEAM = [
   {
     name: "Marcus Reid",
     role: "Founder & CEO",
-    bio: "Founded Outlier in 2013 after watching great Toronto service businesses lose to inferior competitors who simply outranked them. Built around one goal: generating more qualified inbound leads for local operators.",
+    bio: "Founded Outlier in 2024 to help Ontario service businesses generate more inbound leads through focused local SEO and paid media — built around the idea that smaller, specialized agencies get better results for local operators.",
     initials: "MR",
     accent: "#1a56ff",
     tags: ["Strategy", "Business Dev", "Partnerships"],
@@ -87,7 +87,7 @@ const CERTIFICATIONS = [
 ];
 
 const MILESTONES = [
-  { year: "2013", event: "Founded in Toronto. Built for local service businesses from day one." },
+  { year: "2024", event: "Founded in Markham. Built specifically for local service businesses from day one." },
   { year: "2016", event: "Expanded into paid media. First Google and Meta acquisition systems launched." },
   { year: "2018", event: "Launched conversion-focused web and CRO practice." },
   { year: "2020", event: "Deepened focus on local SEO and lead generation systems for Ontario markets." },
@@ -229,7 +229,7 @@ export function AboutPage() {
                       <MapPin className="w-8 h-8 text-white" />
                     </div>
                     <p className="text-white font-black text-2xl mb-1">Markham, Ontario</p>
-                    <p className="text-white/40 text-sm mb-6">Toronto, Ontario · Est. 2013</p>
+                    <p className="text-white/40 text-sm mb-6">Markham, Ontario · Est. 2024</p>
                     <div className="flex gap-4 justify-center">
                       {[{ icon: Coffee, l: "Coffee first" }, { icon: Lightbulb, l: "Ideas always" }, { icon: Play, l: "Fast execution" }].map((item) => (
                         <div key={item.l} className="text-center">
@@ -270,7 +270,7 @@ export function AboutPage() {
                 {[
                   { icon: Users, label: "Focus", value: "Local service businesses" },
                   { icon: Globe, label: "Markets served", value: "Ontario + GTA" },
-                  { icon: Clock, label: "Est.", value: "2013" },
+                  { icon: Clock, label: "Est.", value: "2024" },
                   { icon: Star, label: "Clutch rating", value: "4.9 / 5.0" },
                 ].map((item) => (
                   <div key={item.label} className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-xl p-4 flex gap-3 items-start">

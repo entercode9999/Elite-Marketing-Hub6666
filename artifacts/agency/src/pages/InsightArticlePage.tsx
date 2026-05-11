@@ -103,7 +103,7 @@ const ARTICLES: Article[] = [
     author: "Marcus Reid",
     authorRole: "Founder & CEO",
     authorInitials: "MR",
-    authorBio: "Marcus founded Outlier in 2013 and has spent 20 years in growth strategy. He writes about the intersection of search, paid media, and business fundamentals.",
+    authorBio: "Marcus founded Outlier in 2024 with a focus on local lead generation for Ontario service businesses. He writes about practical SEO, paid media, and what actually drives inbound leads.",
     sections: [
       {
         heading: "What actually changed",
@@ -281,7 +281,7 @@ const ARTICLES: Article[] = [
     author: "Marcus Reid",
     authorRole: "Founder & CEO",
     authorInitials: "MR",
-    authorBio: "Marcus founded Outlier in 2013 and has built content strategies for over 80 Canadian businesses. The topical authority framework he developed is now central to every SEO engagement.",
+    authorBio: "Marcus founded Outlier in 2024 focused on local SEO and lead generation for Ontario service businesses. He writes about content strategy, topical authority, and what drives organic growth.",
     sections: [
       {
         heading: "The content calendar vs the content architecture",

@@ -109,9 +109,6 @@ export function Footer() {
                     <Link href={l.href} className="text-sm text-white/50 hover:text-white transition-colors">{l.label}</Link>
                   </li>
                 ))}
-                <li>
-                  <Link href="/cities" className="text-xs text-[#1a56ff] font-semibold hover:text-[#1a56ff]/80 transition-colors">View all cities →</Link>
-                </li>
               </ul>
             </div>
           </div>
