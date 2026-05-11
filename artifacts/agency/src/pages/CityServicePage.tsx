@@ -2722,9 +2722,9 @@ export default function CityServicePage() {
         "name": "Outlier Digital Marketing",
         "url": "https://outliermarketing.ca",
         "logo": "https://outliermarketing.ca/favicon.svg",
-        "telephone": "+1-416-555-0199",
+        "telephone": "+1-289-818-9102",
         "priceRange": "$$",
-        "email": "hello@outliermarketing.ca",
+        "email": "Wabisabiiinc@gmail.com",
         "description": fill(svc.metaDescTemplate),
         "areaServed": [
           {
@@ -2824,7 +2824,7 @@ export default function CityServicePage() {
                   {svc.cta} <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
-                  href="tel:+14165550199"
+                  href="tel:+12898189102"
                   className="inline-flex items-center gap-2 border border-white/15 text-white font-semibold px-6 py-3.5 rounded-xl hover:border-white/30 hover:bg-white/4 transition-all text-[15px]"
                 >
                   <Phone className="w-4 h-4" /> Call Us
@@ -3374,7 +3374,7 @@ export default function CityServicePage() {
                 <Link href="/contact" className="flex items-center justify-center gap-2 bg-primary text-white font-bold px-6 py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-[15px] w-full">
                   Book Free Strategy Call <ArrowRight className="w-4 h-4" />
                 </Link>
-                <a href="tel:+14165550199" className="flex items-center justify-center gap-2 border border-white/15 text-white font-semibold px-6 py-3.5 rounded-xl hover:border-white/30 hover:bg-white/4 transition-all text-[15px] w-full">
+                <a href="tel:+12898189102" className="flex items-center justify-center gap-2 border border-white/15 text-white font-semibold px-6 py-3.5 rounded-xl hover:border-white/30 hover:bg-white/4 transition-all text-[15px] w-full">
                   <Phone className="w-4 h-4" /> Call Our Team
                 </a>
               </div>

@@ -228,7 +228,7 @@ export function AboutPage() {
                     <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mx-auto mb-5">
                       <MapPin className="w-8 h-8 text-white" />
                     </div>
-                    <p className="text-white font-black text-2xl mb-1">Spadina + King</p>
+                    <p className="text-white font-black text-2xl mb-1">Markham, Ontario</p>
                     <p className="text-white/40 text-sm mb-6">Toronto, Ontario · Est. 2013</p>
                     <div className="flex gap-4 justify-center">
                       {[{ icon: Coffee, l: "Coffee first" }, { icon: Lightbulb, l: "Ideas always" }, { icon: Play, l: "Fast execution" }].map((item) => (
@@ -244,7 +244,7 @@ export function AboutPage() {
                 </div>
                 {/* Bottom bar */}
                 <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/60 to-transparent">
-                  <p className="text-white/50 text-xs">123 Spadina Ave, Suite 800 · Toronto, ON M5V 2T6</p>
+                  <p className="text-white/50 text-xs">Markham, Ontario</p>
                 </div>
               </div>
               {/* Floating stat cards */}
@@ -396,8 +396,9 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 }
 
 export function ContactPage() {
+  const [submitted, setSubmitted] = useState(false);
   useSeo({
-    title: "Contact Outlier | Toronto Digital Marketing Agency",
+    title: "Contact Outlier | Local Lead Generation Agency",
     description: "Get in touch with Outlier's team. Tell us about your business and goals — a senior strategist will respond within 1 business day.",
     canonicalPath: "/contact",
   });
@@ -486,9 +487,9 @@ export function ContactPage() {
                 <h2 className="text-2xl font-black text-[#0e0e0e] mb-6">Reach us directly</h2>
                 <div className="space-y-3">
                   {[
-                    { icon: Phone, label: "Phone", val: "(416) 555-0199", href: "tel:+14165550199" },
-                    { icon: Mail, label: "Email", val: "hello@outlier.co", href: "mailto:hello@outlier.co" },
-                    { icon: MapPin, label: "Office", val: "123 Spadina Ave, Suite 800, Toronto, ON M5V 2T6", href: "#" },
+                    { icon: Phone, label: "Phone", val: "+1 (289) 818-9102", href: "tel:+12898189102" },
+                    { icon: Mail, label: "Email", val: "Wabisabiiinc@gmail.com", href: "mailto:Wabisabiiinc@gmail.com" },
+                    { icon: MapPin, label: "Location", val: "Markham, Ontario", href: "#" },
                   ].map((c) => (
                     <a
                       key={c.label}
@@ -549,9 +550,19 @@ export function ContactPage() {
             {/* Right — form */}
             <div className="lg:col-span-3">
               <div className="bg-white border border-[#e5e2d9] rounded-2xl p-8 shadow-sm">
+                {submitted ? (
+                  <div className="py-12 text-center">
+                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
+                      <CheckCircle2 className="w-8 h-8 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-black text-[#0e0e0e] mb-3">Message received!</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed max-w-xs mx-auto">A senior team member will review your message and respond within 1 business day — usually the same day.</p>
+                  </div>
+                ) : (
+                  <>
                 <h3 className="text-xl font-black text-[#0e0e0e] mb-2">Tell us about your business</h3>
                 <p className="text-gray-400 text-sm mb-7">We'll review your submission and respond within 1 business day.</p>
-                <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">First name *</label>
@@ -602,6 +613,8 @@ export function ContactPage() {
                   </button>
                   <p className="text-center text-gray-400 text-[11px]">No spam. No automated responses. A real person will reply.</p>
                 </form>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -974,11 +987,11 @@ export function CareersPage() {
             We're not actively hiring right now, but we're always open to hearing from specialists who are genuinely good at one thing. If that's you, send a short note and a few examples of your work.
           </p>
           <a
-            href="mailto:hello@outlier.co"
+            href="mailto:Wabisabiiinc@gmail.com"
             className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-sm"
           >
             <Mail className="w-4 h-4" />
-            hello@outlier.co
+            Wabisabiiinc@gmail.com
           </a>
         </div>
       </section>
@@ -1025,7 +1038,7 @@ export function PrivacyPage() {
         <h2 className="text-xl font-black text-[#0e0e0e] !mt-8">Cookies</h2>
         <p>Our website uses cookies to improve your experience, measure performance, and support marketing. You may disable cookies in your browser settings, though some features may not function properly.</p>
         <h2 className="text-xl font-black text-[#0e0e0e] !mt-8">Contact</h2>
-        <p>For privacy-related inquiries, contact us at <a href="mailto:privacy@outlier.co" className="text-primary font-medium">privacy@outlier.co</a> or at 123 Spadina Ave, Suite 800, Toronto, ON M5V 2T6.</p>
+        <p>For privacy-related inquiries, contact us at <a href="mailto:Wabisabiiinc@gmail.com" className="text-primary font-medium">Wabisabiiinc@gmail.com</a> or at Markham, Ontario.</p>
       </div>
     </LegalShell>
   );
@@ -1051,7 +1064,7 @@ export function TermsPage() {
         <h2 className="text-xl font-black text-[#0e0e0e] !mt-8">Governing Law</h2>
         <p>These terms are governed by the laws of the Province of Ontario, Canada. Disputes shall be resolved in Ontario courts.</p>
         <h2 className="text-xl font-black text-[#0e0e0e] !mt-8">Contact</h2>
-        <p>For questions about these terms, contact <a href="mailto:legal@outlier.co" className="text-primary font-medium">legal@outlier.co</a>.</p>
+        <p>For questions about these terms, contact <a href="mailto:Wabisabiiinc@gmail.com" className="text-primary font-medium">Wabisabiiinc@gmail.com</a>.</p>
       </div>
     </LegalShell>
   );
@@ -1078,7 +1091,7 @@ export function AccessibilityPage() {
           <li>Resizable text without loss of functionality</li>
         </ul>
         <h2 className="text-xl font-black text-[#0e0e0e] !mt-8">Feedback</h2>
-        <p>If you encounter an accessibility barrier, please contact us at <a href="mailto:accessibility@outlier.co" className="text-primary font-medium">accessibility@outlier.co</a> or call 1-800-555-0199. We aim to respond within 2 business days.</p>
+        <p>If you encounter an accessibility barrier, please contact us at <a href="mailto:Wabisabiiinc@gmail.com" className="text-primary font-medium">Wabisabiiinc@gmail.com</a> or call +1 (289) 818-9102. We aim to respond within 2 business days.</p>
       </div>
     </LegalShell>
   );

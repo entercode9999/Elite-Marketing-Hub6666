@@ -86,13 +86,12 @@ export function Footer() {
               Boutique lead generation agency focused on helping local service businesses generate and convert high-intent leads through SEO, ads, and conversion systems.
             </p>
             <div className="text-sm text-white/35 space-y-1.5">
-              <div>123 Spadina Ave, Suite 800</div>
-              <div>Toronto, ON M5V 2T6</div>
+              <div>Markham, Ontario</div>
               <div className="pt-1">
-                <a href="tel:+18005550199" className="hover:text-white transition-colors">1-800-555-0199</a>
+                <a href="tel:+12898189102" className="hover:text-white transition-colors">+1 (289) 818-9102</a>
               </div>
               <div>
-                <a href="mailto:hello@outlier.co" className="hover:text-white transition-colors">hello@outlier.co</a>
+                <a href="mailto:Wabisabiiinc@gmail.com" className="hover:text-white transition-colors">Wabisabiiinc@gmail.com</a>
               </div>
             </div>
           </div>

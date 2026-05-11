@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import {
@@ -14,101 +15,95 @@ import { useSeo } from "@/hooks/useSeo";
 
 const PLANS = [
   {
-    name: "Growth",
+    name: "Local Visibility Foundation",
     badge: null,
-    tagline: "For local service businesses ready to build a consistent lead flow.",
-    starting: "2,500",
-    period: "/ month",
-    note: "Typical engagement: $2,500 – $4,500/mo",
+    tagline: "For businesses looking to strengthen visibility in their core local market.",
+    price: "1,490",
+    pageCount: "15",
+    pageLabel: "professionally structured service + location pages",
     color: "#1a56ff",
-    cta: "Start with a free audit",
+    cta: "Get started",
     features: [
-      "1 primary service channel (SEO or Paid)",
-      "Dedicated senior strategist",
-      "Monthly strategy calls",
-      "Live Looker Studio dashboard",
-      "Weekly written updates",
-      "Keyword + competitor tracking",
-      "Google Business Profile management",
-      "Quarterly performance reviews",
+      "Local SEO audit & strategy",
+      "Google Business Profile optimization",
+      "Technical SEO cleanup",
+      "Core service page optimization",
+      "Keyword targeting setup",
+      "Internal linking improvements",
+      "Analytics & search tracking setup",
+      "15 professionally structured service + location pages",
+      "Conversion-focused page layouts",
     ],
-    notIncluded: [
-      "Multi-channel management",
-      "Content production (add-on available)",
-      "Web design / CRO",
-    ],
+    value: "Ideal for businesses targeting one primary city or service region and looking to improve local search visibility and inbound leads.",
   },
   {
-    name: "Scale",
+    name: "Demand Capture System",
     badge: "Most popular",
-    tagline: "For multi-location service businesses building systematic lead generation.",
-    starting: "5,000",
-    period: "/ month",
-    note: "Typical engagement: $5,000 – $9,000/mo",
+    tagline: "Designed for businesses targeting multiple cities and high-intent local searches.",
+    price: "2,990",
+    pageCount: "50",
+    pageLabel: "professionally structured service + location pages",
     color: "#1a56ff",
-    cta: "Start with a free audit",
+    cta: "Get started",
     features: [
-      "2–3 integrated service channels",
-      "Senior strategist + channel specialists",
-      "Bi-weekly strategy calls",
-      "Live Looker Studio dashboard",
-      "Weekly written updates",
-      "Full content production included",
-      "CRO & landing page optimisation",
-      "Google + Meta ad management",
-      "Local SEO across multiple locations",
-      "Monthly deep-dive reporting",
+      "Full local SEO strategy",
+      "Multi-city keyword mapping",
+      "Technical SEO optimization",
+      "Internal linking architecture",
+      "Competitor search gap analysis",
+      "Google Business optimization",
+      "Analytics & conversion tracking",
+      "50 professionally structured service + location pages",
+      "Conversion-focused landing page structure",
+      "Search visibility expansion across multiple service areas",
     ],
-    notIncluded: [
-      "Custom web development",
-      "Large-scale ecommerce development",
-    ],
+    value: "Built to help businesses capture more high-intent local searches across the exact regions they already operate in. Perfect for law firms, contractors, clinics, and home service businesses.",
   },
   {
-    name: "Custom",
-    badge: "Custom",
-    tagline: "For multi-location service businesses ready to scale lead generation across markets.",
-    starting: null,
-    period: null,
-    note: "Scoped to your business",
+    name: "Regional Growth System",
+    badge: null,
+    tagline: "For businesses aggressively expanding visibility across broader regional markets.",
+    price: "4,990",
+    pageCount: "100+",
+    pageLabel: "professionally structured service + location pages",
     color: "#0e0e0e",
-    cta: "Request a custom proposal",
+    cta: "Get started",
     features: [
-      "Multi-channel lead generation management",
-      "Dedicated account team (3+ specialists)",
-      "Weekly calls + on-demand access",
-      "Custom reporting & attribution modelling",
-      "Programmatic SEO builds (pSEO)",
-      "Ecommerce development & CRO",
-      "Multi-market & multi-language SEO",
-      "Executive business reviews (quarterly)",
-      "Custom AI & automation integration",
-      "White-glove onboarding",
+      "Advanced local SEO architecture",
+      "Regional keyword strategy",
+      "Deep competitor analysis",
+      "Technical SEO optimization",
+      "Conversion optimization improvements",
+      "Internal linking & topical clustering",
+      "Multi-market visibility planning",
+      "Analytics & lead tracking setup",
+      "100+ professionally structured service + location pages",
+      "Scalable search expansion framework",
     ],
-    notIncluded: [],
+    value: "Designed for businesses wanting broad regional visibility and long-term inbound lead growth across multiple cities and service categories.",
   },
 ];
 
 const PRICING_FAQ = [
   {
-    q: "Are there setup or onboarding fees?",
-    a: "No. All our plans include onboarding, the initial audit and strategy document, and dashboard setup — at no additional cost. We front-load the work because it's the foundation everything else depends on.",
+    q: "What are 'professionally structured service + location pages'?",
+    a: "These are custom-built, SEO-optimised pages that target specific combinations of your services and the cities or neighbourhoods you serve. For example: 'HVAC repair Markham' or 'family lawyer Vaughan'. Each page is built to capture high-intent local search traffic and convert visitors into leads.",
   },
   {
-    q: "Do you require a long-term contract?",
-    a: "Initial projects are 6 months (to give strategies time to produce results), then month-to-month. We've kept exits easy deliberately — clients stay because the lead generation keeps working.",
+    q: "How quickly will I see results?",
+    a: "Most clients see Google Business Profile improvements and early ranking movement within 30–60 days of launch. Organic page rankings typically build over 3–6 months as Google indexes and evaluates the new content.",
   },
   {
-    q: "Does the price include ad spend?",
-    a: "No. Our fee is for strategy, management, and execution. Your ad budget is billed directly through Google/Meta and goes 100% to media — not our margin.",
+    q: "Can I add the ongoing monthly service later?",
+    a: "Yes. Many clients complete a setup package first, then add the $690/month Ongoing SEO Growth plan to continue expanding visibility, adding pages, and monitoring performance over time.",
   },
   {
-    q: "Can I start with one channel and add more?",
-    a: "Yes, and many clients do. We often start with the highest-leverage channel for your business and expand as you see results. Growing from one channel to two is straightforward.",
+    q: "Do these pages actually rank — or are they just 'AI content'?",
+    a: "These are professionally structured pages built around real keyword research specific to your market. They include proper on-page SEO, internal linking, and conversion-focused layouts. Not generic AI filler.",
   },
   {
-    q: "What if I'm not sure which plan fits?",
-    a: "The free audit call resolves that. We assess your market, your goals, and your current baseline — then tell you exactly what level of engagement makes sense. No pressure, no upsell.",
+    q: "Which plan is right for my business?",
+    a: "The free strategy call resolves this. We look at your service area, competition, and goals — then recommend the right starting point. No pressure, no upsell.",
   },
 ];
 
@@ -127,40 +122,37 @@ function PlanCard({ plan, index }: { plan: typeof PLANS[0]; index: number }) {
       }`}
     >
       {plan.badge && (
-        <div className={`py-2 text-center text-[10px] font-black uppercase tracking-widest ${
-          isPop ? "bg-primary text-white" : "bg-[#08090d] text-white"
-        }`}>
+        <div className="py-2 text-center text-[10px] font-black uppercase tracking-widest bg-primary text-white">
           {plan.badge}
         </div>
       )}
 
       <div className="p-7 flex flex-col flex-1">
-        <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-1">{plan.name}</p>
-        <p className="text-gray-500 text-sm leading-snug mb-6 min-h-[40px]">{plan.tagline}</p>
+        {/* Plan name */}
+        <p className={`text-[11px] font-black uppercase tracking-widest mb-1 ${isPop ? "text-primary" : "text-gray-400"}`}>{plan.name}</p>
+        <p className="text-gray-500 text-sm leading-snug mb-5">{plan.tagline}</p>
 
-        <div className="mb-1">
-          {plan.starting ? (
-            <div className="flex items-end gap-1">
-              <span className="text-gray-400 text-sm font-medium mb-2">Starting from</span>
-            </div>
-          ) : null}
-          <div className="flex items-baseline gap-1">
-            {plan.starting ? (
-              <>
-                <span className="text-gray-500 text-xl font-bold">$</span>
-                <span className="text-5xl font-black text-[#0e0e0e] leading-none">{plan.starting}</span>
-                <span className="text-gray-400 text-sm font-medium">{plan.period}</span>
-              </>
-            ) : (
-              <span className="text-4xl font-black text-[#0e0e0e] leading-none">Custom</span>
-            )}
+        {/* Price */}
+        <div className="mb-5">
+          <div className="flex items-baseline gap-1 mb-1">
+            <span className="text-gray-400 text-lg font-bold">$</span>
+            <span className="text-5xl font-black text-[#0e0e0e] leading-none">{plan.price}</span>
           </div>
-          <p className="text-gray-400 text-[11px] mt-1">{plan.note}</p>
+          <p className="text-gray-400 text-xs">One-time setup investment</p>
         </div>
 
-        <div className="mt-6 mb-6">
+        {/* Page count highlight */}
+        <div className={`rounded-xl p-4 mb-5 border ${isPop ? "bg-primary/5 border-primary/20" : "bg-[#f9f8f5] border-[#e5e2d9]"}`}>
+          <div className="flex items-center gap-3">
+            <div className={`text-4xl font-black leading-none ${isPop ? "text-primary" : "text-[#0e0e0e]"}`}>{plan.pageCount}</div>
+            <p className="text-xs text-gray-500 leading-snug">{plan.pageLabel}</p>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="mb-6">
           <Link
-            href={plan.starting ? "/contact" : "/contact"}
+            href="/contact"
             className={`w-full flex items-center justify-center gap-2 font-bold py-3.5 rounded-xl text-sm transition-colors group ${
               isPop
                 ? "bg-primary text-white hover:bg-primary/90"
@@ -171,29 +163,21 @@ function PlanCard({ plan, index }: { plan: typeof PLANS[0]; index: number }) {
           </Link>
         </div>
 
-        <div className="border-t border-[#e5e2d9] pt-6 flex-1">
+        {/* Features */}
+        <div className="border-t border-[#e5e2d9] pt-5 flex-1">
           <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-4">What's included</p>
-          <ul className="space-y-3 mb-6">
+          <ul className="space-y-2.5 mb-5">
             {plan.features.map((f) => (
-              <li key={f} className="flex items-start gap-2.5 text-sm text-[#0e0e0e]">
+              <li key={f} className={`flex items-start gap-2.5 text-sm ${f.includes("professionally structured") ? "font-bold text-[#0e0e0e]" : "text-[#0e0e0e]"}`}>
                 <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                 {f}
               </li>
             ))}
           </ul>
-          {plan.notIncluded.length > 0 && (
-            <>
-              <p className="text-[10px] font-black uppercase tracking-widest text-gray-300 mb-3">Not included</p>
-              <ul className="space-y-2">
-                {plan.notIncluded.map((f) => (
-                  <li key={f} className="flex items-start gap-2.5 text-sm text-gray-400">
-                    <X className="w-4 h-4 text-gray-300 flex-shrink-0 mt-0.5" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
+          <div className="rounded-xl bg-[#f9f8f5] border border-[#e5e2d9] p-4">
+            <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-2">Who it's for</p>
+            <p className="text-xs text-gray-500 leading-relaxed">{plan.value}</p>
+          </div>
         </div>
       </div>
     </motion.div>
@@ -217,8 +201,8 @@ function PricingFaqItem({ q, a, index }: { q: string; a: string; index: number }
 
 export function PricingPage() {
   useSeo({
-    title: "Digital Marketing Pricing Toronto | Outlier",
-    description: "See straightforward Toronto digital marketing pricing for SEO, Google Ads, and growth campaigns from Outlier.",
+    title: "Local SEO Pricing | Outlier — Markham, Ontario",
+    description: "Transparent local SEO pricing for Ontario service businesses. Professionally structured service and location pages that expand your search visibility footprint.",
     canonicalPath: "/pricing",
   });
   return (
@@ -229,23 +213,23 @@ export function PricingPage() {
       <section className="relative bg-[#08090d] pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:72px_72px]" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-primary/10 rounded-full blur-[150px] pointer-events-none" />
-        <div className="container mx-auto px-4 max-w-7xl relative z-10 text-center">
+        <div className="container mx-auto px-4 max-w-4xl relative z-10 text-center">
           <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}
             className="text-[11px] font-black uppercase tracking-widest text-primary mb-4">Transparent Pricing</motion.p>
           <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.07, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl md:text-6xl font-black text-white leading-[1.05] max-w-3xl mx-auto mb-5">
-            Straightforward pricing.<br /><span className="text-primary italic">No percentage of spend.</span>
+            className="text-4xl md:text-6xl font-black text-white leading-[1.05] mb-5">
+            Expand your visibility footprint.<br /><span className="text-primary italic">More markets. More leads.</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.15 }}
-            className="text-white/40 text-lg max-w-xl mx-auto leading-relaxed mb-8">
-            We charge a flat strategic fee — not a cut of your ad budget. Your media spend goes 100% to media.
+            className="text-white/50 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-8">
+            Each package builds professionally structured service and location pages — expanding the number of local searches your business appears for across the exact cities and services you offer.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.25 }}
-            className="flex flex-wrap gap-6 justify-center">
+            className="flex flex-wrap gap-4 md:gap-6 justify-center">
             {[
-              { icon: Shield, text: "No percentage-of-spend fees" },
-              { icon: Clock, text: "6-month initial, then month-to-month" },
-              { icon: Star, text: "93% client retention rate" },
+              { icon: Shield, text: "No monthly retainer required" },
+              { icon: Clock, text: "Results typically visible in 30–90 days" },
+              { icon: Star, text: "4.9★ Clutch rating" },
             ].map((b) => (
               <div key={b.text} className="flex items-center gap-2 text-white/50 text-sm">
                 <b.icon className="w-4 h-4 text-primary" />
@@ -256,75 +240,80 @@ export function PricingPage() {
         </div>
       </section>
 
+      {/* Why page count matters */}
+      <section className="py-10 bg-white border-b border-[#e5e2d9]">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="grid md:grid-cols-3 gap-6 text-center">
+            {[
+              { icon: "📍", title: "More cities covered", desc: "Each location page targets a specific city or neighbourhood where your customers search." },
+              { icon: "🔍", title: "More services ranked", desc: "Each service page captures buyers searching for that specific service in your area." },
+              { icon: "📈", title: "More inbound leads", desc: "More targeted pages = more entry points for high-intent local searches to find you." },
+            ].map((item) => (
+              <div key={item.title} className="flex flex-col items-center p-6 rounded-2xl bg-[#f9f8f5] border border-[#e5e2d9]">
+                <span className="text-3xl mb-3">{item.icon}</span>
+                <p className="font-black text-[#0e0e0e] text-base mb-2">{item.title}</p>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Plans */}
-      <section className="py-20">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid lg:grid-cols-3 gap-6 mb-12">
+          <div className="text-center mb-12">
+            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Setup Packages</p>
+            <h2 className="text-3xl md:text-4xl font-black text-[#0e0e0e] mb-3">Choose your visibility footprint</h2>
+            <p className="text-gray-500 text-base max-w-xl mx-auto">One-time investment. Professionally structured pages built to generate inbound leads from local search.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
             {PLANS.map((plan, i) => (
               <PlanCard key={plan.name} plan={plan} index={i} />
             ))}
           </div>
 
-          {/* All plans note */}
+          {/* Ongoing monthly add-on */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-[#08090d] rounded-2xl p-8 text-center"
+            transition={{ duration: 0.6 }}
+            className="bg-[#08090d] rounded-2xl overflow-hidden"
           >
-            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Every Plan Includes</p>
-            <div className="flex flex-wrap gap-x-8 gap-y-3 justify-center">
-              {[
-                "Free initial audit & strategy doc",
-                "Senior team from day one",
-                "Live Looker Studio dashboard",
-                "No setup fees",
-                "Weekly written updates",
-                "No lock-in after initial term",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-2 text-white/60 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                  {item}
+            <div className="p-8 md:p-10 grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Ongoing Monthly Growth</p>
+                <h3 className="text-2xl md:text-3xl font-black text-white mb-3">Ongoing SEO Growth</h3>
+                <p className="text-white/50 text-sm leading-relaxed mb-6">For continued growth, optimization, and expansion after your setup is complete. Add new pages, monitor rankings, and keep improving over time.</p>
+                <div className="flex items-baseline gap-2 mb-6">
+                  <span className="text-white/50 text-lg font-bold">$</span>
+                  <span className="text-5xl font-black text-white leading-none">690</span>
+                  <span className="text-white/40 text-base">/month</span>
                 </div>
-              ))}
+                <Link href="/contact" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3.5 rounded-xl text-sm hover:bg-primary/90 transition-colors group">
+                  Add to any package <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </Link>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  "Ongoing SEO improvements",
+                  "New page additions",
+                  "Performance monitoring",
+                  "Search visibility optimization",
+                  "Local SEO enhancements",
+                  "Reporting & analytics",
+                  "Conversion improvements",
+                  "Competitor tracking",
+                ].map((f) => (
+                  <div key={f} className="flex items-start gap-2 text-white/60 text-sm">
+                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                    {f}
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Add-ons */}
-      <section className="py-16 bg-white border-y border-[#e5e2d9]">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="max-w-xl mb-10">
-            <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Optional Add-Ons</p>
-            <h2 className="text-2xl md:text-3xl font-black text-[#0e0e0e] leading-[1.1]">Extend any plan with additional services</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { service: "Content Production", desc: "Monthly blog posts, landing pages, and pillar content. From $800/mo.", icon: BarChart3 },
-              { service: "Web Design & Development", desc: "New site builds, landing pages, and full redesigns. Custom scoped.", icon: Zap },
-              { service: "Programmatic SEO Build", desc: "1,000+ city/service page builds with dynamic data templating. From $5,000.", icon: Search },
-              { service: "Additional Locations", desc: "Local SEO for additional business locations. From $400/location/mo.", icon: Target },
-              { service: "Paid Social Management", desc: "Meta, LinkedIn, TikTok campaigns. From $1,500/mo + spend.", icon: Users },
-              { service: "AI & Automation", desc: "CRM automation, lead capture AI, workflow integration. Custom scoped.", icon: TrendingUp },
-            ].map((a, i) => (
-              <motion.div
-                key={a.service}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07, duration: 0.45 }}
-                className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-xl p-5 hover:border-primary/25 transition-all"
-              >
-                <div className="w-9 h-9 rounded-lg bg-primary/8 flex items-center justify-center mb-4">
-                  <a.icon className="w-4 h-4 text-primary" />
-                </div>
-                <p className="font-black text-[#0e0e0e] text-[15px] mb-1.5">{a.service}</p>
-                <p className="text-gray-500 text-[13px] leading-relaxed">{a.desc}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -418,9 +407,10 @@ const AUDIT_SERVICES = [
 ];
 
 export function FreeAuditPage() {
+  const [submitted, setSubmitted] = useState(false);
   useSeo({
-    title: "Free Digital Marketing Audit | Outlier Toronto",
-    description: "Request a free growth audit from Outlier. A senior strategist reviews your website, ad accounts, and competitive landscape — then walks you through a custom roadmap.",
+    title: "Free Local SEO Audit | Outlier — Markham, Ontario",
+    description: "Request a free growth audit from Outlier. A senior strategist reviews your website and local search visibility — then walks you through exactly what to do.",
     canonicalPath: "/free-audit",
   });
   return (
@@ -575,11 +565,11 @@ export function FreeAuditPage() {
               {/* Contact alternative */}
               <div className="bg-[#f9f8f5] border border-[#e5e2d9] rounded-xl p-5">
                 <p className="font-bold text-[#0e0e0e] text-sm mb-3">Prefer to call directly?</p>
-                <a href="tel:+18005550199" className="flex items-center gap-2 text-primary font-bold text-sm hover:text-primary/80 transition-colors">
-                  <Phone className="w-4 h-4" /> 1-800-555-0199
+                <a href="tel:+12898189102" className="flex items-center gap-2 text-primary font-bold text-sm hover:text-primary/80 transition-colors">
+                  <Phone className="w-4 h-4" /> +1 (289) 818-9102
                 </a>
-                <a href="mailto:hello@outlier.co" className="flex items-center gap-2 text-primary font-bold text-sm hover:text-primary/80 transition-colors mt-2">
-                  <Mail className="w-4 h-4" /> hello@outlier.co
+                <a href="mailto:Wabisabiiinc@gmail.com" className="flex items-center gap-2 text-primary font-bold text-sm hover:text-primary/80 transition-colors mt-2">
+                  <Mail className="w-4 h-4" /> Wabisabiiinc@gmail.com
                 </a>
               </div>
             </div>
@@ -587,9 +577,20 @@ export function FreeAuditPage() {
             {/* Audit form */}
             <div className="lg:col-span-3">
               <div className="bg-white border border-[#e5e2d9] rounded-2xl p-8 shadow-sm">
+                {submitted ? (
+                  <div className="py-14 text-center">
+                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
+                      <CheckCircle2 className="w-8 h-8 text-primary" />
+                    </div>
+                    <h3 className="text-2xl font-black text-[#0e0e0e] mb-3">Audit request received!</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed max-w-sm mx-auto mb-2">We'll review your site and reach out within 1 business day — usually the same day — to schedule your free strategy call.</p>
+                    <p className="text-gray-400 text-xs">Check your email for a confirmation. Questions? Email <a href="mailto:Wabisabiiinc@gmail.com" className="text-primary font-semibold">Wabisabiiinc@gmail.com</a></p>
+                  </div>
+                ) : (
+                  <>
                 <h3 className="text-xl font-black text-[#0e0e0e] mb-2">Request your free audit</h3>
                 <p className="text-gray-400 text-sm mb-7">We'll review your submission and reach out within 1 business day to schedule the call.</p>
-                <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">First name *</label>
@@ -628,6 +629,8 @@ export function FreeAuditPage() {
                   </button>
                   <p className="text-center text-gray-400 text-[11px]">No spam. No automated responses. A senior strategist reviews every submission.</p>
                 </form>
+                  </>
+                )}
               </div>
             </div>
           </div>
