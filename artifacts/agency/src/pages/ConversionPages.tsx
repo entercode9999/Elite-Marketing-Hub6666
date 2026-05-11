@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import {
   ArrowRight, CheckCircle2, Star, Shield, Clock, Zap, TrendingUp,
-  BarChart3, Search, Users, Phone, Mail, Target, Award, Check, X,
+  BarChart3, Search, Users, Phone, Mail, Target, Award, Check, X, MapPin,
 } from "lucide-react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -241,18 +241,47 @@ export function PricingPage() {
       </section>
 
       {/* Why page count matters */}
-      <section className="py-10 bg-white border-b border-[#e5e2d9]">
+      <section className="py-12 bg-white border-b border-[#e5e2d9]">
         <div className="container mx-auto px-4 max-w-5xl">
-          <div className="grid md:grid-cols-3 gap-6 text-center">
+          <div className="grid md:grid-cols-3 gap-4">
             {[
-              { icon: "📍", title: "More cities covered", desc: "Each location page targets a specific city or neighbourhood where your customers search." },
-              { icon: "🔍", title: "More services ranked", desc: "Each service page captures buyers searching for that specific service in your area." },
-              { icon: "📈", title: "More inbound leads", desc: "More targeted pages = more entry points for high-intent local searches to find you." },
+              {
+                Icon: MapPin,
+                color: "#1a56ff",
+                title: "More cities covered",
+                desc: "Each location page targets a specific city or neighbourhood where your customers search.",
+                stat: "15–100+",
+                statLabel: "local pages per package",
+              },
+              {
+                Icon: Search,
+                color: "#7c3aed",
+                title: "More services ranked",
+                desc: "Each service page captures buyers searching for that specific service in your area.",
+                stat: "High-intent",
+                statLabel: "local search traffic",
+              },
+              {
+                Icon: TrendingUp,
+                color: "#20c997",
+                title: "More inbound leads",
+                desc: "More targeted pages = more entry points for local searches to reach your business.",
+                stat: "30–90 days",
+                statLabel: "to first ranking movement",
+              },
             ].map((item) => (
-              <div key={item.title} className="flex flex-col items-center p-6 rounded-2xl bg-[#f9f8f5] border border-[#e5e2d9]">
-                <span className="text-3xl mb-3">{item.icon}</span>
-                <p className="font-black text-[#0e0e0e] text-base mb-2">{item.title}</p>
-                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="flex gap-4 p-6 rounded-2xl bg-[#f9f8f5] border border-[#e5e2d9] hover:border-primary/20 hover:shadow-sm transition-all">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: `${item.color}15` }}>
+                  <item.Icon className="w-5 h-5" style={{ color: item.color }} />
+                </div>
+                <div>
+                  <p className="font-black text-[#0e0e0e] text-[15px] mb-1">{item.title}</p>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-3">{item.desc}</p>
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="font-black text-sm" style={{ color: item.color }}>{item.stat}</span>
+                    <span className="text-gray-400 text-[11px]">{item.statLabel}</span>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -273,47 +302,6 @@ export function PricingPage() {
             ))}
           </div>
 
-          {/* Ongoing monthly add-on */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-[#08090d] rounded-2xl overflow-hidden"
-          >
-            <div className="p-8 md:p-10 grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Ongoing Monthly Growth</p>
-                <h3 className="text-2xl md:text-3xl font-black text-white mb-3">Ongoing SEO Growth</h3>
-                <p className="text-white/50 text-sm leading-relaxed mb-6">For continued growth, optimization, and expansion after your setup is complete. Add new pages, monitor rankings, and keep improving over time.</p>
-                <div className="flex items-baseline gap-2 mb-6">
-                  <span className="text-white/50 text-lg font-bold">$</span>
-                  <span className="text-5xl font-black text-white leading-none">690</span>
-                  <span className="text-white/40 text-base">/month</span>
-                </div>
-                <Link href="/contact" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3.5 rounded-xl text-sm hover:bg-primary/90 transition-colors group">
-                  Add to any package <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                </Link>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                {[
-                  "Ongoing SEO improvements",
-                  "New page additions",
-                  "Performance monitoring",
-                  "Search visibility optimization",
-                  "Local SEO enhancements",
-                  "Reporting & analytics",
-                  "Conversion improvements",
-                  "Competitor tracking",
-                ].map((f) => (
-                  <div key={f} className="flex items-start gap-2 text-white/60 text-sm">
-                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                    {f}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
 
