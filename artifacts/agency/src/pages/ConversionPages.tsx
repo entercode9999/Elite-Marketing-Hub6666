@@ -607,7 +607,7 @@ export function FreeAuditPage() {
                   </div>
                   <div>
                     <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">Business website *</label>
-                    <input name="website" type="url" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="https://yoursite.ca" required />
+                    <input name="website" type="text" inputMode="url" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="yoursite.ca" required />
                   </div>
                   <div>
                     <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">Work email *</label>
