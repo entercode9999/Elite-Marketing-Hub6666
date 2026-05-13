@@ -135,7 +135,7 @@ function ProcessTab({ steps }: { steps: HubProcess[] }) {
             <h3 className="text-2xl font-black text-[#0e0e0e] mb-4">{current.headline}</h3>
             <p className="text-base text-gray-500 leading-relaxed mb-6">{current.description}</p>
             <Link
-              href="/contact"
+              href="/book-call"
               className="inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-6 rounded-xl text-sm group hover:bg-primary/90 transition-colors"
             >
               Book a Free Strategy Call
@@ -312,15 +312,15 @@ export function ServiceHubPage({ data }: { data: HubData }) {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://outliermarketing.ca/" },
-        { "@type": "ListItem", "position": 2, "name": data.breadcrumb, "item": `https://outliermarketing.ca/${data.slug}` },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://outlierdigital.ca/" },
+        { "@type": "ListItem", "position": 2, "name": data.breadcrumb, "item": `https://outlierdigital.ca/${data.slug}` },
       ],
     },
     {
       "@type": "Service",
       "name": data.hero.headline,
       "description": data.hero.description.slice(0, 300),
-      "provider": { "@type": "LocalBusiness", "@id": "https://outliermarketing.ca/#business", "name": "Outlier Digital Marketing" },
+      "provider": { "@type": "LocalBusiness", "@id": "https://outlierdigital.ca/#business", "name": "Outlier Digital Marketing" },
       "areaServed": { "@type": "City", "name": "Toronto", "addressCountry": "CA" },
     },
     ...(data.faqs.length > 0 ? [{

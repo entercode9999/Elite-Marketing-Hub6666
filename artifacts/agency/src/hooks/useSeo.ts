@@ -8,7 +8,7 @@ type SeoOptions = {
   schema?: Record<string, unknown> | Record<string, unknown>[];
 };
 
-const DEFAULT_IMAGE = "https://outliermarketing.ca/opengraph.jpg";
+const DEFAULT_IMAGE = "https://outlierdigital.ca/opengraph.jpg";
 const SITE_NAME = "Outlier Digital Marketing";
 
 export function useSeo({ title, description, canonicalPath, image, schema }: SeoOptions) {

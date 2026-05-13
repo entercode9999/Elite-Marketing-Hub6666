@@ -2720,8 +2720,8 @@ export default function CityServicePage() {
       {
         "@type": "ProfessionalService",
         "name": "Outlier Digital Marketing",
-        "url": "https://outliermarketing.ca",
-        "logo": "https://outliermarketing.ca/favicon.svg",
+        "url": "https://outlierdigital.ca",
+        "logo": "https://outlierdigital.ca/favicon.svg",
         "telephone": "+1-289-818-9102",
         "priceRange": "$$",
         "email": "contact@outlierdigital.ca",
@@ -2762,10 +2762,10 @@ export default function CityServicePage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://outliermarketing.ca/" },
-          { "@type": "ListItem", "position": 2, "name": "Cities We Serve", "item": "https://outliermarketing.ca/cities" },
-          { "@type": "ListItem", "position": 3, "name": city.name, "item": `https://outliermarketing.ca/${citySlug}/seo-services` },
-          { "@type": "ListItem", "position": 4, "name": svc.label, "item": `https://outliermarketing.ca/${citySlug}/${serviceSlug}` },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://outlierdigital.ca/" },
+          { "@type": "ListItem", "position": 2, "name": "Cities We Serve", "item": "https://outlierdigital.ca/cities" },
+          { "@type": "ListItem", "position": 3, "name": city.name, "item": `https://outlierdigital.ca/${citySlug}/seo-services` },
+          { "@type": "ListItem", "position": 4, "name": svc.label, "item": `https://outlierdigital.ca/${citySlug}/${serviceSlug}` },
         ],
       },
     ],
@@ -3142,7 +3142,7 @@ export default function CityServicePage() {
                 <p className="text-white/50 text-sm leading-relaxed mb-6">
                   We audit your current position, analyse your competition in {city.name}, and give you a clear picture of the traffic, leads, and growth available from {svc.shortLabel.toLowerCase()}. Then we scope an engagement that makes sense for your specific situation.
                 </p>
-                <Link href="/contact" className="flex items-center justify-center gap-2 bg-primary text-white font-bold px-6 py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-[15px] w-full">
+                <Link href="/book-call" className="flex items-center justify-center gap-2 bg-primary text-white font-bold px-6 py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-[15px] w-full">
                   Get Free {city.name} Audit <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

@@ -140,17 +140,17 @@ export function LocationServicePage({ data }: { data: LocationData }) {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://outliermarketing.ca/" },
-        { "@type": "ListItem", "position": 2, "name": "Cities We Serve", "item": "https://outliermarketing.ca/cities" },
-        { "@type": "ListItem", "position": 3, "name": data.city, "item": `https://outliermarketing.ca/${data.slug}/seo-services` },
-        { "@type": "ListItem", "position": 4, "name": data.service, "item": `https://outliermarketing.ca${canonicalPath}` },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://outlierdigital.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "Cities We Serve", "item": "https://outlierdigital.ca/cities" },
+        { "@type": "ListItem", "position": 3, "name": data.city, "item": `https://outlierdigital.ca/${data.slug}/seo-services` },
+        { "@type": "ListItem", "position": 4, "name": data.service, "item": `https://outlierdigital.ca${canonicalPath}` },
       ],
     },
     {
       "@type": "LocalBusiness",
-      "@id": "https://outliermarketing.ca/#business",
+      "@id": "https://outlierdigital.ca/#business",
       "name": "Outlier Digital Marketing",
-      "url": "https://outliermarketing.ca",
+      "url": "https://outlierdigital.ca",
       "areaServed": {
         "@type": "City",
         "name": data.city,

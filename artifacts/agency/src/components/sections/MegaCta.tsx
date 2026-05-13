@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Phone } from "lucide-react";
 
@@ -34,20 +35,26 @@ export function MegaCta() {
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button
+              asChild
               size="lg"
               className="h-16 px-10 text-lg bg-white text-primary hover:bg-white/90 border-none rounded-md group font-semibold"
             >
-              <Calendar className="mr-2 h-5 w-5" />
-              Book a Strategy Call
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <Link href="/book-call">
+                <Calendar className="mr-2 h-5 w-5" />
+                Book a Strategy Call
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="h-16 px-10 text-lg rounded-md border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white font-semibold"
             >
-              <Phone className="mr-2 h-5 w-5" />
-              Get a Free Audit
+              <Link href="/free-audit">
+                <Phone className="mr-2 h-5 w-5" />
+                Get a Free Audit
+              </Link>
             </Button>
           </div>
 

@@ -85,10 +85,10 @@ const caseStudies = [
 const HOME_SCHEMA = [
   {
     "@type": "LocalBusiness",
-    "@id": "https://outliermarketing.ca/#business",
+    "@id": "https://outlierdigital.ca/#business",
     "name": "Outlier Digital Marketing",
-    "url": "https://outliermarketing.ca",
-    "logo": "https://outliermarketing.ca/favicon.svg",
+    "url": "https://outlierdigital.ca",
+    "logo": "https://outlierdigital.ca/favicon.svg",
     "telephone": "+12898189102",
     "email": "contact@outlierdigital.ca",
     "description": "Boutique lead generation agency helping Ontario service businesses generate more inbound leads through SEO, paid ads, and conversion systems.",
@@ -110,11 +110,11 @@ const HOME_SCHEMA = [
   },
   {
     "@type": "WebSite",
-    "@id": "https://outliermarketing.ca/#website",
-    "url": "https://outliermarketing.ca",
+    "@id": "https://outlierdigital.ca/#website",
+    "url": "https://outlierdigital.ca",
     "name": "Outlier Digital Marketing",
     "description": "Toronto's strategy-first digital marketing agency.",
-    "publisher": { "@id": "https://outliermarketing.ca/#business" },
+    "publisher": { "@id": "https://outlierdigital.ca/#business" },
   },
   {
     "@type": "FAQPage",

@@ -13,6 +13,7 @@ const sections = [
       ["Insights", "/insights"],
       ["Pricing", "/pricing"],
       ["Testimonials", "/testimonials"],
+      ["Book a Strategy Call", "/book-call"],
       ["Contact", "/contact"],
     ],
   },
@@ -40,8 +41,8 @@ const sections = [
   },
 ];
 
-const urlTotal = 215;
-const indexableTotal = 215;
+const urlTotal = 694;
+const indexableTotal = 694;
 
 export default function SitemapPage() {
   useSeo({

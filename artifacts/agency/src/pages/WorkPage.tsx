@@ -792,7 +792,7 @@ export function OurWorkPage() {
             Every case study above started with a free strategy call. We assessed the market, identified the opportunity, and built a plan. That's how we start every engagement.
           </p>
           <Link
-            href="/contact"
+            href="/book-call"
             className="relative overflow-hidden shimmer-button inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-4 rounded-xl hover:bg-primary/90 transition-colors text-[15px] animate-glow-pulse group"
           >
             Book a Free Strategy Call <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
@@ -1550,7 +1550,7 @@ function CaseStudyPageInner({ cs }: { cs: CaseStudyData }) {
             Book a free strategy call. We'll assess your market, identify your biggest opportunity, and tell you exactly what it would take to achieve results like the ones above.
           </p>
           <Link
-            href="/contact"
+            href="/book-call"
             className="relative overflow-hidden shimmer-button inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-4 rounded-xl hover:bg-primary/90 transition-colors text-[15px] animate-glow-pulse group"
           >
             Book Free Strategy Call <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />

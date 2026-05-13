@@ -16,7 +16,7 @@ import { fileURLToPath } from "url";
 
 const __dir = dirname(fileURLToPath(import.meta.url));
 const distDir = join(__dir, "..", "dist", "public");
-const BASE = "https://outliermarketing.ca";
+const BASE = "https://outlierdigital.ca";
 
 /* ── Province abbreviations ──────────────────────────────────────── */
 const PA = {
@@ -156,7 +156,7 @@ function fill(tpl, cityName, pa) {
   return tpl.replace(/\[City\]/g, cityName).replace(/\[PA\]/g, pa);
 }
 
-const OG_IMAGE = "https://outliermarketing.ca/opengraph.jpg";
+const OG_IMAGE = "https://outlierdigital.ca/opengraph.jpg";
 const SITE_NAME = "Outlier Digital Marketing";
 
 function injectMeta(baseHtml, title, description, canonical) {
@@ -250,3 +250,169 @@ for (const page of INDUSTRY_PAGES) {
 }
 
 console.log(`✓ Prerendered ${count} pages in ${Date.now() - start}ms`);
+
+/* ── XML sitemap ───────────────────────────────────────────────── */
+const STATIC_PATHS = [
+  "/",
+  "/about",
+  "/contact",
+  "/our-work",
+  "/insights",
+  "/careers",
+  "/privacy",
+  "/terms",
+  "/accessibility",
+  "/sitemap",
+  "/pricing",
+  "/free-audit",
+  "/book-call",
+  "/testimonials",
+  "/cities",
+  "/custom-web-design-service",
+  "/website-development-service",
+  "/wordpress-development-service",
+  "/joomla-development-service",
+  "/drupal-development-service",
+  "/laravel-web-development",
+  "/ecommerce-development",
+  "/magento-development",
+  "/shopify-development",
+  "/shopify-plus-development",
+  "/headless-commerce-service",
+  "/adobe-commerce-development",
+  "/magento-2-development",
+  "/magento-2-migration",
+  "/magento-2-support",
+  "/hyva-theme-development",
+  "/hyva-enterprise-solutions",
+  "/seo-services",
+  "/technical-seo-service",
+  "/ai-seo-service",
+  "/digital-marketing",
+  "/content-marketing-service",
+  "/ai-chatbot-service",
+  "/social-media-advertising",
+  "/local-seo-service",
+  "/google-ads-management",
+  "/gbp-optimisation",
+  "/citation-audit",
+  "/review-generation",
+  "/local-landing-pages",
+  "/local-link-building",
+  "/local-seo-reporting",
+  "/google-search-campaigns",
+  "/local-service-ads",
+  "/performance-max",
+  "/paid-social-service",
+  "/display-retargeting",
+  "/youtube-ads-service",
+  "/cro-service",
+  "/website-redesign-service",
+  "/landing-page-design",
+  "/ui-ux-design",
+  "/blog-writing-service",
+  "/topical-authority-service",
+  "/email-marketing-service",
+  "/social-media-service",
+  "/video-script-service",
+  "/core-web-vitals-service",
+  "/crawl-budget-service",
+  "/structured-data-service",
+  "/redirect-audit-service",
+  "/international-seo-service",
+  "/ai-workflow-service",
+  "/ai-integration-service",
+  "/custom-ai-service",
+  "/app-development-service",
+  "/ai-lead-capture-service",
+  "/dental-marketing",
+  "/legal-marketing",
+  "/home-services-marketing",
+  "/real-estate-marketing",
+  "/ecommerce-marketing",
+  "/auto-marketing",
+  "/saas-marketing",
+  "/fitness-marketing",
+  "/restaurant-marketing",
+  "/b2b-marketing",
+  "/b2c-marketing",
+  "/d2c-marketing",
+  "/food-beverage-marketing",
+  "/education-marketing",
+  "/transportation-marketing",
+  "/healthcare-marketing",
+  "/travel-marketing",
+  "/fashion-marketing",
+  "/entertainment-marketing",
+  "/technology-marketing",
+  "/small-business-marketing",
+  "/construction-marketing",
+  "/law-marketing",
+  "/sports-fitness-marketing",
+  "/toronto/local-seo-service",
+  "/mississauga/local-seo-service",
+  "/ottawa/local-seo-service",
+];
+
+const INSIGHT_PATHS = [
+  "/insights/local-seo-2025",
+  "/insights/ai-overviews-2025",
+  "/insights/true-cost-bad-website",
+  "/insights/ppc-budget-waste-7-mistakes",
+  "/insights/topical-authority-playbook",
+  "/insights/meridian-dental-map-pack",
+  "/insights/gta-home-pros-google-ads",
+  "/insights/citation-audit-framework",
+];
+
+const CASE_STUDY_PATHS = [
+  "/our-work/toronto-limo-co",
+  "/our-work/meridian-dental",
+  "/our-work/gta-home-pros",
+  "/our-work/axiom-law",
+  "/our-work/northview-kitchens",
+  "/our-work/purecycle-fitness",
+  "/our-work/bluesky-roofing",
+];
+
+const sitemapUrls = new Set([
+  ...STATIC_PATHS,
+  ...INSIGHT_PATHS,
+  ...CASE_STUDY_PATHS,
+  ...INDUSTRY_PAGES.map((page) => `/${page.path}`),
+]);
+
+for (const citySlug of Object.keys(CITIES)) {
+  for (const serviceSlug of Object.keys(SERVICES)) {
+    sitemapUrls.add(`/${citySlug}/${serviceSlug}`);
+  }
+}
+
+function priorityForPath(path) {
+  if (path === "/") return "1.0";
+  if (["/contact", "/free-audit", "/book-call", "/cities"].includes(path)) return "0.9";
+  if (path.includes("/seo-services") || path.includes("/local-seo") || path.includes("/google-ads")) return "0.8";
+  if (path.startsWith("/privacy") || path.startsWith("/terms") || path.startsWith("/accessibility")) return "0.3";
+  return "0.7";
+}
+
+function changefreqForPath(path) {
+  if (path === "/" || path === "/insights" || path === "/cities") return "weekly";
+  if (path.startsWith("/privacy") || path.startsWith("/terms") || path.startsWith("/accessibility")) return "yearly";
+  return "monthly";
+}
+
+const sitemapXml = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  ...Array.from(sitemapUrls).sort((a, b) => a.localeCompare(b)).map((path) => {
+    const loc = path === "/" ? `${BASE}/` : `${BASE}${path}`;
+    return `  <url><loc>${loc}</loc><changefreq>${changefreqForPath(path)}</changefreq><priority>${priorityForPath(path)}</priority></url>`;
+  }),
+  '</urlset>',
+  '',
+].join("\n");
+
+writeFileSync(join(distDir, "sitemap.xml"), sitemapXml, "utf-8");
+writeFileSync(join(__dir, "..", "public", "sitemap.xml"), sitemapXml, "utf-8");
+console.log(`✓ Wrote sitemap.xml with ${sitemapUrls.size} URLs`);

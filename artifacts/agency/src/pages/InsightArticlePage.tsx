@@ -515,9 +515,9 @@ export function InsightArticlePage() {
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://outliermarketing.ca/" },
-        { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://outliermarketing.ca/insights" },
-        { "@type": "ListItem", "position": 3, "name": article.title, "item": `https://outliermarketing.ca/insights/${article.slug}` },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://outlierdigital.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://outlierdigital.ca/insights" },
+        { "@type": "ListItem", "position": 3, "name": article.title, "item": `https://outlierdigital.ca/insights/${article.slug}` },
       ],
     },
     {
@@ -525,9 +525,9 @@ export function InsightArticlePage() {
       "headline": article.title,
       "description": article.excerpt,
       "author": { "@type": "Person", "name": article.author, "jobTitle": article.authorRole },
-      "publisher": { "@type": "Organization", "name": "Outlier Digital Marketing", "url": "https://outliermarketing.ca" },
+      "publisher": { "@type": "Organization", "name": "Outlier Digital Marketing", "url": "https://outlierdigital.ca" },
       "datePublished": article.date,
-      "mainEntityOfPage": { "@type": "WebPage", "@id": `https://outliermarketing.ca/insights/${article.slug}` },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": `https://outlierdigital.ca/insights/${article.slug}` },
     },
   ] : undefined;
 

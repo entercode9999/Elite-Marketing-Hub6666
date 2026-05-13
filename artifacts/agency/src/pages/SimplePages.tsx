@@ -306,7 +306,7 @@ export function AboutPage() {
           <p className="text-white/40 text-[15px] leading-relaxed mb-8 max-w-xl mx-auto">
             Every project starts with a free strategy call. We review your current lead flow, identify where demand is being lost, and tell you exactly what we'd do about it.
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-4 rounded-xl hover:bg-primary/90 transition-colors text-[15px] group">
+          <Link href="/book-call" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-4 rounded-xl hover:bg-primary/90 transition-colors text-[15px] group">
             Book a Free Strategy Call <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
           </Link>
         </motion.div>

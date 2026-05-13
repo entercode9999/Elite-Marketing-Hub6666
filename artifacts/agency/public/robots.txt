@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://outliermarketing.ca/sitemap.xml
+Sitemap: https://outlierdigital.ca/sitemap.xml

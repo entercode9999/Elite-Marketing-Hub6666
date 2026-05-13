@@ -150,7 +150,7 @@ import {
 } from "@/pages/SimplePages";
 
 /* ── Conversion pages ── */
-import { PricingPage, FreeAuditPage, ThankYouPage } from "@/pages/ConversionPages";
+import { PricingPage, FreeAuditPage, BookCallPage, ThankYouPage } from "@/pages/ConversionPages";
 
 /* ── Our Work & Case Studies ── */
 import { OurWorkPage, CaseStudyPage } from "@/pages/WorkPage";
@@ -189,6 +189,7 @@ function Router() {
       {/* ── Conversion pages ── */}
       <Route path="/pricing" component={PricingPage} />
       <Route path="/free-audit" component={FreeAuditPage} />
+      <Route path="/book-call" component={BookCallPage} />
       <Route path="/thank-you" component={ThankYouPage} />
 
       {/* ── Insight article detail ── */}

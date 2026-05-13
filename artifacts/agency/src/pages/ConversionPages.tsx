@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import {
   ArrowRight, CheckCircle2, Star, Shield, Clock, Zap, TrendingUp,
-  BarChart3, Search, Users, Phone, Mail, Target, Award, Check, X, MapPin,
+  BarChart3, Search, Users, Phone, Mail, Target, Award, Check, X, MapPin, Calendar,
 } from "lucide-react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -642,6 +642,150 @@ export function FreeAuditPage() {
         </div>
       </section>
 
+      <Footer />
+    </div>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   BOOK CALL PAGE  /book-call
+══════════════════════════════════════════════════════════════════ */
+
+const CALL_TIMES = [
+  "9:00 AM ET",
+  "10:30 AM ET",
+  "12:00 PM ET",
+  "1:30 PM ET",
+  "3:00 PM ET",
+  "4:30 PM ET",
+];
+
+export function BookCallPage() {
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [formError, setFormError] = useState("");
+  const today = new Date().toISOString().slice(0, 10);
+
+  async function handleBookingSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setSubmitting(true);
+    setFormError("");
+    try {
+      await submitLeadForm(event.currentTarget, "Strategy call booking");
+      setSubmitted(true);
+    } catch (error) {
+      setFormError(error instanceof Error ? error.message : "Unable to book your call right now.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  useSeo({
+    title: "Book a Strategy Call | Outlier Digital",
+    description: "Schedule a 30-minute strategy call with Outlier Digital to review your lead flow, website, SEO, and paid media opportunities.",
+    canonicalPath: "/book-call",
+  });
+
+  return (
+    <div className="min-h-screen bg-[#f9f8f5]">
+      <Nav />
+      <section className="relative bg-[#08090d] pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:72px_72px]" />
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <div className="grid lg:grid-cols-2 gap-14 items-start">
+            <div>
+              <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-4">30-minute strategy call</p>
+              <h1 className="text-5xl md:text-6xl font-black text-white leading-[1.05] mb-5">
+                Pick a time.<br /><span className="text-primary italic">Bring the real numbers.</span>
+              </h1>
+              <p className="text-white/45 text-[16px] leading-relaxed mb-8 max-w-lg">
+                We will review your current lead flow, website, rankings, ads, and conversion path. You will leave with the highest-leverage next steps, whether you hire us or not.
+              </p>
+              <div className="grid sm:grid-cols-3 gap-3">
+                {[
+                  { icon: Clock, title: "30 minutes", body: "Focused and useful" },
+                  { icon: Users, title: "Senior strategist", body: "No junior handoff" },
+                  { icon: Shield, title: "No pressure", body: "Straight diagnosis" },
+                ].map((item) => (
+                  <div key={item.title} className="bg-white/5 border border-white/10 rounded-xl p-4">
+                    <item.icon className="w-5 h-5 text-primary mb-3" />
+                    <p className="text-white font-bold text-sm">{item.title}</p>
+                    <p className="text-white/35 text-xs mt-1">{item.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl border border-[#e5e2d9] p-7 md:p-8 shadow-xl">
+              {submitted ? (
+                <div className="py-12 text-center">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
+                    <CheckCircle2 className="w-8 h-8 text-primary" />
+                  </div>
+                  <h2 className="text-2xl font-black text-[#0e0e0e] mb-3">Call request received.</h2>
+                  <p className="text-gray-500 text-sm leading-relaxed max-w-sm mx-auto">
+                    We will confirm the calendar invite by email. If that slot is taken, we will send the closest available alternatives.
+                  </p>
+                </div>
+              ) : (
+                <form className="space-y-5" onSubmit={handleBookingSubmit}>
+                  <div>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-primary mb-2">Calendar</p>
+                    <h2 className="text-2xl font-black text-[#0e0e0e]">Book a strategy call</h2>
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">Preferred date *</label>
+                      <input name="preferredDate" type="date" min={today} className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" required />
+                    </div>
+                    <div>
+                      <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">Preferred time *</label>
+                      <select name="preferredTime" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all bg-white" defaultValue="" required>
+                        <option value="" disabled>Select time</option>
+                        {CALL_TIMES.map((time) => <option key={time}>{time}</option>)}
+                      </select>
+                    </div>
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">First name *</label>
+                      <input name="firstName" type="text" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" required />
+                    </div>
+                    <div>
+                      <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">Last name *</label>
+                      <input name="lastName" type="text" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" required />
+                    </div>
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">Work email *</label>
+                      <input name="email" type="email" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" required />
+                    </div>
+                    <div>
+                      <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">Phone</label>
+                      <input name="phone" type="tel" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">Company / website *</label>
+                    <input name="company" type="text" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="company.ca" required />
+                  </div>
+                  <div>
+                    <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">What should we review?</label>
+                    <textarea name="message" rows={4} className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all resize-none" placeholder="Lead flow, SEO, paid ads, website conversion, local rankings, or anything urgent." />
+                  </div>
+                  {formError && <p className="text-sm text-red-600">{formError}</p>}
+                  <button type="submit" disabled={submitting} className="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 text-[15px]">
+                    <Calendar className="w-4 h-4" />
+                    {submitting ? "Sending request..." : "Request Calendar Invite"}
+                  </button>
+                  <p className="text-center text-gray-400 text-[11px]">We confirm manually so the invite has the right strategist and context.</p>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
       <Footer />
     </div>
   );
