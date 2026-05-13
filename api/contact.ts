@@ -132,11 +132,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const to = getRecipients();
   const from = process.env.FROM_EMAIL || `Outlier Digital <${CONTACT_EMAIL}>`;
 
+  const subjectName = firstName || email;
   const notification = await sendResendEmail(resendApiKey, {
     from,
     to,
     reply_to: email,
-    subject: `New ${formName} submission${firstName ? ` from ${firstName}` : ""}`,
+    subject: `New Outlier website lead${subjectName ? ` from ${subjectName}` : ""}`,
     html,
     text,
   });
