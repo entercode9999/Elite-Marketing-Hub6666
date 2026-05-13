@@ -6,6 +6,7 @@ declare const process: {
 
 declare const console: {
   error: (...args: unknown[]) => void;
+  log: (...args: unknown[]) => void;
 };
 
 declare function fetch(
@@ -42,6 +43,14 @@ function escapeHtml(value: string) {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+}
+
+function getRecipients() {
+  const raw = process.env.TO_EMAIL || CONTACT_EMAIL;
+  return raw
+    .split(",")
+    .map((email) => email.trim())
+    .filter(Boolean);
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -103,6 +112,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     </table>
   `;
 
+  const text = fields.map(([label, value]) => `${label}: ${value}`).join("\n");
+  const to = getRecipients();
+
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
@@ -111,18 +123,21 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     },
     body: JSON.stringify({
       from: process.env.FROM_EMAIL || `Outlier Digital <${CONTACT_EMAIL}>`,
-      to: process.env.TO_EMAIL || CONTACT_EMAIL,
+      to,
       reply_to: email,
       subject: `New ${formName} submission${firstName ? ` from ${firstName}` : ""}`,
       html,
+      text,
     }),
   });
 
+  const responseText = await response.text();
+
   if (!response.ok) {
-    const errorText = await response.text();
-    console.error("Resend send failed:", errorText);
+    console.error("Resend send failed:", responseText);
     return res.status(502).json({ message: "Unable to send message right now." });
   }
 
+  console.log("Resend send accepted:", responseText);
   return res.status(200).json({ ok: true });
 }
