@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { LogoMarquee } from "@/components/LogoMarquee";
-import { ArrowRight, MapPin, ChevronRight, Check, TrendingUp } from "lucide-react";
+import { ArrowRight, MapPin, ChevronRight, Check, TrendingUp, CheckCircle2 } from "lucide-react";
 import { useSeo } from "@/hooks/useSeo";
 
 /* ── TYPES ── */

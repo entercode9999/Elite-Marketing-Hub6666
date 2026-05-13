@@ -90,7 +90,7 @@ const HOME_SCHEMA = [
     "url": "https://outliermarketing.ca",
     "logo": "https://outliermarketing.ca/favicon.svg",
     "telephone": "+12898189102",
-    "email": "hello@outliermarketing.ca",
+    "email": "hello@outlierdigital.ca",
     "description": "Boutique lead generation agency helping Ontario service businesses generate more inbound leads through SEO, paid ads, and conversion systems.",
     "address": {
       "@type": "PostalAddress",

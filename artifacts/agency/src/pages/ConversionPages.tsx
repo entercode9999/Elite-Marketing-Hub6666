@@ -8,6 +8,7 @@ import {
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { useSeo } from "@/hooks/useSeo";
+import { submitLeadForm } from "@/lib/forms";
 
 /* ══════════════════════════════════════════════════════════════════
    PRICING PAGE  /pricing
@@ -396,6 +397,21 @@ const AUDIT_SERVICES = [
 
 export function FreeAuditPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [formError, setFormError] = useState("");
+  async function handleAuditSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setSubmitting(true);
+    setFormError("");
+    try {
+      await submitLeadForm(event.currentTarget, "Free audit");
+      setSubmitted(true);
+    } catch (error) {
+      setFormError(error instanceof Error ? error.message : "Unable to send your audit request right now.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
   useSeo({
     title: "Free Local SEO Audit | Outlier — Markham, Ontario",
     description: "Request a free growth audit from Outlier. A senior strategist reviews your website and local search visibility — then walks you through exactly what to do.",
@@ -556,8 +572,8 @@ export function FreeAuditPage() {
                 <a href="tel:+12898189102" className="flex items-center gap-2 text-primary font-bold text-sm hover:text-primary/80 transition-colors">
                   <Phone className="w-4 h-4" /> +1 (289) 818-9102
                 </a>
-                <a href="mailto:hello@outliermarketing.ca" className="flex items-center gap-2 text-primary font-bold text-sm hover:text-primary/80 transition-colors mt-2">
-                  <Mail className="w-4 h-4" /> hello@outliermarketing.ca
+                <a href="mailto:hello@outlierdigital.ca" className="flex items-center gap-2 text-primary font-bold text-sm hover:text-primary/80 transition-colors mt-2">
+                  <Mail className="w-4 h-4" /> hello@outlierdigital.ca
                 </a>
               </div>
             </div>
@@ -572,48 +588,49 @@ export function FreeAuditPage() {
                     </div>
                     <h3 className="text-2xl font-black text-[#0e0e0e] mb-3">Audit request received!</h3>
                     <p className="text-gray-500 text-sm leading-relaxed max-w-sm mx-auto mb-2">We'll review your site and reach out within 1 business day — usually the same day — to schedule your free strategy call.</p>
-                    <p className="text-gray-400 text-xs">Check your email for a confirmation. Questions? Email <a href="mailto:hello@outliermarketing.ca" className="text-primary font-semibold">hello@outliermarketing.ca</a></p>
+                    <p className="text-gray-400 text-xs">Check your email for a confirmation. Questions? Email <a href="mailto:hello@outlierdigital.ca" className="text-primary font-semibold">hello@outlierdigital.ca</a></p>
                   </div>
                 ) : (
                   <>
                 <h3 className="text-xl font-black text-[#0e0e0e] mb-2">Request your free audit</h3>
                 <p className="text-gray-400 text-sm mb-7">We'll review your submission and reach out within 1 business day to schedule the call.</p>
-                <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
+                <form className="space-y-5" onSubmit={handleAuditSubmit}>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">First name *</label>
-                      <input type="text" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="Jane" required />
+                      <input name="firstName" type="text" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="Jane" required />
                     </div>
                     <div>
                       <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">Last name *</label>
-                      <input type="text" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="Smith" required />
+                      <input name="lastName" type="text" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="Smith" required />
                     </div>
                   </div>
                   <div>
                     <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">Business website *</label>
-                    <input type="url" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="https://yoursite.ca" required />
+                    <input name="website" type="url" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="https://yoursite.ca" required />
                   </div>
                   <div>
                     <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">Work email *</label>
-                    <input type="email" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="jane@company.com" required />
+                    <input name="email" type="email" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="jane@company.com" required />
                   </div>
                   <div>
                     <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">Phone</label>
-                    <input type="tel" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="+1 (416) 000-0000" />
+                    <input name="phone" type="tel" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="+1 (416) 000-0000" />
                   </div>
                   <div>
                     <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">What are you looking to improve? *</label>
-                    <select className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all bg-white" defaultValue="" required>
+                    <select name="service" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all bg-white" defaultValue="" required>
                       <option value="" disabled>Select area of focus…</option>
                       {AUDIT_SERVICES.map((s) => <option key={s}>{s}</option>)}
                     </select>
                   </div>
                   <div>
                     <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">Anything specific you want us to look at?</label>
-                    <textarea rows={3} className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all resize-none" placeholder="e.g. Our Google Ads spend isn't converting, or we've dropped rankings recently…" />
+                    <textarea name="message" rows={3} className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all resize-none" placeholder="e.g. Our Google Ads spend isn't converting, or we've dropped rankings recently…" />
                   </div>
-                  <button type="submit" className="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 group text-[15px]">
-                    Request Free Audit <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                  {formError && <p className="text-sm text-red-600">{formError}</p>}
+                  <button type="submit" disabled={submitting} className="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 group text-[15px]">
+                    {submitting ? "Sending..." : "Request Free Audit"} <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                   </button>
                   <p className="text-center text-gray-400 text-[11px]">No spam. No automated responses. A senior strategist reviews every submission.</p>
                 </form>

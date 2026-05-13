@@ -9,6 +9,7 @@ import {
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { useSeo } from "@/hooks/useSeo";
+import { submitLeadForm } from "@/lib/forms";
 
 /* ─── Shared hero shell ──────────────────────────────────────────── */
 function DarkHero({ label, title, sub, children }: { label: string; title: React.ReactNode; sub?: string; children?: React.ReactNode }) {
@@ -397,6 +398,21 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 
 export function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [formError, setFormError] = useState("");
+  async function handleContactSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setSubmitting(true);
+    setFormError("");
+    try {
+      await submitLeadForm(event.currentTarget, "Contact form");
+      setSubmitted(true);
+    } catch (error) {
+      setFormError(error instanceof Error ? error.message : "Unable to send your message right now.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
   useSeo({
     title: "Contact Outlier | Local Lead Generation Agency",
     description: "Get in touch with Outlier's team. Tell us about your business and goals — a senior strategist will respond within 1 business day.",
@@ -488,7 +504,7 @@ export function ContactPage() {
                 <div className="space-y-3">
                   {[
                     { icon: Phone, label: "Phone", val: "+1 (289) 818-9102", href: "tel:+12898189102" },
-                    { icon: Mail, label: "Email", val: "hello@outliermarketing.ca", href: "mailto:hello@outliermarketing.ca" },
+                    { icon: Mail, label: "Email", val: "hello@outlierdigital.ca", href: "mailto:hello@outlierdigital.ca" },
                     { icon: MapPin, label: "Location", val: "Markham, Ontario", href: "#" },
                   ].map((c) => (
                     <a
@@ -562,54 +578,56 @@ export function ContactPage() {
                   <>
                 <h3 className="text-xl font-black text-[#0e0e0e] mb-2">Tell us about your business</h3>
                 <p className="text-gray-400 text-sm mb-7">We'll review your submission and respond within 1 business day.</p>
-                <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
+                <form className="space-y-5" onSubmit={handleContactSubmit}>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">First name *</label>
-                      <input type="text" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="Jane" required />
+                      <input name="firstName" type="text" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="Jane" required />
                     </div>
                     <div>
                       <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">Last name *</label>
-                      <input type="text" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="Smith" required />
+                      <input name="lastName" type="text" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="Smith" required />
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">Email *</label>
-                      <input type="email" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="jane@company.com" required />
+                      <input name="email" type="email" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="jane@company.com" required />
                     </div>
                     <div>
                       <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">Phone</label>
-                      <input type="tel" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="+1 (416) 000-0000" />
+                      <input name="phone" type="tel" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="+1 (416) 000-0000" />
                     </div>
                   </div>
                   <div>
                     <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">Company / Website *</label>
-                    <input type="text" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="acme.ca" required />
+                    <input name="company" type="text" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all" placeholder="acme.ca" required />
                   </div>
                   <div>
                     <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">What do you need help with? *</label>
-                    <select className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all bg-white" required defaultValue="">
+                    <select name="service" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all bg-white" required defaultValue="">
                       <option value="" disabled>Select a service…</option>
                       {SERVICES_LIST.map((s) => <option key={s}>{s}</option>)}
                     </select>
                   </div>
                   <div>
                     <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">Monthly marketing budget</label>
-                    <select className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all bg-white" defaultValue="">
+                    <select name="budget" className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all bg-white" defaultValue="">
                       <option value="" disabled>Select a range…</option>
                       {BUDGETS.map((b) => <option key={b}>{b}</option>)}
                     </select>
                   </div>
                   <div>
                     <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 block">Tell us about your goals</label>
-                    <textarea rows={4} className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all resize-none" placeholder="Where are you now, where do you want to be, and what's the timeline?" />
+                    <textarea name="message" rows={4} className="w-full border border-[#e5e2d9] rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all resize-none" placeholder="Where are you now, where do you want to be, and what's the timeline?" />
                   </div>
+                  {formError && <p className="text-sm text-red-600">{formError}</p>}
                   <button
                     type="submit"
+                    disabled={submitting}
                     className="w-full bg-primary text-white font-bold py-3.5 rounded-xl hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 group"
                   >
-                    Send Message <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                    {submitting ? "Sending..." : "Send Message"} <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                   </button>
                   <p className="text-center text-gray-400 text-[11px]">No spam. No automated responses. A real person will reply.</p>
                 </form>
@@ -744,6 +762,8 @@ export function InsightsPage() {
     canonicalPath: "/insights",
   });
   const [activeCategory, setActiveCategory] = useState("All");
+  const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
+  const [newsletterError, setNewsletterError] = useState("");
 
   const filtered = activeCategory === "All"
     ? POSTS
@@ -918,10 +938,25 @@ export function InsightsPage() {
               <p className="text-white/40 text-[15px] leading-relaxed mb-8 max-w-md mx-auto">
                 One email per week. What we're learning from active client campaigns — no filler, no pitch.
               </p>
-              <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
+              <form
+                className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  setNewsletterError("");
+                  try {
+                    await submitLeadForm(e.currentTarget, "Newsletter signup");
+                    e.currentTarget.reset();
+                    setNewsletterSubmitted(true);
+                  } catch (error) {
+                    setNewsletterError(error instanceof Error ? error.message : "Unable to subscribe right now.");
+                  }
+                }}
+              >
                 <input
+                  name="email"
                   type="email"
                   placeholder="your@email.com"
+                  required
                   className="flex-1 bg-white/8 border border-white/15 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/30 focus:outline-none focus:border-primary/60 transition-colors"
                 />
                 <button
@@ -931,6 +966,8 @@ export function InsightsPage() {
                   Subscribe <ArrowRight className="w-4 h-4" />
                 </button>
               </form>
+              {newsletterSubmitted && <p className="text-primary text-[11px] mt-3 font-bold">Thanks, you're on the list.</p>}
+              {newsletterError && <p className="text-red-300 text-[11px] mt-3">{newsletterError}</p>}
               <p className="text-white/20 text-[11px] mt-3">No spam. Unsubscribe anytime.</p>
             </div>
           </motion.div>
@@ -987,11 +1024,11 @@ export function CareersPage() {
             We're not actively hiring right now, but we're always open to hearing from specialists who are genuinely good at one thing. If that's you, send a short note and a few examples of your work.
           </p>
           <a
-            href="mailto:hello@outliermarketing.ca"
+            href="mailto:hello@outlierdigital.ca"
             className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-sm"
           >
             <Mail className="w-4 h-4" />
-            hello@outliermarketing.ca
+            hello@outlierdigital.ca
           </a>
         </div>
       </section>
@@ -1038,7 +1075,7 @@ export function PrivacyPage() {
         <h2 className="text-xl font-black text-[#0e0e0e] !mt-8">Cookies</h2>
         <p>Our website uses cookies to improve your experience, measure performance, and support marketing. You may disable cookies in your browser settings, though some features may not function properly.</p>
         <h2 className="text-xl font-black text-[#0e0e0e] !mt-8">Contact</h2>
-        <p>For privacy-related inquiries, contact us at <a href="mailto:hello@outliermarketing.ca" className="text-primary font-medium">hello@outliermarketing.ca</a> or at Markham, Ontario.</p>
+        <p>For privacy-related inquiries, contact us at <a href="mailto:hello@outlierdigital.ca" className="text-primary font-medium">hello@outlierdigital.ca</a> or at Markham, Ontario.</p>
       </div>
     </LegalShell>
   );
@@ -1064,7 +1101,7 @@ export function TermsPage() {
         <h2 className="text-xl font-black text-[#0e0e0e] !mt-8">Governing Law</h2>
         <p>These terms are governed by the laws of the Province of Ontario, Canada. Disputes shall be resolved in Ontario courts.</p>
         <h2 className="text-xl font-black text-[#0e0e0e] !mt-8">Contact</h2>
-        <p>For questions about these terms, contact <a href="mailto:hello@outliermarketing.ca" className="text-primary font-medium">hello@outliermarketing.ca</a>.</p>
+        <p>For questions about these terms, contact <a href="mailto:hello@outlierdigital.ca" className="text-primary font-medium">hello@outlierdigital.ca</a>.</p>
       </div>
     </LegalShell>
   );
@@ -1091,7 +1128,7 @@ export function AccessibilityPage() {
           <li>Resizable text without loss of functionality</li>
         </ul>
         <h2 className="text-xl font-black text-[#0e0e0e] !mt-8">Feedback</h2>
-        <p>If you encounter an accessibility barrier, please contact us at <a href="mailto:hello@outliermarketing.ca" className="text-primary font-medium">hello@outliermarketing.ca</a> or call +1 (289) 818-9102. We aim to respond within 2 business days.</p>
+        <p>If you encounter an accessibility barrier, please contact us at <a href="mailto:hello@outlierdigital.ca" className="text-primary font-medium">hello@outlierdigital.ca</a> or call +1 (289) 818-9102. We aim to respond within 2 business days.</p>
       </div>
     </LegalShell>
   );
