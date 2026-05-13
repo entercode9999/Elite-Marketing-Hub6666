@@ -504,7 +504,7 @@ export function ContactPage() {
                 <div className="space-y-3">
                   {[
                     { icon: Phone, label: "Phone", val: "+1 (289) 818-9102", href: "tel:+12898189102" },
-                    { icon: Mail, label: "Email", val: "hello@outlierdigital.ca", href: "mailto:hello@outlierdigital.ca" },
+                    { icon: Mail, label: "Email", val: "contact@outlierdigital.ca", href: "mailto:contact@outlierdigital.ca" },
                     { icon: MapPin, label: "Location", val: "Markham, Ontario", href: "#" },
                   ].map((c) => (
                     <a
@@ -1024,11 +1024,11 @@ export function CareersPage() {
             We're not actively hiring right now, but we're always open to hearing from specialists who are genuinely good at one thing. If that's you, send a short note and a few examples of your work.
           </p>
           <a
-            href="mailto:hello@outlierdigital.ca"
+            href="mailto:contact@outlierdigital.ca"
             className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-sm"
           >
             <Mail className="w-4 h-4" />
-            hello@outlierdigital.ca
+            contact@outlierdigital.ca
           </a>
         </div>
       </section>
@@ -1075,7 +1075,7 @@ export function PrivacyPage() {
         <h2 className="text-xl font-black text-[#0e0e0e] !mt-8">Cookies</h2>
         <p>Our website uses cookies to improve your experience, measure performance, and support marketing. You may disable cookies in your browser settings, though some features may not function properly.</p>
         <h2 className="text-xl font-black text-[#0e0e0e] !mt-8">Contact</h2>
-        <p>For privacy-related inquiries, contact us at <a href="mailto:hello@outlierdigital.ca" className="text-primary font-medium">hello@outlierdigital.ca</a> or at Markham, Ontario.</p>
+        <p>For privacy-related inquiries, contact us at <a href="mailto:contact@outlierdigital.ca" className="text-primary font-medium">contact@outlierdigital.ca</a> or at Markham, Ontario.</p>
       </div>
     </LegalShell>
   );
@@ -1101,7 +1101,7 @@ export function TermsPage() {
         <h2 className="text-xl font-black text-[#0e0e0e] !mt-8">Governing Law</h2>
         <p>These terms are governed by the laws of the Province of Ontario, Canada. Disputes shall be resolved in Ontario courts.</p>
         <h2 className="text-xl font-black text-[#0e0e0e] !mt-8">Contact</h2>
-        <p>For questions about these terms, contact <a href="mailto:hello@outlierdigital.ca" className="text-primary font-medium">hello@outlierdigital.ca</a>.</p>
+        <p>For questions about these terms, contact <a href="mailto:contact@outlierdigital.ca" className="text-primary font-medium">contact@outlierdigital.ca</a>.</p>
       </div>
     </LegalShell>
   );
@@ -1128,7 +1128,7 @@ export function AccessibilityPage() {
           <li>Resizable text without loss of functionality</li>
         </ul>
         <h2 className="text-xl font-black text-[#0e0e0e] !mt-8">Feedback</h2>
-        <p>If you encounter an accessibility barrier, please contact us at <a href="mailto:hello@outlierdigital.ca" className="text-primary font-medium">hello@outlierdigital.ca</a> or call +1 (289) 818-9102. We aim to respond within 2 business days.</p>
+        <p>If you encounter an accessibility barrier, please contact us at <a href="mailto:contact@outlierdigital.ca" className="text-primary font-medium">contact@outlierdigital.ca</a> or call +1 (289) 818-9102. We aim to respond within 2 business days.</p>
       </div>
     </LegalShell>
   );

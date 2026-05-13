@@ -1,4 +1,4 @@
-const CONTACT_EMAIL = "hello@outlierdigital.ca";
+const CONTACT_EMAIL = "contact@outlierdigital.ca";
 
 declare const process: {
   env: Record<string, string | undefined>;

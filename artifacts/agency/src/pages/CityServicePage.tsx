@@ -2724,7 +2724,7 @@ export default function CityServicePage() {
         "logo": "https://outliermarketing.ca/favicon.svg",
         "telephone": "+1-289-818-9102",
         "priceRange": "$$",
-        "email": "hello@outlierdigital.ca",
+        "email": "contact@outlierdigital.ca",
         "description": fill(svc.metaDescTemplate),
         "areaServed": [
           {

@@ -572,8 +572,8 @@ export function FreeAuditPage() {
                 <a href="tel:+12898189102" className="flex items-center gap-2 text-primary font-bold text-sm hover:text-primary/80 transition-colors">
                   <Phone className="w-4 h-4" /> +1 (289) 818-9102
                 </a>
-                <a href="mailto:hello@outlierdigital.ca" className="flex items-center gap-2 text-primary font-bold text-sm hover:text-primary/80 transition-colors mt-2">
-                  <Mail className="w-4 h-4" /> hello@outlierdigital.ca
+                <a href="mailto:contact@outlierdigital.ca" className="flex items-center gap-2 text-primary font-bold text-sm hover:text-primary/80 transition-colors mt-2">
+                  <Mail className="w-4 h-4" /> contact@outlierdigital.ca
                 </a>
               </div>
             </div>
@@ -588,7 +588,7 @@ export function FreeAuditPage() {
                     </div>
                     <h3 className="text-2xl font-black text-[#0e0e0e] mb-3">Audit request received!</h3>
                     <p className="text-gray-500 text-sm leading-relaxed max-w-sm mx-auto mb-2">We'll review your site and reach out within 1 business day — usually the same day — to schedule your free strategy call.</p>
-                    <p className="text-gray-400 text-xs">Check your email for a confirmation. Questions? Email <a href="mailto:hello@outlierdigital.ca" className="text-primary font-semibold">hello@outlierdigital.ca</a></p>
+                    <p className="text-gray-400 text-xs">Check your email for a confirmation. Questions? Email <a href="mailto:contact@outlierdigital.ca" className="text-primary font-semibold">contact@outlierdigital.ca</a></p>
                   </div>
                 ) : (
                   <>

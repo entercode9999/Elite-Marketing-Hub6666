@@ -91,7 +91,7 @@ export function Footer() {
                 <a href="tel:+12898189102" className="hover:text-white transition-colors">+1 (289) 818-9102</a>
               </div>
               <div>
-                <a href="mailto:hello@outlierdigital.ca" className="hover:text-white transition-colors">hello@outlierdigital.ca</a>
+                <a href="mailto:contact@outlierdigital.ca" className="hover:text-white transition-colors">contact@outlierdigital.ca</a>
               </div>
             </div>
           </div>
