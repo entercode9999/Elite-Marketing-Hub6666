@@ -234,10 +234,44 @@ const DELIV_ICONS = [Target, FileText, Star, Globe, Zap, BarChart2, MapPin, Sear
 /* ─── Main Page ─────────────────────────────────────────────────── */
 
 function PageContent({ data }: { data: ServiceIndustryPageData }) {
+  const canonicalPath = `/${data.city.slug}/${data.service.slug}/${data.industry.slug}`;
+  const schema: Record<string, unknown>[] = [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://outlierdigital.ca/" },
+        { "@type": "ListItem", "position": 2, "name": data.city.name, "item": `https://outlierdigital.ca/${data.city.slug}/seo-services` },
+        { "@type": "ListItem", "position": 3, "name": data.service.label, "item": `https://outlierdigital.ca/${data.city.slug}/${data.service.slug}` },
+        { "@type": "ListItem", "position": 4, "name": data.industry.label, "item": `https://outlierdigital.ca${canonicalPath}` },
+      ],
+    },
+    {
+      "@type": "Service",
+      "name": `${data.service.label} for ${data.industry.label} in ${data.city.name}`,
+      "description": data.meta.description,
+      "provider": { "@type": "LocalBusiness", "@id": "https://outlierdigital.ca/#business", "name": "Outlier Digital Marketing" },
+      "areaServed": {
+        "@type": "City",
+        "name": data.city.name,
+        "containedInPlace": { "@type": "AdministrativeArea", "name": data.city.province, "addressCountry": "CA" },
+      },
+      "audience": { "@type": "BusinessAudience", "name": data.industry.label },
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": data.faqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.a },
+      })),
+    },
+  ];
+
   useSeo({
     title: data.meta.title,
     description: data.meta.description,
-    canonicalPath: `/${data.city.slug}/${data.service.slug}/${data.industry.slug}`,
+    canonicalPath,
+    schema,
   });
 
   return (

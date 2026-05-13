@@ -10,13 +10,14 @@ type SeoOptions = {
 
 const DEFAULT_IMAGE = "https://outlierdigital.ca/opengraph.jpg";
 const SITE_NAME = "Outlier Digital Marketing";
+const SITE_URL = "https://outlierdigital.ca";
 
 export function useSeo({ title, description, canonicalPath, image, schema }: SeoOptions) {
   useEffect(() => {
     const og = image ?? DEFAULT_IMAGE;
     const canonical = canonicalPath
-      ? new URL(canonicalPath, window.location.origin).toString()
-      : window.location.href;
+      ? new URL(canonicalPath, SITE_URL).toString()
+      : new URL(window.location.pathname, SITE_URL).toString();
 
     /* ── <title> ──────────────────────────────────────────────────── */
     document.title = title;
@@ -54,17 +55,13 @@ export function useSeo({ title, description, canonicalPath, image, schema }: Seo
 
     /* ── Canonical ────────────────────────────────────────────────── */
     let canonicalEl = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-    if (canonicalPath) {
-      if (canonicalEl) {
-        canonicalEl.href = canonical;
-      } else {
-        canonicalEl = document.createElement("link");
-        canonicalEl.rel = "canonical";
-        canonicalEl.href = canonical;
-        document.head.appendChild(canonicalEl);
-      }
-    } else if (canonicalEl) {
-      canonicalEl.remove();
+    if (canonicalEl) {
+      canonicalEl.href = canonical;
+    } else {
+      canonicalEl = document.createElement("link");
+      canonicalEl.rel = "canonical";
+      canonicalEl.href = canonical;
+      document.head.appendChild(canonicalEl);
     }
 
     /* ── JSON-LD schema ───────────────────────────────────────────── */
