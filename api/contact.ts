@@ -1,5 +1,25 @@
 const CONTACT_EMAIL = "hello@outlierdigital.ca";
 
+declare const process: {
+  env: Record<string, string | undefined>;
+};
+
+declare const console: {
+  error: (...args: unknown[]) => void;
+};
+
+declare function fetch(
+  input: string,
+  init?: {
+    method?: string;
+    headers?: Record<string, string>;
+    body?: string;
+  },
+): Promise<{
+  ok: boolean;
+  text: () => Promise<string>;
+}>;
+
 type VercelRequest = {
   method?: string;
   body?: Record<string, unknown>;
