@@ -53,6 +53,22 @@ function getRecipients() {
     .filter(Boolean);
 }
 
+async function sendResendEmail(resendApiKey: string, payload: Record<string, unknown>) {
+  const response = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${resendApiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  return {
+    ok: response.ok,
+    text: await response.text(),
+  };
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
@@ -114,30 +130,22 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const text = fields.map(([label, value]) => `${label}: ${value}`).join("\n");
   const to = getRecipients();
+  const from = process.env.FROM_EMAIL || `Outlier Digital <${CONTACT_EMAIL}>`;
 
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${resendApiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from: process.env.FROM_EMAIL || `Outlier Digital <${CONTACT_EMAIL}>`,
-      to,
-      reply_to: email,
-      subject: `New ${formName} submission${firstName ? ` from ${firstName}` : ""}`,
-      html,
-      text,
-    }),
+  const notification = await sendResendEmail(resendApiKey, {
+    from,
+    to,
+    reply_to: email,
+    subject: `New ${formName} submission${firstName ? ` from ${firstName}` : ""}`,
+    html,
+    text,
   });
 
-  const responseText = await response.text();
-
-  if (!response.ok) {
-    console.error("Resend send failed:", responseText);
+  if (!notification.ok) {
+    console.error("Resend notification failed:", notification.text);
     return res.status(502).json({ message: "Unable to send message right now." });
   }
 
-  console.log("Resend send accepted:", responseText);
+  console.log("Resend notification accepted:", notification.text);
   return res.status(200).json({ ok: true });
 }
