@@ -18,9 +18,9 @@ const PLANS = [
   {
     name: "Local Visibility Foundation",
     badge: null,
-    tagline: "For businesses looking to strengthen visibility in their core local market.",
+    tagline: "For businesses that want to strengthen visibility in one core local market.",
     price: "1,490",
-    pageCount: "15",
+    pageCount: "10",
     pageLabel: "professionally structured service + location pages",
     color: "#1a56ff",
     cta: "Get started",
@@ -32,17 +32,17 @@ const PLANS = [
       "Keyword targeting setup",
       "Internal linking improvements",
       "Analytics & search tracking setup",
-      "15 professionally structured service + location pages",
+      "10 professionally structured service + location pages",
       "Conversion-focused page layouts",
     ],
-    value: "Ideal for businesses targeting one primary city or service region and looking to improve local search visibility and inbound leads.",
+    value: "Ideal for businesses targeting one primary city or service area. This gives Google more relevant pages to rank and gives local buyers clearer paths to call, book, or request a quote.",
   },
   {
     name: "Demand Capture System",
     badge: "Most popular",
-    tagline: "Designed for businesses targeting multiple cities and high-intent local searches.",
+    tagline: "Designed for businesses targeting multiple services, cities, and high-intent local searches.",
     price: "2,990",
-    pageCount: "50",
+    pageCount: "25",
     pageLabel: "professionally structured service + location pages",
     color: "#1a56ff",
     cta: "Get started",
@@ -54,18 +54,18 @@ const PLANS = [
       "Competitor search gap analysis",
       "Google Business optimization",
       "Analytics & conversion tracking",
-      "50 professionally structured service + location pages",
+      "25 professionally structured service + location pages",
       "Conversion-focused landing page structure",
       "Search visibility expansion across multiple service areas",
     ],
-    value: "Built to help businesses capture more high-intent local searches across the exact regions they already operate in. Perfect for law firms, contractors, clinics, and home service businesses.",
+    value: "Built to capture more searches from people already looking for what you sell. More targeted pages means more chances to appear when buyers search by service, city, and problem.",
   },
   {
     name: "Regional Growth System",
     badge: null,
-    tagline: "For businesses aggressively expanding visibility across broader regional markets.",
-    price: "4,990",
-    pageCount: "100+",
+    tagline: "For businesses expanding visibility across broader regional markets.",
+    price: "4,900",
+    pageCount: "60",
     pageLabel: "professionally structured service + location pages",
     color: "#0e0e0e",
     cta: "Get started",
@@ -78,10 +78,33 @@ const PLANS = [
       "Internal linking & topical clustering",
       "Multi-market visibility planning",
       "Analytics & lead tracking setup",
-      "100+ professionally structured service + location pages",
+      "60 professionally structured service + location pages",
       "Scalable search expansion framework",
     ],
-    value: "Designed for businesses wanting broad regional visibility and long-term inbound lead growth across multiple cities and service categories.",
+    value: "Designed for businesses that want to own more search territory across a region. This package helps you compete in more cities, rank for more service combinations, and build a larger organic lead pipeline.",
+  },
+  {
+    name: "Full Domination Growth",
+    badge: "Maximum coverage",
+    tagline: "For aggressive market coverage across many cities, services, and high-value search terms.",
+    price: "7,500",
+    pageCount: "120",
+    pageLabel: "professionally structured service + location pages",
+    color: "#0e0e0e",
+    cta: "Get started",
+    features: [
+      "Complete local SEO growth architecture",
+      "120 service + location page strategy",
+      "Priority city and service keyword mapping",
+      "Advanced internal linking and topical clustering",
+      "Competitor gap analysis across multiple markets",
+      "Conversion-focused page templates",
+      "Technical SEO cleanup and crawl improvements",
+      "Analytics, call tracking, and lead source visibility",
+      "Scalable framework for long-term search expansion",
+      "Built for businesses ready to dominate their service area",
+    ],
+    value: "Best for companies that want maximum market coverage. It creates a large footprint of targeted pages so your business can show up for more buyer searches, reduce reliance on ads, and generate more inbound leads over time.",
   },
 ];
 
@@ -91,12 +114,12 @@ const PRICING_FAQ = [
     a: "These are custom-built, SEO-optimised pages that target specific combinations of your services and the cities or neighbourhoods you serve. For example: 'HVAC repair Markham' or 'family lawyer Vaughan'. Each page is built to capture high-intent local search traffic and convert visitors into leads.",
   },
   {
-    q: "How quickly will I see results?",
-    a: "Most clients see Google Business Profile improvements and early ranking movement within 30–60 days of launch. Organic page rankings typically build over 3–6 months as Google indexes and evaluates the new content.",
+    q: "Why does page count matter?",
+    a: "Every page creates another targeted entry point for buyers searching by service, location, or problem. A business with pages for more services and more cities can appear in more searches than a site with only a homepage and a few generic service pages.",
   },
   {
-    q: "Can I add the ongoing monthly service later?",
-    a: "Yes. Many clients complete a setup package first, then add the $690/month Ongoing SEO Growth plan to continue expanding visibility, adding pages, and monitoring performance over time.",
+    q: "How quickly will I see results?",
+    a: "Most clients see Google Business Profile improvements and early ranking movement within 30–60 days of launch. Organic page rankings typically build over 3–6 months as Google indexes and evaluates the new content.",
   },
   {
     q: "Do these pages actually rank — or are they just 'AI content'?",
@@ -219,11 +242,11 @@ export function PricingPage() {
             className="text-[11px] font-black uppercase tracking-widest text-primary mb-4">Transparent Pricing</motion.p>
           <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.07, ease: [0.22, 1, 0.36, 1] }}
             className="text-4xl md:text-6xl font-black text-white leading-[1.05] mb-5">
-            Expand your visibility footprint.<br /><span className="text-primary italic">More markets. More leads.</span>
+            Turn more local searches into leads.<br /><span className="text-primary italic">More pages. More markets.</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.15 }}
             className="text-white/50 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-8">
-            Each package builds professionally structured service and location pages — expanding the number of local searches your business appears for across the exact cities and services you offer.
+            Each package builds professionally structured service and location pages that give your business more chances to appear when buyers search for your services in the cities you serve.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.25 }}
             className="flex flex-wrap gap-4 md:gap-6 justify-center">
@@ -251,7 +274,7 @@ export function PricingPage() {
                 color: "#1a56ff",
                 title: "More cities covered",
                 desc: "Each location page targets a specific city or neighbourhood where your customers search.",
-                stat: "15–100+",
+                stat: "10–120",
                 statLabel: "local pages per package",
               },
               {
@@ -295,9 +318,9 @@ export function PricingPage() {
           <div className="text-center mb-12">
             <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Setup Packages</p>
             <h2 className="text-3xl md:text-4xl font-black text-[#0e0e0e] mb-3">Choose your visibility footprint</h2>
-            <p className="text-gray-500 text-base max-w-xl mx-auto">One-time investment. Professionally structured pages built to generate inbound leads from local search.</p>
+            <p className="text-gray-500 text-base max-w-2xl mx-auto">One-time investment. Professionally structured pages built to help your business rank for more service and city searches, capture higher-intent buyers, and turn search visibility into inbound leads.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
             {PLANS.map((plan, i) => (
               <PlanCard key={plan.name} plan={plan} index={i} />
             ))}
