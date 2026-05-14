@@ -34,6 +34,7 @@ const PLANS = [
       "Analytics & search tracking setup",
       "10 professionally structured service + location pages",
       "Conversion-focused page layouts",
+      "Lead-focused call and form paths",
     ],
     outcomes: [
       "Stronger presence in your core city",
@@ -216,7 +217,7 @@ function PlanCard({ plan, index }: { plan: typeof PLANS[0]; index: number }) {
               </li>
             ))}
           </ul>
-          <div className={`mt-auto rounded-xl border p-4 ${isPop ? "bg-primary/5 border-primary/20" : "bg-[#f9f8f5] border-[#e5e2d9]"}`}>
+          <div className={`rounded-xl border p-4 ${isPop ? "bg-primary/5 border-primary/20" : "bg-[#f9f8f5] border-[#e5e2d9]"}`}>
             <div className="flex items-center gap-2 mb-3">
               <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${isPop ? "bg-primary text-white" : "bg-white border border-[#e5e2d9] text-primary"}`}>
                 <TrendingUp className="w-4 h-4" />

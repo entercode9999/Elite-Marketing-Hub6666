@@ -292,8 +292,6 @@ const contentMarketingData: HubData = {
       readTime: "8 min read",
       title: "Why Topical Authority Beats Keyword Targeting in 2026",
       excerpt: "Google's Helpful Content update fundamentally changed what earns rankings. Individual keyword optimisation still matters, but sites with deep topical coverage consistently outperform sites chasing keywords in isolation. We analysed 50 content programmes and found the architecture difference accounts for 3-4x more traffic than any other variable.",
-      author: "Sarah Kowalski",
-      authorRole: "Head of Content",
       href: "/blog/topical-authority-2026",
     },
     {
@@ -302,8 +300,6 @@ const contentMarketingData: HubData = {
       readTime: "5 min read",
       title: "The Content Brief Format That Produces Rankings Every Time",
       excerpt: "Most content briefs are a list of keywords and a word count. That produces average content that ranks occasionally. Our brief format — built over 400+ ranking articles — specifies structure, semantic coverage, SERP feature targeting, internal linking, and conversion architecture before a word is written. Here's the full template.",
-      author: "Marcus Chen",
-      authorRole: "SEO Director",
       href: "/blog/content-brief-template",
     },
     {
@@ -312,8 +308,6 @@ const contentMarketingData: HubData = {
       readTime: "6 min read",
       title: "How to Turn Your Content Programme Into a $42-per-Dollar Email Channel",
       excerpt: "Email averages the highest ROI of any digital marketing channel — but only when list building is treated as a content programme output, not an afterthought. We walk through how to structure content-to-email flows, list segmentation, and automation sequences that convert organic readers into paying customers at scale.",
-      author: "Priya Anand",
-      authorRole: "Email Marketing Lead",
       href: "/blog/content-to-email-funnel",
     },
   ],

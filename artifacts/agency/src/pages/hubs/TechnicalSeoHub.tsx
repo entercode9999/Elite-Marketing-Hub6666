@@ -296,8 +296,6 @@ const technicalSeoData: HubData = {
       readTime: "7 min read",
       title: "The Technical SEO Audit Process We Run on Every New Client Site",
       excerpt: "Most technical SEO audits are raw crawl outputs with a severity score next to each issue. That's not actionable. Our audit process produces a prioritised fix list ranked by expected traffic impact — so development resources go to the issues costing you the most organic revenue first. Here's the full methodology.",
-      author: "James Okafor",
-      authorRole: "Technical SEO Lead",
       href: "/blog/technical-seo-audit-process",
     },
     {
@@ -306,8 +304,6 @@ const technicalSeoData: HubData = {
       readTime: "6 min read",
       title: "Core Web Vitals Fix Priority: Which Metric Moves Rankings Fastest",
       excerpt: "LCP, CLS, and INP each affect rankings differently — and fixing each one requires different interventions. After optimising Core Web Vitals across 80+ client sites, we have a clear picture of which fixes produce the fastest ranking impact and which ones are important for completeness but slow to show results. Here's what to fix first.",
-      author: "Marcus Chen",
-      authorRole: "Performance Specialist",
       href: "/blog/core-web-vitals-fix-priority",
     },
     {
@@ -316,8 +312,6 @@ const technicalSeoData: HubData = {
       readTime: "5 min read",
       title: "How to Redesign Your Website Without Destroying Your SEO Rankings",
       excerpt: "A website redesign without a proper technical SEO migration plan is one of the most reliable ways to wipe out years of organic authority. We've completed over 40 migrations without a meaningful ranking loss and rescued dozens of businesses from bad ones. Here's the complete pre-launch checklist we use on every migration.",
-      author: "Sarah Kowalski",
-      authorRole: "SEO Strategist",
       href: "/blog/redesign-without-losing-seo",
     },
   ],

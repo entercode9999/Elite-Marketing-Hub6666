@@ -283,8 +283,6 @@ const aiData: HubData = {
       readTime: "6 min read",
       title: "Why Generic Chatbots Lose Leads and What Custom AI Actually Fixes",
       excerpt: "The average service business loses 38% of inbound leads to slow response times or after-hours gaps. We analysed 60 AI chatbot deployments across dental, legal, HVAC, and SaaS clients and found the same pattern: generic tools capture volume but miss quality. Here's what actually converts.",
-      author: "Priya Anand",
-      authorRole: "Head of AI Systems",
       href: "/blog/custom-ai-vs-generic-chatbots",
     },
     {
@@ -293,8 +291,6 @@ const aiData: HubData = {
       readTime: "5 min read",
       title: "The 8 Workflows Every Service Business Should Automate First",
       excerpt: "Not all automation is equal. Some workflows deliver 10x returns immediately; others take months to justify. After mapping hundreds of business processes across our client base, we've identified the eight automations that consistently deliver the fastest, most measurable ROI — regardless of industry.",
-      author: "James Okafor",
-      authorRole: "Automation Lead",
       href: "/blog/workflows-to-automate-first",
     },
     {
@@ -303,8 +299,6 @@ const aiData: HubData = {
       readTime: "7 min read",
       title: "How AI Infrastructure Becomes a Compounding Advantage Over 24 Months",
       excerpt: "The businesses winning with AI in 2026 aren't the ones with the fanciest tools — they're the ones who built the right foundation 18 months ago. We look at three client case studies where early AI investment created a compounding lead and efficiency advantage that competitors can't close without significant time investment.",
-      author: "Marcus Chen",
-      authorRole: "Strategy Director",
       href: "/blog/ai-compounding-advantage",
     },
   ],

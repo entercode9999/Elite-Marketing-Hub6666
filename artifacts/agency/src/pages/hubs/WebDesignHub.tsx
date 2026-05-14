@@ -297,8 +297,6 @@ const webDesignData: HubData = {
       readTime: "7 min read",
       title: "Why Your Website's Conversion Rate Is Probably Half What It Should Be",
       excerpt: "The average B2B website converts at 2.3%. The top quartile converts at 6.1%. The gap is not about budget or design talent — it's about whether conversion architecture is treated as a first principle or a final polish. We analysed 140 client sites before and after redesign and found the same five structural problems over and over.",
-      author: "Marcus Chen",
-      authorRole: "Head of Design",
       href: "/blog/conversion-rate-web-design",
     },
     {
@@ -307,8 +305,6 @@ const webDesignData: HubData = {
       readTime: "5 min read",
       title: "The Redesign Mistakes That Kill SEO Authority — And How to Avoid Every One",
       excerpt: "Thousands of businesses wipe out years of organic traffic every time they launch a new website. The culprit is almost always the same: 301 redirects that weren't mapped, URLs that changed without a migration plan, or canonicals that pointed at the staging domain. We've fixed dozens of these situations. Here's the complete checklist we use on every redesign.",
-      author: "Sarah Kowalski",
-      authorRole: "Senior SEO Strategist",
       href: "/blog/redesign-seo-checklist",
     },
     {
@@ -317,8 +313,6 @@ const webDesignData: HubData = {
       readTime: "6 min read",
       title: "Core Web Vitals in 2026: What the Scores Actually Mean for Your Business",
       excerpt: "Google's Core Web Vitals update changed how search ranking works. But most of the guidance online treats Web Vitals as a technical checkbox rather than a revenue driver. We looked at 90 client sites and correlated Lighthouse scores with conversion rates. The relationship is stronger than most people think — and it starts long before you hit the performance threshold.",
-      author: "James Okafor",
-      authorRole: "Lead Developer",
       href: "/blog/core-web-vitals-2026",
     },
   ],

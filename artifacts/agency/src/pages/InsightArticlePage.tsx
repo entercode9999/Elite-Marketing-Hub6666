@@ -1,6 +1,6 @@
 import { Link, useParams } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowLeft, Clock, Calendar, User, Star, BookOpen } from "lucide-react";
+import { ArrowRight, ArrowLeft, Clock, Calendar, Star, BookOpen } from "lucide-react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { useSeo } from "@/hooks/useSeo";
@@ -22,10 +22,6 @@ interface Article {
   tagColor: string;
   date: string;
   readTime: string;
-  author: string;
-  authorRole: string;
-  authorInitials: string;
-  authorBio: string;
   sections: ArticleSection[];
 }
 
@@ -39,10 +35,6 @@ const ARTICLES: Article[] = [
     tagColor: "#1a56ff",
     date: "April 2025",
     readTime: "8 min read",
-    author: "Priya Nair",
-    authorRole: "Head of SEO",
-    authorInitials: "PN",
-    authorBio: "Priya leads Outlier's SEO practice and has built organic growth strategies for 80+ Canadian businesses over 12 years. She developed our proprietary topical authority framework.",
     sections: [
       {
         heading: "Why the local pack still matters more than ever",
@@ -100,10 +92,6 @@ const ARTICLES: Article[] = [
     tagColor: "#7c3aed",
     date: "March 2025",
     readTime: "11 min read",
-    author: "Marcus Reid",
-    authorRole: "Founder & CEO",
-    authorInitials: "MR",
-    authorBio: "Marcus founded Outlier in 2024 with a focus on local lead generation for Ontario service businesses. He writes about practical SEO, paid media, and what actually drives inbound leads.",
     sections: [
       {
         heading: "What actually changed",
@@ -161,10 +149,6 @@ const ARTICLES: Article[] = [
     tagColor: "#20c997",
     date: "March 2025",
     readTime: "9 min read",
-    author: "Chloe Armstrong",
-    authorRole: "Director of Web & CX",
-    authorInitials: "CA",
-    authorBio: "Chloe leads Outlier's web and CRO practice. She has redesigned 60+ Ontario business websites with a singular focus on conversion performance over aesthetics.",
     sections: [
       {
         heading: "The methodology",
@@ -215,10 +199,6 @@ const ARTICLES: Article[] = [
     tagColor: "#1aa7ec",
     date: "February 2025",
     readTime: "7 min read",
-    author: "Jordan Kim",
-    authorRole: "Head of Paid Media",
-    authorInitials: "JK",
-    authorBio: "Jordan specialises in Google and Meta campaign strategy for local service businesses, with deep experience in account restructuring and performance recovery for underperforming accounts.",
     sections: [
       {
         heading: "Why self-managed accounts bleed money",
@@ -278,10 +258,6 @@ const ARTICLES: Article[] = [
     tagColor: "#f59e0b",
     date: "January 2025",
     readTime: "12 min read",
-    author: "Marcus Reid",
-    authorRole: "Founder & CEO",
-    authorInitials: "MR",
-    authorBio: "Marcus founded Outlier in 2024 focused on local SEO and lead generation for Ontario service businesses. He writes about content strategy, topical authority, and what drives organic growth.",
     sections: [
       {
         heading: "The content calendar vs the content architecture",
@@ -333,10 +309,6 @@ const ARTICLES: Article[] = [
     tagColor: "#e85d04",
     date: "February 2025",
     readTime: "14 min read",
-    author: "Priya Nair",
-    authorRole: "Head of SEO",
-    authorInitials: "PN",
-    authorBio: "Priya led the Meridian Dental engagement from initial audit through to month 11 results. She has run local SEO campaigns for 30+ healthcare practices across Ontario.",
     sections: [
       {
         heading: "Where they started",
@@ -391,10 +363,6 @@ const ARTICLES: Article[] = [
     tagColor: "#e85d04",
     date: "January 2025",
     readTime: "10 min read",
-    author: "Jordan Kim",
-    authorRole: "Head of Paid Media",
-    authorInitials: "JK",
-    authorBio: "Jordan led the GTA Home Pros paid media engagement. He has rebuilt 50+ underperforming Google Ads accounts and manages over $4M in annual ad spend.",
     sections: [
       {
         heading: "The account we inherited",
@@ -437,10 +405,6 @@ const ARTICLES: Article[] = [
     tagColor: "#1a56ff",
     date: "December 2024",
     readTime: "6 min read",
-    author: "Priya Nair",
-    authorRole: "Head of SEO",
-    authorInitials: "PN",
-    authorBio: "Priya runs Outlier's local SEO practice and has conducted citation audits for 80+ Ontario businesses. She developed the NAP audit process used across all Outlier engagements.",
     sections: [
       {
         heading: "Why citations matter more than most businesses think",
@@ -524,7 +488,7 @@ export function InsightArticlePage() {
       "@type": "Article",
       "headline": article.title,
       "description": article.excerpt,
-      "author": { "@type": "Person", "name": article.author, "jobTitle": article.authorRole },
+      "author": { "@type": "Organization", "name": "Outlier Digital Marketing" },
       "publisher": { "@type": "Organization", "name": "Outlier Digital Marketing", "url": "https://outlierdigital.ca" },
       "datePublished": article.date,
       "mainEntityOfPage": { "@type": "WebPage", "@id": `https://outlierdigital.ca/insights/${article.slug}` },
@@ -581,17 +545,6 @@ export function InsightArticlePage() {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.1] mb-6 max-w-3xl">{article.title}</h1>
             <p className="text-white/45 text-[16px] leading-relaxed mb-8 max-w-2xl">{article.excerpt}</p>
             <div className="flex flex-wrap items-center gap-5 text-white/40 text-sm">
-              <div className="flex items-center gap-2">
-                <div
-                  className="w-8 h-8 rounded-full flex items-center justify-center font-black text-white text-[11px]"
-                  style={{ backgroundColor: article.tagColor }}
-                >
-                  {article.authorInitials}
-                </div>
-                <span className="font-medium text-white/70">{article.author}</span>
-                <span className="text-white/25">·</span>
-                <span>{article.authorRole}</span>
-              </div>
               <div className="flex items-center gap-1.5">
                 <Calendar className="w-3.5 h-3.5" /> {article.date}
               </div>
@@ -679,28 +632,6 @@ export function InsightArticlePage() {
           </motion.div>
 
           {/* Author bio */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mt-16 border-t border-[#e5e2d9] pt-10"
-          >
-            <div className="flex items-start gap-5 bg-[#f9f8f5] border border-[#e5e2d9] rounded-2xl p-6">
-              <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center font-black text-white text-lg flex-shrink-0"
-                style={{ backgroundColor: article.tagColor }}
-              >
-                {article.authorInitials}
-              </div>
-              <div>
-                <p className="font-black text-[#0e0e0e] text-[16px] mb-0.5">{article.author}</p>
-                <p className="text-[11px] font-bold uppercase tracking-widest mb-3" style={{ color: article.tagColor }}>{article.authorRole}</p>
-                <p className="text-gray-500 text-[14px] leading-relaxed">{article.authorBio}</p>
-              </div>
-            </div>
-          </motion.div>
-
           {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}

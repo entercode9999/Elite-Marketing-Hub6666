@@ -310,8 +310,6 @@ const digitalMarketingData: HubData = {
       readTime: "7 min read",
       title: "Why Multi-Agency Digital Marketing Costs You 30% of Your Budget",
       excerpt: "Hiring separate agencies for SEO, paid media, and content feels like a logical division of expertise. In practice, it creates attribution disputes, duplicated overhead, and strategies that contradict each other. We looked at 40 multi-agency setups we inherited and found consistent patterns in where the losses occur — and how to fix them.",
-      author: "Marcus Chen",
-      authorRole: "Strategy Director",
       href: "/blog/multi-agency-cost",
     },
     {
@@ -320,8 +318,6 @@ const digitalMarketingData: HubData = {
       readTime: "5 min read",
       title: "The Google Ads Audit Checklist We Use on Every New Account",
       excerpt: "The average inherited Google Ads account wastes 22% of its budget on the day we take it over. The culprits are consistent: broad match keywords without negative lists, PMAX campaigns cannibalising branded search, and conversion tracking that's measuring the wrong events. Here's the full audit process we run in the first 48 hours.",
-      author: "James Okafor",
-      authorRole: "Paid Media Lead",
       href: "/blog/google-ads-audit-checklist",
     },
     {
@@ -330,8 +326,6 @@ const digitalMarketingData: HubData = {
       readTime: "6 min read",
       title: "GA4 Attribution in 2026: How to Actually Know What's Driving Revenue",
       excerpt: "GA4's default attribution model tells a partial story. Most businesses are crediting the wrong channels, misallocating budget, and making strategy decisions based on incomplete data. We walk through the custom event setup, attribution model configuration, and Looker Studio dashboard structure we use to build full-funnel visibility for every client.",
-      author: "Priya Anand",
-      authorRole: "Analytics Lead",
       href: "/blog/ga4-attribution-2026",
     },
   ],

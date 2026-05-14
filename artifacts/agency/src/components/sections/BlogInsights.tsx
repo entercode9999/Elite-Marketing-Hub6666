@@ -11,8 +11,6 @@ const ARTICLES = [
     excerpt:
       "The local pack drives 30–45% of click volume on local queries — and that hasn't shrunk despite AI Overviews. Here's what signals actually move the needle in 2025 and how to outrank competitors who are physically closer.",
     href: "/insights/local-seo-2025",
-    author: "Priya Nair",
-    authorRole: "Head of SEO",
   },
   {
     image: "/case-study-ecommerce.png",
@@ -22,8 +20,6 @@ const ARTICLES = [
     excerpt:
       "After auditing 80+ Google Ads accounts, these are the seven mistakes we see in nearly every self-managed account — and the ones costing the most money. Mistake #1 is active in 41% of accounts.",
     href: "/insights/ppc-budget-waste-7-mistakes",
-    author: "Jordan Kim",
-    authorRole: "Head of Paid Media",
   },
   {
     image: "/case-study-saas.png",
@@ -33,8 +29,6 @@ const ARTICLES = [
     excerpt:
       "Most agencies write content to fill a calendar. We build content architectures that compound in authority over time. Here's the exact hub-and-spoke framework — and the data on what it produces.",
     href: "/insights/topical-authority-playbook",
-    author: "Marcus Reid",
-    authorRole: "Founder & CEO",
   },
 ];
 
@@ -105,9 +99,10 @@ export function BlogInsights() {
                 </p>
 
                 <div className="flex items-center justify-between pt-4 border-t border-[#e5e2d9]">
-                  <div>
-                    <p className="text-xs font-bold text-[#0e0e0e]">{article.author}</p>
-                    <p className="text-[10px] text-gray-400">{article.authorRole}</p>
+                  <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gray-400">
+                    <span>{article.category}</span>
+                    <span className="text-gray-300">·</span>
+                    <span>{article.readTime}</span>
                   </div>
                   <span className="inline-flex items-center gap-1 text-xs font-bold text-primary group-hover:gap-2 transition-all">
                     Read

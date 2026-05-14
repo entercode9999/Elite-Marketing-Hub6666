@@ -34,41 +34,6 @@ function DarkHero({ label, title, sub, children }: { label: string; title: React
    ABOUT PAGE
 ══════════════════════════════════════════════════════════════════ */
 
-const TEAM = [
-  {
-    name: "Marcus Reid",
-    role: "Founder & CEO",
-    bio: "Founded Outlier in 2024 to help Ontario service businesses generate more inbound leads through focused local SEO and paid media — built around the idea that smaller, specialized agencies get better results for local operators.",
-    initials: "MR",
-    accent: "#1a56ff",
-    tags: ["Strategy", "Business Dev", "Partnerships"],
-  },
-  {
-    name: "Priya Nair",
-    role: "Head of SEO",
-    bio: "12 years building organic search strategies for local service businesses across Canada. Priya leads our SEO practice with a focus on local search visibility and technical SEO foundations.",
-    initials: "PN",
-    accent: "#7c3aed",
-    tags: ["Technical SEO", "Content Strategy", "Local SEO"],
-  },
-  {
-    name: "Jordan Kim",
-    role: "Head of Paid Media",
-    bio: "Extensive experience running Google and Meta campaigns for local service businesses. Jordan's specialty is building lead acquisition systems that improve over time — not just campaigns that run and stop.",
-    initials: "JK",
-    accent: "#e85d04",
-    tags: ["Google Ads", "Meta Ads", "Analytics"],
-  },
-  {
-    name: "Chloe Armstrong",
-    role: "Director of Web & CX",
-    bio: "Former UX lead at a Vancouver agency, Chloe joined Outlier to build our conversion-focused web practice. She obsesses over the intersection of design, speed, and revenue.",
-    initials: "CA",
-    accent: "#20c997",
-    tags: ["CRO", "UX Design", "Ecommerce"],
-  },
-];
-
 const VALUES = [
   { icon: Target, title: "Outcomes over activity", desc: "Reports and deliverables are easy. Results that move your business are hard. We optimise for the latter — always." },
   { icon: Shield, title: "Radical transparency", desc: "You see everything. Strategy, data, decisions, and what isn't working. We run no black boxes and no vanity metrics." },
@@ -671,7 +636,6 @@ const POSTS = [
     tag: "Local SEO",
     date: "Apr 2025",
     readTime: "8 min read",
-    author: "Priya Nair",
     featured: true,
   },
   {
@@ -681,7 +645,6 @@ const POSTS = [
     tag: "SEO",
     date: "Mar 2025",
     readTime: "11 min read",
-    author: "Marcus Reid",
     featured: false,
   },
   {
@@ -691,7 +654,6 @@ const POSTS = [
     tag: "Web & CRO",
     date: "Mar 2025",
     readTime: "9 min read",
-    author: "Chloe Armstrong",
     featured: false,
   },
   {
@@ -701,7 +663,6 @@ const POSTS = [
     tag: "Case Study",
     date: "Feb 2025",
     readTime: "14 min read",
-    author: "Priya Nair",
     featured: false,
   },
   {
@@ -711,7 +672,6 @@ const POSTS = [
     tag: "Google Ads",
     date: "Feb 2025",
     readTime: "7 min read",
-    author: "Jordan Kim",
     featured: false,
   },
   {
@@ -721,7 +681,6 @@ const POSTS = [
     tag: "Content",
     date: "Jan 2025",
     readTime: "12 min read",
-    author: "Marcus Reid",
     featured: false,
   },
   {
@@ -731,7 +690,6 @@ const POSTS = [
     tag: "Case Study",
     date: "Jan 2025",
     readTime: "10 min read",
-    author: "Jordan Kim",
     featured: false,
   },
   {
@@ -741,7 +699,6 @@ const POSTS = [
     tag: "Local SEO",
     date: "Dec 2024",
     readTime: "6 min read",
-    author: "Priya Nair",
     featured: false,
   },
 ];
@@ -808,14 +765,10 @@ export function InsightsPage() {
                     <p className="text-white/50 text-[15px] leading-relaxed">{featured.excerpt}</p>
                   </div>
                   <div className="flex items-center justify-between relative mt-8">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center font-black text-white text-xs">
-                        {featured.author.split(" ").map((n) => n[0]).join("")}
-                      </div>
-                      <div>
-                        <p className="text-white text-sm font-bold">{featured.author}</p>
-                        <p className="text-white/30 text-[11px]">{featured.date} · {featured.readTime}</p>
-                      </div>
+                    <div className="flex items-center gap-3 text-white/35 text-[11px] font-bold uppercase tracking-widest">
+                      <span>{featured.date}</span>
+                      <span>·</span>
+                      <span>{featured.readTime}</span>
                     </div>
                     <Link href={`/insights/${featured.slug}`} className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all">
                       Read article <ArrowRight className="w-4 h-4" />
@@ -902,17 +855,10 @@ export function InsightsPage() {
                     <h3 className="font-black text-[#0e0e0e] text-[16px] leading-snug mb-3 group-hover:text-primary transition-colors">{p.title}</h3>
                     <p className="text-gray-500 text-[13.5px] leading-relaxed mb-5 flex-1">{p.excerpt}</p>
                     <div className="flex items-center justify-between pt-4 border-t border-[#e5e2d9]">
-                      <div className="flex items-center gap-2">
-                        <div
-                          className="w-6 h-6 rounded-full flex items-center justify-center font-black text-white text-[9px]"
-                          style={{ backgroundColor: TAG_COLORS[p.tag] ?? "#1a56ff" }}
-                        >
-                          {p.author.split(" ").map((n) => n[0]).join("")}
-                        </div>
-                        <div>
-                          <p className="text-[11px] font-bold text-[#0e0e0e]">{p.author}</p>
-                          <p className="text-[10px] text-gray-400">{p.readTime}</p>
-                        </div>
+                      <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                        <span>{p.date}</span>
+                        <span className="text-gray-300">·</span>
+                        <span>{p.readTime}</span>
                       </div>
                       <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                     </div>

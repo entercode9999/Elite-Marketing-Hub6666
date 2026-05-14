@@ -308,8 +308,6 @@ const ecommerceData: HubData = {
       readTime: "8 min read",
       title: "Why You Should Fix Your Store's Conversion Rate Before Scaling Ad Spend",
       excerpt: "Doubling your ad budget on a 1.5% converting store doubles your spend and doubles your revenue. Improving conversion to 3% before scaling doubles your revenue from every dollar you already spend — permanently. We walk through the purchase path audit process and the specific interventions that consistently move conversion rate in the first 60 days.",
-      author: "Marcus Chen",
-      authorRole: "eCommerce Director",
       href: "/blog/conversion-before-scaling",
     },
     {
@@ -318,8 +316,6 @@ const ecommerceData: HubData = {
       readTime: "6 min read",
       title: "Why We Never Use Page Builders for Shopify Stores",
       excerpt: "Shopify page builders — PageFly, GemPages, Shogun — are appealing for their speed and visual editing. In practice, they produce bloated code that fails Core Web Vitals, creates maintenance nightmares, and limits what you can build as the store scales. Here's what we build instead and why it performs better at every scale.",
-      author: "James Okafor",
-      authorRole: "Lead Developer",
       href: "/blog/shopify-no-page-builders",
     },
     {
@@ -328,8 +324,6 @@ const ecommerceData: HubData = {
       readTime: "5 min read",
       title: "The 6 Klaviyo Flows Every Shopify Store Needs From Day One",
       excerpt: "Most Shopify stores launch with a welcome email and an abandoned cart flow. That's leaving 60% of email revenue on the table. We walk through the six flows that consistently generate the most revenue per subscriber — with the trigger logic, timing, and copy principles that make each one perform.",
-      author: "Priya Anand",
-      authorRole: "Email Marketing Lead",
       href: "/blog/klaviyo-flows-shopify",
     },
   ],

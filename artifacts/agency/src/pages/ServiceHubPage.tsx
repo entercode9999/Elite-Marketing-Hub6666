@@ -53,8 +53,6 @@ export interface HubInsightArticle {
   readTime: string;
   title: string;
   excerpt: string;
-  author: string;
-  authorRole: string;
   href: string;
 }
 
@@ -679,14 +677,13 @@ export function ServiceHubPage({ data }: { data: HubData }) {
                       </div>
                       <h3 className="font-bold text-[#0e0e0e] text-base leading-snug mb-3 group-hover:text-primary transition-colors">{a.title}</h3>
                       <p className="text-sm text-gray-500 leading-relaxed flex-1">{a.excerpt}</p>
-                      <div className="mt-5 pt-4 border-t border-[#e5e2d9] flex items-center gap-3">
-                        <div className="w-7 h-7 rounded-full bg-[#0e0e0e] flex items-center justify-center text-white text-[10px] font-black">
-                          {a.author.charAt(0)}
+                      <div className="mt-5 pt-4 border-t border-[#e5e2d9] flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gray-400">
+                          <span>{a.category}</span>
+                          <span className="text-gray-300">·</span>
+                          <span>{a.readTime}</span>
                         </div>
-                        <div>
-                          <p className="text-xs font-bold text-[#0e0e0e]">{a.author}</p>
-                          <p className="text-[10px] text-gray-400">{a.authorRole}</p>
-                        </div>
+                        <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                       </div>
                     </div>
                   </motion.a>
