@@ -35,6 +35,11 @@ const PLANS = [
       "10 professionally structured service + location pages",
       "Conversion-focused page layouts",
     ],
+    outcomes: [
+      "Stronger presence in your core city",
+      "More relevant pages for Google to rank",
+      "Clearer paths from searcher to lead",
+    ],
     value: "Ideal for businesses targeting one primary city or service area. This gives Google more relevant pages to rank and gives local buyers clearer paths to call, book, or request a quote.",
   },
   {
@@ -57,6 +62,11 @@ const PLANS = [
       "25 professionally structured service + location pages",
       "Conversion-focused landing page structure",
       "Search visibility expansion across multiple service areas",
+    ],
+    outcomes: [
+      "Coverage across more services and cities",
+      "More high-intent search entry points",
+      "Better lead tracking and conversion structure",
     ],
     value: "Built to capture more searches from people already looking for what you sell. More targeted pages means more chances to appear when buyers search by service, city, and problem.",
   },
@@ -81,6 +91,11 @@ const PLANS = [
       "60 professionally structured service + location pages",
       "Scalable search expansion framework",
     ],
+    outcomes: [
+      "Broader regional search coverage",
+      "More service + city combinations ranked",
+      "A larger organic lead pipeline over time",
+    ],
     value: "Designed for businesses that want to own more search territory across a region. This package helps you compete in more cities, rank for more service combinations, and build a larger organic lead pipeline.",
   },
   {
@@ -103,6 +118,11 @@ const PLANS = [
       "Analytics, call tracking, and lead source visibility",
       "Scalable framework for long-term search expansion",
       "Built for businesses ready to dominate their service area",
+    ],
+    outcomes: [
+      "Maximum search footprint across your market",
+      "Reduced reliance on paid ads over time",
+      "A scalable framework for local dominance",
     ],
     value: "Best for companies that want maximum market coverage. It creates a large footprint of targeted pages so your business can show up for more buyer searches, reduce reliance on ads, and generate more inbound leads over time.",
   },
@@ -139,22 +159,20 @@ function PlanCard({ plan, index }: { plan: typeof PLANS[0]; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-      className={`relative flex flex-col rounded-2xl border overflow-hidden transition-shadow hover:shadow-xl ${
+      className={`relative flex h-full flex-col rounded-2xl border overflow-hidden transition-shadow hover:shadow-xl ${
         isPop
           ? "border-primary ring-2 ring-primary/20 bg-white"
           : "border-[#e5e2d9] bg-white"
       }`}
     >
-      {plan.badge && (
-        <div className="py-2 text-center text-[10px] font-black uppercase tracking-widest bg-primary text-white">
-          {plan.badge}
-        </div>
-      )}
+      <div className={`min-h-8 py-2 text-center text-[10px] font-black uppercase tracking-widest ${plan.badge ? "bg-primary text-white" : "bg-transparent text-transparent"}`}>
+        {plan.badge || "Standard"}
+      </div>
 
       <div className="p-7 flex flex-col flex-1">
         {/* Plan name */}
         <p className={`text-[11px] font-black uppercase tracking-widest mb-1 ${isPop ? "text-primary" : "text-gray-400"}`}>{plan.name}</p>
-        <p className="text-gray-500 text-sm leading-snug mb-5">{plan.tagline}</p>
+        <p className="text-gray-500 text-sm leading-snug mb-5 min-h-[54px]">{plan.tagline}</p>
 
         {/* Price */}
         <div className="mb-5">
@@ -188,7 +206,7 @@ function PlanCard({ plan, index }: { plan: typeof PLANS[0]; index: number }) {
         </div>
 
         {/* Features */}
-        <div className="border-t border-[#e5e2d9] pt-5 flex-1">
+        <div className="border-t border-[#e5e2d9] pt-5 flex flex-1 flex-col">
           <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-4">What's included</p>
           <ul className="space-y-2.5 mb-5">
             {plan.features.map((f) => (
@@ -198,9 +216,22 @@ function PlanCard({ plan, index }: { plan: typeof PLANS[0]; index: number }) {
               </li>
             ))}
           </ul>
-          <div className="rounded-xl bg-[#f9f8f5] border border-[#e5e2d9] p-4">
-            <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-2">Who it's for</p>
-            <p className="text-xs text-gray-500 leading-relaxed">{plan.value}</p>
+          <div className={`mt-auto rounded-xl border p-4 ${isPop ? "bg-primary/5 border-primary/20" : "bg-[#f9f8f5] border-[#e5e2d9]"}`}>
+            <div className="flex items-center gap-2 mb-3">
+              <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${isPop ? "bg-primary text-white" : "bg-white border border-[#e5e2d9] text-primary"}`}>
+                <TrendingUp className="w-4 h-4" />
+              </div>
+              <p className="text-[10px] font-black uppercase tracking-widest text-[#0e0e0e]">Value delivered</p>
+            </div>
+            <ul className="space-y-2 mb-3">
+              {plan.outcomes.map((outcome) => (
+                <li key={outcome} className="flex items-start gap-2 text-xs font-semibold text-[#0e0e0e] leading-snug">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
+                  {outcome}
+                </li>
+              ))}
+            </ul>
+            <p className="border-t border-[#e5e2d9] pt-3 text-xs text-gray-500 leading-relaxed">{plan.value}</p>
           </div>
         </div>
       </div>
